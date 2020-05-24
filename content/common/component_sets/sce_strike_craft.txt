@@ -1,0 +1,198 @@
+# Icons set here are the ones shown in compnent editor list.
+
+component_set = {
+	key = "sce_FIGHTER_HANGAR_1"
+	
+	icon = "GFX_ship_part_strike_craft_fighter2_1"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_FIGHTER_HANGAR_2"
+	
+	icon = "GFX_ship_part_strike_craft_fighter2_2"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_FIGHTER_HANGAR_3"
+	
+	icon = "GFX_ship_part_strike_craft_fighter2_3"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_FIGHTER_HANGAR_4"
+	
+	icon = "GFX_ship_part_strike_craft_fighter2_4"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_FIGHTER_HANGAR_5_psionic"
+	
+	icon = "GFX_ship_part_strike_craft_fighter2_5_psionic"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_FIGHTER_HANGAR_5_gene"
+	
+	icon = "GFX_ship_part_strike_craft_fighter2_5_gene"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_FIGHTER_HANGAR_5_cyber"
+	
+	icon = "GFX_ship_part_strike_craft_fighter2_5_cyber"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_INTERCEPTOR_HANGAR_1"
+	
+	icon = "GFX_ship_part_strike_craft_fighter_1"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_INTERCEPTOR_HANGAR_2"
+	
+	icon = "GFX_ship_part_strike_craft_fighter_2"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_INTERCEPTOR_HANGAR_3"
+	
+	icon = "GFX_ship_part_strike_craft_fighter_3"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_INTERCEPTOR_HANGAR_4"
+	
+	icon = "GFX_ship_part_strike_craft_fighter_4"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_INTERCEPTOR_HANGAR_5_psionic"
+	
+	icon = "GFX_ship_part_strike_craft_fighter_5_psionic"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_INTERCEPTOR_HANGAR_5_gene"
+	
+	icon = "GFX_ship_part_strike_craft_fighter_5_gene"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_INTERCEPTOR_HANGAR_5_cyber"
+	
+	icon = "GFX_ship_part_strike_craft_fighter_5_cyber"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_GUNSHIP_HANGAR_1"
+	
+	icon = "GFX_ship_part_strike_craft_fighter3_1"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_GUNSHIP_HANGAR_2"
+	
+	icon = "GFX_ship_part_strike_craft_fighter3_2"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_GUNSHIP_HANGAR_3"
+	
+	icon = "GFX_ship_part_strike_craft_fighter3_3"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_GUNSHIP_HANGAR_4"
+	
+	icon = "GFX_ship_part_strike_craft_fighter3_4"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_GUNSHIP_HANGAR_5_psionic"
+	
+	icon = "GFX_ship_part_strike_craft_fighter3_5_psionic"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_GUNSHIP_HANGAR_5_gene"
+	
+	icon = "GFX_ship_part_strike_craft_fighter3_5_gene"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_GUNSHIP_HANGAR_5_cyber"
+	
+	icon = "GFX_ship_part_strike_craft_fighter3_5_cyber"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_BOMBER_HANGAR_1"
+	
+	icon = "GFX_ship_part_strike_craft_bomber_1"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_BOMBER_HANGAR_2"
+	
+	icon = "GFX_ship_part_strike_craft_bomber_2"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_BOMBER_HANGAR_3"
+	
+	icon = "GFX_ship_part_strike_craft_bomber_3"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_BOMBER_HANGAR_4"
+	
+	icon = "GFX_ship_part_strike_craft_bomber_4"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_BOMBER_HANGAR_5_psionic"
+	
+	icon = "GFX_ship_part_strike_craft_bomber_5_psionic"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_BOMBER_HANGAR_5_gene"
+	
+	icon = "GFX_ship_part_strike_craft_bomber_5_gene"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "sce_BOMBER_HANGAR_5_cyber"
+	
+	icon = "GFX_ship_part_strike_craft_bomber_5_cyber"
+	icon_frame = 1	
+}
+

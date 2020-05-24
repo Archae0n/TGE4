@@ -1,0 +1,68 @@
+
+########################################
+########################################
+#####                              #####
+#####    Auto Gene Assimilation    #####
+#####                              #####
+#####    scripted_triggers         #####
+#####                              #####
+########################################
+########################################
+
+
+### Scope: this = country
+AgaTriggerPotentialCountry = {
+	OR = {
+		is_ai = no
+		always = @AgaConstApplyForNpcEmpires
+	}
+	NOR = {
+		is_hive_empire = yes
+		is_robot_empire = yes		## machine_empire, ap_synthetic_evolution or owned by trait_robot
+		is_fallen_empire = yes		## fallen_empire or awakened_fallen_empire
+		has_ascension_perk = ap_xeno_compatibility
+	}
+}
+
+### Scope: this = country
+AgaTriggerPossibleCountry = {
+	AgaTriggerPotentialCountry = yes
+	has_technology = tech_gene_tailoring
+}
+
+### Scope: this = country
+AgaTriggerCheckSocietyResearchIncome = {
+	custom_tooltip = {
+		fail_text = AgaPolicyGeneAssimilationFailText
+		OR = {
+			has_monthly_income = { resource = society_research value >= @AgaConstSocietyResearchForGeneAssimilation_1P }
+			has_policy_flag = AgaFlagGeneAssimilationAllowed
+			always = @AgaConstPolicyDebugMode
+		}
+	}
+}
+
+### Scope: this = species
+AgaTriggerPotentialSpecies = {
+	NOR = {
+		has_trait = trait_hive_mind
+		has_trait = trait_machine_unit
+		has_trait = trait_mechanical
+		has_trait = trait_self_modified		
+	}
+}
+
+### Scope: this = species, root = country (owner)
+AgaTriggerGeneAssimilationStandardSpecies = {
+	has_species_flag = AgaFlagGeneAssimilationStandardSpecies@root
+	AgaTriggerPotentialSpecies = yes
+	root = {
+		any_owned_pop_species = {
+			is_same_species = prevprev
+			NOT = { is_exact_same_species = prevprev }
+			AgaTriggerPotentialSpecies = yes
+		}
+	}
+}
+
+

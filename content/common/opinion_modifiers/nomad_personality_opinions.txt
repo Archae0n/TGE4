@@ -1,0 +1,14 @@
+##########################################################################
+# HARD FIXED STATE - DO NOT REMOVE OR RENAME ANY OF THESE
+##########################################################################
+
+triggered_opinion_from_reaver_personality = {
+	trigger = {			
+		FROM = {
+			has_origin = origin_void_reavers
+		}
+	}
+	opinion = {
+		base = -1000
+	}
+}

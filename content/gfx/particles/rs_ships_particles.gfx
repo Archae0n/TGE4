@@ -1,0 +1,84 @@
+###########################
+### RS PARTCILE EFFECTS ###
+###########################
+
+objectTypes = {
+	
+	pdxparticle = {
+		name = "rs_ship_light_blue_effect"
+		type = "rs_ship_light_blue_effect"
+		
+		scale = 1.0
+	}
+	
+	pdxparticle = {
+		name = "rs_ship_light_blue_regular_effect"
+		type = "rs_ship_light_blue_regular_effect"
+		
+		scale = 1.0
+	}
+	
+	pdxparticle = {
+		name = "rs_ship_light_blue_rolling_effect"
+		type = "rs_ship_light_blue_rolling_effect"
+		
+		scale = 1.0
+	}
+	
+	pdxparticle = {
+		name = "rs_ship_light_red_effect"
+		type = "rs_ship_light_red_effect"
+		
+		scale = 1.0
+	}
+
+	pdxparticle = {
+		name = "rs_ship_light_red_regular_effect"
+		type = "rs_ship_light_red_regular_effect"
+		
+		scale = 1.0
+	}
+	
+	pdxparticle = {
+		name = "rs_ship_light_red_rolling_effect"
+		type = "rs_ship_light_red_rolling_effect"
+		
+		scale = 1.0
+	}
+
+	pdxparticle = {
+		name = "rs_energy_blue_effect"
+		type = "rs_energy_blue_effect"
+		
+		scale = 1.0
+	}
+
+	pdxparticle = {
+		name = "rs_energy_red_effect"
+		type = "rs_energy_red_effect"
+		
+		scale = 1.0
+	}
+
+	pdxparticle = {
+		name = "rs_nanobot_drone_effect"
+		type = "rs_nanobot_drone_effect"
+		
+		scale = 1.0
+	}
+
+	pdxparticle = {
+		name = "ship_aura_negative_effect"
+		type = "ship_aura_negative_effect"
+		
+		scale = 1.0
+	}
+
+	pdxparticle = {
+		name = "ship_aura_positive_effect"
+		type = "ship_aura_positive_effect"
+		
+		scale = 2.0
+	}
+
+}

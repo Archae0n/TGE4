@@ -1,0 +1,381 @@
+﻿l_russian:
+ 
+ 
+ 
+ ### АУКЦИОН ### 
+ ftm_auction_window_title:0 "АУКЦИОН ФЛОТОВ" 
+ 
+ # общее
+ ftm_auction_lot_no_info:0 "Этот лот свободен. Нажмите, чтобы предложить на аукцион один из своих флотов." 
+ ftm_auction_lot_in_progress_info:0 "§RВ данный момент в этот лот выставляется флот. Пожалуйста, подождите.§!" 
+ ftm_auction_lot_info:0 "Одна из империй выставила флот на продажу. Для получения подробной информации нажмите на это сообщение." 
+ ftm_auction_lot_info_seller:0 "Один из наших флотов выставлен на продажу. Для получения подробной информации нажмите на это сообщение." 
+ ftm_auction_lot_price_title:0 "ТЕКУЩАЯ ЦЕНА:" 
+ ftm_auction_lot_price_button:0 "(НАВЕДИ КУРСОР)" 
+ ftm_auction_lot_price_100:0 "+100 £energy£" 
+ ftm_auction_lot_price_1000:0 "+1000 £energy£" 
+ ftm_auction_lot_price_10000:0 "+10000 £energy£" 
+ 
+ # лот 1
+ ftm_auction_lot_1_no_info:0 "§R$ftm_auction_lot_no_info$§!" 
+ ftm_auction_lot_1_info:0 "§R$ftm_auction_lot_info$§!" 
+ ftm_auction_lot_1_info_seller:0 "§R$ftm_auction_lot_info_seller$§!" 
+ ftm_auction_lot_1_price_title:0 "§R$ftm_auction_lot_price_title$§!" 
+ ftm_auction_lot_1_price_button:0 "§R$ftm_auction_lot_price_button$§!" 
+ ftm_auction_lot_1_price_100:0 "§R$ftm_auction_lot_price_100$§!" 
+ ftm_auction_lot_1_price_1000:0 "§R$ftm_auction_lot_price_1000$§!" 
+ ftm_auction_lot_1_price_10000:0 "§R$ftm_auction_lot_price_10000$§!" 
+ ftm_auction_lot_1_price_button_info_0:0 "Установлена стартовая цена в §Y[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost]§! £energy£. Никто еще не сделал свою ставку." 
+ ftm_auction_lot_1_price_button_info:0 "Максимальную цену в §Y[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost]§! £energy£ предложила империя §H[event_target:ftm_auction_lot_1_max_price.GetName]§!" 
+ ftm_auction_lot_1_price_100_info:0 "Добавить 100 £energy£ к текущей цене в §Y[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost]§! £energy£"
+ ftm_auction_lot_1_price_1000_info:0 "Добавить 1000 £energy£ к текущей цене в §Y[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost]§! £energy£"
+ ftm_auction_lot_1_price_10000_info:0 "Добавить 10000 £energy£ к текущей цене в §Y[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost]§! £energy£"
+ # лот 2
+ ftm_auction_lot_2_no_info:0 "§G$ftm_auction_lot_no_info$§!" 
+ ftm_auction_lot_2_info:0 "§G$ftm_auction_lot_info$§!" 
+ ftm_auction_lot_2_info_seller:0 "§G$ftm_auction_lot_info_seller$§!" 
+ ftm_auction_lot_2_price_title:0 "§G$ftm_auction_lot_price_title$§!" 
+ ftm_auction_lot_2_price_button:0 "§G$ftm_auction_lot_price_button$§!" 
+ ftm_auction_lot_2_price_100:0 "§G$ftm_auction_lot_price_100$§!" 
+ ftm_auction_lot_2_price_1000:0 "§G$ftm_auction_lot_price_1000$§!" 
+ ftm_auction_lot_2_price_10000:0 "§G$ftm_auction_lot_price_10000$§!" 
+ ftm_auction_lot_2_price_button_info_0:0 "Установлена стартовая цена в §Y[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost]§! £energy£. Никто еще не сделал свою ставку." 
+ ftm_auction_lot_2_price_button_info:0 "Максимальную цену в §Y[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost]§! £energy£ предложила империя §H[event_target:ftm_auction_lot_2_max_price.GetName]§!" 
+ ftm_auction_lot_2_price_100_info:0 "Добавить 100 £energy£ к текущей цене в §Y[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost]§! £energy£"
+ ftm_auction_lot_2_price_1000_info:0 "Добавить 1000 £energy£ к текущей цене в §Y[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost]§! £energy£"
+ ftm_auction_lot_2_price_10000_info:0 "Добавить 10000 £energy£ к текущей цене в §Y[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost]§! £energy£"
+ # лот 3
+ ftm_auction_lot_3_no_info:0 "§B$ftm_auction_lot_no_info$§!" 
+ ftm_auction_lot_3_info:0 "§B$ftm_auction_lot_info$§!" 
+ ftm_auction_lot_3_info_seller:0 "§B$ftm_auction_lot_info_seller$§!" 
+ ftm_auction_lot_3_price_title:0 "§B$ftm_auction_lot_price_title$§!" 
+ ftm_auction_lot_3_price_button:0 "§B$ftm_auction_lot_price_button$§!" 
+ ftm_auction_lot_3_price_100:0 "§B$ftm_auction_lot_price_100$§!" 
+ ftm_auction_lot_3_price_1000:0 "§B$ftm_auction_lot_price_1000$§!" 
+ ftm_auction_lot_3_price_10000:0 "§B$ftm_auction_lot_price_10000$§!" 
+ ftm_auction_lot_3_price_button_info_0:0 "Установлена стартовая цена в §Y[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost]§! £energy£. Никто еще не сделал свою ставку." 
+ ftm_auction_lot_3_price_button_info:0 "Максимальную цену в §Y[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost]§! £energy£ предложила империя §H[event_target:ftm_auction_lot_3_max_price.GetName]§!" 
+ ftm_auction_lot_3_price_100_info:0 "Добавить 100 £energy£ к текущей цене в §Y[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost]§! £energy£"
+ ftm_auction_lot_3_price_1000_info:0 "Добавить 1000 £energy£ к текущей цене в §Y[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost]§! £energy£"
+ ftm_auction_lot_3_price_10000_info:0 "Добавить 10000 £energy£ к текущей цене в §Y[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost]§! £energy£"
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ # Кнопка открытия окна в окне указов
+ edict_ftm_open_auction_window:0 "§HАукцион флотов§!"
+ edict_ftm_open_auction_window_desc:0 "Нажмите, чтобы открыть окно аукциона"
+ 
+ # Страна-аукцион
+ ftm_auction_country_name:0 "§BЭта флотилия в данный момент находится на аукционе§!"
+ FTM_AUCTION_EMPIRE:0 "Нажмите, чтобы открыть окно аукциона"
+ FTM_AUCTION_EMPIRE_DESC:0 " "
+ 
+ 
+ ### СООБЩЕНИЯ ###  
+ 
+ ## ЛОТ 1 ##
+ 
+ # 1 - окно выбора флота для аукциона
+ ftm_auction.101.title:0 "§BВЫБЕРИТЕ ФЛОТ§!" 
+ ftm_auction.101.desc:0 "Флотилию можно выставить на аукцион, только если выполнены следующие условия:\n§Y1. Флотилия находится на своей территории;\n2. Флотилией не управляет адмирал;\n2. Нельзя выставить на продажу Колосса или Джаггернаута§!\n\nСписок доступных для аукциона флотилий приведен ниже:" 
+ # выбор флотилии
+ ftm_auction.101.fleet_01:0 "§Y[event_target:ftm_auctioned_fleet_lot_1_01.GetFleetName]§!" 
+ ftm_auction.101.fleet_01.tooltip:0 "Флотилия §Y[event_target:ftm_auctioned_fleet_lot_1_01.GetName]§! может быть выставлена на аукцион"
+ ftm_auction.101.fleet_02:0 "§Y[event_target:ftm_auctioned_fleet_lot_1_02.GetFleetName]§!" 
+ ftm_auction.101.fleet_02.tooltip:0 "Флотилия §Y[event_target:ftm_auctioned_fleet_lot_1_02.GetName]§! может быть выставлена на аукцион"
+ ftm_auction.101.fleet_03:0 "§Y[event_target:ftm_auctioned_fleet_lot_1_03.GetFleetName]§!" 
+ ftm_auction.101.fleet_03.tooltip:0 "Флотилия §Y[event_target:ftm_auctioned_fleet_lot_1_03.GetName]§! может быть выставлена на аукцион"
+ ftm_auction.101.fleet_04:0 "§Y[event_target:ftm_auctioned_fleet_lot_1_04.GetFleetName]§!" 
+ ftm_auction.101.fleet_04.tooltip:0 "Флотилия §Y[event_target:ftm_auctioned_fleet_lot_1_04.GetName]§! может быть выставлена на аукцион"
+ ftm_auction.101.fleet_05:0 "§Y[event_target:ftm_auctioned_fleet_lot_1_05.GetFleetName]§!" 
+ ftm_auction.101.fleet_05.tooltip:0 "Флотилия §Y[event_target:ftm_auctioned_fleet_lot_1_05.GetName]§! может быть выставлена на аукцион"
+ ftm_auction.101.nope:0 "Я передумал" 
+ 
+ # 2 - ручная настройка стартовой цены аукциона
+ ftm_auction.102.title:0 "§BУСТАНОВИТЕ ЦЕНУ§!" 
+ ftm_auction.102.desc:0 "Установите стартовую цену вручную.\n\n§YТЕКУЩАЯ ЦЕНА:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost_manual]§!\n§YРЕСУРС:§! §Y£energy£ энергокредиты§!" 
+ # выбор вариантов
+ ftm_auction.102.minus10000:0 "§R-10000§!" 
+ ftm_auction.102.minus10000.tooltip:0 "§YСнизить цену на 10000 единиц§!"  
+ ftm_auction.102.minus1000:0 "§R-1000§!" 
+ ftm_auction.102.minus1000.tooltip:0 "§YСнизить цену на 1000 единиц§!"  
+ ftm_auction.102.minus100:0 "§R-100§!" 
+ ftm_auction.102.minus100.tooltip:0 "§YСнизить цену на 100 единиц§!"  
+ ftm_auction.102.minus10:0 "§R-10§!" 
+ ftm_auction.102.minus10.tooltip:0 "§YСнизить цену на 10 единиц§!"   
+ ftm_auction.102.plus10:0 "§G+10§!" 
+ ftm_auction.102.plus10.tooltip:0 "§YУвеличить цену на 10 единиц§!"   
+ ftm_auction.102.plus100:0 "§G+100§!" 
+ ftm_auction.102.plus100.tooltip:0 "§YУвеличить цену на 100 единиц§!"   
+ ftm_auction.102.plus1000:0 "§G+1000§!" 
+ ftm_auction.102.plus1000.tooltip:0 "§YУвеличить цену на 1000 единиц§!"   
+ ftm_auction.102.plus10000:0 "§G+10000§!" 
+ ftm_auction.102.plus10000.tooltip:0 "§YУвеличить цену на 10000 единиц§!"  
+ ftm_auction.102.done:0 "§YПринять цену§!" 
+ ftm_auction.102.done.tooltip:0 "§YУстановить текущую цену§!" 
+ 
+ # 3 - запрос подтверждения продажи
+ ftm_auction.103.title:0 "§RТРЕБУЕТСЯ ПОДТВЕРЖДЕНИЕ§!" 
+ ftm_auction.103.desc:0 "Будет выставлен следующий лот:\n\n§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_1.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.GetName]§!\n§YСтартовая цена:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost]§! £energy£\n\n§RВНИМАНИЕ!§!\n§YВремя проведения торгов на аукционе составляет 2 года (24 месяца). Все это время флотилия не будет подчиняться нам, а после торгов перейдет к тому, кто предложит большую сумму.§!" 
+ # выбор вариантов
+ ftm_auction.103.confirm:0 "Подтверждаю предложение" 
+ ftm_auction.103.confirm.tooltip:0 "Флотилия §H[event_target:ftm_auctioned_fleet_lot_1.GetFleetName]§! будет выставлена на продажу.\n§RВНИМАНИЕ! ФЛОТИЛИЯ ПЕРЕСТАНЕТ СЧИТАТЬСЯ НАШЕЙ!§!"
+ ftm_auction.103.nope:0 "Я передумал" 
+ 
+ # 5 - сообщение при недостатке энергии для ставки (+100)
+ ftm_auction.105.title:0 "§RНЕДОСТАТОЧНО ЭНЕРГИИ§!" 
+ ftm_auction.105.desc:0 "Недостаточно энергии чтобы сделать ставку.\n\n§YТребуется:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost_plus_100]§!£energy£\n§YВ наличии:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_buyer_auctioned_fleet_lot_1_energy_current_count]§!£energy£" 
+ # выбор вариантов
+ ftm_auction.105.ok:0 "Я понял" 
+ 
+ # 6 - сообщение при недостатке энергии для ставки (+1000)
+ ftm_auction.106.desc:0 "Недостаточно энергии чтобы сделать ставку.\n\n§YТребуется:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost_plus_1000]§!£energy£\n§YВ наличии:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_buyer_auctioned_fleet_lot_1_energy_current_count]§!£energy£" 
+ 
+ # 7 - сообщение при недостатке энергии для ставки (+10000)
+ ftm_auction.107.desc:0 "Недостаточно энергии чтобы сделать ставку.\n\n§YТребуется:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost_plus_10000]§!£energy£\n§YВ наличии:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_buyer_auctioned_fleet_lot_1_energy_current_count]§!£energy£" 
+ 
+ # 8 - сообщение что наша ставка и так максимальная
+ ftm_auction.108.title:0 "§GМАКСИМАЛЬНАЯ СТАВКА§!" 
+ ftm_auction.108.desc:0 "Наша ставка является максимальной, и равна §H[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost]§!£energy£. Нет необходимости делать новую ставку." 
+ # выбор вариантов
+ ftm_auction.108.ok:0 "Я понял" 
+ 
+ # 10 - сообщение с информацией о флоте
+ ftm_auction.110.title:0 "§RИНФОРМАЦИЯ: ЛОТ 1§!" 
+ ftm_auction.110.desc:0 "§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_1.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.GetName]§!\n§YТекущая цена:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost]§!£energy£\n§YМаксимальная ставка:§! §H[event_target:ftm_auction_lot_1_max_price.GetName]§!\n§YОсталось месяцев до окончания торгов:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auction_lot_1_time_in_months]§!\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_titan_count]§!" 
+ ftm_auction.110.desc_mod:0 "§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_1.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.GetName]§!\n§YТекущая цена:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost]§!£energy£\n§YМаксимальная ставка:§! §H[event_target:ftm_auction_lot_1_max_price.GetName]§!\n§YОсталось месяцев до окончания торгов:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auction_lot_1_time_in_months]§!" 
+ # выбор вариантов
+ ftm_auction.110.ok:0 "Закрыть" 
+ 
+ # 11 - сообщение с информацией о победе в аукционе
+ ftm_auction.111.title:0 "§GАУКЦИОН ЗАВЕРШЕН§!" 
+ ftm_auction.111.desc:0 "Мы сделали самую большую ставку на аукционе, и получили следующую флотилию:\n§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_1.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.GetName]§!\n§YПобедившая цена:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost]§!£energy£\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_titan_count]§!" 
+ ftm_auction.111.desc_mod:0 "Мы сделали самую большую ставку на аукционе, и получили следующую флотилию:\n§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_1.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.GetName]§!\n§YПобедившая цена:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost]§!£energy£" 
+ # выбор вариантов
+ ftm_auction.111.ok:0 "Закрыть" 
+ 
+ # 12 - сообщение с информацией об успешной продаже флота на аукционе (+ начисление денег продавцу)
+ ftm_auction.112.title:0 "§GАУКЦИОН ЗАВЕРШЕН§!" 
+ ftm_auction.112.desc:0 "Мы успешно продали одну из наших флотилий через аукцион.\n§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_1.GetFleetName]§!\n§YПобедившая цена:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost]§!£energy£\n§YПокупатель:§! §H[event_target:ftm_auction_lot_1_max_price.GetName]§!\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_titan_count]§!" 
+ ftm_auction.112.desc_mod:0 "Мы успешно продали одну из наших флотилий через аукцион.\n§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_1.GetFleetName]§!\n§YПобедившая цена:§! §H[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost]§!£energy£\n§YПокупатель:§! §H[event_target:ftm_auction_lot_1_max_price.GetName]§!" 
+ # выбор вариантов
+ ftm_auction.112.ok:0 "Закрыть" 
+ ftm_auction.112.ok.tooltip:0 "Мы получим победившую цену в размере §H[event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost]§!£energy£" 
+ 
+ # 13 - сообщение что продать флот не удалось
+ ftm_auction.113.title:0 "§RВРЕМЯ ВЫШЛО§!" 
+ ftm_auction.113.desc:0 "Время, отведенное на размещение флотилии §H[event_target:ftm_auctioned_fleet_lot_1.GetFleetName]§! на аукционе, вышло. Никто не сделал ставки. Флот возвращен." 
+ # выбор вариантов
+ ftm_auction.113.ok:0 "Закрыть"  
+ 
+ # уведомления
+ FTM_AUCTION_LOT_1_NOTIFICATION:0 "Империя §H$COUNTRY$§! выставила на аукцион флотилию §Y$FLEET$§!\n "
+ FTM_AUCTION_LOT_1_PRICE_LOST:0 "Империя §H$COUNTRY$§! повышает ставку на флотилию §Y$FLEET$§!!\n "
+ 
+ 
+ 
+ ## ЛОТ 2 ##
+ 
+ # 1 - окно выбора флота для аукциона
+ ftm_auction.201.title:0 "§BВЫБЕРИТЕ ФЛОТ§!" 
+ ftm_auction.201.desc:0 "Флотилию можно выставить на аукцион, только если выполнены следующие условия:\n§Y1. Флотилия находится на своей территории;\n2. Флотилией не управляет адмирал;\n2. Нельзя выставить на продажу Колосса или Джаггернаута§!\n\nСписок доступных для аукциона флотилий приведен ниже:" 
+ # выбор флотилии
+ ftm_auction.201.fleet_01:0 "1 §Y[event_target:ftm_auctioned_fleet_lot_2_01.GetFleetName]§!" 
+ ftm_auction.201.fleet_01.tooltip:0 "Флотилия §Y[event_target:ftm_auctioned_fleet_lot_2_01.GetName]§! может быть выставлена на аукцион"
+ ftm_auction.201.fleet_02:0 "2 §Y[event_target:ftm_auctioned_fleet_lot_2_02.GetFleetName]§!" 
+ ftm_auction.201.fleet_02.tooltip:0 "Флотилия §Y[event_target:ftm_auctioned_fleet_lot_2_02.GetName]§! может быть выставлена на аукцион"
+ ftm_auction.201.fleet_03:0 "3 §Y[event_target:ftm_auctioned_fleet_lot_2_03.GetFleetName]§!" 
+ ftm_auction.201.fleet_03.tooltip:0 "Флотилия §Y[event_target:ftm_auctioned_fleet_lot_2_03.GetName]§! может быть выставлена на аукцион"
+ ftm_auction.201.fleet_04:0 "4 §Y[event_target:ftm_auctioned_fleet_lot_2_04.GetFleetName]§!" 
+ ftm_auction.201.fleet_04.tooltip:0 "Флотилия §Y[event_target:ftm_auctioned_fleet_lot_2_04.GetName]§! может быть выставлена на аукцион"
+ ftm_auction.201.fleet_05:0 "5 §Y[event_target:ftm_auctioned_fleet_lot_2_05.GetFleetName]§!" 
+ ftm_auction.201.fleet_05.tooltip:0 "Флотилия §Y[event_target:ftm_auctioned_fleet_lot_2_05.GetName]§! может быть выставлена на аукцион"
+ ftm_auction.201.nope:0 "Я передумал" 
+ 
+ # 2 - ручная настройка стартовой цены аукциона
+ ftm_auction.202.title:0 "§BУСТАНОВИТЕ ЦЕНУ§!" 
+ ftm_auction.202.desc:0 "Установите стартовую цену вручную.\n\n§YТЕКУЩАЯ ЦЕНА:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost_manual]§!\n§YРЕСУРС:§! §Y£energy£ энергокредиты§!" 
+ # выбор вариантов
+ ftm_auction.202.minus10000:0 "§R-10000§!" 
+ ftm_auction.202.minus10000.tooltip:0 "§YСнизить цену на 10000 единиц§!"  
+ ftm_auction.202.minus1000:0 "§R-1000§!" 
+ ftm_auction.202.minus1000.tooltip:0 "§YСнизить цену на 1000 единиц§!"  
+ ftm_auction.202.minus100:0 "§R-100§!" 
+ ftm_auction.202.minus100.tooltip:0 "§YСнизить цену на 100 единиц§!"  
+ ftm_auction.202.minus10:0 "§R-10§!" 
+ ftm_auction.202.minus10.tooltip:0 "§YСнизить цену на 10 единиц§!"   
+ ftm_auction.202.plus10:0 "§G+10§!" 
+ ftm_auction.202.plus10.tooltip:0 "§YУвеличить цену на 10 единиц§!"   
+ ftm_auction.202.plus100:0 "§G+100§!" 
+ ftm_auction.202.plus100.tooltip:0 "§YУвеличить цену на 100 единиц§!"   
+ ftm_auction.202.plus1000:0 "§G+1000§!" 
+ ftm_auction.202.plus1000.tooltip:0 "§YУвеличить цену на 1000 единиц§!"   
+ ftm_auction.202.plus10000:0 "§G+10000§!" 
+ ftm_auction.202.plus10000.tooltip:0 "§YУвеличить цену на 10000 единиц§!"  
+ ftm_auction.202.done:0 "§YПринять цену§!" 
+ ftm_auction.202.done.tooltip:0 "§YУстановить текущую цену§!" 
+ 
+ # 3 - запрос подтверждения продажи
+ ftm_auction.203.title:0 "§RТРЕБУЕТСЯ ПОДТВЕРЖДЕНИЕ§!" 
+ ftm_auction.203.desc:0 "Будет выставлен следующий лот:\n\n§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_2.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.GetName]§!\n§YСтартовая цена:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost]§! £energy£\n\n§RВНИМАНИЕ!§!\n§YВремя проведения торгов на аукционе составляет 2 года (24 месяца). Все это время флотилия не будет подчиняться нам, а после торгов перейдет к тому, кто предложит большую сумму.§!" 
+ # выбор вариантов
+ ftm_auction.203.confirm:0 "Подтверждаю предложение" 
+ ftm_auction.203.confirm.tooltip:0 "Флотилия §H[event_target:ftm_auctioned_fleet_lot_2.GetFleetName]§! будет выставлена на продажу.\n§RВНИМАНИЕ! ФЛОТИЛИЯ ПЕРЕСТАНЕТ СЧИТАТЬСЯ НАШЕЙ!§!"
+ ftm_auction.203.nope:0 "Я передумал" 
+ 
+ # 5 - сообщение при недостатке энергии для ставки (+100)
+ ftm_auction.205.title:0 "§RНЕДОСТАТОЧНО ЭНЕРГИИ§!" 
+ ftm_auction.205.desc:0 "Недостаточно энергии чтобы сделать ставку.\n\n§YТребуется:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost_plus_100]§!£energy£\n§YВ наличии:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_buyer_auctioned_fleet_lot_2_energy_current_count]§!£energy£" 
+ # выбор вариантов
+ ftm_auction.205.ok:0 "Я понял" 
+ 
+ # 6 - сообщение при недостатке энергии для ставки (+1000)
+ ftm_auction.206.desc:0 "Недостаточно энергии чтобы сделать ставку.\n\n§YТребуется:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost_plus_1000]§!£energy£\n§YВ наличии:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_buyer_auctioned_fleet_lot_2_energy_current_count]§!£energy£" 
+ 
+ # 7 - сообщение при недостатке энергии для ставки (+10000)
+ ftm_auction.207.desc:0 "Недостаточно энергии чтобы сделать ставку.\n\n§YТребуется:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost_plus_10000]§!£energy£\n§YВ наличии:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_buyer_auctioned_fleet_lot_2_energy_current_count]§!£energy£" 
+ 
+ # 8 - сообщение что наша ставка и так максимальная
+ ftm_auction.208.title:0 "§GМАКСИМАЛЬНАЯ СТАВКА§!" 
+ ftm_auction.208.desc:0 "Наша ставка является максимальной, и равна §H[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost]§!£energy£. Нет необходимости делать новую ставку." 
+ # выбор вариантов
+ ftm_auction.208.ok:0 "Я понял" 
+ 
+ # 10 - сообщение с информацией о флоте
+ ftm_auction.210.title:0 "§GИНФОРМАЦИЯ: ЛОТ 2§!" 
+ ftm_auction.210.desc:0 "§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_2.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.GetName]§!\n§YТекущая цена:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost]§!£energy£\n§YМаксимальная ставка:§! §H[event_target:ftm_auction_lot_2_max_price.GetName]§!\n§YОсталось месяцев до окончания торгов:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auction_lot_2_time_in_months]§!\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_titan_count]§!" 
+ ftm_auction.210.desc_mod:0 "§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_2.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.GetName]§!\n§YТекущая цена:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost]§!£energy£\n§YМаксимальная ставка:§! §H[event_target:ftm_auction_lot_2_max_price.GetName]§!\n§YОсталось месяцев до окончания торгов:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auction_lot_2_time_in_months]§!" 
+ # выбор вариантов
+ ftm_auction.210.ok:0 "Закрыть" 
+ 
+ # 11 - сообщение с информацией о победе в аукционе
+ ftm_auction.211.title:0 "§GАУКЦИОН ЗАВЕРШЕН§!" 
+ ftm_auction.211.desc:0 "Мы сделали самую большую ставку на аукционе, и получили следующую флотилию:\n§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_2.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.GetName]§!\n§YПобедившая цена:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost]§!£energy£\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_titan_count]§!" 
+ ftm_auction.211.desc_mod:0 "Мы сделали самую большую ставку на аукционе, и получили следующую флотилию:\n§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_2.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.GetName]§!\n§YПобедившая цена:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost]§!£energy£" 
+ # выбор вариантов
+ ftm_auction.211.ok:0 "Закрыть" 
+ 
+ # 12 - сообщение с информацией об успешной продаже флота на аукционе (+ начисление денег продавцу)
+ ftm_auction.212.title:0 "§GАУКЦИОН ЗАВЕРШЕН§!" 
+ ftm_auction.212.desc:0 "Мы успешно продали одну из наших флотилий через аукцион.\n§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_2.GetFleetName]§!\n§YПобедившая цена:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost]§!£energy£\n§YПокупатель:§! §H[event_target:ftm_auction_lot_2_max_price.GetName]§!\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_titan_count]§!" 
+ ftm_auction.212.desc_mod:0 "Мы успешно продали одну из наших флотилий через аукцион.\n§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_2.GetFleetName]§!\n§YПобедившая цена:§! §H[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost]§!£energy£\n§YПокупатель:§! §H[event_target:ftm_auction_lot_2_max_price.GetName]§!" 
+ # выбор вариантов
+ ftm_auction.212.ok:0 "Закрыть" 
+ ftm_auction.212.ok.tooltip:0 "Мы получим победившую цену в размере §H[event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost]§!£energy£" 
+ 
+ # 13 - сообщение что продать флот не удалось
+ ftm_auction.213.title:0 "§RВРЕМЯ ВЫШЛО§!" 
+ ftm_auction.213.desc:0 "Время, отведенное на размещение флотилии §H[event_target:ftm_auctioned_fleet_lot_2.GetFleetName]§! на аукционе, вышло. Никто не сделал ставки. Флот возвращен." 
+ # выбор вариантов
+ ftm_auction.213.ok:0 "Закрыть" 
+ 
+ # уведомления
+ FTM_AUCTION_LOT_2_NOTIFICATION:0 "Империя §H$COUNTRY$§! выставила на аукцион флотилию §Y$FLEET$§!\n "
+ FTM_AUCTION_LOT_2_PRICE_LOST:0 "Империя §H$COUNTRY$§! повышает ставку на флотилию §Y$FLEET$§!!\n "
+ 
+ 
+ 
+ ## ЛОТ 3 ##
+ 
+ # 1 - окно выбора флота для аукциона
+ ftm_auction.301.title:0 "§BВЫБЕРИТЕ ФЛОТ§!" 
+ ftm_auction.301.desc:0 "Флотилию можно выставить на аукцион, только если выполнены следующие условия:\n§Y1. Флотилия находится на своей территории;\n2. Флотилией не управляет адмирал;\n2. Нельзя выставить на продажу Колосса или Джаггернаута§!\n\nСписок доступных для аукциона флотилий приведен ниже:" 
+ # выбор флотилии
+ ftm_auction.301.fleet_01:0 "1 §Y[event_target:ftm_auctioned_fleet_lot_3_01.GetFleetName]§!" 
+ ftm_auction.301.fleet_01.tooltip:0 "Флотилия §Y[event_target:ftm_auctioned_fleet_lot_3_01.GetName]§! может быть выставлена на аукцион"
+ ftm_auction.301.fleet_02:0 "2 §Y[event_target:ftm_auctioned_fleet_lot_3_02.GetFleetName]§!" 
+ ftm_auction.301.fleet_02.tooltip:0 "Флотилия §Y[event_target:ftm_auctioned_fleet_lot_3_02.GetName]§! может быть выставлена на аукцион"
+ ftm_auction.301.fleet_03:0 "3 §Y[event_target:ftm_auctioned_fleet_lot_3_03.GetFleetName]§!" 
+ ftm_auction.301.fleet_03.tooltip:0 "Флотилия §Y[event_target:ftm_auctioned_fleet_lot_3_03.GetName]§! может быть выставлена на аукцион"
+ ftm_auction.301.fleet_04:0 "4 §Y[event_target:ftm_auctioned_fleet_lot_3_04.GetFleetName]§!" 
+ ftm_auction.301.fleet_04.tooltip:0 "Флотилия §Y[event_target:ftm_auctioned_fleet_lot_3_04.GetName]§! может быть выставлена на аукцион"
+ ftm_auction.301.fleet_05:0 "5 §Y[event_target:ftm_auctioned_fleet_lot_3_05.GetFleetName]§!" 
+ ftm_auction.301.fleet_05.tooltip:0 "Флотилия §Y[event_target:ftm_auctioned_fleet_lot_3_05.GetName]§! может быть выставлена на аукцион"
+ ftm_auction.301.nope:0 "Я передумал" 
+ 
+ # 2 - ручная настройка стартовой цены аукциона
+ ftm_auction.302.title:0 "§BУСТАНОВИТЕ ЦЕНУ§!" 
+ ftm_auction.302.desc:0 "Установите стартовую цену вручную.\n\n§YТЕКУЩАЯ ЦЕНА:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost_manual]§!\n§YРЕСУРС:§! §Y£energy£ энергокредиты§!" 
+ # выбор вариантов
+ ftm_auction.302.minus10000:0 "§R-10000§!" 
+ ftm_auction.302.minus10000.tooltip:0 "§YСнизить цену на 10000 единиц§!"  
+ ftm_auction.302.minus1000:0 "§R-1000§!" 
+ ftm_auction.302.minus1000.tooltip:0 "§YСнизить цену на 1000 единиц§!"  
+ ftm_auction.302.minus100:0 "§R-100§!" 
+ ftm_auction.302.minus100.tooltip:0 "§YСнизить цену на 100 единиц§!"  
+ ftm_auction.302.minus10:0 "§R-10§!" 
+ ftm_auction.302.minus10.tooltip:0 "§YСнизить цену на 10 единиц§!"   
+ ftm_auction.302.plus10:0 "§G+10§!" 
+ ftm_auction.302.plus10.tooltip:0 "§YУвеличить цену на 10 единиц§!"   
+ ftm_auction.302.plus100:0 "§G+100§!" 
+ ftm_auction.302.plus100.tooltip:0 "§YУвеличить цену на 100 единиц§!"   
+ ftm_auction.302.plus1000:0 "§G+1000§!" 
+ ftm_auction.302.plus1000.tooltip:0 "§YУвеличить цену на 1000 единиц§!"   
+ ftm_auction.302.plus10000:0 "§G+10000§!" 
+ ftm_auction.302.plus10000.tooltip:0 "§YУвеличить цену на 10000 единиц§!"  
+ ftm_auction.302.done:0 "§YПринять цену§!" 
+ ftm_auction.302.done.tooltip:0 "§YУстановить текущую цену§!" 
+ 
+ # 3 - запрос подтверждения продажи
+ ftm_auction.303.title:0 "§RТРЕБУЕТСЯ ПОДТВЕРЖДЕНИЕ§!" 
+ ftm_auction.303.desc:0 "Будет выставлен следующий лот:\n\n§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_3.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.GetName]§!\n§YСтартовая цена:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost]§! £energy£\n\n§RВНИМАНИЕ!§!\n§YВремя проведения торгов на аукционе составляет 2 года (24 месяца). Все это время флотилия не будет подчиняться нам, а после торгов перейдет к тому, кто предложит большую сумму.§!" 
+ # выбор вариантов
+ ftm_auction.303.confirm:0 "Подтверждаю предложение" 
+ ftm_auction.303.confirm.tooltip:0 "Флотилия §H[event_target:ftm_auctioned_fleet_lot_3.GetFleetName]§! будет выставлена на продажу.\n§RВНИМАНИЕ! ФЛОТИЛИЯ ПЕРЕСТАНЕТ СЧИТАТЬСЯ НАШЕЙ!§!"
+ ftm_auction.303.nope:0 "Я передумал" 
+ 
+ # 5 - сообщение при недостатке энергии для ставки (+100)
+ ftm_auction.305.title:0 "§RНЕДОСТАТОЧНО ЭНЕРГИИ§!" 
+ ftm_auction.305.desc:0 "Недостаточно энергии чтобы сделать ставку.\n\n§YТребуется:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost_plus_100]§!£energy£\n§YВ наличии:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_buyer_auctioned_fleet_lot_3_energy_current_count]§!£energy£" 
+ # выбор вариантов
+ ftm_auction.305.ok:0 "Я понял" 
+ 
+ # 6 - сообщение при недостатке энергии для ставки (+1000)
+ ftm_auction.306.desc:0 "Недостаточно энергии чтобы сделать ставку.\n\n§YТребуется:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost_plus_1000]§!£energy£\n§YВ наличии:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_buyer_auctioned_fleet_lot_3_energy_current_count]§!£energy£" 
+ 
+ # 7 - сообщение при недостатке энергии для ставки (+10000)
+ ftm_auction.307.desc:0 "Недостаточно энергии чтобы сделать ставку.\n\n§YТребуется:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost_plus_10000]§!£energy£\n§YВ наличии:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_buyer_auctioned_fleet_lot_3_energy_current_count]§!£energy£" 
+ 
+ # 8 - сообщение что наша ставка и так максимальная
+ ftm_auction.308.title:0 "§GМАКСИМАЛЬНАЯ СТАВКА§!" 
+ ftm_auction.308.desc:0 "Наша ставка является максимальной, и равна §H[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost]§!£energy£. Нет необходимости делать новую ставку." 
+ # выбор вариантов
+ ftm_auction.308.ok:0 "Я понял" 
+ 
+ # 10 - сообщение с информацией о флоте
+ ftm_auction.310.title:0 "§BИНФОРМАЦИЯ: ЛОТ 3§!" 
+ ftm_auction.310.desc:0 "§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_3.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.GetName]§!\n§YТекущая цена:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost]§!£energy£\n§YМаксимальная ставка:§! §H[event_target:ftm_auction_lot_3_max_price.GetName]§!\n§YОсталось месяцев до окончания торгов:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auction_lot_3_time_in_months]§!\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_titan_count]§!" 
+ ftm_auction.310.desc_mod:0 "§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_3.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.GetName]§!\n§YТекущая цена:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost]§!£energy£\n§YМаксимальная ставка:§! §H[event_target:ftm_auction_lot_3_max_price.GetName]§!\n§YОсталось месяцев до окончания торгов:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auction_lot_3_time_in_months]§!" 
+ # выбор вариантов
+ ftm_auction.310.ok:0 "Закрыть" 
+ 
+ # 11 - сообщение с информацией о победе в аукционе
+ ftm_auction.311.title:0 "§GАУКЦИОН ЗАВЕРШЕН§!" 
+ ftm_auction.311.desc:0 "Мы сделали самую большую ставку на аукционе, и получили следующую флотилию:\n§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_3.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.GetName]§!\n§YПобедившая цена:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost]§!£energy£\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_titan_count]§!" 
+ ftm_auction.311.desc_mod:0 "Мы сделали самую большую ставку на аукционе, и получили следующую флотилию:\n§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_3.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.GetName]§!\n§YПобедившая цена:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost]§!£energy£" 
+ # выбор вариантов
+ ftm_auction.311.ok:0 "Закрыть" 
+ 
+ # 12 - сообщение с информацией об успешной продаже флота на аукционе (+ начисление денег продавцу)
+ ftm_auction.312.title:0 "§GАУКЦИОН ЗАВЕРШЕН§!" 
+ ftm_auction.312.desc:0 "Мы успешно продали одну из наших флотилий через аукцион.\n§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_3.GetFleetName]§!\n§YПобедившая цена:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost]§!£energy£\n§YПокупатель:§! §H[event_target:ftm_auction_lot_3_max_price.GetName]§!\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_titan_count]§!" 
+ ftm_auction.312.desc_mod:0 "Мы успешно продали одну из наших флотилий через аукцион.\n§YФлотилия:§! §H[event_target:ftm_auctioned_fleet_lot_3.GetFleetName]§!\n§YПобедившая цена:§! §H[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost]§!£energy£\n§YПокупатель:§! §H[event_target:ftm_auction_lot_3_max_price.GetName]§!" 
+ # выбор вариантов
+ ftm_auction.312.ok:0 "Закрыть" 
+ ftm_auction.312.ok.tooltip:0 "Мы получим победившую цену в размере §H[event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost]§!£energy£" 
+ 
+ # 13 - сообщение что продать флот не удалось
+ ftm_auction.313.title:0 "§RВРЕМЯ ВЫШЛО§!" 
+ ftm_auction.313.desc:0 "Время, отведенное на размещение флотилии §H[event_target:ftm_auctioned_fleet_lot_3.GetFleetName]§! на аукционе, вышло. Никто не сделал ставки. Флот возвращен." 
+ # выбор вариантов
+ ftm_auction.313.ok:0 "Закрыть" 
+ 
+ # уведомления
+ FTM_AUCTION_LOT_3_NOTIFICATION:0 "Империя §H$COUNTRY$§! выставила на аукцион флотилию §Y$FLEET$§!\n "
+ FTM_AUCTION_LOT_3_PRICE_LOST:0 "Империя §H$COUNTRY$§! повышает ставку на флотилию §Y$FLEET$§!!\n "
+ 
+ 

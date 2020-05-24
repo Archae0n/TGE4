@@ -1,0 +1,44 @@
+
+entity = {
+	name = "Dromaeosauridae_large_entity"
+	pdxmesh = "portrait_reptilian_13_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"       animation = "idle"    animation_blend_time = 0.0 chance = 4.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle2"    animation_blend_time = 0.0 chance = 1.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle3"    animation_blend_time = 0.0 chance = 1.0 looping = no next_state = idle}
+	scale = 0.9
+}
+
+entity = {
+	name = "Dromaeosauridae_med_entity"
+	pdxmesh = "portrait_reptilian_13_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"       animation = "idle"    animation_blend_time = 0.0 chance = 4.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle2"    animation_blend_time = 0.0 chance = 1.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle3"    animation_blend_time = 0.0 chance = 1.0 looping = no next_state = idle}
+	scale = 0.7
+}
+
+entity = {
+	name = "Dromaeosauridae_small_entity"
+	pdxmesh = "portrait_reptilian_13_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"       animation = "idle"    animation_blend_time = 0.0 chance = 4.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle2"    animation_blend_time = 0.0 chance = 1.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle3"    animation_blend_time = 0.0 chance = 1.0 looping = no next_state = idle}
+	scale = 0.6
+}
+
+entity = {
+	name = "Dromaeosauridae_micro_entity"
+	pdxmesh = "portrait_reptilian_13_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle"       animation = "idle"    animation_blend_time = 0.0 chance = 4.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle2"    animation_blend_time = 0.0 chance = 1.0 looping = no next_state = idle}
+	state = { name = "idle"       animation = "idle3"    animation_blend_time = 0.0 chance = 1.0 looping = no next_state = idle}
+	scale = 0.5
+}

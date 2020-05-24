@@ -1,0 +1,131 @@
+guiTypes = {
+
+    #EMPIRE NAME
+    containerWindowType = {
+        name = "test_option_00_03"
+        position = { x = 0 y = 0 }
+        size = { width = 0 height = 0 }
+
+        buttonType = {
+            name = "option_button"
+            quadTextureSprite = "GFX_tiled_window_transparent" 
+            position = { x = 550 y = 360 } 
+            size = { x = 200 y = 30 }
+            font = "cg_16b"
+            format = left
+        }
+    }
+
+    #NO ASSINGMENT - NO EMPIRE NAME
+    containerWindowType = {
+        name = "test_option_000_03"
+        position = { x = 0 y = 0 }
+        size = { width = 0 height = 0 }
+
+        buttonType = {
+            name = "option_button"
+            quadTextureSprite = "GFX_tiled_window_transparent" 
+            position = { x = 550 y = 360 } 
+            size = { x = 200 y = 30 }
+            font = "cg_16b"
+            format = left
+        }
+    }
+
+    #INTELLIGENCE REPORT
+    containerWindowType = {
+        name = "betaF_IntelReport"
+        position = { x = 0 y = 0 }
+        size = { width = 0 height = 0 }
+
+        buttonType = {
+            name = "option_button"
+            quadTextureSprite = "GFX_tiled_window_transparent" 
+            position = { x = 550 y = 410 } 
+            size = { x = 180 y = 30 }
+            font = "cg_16b"
+            format = left
+        }
+    }
+    #INTELLIGENCE REPORT UNNASIGNED
+    containerWindowType = {
+        name = "betaF_IntelReport"
+        position = { x = 0 y = 0 }
+        size = { width = 0 height = 0 }
+
+        buttonType = {
+            name = "option_button"
+            quadTextureSprite = "GFX_tiled_window_transparent" 
+            position = { x = 550 y = 410 } 
+            size = { x = 180 y = 30 }
+            font = "cg_16b"
+            format = left
+        }
+    }
+
+    #OPERATION TYPE
+    containerWindowType = {
+        name = "test_option_01_03"
+        position = { x = 0 y = 0 }
+        size = { width = 0 height = 0 }
+
+        buttonType = {
+            name = "option_button"
+            quadTextureSprite = "GFX_tiled_window_transparent" 
+            position = { x = 550 y = 460 } 
+            size = { x = 300 y = 30 }
+            font = "cg_16b"
+            format = left
+        }
+    }
+
+
+
+
+
+
+    ### deploy/redeploy
+    containerWindowType = {
+        name = "test_option_02_03"
+        position = { x = 0 y = 0 }
+        size = { width = 0 height = 0 }
+
+        buttonType = {
+            name = "option_button"
+            spriteType = "GFX_standard_button_116_34"
+            position = { x = 384 y =542 } 
+            size = { x = 100 y = 34 }
+            font = "cg_16b"
+        }
+    }
+
+    ### change operation
+    containerWindowType = {
+        name = "test_option_03_03"
+        position = { x = 0 y = 0 }
+        size = { width = 0 height = 0 }
+
+        buttonType = {
+            name = "option_button"
+            spriteType = "GFX_standard_button_116_34"
+            position = { x = 515 y = 542 } 
+            size = { x = 100 y = 34 }
+            font = "cg_16b"
+        }
+    }
+
+    #conduct raid
+    containerWindowType = { 
+        name = "raidOption_BetaF"
+        position = { x = 0 y = 0 }
+        size = { width = 0 height = 0 }
+
+        buttonType = {
+            name = "option_button"
+            spriteType = "GFX_standard_button_116_34"
+            position = { x = 645 y = 542 } 
+            size = { x = 100 y = 34 }
+            font = "cg_16b"
+        }
+    }
+}

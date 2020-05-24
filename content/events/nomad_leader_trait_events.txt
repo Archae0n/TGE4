@@ -1,0 +1,70 @@
+##################################################################################################################################
+#####Adding traits bonus to eligible nations.
+##################################################################################################################################
+namespace = marauder_leader_trait
+
+#####################
+# Country Type Ref
+######################
+# nomad
+# pirate
+# fallen_empire
+# awakened_fallen_empire
+# primitive
+# enclave
+# tiyanki
+# amoeba
+# crystal
+# drone
+# cloud
+#######################
+
+# New Leaders Get Erudite Trait
+country_event = {
+	id = marauder_leader_trait.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from = {
+			species = { 
+				has_trait = trait_void_farer
+			}
+		}
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = { leader_class = admiral }
+				add_trait = leader_trait_mercenary_warrior
+				add_ruler_trait = leader_trait_expertise_void_ruler
+				break = yes
+			}
+			if = {
+				limit = { leader_class = general }
+				add_trait = leader_trait_general_mercenary_warrior
+				add_ruler_trait = leader_trait_expertise_void_ruler
+				break = yes
+			}
+			if = {
+				limit = { leader_class = governor }
+				add_trait = leader_trait_expertise_void_governor
+				add_ruler_trait = leader_trait_expertise_void_ruler
+				break = yes
+			}
+			if = {
+				limit = { leader_class = scientist }
+				add_trait = leader_trait_expertise_void_engineer
+				add_ruler_trait = leader_trait_expertise_void_ruler
+				break = yes
+			}
+			if = {
+				limit = { leader_class = ruler }
+				add_trait = leader_trait_expertise_void_ruler
+				add_ruler_trait = leader_trait_expertise_void_ruler
+				break = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+origin_codominant_evolution = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_codominant_evolution.dds"
+	picture = GFX_origin_codominant_evolution
+
+	playable = { host_has_dlc = "Utopia" }
+
+	possible = {
+		civics = {
+			NOT = {
+				value = civic_fanatic_purifiers
+			}
+		}
+		ethics = {
+			NOR = {
+				value = ethic_xenophobe
+				value = ethic_fanatic_xenophobe
+				value = ethic_gestalt_consciousness
+			}
+		}
+	}
+
+	description = origin_tooltip_codominant_evolution_effects
+
+	has_secondary_species = {	# see game_start.11
+		title = origin_syncretic_evolution_secondary_species
+	}
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 1
+	}
+}

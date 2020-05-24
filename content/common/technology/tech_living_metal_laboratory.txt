@@ -1,0 +1,46 @@
+tech_living_metal_laboratory = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	category = { materials }
+	prerequisites = { "tech_mine_living_metal" }
+	weight = @tier5weight1
+
+    potential = {
+        any_owned_planet = {
+            OR = {
+				has_deposit = d_living_metal_mine_1
+				has_deposit = d_living_metal_mine_2
+				has_deposit = d_living_metal_mine_3
+            }
+        }
+    }
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+
+		modifier = {
+			factor = 0
+			NOR = {
+				any_system_within_border = { any_system_planet = { has_resource = { type = sr_living_metal amount > 0 } } }
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 5 #important resource
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_materials"
+			}
+		}
+	}
+}

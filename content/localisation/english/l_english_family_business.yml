@@ -1,0 +1,30 @@
+﻿l_english:
+
+ civic_family_business:0 "Family Business"
+ civic_family_business_desc:0 "This company's ownership and management is dominated by a single, very large group of individuals who share kinship."
+ civic_tooltip_family_business_effects:1 "£building£ §YCapital Buildings§! replace some £job_executive£ §Y$job_executive$§! Jobs with £job_neptocrat£ §Y$job_neptocrat_plural$§!\nCan construct £building£ §Y$building_family_estates$§! buildings that add additional £job_neptocrat£ §Y$job_neptocrat$§! Jobs\n§Y$MOD_LEADER_GOVERNOR_SKILL_LEVELS$§! increased by §G+1§!"
+ 
+ building_family_estates:0 "Family Estates"
+ building_family_estates_desc:1 "Luxurious employer-provided residences are a key incentive for the company's relatives--I mean executives."
+
+
+ job_neptocrat:0 "Neptocrat"
+ job_neptocrat_plural:0 "Neptocrats"
+ job_neptocrat_desc:1 "Whether by birthright, adoption, or mating ritual, neptocrats nobly bear the burden of continuing their family's commercial legacy, no matter how many vacations it requires."
+ mod_job_neptocrat_add:0 "Neptocrat Jobs"
+ job_neptocrat_effect_desc:0 "£job_neptocrat£ §Y$job_neptocrat_plural$§! produce £stability£ §YStability§! and £trade_value£ §YTrade Value§!"
+
+policy_family_xeno_acceptance:0 "Ruling Family Xeno Policy"
+policy_family_xeno_acceptance_desc:0 "We can decide whether our company's ruling family should admit xenos through adoption, mating bond ritual, or other means."
+family_purity:0 "Family Purity"
+family_purity_desc:0 "Family means ties of kinship, and even if it were biologically possible to interbreed, we would not dishonor our ancestors by letting a xeno claim our family name."
+xeno_acceptance:0 "Xeno Acceptance"
+xeno_acceptance_desc:0 "As we expand across the stars, we must enrich our family with the multitude of talents and perspectives beyond our ancestral forerunners."
+
+ SUPREMACIST_RULING_FAMILY_PURITY:0 "Ruling Family Purity"
+ SUPREMACIST_RULING_FAMILY_PURITY_DESC:0 "Supremacists like to see the company's ruling family as a bastion of racial purity."
+ MISCEGENATION:0 "Miscegenation"
+
+ RULING_FAMILY_INCLUSIVITY:0 "Ruling Family Inclusivity"
+ XENOIST_RULING_FAMILY_INCLUSIVITY_DESC:0 "Xenoists like to see that every sapient has the potential to become part of the company's ruling clan."
+ "GLASS_CEILING":0 "Glass Ceiling"

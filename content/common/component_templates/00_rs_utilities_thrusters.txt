@@ -1,0 +1,335 @@
+##############################
+### RS UTILITIES THRUSTERS ###
+##############################
+
+#################
+### VARIABLES ###
+#################
+
+@cost1 = 3
+@cost2 = 6
+@cost3 = 9
+@cost4 = 12
+@cost5 = 15
+
+@cruiser_power_1 = -40
+@cruiser_power_2 = -60
+@cruiser_power_3 = -80
+@cruiser_power_4 = -100
+@cruiser_power_5 = -120
+
+@battleship_power_1 = -80
+@battleship_power_2 = -120
+@battleship_power_3 = -160
+@battleship_power_4 = -200
+@battleship_power_5 = -240
+
+@cruiser_cost1 = 12
+@cruiser_cost2 = 24
+@cruiser_cost3 = 36
+@cruiser_cost4 = 48
+@cruiser_cost5 = 60
+
+@battleship_cost1 = 24
+@battleship_cost2 = 48
+@battleship_cost3 = 72
+@battleship_cost4 = 96
+@battleship_cost5 = 120
+
+###############
+### LEVEL 1 ###
+###############
+
+utility_component_template = {
+	key = "CRUISER_SHIP_THRUSTER_1"
+	size = small
+	icon = "GFX_ship_part_thruster_1"
+	icon_frame = 1
+	power = @cruiser_power_1
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cruiser_cost1
+		}
+	}
+	
+	modifier = {
+	}
+		
+	prerequisites = { "tech_thrusters_1" }
+	component_set = "thruster_components"
+	size_restriction = { cruiser rs_support_cruiser rs_ea_cruiser rs_battlecruiser }
+	upgrades_to = "CRUISER_SHIP_THRUSTER_2"
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+utility_component_template = {
+	key = "BATTLESHIP_SHIP_THRUSTER_1"
+	size = small
+	icon = "GFX_ship_part_thruster_1"
+	icon_frame = 1
+	power = @battleship_power_1
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @battleship_cost1
+		}
+	}
+	
+	modifier = {
+	}
+		
+	prerequisites = { "tech_thrusters_1" }
+	component_set = "thruster_components"
+	size_restriction = { battleship battleship rs_dreadnought rs_heavy_dreadnought_type_a rs_heavy_dreadnought_type_b rs_heavy_dreadnought_type_c rs_heavy_dreadnought_type_d rs_heavy_dreadnought_type_e rs_heavy_dreadnought_type_f rs_heavy_dreadnought_type_g rs_heavy_dreadnought_type_h rs_heavy_dreadnought_type_i }
+	upgrades_to = "BATTLESHIP_SHIP_THRUSTER_2"
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+###############
+### LEVEL 2 ###
+###############
+
+utility_component_template = {
+	key = "CRUISER_SHIP_THRUSTER_2"
+	size = small
+	icon = "GFX_ship_part_thruster_2"
+	icon_frame = 1
+	power = @cruiser_power_2
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cruiser_cost2
+		}
+	}
+	
+	modifier = {
+		ship_base_speed_mult = 0.25
+		ship_evasion_add = 3
+	}
+		
+	prerequisites = { "tech_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { cruiser rs_support_cruiser rs_ea_cruiser rs_battlecruiser }
+	upgrades_to = "CRUISER_SHIP_THRUSTER_3"
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+utility_component_template = {
+	key = "BATTLESHIP_SHIP_THRUSTER_2"
+	size = small
+	icon = "GFX_ship_part_thruster_2"
+	icon_frame = 1
+	power = @battleship_power_2
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @battleship_cost2
+		}
+	}
+	
+	modifier = {
+		ship_base_speed_mult = 0.25
+		ship_evasion_add = 2
+	}
+		
+	prerequisites = { "tech_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { battleship battleship rs_dreadnought rs_heavy_dreadnought_type_a rs_heavy_dreadnought_type_b rs_heavy_dreadnought_type_c rs_heavy_dreadnought_type_d rs_heavy_dreadnought_type_e rs_heavy_dreadnought_type_f rs_heavy_dreadnought_type_g rs_heavy_dreadnought_type_h rs_heavy_dreadnought_type_i }
+	upgrades_to = "BATTLESHIP_SHIP_THRUSTER_3"
+	
+	ai_weight = {
+		weight = 2
+	}
+}
+
+###############
+### LEVEL 3 ###
+###############
+
+utility_component_template = {
+	key = "CRUISER_SHIP_THRUSTER_3"
+	size = small
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1
+	power = @cruiser_power_3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cruiser_cost3
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 0.50
+		ship_evasion_add = 6
+	}
+
+	prerequisites = { "tech_thrusters_3" }
+	component_set = "thruster_components"
+	size_restriction = { cruiser rs_support_cruiser rs_ea_cruiser rs_battlecruiser }
+	upgrades_to = "CRUISER_SHIP_THRUSTER_4"
+	
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+	key = "BATTLESHIP_SHIP_THRUSTER_3"
+	size = small
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1
+	power = @battleship_power_3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @battleship_cost3
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 0.50
+		ship_evasion_add = 4
+	}
+
+	prerequisites = { "tech_thrusters_3" }
+	component_set = "thruster_components"
+	size_restriction = { battleship battleship rs_dreadnought rs_heavy_dreadnought_type_a rs_heavy_dreadnought_type_b rs_heavy_dreadnought_type_c rs_heavy_dreadnought_type_d rs_heavy_dreadnought_type_e rs_heavy_dreadnought_type_f rs_heavy_dreadnought_type_g rs_heavy_dreadnought_type_h rs_heavy_dreadnought_type_i }
+	upgrades_to = "BATTLESHIP_SHIP_THRUSTER_4"
+	
+	ai_weight = {
+		weight = 3
+	}
+}
+
+###############
+### LEVEL 4 ###
+###############
+
+utility_component_template = {
+	key = "CRUISER_SHIP_THRUSTER_4"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = @cruiser_power_4
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cruiser_cost4
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 0.75
+		ship_evasion_add = 9
+	}
+
+	prerequisites = { "tech_thrusters_4" }
+	component_set = "thruster_components"
+	size_restriction = { cruiser rs_support_cruiser rs_ea_cruiser rs_battlecruiser }
+	upgrades_to = "CRUISER_SHIP_THRUSTER_5"
+
+	ai_weight = {
+		weight = 4
+	}
+}
+
+utility_component_template = {
+	key = "BATTLESHIP_SHIP_THRUSTER_4"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = @battleship_power_4
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @battleship_cost4
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 0.75
+		ship_evasion_add = 6
+	}
+
+	prerequisites = { "tech_thrusters_4" }
+	component_set = "thruster_components"
+	size_restriction = { battleship battleship rs_dreadnought rs_heavy_dreadnought_type_a rs_heavy_dreadnought_type_b rs_heavy_dreadnought_type_c rs_heavy_dreadnought_type_d rs_heavy_dreadnought_type_e rs_heavy_dreadnought_type_f rs_heavy_dreadnought_type_g rs_heavy_dreadnought_type_h rs_heavy_dreadnought_type_i }
+	upgrades_to = "BATTLESHIP_SHIP_THRUSTER_5"
+
+	ai_weight = {
+		weight = 4
+	}
+}
+
+###############
+### LEVEL 5 ###
+###############
+
+utility_component_template = {
+	key = "CRUISER_SHIP_THRUSTER_5"
+	size = small
+	icon = "GFX_ship_part_thruster_5"
+	icon_frame = 1
+	power = @cruiser_power_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cruiser_cost4
+			sr_dark_matter = 4
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 12
+	}
+
+	prerequisites = { "tech_dark_matter_propulsion" }
+	component_set = "thruster_components"
+	size_restriction = { cruiser rs_support_cruiser rs_ea_cruiser rs_battlecruiser }
+	
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+		}
+	}
+}
+
+utility_component_template = {
+	key = "BATTLESHIP_SHIP_THRUSTER_5"
+	size = small
+	icon = "GFX_ship_part_thruster_5"
+	icon_frame = 1
+	power = @battleship_power_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @battleship_cost4
+			sr_dark_matter = 8
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 8
+	}
+
+	prerequisites = { "tech_dark_matter_propulsion" }
+	component_set = "thruster_components"
+	size_restriction = { battleship battleship rs_dreadnought rs_heavy_dreadnought_type_a rs_heavy_dreadnought_type_b rs_heavy_dreadnought_type_c rs_heavy_dreadnought_type_d rs_heavy_dreadnought_type_e rs_heavy_dreadnought_type_f rs_heavy_dreadnought_type_g rs_heavy_dreadnought_type_h rs_heavy_dreadnought_type_i }	
+	
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0.0
+			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+		}
+	}
+}

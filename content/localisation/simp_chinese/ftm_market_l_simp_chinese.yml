@@ -1,0 +1,608 @@
+﻿l_simp_chinese:
+ 
+ 
+ 
+ ### MARKET ### 
+ ftm_market_window_title:0 "舰队市场" 
+ 
+ # общее
+ ftm_market_slot_no_info:0 "这个展出位是空的。如果你要出售一个舰队并定价，请按下。" 
+ ftm_market_slot_in_progress_info:0 "§R在当前的时刻，这个展位，一个舰队正在展示。请等待。§!" 
+ ftm_market_slot_info:0 "其中一个国家展出的舰队正在出售。请按此消息显示详细信息。" 
+ ftm_market_slot_info_seller:0 "我们的一艘舰队展出待售。收到详细信息请按此消息。" 
+ ftm_market_slot_buy:0 "购买" 
+ 
+ # slot 1
+ ftm_market_slot_1_no_info:0 "§R$ftm_market_slot_no_info$§!" 
+ ftm_market_slot_1_info:0 "§R$ftm_market_slot_info$§!" 
+ ftm_market_slot_1_info_seller:0 "§R$ftm_market_slot_info_seller$§!" 
+ ftm_market_slot_1_buy:0 "§R$ftm_market_slot_buy$§!"  
+ ftm_market_slot_1_buy_info:0 "购买舰队 §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§! 为 §Y[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§!£energy£" 
+ 
+ # slot 2
+ ftm_market_slot_2_no_info:0 "§H$ftm_market_slot_no_info$§!" 
+ ftm_market_slot_2_info:0 "§H$ftm_market_slot_info$§!" 
+ ftm_market_slot_2_info_seller:0 "§H$ftm_market_slot_info_seller$§!" 
+ ftm_market_slot_2_buy:0 "§H$ftm_market_slot_buy$§!" 
+ ftm_market_slot_2_buy_info:0 "购买舰队 §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§! 为 §Y[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§!£energy£" 
+ 
+ # slot 3
+ ftm_market_slot_3_no_info:0 "§Y$ftm_market_slot_no_info$§!" 
+ ftm_market_slot_3_info:0 "§Y$ftm_market_slot_info$§!" 
+ ftm_market_slot_3_info_seller:0 "§Y$ftm_market_slot_info_seller$§!" 
+ ftm_market_slot_3_buy:0 "§Y$ftm_market_slot_buy$§!" 
+ ftm_market_slot_3_buy_info:0 "购买舰队 §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§! 为 §Y[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§!£energy£" 
+ 
+ # slot 4
+ ftm_market_slot_4_no_info:0 "§G$ftm_market_slot_no_info$§!" 
+ ftm_market_slot_4_info:0 "§G$ftm_market_slot_info$§!" 
+ ftm_market_slot_4_info_seller:0 "§G$ftm_market_slot_info_seller$§!" 
+ ftm_market_slot_4_buy:0 "§G$ftm_market_slot_buy$§!" 
+ ftm_market_slot_4_buy_info:0 "购买舰队 §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§! 为 §Y[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§!£energy£" 
+ 
+ # slot 5
+ ftm_market_slot_5_no_info:0 "§B$ftm_market_slot_no_info$§!" 
+ ftm_market_slot_5_info:0 "§B$ftm_market_slot_info$§!" 
+ ftm_market_slot_5_info_seller:0 "§B$ftm_market_slot_info_seller$§!" 
+ ftm_market_slot_5_buy:0 "§B$ftm_market_slot_buy$§!" 
+ ftm_market_slot_5_buy_info:0 "购买舰队 §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§! 为 §Y[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§!£energy£" 
+ 
+ # slot 6
+ ftm_market_slot_6_no_info:0 "§M$ftm_market_slot_no_info$§!" 
+ ftm_market_slot_6_info:0 "§M$ftm_market_slot_info$§!" 
+ ftm_market_slot_6_info_seller:0 "§M$ftm_market_slot_info_seller$§!" 
+ ftm_market_slot_6_buy:0 "§M$ftm_market_slot_buy$§!" 
+ ftm_market_slot_6_buy_info:0 "购买舰队 §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§! 为 §Y[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§!£energy£" 
+ 
+ 
+ 
+ 
+ 
+ 
+ # Кнопка открытия окна в окне указов
+ edict_ftm_open_market_window:0 "§H舰队市场§!"
+ edict_ftm_open_market_window_desc:0 "按下，打开舰队市场的窗口"
+ 
+ # Страна-продажу
+ ftm_market_country_name:0 "§B这支舰队目前正在市场上出售§!"
+ FTM_MARKET_EMPIRE:0 "按下，打开舰队市场的窗口"
+ FTM_MARKET_EMPIRE_DESC:0 " "
+ 
+ 
+ ### СООБЩЕНИЯ ###  
+ 
+ ## SLOT 1 ##
+ 
+ # 1 - окно выбора флота для продажи
+ ftm_market.101.title:0 "§B选择了一个舰队§!" 
+ ftm_market.101.desc:0 "只有在符合下列条件的情况下，舰队才能被出售:\n§Y1. 舰队在你的国家领域内;\n2. 舰队没有指派提督（指挥官）;\n3. 不能展示出售巨像或主宰（移动型恒星基地）§!\n\n可供出售的舰队列表如下:" 
+ # выбор флотилии
+ ftm_market.101.fleet_01:0 "§Y[event_target:ftm_marketed_fleet_slot_1_01.GetFleetName]§!" 
+ ftm_market.101.fleet_01.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_1_01.GetName]§! 可以展示出售"
+ ftm_market.101.fleet_02:0 "§Y[event_target:ftm_marketed_fleet_slot_1_02.GetFleetName]§!" 
+ ftm_market.101.fleet_02.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_1_02.GetName]§! 可以展示出售"
+ ftm_market.101.fleet_03:0 "§Y[event_target:ftm_marketed_fleet_slot_1_03.GetFleetName]§!" 
+ ftm_market.101.fleet_03.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_1_03.GetName]§! 可以展示出售"
+ ftm_market.101.fleet_04:0 "§Y[event_target:ftm_marketed_fleet_slot_1_04.GetFleetName]§!" 
+ ftm_market.101.fleet_04.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_1_04.GetName]§! 可以展示出售"
+ ftm_market.101.fleet_05:0 "§Y[event_target:ftm_marketed_fleet_slot_1_05.GetFleetName]§!" 
+ ftm_market.101.fleet_05.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_1_05.GetName]§! 可以展示出售"
+ ftm_market.101.nope:0 "我改变主意了" 
+ 
+ # 2 - ручная настройка стартовой цены продажи
+ ftm_market.102.title:0 "§B设置价格§!" 
+ ftm_market.102.desc:0 "手动设置价格。\n\n§Y现行价格:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost_manual]§!\n§Y资源:§! §Y£energy£ 能量信用分值§!" 
+ # выбор вариантов
+ ftm_market.102.minus10000:0 "§R-10000§!" 
+ ftm_market.102.minus10000.tooltip:0 "§Y降低价格 10000 单位§!"  
+ ftm_market.102.minus1000:0 "§R-1000§!" 
+ ftm_market.102.minus1000.tooltip:0 "§Y降低价格 1000 单位§!"  
+ ftm_market.102.minus100:0 "§R-100§!" 
+ ftm_market.102.minus100.tooltip:0 "§Y降低价格 100 单位§!"  
+ ftm_market.102.minus10:0 "§R-10§!" 
+ ftm_market.102.minus10.tooltip:0 "§Y降低价格 10 单位§!"   
+ ftm_market.102.plus10:0 "§G+10§!" 
+ ftm_market.102.plus10.tooltip:0 "§Y增加价格 10 单位§!"   
+ ftm_market.102.plus100:0 "§G+100§!" 
+ ftm_market.102.plus100.tooltip:0 "§Y增加价格 100 单位§!"   
+ ftm_market.102.plus1000:0 "§G+1000§!" 
+ ftm_market.102.plus1000.tooltip:0 "§Y增加价格 1000 单位§!"   
+ ftm_market.102.plus10000:0 "§G+10000§!" 
+ ftm_market.102.plus10000.tooltip:0 "§Y增加价格 10000 单位§!"  
+ ftm_market.102.done:0 "§Y接受价格§!" 
+ ftm_market.102.done.tooltip:0 "§Y设置当前价格§!" 
+ 
+ # 3 - запрос подтверждения продажи
+ ftm_market.103.title:0 "§R要求确认§!" 
+ ftm_market.103.desc:0 "下一批将展出:\n\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§! £energy£\n\n§R注意!§!\n§Y待售舰队的时间地点为5年（60个月）。 所有这些时间的舰队将不会服从我们，并且在购买时将由买方根据我们的条款结算。§!" 
+ # выбор вариантов
+ ftm_market.103.confirm:0 "我确认报价" 
+ ftm_market.103.confirm.tooltip:0 "舰队 §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§! 将展出待售。\n§R注意!舰队将不再被认为是我们的!§!"
+ ftm_market.103.nope:0 "我改变主意了" 
+ 
+ # 5 - сообщение при недостатке энергии для покупки
+ ftm_market.105.title:0 "§R没有足够能源§!" 
+ ftm_market.105.desc:0 "没有足够的能源购买舰队。\n\n§Y需要:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§!£energy£\n§Y现有:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_buyer_marketed_fleet_slot_1_energy_current_count]§!£energy£" 
+ # выбор вариантов
+ ftm_market.105.ok:0 "我明白了" 
+ 
+ # 10 - сообщение с информацией о флоте
+ ftm_market.110.title:0 "§R信息:展位 1§!" 
+ ftm_market.110.desc:0 "§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§!£energy£\n§Y剩余时间:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_market_slot_1_time_in_months]§!\n\n§Y组成的舰队:§!\n  §H- 护卫舰:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_titan_count]§!" 
+ ftm_market.110.desc_mod:0 "§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§!£energy£\n§Y剩余时间:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_market_slot_1_time_in_months]§!" 
+ # выбор вариантов
+ ftm_market.110.ok:0 "关闭" 
+ 
+ # 11 - сообщение с информацией о покупке
+ ftm_market.111.title:0 "§G购买完成§!" 
+ ftm_market.111.desc:0 "我们成功地购买了下列舰队:\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§!£energy£\n\n§Y组成的舰队:§!\n  §H- 护卫舰:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_titan_count]§!" 
+ ftm_market.111.desc_mod:0 "我们成功地购买了下列舰队:\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§!£energy£" 
+ # выбор вариантов
+ ftm_market.111.ok:0 "关闭" 
+ 
+ # 12 - сообщение с информацией об успешной продаже флота (+ начисление денег продавцу)
+ ftm_market.112.title:0 "§G销售完毕§!" 
+ ftm_market.112.desc:0 "我们成功地在市场上出售了我们的一支舰队。\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§!£energy£\n§Y买方:§! §H[event_target:ftm_market_slot_1_buyer.GetName]§!\n\n§Y组成的舰队:§!\n  §H- 护卫舰:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_titan_count]§!" 
+ ftm_market.112.desc_mod:0 "我们成功地在市场上出售了我们的一支舰队。\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§!£energy£\n§Y买方:§! §H[event_target:ftm_market_slot_1_buyer.GetName]§!" 
+ # выбор вариантов
+ ftm_market.112.ok:0 "关闭" 
+ ftm_market.112.ok.tooltip:0 "我们将以 §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§!£energy£" 
+ 
+ # 13 - сообщение что продать флот не удалось
+ ftm_market.113.title:0 "§R时间到了§!" 
+ ftm_market.113.desc:0 "时间到了, 为 §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§! 舰队设置的销售结束了。没人想购买。舰队返回。" 
+ # выбор вариантов
+ ftm_market.113.ok:0 "关闭" 
+ 
+ # уведомления
+ FTM_MARKET_SLOT_1_NOTIFICATION:0 "国家 §H$COUNTRY$§! 把舰队§Y$FLEET$§!出售了!\n"
+ 
+ 
+ 
+ 
+ 
+ ## SLOT 2 ##
+ 
+ # 1 - окно выбора флота для продажи
+ ftm_market.201.title:0 "§B选择舰队§!" 
+ ftm_market.201.desc:0 "只有在符合下列条件的情况下，舰队才能被出售:\n§Y1. 舰队在你的国家领域内;\n2. 舰队没有指派提督（指挥官）;\n3. 不能展示出售巨像或主宰（移动型恒星基地）§!\n\n可供出售的舰队列表如下:" 
+ # выбор флотилии
+ ftm_market.201.fleet_01:0 "§Y[event_target:ftm_marketed_fleet_slot_2_01.GetFleetName]§!" 
+ ftm_market.201.fleet_01.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_2_01.GetName]§! 可以展示出售"
+ ftm_market.201.fleet_02:0 "§Y[event_target:ftm_marketed_fleet_slot_2_02.GetFleetName]§!" 
+ ftm_market.201.fleet_02.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_2_02.GetName]§! 可以展示出售"
+ ftm_market.201.fleet_03:0 "§Y[event_target:ftm_marketed_fleet_slot_2_03.GetFleetName]§!" 
+ ftm_market.201.fleet_03.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_2_03.GetName]§! 可以展示出售"
+ ftm_market.201.fleet_04:0 "§Y[event_target:ftm_marketed_fleet_slot_2_04.GetFleetName]§!" 
+ ftm_market.201.fleet_04.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_2_04.GetName]§! 可以展示出售"
+ ftm_market.201.fleet_05:0 "§Y[event_target:ftm_marketed_fleet_slot_2_05.GetFleetName]§!" 
+ ftm_market.201.fleet_05.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_2_05.GetName]§! 可以展示出售"
+ ftm_market.201.nope:0 "我改变主意了" 
+ 
+ # 2 - ручная настройка стартовой цены продажи
+ ftm_market.202.title:0 "§B设置价格§!" 
+ ftm_market.202.desc:0 "手动设置价格。\n\n§Y现行价格:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost_manual]§!\n§Y资源:§! §Y£energy£ 能量信用分值§!" 
+ # выбор вариантов
+ ftm_market.202.minus10000:0 "§R-10000§!" 
+ ftm_market.202.minus10000.tooltip:0 "§Y降低价格 10000 单位§!"  
+ ftm_market.202.minus1000:0 "§R-1000§!" 
+ ftm_market.202.minus1000.tooltip:0 "§Y降低价格 1000 单位§!"  
+ ftm_market.202.minus100:0 "§R-100§!" 
+ ftm_market.202.minus100.tooltip:0 "§Y降低价格 100 单位§!"  
+ ftm_market.202.minus10:0 "§R-10§!" 
+ ftm_market.202.minus10.tooltip:0 "§Y降低价格 10 单位§!"   
+ ftm_market.202.plus10:0 "§G+10§!" 
+ ftm_market.202.plus10.tooltip:0 "§Y增加价格 10 单位§!"   
+ ftm_market.202.plus100:0 "§G+100§!" 
+ ftm_market.202.plus100.tooltip:0 "§Y增加价格 100 单位§!"   
+ ftm_market.202.plus1000:0 "§G+1000§!" 
+ ftm_market.202.plus1000.tooltip:0 "§Y增加价格 1000 单位§!"   
+ ftm_market.202.plus10000:0 "§G+10000§!" 
+ ftm_market.202.plus10000.tooltip:0 "§Y增加价格 10000 单位§!"  
+ ftm_market.202.done:0 "§Y接受价格§!" 
+ ftm_market.202.done.tooltip:0 "§Y设置当前价格§!" 
+ 
+ # 3 - запрос подтверждения продажи
+ ftm_market.203.title:0 "§R要求确认§!" 
+ ftm_market.203.desc:0 "下一批将展出:\n\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§! £energy£\n\n§R注意!§!\n§Y待售舰队的时间地点为5年（60个月）。 所有这些时间的舰队将不会服从我们，并且在购买时将由买方根据我们的条款结算。§!" 
+ # выбор вариантов
+ ftm_market.203.confirm:0 "我确认报价" 
+ ftm_market.203.confirm.tooltip:0 "舰队 §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§! 将展出待售。\n§R注意!舰队将不再被认为是我们的!§!"
+ ftm_market.203.nope:0 "我改变主意了" 
+ 
+ # 5 - сообщение при недостатке энергии для покупки
+ ftm_market.205.title:0 "§R没有足够能源§!" 
+ ftm_market.205.desc:0 "没有足够的能源购买舰队。\n\n§Y需要:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§!£energy£\n§Y现有:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_buyer_marketed_fleet_slot_2_energy_current_count]§!£energy£" 
+ # выбор вариантов
+ ftm_market.205.ok:0 "我明白了" 
+ 
+ # 10 - сообщение с информацией о флоте
+ ftm_market.210.title:0 "§H信息:展位 2§!" 
+ ftm_market.210.desc:0 "§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§!£energy£\n§Y剩余时间:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_market_slot_2_time_in_months]§!\n\n§Y组成的舰队:§!\n  §H- 护卫舰:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_titan_count]§!" 
+ ftm_market.210.desc_mod:0 "§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§!£energy£\n§Y剩余时间:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_market_slot_2_time_in_months]§!" 
+ # выбор вариантов
+ ftm_market.210.ok:0 "关闭" 
+ 
+ # 11 - сообщение с информацией о покупке
+ ftm_market.211.title:0 "§G购买完成§!" 
+ ftm_market.211.desc:0 "我们成功地购买了下列舰队:\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§!£energy£\n\n§Y组成的舰队:§!\n  §H- 护卫舰:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_titan_count]§!" 
+ ftm_market.211.desc_mod:0 "我们成功地购买了下列舰队:\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§!£energy£" 
+ # выбор вариантов
+ ftm_market.211.ok:0 "关闭" 
+ 
+ # 12 - сообщение с информацией об успешной продаже флота (+ начисление денег продавцу)
+ ftm_market.212.title:0 "§G销售完毕§!" 
+ ftm_market.212.desc:0 "我们成功地在市场上出售了我们的一支舰队。\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§!£energy£\n§Y买方:§! §H[event_target:ftm_market_slot_2_buyer.GetName]§!\n\n§Y组成的舰队:§!\n  §H- 护卫舰:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_titan_count]§!" 
+ ftm_market.212.desc_mod:0 "我们成功地在市场上出售了我们的一支舰队。\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§!£energy£\n§Y买方:§! §H[event_target:ftm_market_slot_2_buyer.GetName]§!" 
+ # выбор вариантов
+ ftm_market.212.ok:0 "关闭" 
+ ftm_market.212.ok.tooltip:0 "我们将以 §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§!£energy£ 的价格完成交易" 
+ 
+ # 13 - сообщение что продать флот не удалось
+ ftm_market.213.title:0 "§R时间到了§!" 
+ ftm_market.213.desc:0 "时间到了, 为 §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§! 舰队设置的销售结束了。没人想购买。舰队返回。" 
+ # выбор вариантов
+ ftm_market.213.ok:0 "关闭"
+ 
+ # уведомления
+ FTM_MARKET_SLOT_2_NOTIFICATION:0 "国家 §H$COUNTRY$§! 把舰队§Y$FLEET$§!出售了!\n" 
+ 
+ 
+ 
+ 
+ 
+ ## SLOT 3 ##
+ 
+ # 1 - окно выбора флота для продажи
+ ftm_market.301.title:0 "§B选择舰队§!" 
+ ftm_market.301.desc:0 "只有在符合下列条件的情况下，舰队才能被出售:\n§Y1. 舰队在你的国家领域内;\n2. 舰队没有指派提督（指挥官）;\n3. 不能展示出售巨像或主宰（移动型恒星基地）§!\n\n可供出售的舰队列表如下:" 
+ # выбор флотилии
+ ftm_market.301.fleet_01:0 "§Y[event_target:ftm_marketed_fleet_slot_3_01.GetFleetName]§!" 
+ ftm_market.301.fleet_01.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_3_01.GetName]§! 可以展示出售"
+ ftm_market.301.fleet_02:0 "§Y[event_target:ftm_marketed_fleet_slot_3_02.GetFleetName]§!" 
+ ftm_market.301.fleet_02.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_3_02.GetName]§! 可以展示出售"
+ ftm_market.301.fleet_03:0 "§Y[event_target:ftm_marketed_fleet_slot_3_03.GetFleetName]§!" 
+ ftm_market.301.fleet_03.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_3_03.GetName]§! 可以展示出售"
+ ftm_market.301.fleet_04:0 "§Y[event_target:ftm_marketed_fleet_slot_3_04.GetFleetName]§!" 
+ ftm_market.301.fleet_04.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_3_04.GetName]§! 可以展示出售"
+ ftm_market.301.fleet_05:0 "§Y[event_target:ftm_marketed_fleet_slot_3_05.GetFleetName]§!" 
+ ftm_market.301.fleet_05.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_3_05.GetName]§! 可以展示出售"
+ ftm_market.301.nope:0 "我改变主意了" 
+ 
+ # 2 - ручная настройка стартовой цены продажи
+ ftm_market.302.title:0 "§B设置价格§!" 
+ ftm_market.302.desc:0 "手动设置价格。\n\n§Y现行价格:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost_manual]§!\n§Y资源:§! §Y£energy£ 能量信用分值§!" 
+ # выбор вариантов
+ ftm_market.302.minus10000:0 "§R-10000§!" 
+ ftm_market.302.minus10000.tooltip:0 "§Y降低价格 10000 单位§!"  
+ ftm_market.302.minus1000:0 "§R-1000§!" 
+ ftm_market.302.minus1000.tooltip:0 "§Y降低价格 1000 单位§!"  
+ ftm_market.302.minus100:0 "§R-100§!" 
+ ftm_market.302.minus100.tooltip:0 "§Y降低价格 100 单位§!"  
+ ftm_market.302.minus10:0 "§R-10§!" 
+ ftm_market.302.minus10.tooltip:0 "§Y降低价格 10 单位§!"   
+ ftm_market.302.plus10:0 "§G+10§!" 
+ ftm_market.302.plus10.tooltip:0 "§Y增加价格 10 单位§!"   
+ ftm_market.302.plus100:0 "§G+100§!" 
+ ftm_market.302.plus100.tooltip:0 "§Y增加价格 100 单位§!"   
+ ftm_market.302.plus1000:0 "§G+1000§!" 
+ ftm_market.302.plus1000.tooltip:0 "§Y增加价格 1000 单位§!"   
+ ftm_market.302.plus10000:0 "§G+10000§!" 
+ ftm_market.302.plus10000.tooltip:0 "§Y增加价格 10000 单位§!"  
+ ftm_market.302.done:0 "§Y接受价格§!" 
+ ftm_market.302.done.tooltip:0 "§Y设置当前价格§!" 
+ 
+ # 3 - запрос подтверждения продажи
+ ftm_market.303.title:0 "§R要求确认§!" 
+ ftm_market.303.desc:0 "下一批将展出:\n\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§! £energy£\n\n§R注意!§!\n§Y待售舰队的时间地点为5年（60个月）。 所有这些时间的舰队将不会服从我们，并且在购买时将由买方根据我们的条款结算。§!" 
+ # выбор вариантов
+ ftm_market.303.confirm:0 "我确认报价" 
+ ftm_market.303.confirm.tooltip:0 "舰队 §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§! 将展出待售。\n§R注意!舰队将不再被认为是我们的!§!"
+ ftm_market.303.nope:0 "我改变主意了" 
+ 
+ # 5 - сообщение при недостатке энергии для покупки
+ ftm_market.305.title:0 "§R没有足够能源§!" 
+ ftm_market.305.desc:0 "Not enough energy to sale  a fleet.\n\n§Y需要:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§!£energy£\n§Y现有:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_buyer_marketed_fleet_slot_3_energy_current_count]§!£energy£" 
+ # выбор вариантов
+ ftm_market.305.ok:0 "我明白了" 
+ 
+ # 10 - сообщение с информацией о флоте
+ ftm_market.310.title:0 "§Y信息:展位 3§!" 
+ ftm_market.310.desc:0 "§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§!£energy£\n§Y剩余时间:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_market_slot_3_time_in_months]§!\n\n§Y组成的舰队:§!\n  §H- 护卫舰:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_titan_count]§!" 
+ ftm_market.310.desc_mod:0 "§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§!£energy£\n§Y剩余时间:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_market_slot_3_time_in_months]§!" 
+ # выбор вариантов
+ ftm_market.310.ok:0 "关闭" 
+ 
+ # 11 - сообщение с информацией о покупке
+ ftm_market.311.title:0 "§G购买完成§!" 
+ ftm_market.311.desc:0 "我们成功地购买了下列舰队:\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§!£energy£\n\n§Y组成的舰队:§!\n  §H- 护卫舰:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_titan_count]§!" 
+ ftm_market.311.desc_mod:0 "我们成功地购买了下列舰队:\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§!£energy£" 
+ # выбор вариантов
+ ftm_market.311.ok:0 "关闭" 
+ 
+ # 12 - сообщение с информацией об успешной продаже флота (+ начисление денег продавцу)
+ ftm_market.312.title:0 "§G销售完毕§!" 
+ ftm_market.312.desc:0 "我们成功地在市场上出售了我们的一支舰队。\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§!£energy£\n§Y买方:§! §H[event_target:ftm_market_slot_3_buyer.GetName]§!\n\n§Y组成的舰队:§!\n  §H- 护卫舰:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_titan_count]§!" 
+ ftm_market.312.desc_mod:0 "我们成功地在市场上出售了我们的一支舰队。\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§!£energy£\n§Y买方:§! §H[event_target:ftm_market_slot_3_buyer.GetName]§!" 
+ # выбор вариантов
+ ftm_market.312.ok:0 "关闭" 
+ ftm_market.312.ok.tooltip:0 "我们将以 §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§!£energy£ 的价格完成交易" 
+ 
+ # 13 - сообщение что продать флот не удалось
+ ftm_market.313.title:0 "§R时间到了§!" 
+ ftm_market.313.desc:0 "时间到了, 为 §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§! 舰队设置的销售结束了。没人想购买。舰队返回。" 
+ # выбор вариантов
+ ftm_market.313.ok:0 "关闭" 
+ 
+ # уведомления
+ FTM_MARKET_SLOT_3_NOTIFICATION:0 "国家 §H$COUNTRY$§! 把舰队§Y$FLEET$§!出售了!\n"
+ 
+ 
+ 
+ 
+ 
+ ## SLOT 4 ##
+ 
+ # 1 - окно выбора флота для продажи
+ ftm_market.401.title:0 "§B选择舰队§!" 
+ ftm_market.401.desc:0 "只有在符合下列条件的情况下，舰队才能被出售:\n§Y1. 舰队在你的国家领域内;\n2. 舰队没有指派提督（指挥官）;\n3. 不能展示出售巨像或主宰（移动型恒星基地）§!\n\n可供出售的舰队列表如下:" 
+ # выбор флотилии
+ ftm_market.401.fleet_01:0 "§Y[event_target:ftm_marketed_fleet_slot_4_01.GetFleetName]§!" 
+ ftm_market.401.fleet_01.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_4_01.GetName]§! 可以展示出售"
+ ftm_market.401.fleet_02:0 "§Y[event_target:ftm_marketed_fleet_slot_4_02.GetFleetName]§!" 
+ ftm_market.401.fleet_02.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_4_02.GetName]§! 可以展示出售"
+ ftm_market.401.fleet_03:0 "§Y[event_target:ftm_marketed_fleet_slot_4_03.GetFleetName]§!" 
+ ftm_market.401.fleet_03.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_4_03.GetName]§! 可以展示出售"
+ ftm_market.401.fleet_04:0 "§Y[event_target:ftm_marketed_fleet_slot_4_04.GetFleetName]§!" 
+ ftm_market.401.fleet_04.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_4_04.GetName]§! 可以展示出售"
+ ftm_market.401.fleet_05:0 "§Y[event_target:ftm_marketed_fleet_slot_4_05.GetFleetName]§!" 
+ ftm_market.401.fleet_05.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_4_05.GetName]§! 可以展示出售"
+ ftm_market.401.nope:0 "我改变主意了" 
+ 
+ # 2 - ручная настройка стартовой цены продажи
+ ftm_market.402.title:0 "§B设置价格§!" 
+ ftm_market.402.desc:0 "手动设置价格。\n\n§Y现行价格:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost_manual]§!\n§Y资源:§! §Y£energy£ 能量信用分值§!" 
+ # выбор вариантов
+ ftm_market.402.minus10000:0 "§R-10000§!" 
+ ftm_market.402.minus10000.tooltip:0 "§Y降低价格 10000 单位§!"  
+ ftm_market.402.minus1000:0 "§R-1000§!" 
+ ftm_market.402.minus1000.tooltip:0 "§Y降低价格 1000 单位§!"  
+ ftm_market.402.minus100:0 "§R-100§!" 
+ ftm_market.402.minus100.tooltip:0 "§Y降低价格 100 单位§!"  
+ ftm_market.402.minus10:0 "§R-10§!" 
+ ftm_market.402.minus10.tooltip:0 "§Y降低价格 10 单位§!"   
+ ftm_market.402.plus10:0 "§G+10§!" 
+ ftm_market.402.plus10.tooltip:0 "§Y增加价格 10 单位§!"   
+ ftm_market.402.plus100:0 "§G+100§!" 
+ ftm_market.402.plus100.tooltip:0 "§Y增加价格 100 单位§!"   
+ ftm_market.402.plus1000:0 "§G+1000§!" 
+ ftm_market.402.plus1000.tooltip:0 "§Y增加价格 1000 单位§!"   
+ ftm_market.402.plus10000:0 "§G+10000§!" 
+ ftm_market.402.plus10000.tooltip:0 "§Y增加价格 10000 单位§!"  
+ ftm_market.402.done:0 "§Y接受价格§!" 
+ ftm_market.402.done.tooltip:0 "§Y设置当前价格§!" 
+ 
+ # 3 - запрос подтверждения продажи
+ ftm_market.403.title:0 "§R要求确认§!" 
+ ftm_market.403.desc:0 "下一批将展出:\n\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§! £energy£\n\n§R注意!§!\n§Y待售舰队的时间地点为5年（60个月）。 所有这些时间的舰队将不会服从我们，并且在购买时将由买方根据我们的条款结算。§!" 
+ # выбор вариантов
+ ftm_market.403.confirm:0 "我确认报价" 
+ ftm_market.403.confirm.tooltip:0 "舰队 §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§! 将展出待售。\n§R注意!舰队将不再被认为是我们的!§!"
+ ftm_market.403.nope:0 "我改变主意了" 
+ 
+ # 5 - сообщение при недостатке энергии для покупки
+ ftm_market.405.title:0 "§R没有足够能源§!" 
+ ftm_market.405.desc:0 "没有足够的能源购买舰队。\n\n§Y需要:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§!£energy£\n§Y现有:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_buyer_marketed_fleet_slot_4_energy_current_count]§!£energy£" 
+ # выбор вариантов
+ ftm_market.405.ok:0 "我明白了" 
+ 
+ # 10 - сообщение с информацией о флоте
+ ftm_market.410.title:0 "§G信息:展位 4§!" 
+ ftm_market.410.desc:0 "§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§!£energy£\n§Y剩余时间:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_market_slot_4_time_in_months]§!\n\n§Y组成的舰队:§!\n  §H- 护卫舰:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_titan_count]§!" 
+ ftm_market.410.desc_mod:0 "§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§!£energy£\n§Y剩余时间:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_market_slot_4_time_in_months]§!" 
+ # выбор вариантов
+ ftm_market.410.ok:0 "关闭" 
+ 
+ # 11 - сообщение с информацией о покупке
+ ftm_market.411.title:0 "§G购买完成§!" 
+ ftm_market.411.desc:0 "我们成功地购买了下列舰队:\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§!£energy£\n\n§Y组成的舰队:§!\n  §H- 护卫舰:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_titan_count]§!" 
+ ftm_market.411.desc_mod:0 "我们成功地购买了下列舰队:\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§!£energy£" 
+ # выбор вариантов
+ ftm_market.411.ok:0 "关闭" 
+ 
+ # 12 - сообщение с информацией об успешной продаже флота (+ начисление денег продавцу)
+ ftm_market.412.title:0 "§G销售完毕§!" 
+ ftm_market.412.desc:0 "我们成功地在市场上出售了我们的一支舰队。\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§!£energy£\n§Y买方:§! §H[event_target:ftm_market_slot_4_buyer.GetName]§!\n\n§Y组成的舰队:§!\n  §H- 护卫舰:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_titan_count]§!" 
+ ftm_market.412.desc_mod:0 "我们成功地在市场上出售了我们的一支舰队。\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§!£energy£\n§Y买方:§! §H[event_target:ftm_market_slot_4_buyer.GetName]§!" 
+ # выбор вариантов
+ ftm_market.412.ok:0 "关闭" 
+ ftm_market.412.ok.tooltip:0 "我们将以 §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§!£energy£ 的价格完成交易" 
+ 
+ # 13 - сообщение что продать флот не удалось
+ ftm_market.413.title:0 "§R时间到了§!" 
+ ftm_market.413.desc:0 "时间到了, 为 §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§! 舰队设置的销售结束了。没人想购买。舰队返回。" 
+ # выбор вариантов
+ ftm_market.413.ok:0 "关闭" 
+ 
+ # уведомления
+ FTM_MARKET_SLOT_4_NOTIFICATION:0 "国家 §H$COUNTRY$§! 把舰队§Y$FLEET$§!出售了!\n"
+ 
+ 
+ 
+ 
+ 
+ ## SLOT 5 ##
+ 
+ # 1 - окно выбора флота для продажи
+ ftm_market.501.title:0 "§B选择舰队§!" 
+ ftm_market.501.desc:0 "只有在符合下列条件的情况下，舰队才能被出售:\n§Y1. 舰队在你的国家领域内;\n2. 舰队没有指派提督（指挥官）;\n3. 不能展示出售巨像或主宰（移动型恒星基地）§!\n\n可供出售的舰队列表如下:" 
+ # выбор флотилии
+ ftm_market.501.fleet_01:0 "§Y[event_target:ftm_marketed_fleet_slot_5_01.GetFleetName]§!" 
+ ftm_market.501.fleet_01.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_5_01.GetName]§! 可以展示出售"
+ ftm_market.501.fleet_02:0 "§Y[event_target:ftm_marketed_fleet_slot_5_02.GetFleetName]§!" 
+ ftm_market.501.fleet_02.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_5_02.GetName]§! 可以展示出售"
+ ftm_market.501.fleet_03:0 "§Y[event_target:ftm_marketed_fleet_slot_5_03.GetFleetName]§!" 
+ ftm_market.501.fleet_03.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_5_03.GetName]§! 可以展示出售"
+ ftm_market.501.fleet_04:0 "§Y[event_target:ftm_marketed_fleet_slot_5_04.GetFleetName]§!" 
+ ftm_market.501.fleet_04.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_5_04.GetName]§! 可以展示出售"
+ ftm_market.501.fleet_05:0 "§Y[event_target:ftm_marketed_fleet_slot_5_05.GetFleetName]§!" 
+ ftm_market.501.fleet_05.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_5_05.GetName]§! 可以展示出售"
+ ftm_market.501.nope:0 "我改变主意了" 
+ 
+ # 2 - ручная настройка стартовой цены продажи
+ ftm_market.502.title:0 "§B设置价格§!" 
+ ftm_market.502.desc:0 "手动设置价格。\n\n§Y现行价格:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost_manual]§!\n§Y资源:§! §Y£energy£ 能量信用分值§!" 
+ # выбор вариантов
+ ftm_market.502.minus10000:0 "§R-10000§!" 
+ ftm_market.502.minus10000.tooltip:0 "§Y降低价格 10000 单位§!"  
+ ftm_market.502.minus1000:0 "§R-1000§!" 
+ ftm_market.502.minus1000.tooltip:0 "§Y降低价格 1000 单位§!"  
+ ftm_market.502.minus100:0 "§R-100§!" 
+ ftm_market.502.minus100.tooltip:0 "§Y降低价格 100 单位§!"  
+ ftm_market.502.minus10:0 "§R-10§!" 
+ ftm_market.502.minus10.tooltip:0 "§Y降低价格 10 单位§!"   
+ ftm_market.502.plus10:0 "§G+10§!" 
+ ftm_market.502.plus10.tooltip:0 "§Y增加价格 10 单位§!"   
+ ftm_market.502.plus100:0 "§G+100§!" 
+ ftm_market.502.plus100.tooltip:0 "§Y增加价格 100 单位§!"   
+ ftm_market.502.plus1000:0 "§G+1000§!" 
+ ftm_market.502.plus1000.tooltip:0 "§Y增加价格 1000 单位§!"   
+ ftm_market.502.plus10000:0 "§G+10000§!" 
+ ftm_market.502.plus10000.tooltip:0 "§Y增加价格 10000 单位§!"  
+ ftm_market.502.done:0 "§Y接受价格§!" 
+ ftm_market.502.done.tooltip:0 "§Y设置当前价格§!" 
+ 
+ # 3 - запрос подтверждения продажи
+ ftm_market.503.title:0 "§R要求确认§!" 
+ ftm_market.503.desc:0 "下一批将展出:\n\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§! £energy£\n\n§R注意!§!\n§Y待售舰队的时间地点为5年（60个月）。 所有这些时间的舰队将不会服从我们，并且在购买时将由买方根据我们的条款结算。§!" 
+ # выбор вариантов
+ ftm_market.503.confirm:0 "我确认报价" 
+ ftm_market.503.confirm.tooltip:0 "舰队 §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§! 将展出待售。\n§R注意!舰队将不再被认为是我们的!§!"
+ ftm_market.503.nope:0 "我改变主意了" 
+ 
+ # 5 - сообщение при недостатке энергии для покупки
+ ftm_market.505.title:0 "§R没有足够能源§!" 
+ ftm_market.505.desc:0 "没有足够的能源购买舰队。\n\n§Y需要:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§!£energy£\n§Y现有:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_buyer_marketed_fleet_slot_5_energy_current_count]§!£energy£" 
+ # выбор вариантов
+ ftm_market.505.ok:0 "我明白了" 
+ 
+ # 10 - сообщение с информацией о флоте
+ ftm_market.510.title:0 "§B信息:展位 5§!" 
+ ftm_market.510.desc:0 "§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§!£energy£\n§Y剩余时间:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_market_slot_5_time_in_months]§!\n\n§Y组成的舰队:§!\n  §H- 护卫舰:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_titan_count]§!" 
+ ftm_market.510.desc_mod:0 "§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§!£energy£\n§Y剩余时间:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_market_slot_5_time_in_months]§!" 
+ # выбор вариантов
+ ftm_market.510.ok:0 "关闭" 
+ 
+ # 11 - сообщение с информацией о покупке
+ ftm_market.511.title:0 "§G购买完成§!" 
+ ftm_market.511.desc:0 "我们成功地购买了下列舰队:\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§!£energy£\n\n§Y组成的舰队:§!\n  §H- 护卫舰:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_titan_count]§!" 
+ ftm_market.511.desc_mod:0 "我们成功地购买了下列舰队:\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§!£energy£" 
+ # выбор вариантов
+ ftm_market.511.ok:0 "关闭" 
+ 
+ # 12 - сообщение с информацией об успешной продаже флота (+ начисление денег продавцу)
+ ftm_market.512.title:0 "§G销售完毕§!" 
+ ftm_market.512.desc:0 "我们成功地在市场上出售了我们的一支舰队。\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§!£energy£\n§Y买方:§! §H[event_target:ftm_market_slot_5_buyer.GetName]§!\n\n§Y组成的舰队:§!\n  §H- 护卫舰:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_titan_count]§!" 
+ ftm_market.512.desc_mod:0 "我们成功地在市场上出售了我们的一支舰队。\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§!£energy£\n§Y买方:§! §H[event_target:ftm_market_slot_5_buyer.GetName]§!" 
+ # выбор вариантов
+ ftm_market.512.ok:0 "关闭" 
+ ftm_market.512.ok.tooltip:0 "我们将以 §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§!£energy£ 的价格完成交易" 
+ 
+ # 13 - сообщение что продать флот не удалось
+ ftm_market.513.title:0 "§R时间到了§!" 
+ ftm_market.513.desc:0 "时间到了, 为 §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§! 舰队设置的销售结束了。没人想购买。舰队返回。" 
+ # выбор вариантов
+ ftm_market.513.ok:0 "关闭" 
+ 
+ # уведомления
+ FTM_MARKET_SLOT_5_NOTIFICATION:0 "国家 §H$COUNTRY$§! 把舰队§Y$FLEET$§!出售了!\n"
+ 
+ 
+ 
+ 
+ 
+ ## SLOT 6 ##
+ 
+ # 1 - окно выбора флота для продажи
+ ftm_market.601.title:0 "§B选择舰队§!" 
+ ftm_market.601.desc:0 "只有在符合下列条件的情况下，舰队才能被出售:\n§Y1. 舰队在你的国家领域内;\n2. 舰队没有指派提督（指挥官）;\n3. 不能展示出售巨像或主宰（移动型恒星基地）§!\n\n可供出售的舰队列表如下:" 
+ # выбор флотилии
+ ftm_market.601.fleet_01:0 "§Y[event_target:ftm_marketed_fleet_slot_6_01.GetFleetName]§!" 
+ ftm_market.601.fleet_01.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_6_01.GetName]§! 可以展示出售"
+ ftm_market.601.fleet_02:0 "§Y[event_target:ftm_marketed_fleet_slot_6_02.GetFleetName]§!" 
+ ftm_market.601.fleet_02.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_6_02.GetName]§! 可以展示出售"
+ ftm_market.601.fleet_03:0 "§Y[event_target:ftm_marketed_fleet_slot_6_03.GetFleetName]§!" 
+ ftm_market.601.fleet_03.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_6_03.GetName]§! 可以展示出售"
+ ftm_market.601.fleet_04:0 "§Y[event_target:ftm_marketed_fleet_slot_6_04.GetFleetName]§!" 
+ ftm_market.601.fleet_04.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_6_04.GetName]§! 可以展示出售"
+ ftm_market.601.fleet_05:0 "§Y[event_target:ftm_marketed_fleet_slot_6_05.GetFleetName]§!" 
+ ftm_market.601.fleet_05.tooltip:0 "舰队 §Y[event_target:ftm_marketed_fleet_slot_6_05.GetName]§! 可以展示出售"
+ ftm_market.601.nope:0 "我改变主意了" 
+ 
+ # 2 - ручная настройка стартовой цены продажи
+ ftm_market.602.title:0 "§B设置价格§!" 
+ ftm_market.602.desc:0 "手动设置价格。\n\n§Y现行价格:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost_manual]§!\n§Y资源:§! §Y£energy£ 能量信用分值§!" 
+ # выбор вариантов
+ ftm_market.602.minus10000:0 "§R-10000§!" 
+ ftm_market.602.minus10000.tooltip:0 "§Y降低价格 10000 单位§!"  
+ ftm_market.602.minus1000:0 "§R-1000§!" 
+ ftm_market.602.minus1000.tooltip:0 "§Y降低价格 1000 单位§!"  
+ ftm_market.602.minus100:0 "§R-100§!" 
+ ftm_market.602.minus100.tooltip:0 "§Y降低价格 100 单位§!"  
+ ftm_market.602.minus10:0 "§R-10§!" 
+ ftm_market.602.minus10.tooltip:0 "§Y降低价格 10 单位§!"   
+ ftm_market.602.plus10:0 "§G+10§!" 
+ ftm_market.602.plus10.tooltip:0 "§Y增加价格 10 单位§!"   
+ ftm_market.602.plus100:0 "§G+100§!" 
+ ftm_market.602.plus100.tooltip:0 "§Y增加价格 100 单位§!"   
+ ftm_market.602.plus1000:0 "§G+1000§!" 
+ ftm_market.602.plus1000.tooltip:0 "§Y增加价格 1000 单位§!"   
+ ftm_market.602.plus10000:0 "§G+10000§!" 
+ ftm_market.602.plus10000.tooltip:0 "§Y增加价格 10000 单位§!"  
+ ftm_market.602.done:0 "§Y接受价格§!" 
+ ftm_market.602.done.tooltip:0 "§Y设置当前价格§!" 
+ 
+ # 3 - запрос подтверждения продажи
+ ftm_market.603.title:0 "§R要求确认§!" 
+ ftm_market.603.desc:0 "下一批将展出:\n\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§! £energy£\n\n§R注意!§!\n§Y待售舰队的时间地点为5年（60个月）。 所有这些时间的舰队将不会服从我们，并且在购买时将由买方根据我们的条款结算。§!" 
+ # выбор вариантов
+ ftm_market.603.confirm:0 "我确认报价" 
+ ftm_market.603.confirm.tooltip:0 "舰队 §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§! 将展出待售。\n§R注意!舰队将不再被认为是我们的!§!"
+ ftm_market.603.nope:0 "我改变主意了" 
+ 
+ # 5 - сообщение при недостатке энергии для покупки
+ ftm_market.605.title:0 "§R没有足够能源§!" 
+ ftm_market.605.desc:0 "没有足够的能源购买舰队。\n\n§Y需要:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§!£energy£\n§Y现有:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_buyer_marketed_fleet_slot_6_energy_current_count]§!£energy£" 
+ # выбор вариантов
+ ftm_market.605.ok:0 "我明白了" 
+ 
+ # 10 - сообщение с информацией о флоте
+ ftm_market.610.title:0 "§M信息:展位 6§!" 
+ ftm_market.610.desc:0 "§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§!£energy£\n§Y剩余时间:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_market_slot_6_time_in_months]§!\n\n§Y组成的舰队:§!\n  §H- 护卫舰:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_titan_count]§!" 
+ ftm_market.610.desc_mod:0 "§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§!£energy£\n§Y剩余时间:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_market_slot_6_time_in_months]§!" 
+ # выбор вариантов
+ ftm_market.610.ok:0 "关闭" 
+ 
+ # 11 - сообщение с информацией о покупке
+ ftm_market.611.title:0 "§G购买完成§!" 
+ ftm_market.611.desc:0 "我们成功地购买了下列舰队:\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§!£energy£\n\n§Y组成的舰队:§!\n  §H- 护卫舰:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_titan_count]§!" 
+ ftm_market.611.desc_mod:0 "我们成功地购买了下列舰队:\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.GetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§!£energy£" 
+ # выбор вариантов
+ ftm_market.611.ok:0 "关闭" 
+ 
+ # 12 - сообщение с информацией об успешной продаже флота (+ начисление денег продавцу)
+ ftm_market.612.title:0 "§G销售完毕§!" 
+ ftm_market.612.desc:0 "我们成功地在市场上出售了我们的一支舰队。\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§!£energy£\n§Y买方:§! §H[event_target:ftm_market_slot_6_buyer.GetName]§!\n\n§Y组成的舰队:§!\n  §H- 护卫舰:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_titan_count]§!" 
+ ftm_market.612.desc_mod:0 "我们成功地在市场上出售了我们的一支舰队。\n§Y舰队:§! §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§!\n§Y价格:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§!£energy£\n§Y买方:§! §H[event_target:ftm_market_slot_6_buyer.GetName]§!" 
+ # выбор вариантов
+ ftm_market.612.ok:0 "关闭" 
+ ftm_market.612.ok.tooltip:0 "我们将以 §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§!£energy£ 的价格完成交易" 
+ 
+ # 13 - сообщение что продать флот не удалось
+ ftm_market.613.title:0 "§R时间到了§!" 
+ ftm_market.613.desc:0 "时间到了, 为 §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§! 舰队设置的销售结束了。没人想购买。舰队返回。" 
+ # выбор вариантов
+ ftm_market.613.ok:0 "关闭" 
+ 
+ # уведомления
+ FTM_MARKET_SLOT_6_NOTIFICATION:0 "国家 §H$COUNTRY$§! 把舰队§Y$FLEET$§!出售了!\n"

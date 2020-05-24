@@ -1,0 +1,144 @@
+spriteTypes = {
+	
+	
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_fighter_1"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter_1.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_fighter_2"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter_2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_fighter_3"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_fighter_4"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_fighter_5_psionic"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter_5_psionic.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_fighter_5_gene"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter_5_gene.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_fighter_5_cyber"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter_5_cyber.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_fighter2_1"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter2_1.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_fighter2_2"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter2_2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_fighter2_3"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter2_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_fighter2_4"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter2_4.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_fighter2_5_psionic"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter2_5_psionic.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_fighter2_5_gene"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter2_5_gene.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_fighter2_5_cyber"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter2_5_cyber.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_fighter3_1"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter3_1.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_fighter3_2"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter3_2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_fighter3_3"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter3_3.dds"
+	}
+	
+	spriteType = {
+	name = "GFX_ship_part_strike_craft_fighter3_4"
+	texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter3_4.dds"
+	}
+	
+	spriteType = {
+	name = "GFX_ship_part_strike_craft_fighter3_5_psionic"
+	texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter3_5_psionic.dds"
+	}
+	
+	spriteType = {
+	name = "GFX_ship_part_strike_craft_fighter3_5_gene"
+	texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter3_5_gene.dds"
+	}
+	
+	spriteType = {
+	name = "GFX_ship_part_strike_craft_fighter3_5_cyber"
+	texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_fighter3_5_cyber.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_bomber_1"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_bomber_1.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_bomber_2"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_bomber_2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_bomber_3"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_bomber_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_bomber_4"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_bomber_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_bomber_5_psionic"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_bomber_5_psionic.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_bomber_5_gene"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_bomber_5_gene.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ship_part_strike_craft_bomber_5_cyber"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_strike_craft_bomber_5_cyber.dds"
+	}
+
+}

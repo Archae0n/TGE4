@@ -1,0 +1,93 @@
+namespace = SPBM
+
+country_event = {
+	id = SPBM.1000
+	hide_window = yes
+	is_triggered_only = yes			
+	immediate = {
+		capital_scope = {
+			hidden_effect = {
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+				create_army = {
+					name = "Unfrozen Xenomorphs"
+					type = "xenomorph_army"
+				}
+			}
+		}
+	}				
+}

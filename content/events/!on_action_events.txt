@@ -1,0 +1,30 @@
+
+###################################################
+# Overwritten on_action_events for Superior Species
+###################################################
+
+namespace = action
+
+# Assimilate Pops on Yearly Pulse
+event = {
+	id = action.64
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { always = no }
+
+	immediate = {
+    }
+}
+
+# Assimilate Pops
+planet_event = {
+	id = action.65
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { always = no	}
+
+	immediate = {
+	}
+}

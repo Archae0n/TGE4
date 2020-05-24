@@ -1,0 +1,100 @@
+
+
+# РЫНОК
+ftm_market = {
+	sub_title = "FTM_MARKET_EMPIRE"
+	sub_title_desc = "FTM_MARKET_EMPIRE_DESC"
+	default_ships = no
+	government = no
+	observable = no
+	is_enclave = yes
+	can_own_empty_planets = yes
+	show_in_contacts_list = no	
+	custom_diplomacy = yes
+	can_have_their_comms_shared = yes
+	needs_survey = no
+	has_complete_sensor = yes
+	ai = {
+		enabled = no
+	}
+	faction = {
+		neutral = yes
+		needs_border_access = no
+		generate_borders = no
+		needs_colony = no
+		auto_delete = no
+	}
+	modules = {
+		basic_technology_module = {}
+		standard_event_module = {}
+		exclusive_diplomacy_module = {
+			contact_rule = script_only
+		}
+	}
+}
+
+# АУКЦИОН
+ftm_auction = {
+	sub_title = "FTM_AUCTION_EMPIRE"
+	sub_title_desc = "FTM_AUCTION_EMPIRE_DESC"
+	default_ships = no
+	government = no
+	observable = no
+	is_enclave = yes
+	can_own_empty_planets = yes
+	show_in_contacts_list = no	
+	custom_diplomacy = yes
+	can_have_their_comms_shared = yes
+	needs_survey = no
+	has_complete_sensor = yes
+	ai = {
+		enabled = no
+	}
+	faction = {
+		neutral = yes
+		needs_border_access = no
+		generate_borders = no
+		needs_colony = no
+		auto_delete = no
+	}
+	modules = {
+		basic_technology_module = {}
+		standard_event_module = {}
+		exclusive_diplomacy_module = {
+			contact_rule = script_only
+		}
+	}
+}
+
+# АРЕНДА
+ftm_rent = {
+	sub_title = "FTM_RENT_EMPIRE"
+	sub_title_desc = "FTM_RENT_EMPIRE_DESC"
+	default_ships = no
+	government = no
+	observable = no
+	is_enclave = yes
+	can_own_empty_planets = yes
+	show_in_contacts_list = no	
+	custom_diplomacy = yes
+	can_have_their_comms_shared = yes
+	needs_survey = no
+	has_complete_sensor = yes
+	ai = {
+		enabled = no
+	}
+	faction = {
+		neutral = yes
+		needs_border_access = no
+		generate_borders = no
+		needs_colony = no
+		auto_delete = no
+	}
+	modules = {
+		basic_technology_module = {}
+		standard_event_module = {}
+		exclusive_diplomacy_module = {
+			contact_rule = script_only
+		}
+	}
+}

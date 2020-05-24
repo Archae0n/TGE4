@@ -1,0 +1,197 @@
+namespace = aiDomestic
+
+
+#WHEN AI EMPIRE GOES DOMESTIC, RANDOM PICK DOMESTIC ACTIVITY
+country_event = {
+	id = aiDomestic.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		random_list = {
+			10 = { #BOOST REPUTATION
+				country_event = {
+					id = aiDomestic.2
+				}
+			}
+			30 = { #SWING ETHICS
+				modifier = {
+					factor = 0
+					NOT = {
+						has_technology = tech_spy_socialPropaganda
+					}
+				}
+				country_event = {
+					id = aiDomestic.3
+				}
+			}
+			30 = { #STOP CRIME
+				country_event = {
+					id = aiDomestic.4
+				}
+			}
+		}
+	}
+}
+
+
+country_event = { #BOOST REPUTATION
+	id = aiDomestic.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		random_list = {
+			60 = {
+				every_neighbor_country = {
+					limit = {
+						is_country_type = default
+						not = {
+							has_ethic = ethic_gestalt_consciousness
+						  }
+						has_communications = event_target:AIAgency
+					}
+					add_opinion_modifier = {
+						who = event_target:AIAgency
+						modifier = opinion_boostRep_low
+					}
+				}
+			}
+			40 = {
+				every_neighbor_country = {
+					limit = {
+						is_country_type = default
+						not = {
+							has_ethic = ethic_gestalt_consciousness
+						  }
+						has_communications = event_target:AIAgency
+					}
+					add_opinion_modifier = {
+						who = event_target:AIAgency
+						modifier = opinion_boostRep_high
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #SWING ETHICS
+	id = aiDomestic.3
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+			add_modifier = {
+				modifier = spy_swingAuthoritarian
+				days = 120
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ethic = ethic_fanatic_spiritualist
+					has_ethic = ethic_spiritualist
+				}
+			}
+			add_modifier = {
+				modifier = spy_swingSpiritualist
+				days = 120
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+			add_modifier = {
+				modifier = spy_swingEgalitarian
+				days = 120
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+			add_modifier = {
+				modifier = spy_swingMilitarist
+				days = 120
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+			add_modifier = {
+				modifier = spy_swingXenophobe
+				days = 120
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				}
+			}
+			add_modifier = {
+				modifier = spy_swingMaterialist
+				days = 120
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ethic = ethic_fanatic_pacifist
+					has_ethic = ethic_pacifist
+				}
+			}
+			add_modifier = {
+				modifier = spy_swingPacifist
+				days = 120
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_ethic = ethic_fanatic_xenophile
+					has_ethic = ethic_xenophile
+				}
+			}
+			add_modifier = {
+				modifier = spy_swingXenophile
+				days = 120
+			}
+		}
+	}
+}
+
+country_event = { #STOP CRIME
+	id = aiDomestic.4
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		every_owned_planet = {
+			add_modifier = {
+				modifier = stopCrime
+				days = 120
+			}
+		}
+	}
+}

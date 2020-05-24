@@ -1,0 +1,31 @@
+on_game_start_country = {
+	events = {
+		relytor_raider.1
+	}
+}
+
+# Planet has taken damage from orbital bombardment
+# This = Planet
+# From = Bombarder
+on_planet_bombarded = {
+	events = {
+		relytor_raider.100
+	}
+}
+
+# This = Ship
+# From = Disabler Ship
+on_ship_disabled = {
+	events = {
+		relytor_raider.101
+	}
+}
+
+# Pop is abducted by raiding stance
+# This = Pop scope
+# From = planet abducted from
+on_pop_abducted  = {
+	events = {
+		relytor_raider.102
+	}
+}

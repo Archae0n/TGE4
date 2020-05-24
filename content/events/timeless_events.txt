@@ -1,0 +1,210 @@
+namespace = timeless
+
+pop_event = {
+	id = timeless.70
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		
+	}
+}
+
+## start the timerift
+planet_event = {
+	id = timeless.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+
+
+				create_ambient_object = {
+					type = "timeless_veffect"
+					location = this					
+					scale = 0.08
+				}
+				last_created_ambient_object = {
+					set_ambient_object_flag = extradimensional_system_effect_2
+					set_location = {
+						target = prev
+						distance = 0
+						angle = random
+					}
+				}
+		
+	}
+}
+
+
+
+## turn into ecumenopolis
+planet_event = {
+	id = timeless.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+
+			## we need to kill all pops and recreate them
+			
+			
+			create_pop = {
+						species = owner_main_species
+					}
+			
+			while = {
+				count = 100
+					random_list = {
+					66 = { 
+						create_pop = {
+							species = owner_main_species
+							ethos = random
+						}
+						last_created_pop = {
+							## kill in 5 years
+							pop_event = { id = timeless.70 days = 31 }
+						}
+					} 33 = {  } }
+				
+			}
+			
+			## trigger the planet change in 5 years
+			planet_event = { id = timeless.2 days = 30 }
+			
+			
+			clear_basic_districts = yes
+			#reroll_planet = yes
+			reroll_planet_modifiers = yes
+			remove_all_buildings = yes
+			#destroy_colony = yes
+			
+			
+			
+			change_pc = pc_city
+			set_planet_entity = {
+				entity = "city_planet_entity"
+				graphical_culture = owner
+			}
+			
+			## we need to kill all pops and recreate them
+			
+			
+			while = {
+				limit = {				
+					count_owned_pops = {
+						limit = { <triggers> }
+						count < 75
+					}
+				}
+		
+			create_pop = {
+				species = owner_main_species
+				}
+			}
+			while = {
+			count = 50
+			random_list = {
+					75 = { 
+						create_pop = {
+							species = owner_main_species
+							}
+					}
+					25 = { }
+					}
+			}
+			
+			
+			
+			## add buildings		
+			add_building = building_major_capital
+			add_building = building_hall_judgment 
+			add_building = building_luxury_residence
+			while = {
+				count = 3
+				random_list = {
+					50 = { add_building = building_bureaucratic_2 }
+					50 = { }
+					}
+				}
+				
+			while = {
+				count = 4
+				random_list = {
+					50 = { add_building = building_hydroponics_farm }
+					50 = { }
+					}
+				}
+			while = {
+				count = 2
+				random_list = {
+					25 = { add_building = building_resource_silo  }
+					75 = { }
+					}
+				}
+			while = {
+				count = 2
+				random_list = {
+					25 = { add_building = building_foundry_3  }
+					75 = { }
+					}
+				}
+			while = {
+				count = 2
+				random_list = {
+					25 = { add_building = building_factory_3  }
+					75 = { }
+					}
+				}
+			while = {
+				count = 2
+				random_list = {
+					50 = { add_building = building_research_lab_3  }
+					50 = { }
+					}
+				}
+			
+			while = {
+				count = 2
+				random_list = {
+					50 = { add_building = building_hypercomms_forum  }
+					50 = { }
+					}
+				}	
+				
+				
+				
+				
+			## add districts			
+			while = {
+				count = 4
+				random_list = {
+					75 = { add_district = district_arcology_housing }
+					25 = { }
+					}
+				}		
+			while = {
+				count = 4
+				random_list = {
+					75 = { add_district = district_arcology_arms_industry }
+					25 = { }
+					}
+				}		
+			while = {
+				count = 4
+				random_list = {
+					75 = { add_district = district_arcology_civilian_industry }
+					25 = { }
+					}
+				}		
+			while = {
+				count = 4
+				random_list = {
+					75 = { add_district = district_arcology_leisure }
+					25 = { }
+					}
+				}
+			
+			##remove_all_districts = yes
+	}
+}

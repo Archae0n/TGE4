@@ -1,0 +1,1453 @@
+namespace = sge
+
+
+
+#TODO
+#done# -add code for alternate gender
+#done# -check what happens if a leader is created via event. result: on_action doesn't trigger. this is bad
+#
+#idea: create leader and delete leader after the gender of the other leaders have been changed to refresh the gui
+#and to avoid reloading the savegame. It seems this doesn't work for rulers. result: delete leader need a break of one day
+#idea: clone leader and exile leader for saving data from leader before they are elected
+#done#-test change_leader_portrait(current portrait to robot to current). result: this works properly if on day pass after changing the portrait to robot
+#I can add this to avoid the reloading after changing the ruler/heir gender
+#-are ther issues with non gender species
+
+
+
+country_event = {
+	id = sge.1
+	is_triggered_only = yes
+	title = "sge.1"
+	desc = "sge.1_desc"
+	picture = GFX_evt_throne_room
+	trigger = {
+		is_ai = no
+	}	
+	immediate = {
+		#log = "sge"
+	}
+
+	###female only settings###
+	
+	option = {
+		name = "sge.1_female_headline"
+		trigger = {NOT = {has_country_flag = male_menu}}
+		custom_tooltip = sge.1_female_headline.tooltip
+		hidden_effect = {
+			if = {
+				limit = {NOT = {has_country_flag = sge_collapse_option}}
+				set_country_flag = sge_collapse_option
+				#LOG = "1"
+			}
+			else = {
+				remove_country_flag = sge_collapse_option
+				#LOG = "2"
+			}
+			country_event = {id = sge.1}
+		}
+	}
+	option = {
+		name = "sge.1_all_female"
+		trigger = {
+			NOT = {
+				has_country_flag = male_menu
+				has_country_flag = sge_collapse_option
+			}
+		}
+		custom_tooltip = sge.1_all_female.tooltip
+		hidden_effect = {
+			#country_event = {id = sge.2}
+			if = {
+				limit = {NOT = {has_country_flag = sge_all_female_temp}}
+				set_country_flag = sge_all_female_temp
+				remove_country_flag = sge_all_male_temp
+				remove_country_flag = sge_female_governor_only_temp
+				remove_country_flag = sge_female_admiral_only_temp
+				remove_country_flag = sge_female_scientist_only_temp
+				remove_country_flag = sge_female_general_only_temp
+				remove_country_flag = sge_male_governor_only_temp
+				remove_country_flag = sge_male_admiral_only_temp
+				remove_country_flag = sge_male_scientist_only_temp
+				remove_country_flag = sge_male_general_only_temp
+				remove_country_flag = sge_female_ruler_only_temp
+				remove_country_flag = sge_male_ruler_only_temp
+				remove_country_flag = sge_ruler_gender_alternates_temp	
+			}
+			else = {
+				remove_country_flag = sge_all_female_temp
+			}
+			country_event = {id = sge.1}
+		}
+	}
+	option = {
+		name = "sge.1_female_governor_only"
+		trigger = {
+			NOT = {
+				has_country_flag = male_menu
+				has_country_flag = sge_collapse_option
+			}
+		}
+		custom_tooltip = sge.1_female_governor_only.tooltip
+		hidden_effect = {
+			if = {
+				limit = {NOT = {has_country_flag = sge_female_governor_only_temp}}
+				set_country_flag = sge_female_governor_only_temp
+				remove_country_flag = sge_male_governor_only_temp
+				remove_country_flag = sge_all_male_temp
+				remove_country_flag = sge_all_female_temp
+			}
+			else = {
+				remove_country_flag = sge_female_governor_only_temp
+			}
+			country_event = {id = sge.1}
+		}
+	}
+	option = {
+		name = "sge.1_female_scientist_only"
+		trigger = {
+			NOT = {
+				has_country_flag = male_menu
+				has_country_flag = sge_collapse_option
+			}
+		}
+		custom_tooltip = sge.1_female_scientist_only.tooltip
+		hidden_effect = {
+			if = {
+				limit = {NOT = {has_country_flag = sge_female_scientist_only_temp}}
+				set_country_flag = sge_female_scientist_only_temp
+				remove_country_flag = sge_male_scientist_only_temp
+				remove_country_flag = sge_all_male_temp
+				remove_country_flag = sge_all_female_temp
+			}
+			else = {
+				remove_country_flag = sge_female_scientist_only_temp
+			}
+			country_event = {id = sge.1}
+		}
+	}
+	option = {
+		name = "sge.1_female_admiral_only"
+		trigger = {
+			NOT = {
+				has_country_flag = male_menu
+				has_country_flag = sge_collapse_option
+			}
+		}
+		custom_tooltip = sge.1_female_admiral_only.tooltip
+		hidden_effect = {
+			if = {
+				limit = {NOT = {has_country_flag = sge_female_admiral_only_temp}}
+				set_country_flag = sge_female_admiral_only_temp
+				remove_country_flag = sge_male_admiral_only_temp
+				remove_country_flag = sge_all_male_temp
+				remove_country_flag = sge_all_female_temp
+			}
+			else = {
+				remove_country_flag = sge_female_admiral_only_temp
+			}
+			country_event = {id = sge.1}
+		}
+	}
+	option = {
+		name = "sge.1_female_general_only"
+		trigger = {
+			NOT = {
+				has_country_flag = male_menu
+				has_country_flag = sge_collapse_option
+			}
+		}
+		custom_tooltip = sge.1_female_general_only.tooltip
+		hidden_effect = {
+			if = {
+				limit = {NOT = {has_country_flag = sge_female_general_only_temp}}
+				set_country_flag = sge_female_general_only_temp
+				remove_country_flag = sge_male_general_only_temp
+				remove_country_flag = sge_all_male_temp
+				remove_country_flag = sge_all_female_temp
+			}
+			else = {
+				remove_country_flag = sge_female_general_only_temp
+			}
+			country_event = {id = sge.1}
+		}
+	}
+
+	###male only settings###
+	option = {
+		name = "sge.1_male_headline"
+		trigger = {has_country_flag = male_menu}
+		custom_tooltip = sge.1_male_headline.tooltip
+		hidden_effect = {
+			if = {
+				limit = {NOT = {has_country_flag = sge_collapse_option}}
+				set_country_flag = sge_collapse_option
+			}
+			else = {
+				remove_country_flag = sge_collapse_option
+			}
+			country_event = {id = sge.1}
+		}
+	}
+	option = {
+		name = "sge.1_all_male"
+		trigger = {
+			has_country_flag = male_menu
+			NOT = {has_country_flag = sge_collapse_option}
+		}
+		custom_tooltip = sge.1_all_male.tooltip
+		hidden_effect = {
+			if = {
+				limit = {NOT = {has_country_flag = sge_all_male_temp}}
+				set_country_flag = sge_all_male_temp
+				remove_country_flag = sge_all_female_temp
+				remove_country_flag = sge_female_governor_only_temp
+				remove_country_flag = sge_female_admiral_only_temp
+				remove_country_flag = sge_female_scientist_only_temp
+				remove_country_flag = sge_female_general_only_temp
+				remove_country_flag = sge_male_governor_only_temp
+				remove_country_flag = sge_male_admiral_only_temp
+				remove_country_flag = sge_male_scientist_only_temp
+				remove_country_flag = sge_male_general_only_temp
+				remove_country_flag = sge_female_ruler_only_temp
+				remove_country_flag = sge_male_ruler_only_temp
+				remove_country_flag = sge_ruler_gender_alternates_temp
+			}
+			else = {
+				remove_country_flag = sge_all_male_temp
+			}
+			country_event = {id = sge.1}
+		}
+	}
+	option = {
+		name = "sge.1_male_governor_only"
+		trigger = {
+			has_country_flag = male_menu
+			NOT = {has_country_flag = sge_collapse_option}
+		}
+		custom_tooltip = sge.1_male_governor_only.tooltip
+		hidden_effect = {
+			if = {
+				limit = {NOT = {has_country_flag = sge_male_governor_only_temp}}
+				set_country_flag = sge_male_governor_only_temp
+				remove_country_flag = sge_female_governor_only_temp
+				remove_country_flag = sge_all_male_temp
+				remove_country_flag = sge_all_female_temp
+			}
+			else = {
+				remove_country_flag = sge_male_governor_only_temp
+			}
+			country_event = {id = sge.1}
+		}
+	}	
+	option = {
+		name = "sge.1_male_scientist_only"
+		trigger = {
+			has_country_flag = male_menu
+			NOT = {has_country_flag = sge_collapse_option}
+		}
+		custom_tooltip = sge.1_male_scientist_only.tooltip
+		hidden_effect = {
+			if = {
+				limit = {NOT = {has_country_flag = sge_male_scientist_only_temp}}
+				set_country_flag = sge_male_scientist_only_temp
+				remove_country_flag = sge_female_scientist_only_temp
+				remove_country_flag = sge_all_male_temp
+				remove_country_flag = sge_all_female_temp
+			}
+			else = {
+				remove_country_flag = sge_male_scientist_only_temp
+			}
+			country_event = {id = sge.1}
+		}
+	}
+	option = {
+		name = "sge.1_male_admiral_only"
+		trigger = {
+			has_country_flag = male_menu
+			NOT = {has_country_flag = sge_collapse_option}
+		}
+		custom_tooltip = sge.1_male_admiral_only.tooltip
+		hidden_effect = {
+			if = {
+				limit = {NOT = {has_country_flag = sge_male_admiral_only_temp}}
+				set_country_flag = sge_male_admiral_only_temp
+				remove_country_flag = sge_female_admiral_only_temp
+				remove_country_flag = sge_all_male_temp
+				remove_country_flag = sge_all_female_temp
+			}
+			else = {
+				remove_country_flag = sge_male_admiral_only_temp
+			}
+			country_event = {id = sge.1}
+		}
+	}
+	option = {
+		name = "sge.1_male_general_only"
+		trigger = {
+			has_country_flag = male_menu
+			NOT = {has_country_flag = sge_collapse_option}
+		}
+		custom_tooltip = sge.1_male_general_only.tooltip
+		hidden_effect = {
+			if = {
+				limit = {NOT = {has_country_flag = sge_male_general_only_temp}}
+				set_country_flag = sge_male_general_only_temp
+				remove_country_flag = sge_female_general_only_temp
+				remove_country_flag = sge_all_male_temp
+				remove_country_flag = sge_all_female_temp
+			}
+			else = {
+				remove_country_flag = sge_male_general_only_temp
+			}
+			country_event = {id = sge.1}
+		}
+	}
+	
+	###experimentell stuff###
+	#force change of ruler/heir gender
+	#rename ruler/heir
+	# option = {
+		# name = "sge.1_experimentell_settings"
+		# hidden_effect = {
+			# country_event = {id = sge.1}
+		# }
+	# }
+	option = {
+		trigger = {
+			NOT = {has_country_flag = sge_collapse_option}
+		}
+		name = "sge.1_space"
+		hidden_effect = {
+			country_event = {id = sge.1}
+		}
+	}
+	###general settings###
+	option = {
+		name = "sge.1_male_only_settings"
+		trigger = {
+			NOT = {
+				has_country_flag = sge_collapse_option
+				has_country_flag = male_menu
+			}
+		}
+		custom_tooltip = sge.1_male_only_settings.tooltip
+		hidden_effect = {
+			set_country_flag = male_menu
+			country_event = {id = sge.1}
+		}
+	}
+	option = {
+		name = "sge.1_female_only_settings"
+		trigger = {
+			has_country_flag = male_menu
+			NOT = {has_country_flag = sge_collapse_option}
+		}
+		custom_tooltip = sge.1_female_only_settings.tooltip
+		hidden_effect = {
+			remove_country_flag = male_menu
+			country_event = {id = sge.1}
+		}
+	}
+	option = {
+		name = "sge.1_space"
+		trigger = {
+			NOT = {has_country_flag = sge_collapse_option}
+		}
+		hidden_effect = {
+			country_event = {id = sge.1}
+		}
+	}
+	option = {
+		name = "sge.1_ruler_heir"
+		trigger = {NOT = {has_country_flag = sge_collapse_option}}
+		custom_tooltip = sge.1_ruler_heir.tooltip
+		hidden_effect = {	
+			country_event = {id = sge.10}
+		}
+	}
+	option = {
+		name = "sge.1_space"
+		hidden_effect = {
+			country_event = {id = sge.1}
+		}
+	}
+	option = {
+		name = "sge.1_reset_input"
+		custom_tooltip = sge.1_reset_input.tooltip
+		hidden_effect = {	
+			remove_temp_flags = yes
+			set_temp_flags = yes
+			country_event = {id = sge.1}
+		}
+	}
+	option = {
+		name = "sge.1_reset"
+		custom_tooltip = sge.1_reset.tooltip
+		hidden_effect = {	
+			remove_all_flags = yes
+			country_event = {id = sge.1}
+		}
+	}
+	option = {
+		trigger = {
+			NOT = {has_country_flag = hide_sge_edict}
+		}
+		name = "sge.1_hide_edict"
+		custom_tooltip = sge.1_hide_edict.tooltip
+		hidden_effect = {
+			set_country_flag = hide_sge_edict
+			country_event = {id = sge.1}
+		}
+	}
+	option = {
+		trigger = {
+			has_country_flag = hide_sge_edict
+		}
+		name = "sge.1_unhide_edict"
+		custom_tooltip = sge.1_unhide_edict.tooltip
+		hidden_effect = {
+			remove_country_flag = hide_sge_edict
+			country_event = {id = sge.1}
+		}
+	}
+	option = {
+		name = "sge.1_save"
+		custom_tooltip = sge.1_save.tooltip
+		hidden_effect = {
+		set_non_temp_flags = yes
+			#female
+			if = {
+				limit = {
+					has_country_flag = sge_all_female
+					NOT = {has_country_flag = sge_all_male}
+				}
+				country_event = { id = sge.2}#all female
+			}
+			else = {
+				if = {
+					limit = {
+						NOT = {has_country_flag = sge_all_male}
+					}
+					country_event = { id = sge.3}#specific classes for female only
+				}
+			}
+			#male
+			if = {
+				limit = {
+					has_country_flag = sge_all_male
+					NOT = {has_country_flag = sge_all_female}
+				}
+				country_event = { id = sge.4}#all male
+			}
+			else = {
+				if = {
+					limit = {
+						NOT = {has_country_flag = sge_all_female}
+					}
+					country_event = { id = sge.5}#specific classes for male only
+				}
+			}
+			country_event = {id = sge.1}
+		}
+	}
+	option = {
+		name = "sge.1_save_and_exit"
+		custom_tooltip = sge.1_save_and_exit.tooltip
+		hidden_effect = {
+		set_non_temp_flags = yes
+		remove_temp_flags = yes
+			#female
+			if = {
+				limit = {
+					has_country_flag = sge_all_female
+					NOT = {has_country_flag = sge_all_male}
+				}
+				country_event = { id = sge.2}#all female
+			}
+			else = {
+				if = {
+					limit = {
+						NOT = {has_country_flag = sge_all_male}
+					}
+					country_event = { id = sge.3}#specific classes for female only
+				}
+			}
+			#male
+			if = {
+				limit = {
+					has_country_flag = sge_all_male
+					NOT = {has_country_flag = sge_all_female}
+				}
+				country_event = { id = sge.4}#all male
+			}
+			else = {
+				if = {
+					limit = {
+						NOT = {has_country_flag = sge_all_female}
+					}
+					country_event = { id = sge.5}#specific classes for male only
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "sge.1_cancel"
+		custom_tooltip = sge.1_cancel.tooltip
+		hidden_effect = {
+			remove_temp_flags = yes
+		}
+	}
+	
+}
+
+country_event = {#all female
+	id = sge.2
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		is_ai = no
+	}
+	
+	immediate = {
+		#log = "sge.2"
+		every_owned_leader = { 
+			limit = { gender = male }
+			set_is_female = yes
+			set_name = random
+		}
+		every_pool_leader = {
+			limit = { gender = male }
+			set_is_female = yes
+			set_name = random
+		}
+	}
+	
+}
+
+country_event = {#specific classes for female only
+	id = sge.3
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		is_ai = no
+	}
+	
+	immediate = {
+		#log = "sge.3"
+
+		every_owned_leader = {
+			limit = {
+				gender = male 
+				sge_leader_class_check_female = yes
+			}
+			set_is_female = yes
+			set_name = random
+		}
+		every_pool_leader = {
+			limit = { 
+				gender = male 
+				sge_leader_class_check_female = yes
+			}
+			set_is_female = yes
+			set_name = random
+		}
+	}
+	
+}
+
+country_event = {#all male
+	id = sge.4
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		is_ai = no
+	}
+	
+	immediate = {
+		#log = "sge.4"
+		every_owned_leader = { 
+			limit = { gender = female }
+			set_is_female = no
+			set_name = random
+		}
+		every_pool_leader = {
+			limit = { gender = female }
+			set_is_female = no
+			set_name = random
+		}
+	}
+}
+
+country_event = {#specific classes for male only
+	id = sge.5
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		is_ai = no
+	}
+	
+	immediate = {
+		#log = "sge.5"
+		every_owned_leader = {
+			limit = {
+				gender = female 
+				sge_leader_class_check_male = yes
+			}
+			set_is_female = no
+			set_name = random
+		}
+		every_pool_leader = {
+			limit = { 
+				gender = female 
+				sge_leader_class_check_male = yes
+			}
+			set_is_female = no
+			set_name = random
+		}
+	}
+}
+
+country_event = {#on leader spwan
+	id = sge.6
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		OR = {
+			has_country_flag = sge_all_female
+			has_country_flag = sge_female_governor_only
+			has_country_flag = sge_female_admiral_only
+			has_country_flag = sge_female_scientist_only
+			has_country_flag = sge_female_general_only
+			has_country_flag = sge_all_male
+			has_country_flag = sge_male_governor_only
+			has_country_flag = sge_male_admiral_only
+			has_country_flag = sge_male_scientist_only
+			has_country_flag = sge_male_general_only
+			has_country_flag = sge_female_ruler_only
+			has_country_flag = sge_male_ruler_only
+			has_country_flag = sge_ruler_gender_alternates
+			has_country_flag = all_female#from old version
+			has_country_flag = all_male#from old version
+		}
+	}
+	
+	immediate = {
+		log = "on_leader_spwan"
+		from = {		
+			if = {
+				limit = {
+					leader_class = ruler 
+					OWNER = {
+						has_country_flag = sge_ruler_gender_alternates
+						any_owned_leader = { #heir detection. heir scope doesn't exists at this point
+							leader_class = ruler #ruler and heir belong to leader_class ruler
+							count = 2#Are there two or more leaders of class ruler in this country?
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = {is_same_value = ruler}#if current scope is not identical with ruler scope
+					}
+					#log = "Heir found"
+					set_leader_flag = "This_is_the_heir"
+					if = {
+						limit = {
+							exists = ruler
+							ruler = {gender = female}
+							gender = female
+						}
+						#log = "female ruler and heir: change gender"
+						set_is_female = no
+						#log = "Old Name: [This.GetName]"
+						set_name = random
+						#log = "New Name: [This.GetName]"
+					}
+					else = {
+						if = {
+							limit = {
+								exists = ruler
+								ruler = {gender = male}
+								gender = male
+							}
+							#log = "male ruler and heir: change gender"
+							set_is_female = yes
+							#log = "Old Name: [This.GetName]"
+							set_name = random
+							#log = "New Name: [This.GetName]"
+						}
+					}
+				}
+			}
+		
+			#female
+			if = {
+				limit = {
+					PREV = {
+						OR = {
+							has_country_flag = sge_all_female
+							has_country_flag = all_female#from old version
+						}
+						NOT = {has_country_flag = sge_all_male}
+					}
+				}
+				#log = "1"
+				if = {
+					limit = { 
+						gender = male 
+					}
+					#log = "2"
+					set_is_female = yes
+					set_name = random
+					break = yes
+				}
+			}
+			else = {
+				#log = "3"
+				if = {
+					limit = {
+						PREV = {NOT = {has_country_flag = sge_all_male}}
+					}
+					#log = "4"
+					if = {
+						limit = { 
+							gender = male
+							sge_leader_class_check_female = yes
+						}
+						#log = "5"
+						set_is_female = yes
+						set_name = random
+						break = yes
+					}
+				}
+			}
+			#male
+			if = {
+				limit = {
+					PREV = {
+						OR = {
+							has_country_flag = sge_all_male
+							has_country_flag = all_male#from old version
+						}
+						NOT = {has_country_flag = sge_all_female}
+					}
+				}
+				#log = "6"
+				if = {
+					limit = { 
+						gender = female 
+					}
+					#log = "7"
+					set_is_female = no
+					set_name = random
+					break = yes
+				}
+			}
+			else = {
+				#log = "8"
+				if = {
+					limit = {
+						PREV = {NOT = {has_country_flag = sge_all_female}}
+					}
+					#log = "9"
+					if = {
+						limit = { 
+							gender = female
+							sge_leader_class_check_male = yes
+						}
+						#log = "10"
+						set_is_female = no
+						set_name = random
+						break = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+# This = Country
+country_event = {#on ruler set
+	id = sge.7
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		OR = {
+			has_country_flag = sge_all_female
+			has_country_flag = sge_all_male
+			has_country_flag = sge_female_ruler_only
+			has_country_flag = sge_male_ruler_only
+			has_country_flag = sge_ruler_gender_alternates
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				exists = ruler
+				OR = {
+					has_country_flag = sge_all_female
+					has_country_flag = sge_all_male
+					has_country_flag = sge_female_ruler_only
+					has_country_flag = sge_male_ruler_only
+				}
+			}
+			Ruler = {
+				if = {
+					limit = { 
+						gender = female 
+						PREV = {
+							OR = {
+								has_country_flag = sge_all_male
+								has_country_flag = sge_male_ruler_only
+							}
+						}
+					}
+					set_is_female = no
+					set_name = random
+				}
+				else = {
+					if = {
+						limit = { 
+							gender = male 
+							PREV = {
+								OR = {
+									has_country_flag = sge_all_female
+									has_country_flag = sge_female_ruler_only
+								}
+							}
+						}
+						set_is_female = yes
+						set_name = random
+					}
+				}				
+			}
+		}
+		if = {
+			limit = {
+				exists = ruler
+				OR = {
+					has_country_flag = sge_ruler_gender_alternates
+				}
+			}
+			Ruler = {
+				if = {
+					limit = { 
+						gender = female 
+						OWNER = { has_country_flag = sge_next_male }
+					}
+					set_is_female = no
+					set_name = random
+				}
+				else = {
+					if = {
+						limit = { 
+							gender = male 
+							OWNER = { has_country_flag = sge_next_female }
+						}
+						set_is_female = yes
+						set_name = random
+					}
+				}
+			}
+			if = {
+				limit = { 
+					has_country_flag = sge_next_male
+				}
+				remove_country_flag = sge_next_male
+				set_country_flag = sge_next_female
+			}
+			else = {
+				if = {
+					limit = { 
+						has_country_flag = sge_next_female
+					}
+					remove_country_flag = sge_next_female
+					set_country_flag = sge_next_male
+				}
+			}
+		}
+	}
+}
+
+# From = Previous Ruler, already has the new class
+# This = Country
+country_event = {#on ruler goes back to the mines
+	id = sge.8
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		OR = {
+			has_country_flag = sge_all_female
+			has_country_flag = sge_all_male
+			has_country_flag = sge_female_ruler_only
+			has_country_flag = sge_male_ruler_only
+			has_country_flag = sge_ruler_gender_alternates
+		}
+	}
+	
+	immediate = {
+		FROM = {
+			if = {
+				limit = { 
+					gender = female 
+					OR = {
+						sge_leader_class_check_male = yes
+						Owner = {has_country_flag = sge_all_male}
+					}
+				}
+				set_is_female = no
+				set_name = random
+			}	
+			else = {
+				if = {
+					limit = { 
+						gender = male 
+						OR = {
+							sge_leader_class_check_male = yes
+							Owner = {has_country_flag = sge_all_female}
+						}
+					}
+					set_is_female = yes
+					set_name = random
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = sge.10
+	is_triggered_only = yes
+	title = "sge.1"
+	desc = "sge.1_desc"
+	picture = GFX_evt_throne_room
+	trigger = {
+		is_ai = no
+	}	
+	immediate = {
+		#log = "sge"
+	}
+	option = {
+		name = "sge.10_ruler_settings_headline"
+		trigger = {}
+		custom_tooltip = sge.10_ruler_settings_headline.tooltip
+		hidden_effect = {
+			if = {
+				limit = {NOT = {has_country_flag = sge_collapse_option}}
+				set_country_flag = sge_collapse_option
+			}
+			else = {
+				remove_country_flag = sge_collapse_option
+			}
+			country_event = {id = sge.10}
+		}
+	}
+	option = {
+		name = "sge.10_change_ruler_gender"
+		trigger = {NOT = {has_country_flag = sge_collapse_option}}
+		custom_tooltip = sge.10_change_ruler_gender.tooltip
+		hidden_effect = {
+			country_event = {id = sge.10}
+			Ruler = {
+				if = {
+					limit = {
+						gender = female
+					}
+					set_is_female = no
+					set_name = random
+				}
+				else = {
+					if = {
+						limit = {
+							gender = male
+						}
+						set_is_female = yes
+						set_name = random
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = "sge.10_change_heir_gender"
+		trigger = {
+			exists = heir
+			NOT = {has_country_flag = sge_collapse_option}
+		}
+		custom_tooltip = sge.10_change_heir_gender.tooltip
+		hidden_effect = {
+			country_event = {id = sge.10}
+			Heir = {
+				if = {
+					limit = {
+						gender = female
+					}
+					set_is_female = no
+					set_name = random
+				}
+				else = {
+					if = {
+						limit = {
+							gender = male
+						}
+						set_is_female = yes
+						set_name = random
+					}
+				}
+			}
+		}
+	}
+		option = {
+			name = "sge.10_no_heir"
+			trigger = {
+				NOT = {
+					exists = heir
+					has_country_flag = sge_collapse_option
+				}
+			}
+			custom_tooltip = sge.10_no_heir.tooltip
+			hidden_effect = {
+				country_event = {id = sge.10}
+			}
+		}
+	option = {
+		name = "sge.10_space"
+		trigger = {NOT = {has_country_flag = sge_collapse_option}}
+		hidden_effect = {
+			country_event = {id = sge.10}
+		}
+	}
+	option = {
+		name = "sge.10_caution"
+		trigger = {
+			NOT = {
+				has_authority = auth_imperial
+				has_country_flag = sge_collapse_option
+			}
+		}
+		custom_tooltip = sge.10_caution.tooltip
+		hidden_effect = {
+			country_event = {id = sge.10}
+		}
+	}
+		option = {
+			name = "sge.10_auth_imperial"
+			trigger = {
+				hidden_trigger = {
+					has_authority = auth_imperial
+					NOT = {has_country_flag = sge_collapse_option}
+				}
+			}
+			custom_tooltip = sge.10_auth_imperial.tooltip
+			hidden_effect = {
+				country_event = {id = sge.10}
+			}
+		}
+	option = {
+		name = "sge.10_female_ruler_only"
+		trigger = {NOT = {has_country_flag = sge_collapse_option}}
+		custom_tooltip = sge.10_female_ruler_only.tooltip
+		hidden_effect = {
+			if = {
+				limit = {NOT = {has_country_flag = sge_female_ruler_only_temp}}
+				set_country_flag = sge_female_ruler_only_temp
+				remove_country_flag = sge_male_ruler_only_temp
+				remove_country_flag = sge_all_male_temp
+				remove_country_flag = sge_all_female_temp
+				remove_country_flag = sge_ruler_gender_alternates_temp
+			}
+			else = {
+				remove_country_flag = sge_female_ruler_only_temp
+			}
+			country_event = {id = sge.10}
+		}
+	}
+	option = {
+		name = "sge.10_male_ruler_only"
+		trigger = {NOT = {has_country_flag = sge_collapse_option}}
+		custom_tooltip = sge.10_male_ruler_only.tooltip
+		hidden_effect = {
+			if = {
+				limit = {NOT = {has_country_flag = sge_male_ruler_only_temp}}
+				set_country_flag = sge_male_ruler_only_temp
+				remove_country_flag = sge_female_ruler_only_temp
+				remove_country_flag = sge_all_male_temp
+				remove_country_flag = sge_all_female_temp
+				remove_country_flag = sge_ruler_gender_alternates_temp
+			}
+			else = {
+				remove_country_flag = sge_male_ruler_only_temp
+			}
+			country_event = {id = sge.10}
+		}
+	}
+	option = {
+		name = "sge.10_ruler_gender_alternates"
+		trigger = {NOT = {has_country_flag = sge_collapse_option}}
+		custom_tooltip = sge.10_ruler_gender_alternates.tooltip
+		hidden_effect = {
+			country_event = {id = sge.10}
+			if = {
+				limit = {NOT = {has_country_flag = sge_ruler_gender_alternates_temp}}
+				set_country_flag = sge_ruler_gender_alternates_temp
+				remove_country_flag = sge_female_ruler_only_temp
+				remove_country_flag = sge_male_ruler_only_temp
+				remove_country_flag = sge_all_male_temp
+				remove_country_flag = sge_all_female_temp
+			}
+			else = {
+				remove_country_flag = sge_ruler_gender_alternates_temp
+			}
+		}
+	}
+	option = {
+		name = "sge.10_space"
+		trigger = {NOT = {has_country_flag = sge_collapse_option}}
+		hidden_effect = {
+			country_event = {id = sge.10}
+		}
+	}
+	option = {
+		name = "sge.10_back"
+		trigger = {NOT = {has_country_flag = sge_collapse_option}}
+		hidden_effect = {
+			country_event = {id = sge.1}
+		}
+	}
+	option = {
+		name = "sge.10_space"
+		hidden_effect = {
+			country_event = {id = sge.10}
+		}
+	}
+	option = {
+		name = "sge.1_reset_input"
+		custom_tooltip = sge.1_reset_input.tooltip
+		hidden_effect = {	
+			remove_temp_flags = yes
+			set_temp_flags = yes
+			country_event = {id = sge.10}
+		}
+	}
+	option = {
+		name = "sge.1_reset"
+		custom_tooltip = sge.1_reset.tooltip
+		hidden_effect = {	
+			remove_all_flags = yes
+			country_event = {id = sge.10}
+		}
+	}
+	option = {
+		trigger = {
+			NOT = {has_country_flag = hide_sge_edict}
+		}
+		name = "sge.1_hide_edict"
+		custom_tooltip = sge.1_hide_edict.tooltip
+		hidden_effect = {
+			set_country_flag = hide_sge_edict
+			country_event = {id = sge.10}
+		}
+	}
+	option = {
+		trigger = {
+			has_country_flag = hide_sge_edict
+		}
+		name = "sge.1_unhide_edict"
+		custom_tooltip = sge.1_unhide_edict.tooltip
+		hidden_effect = {
+			remove_country_flag = hide_sge_edict
+			country_event = {id = sge.10}
+		}
+	}
+	option = {
+		name = "sge.1_save"
+		custom_tooltip = sge.1_save.tooltip
+		hidden_effect = {
+		set_non_temp_flags = yes
+			#female
+			if = {
+				limit = {
+					has_country_flag = sge_all_female
+					NOT = {has_country_flag = sge_all_male}
+				}
+				country_event = { id = sge.2}#all female
+			}
+			else = {
+				if = {
+					limit = {
+						NOT = {has_country_flag = sge_all_male}
+					}
+					country_event = { id = sge.3}#specific classes for female only
+				}
+			}
+			#male
+			if = {
+				limit = {
+					has_country_flag = sge_all_male
+					NOT = {has_country_flag = sge_all_female}
+				}
+				country_event = { id = sge.4}#all male
+			}
+			else = {
+				if = {
+					limit = {
+						NOT = {has_country_flag = sge_all_female}
+					}
+					country_event = { id = sge.5}#specific classes for male only
+				}
+			}
+			country_event = {id = sge.10}
+		}
+	}
+	option = {
+		name = "sge.1_save_and_exit"
+		custom_tooltip = sge.1_save_and_exit.tooltip
+		hidden_effect = {
+		set_non_temp_flags = yes
+		remove_temp_flags = yes
+			#female
+			if = {
+				limit = {
+					has_country_flag = sge_all_female
+					NOT = {has_country_flag = sge_all_male}
+				}
+				country_event = { id = sge.2}#all female
+			}
+			else = {
+				if = {
+					limit = {
+						NOT = {has_country_flag = sge_all_male}
+					}
+					country_event = { id = sge.3}#specific classes for female only
+				}
+			}
+			#male
+			if = {
+				limit = {
+					has_country_flag = sge_all_male
+					NOT = {has_country_flag = sge_all_female}
+				}
+				country_event = { id = sge.4}#all male
+			}
+			else = {
+				if = {
+					limit = {
+						NOT = {has_country_flag = sge_all_female}
+					}
+					country_event = { id = sge.5}#specific classes for male only
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "sge.1_cancel"
+		custom_tooltip = sge.1_cancel.tooltip
+		hidden_effect = {
+			remove_temp_flags = yes
+		}
+	}
+	
+}
+
+
+
+
+# country_event = {#heir test
+	# id = sge.500
+	# is_triggered_only = yes
+	# hide_window = yes
+	# trigger = {
+
+	# }
+	
+	# immediate = {
+		# if = {
+			# limit = {exists = heir}
+			# log = "heir scope exists"
+			# heir = {#switch to leader scope
+				# print_scope_effect = yes
+			# }
+			# else = {
+				# log = "no heir exists"
+			# }
+		# }
+	# }
+# }
+
+# country_event = {#heir test on leader spwan
+	# id = sge.501
+	# is_triggered_only = yes
+	# hide_window = yes
+	# trigger = {
+
+	# }
+	
+	# immediate = {
+		# if = {
+			# limit = {
+				# is_ai = no
+			# }
+			# from = {
+				# log = "[This.GetName]"
+				# set_leader_flag = L_test
+				# if = {
+					# limit = {
+						# NOT = {
+							# leader_class = ruler
+							# leader_class = governor
+							# leader_class = admiral
+							# leader_class = scientist
+							# leader_class = general
+						# }
+					# }
+					# set_leader_flag = L_test_2
+					# log = "^^^2"
+				# }
+				# if = {
+					# limit = {
+						# NOT = {
+							# leader_class = governor
+							# leader_class = admiral
+							# leader_class = scientist
+							# leader_class = general
+						# }
+					# }
+					# set_leader_flag = L_test_3
+					# log = "^^^3"
+				# }
+				# if = {
+					# limit = {
+						# leader_class = ruler
+					# }
+					# set_leader_flag = L_test_4
+					# log = "^^^4"
+				# }
+				# if = {
+					# limit = {is_same_value = heir}
+					# log = "heir scope exists"
+					# print_scope_effect = yes
+					# else = {
+						# log = "no heir exists"
+					# }
+				# }
+			# }
+		# }
+	# }
+# }
+
+# country_event = {
+	# id = sge.502
+	# is_triggered_only = yes
+	# hide_window = yes
+	# trigger = {
+
+	# }
+	
+	# immediate = {
+		# heir = {
+			# if = {
+				# limit = {
+					# leader_class = ruler	
+				# }
+				# set_leader_flag = L_test_ruler
+			# }
+		# }
+	# }
+# }
+
+# country_event = {
+	# id = sge.503
+	# is_triggered_only = yes
+	# hide_window = yes
+	# trigger = {
+
+	# }
+	
+	# immediate = {
+		# create_leader = {
+		# name = "create_leader"
+		# species = this
+		# gender = male
+		# type = governor
+		# skill = 10
+		# set_age = 20
+		# }
+	# }
+# }
+
+# country_event = {
+	# id = sge.504
+	# is_triggered_only = yes
+	# hide_window = yes
+	# trigger = {
+
+	# }
+	
+	# immediate = {
+		# ruler = {
+			# change_leader_portrait = sd_hum_robot
+		# }
+	# }
+# }
+# country_event = {
+	# id = sge.505
+	# is_triggered_only = yes
+	# hide_window = yes
+	# trigger = {
+
+	# }
+	
+	# immediate = {
+		# ruler = {
+			# change_leader_portrait = species
+		# }
+	# }
+# }
+# country_event = {
+	# id = sge.506
+	# is_triggered_only = yes
+	# hide_window = yes
+	# trigger = {
+
+	# }
+	
+	# immediate = {
+		# ruler = {
+			# change_leader_portrait = sd_hum_robot
+			# change_leader_portrait = species
+		# }
+	# }
+# }
+# country_event = {
+	# id = sge.507
+	# is_triggered_only = yes
+	# hide_window = yes
+	# trigger = {
+
+	# }
+	
+	# immediate = {
+		# ruler = {
+			# change_leader_portrait = sd_hum_robot
+		# }
+		# country_event = {id=sge.508 days = 1}
+	# }
+# }
+# country_event = {
+	# id = sge.508
+	# is_triggered_only = yes
+	# hide_window = yes
+	# trigger = {
+
+	# }
+	
+	# immediate = {
+		# ruler = {
+			# change_leader_portrait = species
+		# }
+	# }
+# }

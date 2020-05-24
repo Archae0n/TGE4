@@ -1,0 +1,182 @@
+###############################
+### RS SHIP AURA COMPONENTS ###
+###############################
+
+#################
+### VARIABLES ###
+#################
+
+@shipAuraRange = 40
+
+######################
+### FRIENDLY AURAS ###
+######################
+
+utility_component_template = {
+	key = "RS_SHIP_AURA_NANOBOT_CLOUD"
+	size = medium
+	icon = "GFX_ship_part_aura_nanobot"
+	icon_frame = 1
+	power = 0
+	
+	size_restriction = { rs_support_cruiser }
+	component_set = "aura_components"
+	
+	friendly_aura = {
+		name = "aura_nanobot_cloud"
+		radius = @shipAuraRange
+		apply_on = ships
+		
+		stack_info = {
+			id = rs_friendly_support_aura_1
+			priority = 20
+		}
+		
+		modifier = {
+			ship_hull_regen_add_static = 0.5
+			ship_armor_regen_add_static = 1.5
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_positive_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 20
+	}
+}
+
+utility_component_template = {
+	key = "RS_SHIP_AURA_SHIELD_RECHARGER"
+	size = medium
+	icon = "GFX_ship_part_aura_shield_recharger"
+	icon_frame = 1
+	power = -195
+	
+	size_restriction = { rs_support_cruiser }
+	component_set = "ship_aura_components"
+	
+	friendly_aura = {
+		name = "aura_shield_recharger"
+		radius = @shipAuraRange
+		apply_on = ships
+		
+		stack_info = {
+			id = rs_friendly_support_aura_2
+			priority = 20
+		}
+		
+		modifier = {
+			ship_shield_regen_add_perc = 0.1
+		} 
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_positive_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 20
+	}
+}
+
+#####################
+### HOSTILE AURAS ###
+#####################
+
+utility_component_template = {
+	key = "RS_SHIP_AURA_SHIELD_DAMPENER"
+	size = medium
+	icon = "GFX_ship_part_aura_shield_dampener"
+	icon_frame = 1
+	power = 0
+	
+	size_restriction = { rs_ea_cruiser }
+	component_set = "aura_components"
+	
+	hostile_aura = {
+		name = "aura_shield_dampener"
+		radius = @shipAuraRange
+		apply_on = ships
+		
+		stack_info = {
+			id = hostile_inhibitor_aura_1
+			priority = 20
+		}
+		
+		modifier = {
+			ship_shield_mult = -0.10
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 20
+	}
+}
+
+utility_component_template = {
+	key = "RS_SHIP_AURA_QUANTUM_DESTABILIZER"
+	size = medium
+	icon = "GFX_ship_part_aura_quantum_destabilizer"
+	icon_frame = 1
+	power = -195
+
+	size_restriction = { rs_ea_cruiser }
+	component_set = "ship_aura_components"
+	
+	hostile_aura = {
+		name = "aura_quantum_destabilizer"
+		radius = @shipAuraRange
+		apply_on = ships
+		
+		stack_info = {
+			id = hostile_inhibitor_aura_2
+			priority = 20
+		}
+		
+		modifier = {
+			ship_fire_rate_mult = -0.05
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity" 
+				dynamic_scale = no
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 20
+	}
+}

@@ -1,0 +1,160 @@
+spriteTypes = {	
+	# planet_view.gui
+	spriteType = {
+		name = "GFX_ui_job_background"
+		texturefile = "gfx/ui_overhaul_qhd/planetview/ui_job_background.dds"
+		noOfFrames = 3
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+	}
+	spriteType = {
+		name = "GFX_ui_planet_building_slot"
+		textureFile = "gfx/ui_overhaul_qhd/planetview/ui_planet_building_slot.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_ui_planet_locked_slot"
+		textureFile = "gfx/ui_overhaul_qhd/planetview/ui_planet_locked_slot.dds"
+	}
+	progressbartype = {
+		name = "GFX_ui_building_progressbar_68_10"
+		color = { 1.0 1.0 1.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/progressbars/queue_progressbar.dds"
+		textureFile2 = "gfx/interface/progressbars/queue_progressbar_empty.dds"
+		size = { x = 68 y = 10 }
+		effectFile = "gfx/FX/progress_startend.lua"
+	}
+	portraitType = {
+		name = "GFX_ui_species_mask"
+		masking_texture = "gfx/ui_overhaul_qhd/masks/species_mask.tga"
+		texturefile = "gfx/interface/main/unselected_portrait.dds"
+		effectFile = "gfx/FX/buttonstate_rendertarget.lua"
+		type = character
+		character = yes
+	}
+	corneredTileSpriteType = {
+		name = "GFX_ui_tile_large_bg_plain"
+		textureFile = "gfx/interface/tiles/tile_large_bg_plain.dds"
+		borderSize = { x = 0 y = 0 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+	}
+	corneredTileSpriteType = {
+		name = "GFX_tiles_frame_notrans"
+		textureFile = "gfx/ui_overhaul_qhd/tiles/black_bg_green_frame_no_trans_tile.dds"
+		borderSize = { x = 4 y = 4 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+	}
+	spriteType = {
+		name = "GFX_ui_button_plus"
+		texturefile = "gfx/ui_overhaul_qhd/buttons/ui_button_plus.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/buttons/button_sort_mask.dds"
+			animationtexturefile = "gfx/interface/fleet_view/standard_button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	spriteType = {
+		name = "GFX_ui_button_minus"
+		texturefile = "gfx/ui_overhaul_qhd/buttons/ui_button_minus.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 3
+		animation = {
+			animationmaskfile = "gfx/interface/buttons/button_sort_mask.dds"
+			animationtexturefile = "gfx/interface/fleet_view/standard_button_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 12.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	# 2.0
+	spriteType = {
+		name = "GFX_ui_planetview_black_frame"
+		textureFile = "gfx/ui_overhaul_qhd/planetview/planetview_black_frame.dds"
+	}
+	spriteType = {
+		name = "GFX_ui_city_frame"
+		textureFile = "gfx/ui_overhaul_qhd/planetview/planet_view_city_frame.dds"
+	}
+	spriteType = {
+		name = "GFX_ui_planet_overlay"
+		textureFile = "gfx/ui_overhaul_qhd/planetview/planet_overlay.dds"
+	}
+	spriteType = {
+		name = "GFX_ui_planet_overlay_governor"
+		textureFile = "gfx/ui_overhaul_qhd/planetview/planet_overlay_governor.dds"
+	}
+	spriteType = {
+		name = "GFX_ui_planet_overlay_trade"
+		textureFile = "gfx/ui_overhaul_qhd/planetview/planet_overlay_trade.dds"
+	}
+	portraitType = {
+		name = "GFX_ui_portrait_planet_mask"
+		masking_texture = "gfx/ui_overhaul_qhd/planetview/planet_view_mask.dds"
+		effectFile = "gfx/FX/buttonstate_rendertarget.lua"
+		type = planet
+		character = no
+	}
+	spriteType = {
+		name = "GFX_planetview_stripes_1"
+		texturefile = "gfx/ui_overhaul_qhd/planetview/planetview_stripes.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		animation = {
+			animationmaskfile = "gfx/ui_overhaul_qhd/planetview/planetview_stripes_mask.dds"
+			animationtexturefile = "gfx/ui_overhaul_qhd/planetview/planetview_stripes_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 160.0
+			animationdelay = 0.0
+			animationblendmode = "overlay" #add, multiply, overlay
+			animationtype = "scrolling"    #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+	}
+	portraitType = {
+		name = "GFX_ui_planet_governor_mask_large"
+		masking_texture = "gfx/ui_overhaul_qhd/masks/planet_governor_mask_large.tga"
+		effectFile = "gfx/FX/buttonstate_rendertarget.lua"
+		type = character
+		character = yes
+	}
+	progressbarType = {
+		name = "GFX_ui_progressbar_thick"
+		color = { 1.0 1.0 1.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/ui_overhaul_qhd/progressbars/progressbar_thick.dds"
+		textureFile2 = "gfx/ui_overhaul_qhd/progressbars/progressbar_thick_empty.dds"
+		size = { x = 160 y = 20 }
+		effectFile = "gfx/FX/progress.lua"
+	}
+	progressbartype = {
+		name = "GFX_ui_progressbar_550"
+		color = { 1.0 1.0 1.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/ui_overhaul_qhd/progressbars/progressbar_long.dds"
+		textureFile2 = "gfx/ui_overhaul_qhd/progressbars/progressbar_long_empty.dds"
+		size = { x = 550 y = 34 }
+		effectFile = "gfx/FX/progress_startend.lua"
+	}
+	# lines
+	spriteType = {
+		name = "GFX_ui_line_center_tiny"
+		textureFile = "gfx/ui_overhaul_qhd/lines/line_center_tiny.dds"
+	}
+}

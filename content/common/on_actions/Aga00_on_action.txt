@@ -1,0 +1,36 @@
+
+########################################
+########################################
+#####                              #####
+#####    Auto Gene Assimilation    #####
+#####                              #####
+#####    on_actions                #####
+#####                              #####
+########################################
+########################################
+
+
+on_monthly_pulse = {
+	events = {
+		AgaEvent.0001
+	}
+}
+
+### Scopes: this = country
+on_tech_increased = {
+	events = {
+		AgaEvent.0002
+	}
+}
+
+
+### Scopes: this = country, from = species (post modification)
+#
+# triggered for for each combination of planet & original species.
+#
+on_modification_complete = {
+	events = {
+		AgaEvent.0110
+	}
+}
+

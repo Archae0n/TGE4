@@ -1,0 +1,616 @@
+
+# All leaders will have a common trait-point value set in defines, which they use to grab traits
+
+# leader_trait = yes - this tags the trait as a leader-trait and not a species-trait
+# initial = no - if set to no, this trait can not be granted to leaders when they are generated
+# leader_class = { admiral scientist }  -- OR  - if not set, it can be given to all leader-types except Rulers
+# requires_traits = { trait_psionic } -- AND - leader-trait can only be randomly given on generation if the leaders species has this trait
+# requires_governments = { despotic_hegemony ai_overlordship } -- OR - leader-trait can only be randomly given on generation if the Empire has this type of government form
+# prerequisites = { tech_psionic_theory } - AND - leader-trait can only be given if the technology specified has been researched by the Empire
+
+##################################
+#  Superior Species Ruler Traits #
+##################################
+
+# Ruler-traits have the same parameters as leader-traits
+# leader_class has to be set to include "ruler" for a ruler to be valid for a trait
+# modifiers granted to rulers are applied to the entire Empire
+
+trait_ruler_dominus_universi = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_dominus_universi.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		edicts_cost_mult = -0.25
+		edict_length_mult = 0.50
+		country_leader_pool_size = 2
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_masterful }
+	opposites = { trait_ruler_dominus_universi2 trait_ruler_charismatic }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_dominus_universi2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_dominus_universi.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		edicts_cost_mult = -0.25
+		edict_length_mult = 0.50
+		country_leader_pool_size = 2
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_masterful }
+	opposites = { trait_ruler_dominus_universi trait_ruler_charismatic }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_exalted = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_exalted.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		country_unity_produces_mult = 0.20
+		pop_happiness = 0.05
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_eusocial }
+	opposites = { trait_ruler_exalted2 leader_trait_reformer trait_ruler_champion_of_the_people }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_exalted2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_exalted.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		country_unity_produces_mult = 0.20
+		pop_happiness = 0.05
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_eusocial }
+	opposites = { trait_ruler_exalted leader_trait_reformer trait_ruler_champion_of_the_people }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_cryptologist = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_cryptologist.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		planet_sensor_range_add = 2
+		ship_sensor_range_add = 2
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_natural_physicists }
+	opposites = { trait_ruler_cryptologist2 }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_cryptologist2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_cryptologist.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		planet_sensor_range_add = 2
+		ship_sensor_range_add = 2
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_natural_physicists }
+	opposites = { trait_ruler_cryptologist }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_spymaster = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_spymaster.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		country_election_influence_cost_mult = -0.25
+		planet_crime_mult = -0.10
+		country_base_influence_produces_add = 1
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_natural_sociologists }
+	opposites = { trait_ruler_spymaster2 trait_ruler_deep_connections }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_spymaster2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_spymaster.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		country_election_influence_cost_mult = -0.25
+		planet_crime_mult = -0.10
+		country_base_influence_produces_add = 1
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_natural_sociologists trait_ruler_deep_connections }
+	opposites = { trait_ruler_spymaster }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_singularitarian = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_singularitarian.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		pop_assembly_speed = 0.15
+		planet_jobs_robotic_produces_mult = 0.05
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_natural_engineers }
+	prerequisites = { tech_robotic_workers }
+	opposites = { trait_ruler_singularitarian2 }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_singularitarian2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_singularitarian.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		pop_assembly_speed = 0.15
+		planet_jobs_robotic_produces_mult = 0.05
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_natural_engineers }
+	prerequisites = { tech_robotic_workers }
+	opposites = { trait_ruler_singularitarian }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_land_of_the_free = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_land_of_the_free.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		planet_jobs_produces_mult = 0.10
+		country_trade_attractiveness = 0.20
+		pop_ethics_shift_speed_mult = 1.00
+		planet_jobs_slave_produces_mult = -0.25
+		planet_crime_mult = 0.25
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_unbound }
+	opposites = { trait_ruler_land_of_the_free2 }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_land_of_the_free2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_land_of_the_free.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		planet_jobs_produces_mult = 0.10
+		country_trade_attractiveness = 0.20
+		pop_ethics_shift_speed_mult = 1.00
+		planet_jobs_slave_produces_mult = -0.25
+		planet_crime_mult = 0.25
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_unbound }
+	opposites = { trait_ruler_land_of_the_free }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_symbol_of_friendship = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_symbol_of_friendship.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		country_trust_cap_add = 20
+		country_trust_growth = 0.50
+		diplomacy_upkeep_mult = -0.20
+		planet_immigration_pull_mult = 0.20
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_charismatic }
+	opposites = { trait_ruler_symbol_of_friendship2 }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_symbol_of_friendship2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_symbol_of_friendship.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		country_trust_cap_add = 20
+		country_trust_growth = 0.50
+		diplomacy_upkeep_mult = -0.20
+		planet_immigration_pull_mult = 0.20
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_charismatic }
+	opposites = { trait_ruler_symbol_of_friendship }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_furious_defense = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_furious_defense.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		army_defense_damage_mult = 0.25
+		shipclass_starbase_damage_mult = 0.25
+		shipclass_military_station_damage_mult = 0.25
+		country_war_exhaustion_mult = -0.25
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_intrepid }
+	opposites = { trait_ruler_furious_defense2 }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_furious_defense2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_furious_defense.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		army_defense_damage_mult = 0.25
+		shipclass_starbase_damage_mult = 0.25
+		shipclass_military_station_damage_mult = 0.25
+		country_war_exhaustion_mult = -0.25
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_intrepid }
+	opposites = { trait_ruler_furious_defense }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_mathematician = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_mathematician.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		num_tech_alternatives_add = 2
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_time_lords }
+	opposites = { trait_ruler_mathematician2 }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_mathematician2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_mathematician.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		num_tech_alternatives_add = 2
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_time_lords }
+	opposites = { trait_ruler_mathematician }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_mentat = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_mentat.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		all_technology_research_speed = 0.05
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_erudite }
+	opposites = { trait_ruler_mentat2 }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_mentat2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_mentat.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		all_technology_research_speed = 0.05
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_erudite }
+	opposites = { trait_ruler_mentat }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_manifest_destiny = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_manifest_destiny.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		ship_colonizer_cost_mult = -0.50
+		planet_colony_development_speed_mult = 0.50
+		colony_start_num_pops_add = 1
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_robust }
+	opposites = { trait_ruler_manifest_destiny2 trait_ruler_frontier_spirit }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_manifest_destiny2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_manifest_destiny.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		ship_colonizer_cost_mult = -0.50
+		planet_colony_development_speed_mult = 0.50
+		colony_start_num_pops_add = 1
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_robust }
+	opposites = { trait_ruler_manifest_destiny trait_ruler_frontier_spirit }
+	ai_weight = { weight = 200 }
+}
+
+trait_robot_ruler_conflict_resolution = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_robot_ruler_conflict_resolution.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		country_trust_cap_add = 20
+		country_trust_growth = 0.50
+		diplomacy_upkeep_mult = -0.20
+		planet_immigration_pull_mult = 0.20
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_robot_emotion_emulators }
+	opposites = { trait_robot_ruler_conflict_resolution2 }
+	ai_weight = { weight = 200 }
+}
+
+trait_robot_ruler_conflict_resolution2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_robot_ruler_conflict_resolution.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		country_trust_cap_add = 20
+		country_trust_growth = 0.50
+		diplomacy_upkeep_mult = -0.20
+		planet_immigration_pull_mult = 0.20
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_robot_emotion_emulators }
+	opposites = { trait_robot_ruler_conflict_resolution }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_megalomaniac = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_megalomaniac.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		megastructure_build_speed_mult = 0.25
+		modify_species_cost_mult = -0.25
+		category_psionics_research_speed_mult = 0.50
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_presapient_natural_intellectuals }
+	opposites = { trait_ruler_megalomaniac2 }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_megalomaniac2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_megalomaniac.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		megastructure_build_speed_mult = 0.25
+		modify_species_cost_mult = -0.25
+		category_psionics_research_speed_mult = 0.50
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_presapient_natural_intellectuals }
+	opposites = { trait_ruler_megalomaniac }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_occams_razor = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_occams_razor.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		ship_fire_rate_mult = 0.15
+		max_rivalries = 2
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_presapient_proles }
+	opposites = { trait_ruler_occams_razor2 }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_occams_razor2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_occams_razor.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		ship_fire_rate_mult = 0.15
+		max_rivalries = 2
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_presapient_proles }
+	opposites = { trait_ruler_occams_razor }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_call_of_the_stars = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_call_of_the_stars.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		starbase_outpost_cost_mult = -0.20
+		country_starbase_influence_cost_mult = -0.20
+		starbase_modules_cost_mult = -0.20
+		starbase_upgrade_cost_mult = -0.20
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_presapient_starborn }
+	opposites = { trait_ruler_call_of_the_stars2 trait_ruler_home_in_the_sky trait_ruler_expansionist }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_call_of_the_stars2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_call_of_the_stars.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		starbase_outpost_cost_mult = -0.20
+		country_starbase_influence_cost_mult = -0.20
+		starbase_modules_cost_mult = -0.20
+		starbase_upgrade_cost_mult = -0.20
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_presapient_starborn }
+	opposites = { trait_ruler_call_of_the_stars trait_ruler_home_in_the_sky trait_ruler_expansionist }
+	ai_weight = { weight = 200 }
+}
+
+trait_ruler_demagogue = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_demagogue.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		pop_factions_influence_produces_mult = 0.50
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	opposites = { trait_ruler_demagogue2 }
+}
+
+trait_ruler_demagogue2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_ruler_demagogue.dds"
+	leader_potential_add = {
+		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
+	}
+	modifier = {
+		pop_factions_influence_produces_mult = 0.50
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	requires_traits = { trait_iconoclasts }
+	opposites = { trait_ruler_demagogue }
+}

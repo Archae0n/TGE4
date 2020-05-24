@@ -1,0 +1,104 @@
+###################
+# Basic Jobs
+###################
+
+scabber = {
+	category = worker
+	is_capped_by_modifier = no
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_crude_huts
+	clothes_texture_index = 2
+	icon = primitive_laborer
+
+	possible = {
+		hidden_trigger = { exists = owner }
+		worker_job_check_trigger = yes
+		owner = {
+			is_gestalt = no
+			is_void_farer = yes
+		}
+		planet = { is_planet_class = pc_habitat }
+	}
+
+	resources = {
+		category = planet_miners
+		produces = {
+			minerals = 0.5
+			energy = 1
+		}
+		produces = {
+			trigger = {
+				planet = { has_building = building_hydroponics_farm }
+			}
+			food = 1
+		}
+		produces = {
+			trigger = {
+				planet = { has_building = building_foundry_1 }
+				NOT = { planet = { has_building = building_foundry_2 } }
+				NOT = { planet = { has_building = building_foundry_3 } }
+			}
+			alloys = 0.1
+		}
+		produces = {
+			trigger = {
+				planet = { has_building = building_foundry_2 }
+				NOT = { planet = { has_building = building_foundry_3 } }
+			}
+			alloys = 0.2
+		}
+		produces = {
+			trigger = {
+				planet = { has_building = building_foundry_3 }
+			}
+			alloys = 0.3
+		}
+		produces = {
+			trigger = {
+				planet = { has_building = building_factory_1 }
+				NOT = { planet = { has_building = building_factory_2 } }
+				NOT = { planet = { has_building = building_factory_3 } }
+			}
+			consumer_goods = 0.1
+		}
+		produces = {
+			trigger = {
+				planet = { has_building = building_factory_2 }
+				NOT = { planet = { has_building = building_factory_3 } }
+			}
+			consumer_goods = 0.2
+		}
+		produces = {
+			trigger = {
+				planet = { has_building = building_factory_3 }
+			}
+			consumer_goods = 0.3
+		}
+		produces = {
+			trigger = {
+				planet = { has_building = building_refinery }
+			}
+			exotic_gases = 0.1
+		}
+		produces = {
+			trigger = {
+				planet = { has_building = building_chemical_plant }
+			}
+			volatile_motes = 0.1
+		}
+		produces = {
+			trigger = {
+				planet = { has_building = building_crystal_plant }
+			}
+			rare_crystals = 0.1
+		}
+	}
+	
+	pop_modifier = {
+		pop_happiness = -0.10
+	}
+	
+	weight = {
+		weight = @special_job_weight
+	}
+}

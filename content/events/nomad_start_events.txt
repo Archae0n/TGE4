@@ -1,0 +1,305 @@
+##################################################################################################################################
+#####Adding traits bonus to eligible nations.
+##################################################################################################################################
+namespace = nomad_start_events
+namespace = marauder_start_events
+namespace = reaver_start_events
+namespace = nomad_tech_give
+namespace = drone_start_events
+namespace = void_farer_communication
+namespace = void_farer_ships
+
+country_event = {
+	id = nomad_start_events.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = { limit = { has_origin = "origin_void_nomads" }
+			give_technology = { message = no tech = "tech_starbase_3" }
+			give_technology = { message = no tech = "tech_habitat_1" }
+			give_technology = { message = no tech = "tech_automated_exploration" }
+			give_technology = { message = no tech = "tech_shields_2" }
+			give_technology = { message = no tech = "tech_fusion_power" }
+			give_technology = { message = no tech = "tech_ship_armor_2" }
+			give_technology = { message = no tech = "tech_thrusters_2" }
+			give_technology = { message = no tech = "tech_sensors_2 " }
+			give_technology = { message = no tech = "tech_wormhole_stabilization" }
+			give_technology = { message = no tech = "tech_void_farer_engineering" }
+			give_technology = { message = no tech = "tech_robotic_workers" }
+			give_technology = { message = no tech = "tech_powered_exoskeletons" }
+			give_technology = { message = no tech = "tech_hydroponics" }
+			set_country_flag = void_nomad
+			set_country_type = void_farer
+			add_resource = { energy = 200 }
+			add_resource = { minerals = 100 }
+			add_resource = { consumer_goods = 100 }
+			add_resource = { alloys = 200 }
+			add_resource = { influence = 100 }
+			add_resource = { food = 100 }
+		}
+	}
+}
+
+planet_event = {
+	id = nomad_start_events.2
+	hide_window = yes
+	title = nomad_start_events.2.name
+	desc = nomad_start_events.2.desc
+	picture = GFX_evt_fleet_neutral
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = { owner = { is_void_farer = yes } }
+			destroy_colony = yes
+			change_pc = pc_barren
+		}
+	}
+}
+
+### Marauder Start events
+
+country_event = {
+	id = marauder_start_events.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = { limit = { has_origin = origin_void_marauders }
+			give_technology = { message = no tech = "tech_starbase_3" }
+			give_technology = { message = no tech = "tech_habitat_1" }
+			give_technology = { message = no tech = "tech_automated_exploration" }
+			give_technology = { message = no tech = "tech_shields_2" }
+			give_technology = { message = no tech = "tech_fusion_power" }
+			give_technology = { message = no tech = "tech_ship_armor_2" }
+			give_technology = { message = no tech = "tech_thrusters_2" }
+			give_technology = { message = no tech = "tech_sensors_2 " } 
+			give_technology = { message = no tech = "tech_wormhole_stabilization" }
+			give_technology = { message = no tech = "tech_void_farer_engineering" }
+			give_technology = { message = no tech = "tech_robotic_workers" }
+			give_technology = { message = no tech = "tech_powered_exoskeletons" }
+			set_country_flag = void_marauders
+			set_country_type = void_farer
+			add_resource = { energy = 200 }
+			add_resource = { minerals = 100 }
+			add_resource = { consumer_goods = 100 }
+			add_resource = { alloys = 200 }
+			add_resource = { influence = 100 }
+			add_resource = { food = 100 }
+		}
+	}
+}
+
+###########################
+#	Reaver Start events
+###########################
+
+country_event = {
+	id = reaver_start_events.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = { limit = { has_origin = origin_void_reavers }
+			give_technology = { message = no tech = "tech_starbase_3" }
+			give_technology = { message = no tech = "tech_habitat_1" }
+			give_technology = { message = no tech = "tech_automated_exploration" }
+			give_technology = { message = no tech = "tech_shields_2" }
+			give_technology = { message = no tech = "tech_fusion_power" }
+			give_technology = { message = no tech = "tech_ship_armor_2" }
+			give_technology = { message = no tech = "tech_thrusters_2" }
+			give_technology = { message = no tech = "tech_sensors_2 " } 
+			give_technology = { message = no tech = "tech_wormhole_stabilization" }
+			give_technology = { message = no tech = "tech_void_farer_engineering" }
+			give_technology = { message = no tech = "tech_robotic_workers" }
+			give_technology = { message = no tech = "tech_powered_exoskeletons" }
+			set_country_flag = void_reavers
+			set_country_type = void_farer
+			add_resource = { energy = 200 }
+			add_resource = { minerals = 100 }
+			add_resource = { consumer_goods = 100 }
+			add_resource = { alloys = 200 }
+			add_resource = { influence = 100 }
+			add_resource = { food = 100 }
+		}
+	}
+}
+
+###########################
+#	Scavenger Start events
+###########################
+
+country_event = {
+	id = drone_start_events.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = { limit = { has_origin = origin_ancient_drones }
+			give_technology = { message = no tech = "tech_starbase_3" }
+			give_technology = { message = no tech = "tech_habitat_1" }
+			give_technology = { message = no tech = "tech_automated_exploration" }
+			give_technology = { message = no tech = "tech_shields_2" }
+			give_technology = { message = no tech = "tech_fusion_power" }
+			give_technology = { message = no tech = "tech_ship_armor_2" }
+			give_technology = { message = no tech = "tech_thrusters_2" }
+			give_technology = { message = no tech = "tech_sensors_2 " } 
+			give_technology = { message = no tech = "tech_wormhole_stabilization" }
+			give_technology = { message = no tech = "tech_void_farer_engineering" }
+			give_technology = { message = no tech = "tech_robotic_workers" }
+			give_technology = { message = no tech = "tech_powered_exoskeletons" }
+			set_country_flag = void_scavenger_bots
+			set_country_type = void_farer
+			add_resource = { energy = 300 }
+			add_resource = { minerals = 100 }
+			add_resource = { alloys = 200 }
+			add_resource = { influence = 100 }
+		}
+	}
+}
+
+### Void Farer Communication Spread
+country_event = {
+	id = void_farer_communication.1
+	title = OK
+	desc = OK
+	
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	trigger = {
+		OR = {
+			is_country_type = void_farer
+		}
+		any_country = {
+			OR = {
+				is_country_type = default
+				is_country_type = fallen_empire
+				is_country_type = awakened_fallen_empire
+				is_country_type = dormant_marauders
+				is_country_type = nomad
+				is_country_type = neutral_faction
+				is_country_type = enclave
+				is_country_type = swarm
+				is_country_type = extradimensional
+				is_country_type = extradimensional_2
+				is_country_type = extradimensional_3
+				is_country_type = ai_empire
+				is_country_type = cybrex_empire
+				is_country_type = tiyanki
+				is_country_type = amoeba
+				is_country_type = crystal
+				is_country_type = drone
+				is_country_type = cloud
+			}
+			NOT = { has_communications = root }	
+			OR = {
+				# if we're both void farer empires, we know of each other
+				is_country_type = void_farer
+				# also contact if we border them
+				any_owned_planet = {
+					is_neighbor_of = root			
+				}
+				# always if we're awakened
+				root = { is_country_type = awakened_fallen_empire }
+			}
+		}
+	}
+	
+	immediate = {
+		random_country = {
+			limit = {
+				OR = {
+					is_country_type = default
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+					is_country_type = dormant_marauders
+					is_country_type = nomad
+					is_country_type = neutral_faction
+					is_country_type = enclave
+					is_country_type = swarm
+					is_country_type = extradimensional
+					is_country_type = extradimensional_2
+					is_country_type = extradimensional_3
+					is_country_type = ai_empire
+					is_country_type = cybrex_empire
+					is_country_type = tiyanki
+					is_country_type = amoeba
+					is_country_type = crystal
+					is_country_type = drone
+					is_country_type = cloud
+				}
+				NOT = { has_communications = root }
+				OR = {
+					AND = {
+						root = { has_ai_personality = fallen_empire_spiritualist }
+						any_owned_planet = {
+							has_modifier = "holy_planet"
+						}
+					}
+					AND = {
+						root = { has_ai_personality = fallen_empire_materialist }
+						OR = {
+							has_technology = tech_sapient_ai
+							has_technology = tech_synthetic_workers
+						}
+						any_system = {
+							distance = {
+								source = root.capital_scope
+								max_distance = 200
+							}
+						}
+					}
+					# also contact if we border them
+					OR = {
+						any_owned_planet = {
+							is_neighbor_of = root
+						}
+						any_owned_fleet = {
+							is_ship_class = shipclass_starbase
+							distance_to_empire = {
+								who = root
+								distance = 75
+							}					
+						}
+					}		
+				}
+			}
+			establish_communications_no_message = root	
+			root = { save_event_target_as = contact_empire }
+			country_event = { id = action.1 }				
+		}
+	}
+}
+
+### Void farer init - add ships
+country_event = {
+	id = void_farer_ships.9
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		#Ark
+		if = {
+			limit = { is_country_type = void_farer }
+			create_fleet = {
+				set_take_point = yes
+				effect = {
+					set_owner = prev
+					while = {
+						count = 1
+						create_ship = {
+							name = random
+							random_existing_design = capital_ark_ship
+						}
+					}
+				}
+			}
+		}
+	}
+}

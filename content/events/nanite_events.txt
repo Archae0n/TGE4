@@ -1,0 +1,185 @@
+############################
+#
+# Nanites Goo Events
+#
+# Written by Henrik Eklund
+#
+############################
+
+namespace = nanite
+
+### Nanites
+
+# Create Nanite Hub
+country_event = {
+	id = nanite.499
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = { has_civic = civic_ancient_drones }
+	
+	immediate = {
+		create_country = {
+			name = "NAME_nanite_nexus"
+			type = nanite_hub
+			flag = {
+				icon= {
+					category = "special"
+					file = "gray_goo.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "sinus.dds"
+				}
+				colors={
+					"grey"
+					"dark_grey"
+					"null"
+					"null"
+				}
+				set_country_flag = nanite_hub_1
+			}
+		}
+		last_created_country = {
+			establish_communications_no_message = root
+		}
+	}
+}
+
+# Main Menu (Initial)
+country_event = {
+	id = nanite.500
+	title = "nanite.500.title"
+	desc = "nanite.500.a.desc"
+	desc = "nanite.500.b.desc"
+	desc = "nanite.500.c.desc"
+	desc = "nanite.500.d.desc"
+	
+	force_open = yes
+	diplomatic = yes
+	is_triggered_only = yes
+	
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	immediate = {
+		set_country_flag = nanite_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = nanite_diplomacy_engaged }
+	}
+	
+	trigger = {
+		from = {
+			is_country_type = nanite_hub
+		}
+	}
+	
+	option = { # Leader
+		name = nanite.500.a
+		response_text = nanite.500.a.response
+		hidden_effect = {
+			create_nanite_leader = yes
+		}
+	}
+	option = { # Arkship
+		name = nanite.500.b
+		response_text = nanite.500.b.response
+		custom_tooltip = nanite_ark_ship_tool_tip
+		NOT = {
+			has_ship_flag = nanite_ark_ship
+		}
+		hidden_effect = {
+			create_fleet = {
+				name = "NAME_Tempest_Fleet"
+				effect = {
+					set_owner = root
+					create_nanite_ark_ship = yes
+					set_location = root.capital_scope
+				}
+				settings = {
+					can_upgrade = no
+					can_disband = no
+					can_change_composition = no
+					uses_naval_capacity = no
+					spawn_debris = no
+				}
+			}
+		}
+	}
+	option = { # Mothership
+		name = nanite.500.b.a
+		response_text = nanite.500.b.a.response
+		custom_tooltip = mother_ship_hire
+		has_ship_flag = nanite_ark_ship
+		hidden_effect = {
+			create_fleet = {
+				name = "NAME_Tempest_Fleet"
+				effect = {
+					set_owner = root
+					create_nanite_warship = yes
+					set_location = root.capital_scope
+					set_fleet_flag = nanite_mother_ship
+				}
+				settings = { 
+					can_upgrade = no
+					can_disband = no
+					can_change_composition = no
+					uses_naval_capacity = no
+					spawn_debris = no
+				}
+			}
+		}
+	}
+	option = { # Army
+		name = nanite.500.c
+		response_text = nanite.500.c.response
+		hidden_effect = {
+			create_nanite_army = yes
+		}
+	}
+	option = {
+		name = nanite.500.d
+		default_hide_option = yes
+	}
+}
+
+# Mothership creates ships
+fleet_event = {
+	id = nanite.106
+	hide_window = yes
+	
+	trigger = {
+		has_fleet_flag = nanite_mother_ship
+		num_ships < 30
+		any_ship = { is_ship_size = graygoo_mothership }
+	}
+	
+	mean_time_to_happen = {
+		months = 2
+	}
+		
+	immediate = {
+		random_list = {
+			5 = {
+				create_ship = {
+					name = random
+					design = "NAME_Nanite_MotherShip"
+					graphical_culture = "swarm_01"
+					upgradable = no
+				}
+			}
+			95 = {
+				create_ship = {
+					name = random
+					design = "NAME_NanitE_Interdictor"
+					graphical_culture = "swarm_01"
+					upgradable = no
+				}
+			}
+		}
+	}
+}

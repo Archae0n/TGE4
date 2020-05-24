@@ -1,0 +1,10 @@
+﻿l_english:
+
+ war_goal_wg_stop_raiding: "Free our people"
+ war_goal_wg_stop_raiding_desc: "Free our people they may have abducted, and stop them from raiding us again for a time.  In the event of a Status Quo peace, our people on planets we have occupied will be returned.  We cannot take space with this war goal."
+ wg_stop_raiding_status_quo: "All of [This.GetName]'s pops abducted by [From.GetName] will be resettled from the planets [This.GetName] currently occupies, and sent back to the pop's original planet, or back to [This.GetName]'s capital if the original planet isn't available.'"
+ wg_stop_raiding_accept: "[This.GetName]'s pops abducted by [From.GetName] will all be resettled back to the pop's original planet, or back to [This.GetName]'s capital if the original planet isn't available.'"
+
+ casus_belli_cb_stop_raiding: "Free our people"
+
+ war_goal_wg_plunder_desc:0 "War is waged to raid and plunder the enemy.  Our claims are not pressed and we cannot take space with this war goal."

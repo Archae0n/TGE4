@@ -1,0 +1,68 @@
+#######################################
+### RS ARTHROPOID HEAVY DREADNOUGHT ###
+#######################################
+
+@battleship_scale = 12.0
+
+#############
+### FRAME ###
+#############
+
+entity = {
+	name = "terran_01_juggernaut_entity"
+	pdxmesh = "terran_01_battleship_frame_mesh"
+	
+	scale = 1.0
+		
+	game_data = {
+		size = @battleship_scale
+		emissive_recolor_crunch = 3.0
+	}
+}
+
+###########
+### BOW ###
+###########
+
+entity = {
+	name = "terran_01_juggernaut_bow_entity"
+	pdxmesh = ""
+
+}
+
+############
+### MID1 ###
+############
+
+entity = {
+	name = "terran_01_juggernaut_mid_entity"
+	pdxmesh = "terran_01_battleship_mesh"
+	
+
+}
+
+############
+### MID2 ###
+############
+
+entity = {
+	name = "terran_01_juggernaut_mid2_entity"
+	pdxmesh = ""
+	
+
+}
+
+
+
+#############
+### STERN ###
+#############
+
+entity = {
+	name = "terran_01_juggernaut_stren_entity"
+	pdxmesh = ""
+
+}
+
+
+}

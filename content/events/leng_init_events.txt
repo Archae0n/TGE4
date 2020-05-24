@@ -1,0 +1,12 @@
+namespace = leng_init_event
+
+event = {
+    id = leng_init_event.1
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    immediate = {
+        set_global_flag = life_engineering_installed
+    }
+}

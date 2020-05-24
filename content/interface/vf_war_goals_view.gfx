@@ -1,0 +1,46 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_wg_marauder_plunder"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_war.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_wg_nomad_humiliation"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_war.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_wg_marauder_khan"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_war.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_wg_end_threat_marauder_khan"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_war.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_wg_marauder_subjugation"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_isvassal.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_nomad_force_ideology"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_integrating.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_wg_end_threat_wild_hunt"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_war.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_void_farer_conquest"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_war.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_reaver_plunder"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_war.dds"
+	}
+	spriteType = {
+		name = "GFX_wg_wild_hunt"
+		texturefile = "gfx/interface/icons/diplomacy/diplomacy_war.dds"
+	}
+}

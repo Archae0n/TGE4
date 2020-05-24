@@ -1,0 +1,61 @@
+###################################
+### RS HEAVY DREADNOUGHT TYPE C ###
+###################################
+
+rs_heavy_dreadnought_type_c = {
+
+	formation_priority = 45.00
+	max_speed = 85.000
+	acceleration = 0.140
+	rotation_speed = 0.110
+	collision_radius = 6.000
+
+	modifier = { 
+		ship_evasion_add = 5
+		ship_piracy_suppression_add = 4
+	}
+
+	max_hitpoints = 4600
+	size_multiplier = 12
+	fleet_slot_size = 6
+	section_slots = { "bow" = { locator = "part1" } "mid1" = { locator = "part2" } "mid2" = { locator = "part3" } "stern" = { locator = "part4" } }
+	num_target_locators = 4
+	is_space_station = no
+	icon_frame = 5
+	base_buildtime = 720
+	can_have_federation_design = yes
+	enable_default_design = yes
+	
+	prerequisites = { "tech_titans" "tech_molluscoid_engineering" }
+
+	default_behavior = line
+	combat_disengage_chance = 1.00
+	
+	class = shipclass_military
+	construction_type = starbase_shipyard
+	required_component_set = "power_core"
+	required_component_set = "aux_power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "sensor_components"
+	required_component_set = "combat_computers"
+
+	##########################################
+	### 3RD-PARTY/LEGACY COMPONENT SUPPORT ###
+	##########################################
+	required_component_set = "c_ship_crew"				# built-in support for Guilli's Ship Components 2.3 Mod
+	required_component_set = "ai_behaviour"				# built-in support for Advanced Ship Behaviour Mod
+	required_component_set = "powerstation_components" 		# built-in support for Ship Power Stations mod
+
+	resources = {
+		category = ships
+		upkeep = {
+			energy = @battleship_upkeep_energy
+			alloys = @battleship_upkeep_alloys
+		}
+	}
+
+	min_upgrade_cost = {
+		alloys = 10
+	}
+}

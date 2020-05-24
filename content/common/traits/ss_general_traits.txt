@@ -1,0 +1,133 @@
+
+# All leaders will have a common trait-point value set in defines, which they use to grab traits
+
+# leader_trait = yes - this tags the trait as a leader-trait and not a species-trait
+# initial = no - if set to no, this trait can not be granted to leaders when they are generated
+# leader_class = { admiral scientist }  -- OR  - if not set, it can be given to all leader-types except Rulers
+# requires_traits = { trait_psionic } -- AND - leader-trait can only be randomly given on generation if the leaders species has this trait
+# requires_governments = { despotic_hegemony ai_overlordship } -- OR - leader-trait can only be randomly given on generation if the Empire has this type of government form
+# prerequisites = { tech_psionic_theory } - AND - leader-trait can only be given if the technology specified has been researched by the Empire
+
+###################################
+# Superior Species General Traits #
+###################################
+trait_general_blitz = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_general_blitz.dds"
+	modifier = {
+		army_damage_mult = 0.75
+		army_morale_damage_mult = 0.75
+		army_collateral_damage_mult = 0.50
+		army_health = -0.50
+		army_morale = -0.50
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	requires_traits = { trait_time_lords }
+	ai_weight = { weight = 500 }
+}
+
+trait_general_star_paladins = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_general_star_paladins.dds"
+	modifier = {
+		army_morale = 0.25
+		army_collateral_damage_mult = -0.75
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	requires_traits = { trait_very_strong }
+	opposites = { trait_general_star_paladins2 }
+	ai_weight = { weight = 500 }
+}
+
+trait_general_star_paladins2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_general_star_paladins.dds"
+	modifier = {
+		army_morale = 0.25
+		army_collateral_damage_mult = -0.75
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	requires_traits = { trait_presapient_proles }
+	opposites = { trait_general_star_paladins }
+	ai_weight = { weight = 500 }
+}
+
+trait_general_apocalypse = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_general_apocalypse.dds"
+	modifier = {
+		army_damage_mult = 0.33
+		army_collateral_damage_mult = 1.00
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	requires_traits = { trait_survivor }
+	opposites = { trait_general_apocalypse2 }
+	ai_weight = { weight = 500 }
+}
+
+trait_general_apocalypse2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_general_apocalypse.dds"
+	modifier = {
+		army_damage_mult = 0.33
+		army_collateral_damage_mult = 1.00
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	requires_traits = { trait_presapient_irradiated }
+	opposites = { trait_general_apocalypse }
+	ai_weight = { weight = 500 }
+}
+
+trait_robot_general_ace_unit = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_robot_general_ace_unit.dds"
+	modifier = {
+		army_damage_mult = 0.25
+		army_morale_damage_mult = 0.25
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	requires_traits = { trait_robot_mechas }
+	ai_weight = { weight = 500 }
+}
+
+trait_robot_general_protective = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_robot_general_protective.dds"
+	modifier = {
+		army_morale = 0.25
+		army_disengage_chance_mult = 0.75
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	requires_traits = { trait_robot_loyalty_circuits }
+	opposites = { trait_robot_general_protective2 }
+	ai_weight = { weight = 500 }
+}
+
+trait_robot_general_protective2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_robot_general_protective.dds"
+	modifier = {
+		army_morale = 0.25
+		army_disengage_chance_mult = 0.75
+	}
+	leader_trait = { general }
+	leader_class = { general }
+	requires_traits = { trait_robot_loyalty_circuits }
+	opposites = { trait_robot_general_protective }
+	ai_weight = { weight = 500 }
+}

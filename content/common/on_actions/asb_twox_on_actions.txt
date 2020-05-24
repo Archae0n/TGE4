@@ -1,0 +1,24 @@
+on_game_start = {
+	events = {
+	}
+}
+
+on_yearly_pulse = {
+	events = {
+	}
+}
+
+on_monthly_pulse = {
+	events = {
+	}
+}
+
+on_ship_enabled = {
+	events = {
+	}
+}
+
+on_ship_built = {
+	events = {
+	}
+}

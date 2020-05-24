@@ -1,0 +1,72 @@
+##########################################
+# Superior Species Genetic Memory Traits #
+##########################################
+
+trait_general_genetic_savant = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_leader_genetic_savant.dds"
+	modifier = {
+		army_damage_mult = 0.05
+		army_disengage_chance_mult = 0.15
+	}
+	leader_class = { general }
+	leader_trait = { general }
+	initial = no
+	randomized = no
+}
+
+trait_admiral_genetic_savant = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_leader_genetic_savant.dds"
+	modifier = {
+		ship_fire_rate_mult = 0.05
+		ship_disengage_chance_mult = 0.15
+	}
+	leader_trait = { admiral }
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
+
+trait_scientist_genetic_savant = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_leader_genetic_savant.dds"
+	modifier = {
+		all_technology_research_speed = 0.05
+		ship_anomaly_generation_chance_mult = 0.25
+	}
+	leader_trait = { scientist }
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+}
+
+trait_governor_genetic_savant = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_leader_genetic_savant.dds"
+	modifier = {
+		planet_pops_upkeep_mult = -0.10
+		planet_amenities_add = 10
+	}
+	leader_trait = { governor }
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+
+trait_ruler_genetic_savant = {
+	cost = 0
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/trait_leader_genetic_savant.dds"
+	modifier = {
+		empire_size_penalty_mult = -0.15
+	}
+	leader_trait = { ruler }
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+}

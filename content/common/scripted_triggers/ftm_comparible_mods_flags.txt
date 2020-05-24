@@ -1,0 +1,9 @@
+### ГЛОБАЛ ФЛАГИ МОДОВ, ДОБАВЛЯЮЩИХ НОВЫЕ ТИПЫ КОРАБЛЕЙ
+
+# Корветы и похожие размеры
+ftm_comparible_mods_flags = {
+	OR = {
+		has_global_flag = has_nsc_active
+		# your global_flag must be here!
+	}
+}

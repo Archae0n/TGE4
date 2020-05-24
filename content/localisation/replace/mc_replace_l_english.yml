@@ -1,0 +1,7 @@
+﻿l_english:
+ ####################################
+ # Meaningful Crime Localisation
+ ####################################
+ civic_tooltip_criminal_heritage_effects:2 "Cannot form §YCommercial Pacts§!\nCan build §YBranch Offices§! on the planet of any regular empire they have no war or active truce with\nCrime on §YBranch Office§! Planets increases Branch Office Value\n§YBranch Office Cost:§! §G-30%§!\nCan build special Crime-increasing £building£ §Y$BRANCH_OFFICE_BUILDINGS$§!"
+ civic_tooltip_police_state_effects:1 "§Y$MOD_PLANET_STABILITY_ADD$§! increased by §G+5§!\n£job_enforcer£ §Y$job_enforcer_plural$§! produce an additional §G1§! £unity£ §YUnity§! and §G-10§! £crime£ §YCrime Suppression§!\nCannot make §YCrime Lord Deals§!"
+ 

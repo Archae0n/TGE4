@@ -1,0 +1,396 @@
+	#  general flags
+	#  sge_all_female
+	#  sge_female_governor_only
+	#  sge_female_admiral_only
+	#  sge_female_scientist_only
+	#  sge_female_general_only
+	#  sge_all_male
+	#  sge_male_governor_only
+	#  sge_male_admiral_only
+	#  sge_male_scientist_only
+	#  sge_male_general_only
+	#  sge_female_ruler_only
+	#  sge_male_ruler_only
+	#  sge_ruler_gender_alternates
+	
+	#  temp flags
+	#  sge_all_female_temp
+	#  sge_female_governor_only_temp
+	#  sge_female_admiral_only_temp
+	#  sge_female_scientist_only_temp
+	#  sge_female_general_only_temp
+	#  sge_all_male_temp
+	#  sge_male_governor_only_temp
+	#  sge_male_admiral_only_temp
+	#  sge_male_scientist_only_temp
+	#  sge_male_general_only_temp
+	#  sge_female_ruler_only_temp
+	#  sge_male_ruler_only_temp
+	#  sge_ruler_gender_alternates_temp
+
+
+
+remove_temp_flags = {
+	remove_country_flag = sge_all_female_temp
+	remove_country_flag = sge_female_governor_only_temp
+	remove_country_flag = sge_female_admiral_only_temp
+	remove_country_flag = sge_female_scientist_only_temp
+	remove_country_flag = sge_female_general_only_temp
+	remove_country_flag = sge_all_male_temp
+	remove_country_flag = sge_male_governor_only_temp
+	remove_country_flag = sge_male_admiral_only_temp
+	remove_country_flag = sge_male_scientist_only_temp
+	remove_country_flag = sge_male_general_only_temp
+	
+	remove_country_flag = sge_female_ruler_only_temp
+	remove_country_flag = sge_male_ruler_only_temp
+	remove_country_flag = sge_ruler_gender_alternates_temp
+}
+
+set_temp_flags = {
+	if = {
+		limit = {
+			has_country_flag = sge_all_female
+		}
+		set_country_flag = sge_all_female_temp
+	}
+	else = {
+		remove_country_flag = sge_all_female_temp
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_female_governor_only
+		}
+		set_country_flag = sge_female_governor_only_temp
+	}
+	else = {
+		remove_country_flag = sge_female_governor_only_temp
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_female_admiral_only
+		}
+		set_country_flag = sge_female_admiral_only_temp
+	}
+	else = {
+		remove_country_flag = sge_female_admiral_only_temp
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_female_scientist_only
+		}
+		set_country_flag = sge_female_scientist_only_temp
+	}
+	else = {
+		remove_country_flag = sge_female_scientist_only_temp
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_female_general_only
+		}
+		set_country_flag = sge_female_general_only_temp
+	}
+	else = {
+		remove_country_flag = sge_female_general_only_temp
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_all_male
+		}
+		set_country_flag = sge_all_male_temp
+	}
+	else = {
+		remove_country_flag = sge_all_male_temp
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_male_governor_only
+		}
+		set_country_flag = sge_male_governor_only_temp
+	}
+	else = {
+		remove_country_flag = sge_male_governor_only_temp
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_male_admiral_only
+		}
+		set_country_flag = sge_male_admiral_only_temp
+	}
+	else = {
+		remove_country_flag = sge_male_admiral_only_temp
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_male_scientist_only
+		}
+		set_country_flag = sge_male_scientist_only_temp
+	}
+	else = {
+		remove_country_flag = sge_male_scientist_only_temp
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_male_general_only
+		}
+		set_country_flag = sge_male_general_only_temp
+	}
+	else = {
+		remove_country_flag = sge_male_general_only_temp
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_female_ruler_only
+		}
+		set_country_flag = sge_female_ruler_only_temp
+	}
+	else = {
+		remove_country_flag = sge_female_ruler_only_temp
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_male_ruler_only
+		}
+		set_country_flag = sge_male_ruler_only_temp
+	}
+	else = {
+		remove_country_flag = sge_male_ruler_only_temp
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_ruler_gender_alternates
+		}
+		set_country_flag = sge_ruler_gender_alternates_temp
+	}
+	else = {
+		remove_country_flag = sge_ruler_gender_alternates_temp
+	}
+}
+
+set_non_temp_flags = {
+	if = {
+		limit = {
+			has_country_flag = sge_all_female_temp
+		}
+		set_country_flag = sge_all_female
+	}
+	else = {
+		remove_country_flag = sge_all_female
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_female_governor_only_temp
+		}
+		set_country_flag = sge_female_governor_only
+	}
+	else = {
+		remove_country_flag = sge_female_governor_only
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_female_admiral_only_temp
+		}
+		set_country_flag = sge_female_admiral_only
+	}
+	else = {
+		remove_country_flag = sge_female_admiral_only
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_female_scientist_only_temp
+		}
+		set_country_flag = sge_female_scientist_only
+	}
+	else = {
+		remove_country_flag = sge_female_scientist_only
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_female_general_only_temp
+		}
+		set_country_flag = sge_female_general_only
+	}
+	else = {
+		remove_country_flag = sge_female_general_only
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_all_male_temp
+		}
+		set_country_flag = sge_all_male
+	}
+	else = {
+		remove_country_flag = sge_all_male
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_male_governor_only_temp
+		}
+		set_country_flag = sge_male_governor_only
+	}
+	else = {
+		remove_country_flag = sge_male_governor_only
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_male_admiral_only_temp
+		}
+		set_country_flag = sge_male_admiral_only
+	}
+	else = {
+		remove_country_flag = sge_male_admiral_only
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_male_scientist_only_temp
+		}
+		set_country_flag = sge_male_scientist_only
+	}
+	else = {
+		remove_country_flag = sge_male_scientist_only
+	}
+
+	if = {
+		limit = {
+			has_country_flag = sge_male_general_only_temp
+		}
+		set_country_flag = sge_male_general_only
+	}
+	else = {
+		remove_country_flag = sge_male_general_only
+	}
+
+	if = {
+		limit = {
+			has_country_flag = sge_female_ruler_only_temp
+		}
+		set_country_flag = sge_female_ruler_only
+	}
+	else = {
+		remove_country_flag = sge_female_ruler_only
+	}
+	
+	if = {
+		limit = {
+			has_country_flag = sge_male_ruler_only_temp
+		}
+		set_country_flag = sge_male_ruler_only
+	}
+	else = {
+		remove_country_flag = sge_male_ruler_only
+	}
+
+	if = {
+		limit = {
+			has_country_flag = sge_ruler_gender_alternates_temp
+		}
+		set_country_flag = sge_ruler_gender_alternates
+		if = {
+			limit = {
+				exists = ruler
+				ruler = {gender = female}
+			}
+				set_country_flag = sge_next_female
+				remove_country_flag = sge_next_male
+		}
+		else = {#if the ruler doesn't exists then set next_male as default
+			set_country_flag = sge_next_male
+			remove_country_flag = sge_next_female
+		}
+	}
+	else = {
+		remove_country_flag = sge_ruler_gender_alternates
+		remove_country_flag = sge_next_female
+		remove_country_flag = sge_next_male
+	}
+}
+
+remove_all_flags = {
+	#temp
+	remove_country_flag = sge_all_female_temp
+	remove_country_flag = sge_female_governor_only_temp
+	remove_country_flag = sge_female_admiral_only_temp
+	remove_country_flag = sge_female_scientist_only_temp
+	remove_country_flag = sge_female_general_only_temp
+	remove_country_flag = sge_all_male_temp
+	remove_country_flag = sge_male_governor_only_temp
+	remove_country_flag = sge_male_admiral_only_temp
+	remove_country_flag = sge_male_scientist_only_temp
+	remove_country_flag = sge_male_general_only_temp
+	remove_country_flag = sge_female_ruler_only_temp
+	remove_country_flag = sge_male_ruler_only_temp
+	remove_country_flag = sge_ruler_gender_alternates_temp
+	
+	#general
+	remove_country_flag = male_menu
+	remove_country_flag = hide_sge_edict
+	remove_country_flag = sge_collapse_option
+	
+	remove_country_flag = sge_all_female
+	remove_country_flag = sge_female_governor_only
+	remove_country_flag = sge_female_admiral_only
+	remove_country_flag = sge_female_scientist_only
+	remove_country_flag = sge_female_general_only
+	remove_country_flag = sge_all_male
+	remove_country_flag = sge_male_governor_only
+	remove_country_flag = sge_male_admiral_only
+	remove_country_flag = sge_male_scientist_only
+	remove_country_flag = sge_male_general_only
+	remove_country_flag = sge_female_ruler_only
+	remove_country_flag = sge_male_ruler_only
+	remove_country_flag = sge_ruler_gender_alternates
+	remove_country_flag = sge_next_female
+	remove_country_flag = sge_next_male
+}
+
+# sge_refresh_gui = {
+	# # create_leader = {
+		# # name = "The issue that forces you to reload your savegame"
+		# # species = this
+		# # gender = random
+		# # type = governor
+		# # skill = 10
+		# # set_age = 1000
+	# # }
+	# random_owned_leader = {
+		# limit = {NOT = { leader_class = ruler}}
+		# owner = {
+			# log = "start cloning"
+			# clone_leader = {
+				# target = prev
+				# effect = {
+					# log = "Clone[This.GetName]"				
+					# set_name = "sge_clone"
+					# set_leader_flag = sge_clone
+				# }
+			# }
+		# }
+	# }
+	# random_owned_leader = {
+		# limit = {has_leader_flag = sge_clone}
+		# # log = "kill [This.GetName]"
+		# #kill_leader = {show_notification = yes }
+		# exile_leader_as = sge_clone_exiled
+	# }
+# }
+

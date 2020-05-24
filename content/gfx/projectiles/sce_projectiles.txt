@@ -1,0 +1,79 @@
+# SCE TORPEDOS
+
+projectile_gfx_ballistic = {
+	#common for all types of projectiles
+	name = "small_torpedo_sce"
+	color = { 1.0 	0.55 	1.0 	1.0 }
+	hit_entity = "missile_small_hit_entity"
+	shield_hit_entity = "missile_small_shield_hit_entity"
+	muzzle_flash_entity = "missile_small_muzzle_entity"
+	
+	shield_impact = {
+		size = small
+		delay = 0.0
+	}
+	
+	#ballistic specific
+	entity = missile_sce_entity
+	speed = 510.0			#preferred speed of the projectile
+	max_duration = 1.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
+}
+
+# SCE PLASMA
+
+projectile_gfx_ballistic = {
+	#common for all types of projectiles
+	name = "plasma_thrower_sce"
+	color = { 1.0	1.0		1.0		1.0 }
+	hit_entity = "plasma_thrower_small_hit_entity"
+	shield_hit_entity = "plasma_thrower_small_shield_hit_entity"
+	muzzle_flash_entity = "plasma_thrower_small_muzzle_flash_entity"
+	
+	#ballistic specific
+	entity = "plasma_thrower_small_entity"
+	speed = 350.0			#preferred speed of the projectile
+	max_duration = 3.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
+	
+	shield_impact = {
+		size = small
+		delay = 0.0
+	}
+}
+
+projectile_gfx_ballistic = {
+	#common for all types of projectiles
+	name = "plasma_accelerator_sce"
+	color = { 1.0	1.0		1.0		1.0 }
+	hit_entity = "plasma_accelerator_small_hit_entity"
+	shield_hit_entity = "plasma_accelerator_small_shield_hit_entity"
+	muzzle_flash_entity = "plasma_accelerator_small_muzzle_flash_entity"
+	
+	#ballistic specific
+	entity = "plasma_accelerator_small_entity"
+	speed = 350.0			#preferred speed of the projectile
+	max_duration = 3.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
+	
+	shield_impact = {
+		size = small
+		delay = 0.0
+	}
+}
+
+projectile_gfx_ballistic = {
+	#common for all types of projectiles
+	name = "plasma_cannon_sce"
+	color = { 1.0	1.0		1.0		1.0 }
+	hit_entity = "plasma_cannon_small_hit_entity"
+	shield_hit_entity = "plasma_cannon_small_shield_hit_entity"
+	muzzle_flash_entity = "plasma_cannon_small_muzzle_flash_entity"
+	
+	#ballistic specific
+	entity = "plasma_cannon_small_entity"
+	speed = 350.0			#preferred speed of the projectile
+	max_duration = 3.0		#Speed of projectile might be scaled up in order to guarantee reaching the target within <max_duration> seconds
+	
+	shield_impact = {
+		size = small
+		delay = 0.0
+	}
+}

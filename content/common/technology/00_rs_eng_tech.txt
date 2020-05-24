@@ -1,0 +1,1309 @@
+##################################
+### RS CUSTOM ENGINEERING TECH ###
+##################################
+
+####################
+### SHIP CLASSES ###
+####################
+
+tech_cruisers = {
+	cost = @tier3cost1
+	area = engineering
+	tier = 3
+	category = { voidcraft }	
+	prerequisites = { "tech_destroyers" }
+	weight = @tier3weight1
+	
+	gateway = ship
+		
+	prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_CRUISER_CONSTRUCTION_TITLE"
+			desc = "TECH_UNLOCK_CRUISER_CONSTRUCTION_DESC"
+		}
+		custom = {
+			title = "TECH_UNLOCK_RS_AUXILIARY_CRUISERS_TITLE"
+			desc = "TECH_UNLOCK_RS_AUXILIARY_CRUISERS_DESC"
+		}
+	}
+}
+
+tech_rs_battlecruisers = {
+	cost = @tier3cost1
+	area = engineering
+	tier = 3
+	category = { voidcraft }	
+	prerequisites = { "tech_cruisers" }
+	weight = @tier3weight1
+	
+	gateway = ship
+}
+
+tech_battleships = {
+	cost = @tier4cost1
+	area = engineering
+	tier = 4
+	category = { voidcraft }	
+	prerequisites = { "tech_rs_battlecruisers" }
+	weight = @tier4weight1
+		
+	prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_BATTLESHIP_CONSTRUCTION_TITLE"
+			desc = "TECH_UNLOCK_BATTLESHIP_CONSTRUCTION_DESC"
+		}
+		custom = {
+			title = "TECH_UNLOCK_RS_HEAVY_DREADNOUGHT_TITLE"
+			desc = "TECH_UNLOCK_RS_HEAVY_DREADNOUGHT_DESC"
+		}
+	}
+}
+
+tech_rs_dreadnoughts = {
+	cost = @tier4cost1
+	area = engineering
+	tier = 4
+	category = { voidcraft }	
+	prerequisites = { "tech_battleships" }
+	weight = @tier4weight1
+	is_reverse_engineerable = no
+	
+	prereqfor_desc = {
+		
+		ship = {
+			title = "TECH_UNLOCK_RS_DREADNOUGHT_TITLE"
+			desc = "TECH_UNLOCK_RS_DREADNOUGHT_DESC"
+		}
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+			
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_titans = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	category = { voidcraft }
+	prerequisites = { "tech_rs_dreadnoughts" }
+	weight = @tier5weight1
+	ai_update_type = military
+
+	modifier = {
+		country_command_limit_add = 10
+	}
+
+	potential = {
+		host_has_dlc = "Apocalypse"
+	}
+
+	## unlock titans
+	prereqfor_desc = {
+		hide_prereq_for_desc = component
+		ship = {
+			title = "TECH_UNLOCK_TITAN_CONSTRUCTION_TITLE"
+			desc = "TECH_UNLOCK_TITAN_CONSTRUCTION_DESC"
+		}
+		custom = {
+			title = "TECH_UNLOCK_RS_HEAVY_DREADNOUGHT_TITLE"
+			desc = "TECH_UNLOCK_RS_HEAVY_DREADNOUGHT_DESC"
+		}
+		custom = {
+			title = "TECH_UNLOCK_ION_CANNON_CONSTRUCTION_TITLE"
+			desc = "TECH_UNLOCK_ION_CANNON_CONSTRUCTION_DESC"
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0.1
+			NOT = { years_passed > 100 }
+		}
+		modifier = {
+			factor = 10
+			any_neighbor_country = {
+				has_technology = tech_titans
+			}
+		}
+		modifier = {
+			factor = 2
+			years_passed > 130
+		}
+		modifier = {
+			factor = 3
+			years_passed > 140
+		}
+		modifier = {
+			factor = 4
+			years_passed > 150
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 100 #higher factor due to titan hull
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+#################################
+### SUB-CAPTIAL SHIP UPGRADES ###
+#################################
+
+tech_cruiser_build_speed = {
+	cost = @tier3cost2
+	area = engineering
+	tier = 3
+	category = { voidcraft }
+	prerequisites = { "tech_cruisers" }
+	weight = @tier3weight2
+			
+	modifier = {
+		shipsize_cruiser_build_speed_mult = 0.25
+		ship_cruiser_cost_mult = -0.05
+		shipsize_rs_support_cruiser_build_speed_mult = 0.20
+		#ship_rs_support_cruiser_cost_mult = -0.04
+		shipsize_rs_ea_cruiser_build_speed_mult = 0.20
+		#ship_rs_ea_cruiser_cost_mult = -0.04
+		shipsize_rs_battlecruiser_build_speed_mult = 0.15
+ 		#ship_rs_battlecruiser_cost_mult = -0.04
+	}
+}
+
+tech_cruiser_hull_1 = {
+	cost = @tier3cost3
+	area = engineering
+	tier = 3
+	category = { voidcraft }
+	prerequisites = { "tech_cruisers" }
+	weight = @tier3weight3
+	
+	modifier = {
+		shipsize_cruiser_hull_add = 500
+		shipsize_rs_support_cruiser_hull_add = 250
+		shipsize_rs_ea_cruiser_hull_add = 250
+		shipsize_rs_battlecruiser_hull_add = 500
+	}
+}
+
+tech_cruiser_hull_2 = {
+	cost = @tier4cost1
+	area = engineering
+	tier = 4
+	is_rare = yes
+	category = { voidcraft }
+	prerequisites = { "tech_cruiser_hull_1" }
+	weight = @tier4weight1
+	
+	modifier = {
+		shipsize_cruiser_hull_add = 500
+		shipsize_rs_support_cruiser_hull_add = 250
+		shipsize_rs_ea_cruiser_hull_add = 250
+		shipsize_rs_battlecruiser_hull_add = 500
+	}
+}
+
+############################
+### DN/HDN SHIP UPGRADES ###
+############################
+
+####################################
+### STANDARDIZED DN/HDN PATTERNS ###
+####################################
+
+tech_dn_hdn_type_a_build_speed = {
+	cost = @tier4cost2
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_arthropoid_engineering" }
+	weight = @tier4weight2
+
+	modifier = {
+		shipsize_rs_dreadnought_build_speed_mult = 0.25
+		#ship_rs_dreadnought_cost_mult = -0.05
+		shipsize_rs_heavy_dreadnought_type_a_build_speed_mult = 0.20
+		#ship_rs_heavy_dreadnought_type_a_cost_mult = -0.04
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+			
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_b_build_speed = {
+	cost = @tier4cost2
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_mammalian_engineering" }
+	weight = @tier4weight2
+
+	modifier = {
+		shipsize_rs_dreadnought_build_speed_mult = 0.25
+		#ship_rs_dreadnought_cost_mult = -0.05
+		shipsize_rs_heavy_dreadnought_type_b_build_speed_mult = 0.20
+		#ship_rs_heavy_dreadnought_type_b_cost_mult = -0.04
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+			
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_c_build_speed = {
+	cost = @tier4cost2
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_molluscoid_engineering" }
+	weight = @tier4weight2
+
+	modifier = {
+		shipsize_rs_dreadnought_build_speed_mult = 0.25
+		#ship_rs_dreadnought_cost_mult = -0.05
+		shipsize_rs_heavy_dreadnought_type_c_build_speed_mult = 0.20
+		#ship_rs_heavy_dreadnought_type_c_cost_mult = -0.04
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+			
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_d_build_speed = {
+	cost = @tier4cost2
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_avian_engineering" }
+	weight = @tier4weight2
+
+	modifier = {
+		shipsize_rs_dreadnought_build_speed_mult = 0.25
+		#ship_rs_dreadnought_cost_mult = -0.05
+		shipsize_rs_heavy_dreadnought_type_d_build_speed_mult = 0.20
+		#ship_rs_heavy_dreadnought_type_d_cost_mult = -0.04
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+			
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_e_build_speed = {
+	cost = @tier4cost2
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_reptilian_engineering" }
+	weight = @tier4weight2
+
+	modifier = {
+		shipsize_rs_dreadnought_build_speed_mult = 0.25
+		#ship_rs_dreadnought_cost_mult = -0.05
+		shipsize_rs_heavy_dreadnought_type_e_build_speed_mult = 0.20
+		#ship_rs_heavy_dreadnought_type_e_cost_mult = -0.04
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+			
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_f_build_speed = {
+	cost = @tier4cost2
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_fungoid_engineering" }
+	weight = @tier4weight2
+
+	modifier = {
+		shipsize_rs_dreadnought_build_speed_mult = 0.25
+		#ship_rs_dreadnought_cost_mult = -0.05
+		shipsize_rs_heavy_dreadnought_type_f_build_speed_mult = 0.20
+		#ship_rs_heavy_dreadnought_type_f_cost_mult = -0.04
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+			
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_g_build_speed = {
+	cost = @tier4cost2
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_plantoid_engineering" }
+	weight = @tier4weight2
+
+	modifier = {
+		shipsize_rs_dreadnought_build_speed_mult = 0.25
+		#ship_rs_dreadnought_cost_mult = -0.05
+		shipsize_rs_heavy_dreadnought_type_g_build_speed_mult = 0.20
+		#ship_rs_heavy_dreadnought_type_g_cost_mult = -0.04
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+			
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_h_build_speed = {
+	cost = @tier4cost2
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_humanoid_engineering" }
+	weight = @tier4weight2
+
+	modifier = {
+		shipsize_rs_dreadnought_build_speed_mult = 0.25
+		#ship_rs_dreadnought_cost_mult = -0.05
+		shipsize_rs_heavy_dreadnought_type_h_build_speed_mult = 0.20
+		#ship_rs_heavy_dreadnought_type_h_cost_mult = -0.04
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+			
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+#############################
+### IMPROVED DN/HDN HULLS ###
+#############################
+
+tech_dn_hdn_type_a_hull_1 = {
+	cost = @tier4cost3
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_arthropoid_engineering" }
+	weight = @tier4weight3
+	
+	modifier = {
+		shipsize_rs_dreadnought_hull_add = 400
+		shipsize_rs_heavy_dreadnought_type_a_hull_add = 400
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_b_hull_1 = {
+	cost = @tier4cost3
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_mammalian_engineering" }
+	weight = @tier4weight3
+	
+	modifier = {
+		shipsize_rs_dreadnought_hull_add = 400
+		shipsize_rs_heavy_dreadnought_type_b_hull_add = 400
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_c_hull_1 = {
+	cost = @tier4cost3
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_molluscoid_engineering" }
+	weight = @tier4weight3
+	
+	modifier = {
+		shipsize_rs_dreadnought_hull_add = 400
+		shipsize_rs_heavy_dreadnought_type_c_hull_add = 400
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_d_hull_1 = {
+	cost = @tier4cost3
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_avian_engineering" }
+	weight = @tier4weight3
+	
+	modifier = {
+		shipsize_rs_dreadnought_hull_add = 400
+		shipsize_rs_heavy_dreadnought_type_d_hull_add = 400
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_e_hull_1 = {
+	cost = @tier4cost3
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_reptilian_engineering" }
+	weight = @tier4weight3
+	
+	modifier = {
+		shipsize_rs_dreadnought_hull_add = 400
+		shipsize_rs_heavy_dreadnought_type_e_hull_add = 400
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_f_hull_1 = {
+	cost = @tier4cost3
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_fungoid_engineering" }
+	weight = @tier4weight3
+	
+	modifier = {
+		shipsize_rs_dreadnought_hull_add = 400
+		shipsize_rs_heavy_dreadnought_type_f_hull_add = 400
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_g_hull_1 = {
+	cost = @tier4cost3
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_plantoid_engineering" }
+	weight = @tier4weight3
+	
+	modifier = {
+		shipsize_rs_dreadnought_hull_add = 400
+		shipsize_rs_heavy_dreadnought_type_g_hull_add = 400
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_h_hull_1 = {
+	cost = @tier4cost3
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_humanoid_engineering" }
+	weight = @tier4weight3
+	
+	modifier = {
+		shipsize_rs_dreadnought_hull_add = 400
+		shipsize_rs_heavy_dreadnought_type_h_hull_add = 400
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+#############################
+### ADVANCED DN/HDN HULLS ###
+#############################
+
+tech_dn_hdn_type_a_hull_2 = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	is_rare = yes
+	category = { voidcraft }
+	prerequisites = { "tech_dn_hdn_type_a_hull_1" "tech_arthropoid_engineering" }
+	weight = @tier5weight1
+	
+	modifier = {
+		shipsize_rs_dreadnought_hull_add = 400
+		shipsize_rs_heavy_dreadnought_type_a_hull_add = 400
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.25
+			NOR = {
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_curator"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_spark_of_genius"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_expertise_voidcraft"
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_b_hull_2 = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	is_rare = yes
+	category = { voidcraft }
+	prerequisites = { "tech_dn_hdn_type_b_hull_1" "tech_mammalian_engineering" }
+	weight = @tier5weight1
+	
+	modifier = {
+		shipsize_rs_dreadnought_hull_add = 400
+		shipsize_rs_heavy_dreadnought_type_b_hull_add = 400
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.25
+			NOR = {
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_curator"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_spark_of_genius"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_expertise_voidcraft"
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_c_hull_2 = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	is_rare = yes
+	category = { voidcraft }
+	prerequisites = { "tech_dn_hdn_type_c_hull_1" "tech_molluscoid_engineering" }
+	weight = @tier5weight1
+	
+	modifier = {
+		shipsize_rs_dreadnought_hull_add = 400
+		shipsize_rs_heavy_dreadnought_type_c_hull_add = 400
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.25
+			NOR = {
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_curator"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_spark_of_genius"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_expertise_voidcraft"
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_d_hull_2 = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	is_rare = yes
+	category = { voidcraft }
+	prerequisites = { "tech_dn_hdn_type_d_hull_1" "tech_avian_engineering" }
+	weight = @tier5weight1
+	
+	modifier = {
+		shipsize_rs_dreadnought_hull_add = 400
+		shipsize_rs_heavy_dreadnought_type_d_hull_add = 400
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.25
+			NOR = {
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_curator"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_spark_of_genius"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_expertise_voidcraft"
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_e_hull_2 = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	is_rare = yes
+	category = { voidcraft }
+	prerequisites = { "tech_dn_hdn_type_e_hull_1" "tech_reptilian_engineering" }
+	weight = @tier5weight1
+	
+	modifier = {
+		shipsize_rs_dreadnought_hull_add = 400
+		shipsize_rs_heavy_dreadnought_type_e_hull_add = 400
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.25
+			NOR = {
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_curator"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_spark_of_genius"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_expertise_voidcraft"
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_f_hull_2 = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	is_rare = yes
+	category = { voidcraft }
+	prerequisites = { "tech_dn_hdn_type_f_hull_1" "tech_fungoid_engineering" }
+	weight = @tier5weight1
+	
+	modifier = {
+		shipsize_rs_dreadnought_hull_add = 400
+		shipsize_rs_heavy_dreadnought_type_f_hull_add = 400
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.25
+			NOR = {
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_curator"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_spark_of_genius"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_expertise_voidcraft"
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_g_hull_2 = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	is_rare = yes
+	category = { voidcraft }
+	prerequisites = { "tech_dn_hdn_type_g_hull_1" "tech_plantoid_engineering" }
+	weight = @tier5weight1
+	
+	modifier = {
+		shipsize_rs_dreadnought_hull_add = 400
+		shipsize_rs_heavy_dreadnought_type_g_hull_add = 400
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.25
+			NOR = {
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_curator"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_spark_of_genius"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_expertise_voidcraft"
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_dn_hdn_type_h_hull_2 = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	is_rare = yes
+	category = { voidcraft }
+	prerequisites = { "tech_dn_hdn_type_h_hull_1" "tech_humanoid_engineering" }
+	weight = @tier5weight1
+	
+	modifier = {
+		shipsize_rs_dreadnought_hull_add = 400
+		shipsize_rs_heavy_dreadnought_type_h_hull_add = 400
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.25
+			NOR = {
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_curator"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_spark_of_genius"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_expertise_voidcraft"
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_tradition = tr_supremacy_adopt
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}

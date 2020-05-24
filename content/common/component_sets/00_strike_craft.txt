@@ -1,0 +1,29 @@
+#content
+component_set = {
+	key = "AMOEBA_STRIKE_CRAFT_1"
+	
+	icon = "GFX_ship_part_amoeba_strike_craft_1"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "SWARM_STRIKE_CRAFT_1"
+	
+	icon = "GFX_ship_part_swarm_strike_craft_1"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "AI_STRIKE_CRAFT_1"
+	
+	icon = "GFX_ship_part_swarm_strike_craft_1"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "DRONE_STRIKE_CRAFT"
+	
+	icon = "GFX_ship_part_strike_craft_scout_1"
+	icon_frame = 1	
+}
+

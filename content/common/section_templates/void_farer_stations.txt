@@ -1,0 +1,40 @@
+
+###########################
+## Civilian Stations
+###########################
+
+ship_section_template = {
+	key = "VOID_FARER_MINING_STATION_SECTION"
+	ship_size = vf_mining_station
+	fits_on_slot = mid
+	entity = "mining_station_entity"
+	icon = "GFX_ship_part_core_mid"
+}  
+ship_section_template = {
+	key = "VOID_FARER_ALLOY_STATION_SECTION"
+	ship_size = vf_alloy_station
+	fits_on_slot = mid
+	entity = "mining_station_entity"
+	icon = "GFX_ship_part_core_mid"
+}
+ship_section_template = {
+	key = "VOID_FARER_FACTORY_STATION_SECTION"
+	ship_size = vf_factory_station
+	fits_on_slot = mid
+	entity = "mining_station_entity"
+	icon = "GFX_ship_part_core_mid"
+}
+ship_section_template = {
+	key = "VOID_FARER_ENERGY_STATION_SECTION"
+	ship_size = vf_energy_station
+	fits_on_slot = mid
+	entity = "mining_station_entity"
+	icon = "GFX_ship_part_core_mid"
+}
+ship_section_template = {
+	key = "VOID_FARER_RESEARCH_STATION_SECTION"
+	ship_size = vf_research_station
+	fits_on_slot = mid
+	entity = "research_station_entity"
+	icon = "GFX_ship_part_core_mid"
+}

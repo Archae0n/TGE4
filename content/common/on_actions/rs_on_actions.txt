@@ -1,0 +1,9 @@
+#############################
+### RS TECH EVENT TRIGGER ###
+#############################
+
+on_tech_increased = {
+	events = {
+		rs_graphical_culture_specific_engineering.1
+	}
+}

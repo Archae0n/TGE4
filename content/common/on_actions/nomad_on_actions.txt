@@ -1,0 +1,222 @@
+# Triggers when the game starts
+
+# Fleet Support calculation
+
+on_press_begin = {
+	events = {
+	}
+}
+
+empire_init_capital_planet = {
+	events = {
+		drone_start_events.2
+		nomad_start_events.2
+	}
+}
+
+empire_init_create_ships = {
+	events = {
+		void_farer_ships.9
+	}
+}
+
+on_game_start_country = {
+	events = {
+		nomad_start_events.34
+		void_farer_starbase.3
+		reaver_shroud_country_create.01
+	}
+}
+
+# Nomad resources
+on_monthly_pulse = {
+	events = {
+		nomad.208
+	}
+}
+
+on_yearly_pulse = {
+	events = {
+		void_marauder_raid_event.3
+	}
+}
+
+### Nomad Spawn with marauder or nomad traits
+on_leader_spawned = {
+	events = {
+		marauder_leader_trait.1
+	}
+}
+
+empire_init_add_technologies = {
+	events = {
+		nomad_start_events.1
+		marauder_start_events.1
+		reaver_start_events.1
+		drone_start_events.1
+	}
+}
+
+# This = owner of fleet 1 (combatant)
+# From = owner of fleet 2 (destroyed)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_fleet_destroyed_perp = {
+	events = {
+	}
+	random_events = {
+	}
+}
+
+# This = owner of ship 1 (destroyed)
+# From = owner of ship 2 (combatant)
+# FromFrom = ship 1
+# FromFromFrom = ship 2
+on_ship_destroyed_victim = {
+	events = {
+		khan_return.30
+		new_khan.30
+		void_farer_ship_destroyed.1
+		void_farer_ship_destroyed.2
+	}
+}
+
+# This = owner of ship 1 (destroyed)
+# From = owner of ship 2 (combatant)
+# FromFrom = ship 1
+# FromFromFrom = ship 2
+on_ship_destroyed_perp = {
+	events = {
+		
+	}
+	random_events = {
+	}
+}
+
+on_pop_abducted  = {
+	events = {
+		void_marauder_raid_event.1
+	}
+}
+
+on_planet_zero_health = {
+	events = {
+		marauder_bounty.12
+		marauder_bounty.13
+		marauder_bounty.14
+	}
+}
+
+# This = Planet scope
+# From = Country
+# FromFrom = Pop
+on_purge_complete = {
+	events = {
+		reaver_purge.1
+		reaver_purge.2
+		reaver_purge.3
+		reaver_purge.4
+		reaver_purge.5
+		reaver_offerings.217
+	}
+}
+
+# A Megastructure has been built
+# Root = Country
+# From = Megastructure
+# FromFrom = System
+# FromFromFrom = Fleet
+on_megastructure_built = {
+	events = {
+		nomad_ship_build.2
+	}
+}
+
+# A Megastructure has begun to be upgraded
+# Root = Country
+# From = Megastructure
+# FromFrom = System
+on_megastructure_upgrade_begin = {
+	events = {
+	}
+}
+
+# A Megastructure has been upgraded
+# Root = Country
+# From = Megastructure
+# FromFrom = System
+on_megastructure_upgraded = {
+	events = {
+	}
+}
+
+on_tech_increased = {
+	events = {
+	}
+}
+
+# Planet has taken damage from orbital bombardment
+# This = Planet
+# From = Bombarder
+on_planet_bombarded = {
+	events = {
+		void_marauder_raid_event.2
+	}
+}
+
+###################
+# Custome diplomacy
+###################
+
+# Triggers when trying to open the diplomacy view for countries with custom diplomacy.
+# Country scope
+### Void Farer shroud, Fleet elements, Black market.
+# This = target country (player)
+# From = source country
+on_custom_diplomacy = {
+	events = {
+		reaver_shroud.1
+		nanite.500
+	}
+}
+
+################
+# Contact events
+################
+on_first_contact = {
+	events = {
+		vfaction.10
+		vfaction.15
+		vfaction.16
+		vfaction.17
+		vfaction.18
+		vfaction.25
+		vfaction.26
+	}
+}
+
+on_pre_communications_established = {
+	events = {
+		action.7
+		action.19
+	}
+}
+
+on_post_communications_established = {
+	events = {
+		
+	}
+}
+
+### Use for ship build events
+on_fleet_enter_orbit = {
+	events = {
+		
+	}
+}
+
+on_building_completed = {
+	events = {
+		
+	}
+}

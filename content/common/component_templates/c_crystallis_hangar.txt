@@ -1,0 +1,235 @@
+########
+#	COST	  #
+########
+@cost_1 = 15
+@cost_2 = 20
+@cost_3 = 25
+@cost_4 = 30
+@cost_5 = 35
+
+#########
+#	POWER   #
+#########
+@power_1 = -10
+@power_2 = -15
+@power_3 = -20
+@power_4 = -25
+@power_5 = -30
+
+#########
+#	DAMAGE #
+#########
+@damage_1 = 0.10
+@damage_2 = 0.15
+@damage_3 = 0.25
+@damage_4 = 0.33
+@damage_5 = 0.50
+
+#############
+#	FLIGHTSPEED  #
+#############
+@flightspeed_1 = 0.05
+@flightspeed_2 = 0.10
+@flightspeed_3 = 0.15
+@flightspeed_4 = 0.20
+@flightspeed_5 = 0.25
+
+# Hangar Bays
+utility_component_template = {
+	key = "C_HANGAR_BAY_1"
+	size = aux
+	icon = "GFX_C_ship_part_hangar_1"
+	icon_frame = 1
+	power = @power_1
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 10
+			exotic_gases = 5
+		}
+	}
+	
+	ship_modifier = {
+		weapon_type_strike_craft_weapon_damage_mult = @damage_1
+		weapon_type_strike_craft_speed_mult = @flightspeed_1
+	}
+	
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = weapon_type_strike_craft
+			has_monthly_income = { resource = exotic_gases value > 0 }
+		}
+
+		modifier = {
+			factor = 0
+			has_monthly_income = { resource = exotic_gases value <= 0 }
+		}
+	}
+	
+	prerequisites = { "tech_c_hangar_1" }
+	component_set = "C_HANGAR_1"
+	#size_restriction = { cruiser battleship titan military_station_large }
+	
+	upgrades_to = "C_HANGAR_BAY_2"
+}
+
+utility_component_template = {
+	key = "C_HANGAR_BAY_2"
+	size = aux
+	icon = "GFX_C_ship_part_hangar_2"
+	icon_frame = 1
+	power = @power_2
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 10
+			exotic_gases = 10
+		}
+	}
+
+	ship_modifier = {
+		weapon_type_strike_craft_weapon_damage_mult = @damage_2
+		weapon_type_strike_craft_speed_mult = @flightspeed_2
+	}
+	
+	ai_weight = {
+		weight = 7
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = weapon_type_strike_craft
+			has_monthly_income = { resource = exotic_gases value > 0 }
+		}
+
+		modifier = {
+			factor = 0
+			has_monthly_income = { resource = exotic_gases value <= 0 }
+		}
+	}
+	
+	prerequisites = { "tech_c_hangar_2" }
+	component_set = "C_HANGAR_2"
+	#size_restriction = { cruiser battleship titan military_station_large }
+	
+	upgrades_to = "C_HANGAR_BAY_3"
+}
+
+utility_component_template = {
+	key = "C_HANGAR_BAY_3"
+	size = aux
+	icon = "GFX_C_ship_part_hangar_3"
+	icon_frame = 1
+	power = @power_3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 10			
+			exotic_gases = 15
+		}
+	}
+
+	ship_modifier = {
+		weapon_type_strike_craft_weapon_damage_mult = @damage_3
+		weapon_type_strike_craft_speed_mult = @flightspeed_3
+	}
+	
+	ai_weight = {
+		weight = 9
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = weapon_type_strike_craft
+			has_monthly_income = { resource = exotic_gases value > 0 }
+		}
+
+		modifier = {
+			factor = 0
+			has_monthly_income = { resource = exotic_gases value <= 0 }
+		}
+	}
+	
+	prerequisites = { "tech_c_hangar_3" }
+	component_set = "C_HANGAR_3"
+	#size_restriction = { cruiser battleship titan }
+	
+	upgrades_to = "C_HANGAR_BAY_4"
+}
+
+utility_component_template = {
+	key = "C_HANGAR_BAY_4"
+	size = aux
+	icon = "GFX_C_ship_part_hangar_4"
+	icon_frame = 1
+	power = @power_4
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 10
+			exotic_gases = 20
+		}
+	}
+
+	ship_modifier = {
+		weapon_type_strike_craft_weapon_damage_mult = @damage_4
+		weapon_type_strike_craft_speed_mult = @flightspeed_4
+	}
+	
+	ai_weight = {
+		weight = 11
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = weapon_type_strike_craft
+			has_monthly_income = { resource = exotic_gases value > 0 }
+		}
+
+		modifier = {
+			factor = 0
+			has_monthly_income = { resource = exotic_gases value <= 0 }
+		}
+	}
+	
+	prerequisites = { "tech_c_hangar_4" }
+	component_set = "C_HANGAR_4"
+	#size_restriction = { cruiser battleship titan military_station_large }
+	
+	upgrades_to = "C_HANGAR_BAY_5"
+}
+
+utility_component_template = {
+	key = "C_HANGAR_BAY_5"
+	size = aux
+	icon = "GFX_C_ship_part_hangar_5"
+	icon_frame = 1
+	power = @power_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 10
+			exotic_gases = 25
+		}
+	}
+
+	ship_modifier = {
+		weapon_type_strike_craft_weapon_damage_mult = @damage_5
+		weapon_type_strike_craft_speed_mult = @flightspeed_5
+	}
+	
+	ai_weight = {
+		weight = 13
+		modifier = {
+			factor = 2.0
+			is_preferred_weapons = weapon_type_strike_craft
+			has_monthly_income = { resource = exotic_gases value > 0 }
+		}
+
+		modifier = {
+			factor = 0
+			has_monthly_income = { resource = exotic_gases value <= 0 }
+		}
+	}
+	
+	prerequisites = { "tech_c_hangar_5" }
+	component_set = "C_HANGAR_5"
+	#size_restriction = { cruiser battleship titan military_station_large }
+	
+}

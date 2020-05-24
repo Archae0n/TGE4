@@ -1,0 +1,2641 @@
+
+
+################################################################
+##### фон
+
+# картинка
+ftm_rent_window_background_effect = {
+	potential = {
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+	}
+}
+
+### Кнопка настройки ###
+ftm_rent_settings = {
+	potential = {
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		if = {
+			limit = {
+				has_country_flag = ftm_server_country
+			}
+			hidden_effect = {
+				country_event = { id = ftm_transfer.999 }
+			}
+		}
+		else = {
+			custom_tooltip = ftm_settings_only_for_server
+		}
+	}
+}
+
+
+################################################################
+##### cлот 1
+
+# условие отображения когда лота нет
+ftm_rent_slot_1_no_info = {
+	potential = {
+		NOT = {
+			OR = {
+				has_global_flag = ftm_rent_slot_1_selected
+				has_global_flag = ftm_rent_slot_1_arended
+			}
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = ftm_rent_slot_1_in_progress		
+				}			
+			}
+			hidden_effect = {
+				country_event = { id = ftm_rent.101 }
+				set_global_flag = ftm_rent_slot_1_in_progress
+			}
+		}
+		else = {
+			custom_tooltip = ftm_rent_slot_in_progress_info
+		}
+	}
+}
+
+# условие отображение информации (длЯ покупателей)
+ftm_rent_slot_1_info = {
+	potential = {
+		has_global_flag = ftm_rent_slot_1_selected
+		NOT = {
+			is_same_value = event_target:ftm_rented_fleet_slot_1_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		hidden_effect = {
+			country_event = { id = ftm_rent.110 }
+		}
+	}
+}
+
+# условие отображение информации (длЯ продавца)
+ftm_rent_slot_1_info_seller = {
+	potential = {
+		has_global_flag = ftm_rent_slot_1_selected
+		is_same_value = event_target:ftm_rented_fleet_slot_1_seller
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		hidden_effect = {
+			country_event = { id = ftm_rent.110 }
+		}
+	}
+}
+
+# условие отображение информации (флот арендован)
+ftm_rent_slot_1_info_arended = {
+	potential = {
+		has_global_flag = ftm_rent_slot_1_arended
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_rent_slot_1_info_arended_time
+	}
+}
+
+# условие отображения кнопки "купить"
+ftm_rent_slot_1_buy = {
+	potential = {
+		has_global_flag = ftm_rent_slot_1_selected
+		NOT = {
+			is_same_value = event_target:ftm_rented_fleet_slot_1_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_rent_slot_1_buy_info
+		hidden_effect = {
+			log = "[Root.GetName] want to buy fleet in slot 1."
+
+		### проверка наличиЯ энергии
+
+			set_variable = {
+				which = ftm_buyer_rented_fleet_slot_1_check_energy
+				value = 0
+			}
+			#1	
+			while = {
+				count = 99
+				if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10000 }
+					}
+					add_resource = { energy = -10000 }
+					event_target:ftm_rented_fleet_slot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_1_check_energy
+							value = 10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1000 }
+					}
+					add_resource = { energy = -1000 }
+					event_target:ftm_rented_fleet_slot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_1_check_energy
+							value = 1000
+						}			
+					}			
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 100 }
+					}
+					add_resource = { energy = -100 }
+					event_target:ftm_rented_fleet_slot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_1_check_energy
+							value = 100
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10 }
+					}
+					add_resource = { energy = -10 }
+					event_target:ftm_rented_fleet_slot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_1_check_energy
+							value = 10
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1 }
+					}
+					add_resource = { energy = -1 }
+					event_target:ftm_rented_fleet_slot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_1_check_energy
+							value = 1
+						}
+					}					
+				}
+				else = {
+					#nothing
+				}
+			}
+			#2
+			event_target:ftm_rented_fleet_slot_1_seller = { 
+				set_variable = {
+					which = ftm_buyer_rented_fleet_slot_1_energy_current_count
+					value = ftm_buyer_rented_fleet_slot_1_check_energy
+				}
+			}
+			#3
+			while = {
+				count = 99
+				if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_1_check_energy
+								value >= 10000
+							}
+						}
+					}
+					add_resource = { energy = 10000 }
+					event_target:ftm_rented_fleet_slot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_1_check_energy
+							value = -10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_1_check_energy
+								value >= 1000
+							}
+						}
+					}
+					add_resource = { energy = 1000 }
+					event_target:ftm_rented_fleet_slot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_1_check_energy
+							value = -1000
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_1_check_energy
+								value >= 100
+							}
+						}
+					}
+					add_resource = { energy = 100 }
+					event_target:ftm_rented_fleet_slot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_1_check_energy
+							value = -100
+						}
+					}					
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_1_check_energy
+								value >= 10
+							}
+						}
+					}
+					add_resource = { energy = 10 }
+					event_target:ftm_rented_fleet_slot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_1_check_energy
+							value = -10
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_1_check_energy
+								value >= 1
+							}
+						}
+					}
+					add_resource = { energy = 1 }
+					event_target:ftm_rented_fleet_slot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_1_check_energy
+							value = -1
+						}					
+					}
+				}
+				else = {
+					#nothing
+				}
+			}	
+			log = "[Root.GetName]: energy_check complete. ENERGY: [event_target:ftm_rented_fleet_slot_1_seller.ftm_buyer_rented_fleet_slot_1_energy_current_count]."
+			
+			
+			### 
+			
+			#4
+			if = {
+				limit = {
+					has_country_flag = ftm_rent_slot_1_sanction_block
+				}
+				log = "Check [Root.GetName] sanction: SANCTION ACTIVE!!!"
+				country_event = { id = ftm_rent.121 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = ftm_rent_slot_1_sanction_block
+					}
+					event_target:ftm_rented_fleet_slot_1_seller = { 
+						check_variable = {
+							which = ftm_buyer_rented_fleet_slot_1_energy_current_count
+							value < ftm_rented_fleet_slot_1_cost
+						}
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_rented_fleet_slot_1_seller.ftm_rented_fleet_slot_1_cost]... FAIL. NO ENERGY."
+				country_event = { id = ftm_rent.105 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = ftm_rent_slot_1_sanction_block
+					}
+					event_target:ftm_rented_fleet_slot_1_seller = { 
+						check_variable = {
+							which = ftm_buyer_rented_fleet_slot_1_energy_current_count
+							value >= ftm_rented_fleet_slot_1_cost
+						}
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_rented_fleet_slot_1_seller.ftm_rented_fleet_slot_1_cost]... SUCCESS. ENERGY IN."
+				save_global_event_target_as = ftm_rent_slot_1_buyer
+				
+				# передача флота и денег
+				event_target:ftm_rented_fleet_slot_1 = { 
+					set_fleet_flag = ftm_rented_fleet_slot_1
+					set_owner = event_target:ftm_rent_slot_1_buyer
+					set_event_locked = no
+				}
+				event_target:ftm_rent_slot_1_buyer = { 
+					country_event = { id = ftm_rent.111 }
+				
+				
+					# снятие ресурсов при покупке			
+			
+					event_target:ftm_rented_fleet_slot_1_seller = { 
+						set_variable = {
+							which = ftm_rented_fleet_slot_1_lot_cost
+							value = ftm_rented_fleet_slot_1_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_rented_fleet_slot_1_seller.ftm_rented_fleet_slot_1_lot_cost] energy is SLOT-1 cost"	
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_1_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_1_lot_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = -10000 }
+							event_target:ftm_rented_fleet_slot_1_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_1_lot_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_1_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_1_lot_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = -1000 }
+							event_target:ftm_rented_fleet_slot_1_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_1_lot_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_1_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_1_lot_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = -100 }
+							event_target:ftm_rented_fleet_slot_1_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_1_lot_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_1_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_1_lot_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = -10 }
+							event_target:ftm_rented_fleet_slot_1_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_1_lot_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_1_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_1_lot_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = -1 }
+							event_target:ftm_rented_fleet_slot_1_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_1_lot_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}	
+				}
+				event_target:ftm_rented_fleet_slot_1_seller = { 
+					country_event = { id = ftm_rent.112 }
+				}
+				remove_global_flag = ftm_rent_slot_1_selected
+				set_global_flag = ftm_rent_slot_1_arended	
+			}
+		}
+	}
+}
+
+
+################################################################
+##### cлот 2
+
+# условие отображения когда лота нет
+ftm_rent_slot_2_no_info = {
+	potential = {
+		NOT = {
+			OR = {
+				has_global_flag = ftm_rent_slot_2_selected
+				has_global_flag = ftm_rent_slot_2_arended
+			}
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = ftm_rent_slot_2_in_progress		
+				}			
+			}
+			hidden_effect = {
+				country_event = { id = ftm_rent.201 }
+				set_global_flag = ftm_rent_slot_2_in_progress
+			}
+		}
+		else = {
+			custom_tooltip = ftm_rent_slot_in_progress_info
+		}
+	}
+}
+
+# условие отображение информации (длЯ покупателей)
+ftm_rent_slot_2_info = {
+	potential = {
+		has_global_flag = ftm_rent_slot_2_selected
+		NOT = {
+			is_same_value = event_target:ftm_rented_fleet_slot_2_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		hidden_effect = {
+			country_event = { id = ftm_rent.210 }
+		}
+	}
+}
+
+# условие отображение информации (длЯ продавца)
+ftm_rent_slot_2_info_seller = {
+	potential = {
+		has_global_flag = ftm_rent_slot_2_selected
+		is_same_value = event_target:ftm_rented_fleet_slot_2_seller
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		hidden_effect = {
+			country_event = { id = ftm_rent.210 }
+		}
+	}
+}
+
+# условие отображение информации (флот арендован)
+ftm_rent_slot_2_info_arended = {
+	potential = {
+		has_global_flag = ftm_rent_slot_2_arended
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_rent_slot_2_info_arended_time
+	}
+}
+
+# условие отображения кнопки "купить"
+ftm_rent_slot_2_buy = {
+	potential = {
+		has_global_flag = ftm_rent_slot_2_selected
+		NOT = {
+			is_same_value = event_target:ftm_rented_fleet_slot_2_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_rent_slot_2_buy_info
+		hidden_effect = {
+			log = "[Root.GetName] want to buy fleet in slot 1."
+
+		### проверка наличиЯ энергии
+
+			set_variable = {
+				which = ftm_buyer_rented_fleet_slot_2_check_energy
+				value = 0
+			}
+			#1	
+			while = {
+				count = 99
+				if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10000 }
+					}
+					add_resource = { energy = -10000 }
+					event_target:ftm_rented_fleet_slot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_2_check_energy
+							value = 10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1000 }
+					}
+					add_resource = { energy = -1000 }
+					event_target:ftm_rented_fleet_slot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_2_check_energy
+							value = 1000
+						}			
+					}			
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 100 }
+					}
+					add_resource = { energy = -100 }
+					event_target:ftm_rented_fleet_slot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_2_check_energy
+							value = 100
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10 }
+					}
+					add_resource = { energy = -10 }
+					event_target:ftm_rented_fleet_slot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_2_check_energy
+							value = 10
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1 }
+					}
+					add_resource = { energy = -1 }
+					event_target:ftm_rented_fleet_slot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_2_check_energy
+							value = 1
+						}
+					}					
+				}
+				else = {
+					#nothing
+				}
+			}
+			#2
+			event_target:ftm_rented_fleet_slot_2_seller = { 
+				set_variable = {
+					which = ftm_buyer_rented_fleet_slot_2_energy_current_count
+					value = ftm_buyer_rented_fleet_slot_2_check_energy
+				}
+			}
+			#3
+			while = {
+				count = 99
+				if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_2_check_energy
+								value >= 10000
+							}
+						}
+					}
+					add_resource = { energy = 10000 }
+					event_target:ftm_rented_fleet_slot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_2_check_energy
+							value = -10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_2_check_energy
+								value >= 1000
+							}
+						}
+					}
+					add_resource = { energy = 1000 }
+					event_target:ftm_rented_fleet_slot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_2_check_energy
+							value = -1000
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_2_check_energy
+								value >= 100
+							}
+						}
+					}
+					add_resource = { energy = 100 }
+					event_target:ftm_rented_fleet_slot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_2_check_energy
+							value = -100
+						}
+					}					
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_2_check_energy
+								value >= 10
+							}
+						}
+					}
+					add_resource = { energy = 10 }
+					event_target:ftm_rented_fleet_slot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_2_check_energy
+							value = -10
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_2_check_energy
+								value >= 1
+							}
+						}
+					}
+					add_resource = { energy = 1 }
+					event_target:ftm_rented_fleet_slot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_2_check_energy
+							value = -1
+						}					
+					}
+				}
+				else = {
+					#nothing
+				}
+			}	
+			log = "[Root.GetName]: energy_check complete. ENERGY: [event_target:ftm_rented_fleet_slot_2_seller.ftm_buyer_rented_fleet_slot_2_energy_current_count]."
+			
+			
+			### 
+			
+			#4
+			if = {
+				limit = {
+					has_country_flag = ftm_rent_slot_2_sanction_block
+				}
+				log = "Check [Root.GetName] sanction: SANCTION ACTIVE!!!"
+				country_event = { id = ftm_rent.221 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = ftm_rent_slot_2_sanction_block
+					}
+					event_target:ftm_rented_fleet_slot_2_seller = { 
+						check_variable = {
+							which = ftm_buyer_rented_fleet_slot_2_energy_current_count
+							value < ftm_rented_fleet_slot_2_cost
+						}
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_rented_fleet_slot_2_seller.ftm_rented_fleet_slot_2_cost]... FAIL. NO ENERGY."
+				country_event = { id = ftm_rent.205 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = ftm_rent_slot_2_sanction_block
+					}
+					event_target:ftm_rented_fleet_slot_2_seller = { 
+						check_variable = {
+							which = ftm_buyer_rented_fleet_slot_2_energy_current_count
+							value >= ftm_rented_fleet_slot_2_cost
+						}
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_rented_fleet_slot_2_seller.ftm_rented_fleet_slot_2_cost]... SUCCESS. ENERGY IN."
+				save_global_event_target_as = ftm_rent_slot_2_buyer
+				
+				# передача флота и денег
+				event_target:ftm_rented_fleet_slot_2 = { 
+					set_fleet_flag = ftm_rented_fleet_slot_2
+					set_owner = event_target:ftm_rent_slot_2_buyer
+					set_event_locked = no
+				}
+				event_target:ftm_rent_slot_2_buyer = { 
+					country_event = { id = ftm_rent.211 }
+				
+				
+					# снятие ресурсов при покупке			
+			
+					event_target:ftm_rented_fleet_slot_2_seller = { 
+						set_variable = {
+							which = ftm_rented_fleet_slot_2_lot_cost
+							value = ftm_rented_fleet_slot_2_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_rented_fleet_slot_2_seller.ftm_rented_fleet_slot_2_lot_cost] energy is SLOT-1 cost"	
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_2_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_2_lot_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = -10000 }
+							event_target:ftm_rented_fleet_slot_2_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_2_lot_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_2_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_2_lot_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = -1000 }
+							event_target:ftm_rented_fleet_slot_2_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_2_lot_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_2_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_2_lot_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = -100 }
+							event_target:ftm_rented_fleet_slot_2_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_2_lot_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_2_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_2_lot_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = -10 }
+							event_target:ftm_rented_fleet_slot_2_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_2_lot_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_2_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_2_lot_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = -1 }
+							event_target:ftm_rented_fleet_slot_2_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_2_lot_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}	
+				}
+				event_target:ftm_rented_fleet_slot_2_seller = { 
+					country_event = { id = ftm_rent.212 }
+				}
+				remove_global_flag = ftm_rent_slot_2_selected
+				set_global_flag = ftm_rent_slot_2_arended	
+			}
+		}
+	}
+}
+
+
+################################################################
+##### cлот 3
+
+# условие отображения когда лота нет
+ftm_rent_slot_3_no_info = {
+	potential = {
+		NOT = {
+			OR = {
+				has_global_flag = ftm_rent_slot_3_selected
+				has_global_flag = ftm_rent_slot_3_arended
+			}
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = ftm_rent_slot_3_in_progress		
+				}			
+			}
+			hidden_effect = {
+				country_event = { id = ftm_rent.301 }
+				set_global_flag = ftm_rent_slot_3_in_progress
+			}
+		}
+		else = {
+			custom_tooltip = ftm_rent_slot_in_progress_info
+		}
+	}
+}
+
+# условие отображение информации (длЯ покупателей)
+ftm_rent_slot_3_info = {
+	potential = {
+		has_global_flag = ftm_rent_slot_3_selected
+		NOT = {
+			is_same_value = event_target:ftm_rented_fleet_slot_3_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		hidden_effect = {
+			country_event = { id = ftm_rent.310 }
+		}
+	}
+}
+
+# условие отображение информации (длЯ продавца)
+ftm_rent_slot_3_info_seller = {
+	potential = {
+		has_global_flag = ftm_rent_slot_3_selected
+		is_same_value = event_target:ftm_rented_fleet_slot_3_seller
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		hidden_effect = {
+			country_event = { id = ftm_rent.310 }
+		}
+	}
+}
+
+# условие отображение информации (флот арендован)
+ftm_rent_slot_3_info_arended = {
+	potential = {
+		has_global_flag = ftm_rent_slot_3_arended
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_rent_slot_3_info_arended_time
+	}
+}
+
+# условие отображения кнопки "купить"
+ftm_rent_slot_3_buy = {
+	potential = {
+		has_global_flag = ftm_rent_slot_3_selected
+		NOT = {
+			is_same_value = event_target:ftm_rented_fleet_slot_3_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_rent_slot_3_buy_info
+		hidden_effect = {
+			log = "[Root.GetName] want to buy fleet in slot 1."
+
+		### проверка наличиЯ энергии
+
+			set_variable = {
+				which = ftm_buyer_rented_fleet_slot_3_check_energy
+				value = 0
+			}
+			#1	
+			while = {
+				count = 99
+				if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10000 }
+					}
+					add_resource = { energy = -10000 }
+					event_target:ftm_rented_fleet_slot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_3_check_energy
+							value = 10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1000 }
+					}
+					add_resource = { energy = -1000 }
+					event_target:ftm_rented_fleet_slot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_3_check_energy
+							value = 1000
+						}			
+					}			
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 100 }
+					}
+					add_resource = { energy = -100 }
+					event_target:ftm_rented_fleet_slot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_3_check_energy
+							value = 100
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10 }
+					}
+					add_resource = { energy = -10 }
+					event_target:ftm_rented_fleet_slot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_3_check_energy
+							value = 10
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1 }
+					}
+					add_resource = { energy = -1 }
+					event_target:ftm_rented_fleet_slot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_3_check_energy
+							value = 1
+						}
+					}					
+				}
+				else = {
+					#nothing
+				}
+			}
+			#2
+			event_target:ftm_rented_fleet_slot_3_seller = { 
+				set_variable = {
+					which = ftm_buyer_rented_fleet_slot_3_energy_current_count
+					value = ftm_buyer_rented_fleet_slot_3_check_energy
+				}
+			}
+			#3
+			while = {
+				count = 99
+				if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_3_check_energy
+								value >= 10000
+							}
+						}
+					}
+					add_resource = { energy = 10000 }
+					event_target:ftm_rented_fleet_slot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_3_check_energy
+							value = -10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_3_check_energy
+								value >= 1000
+							}
+						}
+					}
+					add_resource = { energy = 1000 }
+					event_target:ftm_rented_fleet_slot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_3_check_energy
+							value = -1000
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_3_check_energy
+								value >= 100
+							}
+						}
+					}
+					add_resource = { energy = 100 }
+					event_target:ftm_rented_fleet_slot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_3_check_energy
+							value = -100
+						}
+					}					
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_3_check_energy
+								value >= 10
+							}
+						}
+					}
+					add_resource = { energy = 10 }
+					event_target:ftm_rented_fleet_slot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_3_check_energy
+							value = -10
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_3_check_energy
+								value >= 1
+							}
+						}
+					}
+					add_resource = { energy = 1 }
+					event_target:ftm_rented_fleet_slot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_3_check_energy
+							value = -1
+						}					
+					}
+				}
+				else = {
+					#nothing
+				}
+			}	
+			log = "[Root.GetName]: energy_check complete. ENERGY: [event_target:ftm_rented_fleet_slot_3_seller.ftm_buyer_rented_fleet_slot_3_energy_current_count]."
+			
+			
+			### 
+			
+			#4
+			if = {
+				limit = {
+					has_country_flag = ftm_rent_slot_3_sanction_block
+				}
+				log = "Check [Root.GetName] sanction: SANCTION ACTIVE!!!"
+				country_event = { id = ftm_rent.321 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = ftm_rent_slot_3_sanction_block
+					}
+					event_target:ftm_rented_fleet_slot_3_seller = { 
+						check_variable = {
+							which = ftm_buyer_rented_fleet_slot_3_energy_current_count
+							value < ftm_rented_fleet_slot_3_cost
+						}
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_rented_fleet_slot_3_seller.ftm_rented_fleet_slot_3_cost]... FAIL. NO ENERGY."
+				country_event = { id = ftm_rent.305 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = ftm_rent_slot_3_sanction_block
+					}
+					event_target:ftm_rented_fleet_slot_3_seller = { 
+						check_variable = {
+							which = ftm_buyer_rented_fleet_slot_3_energy_current_count
+							value >= ftm_rented_fleet_slot_3_cost
+						}
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_rented_fleet_slot_3_seller.ftm_rented_fleet_slot_3_cost]... SUCCESS. ENERGY IN."
+				save_global_event_target_as = ftm_rent_slot_3_buyer
+				
+				# передача флота и денег
+				event_target:ftm_rented_fleet_slot_3 = { 
+					set_fleet_flag = ftm_rented_fleet_slot_3
+					set_owner = event_target:ftm_rent_slot_3_buyer
+					set_event_locked = no
+				}
+				event_target:ftm_rent_slot_3_buyer = { 
+					country_event = { id = ftm_rent.311 }
+				
+				
+					# снятие ресурсов при покупке			
+			
+					event_target:ftm_rented_fleet_slot_3_seller = { 
+						set_variable = {
+							which = ftm_rented_fleet_slot_3_lot_cost
+							value = ftm_rented_fleet_slot_3_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_rented_fleet_slot_3_seller.ftm_rented_fleet_slot_3_lot_cost] energy is SLOT-1 cost"	
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_3_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_3_lot_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = -10000 }
+							event_target:ftm_rented_fleet_slot_3_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_3_lot_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_3_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_3_lot_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = -1000 }
+							event_target:ftm_rented_fleet_slot_3_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_3_lot_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_3_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_3_lot_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = -100 }
+							event_target:ftm_rented_fleet_slot_3_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_3_lot_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_3_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_3_lot_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = -10 }
+							event_target:ftm_rented_fleet_slot_3_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_3_lot_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_3_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_3_lot_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = -1 }
+							event_target:ftm_rented_fleet_slot_3_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_3_lot_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}	
+				}
+				event_target:ftm_rented_fleet_slot_3_seller = { 
+					country_event = { id = ftm_rent.312 }
+				}
+				remove_global_flag = ftm_rent_slot_3_selected
+				set_global_flag = ftm_rent_slot_3_arended	
+			}
+		}
+	}
+}
+
+
+################################################################
+##### cлот 4
+
+# условие отображения когда лота нет
+ftm_rent_slot_4_no_info = {
+	potential = {
+		NOT = {
+			OR = {
+				has_global_flag = ftm_rent_slot_4_selected
+				has_global_flag = ftm_rent_slot_4_arended
+			}
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = ftm_rent_slot_4_in_progress		
+				}			
+			}
+			hidden_effect = {
+				country_event = { id = ftm_rent.401 }
+				set_global_flag = ftm_rent_slot_4_in_progress
+			}
+		}
+		else = {
+			custom_tooltip = ftm_rent_slot_in_progress_info
+		}
+	}
+}
+
+# условие отображение информации (длЯ покупателей)
+ftm_rent_slot_4_info = {
+	potential = {
+		has_global_flag = ftm_rent_slot_4_selected
+		NOT = {
+			is_same_value = event_target:ftm_rented_fleet_slot_4_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		hidden_effect = {
+			country_event = { id = ftm_rent.410 }
+		}
+	}
+}
+
+# условие отображение информации (длЯ продавца)
+ftm_rent_slot_4_info_seller = {
+	potential = {
+		has_global_flag = ftm_rent_slot_4_selected
+		is_same_value = event_target:ftm_rented_fleet_slot_4_seller
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		hidden_effect = {
+			country_event = { id = ftm_rent.410 }
+		}
+	}
+}
+
+# условие отображение информации (флот арендован)
+ftm_rent_slot_4_info_arended = {
+	potential = {
+		has_global_flag = ftm_rent_slot_4_arended
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_rent_slot_4_info_arended_time
+	}
+}
+
+# условие отображения кнопки "купить"
+ftm_rent_slot_4_buy = {
+	potential = {
+		has_global_flag = ftm_rent_slot_4_selected
+		NOT = {
+			is_same_value = event_target:ftm_rented_fleet_slot_4_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_rent_slot_4_buy_info
+		hidden_effect = {
+			log = "[Root.GetName] want to buy fleet in slot 1."
+
+		### проверка наличиЯ энергии
+
+			set_variable = {
+				which = ftm_buyer_rented_fleet_slot_4_check_energy
+				value = 0
+			}
+			#1	
+			while = {
+				count = 99
+				if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10000 }
+					}
+					add_resource = { energy = -10000 }
+					event_target:ftm_rented_fleet_slot_4_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_4_check_energy
+							value = 10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1000 }
+					}
+					add_resource = { energy = -1000 }
+					event_target:ftm_rented_fleet_slot_4_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_4_check_energy
+							value = 1000
+						}			
+					}			
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 100 }
+					}
+					add_resource = { energy = -100 }
+					event_target:ftm_rented_fleet_slot_4_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_4_check_energy
+							value = 100
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10 }
+					}
+					add_resource = { energy = -10 }
+					event_target:ftm_rented_fleet_slot_4_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_4_check_energy
+							value = 10
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1 }
+					}
+					add_resource = { energy = -1 }
+					event_target:ftm_rented_fleet_slot_4_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_4_check_energy
+							value = 1
+						}
+					}					
+				}
+				else = {
+					#nothing
+				}
+			}
+			#2
+			event_target:ftm_rented_fleet_slot_4_seller = { 
+				set_variable = {
+					which = ftm_buyer_rented_fleet_slot_4_energy_current_count
+					value = ftm_buyer_rented_fleet_slot_4_check_energy
+				}
+			}
+			#3
+			while = {
+				count = 99
+				if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_4_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_4_check_energy
+								value >= 10000
+							}
+						}
+					}
+					add_resource = { energy = 10000 }
+					event_target:ftm_rented_fleet_slot_4_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_4_check_energy
+							value = -10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_4_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_4_check_energy
+								value >= 1000
+							}
+						}
+					}
+					add_resource = { energy = 1000 }
+					event_target:ftm_rented_fleet_slot_4_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_4_check_energy
+							value = -1000
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_4_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_4_check_energy
+								value >= 100
+							}
+						}
+					}
+					add_resource = { energy = 100 }
+					event_target:ftm_rented_fleet_slot_4_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_4_check_energy
+							value = -100
+						}
+					}					
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_4_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_4_check_energy
+								value >= 10
+							}
+						}
+					}
+					add_resource = { energy = 10 }
+					event_target:ftm_rented_fleet_slot_4_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_4_check_energy
+							value = -10
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_4_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_4_check_energy
+								value >= 1
+							}
+						}
+					}
+					add_resource = { energy = 1 }
+					event_target:ftm_rented_fleet_slot_4_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_4_check_energy
+							value = -1
+						}					
+					}
+				}
+				else = {
+					#nothing
+				}
+			}	
+			log = "[Root.GetName]: energy_check complete. ENERGY: [event_target:ftm_rented_fleet_slot_4_seller.ftm_buyer_rented_fleet_slot_4_energy_current_count]."
+			
+			
+			### 
+			
+			#4
+			if = {
+				limit = {
+					has_country_flag = ftm_rent_slot_4_sanction_block
+				}
+				log = "Check [Root.GetName] sanction: SANCTION ACTIVE!!!"
+				country_event = { id = ftm_rent.421 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = ftm_rent_slot_4_sanction_block
+					}
+					event_target:ftm_rented_fleet_slot_4_seller = { 
+						check_variable = {
+							which = ftm_buyer_rented_fleet_slot_4_energy_current_count
+							value < ftm_rented_fleet_slot_4_cost
+						}
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_rented_fleet_slot_4_seller.ftm_rented_fleet_slot_4_cost]... FAIL. NO ENERGY."
+				country_event = { id = ftm_rent.405 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = ftm_rent_slot_4_sanction_block
+					}
+					event_target:ftm_rented_fleet_slot_4_seller = { 
+						check_variable = {
+							which = ftm_buyer_rented_fleet_slot_4_energy_current_count
+							value >= ftm_rented_fleet_slot_4_cost
+						}
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_rented_fleet_slot_4_seller.ftm_rented_fleet_slot_4_cost]... SUCCESS. ENERGY IN."
+				save_global_event_target_as = ftm_rent_slot_4_buyer
+				
+				# передача флота и денег
+				event_target:ftm_rented_fleet_slot_4 = { 
+					set_fleet_flag = ftm_rented_fleet_slot_4
+					set_owner = event_target:ftm_rent_slot_4_buyer
+					set_event_locked = no
+				}
+				event_target:ftm_rent_slot_4_buyer = { 
+					country_event = { id = ftm_rent.411 }
+				
+				
+					# снятие ресурсов при покупке			
+			
+					event_target:ftm_rented_fleet_slot_4_seller = { 
+						set_variable = {
+							which = ftm_rented_fleet_slot_4_lot_cost
+							value = ftm_rented_fleet_slot_4_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_rented_fleet_slot_4_seller.ftm_rented_fleet_slot_4_lot_cost] energy is SLOT-1 cost"	
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_4_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_4_lot_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = -10000 }
+							event_target:ftm_rented_fleet_slot_4_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_4_lot_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_4_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_4_lot_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = -1000 }
+							event_target:ftm_rented_fleet_slot_4_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_4_lot_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_4_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_4_lot_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = -100 }
+							event_target:ftm_rented_fleet_slot_4_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_4_lot_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_4_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_4_lot_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = -10 }
+							event_target:ftm_rented_fleet_slot_4_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_4_lot_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_4_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_4_lot_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = -1 }
+							event_target:ftm_rented_fleet_slot_4_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_4_lot_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}	
+				}
+				event_target:ftm_rented_fleet_slot_4_seller = { 
+					country_event = { id = ftm_rent.412 }
+				}
+				remove_global_flag = ftm_rent_slot_4_selected
+				set_global_flag = ftm_rent_slot_4_arended	
+			}
+		}
+	}
+}
+
+
+################################################################
+##### cлот 5
+
+# условие отображения когда лота нет
+ftm_rent_slot_5_no_info = {
+	potential = {
+		NOT = {
+			OR = {
+				has_global_flag = ftm_rent_slot_5_selected
+				has_global_flag = ftm_rent_slot_5_arended
+			}
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = ftm_rent_slot_5_in_progress		
+				}			
+			}
+			hidden_effect = {
+				country_event = { id = ftm_rent.501 }
+				set_global_flag = ftm_rent_slot_5_in_progress
+			}
+		}
+		else = {
+			custom_tooltip = ftm_rent_slot_in_progress_info
+		}
+	}
+}
+
+# условие отображение информации (длЯ покупателей)
+ftm_rent_slot_5_info = {
+	potential = {
+		has_global_flag = ftm_rent_slot_5_selected
+		NOT = {
+			is_same_value = event_target:ftm_rented_fleet_slot_5_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		hidden_effect = {
+			country_event = { id = ftm_rent.510 }
+		}
+	}
+}
+
+# условие отображение информации (длЯ продавца)
+ftm_rent_slot_5_info_seller = {
+	potential = {
+		has_global_flag = ftm_rent_slot_5_selected
+		is_same_value = event_target:ftm_rented_fleet_slot_5_seller
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		hidden_effect = {
+			country_event = { id = ftm_rent.510 }
+		}
+	}
+}
+
+# условие отображение информации (флот арендован)
+ftm_rent_slot_5_info_arended = {
+	potential = {
+		has_global_flag = ftm_rent_slot_5_arended
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_rent_slot_5_info_arended_time
+	}
+}
+
+# условие отображения кнопки "купить"
+ftm_rent_slot_5_buy = {
+	potential = {
+		has_global_flag = ftm_rent_slot_5_selected
+		NOT = {
+			is_same_value = event_target:ftm_rented_fleet_slot_5_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_rent_slot_5_buy_info
+		hidden_effect = {
+			log = "[Root.GetName] want to buy fleet in slot 1."
+
+		### проверка наличиЯ энергии
+
+			set_variable = {
+				which = ftm_buyer_rented_fleet_slot_5_check_energy
+				value = 0
+			}
+			#1	
+			while = {
+				count = 99
+				if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10000 }
+					}
+					add_resource = { energy = -10000 }
+					event_target:ftm_rented_fleet_slot_5_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_5_check_energy
+							value = 10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1000 }
+					}
+					add_resource = { energy = -1000 }
+					event_target:ftm_rented_fleet_slot_5_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_5_check_energy
+							value = 1000
+						}			
+					}			
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 100 }
+					}
+					add_resource = { energy = -100 }
+					event_target:ftm_rented_fleet_slot_5_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_5_check_energy
+							value = 100
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10 }
+					}
+					add_resource = { energy = -10 }
+					event_target:ftm_rented_fleet_slot_5_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_5_check_energy
+							value = 10
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1 }
+					}
+					add_resource = { energy = -1 }
+					event_target:ftm_rented_fleet_slot_5_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_5_check_energy
+							value = 1
+						}
+					}					
+				}
+				else = {
+					#nothing
+				}
+			}
+			#2
+			event_target:ftm_rented_fleet_slot_5_seller = { 
+				set_variable = {
+					which = ftm_buyer_rented_fleet_slot_5_energy_current_count
+					value = ftm_buyer_rented_fleet_slot_5_check_energy
+				}
+			}
+			#3
+			while = {
+				count = 99
+				if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_5_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_5_check_energy
+								value >= 10000
+							}
+						}
+					}
+					add_resource = { energy = 10000 }
+					event_target:ftm_rented_fleet_slot_5_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_5_check_energy
+							value = -10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_5_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_5_check_energy
+								value >= 1000
+							}
+						}
+					}
+					add_resource = { energy = 1000 }
+					event_target:ftm_rented_fleet_slot_5_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_5_check_energy
+							value = -1000
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_5_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_5_check_energy
+								value >= 100
+							}
+						}
+					}
+					add_resource = { energy = 100 }
+					event_target:ftm_rented_fleet_slot_5_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_5_check_energy
+							value = -100
+						}
+					}					
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_5_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_5_check_energy
+								value >= 10
+							}
+						}
+					}
+					add_resource = { energy = 10 }
+					event_target:ftm_rented_fleet_slot_5_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_5_check_energy
+							value = -10
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_5_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_5_check_energy
+								value >= 1
+							}
+						}
+					}
+					add_resource = { energy = 1 }
+					event_target:ftm_rented_fleet_slot_5_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_5_check_energy
+							value = -1
+						}					
+					}
+				}
+				else = {
+					#nothing
+				}
+			}	
+			log = "[Root.GetName]: energy_check complete. ENERGY: [event_target:ftm_rented_fleet_slot_5_seller.ftm_buyer_rented_fleet_slot_5_energy_current_count]."
+			
+			
+			### 
+			
+			#4
+			if = {
+				limit = {
+					has_country_flag = ftm_rent_slot_5_sanction_block
+				}
+				log = "Check [Root.GetName] sanction: SANCTION ACTIVE!!!"
+				country_event = { id = ftm_rent.521 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = ftm_rent_slot_5_sanction_block
+					}
+					event_target:ftm_rented_fleet_slot_5_seller = { 
+						check_variable = {
+							which = ftm_buyer_rented_fleet_slot_5_energy_current_count
+							value < ftm_rented_fleet_slot_5_cost
+						}
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_rented_fleet_slot_5_seller.ftm_rented_fleet_slot_5_cost]... FAIL. NO ENERGY."
+				country_event = { id = ftm_rent.505 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = ftm_rent_slot_5_sanction_block
+					}
+					event_target:ftm_rented_fleet_slot_5_seller = { 
+						check_variable = {
+							which = ftm_buyer_rented_fleet_slot_5_energy_current_count
+							value >= ftm_rented_fleet_slot_5_cost
+						}
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_rented_fleet_slot_5_seller.ftm_rented_fleet_slot_5_cost]... SUCCESS. ENERGY IN."
+				save_global_event_target_as = ftm_rent_slot_5_buyer
+				
+				# передача флота и денег
+				event_target:ftm_rented_fleet_slot_5 = { 
+					set_fleet_flag = ftm_rented_fleet_slot_5
+					set_owner = event_target:ftm_rent_slot_5_buyer
+					set_event_locked = no
+				}
+				event_target:ftm_rent_slot_5_buyer = { 
+					country_event = { id = ftm_rent.511 }
+				
+				
+					# снятие ресурсов при покупке			
+			
+					event_target:ftm_rented_fleet_slot_5_seller = { 
+						set_variable = {
+							which = ftm_rented_fleet_slot_5_lot_cost
+							value = ftm_rented_fleet_slot_5_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_rented_fleet_slot_5_seller.ftm_rented_fleet_slot_5_lot_cost] energy is SLOT-1 cost"	
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_5_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_5_lot_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = -10000 }
+							event_target:ftm_rented_fleet_slot_5_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_5_lot_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_5_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_5_lot_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = -1000 }
+							event_target:ftm_rented_fleet_slot_5_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_5_lot_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_5_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_5_lot_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = -100 }
+							event_target:ftm_rented_fleet_slot_5_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_5_lot_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_5_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_5_lot_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = -10 }
+							event_target:ftm_rented_fleet_slot_5_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_5_lot_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_5_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_5_lot_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = -1 }
+							event_target:ftm_rented_fleet_slot_5_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_5_lot_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}	
+				}
+				event_target:ftm_rented_fleet_slot_5_seller = { 
+					country_event = { id = ftm_rent.512 }
+				}
+				remove_global_flag = ftm_rent_slot_5_selected
+				set_global_flag = ftm_rent_slot_5_arended	
+			}
+		}
+	}
+}
+
+
+################################################################
+##### cлот 6
+
+# условие отображения когда лота нет
+ftm_rent_slot_6_no_info = {
+	potential = {
+		NOT = {
+			OR = {
+				has_global_flag = ftm_rent_slot_6_selected
+				has_global_flag = ftm_rent_slot_6_arended
+			}
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = ftm_rent_slot_6_in_progress		
+				}			
+			}
+			hidden_effect = {
+				country_event = { id = ftm_rent.601 }
+				set_global_flag = ftm_rent_slot_6_in_progress
+			}
+		}
+		else = {
+			custom_tooltip = ftm_rent_slot_in_progress_info
+		}
+	}
+}
+
+# условие отображение информации (длЯ покупателей)
+ftm_rent_slot_6_info = {
+	potential = {
+		has_global_flag = ftm_rent_slot_6_selected
+		NOT = {
+			is_same_value = event_target:ftm_rented_fleet_slot_6_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		hidden_effect = {
+			country_event = { id = ftm_rent.610 }
+		}
+	}
+}
+
+# условие отображение информации (длЯ продавца)
+ftm_rent_slot_6_info_seller = {
+	potential = {
+		has_global_flag = ftm_rent_slot_6_selected
+		is_same_value = event_target:ftm_rented_fleet_slot_6_seller
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		hidden_effect = {
+			country_event = { id = ftm_rent.610 }
+		}
+	}
+}
+
+# условие отображение информации (флот арендован)
+ftm_rent_slot_6_info_arended = {
+	potential = {
+		has_global_flag = ftm_rent_slot_6_arended
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_rent_slot_6_info_arended_time
+	}
+}
+
+# условие отображения кнопки "купить"
+ftm_rent_slot_6_buy = {
+	potential = {
+		has_global_flag = ftm_rent_slot_6_selected
+		NOT = {
+			is_same_value = event_target:ftm_rented_fleet_slot_6_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_rent_slot_6_buy_info
+		hidden_effect = {
+			log = "[Root.GetName] want to buy fleet in slot 1."
+
+		### проверка наличиЯ энергии
+
+			set_variable = {
+				which = ftm_buyer_rented_fleet_slot_6_check_energy
+				value = 0
+			}
+			#1	
+			while = {
+				count = 99
+				if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10000 }
+					}
+					add_resource = { energy = -10000 }
+					event_target:ftm_rented_fleet_slot_6_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_6_check_energy
+							value = 10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1000 }
+					}
+					add_resource = { energy = -1000 }
+					event_target:ftm_rented_fleet_slot_6_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_6_check_energy
+							value = 1000
+						}			
+					}			
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 100 }
+					}
+					add_resource = { energy = -100 }
+					event_target:ftm_rented_fleet_slot_6_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_6_check_energy
+							value = 100
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10 }
+					}
+					add_resource = { energy = -10 }
+					event_target:ftm_rented_fleet_slot_6_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_6_check_energy
+							value = 10
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1 }
+					}
+					add_resource = { energy = -1 }
+					event_target:ftm_rented_fleet_slot_6_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_6_check_energy
+							value = 1
+						}
+					}					
+				}
+				else = {
+					#nothing
+				}
+			}
+			#2
+			event_target:ftm_rented_fleet_slot_6_seller = { 
+				set_variable = {
+					which = ftm_buyer_rented_fleet_slot_6_energy_current_count
+					value = ftm_buyer_rented_fleet_slot_6_check_energy
+				}
+			}
+			#3
+			while = {
+				count = 99
+				if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_6_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_6_check_energy
+								value >= 10000
+							}
+						}
+					}
+					add_resource = { energy = 10000 }
+					event_target:ftm_rented_fleet_slot_6_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_6_check_energy
+							value = -10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_6_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_6_check_energy
+								value >= 1000
+							}
+						}
+					}
+					add_resource = { energy = 1000 }
+					event_target:ftm_rented_fleet_slot_6_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_6_check_energy
+							value = -1000
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_6_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_6_check_energy
+								value >= 100
+							}
+						}
+					}
+					add_resource = { energy = 100 }
+					event_target:ftm_rented_fleet_slot_6_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_6_check_energy
+							value = -100
+						}
+					}					
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_6_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_6_check_energy
+								value >= 10
+							}
+						}
+					}
+					add_resource = { energy = 10 }
+					event_target:ftm_rented_fleet_slot_6_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_6_check_energy
+							value = -10
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_rented_fleet_slot_6_seller = { 
+							check_variable = {
+								which = ftm_buyer_rented_fleet_slot_6_check_energy
+								value >= 1
+							}
+						}
+					}
+					add_resource = { energy = 1 }
+					event_target:ftm_rented_fleet_slot_6_seller = { 
+						change_variable = {
+							which = ftm_buyer_rented_fleet_slot_6_check_energy
+							value = -1
+						}					
+					}
+				}
+				else = {
+					#nothing
+				}
+			}	
+			log = "[Root.GetName]: energy_check complete. ENERGY: [event_target:ftm_rented_fleet_slot_6_seller.ftm_buyer_rented_fleet_slot_6_energy_current_count]."
+			
+			
+			### 
+			
+			#4
+			if = {
+				limit = {
+					has_country_flag = ftm_rent_slot_6_sanction_block
+				}
+				log = "Check [Root.GetName] sanction: SANCTION ACTIVE!!!"
+				country_event = { id = ftm_rent.621 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = ftm_rent_slot_6_sanction_block
+					}
+					event_target:ftm_rented_fleet_slot_6_seller = { 
+						check_variable = {
+							which = ftm_buyer_rented_fleet_slot_6_energy_current_count
+							value < ftm_rented_fleet_slot_6_cost
+						}
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_rented_fleet_slot_6_seller.ftm_rented_fleet_slot_6_cost]... FAIL. NO ENERGY."
+				country_event = { id = ftm_rent.605 }
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = ftm_rent_slot_6_sanction_block
+					}
+					event_target:ftm_rented_fleet_slot_6_seller = { 
+						check_variable = {
+							which = ftm_buyer_rented_fleet_slot_6_energy_current_count
+							value >= ftm_rented_fleet_slot_6_cost
+						}
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_rented_fleet_slot_6_seller.ftm_rented_fleet_slot_6_cost]... SUCCESS. ENERGY IN."
+				save_global_event_target_as = ftm_rent_slot_6_buyer
+				
+				# передача флота и денег
+				event_target:ftm_rented_fleet_slot_6 = { 
+					set_fleet_flag = ftm_rented_fleet_slot_6
+					set_owner = event_target:ftm_rent_slot_6_buyer
+					set_event_locked = no
+				}
+				event_target:ftm_rent_slot_6_buyer = { 
+					country_event = { id = ftm_rent.611 }
+				
+				
+					# снятие ресурсов при покупке			
+			
+					event_target:ftm_rented_fleet_slot_6_seller = { 
+						set_variable = {
+							which = ftm_rented_fleet_slot_6_lot_cost
+							value = ftm_rented_fleet_slot_6_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_rented_fleet_slot_6_seller.ftm_rented_fleet_slot_6_lot_cost] energy is SLOT-1 cost"	
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_6_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_6_lot_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = -10000 }
+							event_target:ftm_rented_fleet_slot_6_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_6_lot_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_6_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_6_lot_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = -1000 }
+							event_target:ftm_rented_fleet_slot_6_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_6_lot_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_6_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_6_lot_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = -100 }
+							event_target:ftm_rented_fleet_slot_6_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_6_lot_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_6_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_6_lot_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = -10 }
+							event_target:ftm_rented_fleet_slot_6_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_6_lot_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_rented_fleet_slot_6_seller = { 
+									check_variable = {
+										which = ftm_rented_fleet_slot_6_lot_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = -1 }
+							event_target:ftm_rented_fleet_slot_6_seller = { 
+								change_variable = {
+									which = ftm_rented_fleet_slot_6_lot_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}	
+				}
+				event_target:ftm_rented_fleet_slot_6_seller = { 
+					country_event = { id = ftm_rent.612 }
+				}
+				remove_global_flag = ftm_rent_slot_6_selected
+				set_global_flag = ftm_rent_slot_6_arended	
+			}
+		}
+	}
+}

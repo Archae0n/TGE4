@@ -1,0 +1,608 @@
+defined_text = {
+	name = sge_gender_status
+	text = {
+		trigger = {
+			has_country_flag = all_female
+			NOT = {has_country_flag = all_male}
+		}
+		localization_key = "sge_status_all_female"	
+	}
+	
+	text = {
+		trigger = {
+			has_country_flag = all_male
+			NOT = {has_country_flag = all_female}
+		}
+		localization_key = "sge_status_all_male"
+	}
+	
+	text = {
+		trigger = {
+			OR = {
+				has_country_flag = all_female
+				has_country_flag = all_male
+			}
+		}
+		localization_key = "sge_status_error"
+	}
+	
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = all_female
+				has_country_flag = all_male
+			}
+		}
+		localization_key = "sge_status_vanilla"
+	}
+}
+
+defined_text = {
+	name = sge_hide_status
+	text = {
+		trigger = {
+			has_country_flag = hide_sge_edict
+		}
+		localization_key = "sge_status_hidden"	
+	}
+		
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = hide_sge_edict
+			}
+		}
+		localization_key = " "
+	}
+}
+
+#female
+defined_text = {
+	name = sge_fro
+	text = {
+		trigger = {
+			has_country_flag = sge_female_ruler_only_temp
+			NOT = {has_country_flag = sge_female_ruler_only}
+		}
+		localization_key = sge.ruler_yellow
+	}		
+	text = {
+		trigger = {
+			has_country_flag = sge_female_ruler_only
+			has_country_flag = sge_female_ruler_only_temp
+		}
+		localization_key = sge.ruler_green
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = sge_female_ruler_only
+				has_country_flag = sge_female_ruler_only_temp
+			}
+		}
+		localization_key = sge.1_space
+	}
+}
+defined_text = {
+	name = sge_fgoo
+	text = {
+		trigger = {
+			has_country_flag = sge_female_governor_only_temp
+			NOT = {has_country_flag = sge_female_governor_only}
+		}
+		localization_key = sge.governor_yellow
+	}		
+	text = {
+		trigger = {
+			has_country_flag = sge_female_governor_only
+			has_country_flag = sge_female_governor_only_temp
+		}
+		localization_key = sge.governor_green
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = sge_female_governor_only
+				has_country_flag = sge_female_governor_only_temp
+			}
+		}
+		localization_key = sge.1_space
+	}
+}
+defined_text = {
+	name = sge_fao
+	text = {
+		trigger = {
+			has_country_flag = sge_female_admiral_only_temp
+			NOT = {has_country_flag = sge_female_admiral_only}
+		}
+		localization_key = sge.admiral_yellow
+	}
+	text = {
+		trigger = {
+			has_country_flag = sge_female_admiral_only
+			has_country_flag = sge_female_admiral_only_temp
+		}
+		localization_key = sge.admiral_green
+	}	
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = sge_female_admiral_only
+				has_country_flag = sge_female_admiral_only_temp
+			}
+		}
+		localization_key = sge.1_space
+	}
+}
+defined_text = {
+	name = sge_fso
+	text = {
+		trigger = {
+			has_country_flag = sge_female_scientist_only_temp
+			NOT = {has_country_flag = sge_female_scientist_only}
+		}
+		localization_key = sge.scientist_yellow
+	}
+	text = {
+		trigger = {
+			has_country_flag = sge_female_scientist_only
+			has_country_flag = sge_female_scientist_only_temp
+		}
+		localization_key = sge.scientist_green
+	}	
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = sge_female_scientist_only
+				has_country_flag = sge_female_scientist_only_temp
+			}
+		}
+		localization_key = sge.1_space
+	}
+}
+defined_text = {
+	name = sge_fgeo
+	text = {
+		trigger = {
+			has_country_flag = sge_female_general_only_temp
+			NOT = {has_country_flag = sge_female_general_only}
+		}
+		localization_key = sge.general_yellow
+	}
+	text = {
+		trigger = {
+			has_country_flag = sge_female_general_only
+			has_country_flag = sge_female_general_only_temp
+		}
+		localization_key = sge.general_green
+	}	
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = sge_female_general_only
+				has_country_flag = sge_female_general_only_temp
+			}
+		}
+		localization_key = sge.1_space
+	}
+}
+defined_text = {
+	name = sge_fall
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = sge_all_female
+				has_country_flag = sge_female_ruler_only
+				has_country_flag = sge_female_governor_only
+				has_country_flag = sge_female_admiral_only
+				has_country_flag = sge_female_scientist_only
+				has_country_flag = sge_female_general_only
+				has_country_flag = sge_all_female_temp
+				has_country_flag = sge_female_ruler_only_temp
+				has_country_flag = sge_female_governor_only_temp
+				has_country_flag = sge_female_admiral_only_temp
+				has_country_flag = sge_female_scientist_only_temp
+				has_country_flag = sge_female_general_only_temp
+			}
+		}
+		localization_key = sge.none_green
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = sge_all_female_temp
+				has_country_flag = sge_female_ruler_only_temp
+				has_country_flag = sge_female_governor_only_temp
+				has_country_flag = sge_female_admiral_only_temp
+				has_country_flag = sge_female_scientist_only_temp
+				has_country_flag = sge_female_general_only_temp
+			}
+			OR = {
+				has_country_flag = sge_all_female
+				has_country_flag = sge_female_ruler_only
+				has_country_flag = sge_female_governor_only
+				has_country_flag = sge_female_admiral_only
+				has_country_flag = sge_female_scientist_only
+				has_country_flag = sge_female_general_only
+			}
+		}
+		localization_key = sge.none_yellow
+	}	
+	text = {
+		trigger = {
+			has_country_flag = sge_all_female_temp
+			NOT = {has_country_flag = sge_all_female}			
+		}
+		localization_key = sge.all_yellow
+	}
+	text = {
+		trigger = {
+			has_country_flag = sge_all_female	
+			has_country_flag = sge_all_female_temp
+		}
+		localization_key = sge.all_green
+	}
+	#text = {
+		#localization_key = sge.1_space
+	#}
+}
+
+#male
+defined_text = {
+	name = sge_mro
+	text = {
+		trigger = {
+			has_country_flag = sge_male_ruler_only_temp
+			NOT = {has_country_flag = sge_male_ruler_only}
+		}
+		localization_key = sge.ruler_yellow
+	}		
+	text = {
+		trigger = {
+			has_country_flag = sge_male_ruler_only
+			has_country_flag = sge_male_ruler_only_temp
+		}
+		localization_key = sge.ruler_green
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = sge_male_ruler_only
+				has_country_flag = sge_male_ruler_only_temp
+			}
+		}
+		localization_key = sge.1_space
+	}
+}
+defined_text = {
+	name = sge_mgoo
+	text = {
+		trigger = {
+			has_country_flag = sge_male_governor_only_temp
+			NOT = {has_country_flag = sge_male_governor_only}
+		}
+		localization_key = sge.governor_yellow
+	}		
+	text = {
+		trigger = {
+			has_country_flag = sge_male_governor_only
+			has_country_flag = sge_male_governor_only_temp
+		}
+		localization_key = sge.governor_green
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = sge_male_governor_only
+				has_country_flag = sge_male_governor_only_temp
+			}
+		}
+		localization_key = sge.1_space
+	}
+}
+defined_text = {
+	name = sge_mao
+	text = {
+		trigger = {
+			has_country_flag = sge_male_admiral_only_temp
+			NOT = {has_country_flag = sge_male_admiral_only}
+		}
+		localization_key = sge.admiral_yellow
+	}
+	text = {
+		trigger = {
+			has_country_flag = sge_male_admiral_only
+			has_country_flag = sge_male_admiral_only_temp
+		}
+		localization_key = sge.admiral_green
+	}	
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = sge_male_admiral_only
+				has_country_flag = sge_male_admiral_only_temp
+			}
+		}
+		localization_key = sge.1_space
+	}
+}
+defined_text = {
+	name = sge_mso
+	text = {
+		trigger = {
+			has_country_flag = sge_male_scientist_only_temp
+			NOT = {has_country_flag = sge_male_scientist_only}
+		}
+		localization_key = sge.scientist_yellow
+	}
+	text = {
+		trigger = {
+			has_country_flag = sge_male_scientist_only
+			has_country_flag = sge_male_scientist_only_temp
+		}
+		localization_key = sge.scientist_green
+	}	
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = sge_male_scientist_only
+				has_country_flag = sge_male_scientist_only_temp
+			}
+		}
+		localization_key = sge.1_space
+	}
+}
+defined_text = {
+	name = sge_mgeo
+	text = {
+		trigger = {
+			has_country_flag = sge_male_general_only_temp
+			NOT = {has_country_flag = sge_male_general_only}
+		}
+		localization_key = sge.general_yellow
+	}
+	text = {
+		trigger = {
+			has_country_flag = sge_male_general_only
+			has_country_flag = sge_male_general_only_temp
+		}
+		localization_key = sge.general_green
+	}	
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = sge_male_general_only
+				has_country_flag = sge_male_general_only_temp
+			}
+		}
+		localization_key = sge.1_space
+	}
+}
+defined_text = {
+	name = sge_mall
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = sge_all_male
+				has_country_flag = sge_male_ruler_only
+				has_country_flag = sge_male_governor_only
+				has_country_flag = sge_male_admiral_only
+				has_country_flag = sge_male_scientist_only
+				has_country_flag = sge_male_general_only
+				has_country_flag = sge_all_male_temp
+				has_country_flag = sge_male_ruler_only_temp
+				has_country_flag = sge_male_governor_only_temp
+				has_country_flag = sge_male_admiral_only_temp
+				has_country_flag = sge_male_scientist_only_temp
+				has_country_flag = sge_male_general_only_temp
+			}
+		}
+		localization_key = sge.none_green
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = sge_all_male_temp
+				has_country_flag = sge_male_ruler_only_temp
+				has_country_flag = sge_male_governor_only_temp
+				has_country_flag = sge_male_admiral_only_temp
+				has_country_flag = sge_male_scientist_only_temp
+				has_country_flag = sge_male_general_only_temp
+			}
+			OR = {
+				has_country_flag = sge_all_male
+				has_country_flag = sge_male_ruler_only
+				has_country_flag = sge_male_governor_only
+				has_country_flag = sge_male_admiral_only
+				has_country_flag = sge_male_scientist_only
+				has_country_flag = sge_male_general_only
+			}
+		}
+		localization_key = sge.none_yellow
+	}	
+	text = {
+		trigger = {
+			has_country_flag = sge_all_male_temp
+			NOT = {has_country_flag = sge_all_male}			
+		}
+		localization_key = sge.all_yellow
+	}
+	text = {
+		trigger = {
+			has_country_flag = sge_all_male	
+			has_country_flag = sge_all_male_temp
+		}
+		localization_key = sge.all_green
+	}
+	#text = {
+	#	localization_key = sge.1_space
+	#}
+}
+defined_text = {
+	name = sge_ruler_setting
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = sge_female_ruler_only_temp
+					NOT = {has_country_flag = sge_female_ruler_only}
+				}
+				AND = {
+					has_country_flag = sge_all_female_temp
+					NOT = {has_country_flag = sge_all_female}
+				}
+			}
+		}
+		localization_key = sge.female_ruler_yellow
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = sge_female_ruler_only
+					has_country_flag = sge_female_ruler_only_temp
+				}
+				AND = {
+					has_country_flag = sge_all_female
+					has_country_flag = sge_all_female_temp
+				}
+			}
+		}
+		localization_key = sge.female_ruler_green
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = sge_male_ruler_only_temp
+					NOT = {has_country_flag = sge_male_ruler_only}
+				}
+				AND = {
+					has_country_flag = sge_all_male_temp
+					NOT = {has_country_flag = sge_all_male}
+				}
+			}
+		}
+		localization_key = sge.male_ruler_yellow
+	}
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = sge_male_ruler_only
+					has_country_flag = sge_male_ruler_only_temp
+				}
+				AND = {
+					has_country_flag = sge_all_male
+					has_country_flag = sge_all_male_temp
+				}
+			}
+		}
+		localization_key = sge.male_ruler_green
+	}
+	text = {
+		trigger = {
+			has_country_flag = sge_ruler_gender_alternates_temp
+			NOT = {has_country_flag = sge_ruler_gender_alternates}
+		}
+		localization_key = sge.gender_alternates_yellow
+	}
+	text = {
+		trigger = {
+			has_country_flag = sge_ruler_gender_alternates
+			has_country_flag = sge_ruler_gender_alternates_temp
+		}
+		localization_key = sge.gender_alternates_green
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = sge_all_male
+				has_country_flag = sge_male_ruler_only
+				has_country_flag = sge_all_female
+				has_country_flag = sge_female_ruler_only
+				has_country_flag = sge_all_male_temp
+				has_country_flag = sge_male_ruler_only_temp
+				has_country_flag = sge_all_female_temp
+				has_country_flag = sge_female_ruler_only_temp
+				has_country_flag = sge_ruler_gender_alternates
+				has_country_flag = sge_ruler_gender_alternates_temp
+			}
+		}
+		localization_key = sge.vanilla_green
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_country_flag = sge_all_male_temp
+				has_country_flag = sge_male_ruler_only_temp
+				has_country_flag = sge_all_female_temp
+				has_country_flag = sge_female_ruler_only_temp
+				has_country_flag = sge_ruler_gender_alternates_temp
+			}
+			OR = {
+				has_country_flag = sge_all_male
+				has_country_flag = sge_male_ruler_only
+				has_country_flag = sge_all_female
+				has_country_flag = sge_female_ruler_only
+				has_country_flag = sge_ruler_gender_alternates
+			}
+		}
+		localization_key = sge.vanilla_yellow
+	}
+	#text = {
+	#	localization_key = sge.1_space
+	#}
+}
+
+defined_text = {
+	name = exists_heir
+	text = {
+		trigger = {
+			OR = {
+				has_authority = auth_imperial
+				exists = heir
+			}
+		}
+		localization_key = sge.1_heir_loc
+	}
+
+	
+	text = {
+		trigger = {
+			NOT = {
+				has_authority = auth_imperial
+				exists = heir
+			}
+		}
+		localization_key = sge.1_space
+	}
+}
+
+defined_text = {
+	name = exists_heir_2
+	text = {
+		trigger = {
+			OR = {
+				has_authority = auth_imperial
+				exists = heir
+			}
+		}
+		localization_key = sge.1_heir_loc
+	}
+
+	
+	text = {
+		trigger = {
+			NOT = {
+				has_authority = auth_imperial
+				exists = heir
+			}
+		}
+		localization_key = sge.1_space
+	}
+}
+
+
+

@@ -1,0 +1,95 @@
+#this file ( and all files in this folder ) is reloadable with console command "reload behavior"
+#filewatcher is enabled for all files in this folder
+
+# FIGHTER
+ship_behavior = {
+	name = "sce_fighter_behavior"
+	preferred_attack_range = 7
+	formation_distance = 130
+	return_to_formation_distance = 300
+	attack_move_pattern = charge
+	passive_move_pattern = orbit
+	
+	targeting = {
+		keep_previous_target_bonus		= 50000
+		damage_value					= 0
+		low_health_bonus				= 5000
+		shield_focus_value				= 0
+		armor_focus_value				= 0
+		already_incoming_damage_penalty = 0
+		distance_to_fleet_penalty		= 10
+		size_difference_penalty			= -0
+		transport_target_penalty		= 50000
+		civilian_target_penalty			= 100000
+	}
+}
+
+# INTERCEPTOR
+ship_behavior = {
+	name = "sce_interceptor_behavior"
+	preferred_attack_range = 7
+	formation_distance = 25
+	return_to_formation_distance = 60
+	attack_move_pattern = charge
+	passive_move_pattern = charge
+
+	targeting = {
+		keep_previous_target_bonus		= 50000
+		damage_value					= 0
+		low_health_bonus				= 100
+		shield_focus_value				= 0
+		armor_focus_value				= 0
+		already_incoming_damage_penalty = 0
+		distance_to_fleet_penalty		= 0
+		size_difference_penalty			= -1000
+		transport_target_penalty		= 50000
+		civilian_target_penalty			= 100000
+	}
+}
+
+# GUNSHIP
+ship_behavior = {
+	name = "sce_gunship_behavior"
+	preferred_attack_range = 9
+	formation_distance = 150
+	return_to_formation_distance = 275
+	attack_move_pattern = orbit
+	passive_move_pattern = orbit
+
+	targeting = {
+		keep_previous_target_bonus		= 0
+		damage_value					= 0
+		low_health_bonus				= 5000
+		shield_focus_value				= 0
+		armor_focus_value				= 0
+		already_incoming_damage_penalty = 0
+		distance_to_fleet_penalty		= 20
+		size_difference_penalty			= 0
+		transport_target_penalty		= 50000
+		civilian_target_penalty			= 100000
+	}
+}
+
+# BOMBER
+# Bombers do a strafing run, then retreat while their weapons cooldown, then come in for another attack.
+ship_behavior = {
+	name = "sce_bomber_behavior"
+	preferred_attack_range = 12
+	formation_distance = 20
+	return_to_formation_distance = 300
+	attack_move_pattern = charge
+	passive_move_pattern = charge
+
+	targeting = {
+		keep_previous_target_bonus		= 500000
+		damage_value					= 0
+		low_health_bonus				= 50
+		shield_focus_value				= 0
+		armor_focus_value				= 5
+		already_incoming_damage_penalty = 0
+		distance_to_fleet_penalty		= 100
+		size_difference_penalty			= 10000
+		transport_target_penalty		= 5000
+		civilian_target_penalty			= 10000
+	}
+}

@@ -1,0 +1,838 @@
+##################
+### TECH COSTS ###
+##################
+#If you change any of these, use replace in files so the values are the same across all files
+
+@tier1cost1 = 360
+@tier1cost2 = 480
+@tier1cost3 = 600
+@tier1cost4 = 720
+
+@tier2cost1 = 1000
+@tier2cost2 = 1400
+@tier2cost3 = 1800
+@tier2cost4 = 2200
+
+@tier3cost1 = 3000
+@tier3cost2 = 4000
+@tier3cost3 = 5000
+@tier3cost4 = 6000
+
+@tier4cost1 = 10000
+
+####################
+### TECH WEIGHTS ###
+####################
+
+@tier1weight1 = 100
+@tier1weight2 = 95
+@tier1weight3 = 90
+@tier1weight4 = 85
+
+@tier2weight1 = 75
+@tier2weight2 = 70
+@tier2weight3 = 65
+@tier2weight4 = 60
+
+@tier3weight1 = 50
+@tier3weight2 = 45
+@tier3weight3 = 40
+@tier3weight4 = 35
+
+@tier4weight1 = 30
+
+# ##################
+# Nomad Voidcraft
+# ##################
+
+# Nomad Ships
+tech_nomad_ships = {
+	cost = 0
+	area = engineering
+	category = { voidcraft }
+	tier = 0
+	start_tech = yes
+	weight = 0
+	
+	## unlock the ability to build nomad ships and stations
+	
+	potential = {
+		or = {
+			has_origin = origin_void_nomads
+			has_origin = origin_void_marauders
+			has_origin = origin_void_reavers
+			has_origin = origin_ancient_drones
+		}
+	}
+	
+	Weight_modifier = {
+		factor = 0
+	}
+}
+
+# Void Farer Power
+tech_void_farer_engineering = {
+	cost = 0
+	area = engineering
+	category = { voidcraft }
+	tier = 0
+	start_tech = yes
+	weight = 0
+	
+	potential = {
+		has_origin = origin_void_nomads
+	}
+	
+	## unlock the ability to build nomad ships and stations
+	
+	Weight_modifier = {
+		factor = 0
+	}
+}
+
+# Armed Civilian Fleet
+tech_arm_civilian_fleet = {
+	cost = 2000
+	area = engineering
+	category = { voidcraft }
+	tier = 2
+	is_rare = yes
+	ai_update_type = all
+	weight = 1
+	
+	potential = {
+		OR = {
+			is_void_farer = yes
+			has_ascension_perk = ap_voidborn
+		}
+	}
+	
+	## unlock armed sections for nomad civilian ships
+	
+	Weight_modifier = {
+		factor = 0
+	}
+}
+
+tech_void_warfare_constructions = {
+	cost = 6000
+	area = engineering
+	category = { voidcraft }
+	tier = 3
+	is_rare = yes
+	ai_update_type = all
+	weight = 0
+	
+	## unlock armed sections for nomad civilian ships
+	
+	Weight_modifier = {
+		factor = 0
+	}
+}
+
+####################
+# Marauder Voidcraft
+####################
+
+tech_marauder_ships = {
+	cost = 0
+	area = engineering
+	category = { voidcraft }
+	tier = 0
+	start_tech = yes
+	weight = 0
+	
+	potential = {
+		OR = {
+			has_origin = origin_void_marauders
+			has_origin = origin_void_reavers
+		}
+	}
+	
+	## unlock the ability to build nomad ships and stations
+	
+	Weight_modifier = {
+		factor = 0
+	}
+}
+
+# Marauder Hull Upgrades
+
+tech_vf_marauder_corvette_build_speed = {
+	cost = @tier1cost2
+	area = engineering
+	tier = 1
+	category = { voidcraft }
+	prerequisites = { "tech_corvettes" "tech_marauder_ships" }
+	weight = @tier1weight2
+	
+	potential = {
+		is_country_type = void_farer
+		OR = {
+			has_origin = origin_void_marauders
+			has_origin = origin_void_reavers
+		}
+	}
+	
+	modifier = {
+		shipsize_vf_marauder_corvette_build_speed_mult = 0.25
+		shipsize_vf_marauder_corvette_build_cost_mult = -0.05
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_vf_marauder_corvette_hull_1 = {
+	cost = @tier1cost3
+	area = engineering
+	tier = 1
+	category = { voidcraft }
+	prerequisites = { "tech_corvettes" "tech_marauder_ships" }
+	weight = @tier1weight3
+	
+	potential = {
+		is_country_type = void_farer
+		OR = {
+			has_origin = origin_void_marauders
+			has_origin = origin_void_reavers
+		}
+	}
+	
+	modifier = {
+		shipsize_vf_marauder_corvette_hull_add = 125
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_vf_marauder_corvette_hull_2 = {
+	cost = @tier2cost3
+	area = engineering
+	tier = 2
+	is_rare = yes
+	category = { voidcraft }
+	prerequisites = { "tech_vf_marauder_corvette_hull_1" "tech_marauder_ships" }
+	weight = @tier2weight3
+	
+	potential = {
+		is_country_type = void_farer
+		OR = {
+			has_origin = origin_void_marauders
+			has_origin = origin_void_reavers
+		}
+	}
+	
+	modifier = {
+		shipsize_vf_marauder_corvette_hull_add = 125
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.25
+			NOR = {
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_curator"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_spark_of_genius"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_expertise_voidcraft"
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_vf_marauder_frigate_build_speed = {
+	cost = @tier2cost2
+	area = engineering
+	tier = 2
+	category = { voidcraft }
+	prerequisites = { "tech_destroyers" "tech_marauder_ships" }
+	weight = @tier1weight2
+	
+	potential = {
+		is_country_type = void_farer
+		OR = {
+			has_origin = origin_void_marauders
+			has_origin = origin_void_reavers
+		}
+	}
+	
+	modifier = {
+		shipsize_vf_marauder_frigate_build_speed_mult = 0.25
+		shipsize_vf_marauder_frigate_build_cost_mult = -0.05
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_vf_marauder_frigate_hull_1 = {
+	cost = @tier2cost3
+	area = engineering
+	tier = 2
+	category = { voidcraft }
+	prerequisites = { "tech_destroyers" "tech_marauder_ships" }
+	weight = @tier1weight3
+	
+	potential = {
+		is_country_type = void_farer
+		OR = {
+			has_origin = origin_void_marauders
+			has_origin = origin_void_reavers
+		}
+	}
+	
+	modifier = {
+		shipsize_vf_marauder_frigate_hull_add = 250
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_vf_marauder_frigate_hull_2 = {
+	cost = @tier3cost1
+	area = engineering
+	tier = 3
+	is_rare = yes
+	category = { voidcraft }
+	prerequisites = { "tech_vf_marauder_frigate_hull_1" "tech_marauder_ships" }
+	weight = @tier2weight3
+	
+	potential = {
+		is_country_type = void_farer
+		OR = {
+			has_origin = origin_void_marauders
+			has_origin = origin_void_reavers
+		}
+	}
+	
+	modifier = {
+		shipsize_vf_marauder_frigate_hull_add = 250
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.25
+			NOR = {
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_curator"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_spark_of_genius"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_expertise_voidcraft"
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_vf_marauder_cruiser_build_speed = {
+	cost = @tier3cost2
+	area = engineering
+	tier = 3
+	category = { voidcraft }
+	prerequisites = { "tech_cruisers" "tech_marauder_ships" }
+	weight = @tier1weight2
+	
+	potential = {
+		is_country_type = void_farer
+		OR = {
+			has_origin = origin_void_marauders
+			has_origin = origin_void_reavers
+		}
+	}
+	
+	modifier = {
+		shipsize_vf_marauder_cruiser_build_speed_mult = 0.25
+		shipsize_vf_marauder_cruiser_build_cost_mult = -0.05
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_vf_marauder_cruiser_hull_1 = {
+	cost = @tier3cost3
+	area = engineering
+	tier = 3
+	category = { voidcraft }
+	prerequisites = { "tech_cruisers" "tech_marauder_ships" }
+	weight = @tier1weight3
+	
+	potential = {
+		is_country_type = void_farer
+		OR = {
+			has_origin = origin_void_marauders
+			has_origin = origin_void_reavers
+		}
+	}
+	
+	modifier = {
+		shipsize_vf_marauder_cruiser_hull_add = 600
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_vf_marauder_cruiser_hull_2 = {
+	cost = @tier4cost1
+	area = engineering
+	tier = 4
+	is_rare = yes
+	category = { voidcraft }
+	prerequisites = { "tech_cruisers" "tech_marauder_ships" "tech_vf_marauder_cruiser_hull_1" }
+	weight = @tier2weight3
+	
+	potential = {
+		is_country_type = void_farer
+		OR = {
+			has_origin = origin_void_marauders
+			has_origin = origin_void_reavers
+		}
+	}
+	
+	modifier = {
+		shipsize_vf_marauder_cruiser_hull_add = 600
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.25
+			NOR = {
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_curator"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_spark_of_genius"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_expertise_voidcraft"
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_vf_marauder_galleon_build_speed = {
+	cost = @tier4cost2
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_battleships" "tech_marauder_ships" }
+	weight = @tier1weight2
+	
+	potential = {
+		is_country_type = void_farer
+		OR = {
+			has_origin = origin_void_marauders
+			has_origin = origin_void_reavers
+		}
+	}
+	
+	modifier = {
+		shipsize_vf_marauder_galleon_build_speed_mult = 0.25
+		shipsize_vf_marauder_galleon_build_cost_mult = -0.05
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_vf_marauder_galleon_hull_1 = {
+	cost = @tier4cost3
+	area = engineering
+	tier = 4
+	category = { voidcraft }
+	prerequisites = { "tech_battleships" "tech_marauder_ships" }
+	weight = @tier1weight3
+	
+	potential = {
+		is_country_type = void_farer
+		OR = {
+			has_origin = origin_void_marauders
+			has_origin = origin_void_reavers
+		}
+	}
+	
+	modifier = {
+		shipsize_vf_marauder_galleon_hull_add = 1000
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_vf_marauder_galleon_hull_2 = {
+	cost = @tier5cost1
+	area = engineering
+	tier = 5
+	is_rare = yes
+	category = { voidcraft }
+	prerequisites = { "tech_battleships" "tech_marauder_ships" "tech_vf_marauder_galleon_hull_1" }
+	weight = @tier2weight3
+	
+	potential = {
+		is_country_type = void_farer
+		OR = {
+			has_origin = origin_void_marauders
+			has_origin = origin_void_reavers
+		}
+	}
+	
+	modifier = {
+		shipsize_vf_marauder_galleon_hull_add = 1000
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 0.25
+			NOR = {
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_curator"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_spark_of_genius"
+				}
+				research_leader = {
+					area = engineering
+					has_trait = "leader_trait_expertise_voidcraft"
+				}
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # ship upgrades are supposed to be good!
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+####################
+# Scavengers
+####################
+
+tech_old_ai_designs = {
+	cost = 0
+	area = engineering
+	category = { voidcraft }
+	tier = 0
+	start_tech = yes
+	weight = 0
+	
+	potential = {
+		has_valid_civic = civic_old_drones
+	}
+	
+	## unlock the ability to build nomad ships and stations
+	
+	Weight_modifier = {
+		factor = 0
+	}
+}
+
+tech_replication_logistics = {
+	cost = @tier3cost3
+	area = engineering
+	tier = 3
+	category = { industry }	
+	weight = @tier3weight3
+	prerequisites = { "tech_self_assembling_components" }
+	
+	prereqfor_desc = {
+		diplo_action = {
+			title = "TECH_DECISION_ADD_REPICATOR_TITLE"
+			desc = "TECH_DECISION_ADD_REPICATOR_DESC"
+		}
+	}
+	
+	potential = {
+		has_valid_civic = civic_old_drones
+	}
+	
+	weight_modifier = {
+		factor = 1.5 
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_industry"
+			}
+		}
+	}
+}
+
+#################
+# Stations
+#################
+
+tech_way_stations = {
+	cost = 0
+	area = engineering
+	category = { voidcraft }
+	tier = 0
+	start_tech = yes
+	weight = 0
+	
+	potential = {
+		is_void_farer = yes
+	}
+	
+	## unlock the ability to build nomad ships and stations
+	
+	Weight_modifier = {
+		factor = 0
+	}
+}
+
+tech_work_in_progress = {
+	cost = 2000
+	area = engineering
+	category = { voidcraft }
+	tier = 2
+	is_rare = yes
+	ai_update_type = all
+	weight = 0
+	
+	## unlock the ability to build nomad ships and stations
+	
+	Weight_modifier = {
+		factor = 0
+	}
+}

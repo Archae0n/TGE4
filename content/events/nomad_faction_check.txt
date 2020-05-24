@@ -1,0 +1,55 @@
+namespace = nomad
+
+# Destroy Nomads if no planets, systems and no ships remain
+# On yearly pulse
+event = {
+	id = nomad.208
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		any_country = {
+			is_country_type = void_farer
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				any_country = {
+					is_country_type = void_farer
+					num_ships < 2
+					NOT = {
+						any_system = {
+							any_system_planet = {
+								exists = controller
+								controller = { is_country_type = void_farer }
+							}
+						}
+					}
+					NOT = {
+						any_system = {
+							any_system_planet = {
+								exists = owner
+								owner = { is_country_type = void_farer }
+							}
+						}
+					}
+					NOT = {
+						any_system = {
+							exists = owner
+							owner = { is_country_type = void_farer }
+						}
+					}
+				}
+			}
+			random_country = {
+				limit = {
+					is_country_type = void_farer
+				}
+				destroy_country = yes
+			}
+		}
+	}
+}

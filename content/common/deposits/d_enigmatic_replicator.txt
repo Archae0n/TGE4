@@ -1,0 +1,7 @@
+d_enigmatic_replicator = {
+	is_for_colonizeable = yes
+	icon = "d_enigmatic_replicator"
+	category = deposit_cat_rare
+
+	potential = { always = no }
+}

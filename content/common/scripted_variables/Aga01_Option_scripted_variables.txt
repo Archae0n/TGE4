@@ -1,0 +1,18 @@
+
+############################################################
+############################################################
+#####                                                  #####
+#####    Auto Gene Assimilation                        #####
+#####                                                  #####
+#####    scripted_variables for Hard Coated Options    #####
+#####                                                  #####
+############################################################
+############################################################
+
+@AgaConstApplyForNpcEmpires = no
+@AgaConstResetFlagWhenGeneAssimilationForbidden = no
+
+@AgaConstPolicyDebugMode = no		## Ignore Society Monthly Income
+@AgaConstDefaultPolicy_Allowed = no
+@AgaConstDefaultPolicy_Forced = no
+

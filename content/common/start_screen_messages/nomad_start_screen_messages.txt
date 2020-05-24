@@ -1,0 +1,253 @@
+# Start Screen Messages
+# Parameters:
+#   trigger, a trigger with country which decides if this is a valid part. Empty will be treated as always=yes.
+#   localization, a key to a localized string.
+#	location, decides where this chunk of text is located in the description, cannot be negative.
+
+### FIRST PARTS
+
+### SECOND PARTS
+
+### GOVERNMENT REWORK
+
+###########################
+#
+# Nomads
+#
+###########################
+
+# Nomads
+part = {
+	location = 1
+	localization = "START_SCREEN_PART_TWO_NOMADS"
+	
+	trigger = {
+		OR = {
+			has_government = gov_nomads
+		}
+	}
+}
+
+# Imperial Nomads
+part = {
+	location = 1
+	localization = "START_SCREEN_PART_TWO_IMPERIAL_NOMADS"
+	
+	trigger = {
+		OR = {
+			has_government = gov_nomads_empire
+		}
+	}
+}
+
+# Dictatorship Nomads
+part = {
+	location = 1
+	localization = "START_SCREEN_PART_TWO_DICTATORSHIP_NOMADS"
+	
+	trigger = {
+		OR = {
+			has_government = gov_nomads_dictatorship
+		}
+	}
+}
+
+# Oligarchy Nomads
+part = {
+	location = 1
+	localization = "START_SCREEN_PART_TWO_OLIGARCHY_NOMADS"
+	
+	trigger = {
+		OR = {
+			has_government = gov_nomad_oligarchy
+		}
+	}
+}
+
+# Republic Nomads
+part = {
+	location = 1
+	localization = "START_SCREEN_PART_TWO_REPUBLIC_NOMADS"
+	
+	trigger = {
+		OR = {
+			has_government = gov_nomad_repubic
+		}
+	}
+}
+
+# Adrimal Board
+part = {
+	location = 1
+	localization = "START_SCREEN_PART_TWO_ADMIRALTY_BOARD"
+	
+	trigger = {
+		OR = {
+			has_government = gov_admiralty_board
+		}
+	}
+}
+
+###########################
+#
+# Marauders
+#
+###########################
+
+
+# Imperial Marauders
+part = {
+	location = 1
+	localization = "START_SCREEN_PART_TWO_KHANATE"
+	
+	trigger = {
+		OR = {
+			has_government = gov_marauder_empire
+		}
+	}
+}
+
+# Dictatorship Marauders
+part = {
+	location = 1
+	localization = "START_SCREEN_PART_TWO_BLACK_ADMIRALTY"
+	
+	trigger = {
+		OR = {
+			has_government = gov_marauder_dictatorship
+		}
+	}
+}
+
+# Oligarchy Marauders
+part = {
+	location = 1
+	localization = "START_SCREEN_PART_TWO_BRETHREN_COURT"
+	
+	trigger = {
+		OR = {
+			has_government = gov_marauder_oligarchy
+		}
+	}
+}
+
+# Republic Marauders
+part = {
+	location = 1
+	localization = "START_SCREEN_PART_TWO_RAIDER_REPUBLIC"
+	
+	trigger = {
+		OR = {
+			has_government = gov_marauder_repubic
+		}
+	}
+}
+
+###########################
+#
+# Reavers
+#
+##########################
+
+# Reavers
+part = {
+	location = 1
+	localization = "START_SCREEN_PART_TWO_REAVERS"
+	
+	trigger = {
+		OR = {
+			has_government = gov_reavers
+		}
+	}
+}
+
+# Tech Reavers
+part = {
+	location = 1
+	localization = "START_SCREEN_PART_TWO_TECH_REAVERS"
+	
+	trigger = {
+		OR = {
+			has_government = gov_tech_reavers
+		}
+	}
+}
+
+# Shrouded Reavers
+part = {
+	location = 1
+	localization = "START_SCREEN_PART_TWO_SHROUDED_REAVERS"
+	
+	trigger = {
+		OR = {
+			has_government = gov_shrouded_reavers
+		}
+	}
+}
+
+###########################
+#
+# Ancient Machines
+#
+###########################
+
+# Scavenger Bots
+part = {
+	location = 1
+	localization = "START_SCREEN_PART_TWO_SCAVENGER_BOTS"
+	
+	trigger = {
+		OR = {
+			has_government = gov_scavengers
+		}
+	}
+}
+
+# Abandoned Mining Network
+
+part = {
+	location = 1
+	localization = "START_SCREEN_PART_TWO_ABANDONED_MINING_NETWORK"
+	
+	trigger = {
+		OR = {
+			has_government = gov_mining_drones
+		}
+	}
+}
+
+# Exploratory Probes
+part = {
+	location = 1
+	localization = "START_SCREEN_PART_TWO_EXPLORATORY_PROBES"
+	
+	trigger = {
+		OR = {
+			has_government = gov_von_neumann_prodes
+		}
+	}
+}
+
+# Automated Zoologists
+part = {
+	location = 1
+	localization = "START_SCREEN_PART_TWO_AUTOMATED_ZOOLOGISTS"
+	
+	trigger = {
+		OR = {
+			has_government = gov_automated_zoologists
+		}
+	}
+}
+
+# Berserkers
+part = {
+	location = 1
+	localization = "START_SCREEN_PART_TWO_BERSERKERS"
+	
+	trigger = {
+		OR = {
+			has_government = gov_berserkers
+		}
+	}
+}

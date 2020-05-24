@@ -1,0 +1,310 @@
+namespace = evangalist
+
+#Mod Flag
+# event = {
+# 	id = evangalist.0
+# 	hide_window = yes	
+# 	is_triggered_only = yes
+
+# 	trigger = {
+# 		NOT = { has_global_flag = evangalist_active }		
+# 	}
+# 	immediate = {
+# 		set_global_flag = evangalist_active
+# 	}
+# }
+
+#Start Evangalizing
+event = {
+	id = evangalist.1
+	hide_window = yes	
+	is_triggered_only = yes
+
+	trigger = {
+		has_policy_flag = diplo_stance_evangalist		
+	}
+	immediate = {
+		every_country = {
+			limit = {
+				root = {
+					is_improving_relations_with = prev					
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_authoritarian
+					}
+				}
+				add_modifier = {
+					modifier = authoritarian_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_authoritarian
+					}
+				}
+				add_modifier = {
+					modifier = authoritarian_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_egalitarian
+					}
+				}
+				add_modifier = {
+					modifier = egalitarian_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_egalitarian
+					}
+				}
+				add_modifier = {
+					modifier = egalitarian_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_materialist
+					}
+				}
+				add_modifier = {
+					modifier = materialist_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_materialist
+					}
+				}
+				add_modifier = {
+					modifier = materialist_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_militarist
+					}
+				}
+				add_modifier = {
+					modifier = militarist_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_militarist
+					}
+				}
+				add_modifier = {
+					modifier = militarist_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_pacifist
+					}
+				}
+				add_modifier = {
+					modifier = pacifist_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_pacifist
+					}
+				}
+				add_modifier = {
+					modifier = pacifist_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_spiritualist
+					}
+				}
+				add_modifier = {
+					modifier = spiritualist_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_spiritualist
+					}
+				}
+				add_modifier = {
+					modifier = spiritualist_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_xenophile
+					}
+				}
+				add_modifier = {
+					modifier = xenophile_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_xenophile
+					}
+				}
+				add_modifier = {
+					modifier = xenophile_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_xenophobe
+					}
+				}
+				add_modifier = {
+					modifier = xenophobe_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_xenophobe
+					}
+				}
+				add_modifier = {
+					modifier = xenophobe_evangalist
+					days = 360
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				root = {
+					is_harming_relations_with = prev					
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_authoritarian
+					}
+				}
+				add_modifier = {
+					modifier = fanatic_authoritarian_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_egalitarian
+					}
+				}
+				add_modifier = {
+					modifier = fanatic_egalitarian_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_materialist
+					}
+				}
+				add_modifier = {
+					modifier = fanatic_materialist_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_militarist
+					}
+				}
+				add_modifier = {
+					modifier = fanatic_militarist_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_pacifist
+					}
+				}
+				add_modifier = {
+					modifier = fanatic_pacifist_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_spiritualist
+					}
+				}
+				add_modifier = {
+					modifier = fanatic_spiritualist_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_xenophile
+					}
+				}
+				add_modifier = {
+					modifier = fanatic_xenophile_evangalist
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_xenophobe
+					}
+				}
+				add_modifier = {
+					modifier = fanatic_xenophobe_evangalist
+					days = 360
+				}
+			}
+		}
+		country_event ={
+			id = evangalist.1
+			days = 360
+		}
+	}
+}

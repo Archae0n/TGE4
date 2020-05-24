@@ -1,0 +1,429 @@
+### Nomad ###
+#########
+### Arks
+##########
+# Space Arks
+## Capital Ark
+ship_section_template = {
+	key = "capital_ark_ship_section"
+	ship_size = capital_ark_ship
+	fits_on_slot = mid
+	entity = "colony_ship_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	prerequisites = { tech_nomad_ships }
+	
+	small_utility_slots = 2
+	medium_utility_slots = 2
+	large_utility_slots = 2
+	aux_utility_slots = 2
+}
+
+ship_section_template = {
+	key = "capital_ark_ship_armed_section"
+	ship_size = capital_ark_ship
+	fits_on_slot = mid
+	entity = "colony_ship_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	prerequisites = { tech_arm_civilian_fleet }
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "medium_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "medium_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "large_turret"
+		locatorname = "root"
+	}
+	
+	small_utility_slots = 2
+	medium_utility_slots = 2
+	large_utility_slots = 2
+	aux_utility_slots = 3
+}
+
+ship_section_template = {
+	key = "capital_ark_ship_XL_section"
+	ship_size = capital_ark_ship
+	fits_on_slot = mid
+	entity = "colony_ship_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	prerequisites = { tech_arm_civilian_fleet }
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "large_strike_craft"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "large_strike_craft"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "invisible_extra_large_fixed"
+		locatorname = "root"
+	}
+	
+	small_utility_slots = 2
+	medium_utility_slots = 2
+	large_utility_slots = 2
+	aux_utility_slots = 3
+}
+
+#
+### Support ark
+#
+ship_section_template = {
+	key = "ark_ship_support_section"
+	ship_size = support_ark_ship
+	fits_on_slot = mid
+	entity = "colony_ship_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	prerequisites { tech_nomad_ships }
+	
+	small_utility_slots = 2
+	medium_utility_slots = 2
+	large_utility_slots = 2
+	aux_utility_slots = 2
+}
+
+ship_section_template = {
+	key = "ark_ship_support_armed_section"
+	ship_size = support_ark_ship
+	fits_on_slot = mid
+	entity = "colony_ship_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	prerequisites = { tech_arm_civilian_fleet }
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "large_strike_craft"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "large_strike_craft"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "large_turret"
+		locatorname = "root"
+	}
+	
+	small_utility_slots = 2
+	medium_utility_slots = 2
+	large_utility_slots = 2
+	aux_utility_slots = 3
+}
+
+ship_section_template = {
+	key = "ark_ship_support_xl_section"
+	ship_size = support_ark_ship
+	fits_on_slot = mid
+	entity = "colony_ship_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	prerequisites = { tech_arm_civilian_fleet }
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "large_strike_craft"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "large_strike_craft"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		locatorname = "root"
+	}
+	
+	small_utility_slots = 2
+	medium_utility_slots = 2
+	large_utility_slots = 2
+	aux_utility_slots = 3
+}
+
+#########################
+# Factory Ship
+#########################
+
+ship_section_template = {
+	key = "factory_ship_section"
+	ship_size = factory_ship
+	fits_on_slot = mid
+	entity = "factory_ship_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	prerequisites = { "tech_nomad_ships" }
+	
+	small_utility_slots = 2
+	medium_utility_slots = 2
+	large_utility_slots = 2
+	aux_utility_slots = 3
+	
+	cost = 1000
+}
+
+ship_section_template = {
+	key = "factory_ship_armed_section"
+	ship_size = factory_ship
+	fits_on_slot = mid
+	entity = "factory_ship_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	prerequisites = { tech_arm_civilian_fleet }
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "large_turret"
+	}
+	
+	small_utility_slots = 2
+	medium_utility_slots = 2
+	large_utility_slots = 2
+	aux_utility_slots = 3
+	
+	cost = 1000
+}
+
+######################
+# Nomad Civilian Ships
+######################
+
+# Nomad Freighter
+ship_section_template = {
+	key = "civilian_freighter_section"
+	ship_size = nomad_mining_ship
+	fits_on_slot = mid
+	entity = "nomad_mining_ship_hull_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	prerequisites = { "tech_nomad_ships" }
+	
+	small_utility_slots = 3
+	medium_utility_slots = 3
+	large_utility_slots = 3
+}
+
+ship_section_template = {
+	key = "civilian_freighter_armed_section"
+	ship_size = nomad_mining_ship
+	fits_on_slot = mid
+	entity = "nomad_mining_ship_hull_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	prerequisites = { "tech_nomad_ships" }
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "point_defence_turret"
+	}
+	
+	small_utility_slots = 3
+	medium_utility_slots = 3
+	large_utility_slots = 3
+	aux_utility_slots = 1
+}
+
+# Nomad Tanker
+ship_section_template = {
+	key = "nomad_energy_tanker_section"
+	ship_size = nomad_energy_tanker
+	fits_on_slot = mid
+	entity = "nomad_energy_tanker_hull_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	prerequisites = { "tech_nomad_ships" }
+	
+	small_utility_slots = 3
+	medium_utility_slots = 2
+	large_utility_slots = 1
+}
+
+ship_section_template = {
+	key = "nomad_energy_tanker_armed_section"
+	ship_size = nomad_energy_tanker
+	fits_on_slot = mid
+	entity = "nomad_energy_tanker_hull_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	prerequisites = { "tech_nomad_ships" }
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "point_defence_turret"
+		locatorname = "root"
+	}
+	
+	small_utility_slots = 3
+	medium_utility_slots = 3
+	large_utility_slots = 3
+	aux_utility_slots = 1
+}
+
+### Nomad Way Station
+
+################
+### Starbase ###
+################
+
+### sections to sort
+
+ship_section_template = {
+	key = "probe_section"
+	ship_size = probe
+	fits_on_slot = mid
+	entity = "probe_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "root"
+	}
+	
+	small_utility_slots = 1
+	medium_utility_slots = 1
+	large_utility_slots = 1
+}
+
+### Large Station
+ship_section_template = {
+	key = "station_void_farer_dwelling"
+	ship_size = void_farer_void_dwelling
+	fits_on_slot = "mid"
+	entity = "void_farer_void_dwelling_hull_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		template = "medium_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "PD_02"
+		template = "point_defence_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "PD_03"
+		template = "point_defence_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "PD_04"
+		template = "point_defence_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "SMALL_GUN_04"
+		template = "small_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "medium_missile_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "TORPEDO_03"
+		template = "medium_missile_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "TORPEDO_04"
+		template = "medium_missile_turret"
+		locatorname = "part1"
+	}	
+	
+	large_utility_slots = 10
+	aux_utility_slots = 1
+}

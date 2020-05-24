@@ -1,0 +1,21 @@
+
+component_set = {
+	key = "ARK_RESOURCE_BAY"
+
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "ARK_SCIENCE_BAY"
+
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "ARK_UNITY_BAY"
+
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1	
+}

@@ -1,0 +1,321 @@
+#################################################
+### RS CUSTOM EXTRA LARGE WEAPON ###
+#################################################
+
+tech_energy_lance_1 = {
+	area = physics
+	cost = @tier4cost2
+	tier = 4
+	category = { particles }
+	ai_update_type = military	
+	prerequisites = { "tech_lasers_4" "tech_rs_battlecruisers" }
+	weight = @tier4weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}	
+	}
+	
+	ai_weight = {
+		factor = 2		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+	}
+}
+
+tech_arc_emitter_1 = {
+	area = physics
+	cost = @tier4cost2
+	tier = 4
+	category = { particles }
+	ai_update_type = military	
+	prerequisites = { "tech_disruptors_3" "tech_rs_battlecruisers" }
+	weight = @tier4weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 2		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_particles"
+			}
+		}
+	}
+}
+
+tech_mass_accelerator_1 = {
+	area = engineering
+	cost = @tier4cost2
+	tier = 4
+	category = { propulsion }
+	ai_update_type = military
+	prerequisites = { "tech_mass_drivers_4" "tech_rs_battlecruisers" }
+	weight = @tier4weight2
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_propulsion"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 2		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_propulsion"
+			}
+		}
+	}
+}
+
+#################################################
+### RS CUSTOM GRAPHICAL-CULTURE SPECIFIC TECH ###
+#################################################
+
+
+tech_arthropoid_engineering = {
+	cost = 0
+	area = engineering
+	tier = 0
+	category = { voidcraft }	
+	prerequisites = { "tech_battleships" }
+	weight = 0
+	is_reverse_engineerable = no
+	
+	prereqfor_desc = {
+		
+		custom = {
+			title = "TECH_UNLOCK_ARTHROPOID_ENGINEERING_TITLE"
+		}
+	}
+	
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_mammalian_engineering = {
+	cost = 0
+	area = engineering
+	tier = 0
+	category = { voidcraft }	
+	prerequisites = { "tech_battleships" }
+	weight = 0
+	is_reverse_engineerable = no
+	
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_MAMMALIAN_ENGINEERING_TITLE"
+		}
+	}
+	
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_molluscoid_engineering = {
+	cost = 0
+	area = engineering
+	tier = 0
+	category = { voidcraft }	
+	prerequisites = { "tech_battleships" }
+	weight = 0
+	is_reverse_engineerable = no
+	
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_MOLLUSCOID_ENGINEERING_TITLE"
+		}
+	}
+	
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_avian_engineering = {
+	cost = 0
+	area = engineering
+	tier = 0
+	category = { voidcraft }	
+	prerequisites = { "tech_battleships" }
+	weight = 0
+	is_reverse_engineerable = no
+	
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_AVIAN_ENGINEERING_TITLE"
+		}
+	}
+	
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_reptilian_engineering = {
+	cost = 0
+	area = engineering
+	tier = 0
+	category = { voidcraft }	
+	prerequisites = { "tech_battleships" }
+	weight = 0
+	is_reverse_engineerable = no
+	
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_REPTILIAN_ENGINEERING_TITLE"
+		}
+	}
+	
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_fungoid_engineering = {
+	cost = 0
+	area = engineering
+	tier = 0
+	category = { voidcraft }	
+	prerequisites = { "tech_battleships" }
+	weight = 0
+	is_reverse_engineerable = no
+	
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_FUNGOID_ENGINEERING_TITLE"
+		}
+	}
+	
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_plantoid_engineering = {
+	cost = 0
+	area = engineering
+	tier = 0
+	category = { voidcraft }	
+	prerequisites = { "tech_battleships" }
+	weight = 0
+	is_reverse_engineerable = no
+	
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_PLANTOID_ENGINEERING_TITLE"
+		}
+	}
+	
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_lithoid_engineering = {
+	cost = 0
+	area = engineering
+	tier = 0
+	category = { voidcraft }	
+	prerequisites = { "tech_battleships" }
+	weight = 0
+	is_reverse_engineerable = no
+	
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_LITHOID_ENGINEERING_TITLE"
+		}
+	}
+	
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_humanoid_engineering = {
+	cost = 0
+	area = engineering
+	tier = 0
+	category = { voidcraft }	
+	prerequisites = { "tech_battleships" }
+	weight = 0
+	is_reverse_engineerable = no
+	
+	prereqfor_desc = {
+		custom = {
+			title = "TECH_UNLOCK_HUMANOID_ENGINEERING_TITLE"
+		}
+	}
+	
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}

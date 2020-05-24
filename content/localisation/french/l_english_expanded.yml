@@ -1,0 +1,92 @@
+﻿l_english:
+
+ ##################
+ #sce_Strike Crafts:
+ ##################
+ # BOMBERS:
+ sce_BOMBER_HANGAR_1_start: "Torpedo Bomber Wing"
+ sce_BOMBER_HANGAR_1_start_DESC: "A Bomber Wing, equipped with missiles that continue to detonate after deployment to deal maximum damage to the enemy."
+ sce_BOMBER_HANGAR_1: "Basic Torpedo Bomber Wing"
+ sce_BOMBER_HANGAR_1_DESC: "A Basic Torpedo Bomber Wing, equipped with our first generation missiles that continue to detonate after deployment to deal maximum damage to the enemy."
+ sce_BOMBER_HANGAR_2: "Improved Torpedo Bomber Wing"
+ sce_BOMBER_HANGAR_2_DESC: "An Improved Torpedo Bomber Wing, equipped with our improved, second generation of missiles that continue to detonate after deployment to deal maximum damage to the enemy."
+ sce_BOMBER_HANGAR_3: "Advanced Torpedo Bomber Wing"
+ sce_BOMBER_HANGAR_3_DESC: "An Advanced Torpedo Bomber Wing, equipped with advanced technology, wielding missiles that continue to detonate after deployment to deal maximum damage to the enemy."
+ sce_BOMBER_HANGAR_4: "Superior Torpedo Bomber Wing"
+ sce_BOMBER_HANGAR_4_DESC: "A Superior Torpedo Bomber Wing, equipped with cutting edge technology, wielding missiles that continue to detonate after deployment to deal maximum damage to the enemy."
+ # Acension Path Bombers
+ sce_BOMBER_HANGAR_5_psionic: "Psionic-Enhanced Torpedo Bomber Wing"
+ sce_BOMBER_HANGAR_5_psionic_DESC: "A Psionic-Enhanced Torpedo Bomber Wing is equipped with our special equipment that allows our psionic pilots to penetrate enemy shields better as well as augment their own shields."
+ sce_BOMBER_HANGAR_5_gene: "Living Gene-Modded Torpedo Bomber Wing"
+ sce_BOMBER_HANGAR_5_gene_DESC: "A Living Gene-Modded Torpedo Bomber Wing, equipped with a regenerative living hull."
+ sce_BOMBER_HANGAR_5_cyber: "Cybernetic Interfacing Torpedo Bomber Wing"
+ sce_BOMBER_HANGAR_5_cyber_DESC: "A Torpedo Bomber Wing with a cyberntic interface for controling drones specialized for assiting Bombers in combat, as well as armor infused with automated repair nanites."
+ 
+ 
+ # GUNSHIPS:
+ sce_GUNSHIP_HANGAR_1_start: "Gunship Wing"
+ sce_GUNSHIP_HANGAR_1_start_DESC: "A Gunship Wing, equipped with heavy repeating cannons that fire in rapid succession."
+ sce_GUNSHIP_HANGAR_1: "Basic Gunship Wing"
+ sce_GUNSHIP_HANGAR_1_DESC: "A Basic Gunship Wing, equipped with our first generation of heavy repeating cannons that fire in rapid succession."
+ sce_GUNSHIP_HANGAR_2: "Improved Gunship Wing"
+ sce_GUNSHIP_HANGAR_2_DESC: "An Improved Gunship Wing, equipped with our second generation of heavy repeating cannons that fire in rapid succession."
+ sce_GUNSHIP_HANGAR_3: "Advanced Gunship Wing"
+ sce_GUNSHIP_HANGAR_3_DESC: "An Advanced Gunship Wing, equipped with our second generation of heavy repeating cannons that fire in rapid succession."
+ sce_GUNSHIP_HANGAR_4: "Superior Gunship Wing"
+ sce_GUNSHIP_HANGAR_4_DESC: "An Advanced Gunship Wing, equipped with cutting-edge technology and heavy repeating cannons that fire in rapid succession."
+ # Acension Path Gunships
+ sce_GUNSHIP_HANGAR_5_psionic: "Psionic-Enhanced Gunship Wing"
+ sce_GUNSHIP_HANGAR_5_psionic_DESC: "A Psionic-Enhanced Gunship Wing is equipped with our special equipment that allows our psionic pilots to penetrate enemy shields better as well as augment their own shields."
+ sce_GUNSHIP_HANGAR_5_gene: "Living Gene-Modded Gunship Wing"
+ sce_GUNSHIP_HANGAR_5_gene_DESC: "A Living Gene-Modded Gunship Wing, equipped with a regenerative living hull."
+ sce_GUNSHIP_HANGAR_5_cyber: "Cybernetic Interfacing Gunship Wing"
+ sce_GUNSHIP_HANGAR_5_cyber_DESC: "A Gunship Wing with a cyberntic interface for controling drones specialized for assiting Gunships in combat, as well as armor infused with automated repair nanites."
+
+
+ # INTERCEPTORS:
+ sce_INTERCEPTOR_HANGAR_1_start: "Interceptor Wing"
+ sce_INTERCEPTOR_HANGAR_1_start_DESC: "An Interceptor Wing, designed to defend our capital ships and carriers from enemy carrier missions."
+ sce_INTERCEPTOR_HANGAR_1: "Basic Interceptor Wing"
+ sce_INTERCEPTOR_HANGAR_1_DESC: "A Basic Interceptor Wing, designed to defend our capital ships and carriers from enemy carrier missions."
+ sce_INTERCEPTOR_HANGAR_2: "Improved Interceptor Wing"
+ sce_INTERCEPTOR_HANGAR_2_DESC: "Improving on previous technology, an Improved Interceptor Wing is designed to defend our capital ships and carriers from enemy carrier missions."
+ sce_INTERCEPTOR_HANGAR_3: "Advanced Interceptor Wing"
+ sce_INTERCEPTOR_HANGAR_3_DESC: "Utilizing advanced technology, an Advanced Interceptor Wing is designed to defend our capital ships and carriers from enemy carrier missions."
+ sce_INTERCEPTOR_HANGAR_4: "Superior Interceptor Wing"
+ sce_INTERCEPTOR_HANGAR_4_DESC: "Utilizing cutting edge technology, a Superior Interceptor Wing is designed to defend our capital ships and carriers from enemy carrier missions."
+ # Acension Path Interceptors
+ sce_INTERCEPTOR_HANGAR_5_psionic: "Psionic-Enhanced Interceptor Wing"
+ sce_INTERCEPTOR_HANGAR_5_psionic_DESC: "A Psionic-Enhanced Interceptor Wing is equipped with our special equipment that allows our psionic pilots to penetrate enemy shields better as well as augment their own shields."
+ sce_INTERCEPTOR_HANGAR_5_gene: "Living Gene-Modded Interceptor Wing"
+ sce_INTERCEPTOR_HANGAR_5_gene_DESC: "A Living Gene-Modded Interceptor Wing, equipped with a regenerative living hull."
+ sce_INTERCEPTOR_HANGAR_5_cyber: "Cybernetic Interfacing Interceptor Wing"
+ sce_INTERCEPTOR_HANGAR_5_cyber_DESC: "An Interceptor Wing with a cyberntic interface for controling drones specialized for assiting Interceptors in combat, as well as armor infused with automated repair nanites."
+ 
+ 
+ # FIGHTERS:
+ sce_FIGHTER_HANGAR_1_start: "Fighter Wing"
+ sce_FIGHTER_HANGAR_1_start_DESC: "A Fighter Wing is equipped to deploy rapidly as a vanguard, protecting allied carrier missions and impacting enemy shields."
+ sce_FIGHTER_HANGAR_1: "Basic Fighter Wing"
+ sce_FIGHTER_HANGAR_1_DESC: "A Basic Fighter Wing is equipped to deploy rapidly as a vanguard, protecting allied carrier missions and impacting enemy shields."
+ sce_FIGHTER_HANGAR_2: "Improved Fighter Wing"
+ sce_FIGHTER_HANGAR_2_DESC: "Improving on its predecessors, an Improved Fighter Wing, equipped to deploy rapidly as a vanguard, protecting allied carrier missions and impacting enemy shields."
+ sce_FIGHTER_HANGAR_3: "Advanced Fighter Wing"
+ sce_FIGHTER_HANGAR_3_DESC: "An Advanced Fighter Wing, equipped to deploy rapidly as a vanguard, protecting allied carrier missions and impacting enemy shields."
+ sce_FIGHTER_HANGAR_4: "Superior Fighter Wing"
+ sce_FIGHTER_HANGAR_4_DESC: "A Superior Fighter Wing, utilizing cutting edge technologyequipped to deploy rapidly as a vanguard, protecting allied carrier missions and impacting enemy shields."
+ # Acension Path Fighters
+ sce_FIGHTER_HANGAR_5_psionic: "Psionic-Enhanced Fighter Wing"
+ sce_FIGHTER_HANGAR_5_psionic_DESC: "A Psionic-Enhanced Interceptor Wing is equipped with our special equipment that allows our psionic pilots to penetrate enemy shields better as well as augment their own shields."
+ sce_FIGHTER_HANGAR_5_gene: "Living Gene-Modded Fighter Wing"
+ sce_FIGHTER_HANGAR_5_gene_DESC: "A Living Gene-Modded Fighter Wing, equipped with a regenerative living hull."
+ sce_FIGHTER_HANGAR_5_cyber: "Cybernetic Interfacing Fighter Wing"
+ sce_FIGHTER_HANGAR_5_cyber_DESC: "A Fighter Wing with a cyberntic interface for controling drones specialized for assiting Fighters in combat, as well as armor infused with automated repair nanites."
+
+
+# Acension Craft Research
+ tech_strike_craft_5_psionic: "Psionicly Enhanced Strike Craft."
+ tech_strike_craft_5_psionic_DESC: "Psionicly enhance our strike craft that allow the pilot to channel their psionic energy to envelop their ammunition in psionic energy to peirce shields, or enhance thier own shields. Pilots are also able to use their psionic abilities to predict evasive maneuvers."
+ tech_strike_craft_5_gene: "Living Gene-Modded Strike Craft"
+ tech_strike_craft_5_gene_DESC: "Create living strike craft that are gentically enhanced and can regenerate it's own hull in combat, as well as biologically hand some maintence, thereby reducing upkeep costs. It also produce a unique weaponized corrosive chemical for use in ammunition."
+ tech_strike_craft_5_cyber: "Cybernetically Interfacing Strike Craft."
+ tech_strike_craft_5_cyber_DESC: "Create a Cybernetic interface in our strike crafts that allows our pilots to effortlessly control a group of external drones to perform pinpoint attacks on a ships weak points in thier hull, as well as self-repairing nanites in the armor."

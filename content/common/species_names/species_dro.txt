@@ -1,0 +1,23 @@
+Dromaeosauridae = {
+	Yuyaki = {
+		name = "Yuyaki"
+		plural = "Yuyaki"
+		home_planet = "Scales"
+		home_system = "Idaatan Iilhia"
+		name_list = "REP3"
+	}
+	Alasnalhada = {
+		name = "Alasnalhada"
+		plural = "Alasnalhadae"
+		home_planet = "Membra Carnium"
+		home_system = "Eayanala"
+		name_list = "REP2"
+	}
+	Dromaeosauridae = {
+		name = "Dromaeosauridae"
+		plural = "Dromaeosauridae"
+		home_planet = "Verde"
+		home_system = "Veridis"
+		name_list = "REP1"
+	}
+}

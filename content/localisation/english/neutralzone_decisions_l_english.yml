@@ -1,0 +1,8 @@
+﻿l_english: 
+ # DECISIONS  
+ decision_neutral_zoning: "Add to Neutral Zone"
+ decision_neutral_zoning_desc: "This system will become a Neutral Zone."
+ decision_neutral_zoning_custom: "Once added to a Neutral Zone, this system can no longer be owned by any empire."
+ 
+ decision_end_neutral_zoning: "Dismantle Neutral Zone"
+ decision_end_neutral_zoning_desc: "Any neighbouring system in a Neutral Zone will have ownership returned to your empire."

@@ -1,0 +1,44 @@
+
+########################################
+########################################
+#####                              #####
+#####    Auto Gene Assimilation    #####
+#####                              #####
+#####    static_modifiers          #####
+#####                              #####
+########################################
+########################################
+
+###################
+###  Constants  ###
+###################
+
+@AgaConstModifierIconGeneAssimilation = "gfx/interface/icons/technologies/tech_gene_expressions.dds"		## Other Choices: gfx/interface/icons/ascension_perks/ap_engineered_evolution.dds
+
+
+###################
+###  Modifiers  ###
+###################
+
+AgaModifierGeneAssimilated_0a = {		## Gene Assimilation Has Finished
+	icon = @AgaConstModifierIconGeneAssimilation
+}
+AgaModifierGeneAssimilated_0b = {		## Lack of Society Research
+	icon = @AgaConstModifierIconGeneAssimilation
+}
+
+AgaModifierGeneAssimilated_1 = {
+	icon = @AgaConstModifierIconGeneAssimilation
+	#country_society_research_produces_add = @AgaConstSocietyResearchForGeneAssimilation_1N
+	country_base_society_research_produces_add = @AgaConstSocietyResearchForGeneAssimilation_1N
+}
+AgaModifierGeneAssimilated_2 = {
+	icon = @AgaConstModifierIconGeneAssimilation
+	#country_society_research_produces_add = @AgaConstSocietyResearchForGeneAssimilation_2N
+	country_base_society_research_produces_add = @AgaConstSocietyResearchForGeneAssimilation_2N
+}
+AgaModifierGeneAssimilated_3 = {
+	icon = @AgaConstModifierIconGeneAssimilation
+	#country_society_research_produces_add = @AgaConstSocietyResearchForGeneAssimilation_3N
+	country_base_society_research_produces_add = @AgaConstSocietyResearchForGeneAssimilation_3N
+}

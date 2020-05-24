@@ -1,0 +1,17 @@
+d_nanites_mine = {
+	is_for_colonizeable = yes
+	icon = "d_nanites_mine"
+	category = deposit_cat_rare
+
+	potential = {
+		can_have_habitable_deposits = yes
+	}
+
+	planet_modifier = {
+		building_nanite_replicator_max = 1
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}

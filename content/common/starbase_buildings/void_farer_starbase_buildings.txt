@@ -1,0 +1,254 @@
+
+nomad_trading_company = {
+	icon = "GFX_starbase_offworld_trading_company"
+	construction_days = 360
+
+	
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_space_trading
+			has_technology = tech_void_farer_engineering
+		}
+	}
+
+	resources = {
+		category = starbase_buildings
+		produces = {
+			minerals = 1
+			energy = 2
+		}
+		cost = {
+			minerals = 400
+		}
+		produced_resource_trigger = {
+			modifier = {
+				hidden_trigger = { exists = this }		
+				owner = { has_technology = tech_mineral_processing_1 }
+				resources = {
+					minerals = 1
+				}
+			}
+			modifier = {
+				hidden_trigger = { exists = this }		
+				owner = { has_technology = tech_mineral_processing_2 }
+				resources = {
+					minerals = 1
+				}
+			}
+			modifier = {
+				hidden_trigger = { exists = this }		
+				owner = { has_technology = tech_power_hub_1 }
+				resources = {
+					energy = 1
+				}
+			}
+			modifier = {
+				hidden_trigger = { exists = this }		
+				owner = { has_technology = tech_power_hub_2 }
+				resources = {
+					energy = 1
+				}
+			}
+		}
+	}
+
+	custom_tooltip = sm_nomad_trading_company_desc_modifier
+
+	show_in_tech = "tech_space_trading"
+	
+	ai_build_at_chokepoint = no
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 200
+		modifier = {
+			factor = 0
+			count_starbase_modules = {
+				type = nomad_trade_hub
+				count < 3
+			}
+		}
+	}
+}
+
+nomad_think_tank = {
+	icon = "GFX_starbase_curator_think_tank"
+	construction_days = 360
+	
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_void_farer_engineering }
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport"
+			has_starbase_size >= starbase_starport
+		}
+	}
+	
+	resources = {
+		category = starbase_buildings
+		cost = {
+			minerals = 450
+		}
+		produces = {
+			physics_research = 5
+			society_research = 5
+			engineering_research = 5
+		}
+		produced_resource_trigger = {
+			modifier = {
+				hidden_trigger = { exists = this }		
+				owner = { has_technology = tech_physics_lab_1 }
+				resources = {
+					physics_research = 1
+				}
+			}
+			modifier = {
+				hidden_trigger = { exists = this }		
+				owner = { has_technology = tech_physics_lab_2 }
+				resources = {
+					physics_research = 1
+				}
+			}
+			modifier = {
+				hidden_trigger = { exists = this }		
+				owner = { has_technology = tech_physics_lab_3 }
+				resources = {
+					physics_research = 1
+				}
+			}
+			modifier = {
+				hidden_trigger = { exists = this }		
+				owner = { has_technology = tech_engineering_lab_1 }
+				resources = {
+					engineering_research = 1
+				}
+			}
+			modifier = {
+				hidden_trigger = { exists = this }		
+				owner = { has_technology = tech_engineering_lab_2 }
+				resources = {
+					engineering_research = 1
+				}
+			}
+			modifier = {
+				hidden_trigger = { exists = this }		
+				owner = { has_technology = tech_engineering_lab_3 }
+				resources = {
+					engineering_research = 1
+				}
+			}
+			modifier = {
+				hidden_trigger = { exists = this }		
+				owner = { has_technology = tech_biolab_1 }
+				resources = {
+					society_research = 1
+				}
+			}
+			modifier = {
+				hidden_trigger = { exists = this }		
+				owner = { has_technology = tech_biolab_2 }
+				resources = {
+					society_research = 1
+				}
+			}
+			modifier = {
+				hidden_trigger = { exists = this }		
+				owner = { has_technology = tech_biolab_3 }
+				resources = {
+					society_research = 1
+				}
+			}
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 150
+	}
+}
+
+nomad_art_college = {
+	icon = "GFX_starbase_artist_college"
+	construction_days = 360
+	
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_void_farer_engineering }
+	}
+	
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport"
+			has_starbase_size >= starbase_starport
+		}
+	}
+	resources = {
+		category = starbase_buildings
+		cost = {
+			minerals = 350
+		}
+		produces = {
+			unity = 2
+				produced_resource_trigger = {
+				modifier = {
+					hidden_trigger = { exists = this }		
+					owner = { has_technology = tech_heritage_site }
+					resources = {
+						unity = 2
+					}
+				}
+				modifier = {
+					hidden_trigger = { exists = this }		
+					owner = { has_technology = tech_hypercomms_forum }
+					resources = {
+						unity = 2
+					}
+				}
+				modifier = {
+					hidden_trigger = { exists = this }		
+					owner = { has_technology = tech_autocurating_vault }
+					resources = {
+						unity = 2
+					}
+				}
+				modifier = {
+					hidden_trigger = { exists = this }		
+					owner = { has_technology = tech_holographic_rituals }
+					resources = {
+						unity = 2
+					}
+				}
+				modifier = {
+					hidden_trigger = { exists = this }		
+					owner = { has_technology = tech_consecration_fields }
+					resources = {
+						unity = 2
+					}
+				}
+				modifier = {
+					hidden_trigger = { exists = this }		
+					owner = { has_technology = tech_transcendent_faith }
+					resources = {
+						unity = 2
+					}
+				}
+			}
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 150
+	}
+}

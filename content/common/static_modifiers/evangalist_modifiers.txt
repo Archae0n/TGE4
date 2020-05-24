@@ -1,0 +1,88 @@
+authoritarian_evangalist = {
+	pop_ethic_authoritarian_attraction_mult = 0.1
+
+	icon = "gfx\interface\icons\ethics\ethic_authoritarian.dds"
+}
+fanatic_authoritarian_evangalist = {
+	pop_ethic_authoritarian_attraction_mult = 0.15
+	pop_ethics_shift_speed_mult = 0.3
+
+	icon = "gfx\interface\icons\ethics\ethic_fanatic_authoritarian.dds"
+}
+egalitarian_evangalist = {
+	pop_ethic_egalitarian_attraction_mult = 0.1
+
+	icon = "gfx\interface\icons\ethics\ethic_egalitarian.dds"
+}
+fanatic_egalitarian_evangalist = {
+	pop_ethic_egalitarian_attraction_mult = 0.15
+	pop_ethics_shift_speed_mult = 0.3
+
+	icon = "gfx\interface\icons\ethics\ethic_fanatic_egalitarian.dds"
+}
+militarist_evangalist = {
+	pop_ethic_militarist_attraction_mult = 0.1
+
+	icon = "gfx\interface\icons\ethics\ethic_militarist.dds"
+}
+fanatic_militarist_evangalist = {
+	pop_ethic_militarist_attraction_mult = 0.15
+	pop_ethics_shift_speed_mult = 0.3
+
+	icon = "gfx\interface\icons\ethics\ethic_fanatic_militarist.dds"
+}
+pacifist_evangalist = {
+	pop_ethic_pacifist_attraction_mult = 0.1
+
+	icon = "gfx\interface\icons\ethics\ethic_pacifist.dds"
+}
+fanatic_pacifist_evangalist = {
+	pop_ethic_pacifist_attraction_mult = 0.15
+	pop_ethics_shift_speed_mult = 0.3
+
+	icon = "gfx\interface\icons\ethics\ethic_fanatic_pacifist.dds"
+}
+spiritualist_evangalist = {
+	pop_ethic_spiritualist_attraction_mult = 0.1
+
+	icon = "gfx\interface\icons\ethics\ethic_spiritualist.dds"
+}
+fanatic_spiritualist_evangalist = {
+	pop_ethic_spiritualist_attraction_mult = 0.15
+	pop_ethics_shift_speed_mult = 0.3
+
+	icon = "gfx\interface\icons\ethics\ethic_fanatic_spiritualist.dds"
+}
+materialist_evangalist = {
+	pop_ethic_materialist_attraction_mult = 0.1
+
+	icon = "gfx\interface\icons\ethics\ethic_materialist.dds"
+}
+fanatic_materialist_evangalist = {
+	pop_ethic_materialist_attraction_mult =0.15
+	pop_ethics_shift_speed_mult = 0.3
+
+	icon = "gfx\interface\icons\ethics\ethic_fanatic_materialist.dds"
+}
+xenophobe_evangalist = {
+	pop_ethic_xenophobe_attraction_mult = 0.1
+
+	icon = "gfx\interface\icons\ethics\ethic_xenophobe.dds"
+}
+fanatic_xenophobe_evangalist = {
+	pop_ethic_xenophobe_attraction_mult = 0.15
+	pop_ethics_shift_speed_mult = 0.3
+
+	icon = "gfx\interface\icons\ethics\ethic_fanatic_xenophobe.dds"
+}
+xenophile_evangalist = {
+	pop_ethic_xenophile_attraction_mult = 0.1
+
+	icon = "gfx\interface\icons\ethics\ethic_xenophile.dds"
+}
+fanatic_xenophile_evangalist = {
+	pop_ethic_xenophile_attraction_mult = 0.15
+	pop_ethics_shift_speed_mult = 0.3
+
+	icon = "gfx\interface\icons\ethics\ethic_fanatic_xenophile.dds"
+}

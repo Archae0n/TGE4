@@ -1,0 +1,220 @@
+#####################################
+# Superior Species On-Action Events #
+#####################################
+
+namespace = ss
+
+# Sets a global flag for cross-mod compatibility
+event = {
+	id = ss.1
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		set_global_flag = mod_superior_species_enabled
+	}
+}
+
+# New Leaders get Genetic Savant
+country_event = {
+	id = ss.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		from.species = { has_trait = trait_genetic_memory }
+	}
+	
+	immediate = {
+		from = {
+			if = {
+				limit = { 
+					species = { has_trait = trait_genetic_memory }
+					has_skill < 3
+				}
+				set_skill = 3
+			}
+			if = {
+				limit = {
+					leader_class = admiral 
+					from.species = { has_trait = trait_genetic_memory }
+				}
+				add_trait = trait_admiral_genetic_savant
+				add_ruler_trait = trait_ruler_genetic_savant
+				break = yes
+			}
+			if = {
+				limit = {
+					leader_class = general 
+					species = { has_trait = trait_genetic_memory }
+				}
+				add_trait = trait_general_genetic_savant
+				add_ruler_trait = trait_ruler_genetic_savant
+				break = yes
+			}
+			if = {
+				limit = {
+					leader_class = governor 
+					species = { has_trait = trait_genetic_memory }
+				}
+				add_trait = trait_governor_genetic_savant
+				add_ruler_trait = trait_ruler_genetic_savant
+				break = yes
+			}
+			if = {
+				limit = { 
+					leader_class = scientist 
+					species = { has_trait = trait_genetic_memory }
+				}
+				add_trait = trait_scientist_genetic_savant
+				add_ruler_trait = trait_ruler_genetic_savant
+				break = yes
+			}
+			if = {
+				limit = { 
+					leader_class = ruler 
+					species = { has_trait = trait_genetic_memory }
+				}
+				add_trait = trait_ruler_genetic_savant
+				add_ruler_trait = trait_ruler_genetic_savant
+				break = yes
+			}
+		}
+	}
+}
+
+# Owned and Pool leaders get Genetic Savant
+country_event = {
+	id = ss.3
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		every_owned_leader = {
+			add_genetic_savant_after_modification = yes
+			remove_genetic_savant_after_modification = yes
+		}
+		
+		every_pool_leader = {
+			add_genetic_savant_after_modification = yes
+			remove_genetic_savant_after_modification = yes		
+		}
+	}
+}
+
+# Superior Species: Assimilate Pops on Monthly Pulse
+event = {
+	id = ss.4
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_playable_country = {
+			if = {
+				limit = {
+					any_owned_pop_species = {
+						has_citizenship_type = {
+							type = citizenship_assimilation
+							country = prev
+						}
+					}
+				}
+				every_owned_planet = {
+					planet_event = { id = ss.5 }
+				}
+			}
+		}
+	}
+}
+
+# Superior Species Assimilate Pops
+planet_event = {
+	id = ss.5
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_owned_pop = {
+			has_citizenship_type = {
+				type = citizenship_assimilation
+				country = root.owner
+			}
+		}
+	}
+
+	immediate = {
+		random_list = {
+			1 = { # 1 pop
+				while = {
+					count = 1
+					limit = {
+						any_owned_pop = {
+							has_citizenship_type = {
+								type = citizenship_assimilation
+								country = root.owner
+							}
+						} 
+					}
+					assimilate_random_pop = yes
+				}
+			}
+
+			1 = { # 2 pops
+				while = {
+					count = 2
+					limit = {
+						any_owned_pop = {
+							has_citizenship_type = {
+								type = citizenship_assimilation
+								country = root.owner
+							}
+						} 
+					}
+					assimilate_random_pop = yes
+				}
+			}
+
+			1 = { # 4 pops
+				while = {
+					count = 4
+					limit = {
+						any_owned_pop = {
+							has_citizenship_type = {
+								type = citizenship_assimilation
+								country = root.owner
+							}
+						} 
+					}
+					assimilate_random_pop = yes
+				}
+			}
+		}
+	}
+}
+
+# Removes Erudite leader traits if they would apply (as per event utopia.2509)
+country_event = {
+	id = ss.10
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		every_owned_leader = {
+			remove_trait = leader_trait_admiral_erudite
+			remove_trait = leader_trait_general_erudite
+			remove_trait = leader_trait_governor_erudite
+			remove_trait = leader_trait_scientist_erudite
+			remove_trait = leader_trait_ruler_erudite
+			remove_ruler_trait = leader_trait_ruler_erudite
+		}
+		every_pool_leader = {
+			remove_trait = leader_trait_admiral_erudite
+			remove_trait = leader_trait_general_erudite
+			remove_trait = leader_trait_governor_erudite
+			remove_trait = leader_trait_scientist_erudite
+			remove_trait = leader_trait_ruler_erudite
+			remove_ruler_trait = leader_trait_ruler_erudite
+		}
+	}
+}

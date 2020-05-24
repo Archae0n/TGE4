@@ -1,0 +1,616 @@
+guiTypes = {
+
+	### FACTION OVERVIEW GUI ###
+
+	containerWindowType = {
+		name = "ftm_auction_window_gui"
+		orientation = center
+		origo = center
+		moveable = yes
+		size = { width = 800 height = 600 }
+
+		background = { name = "background" quadTextureSprite ="GFX_tile_outliner_bg" }
+
+		iconType = { name = "hex_bg" spriteType = "GFX_hex_bg" position = { x = -10 y = -14 } alwaysTransparent = yes }
+		iconType = { name = "empire_header_line" quadTextureSprite = "GFX_line_long" position = { x = 6 y = 22 } alwaysTransparent = yes }
+		
+		
+		
+		
+		### ФОН ###
+			
+		effectButtonType = {
+			position = { x = 0 y = 0 }
+			name = "ftm_auction_window_background_id"
+			effect = "ftm_auction_window_background_effect"
+			quadTextureSprite = "GFX_ftm_auction_window_background"
+			alwaysTransparent = yes
+		}
+		
+		
+		
+		
+
+		### ALL OF THIS IS HIDDEN OR DISPLACED ! ### НИЧЕГО НЕ МЕНЯТЬ
+
+		buttonType = { name = "focus_button" position = { x = -1180 y = -1112 } spriteType = "GFX_fleetview_focus" } # hidden
+		instantTextBoxType = { name = "heading" font = "malgun_goth_24" position = { x = -1120 y = -115 } } # hidden
+		buttonType = { name = "alien_message_background" size = { x = 0 y = 0 } position = { x = -1110 y = -11430 } spriteType = "GFX_tiles_dark_area_cut_8" } # hidden
+		buttonType = { name = "confirm_button" quadTextureSprite = "GFX_standard_button_142_34_button" } # hidden
+		containerWindowType = {
+			name = "portrait_background"
+			position = { x = -1117 y = -1145 }
+			size = { width = 0 height = 0 }		# hide portrait window
+			iconType = { name = "event_picture" spriteType = "GFX_diplomacy_portrait_frame" } # hidden
+			iconType = { name = "portrait" spriteType = "GFX_portrait_character" } # hidden
+		}
+		containerWindowType = {
+			name = "portrait"
+			position = { x = -1117 y = -1145 }
+			size = { width = 0 height = 0 } # hide portrait window
+			iconType = { name = "portrait" spriteType = "GFX_portrait_gamesetup_mask" } # hidden
+			iconType = { name = "black_frame" spriteType = "GFX_diplomacy_portrait_shadow_frame" } # hidden
+			iconType = { name = "stripes_1" spriteType = "GFX_diplomacy_stripes_2" } # hidden
+			iconType = { name = "city_frame" spriteType = "GFX_diplomacy_portrait_frame" } # hidden
+		}
+		iconType = { name = "empire_info_bg" spriteType = "GFX_diplomacy_dark_fade_bg" } # hidden
+		instantTextBoxType={ name = "empire_name" font = "malgun_goth_24" } # hidden 
+		instantTextBoxType={ name = "empire_government_type" font = "cg_16b" } # hidden
+		instantTextBoxType={ name = "empire_personality_type" font = "cg_16b" } # hidden
+		OverlappingElementsBoxType = { name = "empire_ethics_icons" position = { x = -1145 y = -11138 } } # hidden
+		iconType = { name = "empire_flag" spriteType = "GFX_empire_flag_128" position = { x = -1125 y = -11235 } } # hidden
+		containerWindowType = {
+			name = "leader_details"
+			position = { x = -1125 y = -1175 }
+			containerWindowType = { name = "empire_traits_box" } # hidden
+			instantTextBoxType = { name = "empire_traits_label" font = "cg_16b" } # hidden
+			overlappingElementsBoxType = { name = "leader_traits" } # hidden
+			instantTextBoxType = { name = "leader_name" font = "cg_16b" } # hidden
+			instantTextBoxType = { name = "leader_species" font = "cg_16b" } # hidden
+		}
+		containerWindowType = {
+			name = "opinion_window"
+			position = { x = -1127 y = -11110 }
+			size = { width = 94 height = 30 }
+			iconType = { name = "their_opinion_icon" spriteType = "GFX_diplomacy_opinion" } # hidden
+			instantTextBoxType = { name = "their_opinion" font = "cg_16b" }
+		}
+		
+		
+#################################################################################################
+#################################################################################################
+#################################################################################################
+		
+		
+		
+		
+		
+		### ЛОТ 1 ###
+		
+		containerWindowType = {
+			name = "ftm_auction_window_lot_1"
+			position = { x = 10 y = 50 }
+			size = { width = 250 height = 540 }
+			moveable = no
+			
+			## НЕТ ЛОТА
+			# информация
+			effectButtonType = {
+				position = { x = 10 y = 10 }
+				name = "ftm_auction_lot_1_no_info_picture"
+				effect = "ftm_auction_lot_1_no_info"
+				quadTextureSprite = "GFX_ftm_auction_info_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_1_no_info"
+				effect = "ftm_auction_lot_1_no_info"
+				position = { x = 25 y = 25 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_1_no_info"
+				alwaysTransparent = yes
+			}
+			
+			# ЕСТЬ ЛОТ
+			# информация для покупателей
+			effectButtonType = {
+				position = { x = 10 y = 10 }
+				name = "ftm_auction_lot_1_info_picture"
+				effect = "ftm_auction_lot_1_info"
+				quadTextureSprite = "GFX_ftm_auction_info_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_1_info"
+				effect = "ftm_auction_lot_1_info"
+				position = { x = 25 y = 25 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_1_info"
+				alwaysTransparent = yes
+			}
+			# информация для продавца
+			effectButtonType = {
+				position = { x = 10 y = 10 }
+				name = "ftm_auction_lot_1_info_seller_picture"
+				effect = "ftm_auction_lot_1_info_seller"
+				quadTextureSprite = "GFX_ftm_auction_info_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_1_info_seller"
+				effect = "ftm_auction_lot_1_info_seller"
+				position = { x = 25 y = 25 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_1_info_seller"
+				alwaysTransparent = yes
+			}
+			
+			# надпись "ТЕКУЩАЯ ЦЕНА"
+			effectButtonType = {
+				position = { x = 10 y = 306 }
+				name = "ftm_auction_lot_1_price_button_picture"
+				effect = "ftm_auction_lot_1_price_button"
+				quadTextureSprite = "GFX_ftm_auction_price_info_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_1_current_price"
+				effect = "ftm_auction_lot_1_current_price"
+				position = { x = 25 y = 220 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_1_price_title"
+				alwaysTransparent = yes
+			}
+			
+			# надпись "(НАВЕДИ КУРСОР)"
+			effectButtonType = {
+				name = "ftm_auction_lot_1_price_button"
+				effect = "ftm_auction_lot_1_price_button"
+				position = { x = 25 y = 340 }
+				size = { x = 200 y = 40 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_1_price_button"
+				alwaysTransparent = yes
+			}
+			
+			# кнопка +100
+			effectButtonType = {
+				position = { x = 0 y = 378 }
+				name = "ftm_auction_lot_1_price_100_picture"
+				effect = "ftm_auction_lot_1_price_100"
+				quadTextureSprite = "GFX_ftm_red_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_1_price_100"
+				effect = "ftm_auction_lot_1_price_100"
+				position = { x = 25 y = 383 }
+				size = { x = 200 y = 40 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_1_price_100"
+				alwaysTransparent = yes
+			}
+			
+			# кнопка +1000
+			effectButtonType = {
+				position = { x = 0 y = 428 }
+				name = "ftm_auction_lot_1_price_1000_picture"
+				effect = "ftm_auction_lot_1_price_1000"
+				quadTextureSprite = "GFX_ftm_red_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_1_price_1000"
+				effect = "ftm_auction_lot_1_price_1000"
+				position = { x = 25 y = 433 }
+				size = { x = 200 y = 40 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_1_price_1000"
+				alwaysTransparent = yes
+			}
+			
+			# кнопка +10000
+			effectButtonType = {
+				position = { x = 0 y = 478 }
+				name = "ftm_auction_lot_1_price_10000_picture"
+				effect = "ftm_auction_lot_1_price_10000"
+				quadTextureSprite = "GFX_ftm_red_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_1_price_10000"
+				effect = "ftm_auction_lot_1_price_10000"
+				position = { x = 25 y = 483 }
+				size = { x = 200 y = 40 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_1_price_10000"
+				alwaysTransparent = yes
+			}
+			
+			
+		}
+		
+		
+		
+		
+		
+		### ЛОТ 2 ###
+		
+		containerWindowType = {
+			name = "ftm_auction_window_lot_2"
+			position = { x = 275 y = 50 }
+			size = { width = 250 height = 540 }
+			moveable = no
+			
+			## НЕТ ЛОТА
+			# информация
+			effectButtonType = {
+				position = { x = 10 y = 10 }
+				name = "ftm_auction_lot_2_no_info_picture"
+				effect = "ftm_auction_lot_2_no_info"
+				quadTextureSprite = "GFX_ftm_auction_info_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_2_no_info"
+				effect = "ftm_auction_lot_2_no_info"
+				position = { x = 25 y = 25 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_2_no_info"
+				alwaysTransparent = yes
+			}
+			
+			# ЕСТЬ ЛОТ
+			# информация для покупателей
+			effectButtonType = {
+				position = { x = 10 y = 10 }
+				name = "ftm_auction_lot_2_info_picture"
+				effect = "ftm_auction_lot_2_info"
+				quadTextureSprite = "GFX_ftm_auction_info_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_2_info"
+				effect = "ftm_auction_lot_2_info"
+				position = { x = 25 y = 25 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_2_info"
+				alwaysTransparent = yes
+			}
+			# информация для продавца
+			effectButtonType = {
+				position = { x = 10 y = 10 }
+				name = "ftm_auction_lot_2_info_seller_picture"
+				effect = "ftm_auction_lot_2_info_seller"
+				quadTextureSprite = "GFX_ftm_auction_info_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_2_info_seller"
+				effect = "ftm_auction_lot_2_info_seller"
+				position = { x = 25 y = 25 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_2_info_seller"
+				alwaysTransparent = yes
+			}
+			
+			# надпись "ТЕКУЩАЯ ЦЕНА"
+			effectButtonType = {
+				position = { x = 10 y = 306 }
+				name = "ftm_auction_lot_2_price_button_picture"
+				effect = "ftm_auction_lot_2_price_button"
+				quadTextureSprite = "GFX_ftm_auction_price_info_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_2_current_price"
+				effect = "ftm_auction_lot_2_current_price"
+				position = { x = 25 y = 220 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_2_price_title"
+				alwaysTransparent = yes
+			}
+			
+			# надпись "(НАВЕДИ КУРСОР)"
+			effectButtonType = {
+				name = "ftm_auction_lot_2_price_button"
+				effect = "ftm_auction_lot_2_price_button"
+				position = { x = 25 y = 340 }
+				size = { x = 200 y = 40 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_2_price_button"
+				alwaysTransparent = yes
+			}
+			
+			# кнопка +100
+			effectButtonType = {
+				position = { x = 0 y = 378 }
+				name = "ftm_auction_lot_2_price_100_picture"
+				effect = "ftm_auction_lot_2_price_100"
+				quadTextureSprite = "GFX_ftm_green_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_2_price_100"
+				effect = "ftm_auction_lot_2_price_100"
+				position = { x = 25 y = 383 }
+				size = { x = 200 y = 40 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_2_price_100"
+				alwaysTransparent = yes
+			}
+			
+			# кнопка +1000
+			effectButtonType = {
+				position = { x = 0 y = 428 }
+				name = "ftm_auction_lot_2_price_1000_picture"
+				effect = "ftm_auction_lot_2_price_1000"
+				quadTextureSprite = "GFX_ftm_green_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_2_price_1000"
+				effect = "ftm_auction_lot_2_price_1000"
+				position = { x = 25 y = 433 }
+				size = { x = 200 y = 40 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_2_price_1000"
+				alwaysTransparent = yes
+			}
+			
+			# кнопка +10000
+			effectButtonType = {
+				position = { x = 0 y = 478 }
+				name = "ftm_auction_lot_2_price_10000_picture"
+				effect = "ftm_auction_lot_2_price_10000"
+				quadTextureSprite = "GFX_ftm_green_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_2_price_10000"
+				effect = "ftm_auction_lot_2_price_10000"
+				position = { x = 25 y = 483 }
+				size = { x = 200 y = 40 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_2_price_10000"
+				alwaysTransparent = yes
+			}
+			
+			
+		}
+		
+		
+		
+		
+		
+		### ЛОТ 3 ###
+		
+		containerWindowType = {
+			name = "ftm_auction_window_lot_3"
+			position = { x = 540 y = 50 }
+			size = { width = 250 height = 540 }
+			moveable = no
+			
+			## НЕТ ЛОТА
+			# информация
+			effectButtonType = {
+				position = { x = 10 y = 10 }
+				name = "ftm_auction_lot_3_no_info_picture"
+				effect = "ftm_auction_lot_3_no_info"
+				quadTextureSprite = "GFX_ftm_auction_info_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_3_no_info"
+				effect = "ftm_auction_lot_3_no_info"
+				position = { x = 25 y = 25 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_3_no_info"
+				alwaysTransparent = yes
+			}
+			
+			# ЕСТЬ ЛОТ
+			# информация для покупателей
+			effectButtonType = {
+				position = { x = 10 y = 10 }
+				name = "ftm_auction_lot_3_info_picture"
+				effect = "ftm_auction_lot_3_info"
+				quadTextureSprite = "GFX_ftm_auction_info_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_3_info"
+				effect = "ftm_auction_lot_3_info"
+				position = { x = 25 y = 25 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_3_info"
+				alwaysTransparent = yes
+			}
+			# информация для продавца
+			effectButtonType = {
+				position = { x = 10 y = 10 }
+				name = "ftm_auction_lot_3_info_seller_picture"
+				effect = "ftm_auction_lot_3_info_seller"
+				quadTextureSprite = "GFX_ftm_auction_info_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_3_info_seller"
+				effect = "ftm_auction_lot_3_info_seller"
+				position = { x = 25 y = 25 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_3_info_seller"
+				alwaysTransparent = yes
+			}
+			
+			# надпись "ТЕКУЩАЯ ЦЕНА"
+			effectButtonType = {
+				position = { x = 10 y = 306 }
+				name = "ftm_auction_lot_3_price_button_picture"
+				effect = "ftm_auction_lot_3_price_button"
+				quadTextureSprite = "GFX_ftm_auction_price_info_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_3_current_price"
+				effect = "ftm_auction_lot_3_current_price"
+				position = { x = 25 y = 220 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_3_price_title"
+				alwaysTransparent = yes
+			}
+			
+			# надпись "(НАВЕДИ КУРСОР)"
+			effectButtonType = {
+				name = "ftm_auction_lot_3_price_button"
+				effect = "ftm_auction_lot_3_price_button"
+				position = { x = 25 y = 340 }
+				size = { x = 200 y = 40 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_3_price_button"
+				alwaysTransparent = yes
+			}
+			
+			# кнопка +100
+			effectButtonType = {
+				position = { x = 0 y = 378 }
+				name = "ftm_auction_lot_3_price_100_picture"
+				effect = "ftm_auction_lot_3_price_100"
+				quadTextureSprite = "GFX_ftm_blue_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_3_price_100"
+				effect = "ftm_auction_lot_3_price_100"
+				position = { x = 25 y = 383 }
+				size = { x = 200 y = 40 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_3_price_100"
+				alwaysTransparent = yes
+			}
+			
+			# кнопка +1000
+			effectButtonType = {
+				position = { x = 0 y = 428 }
+				name = "ftm_auction_lot_3_price_1000_picture"
+				effect = "ftm_auction_lot_3_price_1000"
+				quadTextureSprite = "GFX_ftm_blue_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_3_price_1000"
+				effect = "ftm_auction_lot_3_price_1000"
+				position = { x = 25 y = 433 }
+				size = { x = 200 y = 40 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_3_price_1000"
+				alwaysTransparent = yes
+			}
+			
+			# кнопка +10000
+			effectButtonType = {
+				position = { x = 0 y = 478 }
+				name = "ftm_auction_lot_3_price_10000_picture"
+				effect = "ftm_auction_lot_3_price_10000"
+				quadTextureSprite = "GFX_ftm_blue_button"
+			}
+			effectButtonType = {
+				name = "ftm_auction_lot_3_price_10000"
+				effect = "ftm_auction_lot_3_price_10000"
+				position = { x = 25 y = 483 }
+				size = { x = 200 y = 40 }
+				font = "malgun_goth_24"
+				format = center
+				text = "ftm_auction_lot_3_price_10000"
+				alwaysTransparent = yes
+			}
+			
+			
+		}
+		
+		
+		
+
+#################################################################################################
+#################################################################################################
+#################################################################################################
+
+		
+		
+		buttonType = {
+			name = "close"
+			quadTextureSprite = "GFX_main_close_button"
+			position = { x= -42 y = 12 }
+			Orientation = "UPPER_RIGHT"
+			shortcut = "ESCAPE"
+			clicksound = "back_click"
+		}
+		
+		### Кнопка настройки ###
+		effectButtonType = {
+			position = { x = 725 y = 12 }
+			name = "ftm_auction_settings"
+			effect = "ftm_auction_settings"
+			quadTextureSprite = "GFX_ftm_button_settings"
+		}
+		
+		
+
+		# Custom header
+		instantTextBoxType = {
+			name = "ftm_auction_window_some_header"
+			font = "malgun_goth_24"
+			text = "ftm_auction_window_title"		# Название окна (сверху показывается)
+			position = { x = 20 y = 5 }
+			maxWidth = 543
+			maxHeight = 22
+			fixedSize = yes
+			alwaysTransparent = yes
+		}
+
+
+		containerWindowType = {
+			name = "EVENT_DIPLO"
+			position = { x = 2000000 y = 5000000 }
+			#size = { width=563 height=220 }
+			moveable = no
+			
+			instantTextBoxType={
+				name = "action_title"
+				font = "malgun_goth_24"
+				position = { x = 20 y = 0 }
+				maxWidth = 200
+				alwaysTransparent = yes
+			}
+			
+			instantTextBoxType={
+				name = "action_desc"
+				font = "malgun_goth_24"
+				position = { x = 490 y = 0 }
+				maxWidth = 500
+				maxHeight = 180
+				Orientation = "UPPER_LEFT"
+				format = center
+				alwaysTransparent = yes
+				text_color_code = "H"
+			}
+			
+			listboxType = { name = "option_list" position = { x = -11500 y = -1130 } } # hidden option list
+		}
+
+		# Description Section
+		instantTextBoxType = {
+			name = "alien_message"
+			font = "cg_16b"
+			position = { x = 20000000 y = 1000000000 }
+			maxWidth = 465
+			maxHeight = 220
+			format = left
+			scrollbartype = "standardtext_slider"
+		}
+
+	}
+}

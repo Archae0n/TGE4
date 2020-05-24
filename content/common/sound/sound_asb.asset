@@ -1,0 +1,7 @@
+########## ASB ######################
+sound =
+{
+	name = "explosion_cap_2"
+	file = "ambient/explosion_cap_2.wav"
+	always_load = no
+}

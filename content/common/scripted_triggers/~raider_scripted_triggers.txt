@@ -1,0 +1,52 @@
+## Common mod trigger
+# This must replace all "is_country_type = default" triggers, otherwise they won't fire for the new "raider" empire
+is_raider = {
+	OR = {
+		has_valid_civic = civic_barbaric_despoilers
+		has_ascension_perk = ap_nihilistic_acquisition
+	}
+}
+
+## Custom triggers
+is_friendly_towards = {
+	log = "Checking if [$target$.GetName] is friendly towards [This.GetName]"
+	# Has comms
+	has_communications = $target$
+	# Not hostile
+	NOT = { is_hostile = $target$ }
+	OR = {
+		# Has open borders
+		NOT = { has_closed_borders = $target$ }
+		# OR Are in a war together
+		any_war = {
+			OR = {
+				AND = {
+					is_war_participant = { who = PREVPREV side = attackers }
+					is_war_participant = { who = $target$ side = attackers }
+				}
+				AND = {
+					is_war_participant = { who = PREVPREV side = defenders }
+					is_war_participant = { who = $target$ side = defenders }
+				}
+			}
+		}
+	}
+}
+
+is_friendly = {
+	if = { limit = { exists = controller }
+		controller = {
+			OR = {
+				is_same_value = $target$
+				is_friendly_towards = { target = $target$ }
+			}
+		}
+	} else_if = { limit = { exists = owner }
+		owner = {
+			OR = {
+				is_same_value = FROM.owner
+				is_friendly_towards = { target = $target$ }
+			}
+		}
+	}
+}

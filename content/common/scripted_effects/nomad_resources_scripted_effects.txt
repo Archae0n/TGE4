@@ -1,0 +1,326 @@
+#	Example:
+#
+#	example_effect = {
+#		add_energy = -100
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		example_effect = yes
+#	}
+#
+
+# Debug scope printing
+print_scope_effect = {
+	log = "------------------------------"
+	log = "- Printing the current scopes (trigger) -"
+	log = "- This: [This.GetName]"
+	log = "- Root: [Root.GetName]"
+	log = "- Prev: [Prev.GetName]"
+	log = "- PrevPrev: [Prev.Prev.GetName]"
+	log = "- PrevPrevPrev: [Prev.Prev.Prev.GetName]"
+	log = "- PrevPrevPrevPrev: [Prev.Prev.Prev.Prev.GetName]"
+	log = "- From: [From.GetName]"
+	log = "- FromFrom: [From.From.GetName]"
+	log = "- FromFromFrom: [From.From.From.GetName]"
+	log = "- FromFromFromFrom: [From.From.From.From.GetName]"
+	log = "- This's Solar System: [This.GetStarName]"
+	log = "- This's Planet: [This.Planet.GetName]"
+	log = "- This's Sector: [This.Sector.GetName]"
+	log = "- Root's Solar System: [Root.GetStarName]"
+	log = "- Root's Owner's Name: [Root.Owner.GetName]"
+	log = "- Root's Owner's Capital's Name: [Root.Owner.Capital.GetName]"
+	log = "------------------------------"
+}
+
+### increase starbase influnce cost
+calculate_starbase_cost = {
+	if = { # > 7
+		limit = {
+			any_country = {
+				is_country_type = void_farer
+				count_owned_starbase = {
+				count > 7
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_modifier = voidfarer_starbase_influence_cost_8 }
+			}
+			add_modifier = {
+				modifier = voidfarer_starbase_influence_cost_8
+				days = -1
+			}
+		}
+		switch = {
+			trigger = has_modifier
+			voidfarer_starbase_influence_cost_0 = { remove_modifier = voidfarer_starbase_influence_cost_0 }
+			voidfarer_starbase_influence_cost_1 = { remove_modifier = voidfarer_starbase_influence_cost_1 }
+			voidfarer_starbase_influence_cost_2 = { remove_modifier = voidfarer_starbase_influence_cost_2 }
+			voidfarer_starbase_influence_cost_3 = { remove_modifier = voidfarer_starbase_influence_cost_3 }
+			voidfarer_starbase_influence_cost_4 = { remove_modifier = voidfarer_starbase_influence_cost_4 }
+			voidfarer_starbase_influence_cost_5 = { remove_modifier = voidfarer_starbase_influence_cost_5 }
+			voidfarer_starbase_influence_cost_6 = { remove_modifier = voidfarer_starbase_influence_cost_6 }
+			voidfarer_starbase_influence_cost_7 = { remove_modifier = voidfarer_starbase_influence_cost_7 }
+		}
+		else = {
+			if = { # > 6
+				limit = {
+					any_country = {
+						is_country_type = void_farer
+						count_owned_starbase = {
+						count > 6
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_modifier = voidfarer_starbase_influence_cost_7 }
+					}
+					add_modifier = {
+						modifier = voidfarer_starbase_influence_cost_7
+						days = -1
+					}
+				}
+				switch = {
+					trigger = has_modifier
+					voidfarer_starbase_influence_cost_0 = { remove_modifier = voidfarer_starbase_influence_cost_0 }
+					voidfarer_starbase_influence_cost_1 = { remove_modifier = voidfarer_starbase_influence_cost_1 }
+					voidfarer_starbase_influence_cost_2 = { remove_modifier = voidfarer_starbase_influence_cost_2 }
+					voidfarer_starbase_influence_cost_3 = { remove_modifier = voidfarer_starbase_influence_cost_3 }
+					voidfarer_starbase_influence_cost_4 = { remove_modifier = voidfarer_starbase_influence_cost_4 }
+					voidfarer_starbase_influence_cost_5 = { remove_modifier = voidfarer_starbase_influence_cost_5 }
+					voidfarer_starbase_influence_cost_6 = { remove_modifier = voidfarer_starbase_influence_cost_6 }
+					voidfarer_starbase_influence_cost_8 = { remove_modifier = voidfarer_starbase_influence_cost_8 }
+				}
+				else = {
+					if = { # > 5
+						limit = {
+							any_country = {
+								is_country_type = void_farer
+								count_owned_starbase = {
+								count > 5
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = { has_modifier = voidfarer_starbase_influence_cost_6 }
+							}
+							add_modifier = {
+								modifier = voidfarer_starbase_influence_cost_6
+								days = -1
+							}
+						}
+						switch = {
+							trigger = has_modifier
+							voidfarer_starbase_influence_cost_0 = { remove_modifier = voidfarer_starbase_influence_cost_0 }
+							voidfarer_starbase_influence_cost_1 = { remove_modifier = voidfarer_starbase_influence_cost_1 }
+							voidfarer_starbase_influence_cost_2 = { remove_modifier = voidfarer_starbase_influence_cost_2 }
+							voidfarer_starbase_influence_cost_3 = { remove_modifier = voidfarer_starbase_influence_cost_3 }
+							voidfarer_starbase_influence_cost_4 = { remove_modifier = voidfarer_starbase_influence_cost_4 }
+							voidfarer_starbase_influence_cost_5 = { remove_modifier = voidfarer_starbase_influence_cost_5 }
+							voidfarer_starbase_influence_cost_7 = { remove_modifier = voidfarer_starbase_influence_cost_7 }
+							voidfarer_starbase_influence_cost_8 = { remove_modifier = voidfarer_starbase_influence_cost_8 }
+						}
+						else = {
+							if = { # > 4
+								limit = {
+									any_country = {
+										is_country_type = void_farer
+										count_owned_starbase = {
+										count > 4
+										}
+									}
+								}
+								if = {
+									limit = {
+										NOT = { has_modifier = voidfarer_starbase_influence_cost_5 }
+									}
+									add_modifier = {
+										modifier = voidfarer_starbase_influence_cost_5
+										days = -1
+									}
+								}
+								switch = {
+									trigger = has_modifier
+									voidfarer_starbase_influence_cost_0 = { remove_modifier = voidfarer_starbase_influence_cost_0 }
+									voidfarer_starbase_influence_cost_1 = { remove_modifier = voidfarer_starbase_influence_cost_1 }
+									voidfarer_starbase_influence_cost_2 = { remove_modifier = voidfarer_starbase_influence_cost_2 }
+									voidfarer_starbase_influence_cost_3 = { remove_modifier = voidfarer_starbase_influence_cost_3 }
+									voidfarer_starbase_influence_cost_4 = { remove_modifier = voidfarer_starbase_influence_cost_4 }
+									voidfarer_starbase_influence_cost_6 = { remove_modifier = voidfarer_starbase_influence_cost_6 }
+									voidfarer_starbase_influence_cost_7 = { remove_modifier = voidfarer_starbase_influence_cost_7 }
+									voidfarer_starbase_influence_cost_8 = { remove_modifier = voidfarer_starbase_influence_cost_8 }
+								}
+								else = {
+									if = { # > 3
+										limit = {
+											any_country = {
+												is_country_type = void_farer
+												count_owned_starbase = {
+												count > 3
+												}
+											}
+										}
+										if = {
+											limit = {
+												NOT = { has_modifier = voidfarer_starbase_influence_cost_4 }
+											}
+											add_modifier = {
+												modifier = voidfarer_starbase_influence_cost_4
+												days = -1
+											}
+										}
+										switch = {
+											trigger = has_modifier
+											voidfarer_starbase_influence_cost_0 = { remove_modifier = voidfarer_starbase_influence_cost_0 }
+											voidfarer_starbase_influence_cost_1 = { remove_modifier = voidfarer_starbase_influence_cost_1 }
+											voidfarer_starbase_influence_cost_2 = { remove_modifier = voidfarer_starbase_influence_cost_2 }
+											voidfarer_starbase_influence_cost_3 = { remove_modifier = voidfarer_starbase_influence_cost_3 }
+											voidfarer_starbase_influence_cost_5 = { remove_modifier = voidfarer_starbase_influence_cost_5 }
+											voidfarer_starbase_influence_cost_6 = { remove_modifier = voidfarer_starbase_influence_cost_6 }
+											voidfarer_starbase_influence_cost_7 = { remove_modifier = voidfarer_starbase_influence_cost_7 }
+											voidfarer_starbase_influence_cost_8 = { remove_modifier = voidfarer_starbase_influence_cost_8 }
+										}
+										else = {
+											if = { # > 2
+												limit = {
+													any_country = {
+														is_country_type = void_farer
+														count_owned_starbase = {
+														count > 2
+														}
+													}
+												}
+												if = {
+													limit = {
+														NOT = { has_modifier = voidfarer_starbase_influence_cost_3 }
+													}
+													add_modifier = {
+														modifier = voidfarer_starbase_influence_cost_3
+														days = -1
+													}
+												}
+												switch = {
+													trigger = has_modifier
+													voidfarer_starbase_influence_cost_0 = { remove_modifier = voidfarer_starbase_influence_cost_0 }
+													voidfarer_starbase_influence_cost_1 = { remove_modifier = voidfarer_starbase_influence_cost_1 }
+													voidfarer_starbase_influence_cost_2 = { remove_modifier = voidfarer_starbase_influence_cost_2 }
+													voidfarer_starbase_influence_cost_4 = { remove_modifier = voidfarer_starbase_influence_cost_4 }
+													voidfarer_starbase_influence_cost_5 = { remove_modifier = voidfarer_starbase_influence_cost_5 }
+													voidfarer_starbase_influence_cost_6 = { remove_modifier = voidfarer_starbase_influence_cost_6 }
+													voidfarer_starbase_influence_cost_7 = { remove_modifier = voidfarer_starbase_influence_cost_7 }
+													voidfarer_starbase_influence_cost_8 = { remove_modifier = voidfarer_starbase_influence_cost_8 }
+												}
+												else = {
+													if = { # > 1
+														limit = {
+															any_country = {
+																is_country_type = void_farer
+																count_owned_starbase = {
+																count > 1
+																}
+															}
+														}
+														if = {
+															limit = {
+																NOT = { has_modifier = voidfarer_starbase_influence_cost_2 }
+															}
+															add_modifier = {
+																modifier = voidfarer_starbase_influence_cost_2
+																days = -1
+															}
+														}
+														switch = {
+															trigger = has_modifier
+															voidfarer_starbase_influence_cost_0 = { remove_modifier = voidfarer_starbase_influence_cost_0 }
+															voidfarer_starbase_influence_cost_1 = { remove_modifier = voidfarer_starbase_influence_cost_1 }
+															voidfarer_starbase_influence_cost_3 = { remove_modifier = voidfarer_starbase_influence_cost_3 }
+															voidfarer_starbase_influence_cost_4 = { remove_modifier = voidfarer_starbase_influence_cost_4 }
+															voidfarer_starbase_influence_cost_5 = { remove_modifier = voidfarer_starbase_influence_cost_5 }
+															voidfarer_starbase_influence_cost_6 = { remove_modifier = voidfarer_starbase_influence_cost_6 }
+															voidfarer_starbase_influence_cost_7 = { remove_modifier = voidfarer_starbase_influence_cost_7 }
+															voidfarer_starbase_influence_cost_8 = { remove_modifier = voidfarer_starbase_influence_cost_8 }
+														}
+														else = {
+															if = { # > 0
+																limit = {
+																	any_country = {
+																		is_country_type = void_farer
+																		count_owned_starbase = {
+																		count > 0
+																		}
+																	}
+																}
+																if = {
+																	limit = {
+																		NOT = { has_modifier = voidfarer_starbase_influence_cost_1 }
+																	}
+																	add_modifier = {
+																		modifier = voidfarer_starbase_influence_cost_1
+																		days = -1
+																	}
+																}
+																switch = {
+																	trigger = has_modifier
+																	voidfarer_starbase_influence_cost_0 = { remove_modifier = voidfarer_starbase_influence_cost_0 }
+																	voidfarer_starbase_influence_cost_2 = { remove_modifier = voidfarer_starbase_influence_cost_2 }
+																	voidfarer_starbase_influence_cost_3 = { remove_modifier = voidfarer_starbase_influence_cost_3 }
+																	voidfarer_starbase_influence_cost_4 = { remove_modifier = voidfarer_starbase_influence_cost_4 }
+																	voidfarer_starbase_influence_cost_5 = { remove_modifier = voidfarer_starbase_influence_cost_5 }
+																	voidfarer_starbase_influence_cost_6 = { remove_modifier = voidfarer_starbase_influence_cost_6 }
+																	voidfarer_starbase_influence_cost_7 = { remove_modifier = voidfarer_starbase_influence_cost_7 }
+																	voidfarer_starbase_influence_cost_8 = { remove_modifier = voidfarer_starbase_influence_cost_8 }
+																}
+																else = {
+																	if = { # < 1
+																		limit = {
+																			any_country = {
+																				is_country_type = void_farer
+																				count_owned_starbase = {
+																				count < 1
+																				}
+																			}
+																		}
+																		switch = {
+																			trigger = has_modifier
+																			voidfarer_starbase_influence_cost_0 = { remove_modifier = voidfarer_starbase_influence_cost_0 }
+																			voidfarer_starbase_influence_cost_2 = { remove_modifier = voidfarer_starbase_influence_cost_2 }
+																			voidfarer_starbase_influence_cost_3 = { remove_modifier = voidfarer_starbase_influence_cost_3 }
+																			voidfarer_starbase_influence_cost_4 = { remove_modifier = voidfarer_starbase_influence_cost_4 }
+																			voidfarer_starbase_influence_cost_5 = { remove_modifier = voidfarer_starbase_influence_cost_5 }
+																			voidfarer_starbase_influence_cost_6 = { remove_modifier = voidfarer_starbase_influence_cost_6 }
+																			voidfarer_starbase_influence_cost_7 = { remove_modifier = voidfarer_starbase_influence_cost_7 }
+																			voidfarer_starbase_influence_cost_8 = { remove_modifier = voidfarer_starbase_influence_cost_8 }
+																		}
+																		if = {
+																			limit = {
+																				NOT = { has_modifier = voidfarer_starbase_influence_cost_0 }
+																			}
+																			add_modifier = {
+																				modifier = voidfarer_starbase_influence_cost_0
+																				days = -1
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

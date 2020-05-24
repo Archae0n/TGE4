@@ -1,0 +1,146 @@
+
+
+@tech_cost = 10000
+@tech_weight = 20
+
+
+tech_psi_strike_craft = {
+	cost = @tech_cost
+	area = engineering
+	tier = 4
+	ai_update_type = military
+	category = { voidcraft }	
+	prerequisites = { "tech_strike_craft_3" }
+	is_rare = yes
+	is reverse_engineerable = no
+	weight = @tech_weight
+		
+	potential = {
+		has_ascension_perk = ap_mind_over_matter
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # rush component!
+		modifier = {
+			factor = 5
+			OR = {
+				has_megastructure = think_tank_3
+				has_megastructure = think_tank_4
+				has_megastructure = think_tank_restored
+			}	
+		}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_gene_strike_craft = {
+	cost = @tech_cost
+	area = engineering
+	tier = 4
+	ai_update_type = military
+	category = { voidcraft }	
+	prerequisites = { "tech_strike_craft_3" }
+	is_rare = yes
+	is reverse_engineerable = no
+	weight = @tech_weight
+		
+	potential = {
+		has_ascension_perk = ap_engineered_evolution
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # rush component!
+		modifier = {
+			factor = 5
+			OR = {
+				has_megastructure = think_tank_3
+				has_megastructure = think_tank_4
+				has_megastructure = think_tank_restored
+			}	
+		}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
+
+tech_cyber_strike_craft = {
+	cost = @tech_cost
+	area = engineering
+	tier = 4
+	ai_update_type = military
+	category = { voidcraft }	
+	prerequisites = { "tech_strike_craft_3" }
+	is_rare = yes
+	is reverse_engineerable = no
+	weight = @tech_weight
+		
+	potential = {
+		has_ascension_perk = ap_the_flesh_is_weak
+	}
+	
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+	
+	ai_weight = {
+		factor = 3 # rush component!
+		modifier = {
+			factor = 5
+			OR = {
+				has_megastructure = think_tank_3
+				has_megastructure = think_tank_4
+				has_megastructure = think_tank_restored
+			}	
+		}
+	
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}

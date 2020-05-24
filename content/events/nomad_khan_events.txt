@@ -1,0 +1,567 @@
+namespace = khan
+namespace = khan_return
+namespace = new_khan
+
+# The canidate for Khan
+country_event = {
+	id = khan.1
+	title = "khan.1.name"
+	desc = "khan.1.desc"
+	diplomatic = yes
+	force_open = yes
+	
+	picture_event_data = {
+		portrait = shroud1
+		room = ethic_spaceship_room
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		AND = {
+			has_country_type = void_farer
+			has_origin = origin_galactic_marauders
+			has_ascension_perk = ap_khan
+		}
+		NOR = {
+			has_country_type = default
+			has_country_flag = void_nomads
+			has_country_flag = void_reavers
+			any_owned_leader = { has_trait = leader_trait_great_khan }
+		}
+	}
+
+	immediate = {
+		set_country_flag = shroud_diplomacy_engaged
+		random_owned_leader = {
+			limit = { leader_class = admiral }
+			save_event_target_as = leader_1
+			random_list = {
+				100 = { set_leader_flag = high_psi }
+			}
+		}
+		random_owned_leader = {
+			limit = {
+				leader_class = admiral
+				NOT = { is_same_value = event_target:leader_1 }
+			}
+			save_event_target_as = leader_2
+			random_list = {
+				100 = { set_leader_flag = high_psi }
+			}
+		}
+		random_owned_leader = {
+			limit = {
+				leader_class = admiral
+				NOT = {
+					is_same_value = event_target:leader_1
+					is_same_value = event_target:leader_2
+				}
+			}
+			save_event_target_as = leader_3
+			random_list = {
+				100 = { set_leader_flag = high_psi }
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			remove_country_flag = shroud_diplomacy_engaged
+			event_target:leader_1 = {
+				remove_leader_flag = high_psi
+			}
+			event_target:leader_2 = {
+				remove_leader_flag = high_psi
+			}
+			event_target:leader_3 = {
+				remove_leader_flag = high_psi
+			}
+		}
+	}
+
+	option = {
+		name = "khan.1.1.a"
+		custom_tooltip = "shroud.unknown.chances.high"
+		trigger = {
+			event_target:leader_1 = { has_leader_flag = high_psi }
+		}
+		event_target:leader_1 = { save_event_target_as = khan_leader }
+		hidden_effect = {
+			country_event = { id = khan.2 }
+		}
+	}
+	option = {
+		name = "khan.1.1.b"
+		custom_tooltip = "shroud.unknown.chances.high"
+		trigger = {
+			event_target:leader_2 = { has_leader_flag = high_psi }
+		}
+		event_target:leader_2 = { save_event_target_as = chosen_leader }
+		hidden_effect = {
+			country_event = { id = khan.2 }
+		}
+	}
+	option = {
+		name = "khan.1.1.c"
+		custom_tooltip = "shroud.unknown.chances.high"
+		trigger = {
+			event_target:leader_3 = { has_leader_flag = high_psi }
+		}
+		event_target:leader_3 = { save_event_target_as = chosen_leader }
+		hidden_effect = {
+			country_event = { id = khan.2 }
+		}
+	}
+
+	option = {
+		name = "gain_khan"
+		custom_tooltip = "gain_khan.tooltip"
+		default_hide_option = yes
+		hidden_effect = {
+			every_country = {
+				limit = { 
+					is_ai = no
+					has_communications = root
+					NOT = { is_same_value = root }
+				}
+				country_event = { id = khan.1 days = 360 }
+			}
+		}
+	}
+}
+
+# Success
+country_event = {
+	id = khan.2
+	title = "khan.2.name"
+	desc = "khan.2.desc"
+	picture = GFX_evt_khan_throne_room
+	show_sound = eve
+	
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = shroud_diplomacy_engaged
+		set_country_flag = khan_selected
+	}
+
+	after = {
+		hidden_effect = {
+			remove_country_flag = shroud_diplomacy_engaged
+		}
+	}
+
+	option = {
+		name = "wrath_of_the_khan"
+		default_hide_option = yes
+		if = {
+			limit = { event_target:chosen_leader = { leader_class = admiral } }
+			event_target:chosen_leader = { 
+				add_trait = leader_trait_great_khan
+			}
+			break = yes
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_ai = no
+					has_communications = root
+					NOT = { is_same_value = root }
+				}
+				country_event = { id = khan.3 }
+			}
+		}
+	}
+}
+
+# Notification for other empires
+country_event = {
+	id = khan.3
+	title = "khan.3.name"
+	desc = "khan.3.desc"
+	picture = GFX_evt_khan_throne_room
+	show_sound = event_radio_chatter
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = recived_khan_notification }
+	}
+	
+	option = {
+		name = WORRYING
+		set_country_flag = recived_khan_notification
+		trigger = {
+			NOT = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+				is_at_war_with = from
+				species = { has_trait = trait_void_farer }
+			}
+		}
+	}
+	option = {
+		name = "khan_responce.1.b"
+		set_country_flag = recived_khan_notification
+		trigger = {
+			AND = {
+				OR = {
+					has_ethic = ethic_fanatic_militarist
+					has_ethic = ethic_militarist
+				}
+				NOT = {
+					is_at_war_with = from
+					species = { has_trait = trait_void_farer }
+				}
+			}
+		}
+	}
+	option = {
+		name = "khan_responce.1.c"
+		set_country_flag = recived_khan_notification
+		trigger = {
+			is_at_war_with = from
+			NOT = { is_void_farer = no }
+		}
+	}
+	option = {
+		name = "khan_responce.1.d"
+		set_country_flag = recived_khan_notification
+		trigger = {
+			species = { is_void_farer = yes }
+		}
+	}
+	option = {
+		name = "khan_responce.1.p"
+		set_country_flag = recived_khan_notification
+		trigger = {
+			species = { has_trait = trait_psionic }
+		}
+	}
+}
+
+
+######################
+#
+# Khan Return/New Khan
+#
+######################
+
+
+# Khan Returns
+# This = owner of fleet 1 (destroyed)
+# From = owner of fleet 2 (combatant)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+country_event = {
+	id = khan_return.30
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_type = void_farer
+		fromfrom = {
+			exists = leader
+			fleet = { num_ships = 0 }
+			leader = {
+				leader_class = admiral
+				has_trait = leader_trait_great_khan
+			}
+		}
+	}
+
+	immediate = {
+		random_list = {
+			30 = {
+				country_event = { id = new_khan.30 days = 3600 }
+				remove_country_flag = khan_selected
+				remove_country_flag = new_khan_selected
+				removed_country_flag = recived_khan_notification
+			} # null
+			70 = {
+				fromfrom = {
+					leader = {
+						exile_leader_as = restore_point_leader
+					}
+				}
+				country_event = { id = khan_return.31 days = 360 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = khan_return.31
+	title = khan_return.31.name
+	desc = khan_return.31.desc
+	picture = GFX_evt_synth_sabotage
+	show_sound = event_ship_bridge
+	location = event_target:restored_leader.fleet
+
+	is_triggered_only = yes
+
+	trigger = {
+		any_owned_fleet = {
+			NOT = { exists = leader }
+			any_owned_ship = {
+				is_ship_class = shipclass_military
+			}
+		}
+	}
+
+	immediate = {
+		random_owned_fleet = {
+			limit = {
+				NOT = { exists = leader }
+				any_owned_ship = {
+					is_ship_class = shipclass_military
+				}
+			}
+			set_leader = restore_point_leader
+			leader = {
+				save_event_target_as = restored_leader
+			}
+		}
+	}
+
+	option = {
+		name = OK
+		trigger = {
+			event_target:restored_leader = {
+				has_trait = leader_trait_great_khan
+			}
+		}
+	}
+}
+
+# New Khan
+# The canidate for New Khan
+country_event = {
+	id = new_khan.30
+	title = "new_khan.30.name"
+	desc = "new_khan.30.desc"
+	diplomatic = yes
+	force_open = yes
+	
+	picture_event_data = {
+		portrait = shroud1
+		room = ethic_spaceship_room
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		AND = {
+			has_country_type = void_farer
+			has_origin = origin_galactic_marauders
+			has_ascension_perk = ap_khan
+		}
+		NOR = {
+			has_country_type = default
+			has_country_flag = void_nomads
+			has_country_flag = void_reavers
+			any_owned_leader = { has_trait = leader_trait_great_khan }
+		}
+	}
+	
+	immediate = {
+		set_country_flag = shroud_diplomacy_engaged
+		random_owned_leader = {
+			limit = { leader_class = admiral }
+			save_event_target_as = leader_1
+			random_list = {
+				100 = { set_leader_flag = high_psi }
+			}
+		}
+		random_owned_leader = {
+			limit = {
+				leader_class = admiral
+				NOT = { is_same_value = event_target:leader_1 }
+			}
+			save_event_target_as = leader_2
+			random_list = {
+				100 = { set_leader_flag = high_psi }
+			}
+		}
+		random_owned_leader = {
+			limit = {
+				leader_class = admiral
+				NOT = {
+					is_same_value = event_target:leader_1
+					is_same_value = event_target:leader_2
+				}
+			}
+			save_event_target_as = leader_3
+			random_list = {
+				100 = { set_leader_flag = high_psi }
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			remove_country_flag = shroud_diplomacy_engaged
+			event_target:leader_1 = {
+				remove_leader_flag = high_psi
+			}
+			event_target:leader_2 = {
+				remove_leader_flag = high_psi
+			}
+			event_target:leader_3 = {
+				remove_leader_flag = high_psi
+			}
+		}
+	}
+
+	option = {
+		name = "khan.1.1.a"
+		custom_tooltip = "shroud.unknown.chances.high"
+		trigger = {
+			event_target:leader_1 = { has_leader_flag = high_psi }
+		}
+		event_target:leader_1 = { save_event_target_as = khan_leader }
+		hidden_effect = {
+			country_event = { id = khan.2 }
+		}
+	}
+	option = {
+		name = "khan.1.1.b"
+		custom_tooltip = "shroud.unknown.chances.high"
+		trigger = {
+			event_target:leader_2 = { has_leader_flag = high_psi }
+		}
+		event_target:leader_2 = { save_event_target_as = chosen_leader }
+		hidden_effect = {
+			country_event = { id = khan.2 }
+		}
+	}
+	option = {
+		name = "khan.1.1.c"
+		custom_tooltip = "shroud.unknown.chances.high"
+		trigger = {
+			event_target:leader_3 = { has_leader_flag = high_psi }
+		}
+		event_target:leader_3 = { save_event_target_as = chosen_leader }
+		hidden_effect = {
+			country_event = { id = khan.2 }
+		}
+	}
+
+	option = {
+		name = "gain_khan"
+		custom_tooltip = "gain_khan.tooltip"
+		default_hide_option = yes
+		hidden_effect = {
+			every_country = {
+				limit = { 
+					is_ai = no
+					has_communications = root
+					NOT = { is_same_value = root }
+				}
+				country_event = { id = khan.30 days = 90 }
+			}
+		}
+	}
+}
+
+# Success
+country_event = {
+	id = new_khan.32
+	title = "new_khan.32.name"
+	desc = "new_khan.32.desc"
+	picture = GFX_evt_khan_throne_room
+	show_sound = eve
+	
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = shroud_diplomacy_engaged
+		set_country_flag = new_khan_selected
+	}
+
+	after = {
+		hidden_effect = {
+			remove_country_flag = shroud_diplomacy_engaged
+		}
+	}
+
+	option = {
+		name = "wrath_of_the_khan"
+		default_hide_option = yes
+		if = {
+			limit = { event_target:chosen_leader = { leader_class = admiral } }
+			event_target:chosen_leader = { 
+				add_trait = leader_trait_great_khan
+			}
+			break = yes
+		}
+		hidden_effect = {
+			every_country = {
+				limit = { 
+					is_ai = no
+					has_communications = root
+					NOT = { is_same_value = root }
+				}
+				country_event = { id = khan.3 }
+			}
+		}
+	}
+}
+
+# Notification for other empires
+country_event = {
+	id = new_khan.33
+	title = "new_khan.33.name"
+	desc = "new_khan.33.desc"
+	picture = GFX_evt_khan_throne_room
+	show_sound = event_radio_chatter
+	
+	is_triggered_only = yes
+
+	option = {
+		name = WORRYING
+		trigger = {
+			NOT = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+				is_at_war_with = from
+				species = { has_trait = trait_void_farer }
+			}
+		}
+	}
+	option = {
+		name = "new_khan_responce.1.b"
+		trigger = {
+			AND = {
+				OR = {
+					has_ethic = ethic_fanatic_militarist
+					has_ethic = ethic_militarist
+				}
+				NOT = {
+					is_at_war_with = from
+					species = { has_trait = trait_void_farer }
+				}
+			}
+		}
+	}
+	option = {
+		name = "new_khan_responce.1.c"
+		trigger = {
+			is_at_war_with = from
+			NOT = { species = { has_trait = trait_void_farer } }
+		}
+	}
+	option = {
+		name = "new_khan_responce.1.d"
+		trigger = {
+			species = { has_trait = trait_void_farer }
+		}
+	}
+	option = {
+		name = "new_khan_responce.1.p"
+		trigger = {
+			species = { has_trait = trait_psionic }
+		}
+	}
+}

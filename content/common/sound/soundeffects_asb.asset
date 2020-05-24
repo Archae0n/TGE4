@@ -1,0 +1,10 @@
+######### ASB #################
+soundeffect = {
+	name = explosion_cap_2_sound
+	sounds = {
+		sound = explosion_cap_2
+	}
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 1.0
+}

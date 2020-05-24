@@ -1,0 +1,215 @@
+
+origin_void_nomads = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_void_dwellers.dds"
+	picture = GFX_origin_void_nomads
+
+	starting_colony = pc_habitat
+	habitability_preference = pc_habitat
+	max_once_global = yes
+	preferred_planet_class_neighbor = no
+
+	possible = {
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		civics = { NOT = { value = civic_agrarian_idyll } }
+	}
+
+	description = "origin_tooltip_void_nomads_effects"
+	flags = { custom_start_screen }
+	
+	modifier = {
+		ship_sensor_range_add = 1
+		ship_speed_mult = 0.15
+		station_gatherers_produces_mult = 0.5
+		country_starbase_influence_cost_mult = 0.5
+		
+		triggered_modifier = {
+			potential = {
+				exists = owner
+				owner = { is_country_type = void_farer }
+				NOT = {
+					any_system = {
+						exists = owner
+						owner = { is_country_type = void_farer }
+					}
+				}
+			}
+			modifier = {
+				country_starbase_influence_cost_mult = -1000
+			}
+		}
+	}
+	
+	traits = {
+		trait = trait_void_dweller_1
+	}
+
+	random_weight = {
+		base = 0.5
+	}
+}
+
+origin_void_marauders = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_void_dwellers.dds"
+	picture = GFX_origin_void_marauders
+
+	starting_colony = pc_habitat
+	habitability_preference = pc_habitat
+	max_once_global = yes
+	preferred_planet_class_neighbor = no
+
+	possible = {
+		ethics = {
+			NOT = { value = ethic_gestalt_consciousness }
+			OR = {
+				value = ethic_fanatic_xenophobe
+				value = ethic_xenophobe
+				value = ethic_militarist
+				value = ethic_fanatic_militarist
+			}
+		}
+		civics = { NOT = { value = civic_agrarian_idyll } }
+	}
+
+	description = "origin_tooltip_void_marauder_effects"
+	flags = { custom_start_screen }
+	
+	modifier = {
+		ship_sensor_range_add = 1
+		ship_speed_mult = 0.15
+		station_gatherers_produces_mult = 0.5
+		country_starbase_influence_cost_mult = 0.5
+		triggered_modifier = {
+			potential = {
+				exists = owner
+				owner = { is_country_type = void_farer }
+				NOT = {
+					any_system = {
+						exists = owner
+						owner = { is_country_type = void_farer }
+					}
+				}
+			}
+			modifier = {
+				country_starbase_influence_cost_mult = -1000
+			}
+		}
+	}
+	
+	traits = {
+		trait = trait_void_dweller_1
+	}
+
+	random_weight = {
+		base = 0.5
+	}
+}
+
+origin_void_reavers = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_void_dwellers.dds"
+	picture = GFX_origin_void_reavers
+
+	starting_colony = pc_habitat
+	habitability_preference = pc_habitat
+	max_once_global = yes
+	preferred_planet_class_neighbor = no
+
+	possible = {
+		ethics = {
+			value = ethic_fanatic_xenophobe
+			OR = {
+				value = ethic_militarist
+				value = ethic_materialist
+				value = ethic_spiritualist
+			}
+		}
+		civics = {
+			NOT = { value = civic_agrarian_idyll }
+			NOT = { value = civic_diplomatic_corps }
+		}
+	}
+
+	description = "origin_tooltip_void_reavers_effects"
+	flags = { custom_start_screen }
+	
+	modifier = {
+		ship_sensor_range_add = 1
+		ship_speed_mult = 0.15
+		station_gatherers_produces_mult = 0.5
+		country_starbase_influence_cost_mult = 0.5
+		triggered_modifier = {
+			potential = {
+				exists = owner
+				owner = { is_country_type = void_farer }
+				NOT = {
+					any_system = {
+						exists = owner
+						owner = { is_country_type = void_farer }
+					}
+				}
+			}
+			modifier = {
+				country_starbase_influence_cost_mult = -1000
+			}
+		}
+	}
+
+	traits = {
+		trait = trait_void_dweller_1
+	}
+
+	random_weight = {
+		base = 0.5
+	}
+}
+
+origin_ancient_drones = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_void_dwellers.dds"
+	picture = GFX_origin_ancient_drones
+
+	starting_colony = pc_habitat
+	habitability_preference = pc_habitat
+	max_once_global = yes
+	preferred_planet_class_neighbor = no
+
+	possible = {
+		ethics = { value = ethic_gestalt_consciousness }
+		authority = { value = auth_machine_intelligence }
+	}
+
+	description = "origin_tooltip_ancient_drones_effects"
+	flags = { custom_start_screen }
+	
+	modifier = {
+		ship_sensor_range_add = 1
+		ship_speed_mult = 0.15
+		station_gatherers_produces_mult = 1.0
+		country_starbase_influence_cost_mult = 0.5
+		triggered_modifier = {
+			potential = {
+				exists = owner
+				owner = { is_country_type = void_farer }
+				NOT = {
+					any_system = {
+						exists = owner
+						owner = { is_country_type = void_farer }
+					}
+				}
+			}
+			modifier = {
+				country_starbase_influence_cost_mult = -1000
+			}
+		}
+	}
+	
+	traits = {
+		trait = trait_bit_degradation
+	}
+
+	random_weight = {
+		base = 0.5
+	}
+}

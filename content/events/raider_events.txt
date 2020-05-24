@@ -1,0 +1,426 @@
+namespace = relytor_raider
+
+# per pop amounts
+@resource_taken_amount			 = -5
+@resource_given_amount			 =  5
+@rare_resource_taken_amount		 = -2
+@rare_resource_given_amount		 =  2
+@strategic_resource_taken_amount = -1
+@strategic_resource_given_amount =  1
+
+@raid_chance = 1.1
+
+#######################
+# Initialization events 1-99
+#######################
+
+country_event = {
+	id = relytor_raider.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { is_raider = yes }
+
+	immediate = {
+		# set_country_type = raider
+		save_event_target_as = event_target:raider_country
+	}
+}
+
+#######################
+# Raiding events 100-199
+#######################
+
+# Planet has taken damage from orbital bombardment
+# This = Planet
+# From = Bombarder
+planet_event = {
+	id = relytor_raider.100
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_orbital_bombardment = yes
+		has_orbital_bombardment_stance = raiding
+	}
+
+	immediate = {
+		random_list = {
+			99 = {}
+			1 = {
+				# At 100 devastation their is nothing left to raid
+				modifier = {
+					factor = 0
+					planet_devastation = 100
+				}
+				# More devastation, more likely to raid
+				modifier = {
+					factor = @raid_chance
+					planet_devastation > 10
+				}
+				modifier = {
+					factor = @raid_chance
+					planet_devastation > 20
+				}
+				modifier = {
+					factor = @raid_chance
+					planet_devastation > 30
+				}
+				modifier = {
+					factor = @raid_chance
+					planet_devastation > 40
+				}
+				modifier = {
+					factor = @raid_chance
+					planet_devastation > 50
+				}
+				modifier = {
+					factor = @raid_chance
+					planet_devastation > 60
+				}
+				modifier = {
+					factor = @raid_chance
+					planet_devastation > 70
+				}
+				modifier = {
+					factor = @raid_chance
+					planet_devastation > 80
+				}
+				modifier = {
+					factor = @raid_chance
+					planet_devastation > 90
+				}
+				root.owner = { set_relation_flag = { who = from flag = raided_planet } }
+				# More pops means more resources
+				every_owned_pop = {
+					# "steal" unity for a successful raid
+					owner = { add_resource = { unity = @strategic_resource_taken_amount } }
+					from = { add_resource = { unity = @strategic_resource_given_amount } }
+					# always steal energy
+					owner = { add_resource = { energy = @resource_taken_amount } }
+					from = { add_resource = { energy = @resource_given_amount } }
+					# plus steal any resource the pop is producing
+					if = { limit = { pop_produces_resource = { type = energy amount > 0 } }
+						owner = { add_resource = { energy = @resource_taken_amount } }
+						from = { add_resource = { energy = @resource_given_amount } }
+					}
+					if = { limit = { pop_produces_resource = { type = minerals amount > 0 } }
+						owner = { add_resource = { minerals = @resource_taken_amount } }
+						from = { add_resource = { minerals = @resource_given_amount } }
+					}
+					if = { limit = { pop_produces_resource = { type = food amount > 0 } }
+						owner = { add_resource = { food = @resource_taken_amount } }
+						from = { add_resource = { food = @resource_given_amount } }
+					}
+					if = { limit = { pop_produces_resource = { type = alloys amount > 0 } }
+						owner = { add_resource = { alloys = @rare_resource_taken_amount } }
+						from = { add_resource = { alloys = @rare_resource_given_amount } }
+					}
+					if = { limit = { pop_produces_resource = { type = consumer_goods amount > 0 } }
+						owner = { add_resource = { consumer_goods = @rare_resource_taken_amount } }
+						from = { add_resource = { consumer_goods = @rare_resource_given_amount } }
+					}
+					if = { limit = { pop_produces_resource = { type = volatile_motes amount > 0 } }
+						owner = { add_resource = { volatile_motes = @strategic_resource_taken_amount } }
+						from = { add_resource = { volatile_motes = @strategic_resource_given_amount } }
+					}
+					if = { limit = { pop_produces_resource = { type = exotic_gases amount > 0 } }
+						owner = { add_resource = { exotic_gases = @strategic_resource_taken_amount } }
+						from = { add_resource = { exotic_gases = @strategic_resource_given_amount } }
+					}
+					if = { limit = { pop_produces_resource = { type = rare_crystals amount > 0 } }
+						owner = { add_resource = { rare_crystals = @strategic_resource_taken_amount } }
+						from = { add_resource = { rare_crystals = @strategic_resource_given_amount } }
+					}
+					# steal research secrets
+					if = { limit = { pop_produces_resource = { type = physics_research amount > 0 } }
+						from = { add_resource = { physics_research = @rare_resource_given_amount } }
+					}
+					if = { limit = { pop_produces_resource = { type = society_research amount > 0 } }
+						from = { add_resource = { society_research = @rare_resource_given_amount } }
+					}
+					if = { limit = { pop_produces_resource = { type = engineering_research amount > 0 } }
+						from = { add_resource = { engineering_research = @rare_resource_given_amount } }
+					}
+				}
+			}
+		}
+	}
+}
+
+# We have disabled a starbase
+# This = Ship (Starbase)
+# From = Disabler Ship
+ship_event = {
+	id = relytor_raider.101
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ship_class = shipclass_starbase
+		exists = from
+		exists = from.owner
+		from.owner = { is_raider = yes }
+	}
+
+	immediate = {
+		if = {
+			limit = { exists = space_owner }
+			space_owner = {
+				set_relation_flag = { who = from.owner flag = raided_space }
+			}
+		}
+		# Steal a months of resources from each collected deposit
+		solar_system = {
+			every_system_planet = {
+				limit = {
+					has_deposit = yes
+					has_orbital_station = yes
+				}
+				if = { limit = { has_deposit = d_minerals_1 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { minerals = -1 } } }
+					root.from.owner = { add_resource = { minerals = 1 } }
+				}
+				if = { limit = { has_deposit = d_minerals_2 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { minerals = -2 } } }
+					root.from.owner = { add_resource = { minerals = 2 } }
+				}
+				if = { limit = { has_deposit = d_minerals_3 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { minerals = -3 } } }
+					root.from.owner = { add_resource = { minerals = 3 } }
+				}
+				if = { limit = { has_deposit = d_minerals_4 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { minerals = -4 } } }
+					root.from.owner = { add_resource = { minerals = 4 } }
+				}
+				if = { limit = { has_deposit = d_minerals_5 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { minerals = -5 } } }
+					root.from.owner = { add_resource = { minerals = 5 } }
+				}
+				if = { limit = { has_deposit = d_minerals_6 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { minerals = -6 } } }
+					root.from.owner = { add_resource = { minerals = 6 } }
+				}
+				if = { limit = { has_deposit = d_minerals_7 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { minerals = -7 } } }
+					root.from.owner = { add_resource = { minerals = 7 } }
+				}
+				if = { limit = { has_deposit = d_minerals_8 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { minerals = -8 } } }
+					root.from.owner = { add_resource = { minerals = 8 } }
+				}
+				if = { limit = { has_deposit = d_minerals_9 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { minerals = -9 } } }
+					root.from.owner = { add_resource = { minerals = 9 } }
+				}
+				if = { limit = { has_deposit = d_minerals_10 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { minerals = -10 } } }
+					root.from.owner = { add_resource = { minerals = 10 } }
+				}
+				if = { limit = { OR = { has_deposit = d_energy_1 has_deposit = d_trade_value_1 } }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { energy = -1 } } }
+					root.from.owner = { add_resource = { energy = 1 } }
+				}
+				if = { limit = { OR = { has_deposit = d_energy_2 has_deposit = d_trade_value_2 } }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { energy = -2 } } }
+					root.from.owner = { add_resource = { energy = 2 } }
+				}
+				if = { limit = { OR = { has_deposit = d_energy_3 has_deposit = d_trade_value_3 } }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { energy = -3 } } }
+					root.from.owner = { add_resource = { energy = 3 } }
+				}
+				if = { limit = { OR = { has_deposit = d_energy_4 has_deposit = d_trade_value_4 } }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { energy = -4 } } }
+					root.from.owner = { add_resource = { energy = 4 } }
+				}
+				if = { limit = { OR = { has_deposit = d_energy_5 has_deposit = d_trade_value_5 } }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { energy = -5 } } }
+					root.from.owner = { add_resource = { energy = 5 } }
+				}
+				if = { limit = { OR = { has_deposit = d_energy_6 has_deposit = d_trade_value_6 } }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { energy = -6 } } }
+					root.from.owner = { add_resource = { energy = 6 } }
+				}
+				if = { limit = { OR = { has_deposit = d_energy_7 has_deposit = d_trade_value_7 } }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { energy = -7 } } }
+					root.from.owner = { add_resource = { energy = 7 } }
+				}
+				if = { limit = { OR = { has_deposit = d_energy_8 has_deposit = d_trade_value_8 } }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { energy = -8 } } }
+					root.from.owner = { add_resource = { energy = 8 } }
+				}
+				if = { limit = { OR = { has_deposit = d_energy_9 has_deposit = d_trade_value_9 } }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { energy = -9 } } }
+					root.from.owner = { add_resource = { energy = 9 } }
+				}
+				if = { limit = { OR = { has_deposit = d_energy_10 has_deposit = d_trade_value_10 } }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { energy = -10 } } }
+					root.from.owner = { add_resource = { energy = 10 } }
+				}
+				if = { limit = { has_deposit = d_physics_1 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { physics_research = -1 } } }
+					root.from.owner = { add_resource = { physics_research = 1 } }
+				}
+				if = { limit = { has_deposit = d_physics_2 }
+					space_owner = { add_resource = { physics_research = -2 } }
+					root.from.owner = { add_resource = { physics_research = 2 } }
+				}
+				if = { limit = { has_deposit = d_physics_3 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { physics_research = -3 } } }
+					root.from.owner = { add_resource = { physics_research = 3 } }
+				}
+				if = { limit = { has_deposit = d_physics_4 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { physics_research = -4 } } }
+					root.from.owner = { add_resource = { physics_research = 4 } }
+				}
+				if = { limit = { has_deposit = d_physics_5 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { physics_research = -5 } } }
+					root.from.owner = { add_resource = { physics_research = 5 } }
+				}
+				if = { limit = { has_deposit = d_physics_6 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { physics_research = -6 } } }
+					root.from.owner = { add_resource = { physics_research = 6 } }
+				}
+				if = { limit = { has_deposit = d_physics_7 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { physics_research = -7 } } }
+					root.from.owner = { add_resource = { physics_research = 7 } }
+				}
+				if = { limit = { has_deposit = d_physics_8 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { physics_research = -8 } } }
+					root.from.owner = { add_resource = { physics_research = 8 } }
+				}
+				if = { limit = { has_deposit = d_physics_9 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { physics_research = -9 } } }
+					root.from.owner = { add_resource = { physics_research = 9 } }
+				}
+				if = { limit = { has_deposit = d_physics_10 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { physics_research = -10 } } }
+					root.from.owner = { add_resource = { physics_research = 10 } }
+				}
+				if = { limit = { has_deposit = d_society_1 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { society_research = -1 } } }
+					root.from.owner = { add_resource = { society_research = 1 } }
+				}
+				if = { limit = { has_deposit = d_society_2 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { society_research = -2 } } }
+					root.from.owner = { add_resource = { society_research = 2 } }
+				}
+				if = { limit = { has_deposit = d_society_3 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { society_research = -3 } } }
+					root.from.owner = { add_resource = { society_research = 3 } }
+				}
+				if = { limit = { has_deposit = d_society_4 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { society_research = -4 } } }
+					root.from.owner = { add_resource = { society_research = 4 } }
+				}
+				if = { limit = { has_deposit = d_society_5 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { society_research = -5 } } }
+					root.from.owner = { add_resource = { society_research = 5 } }
+				}
+				if = { limit = { has_deposit = d_society_6 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { society_research = -6 } } }
+					root.from.owner = { add_resource = { society_research = 6 } }
+				}
+				if = { limit = { has_deposit = d_society_7 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { society_research = -7 } } }
+					root.from.owner = { add_resource = { society_research = 7 } }
+				}
+				if = { limit = { has_deposit = d_society_8 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { society_research = -8 } } }
+					root.from.owner = { add_resource = { society_research = 8 } }
+				}
+				if = { limit = { has_deposit = d_society_9 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { society_research = -9 } } }
+					root.from.owner = { add_resource = { society_research = 9 } }
+				}
+				if = { limit = { has_deposit = d_society_10 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { society_research = -10 } } }
+					root.from.owner = { add_resource = { society_research = 10 } }
+				}
+				if = { limit = { has_deposit = d_engineering_1 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { engineering_research = -1 } } }
+					root.from.owner = { add_resource = { engineering_research = 1 } }
+				}
+				if = { limit = { has_deposit = d_engineering_2 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { engineering_research = -2 } } }
+					root.from.owner = { add_resource = { engineering_research = 2 } }
+				}
+				if = { limit = { has_deposit = d_engineering_3 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { engineering_research = -3 } } }
+					root.from.owner = { add_resource = { engineering_research = 3 } }
+				}
+				if = { limit = { has_deposit = d_engineering_4 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { engineering_research = -4 } } }
+					root.from.owner = { add_resource = { engineering_research = 4 } }
+				}
+				if = { limit = { has_deposit = d_engineering_5 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { engineering_research = -5 } } }
+					root.from.owner = { add_resource = { engineering_research = 5 } }
+				}
+				if = { limit = { has_deposit = d_engineering_6 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { engineering_research = -6 } } }
+					root.from.owner = { add_resource = { engineering_research = 6 } }
+				}
+				if = { limit = { has_deposit = d_engineering_7 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { engineering_research = -7 } } }
+					root.from.owner = { add_resource = { engineering_research = 7 } }
+				}
+				if = { limit = { has_deposit = d_engineering_8 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { engineering_research = -8 } } }
+					root.from.owner = { add_resource = { engineering_research = 8 } }
+				}
+				if = { limit = { has_deposit = d_engineering_9 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { engineering_research = -9 } } }
+					root.from.owner = { add_resource = { engineering_research = 9 } }
+				}
+				if = { limit = { has_deposit = d_engineering_10 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { engineering_research = -10 } } }
+					root.from.owner = { add_resource = { engineering_research = 10 } }
+				}
+				if = { limit = { has_deposit = d_alloys_1 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { alloys = -1 } } }
+					root.from.owner = { add_resource = { alloys = 1 } }
+				}
+				if = { limit = { has_deposit = d_alloys_2 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { alloys = -2 } } }
+					root.from.owner = { add_resource = { alloys = 2 } }
+				}
+				if = { limit = { has_deposit = d_alloys_3 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { alloys = -3 } } }
+					root.from.owner = { add_resource = { alloys = 3 } }
+				}
+				if = { limit = { has_deposit = d_alloys_4 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { alloys = -4 } } }
+					root.from.owner = { add_resource = { alloys = 4 } }
+				}
+				if = { limit = { has_deposit = d_alloys_5 }
+					if = { limit = { exists = space_owner } space_owner = { add_resource = { alloys = -5 } } }
+					root.from.owner = { add_resource = { alloys = 5 } }
+				}
+			}
+		}
+	}
+}
+
+# Pop is abducted by raiding stance
+# This = Pop scope
+# From = planet abducted from
+pop_event  = {
+	id = relytor_raider.102
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_pop_flag = abducted_pop_@from.owner
+		set_pop_flag = abducted_from_@from
+		from.solar_system = {
+			random_fleet_in_system = {
+				limit = {
+					exists = orbit
+					orbit = { is_same_value = from }
+				}
+				from.owner = { set_timed_relation_flag = { who = prev.owner flag = abducted_pops days = 9000 } }
+			}
+		}
+	}
+}

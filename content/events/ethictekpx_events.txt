@@ -1,0 +1,57 @@
+namespace = neutralzoneevents
+
+# Enabling neutral zone
+planet_event = {
+	id = neutralzoneevents.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				not = {
+					any_country = {
+						is_country_type = neutral_zone
+					}
+				}
+			}			
+			create_country = {
+				name = NAME_neutral_zone
+				type = neutral_zone
+				flag = random
+				ignore_initial_colony_error = yes
+			}
+			last_created_country = {
+				save_event_target_as = newneutralzone
+			}
+		}
+		else = {
+			random_country = {
+				limit = {
+					is_country_type = neutral_zone
+				}
+				save_event_target_as = newneutralzone
+			}
+		}
+
+		solar_system = {
+			set_star_flag = sf_neutral_zone
+			every_fleet_in_system = {
+				limit = {
+					or = {
+						is_ship_class = shipclass_starbase
+						is_ship_class = shipclass_military_station
+						is_ship_class = shipclass_research_station
+						is_ship_class = shipclass_mining_station
+					}
+				}
+				set_controller = event_target:newneutralzone
+				set_owner = event_target:newneutralzone
+			}
+		}
+
+		every_country = {
+			establish_communications_no_message = event_target:newneutralzone
+		}
+	}
+}

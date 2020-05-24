@@ -1,0 +1,153 @@
+# planet scope
+meaningful_crime_could_have_criminals = {
+	OR = {
+		has_modifier = criminal_underworld
+		has_modifier = gang_wars
+		has_modifier = center_of_drug_trade
+		has_modifier = mob_rule
+	}
+}
+
+meaningful_crime_could_have_deviant_drones = {
+	OR = {
+		has_modifier = drone_deviancy
+		has_modifier = drone_corruption
+	}
+}
+
+meaningful_crime_acceptable_criminal_jobs = {
+	IF = {
+		limit = {
+			num_pops >= 50
+			has_current_purge = no
+		}
+		count_pops = {
+			limit = {
+				OR = {
+					has_job = criminal
+					has_job = deviant_drone
+					has_job = corrupt_drone
+				}
+			}
+			count <= 4
+		}
+	}
+	ELSE_IF = {
+		limit = { num_pops >= 40 }
+		count_pops = {
+			limit = {
+				OR = {
+					has_job = criminal
+					has_job = deviant_drone
+					has_job = corrupt_drone
+				}
+			}
+			count <= 3
+		}
+	}
+	ELSE_IF = {
+		limit = { num_pops >= 30 }
+		count_pops = {
+			limit = { 
+				OR = {
+					has_job = criminal
+					has_job = deviant_drone
+					has_job = corrupt_drone
+				}
+			}
+			count <= 2
+		}
+	}
+	ELSE_IF = {
+		limit = { num_pops >= 10 }
+		count_pops = {
+			limit = { 
+				OR = {
+					has_job = criminal
+					has_job = deviant_drone
+					has_job = corrupt_drone
+				}
+			}
+			count <= 1
+		}
+	}
+	ELSE = {
+		NOT = { any_pop = {
+			OR = {
+				has_job = criminal
+				has_job = deviant_drone
+				has_job = corrupt_drone
+			}
+		} }
+	}
+}
+
+meaningful_crime_acceptable_criminal_jobs_plus_one = {
+	IF = {
+		limit = {
+			num_pops >= 50
+			has_current_purge = no
+		}
+		count_pops = {
+			limit = {
+				OR = {
+					has_job = criminal
+					has_job = deviant_drone
+					has_job = corrupt_drone
+				}
+			}
+			count <= 5
+		}
+	}
+	ELSE_IF = {
+		limit = { num_pops >= 40 }
+		count_pops = {
+			limit = {
+				OR = {
+					has_job = criminal
+					has_job = deviant_drone
+					has_job = corrupt_drone
+				}
+			}
+			count <= 4
+		}
+	}
+	ELSE_IF = {
+		limit = { num_pops >= 30 }
+		count_pops = {
+			limit = { 
+				OR = {
+					has_job = criminal
+					has_job = deviant_drone
+					has_job = corrupt_drone
+				}
+			}
+			count <= 3
+		}
+	}
+	ELSE_IF = {
+		limit = { num_pops >= 10 }
+		count_pops = {
+			limit = { 
+				OR = {
+					has_job = criminal
+					has_job = deviant_drone
+					has_job = corrupt_drone
+				}
+			}
+			count <= 2
+		}
+	}
+	ELSE = {
+		count_pops = {
+			limit = { 
+				OR = {
+					has_job = criminal
+					has_job = deviant_drone
+					has_job = corrupt_drone
+				}
+			}
+			count <= 1
+		}
+	}
+}

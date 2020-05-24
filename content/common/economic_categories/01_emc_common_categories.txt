@@ -1,0 +1,50 @@
+planet_entertainers = {
+    parent = planet_jobs     
+    generate_mult_modifiers = {
+        produces
+        upkeep
+    }
+    generate_add_modifiers = {
+        produces
+        upkeep
+    }
+}
+
+
+planet_researchers = {
+    parent = planet_jobs     
+    generate_mult_modifiers = {
+        produces
+        upkeep
+    }
+    generate_add_modifiers = {
+        produces
+        upkeep
+    }
+}
+
+
+planet_artisans = {
+    parent = planet_jobs     
+    generate_mult_modifiers = {
+        produces
+        upkeep
+    }
+    generate_add_modifiers = {
+        produces
+        upkeep
+    }
+}
+
+planet_metallurgists = {
+    icon = "job_foundry"
+    parent = planet_jobs
+    generate_mult_modifiers = {
+        produces
+        upkeep
+    }
+
+    generate_add_modifiers = {
+        produces
+    }
+}

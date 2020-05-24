@@ -1,0 +1,86 @@
+
+# All leaders will have a common trait-point value set in defines, which they use to grab traits
+
+# leader_trait = yes - this tags the trait as a leader-trait and not a species-trait
+# initial = no - if set to no, this trait can not be granted to leaders when they are generated
+# leader_class = { admiral scientist }  -- OR  - if not set, it can be given to all leader-types except Rulers
+# requires_traits = { trait_psionic } -- AND - leader-trait can only be randomly given on generation if the leaders species has this trait
+# requires_governments = { despotic_hegemony ai_overlordship } -- OR - leader-trait can only be randomly given on generation if the Empire has this type of government form
+# prerequisites = { tech_psionic_theory } - AND - leader-trait can only be given if the technology specified has been researched by the Empire
+# ai_categories = { survey engineering physics society }
+# ai_weight - standard drop weight modifier, scope = country
+
+###########
+# Balance #
+###########
+#effects on research traits
+@categorybonus = 0.05
+
+####################
+# Scientist Traits #
+####################
+
+leader_trait_expertise_void_engineer = {
+	cost = 1
+	modification = no
+	modifier = {
+		category_materials_research_speed_mult = @categorybonus
+		category_propulsion_research_speed_mult = @categorybonus
+		category_voidcraft_research_speed_mult = @categorybonus
+	}
+	leader_trait = yes
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+	
+	ai_categories = {
+		engineering
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+leader_trait_expertise_void_governor = {
+	cost = 1
+	modification = no
+	modifier = {
+		starbase_shipyard_build_speed_mult = 0.10
+		starbase_shipyard_build_cost_mult = -0.05
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	initial = no
+	randomized = no
+	
+	ai_categories = {
+		engineering
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+leader_trait_expertise_void_ruler = {
+	cost = 1
+	modification = no
+	modifier = {
+		ship_upkeep_mult = -0.05
+		country_ship_upgrade_cost_mult = -0.1
+		starbase_shipyard_build_cost_mult = -0.1
+	}
+	leader_trait = yes
+	leader_class = { ruler }
+	initial = no
+	randomized = no
+	
+	ai_categories = {
+		engineering
+	}
+	
+	ai_weight = {
+		weight = 100
+	}
+}

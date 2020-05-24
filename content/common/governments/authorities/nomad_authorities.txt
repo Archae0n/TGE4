@@ -1,0 +1,16 @@
+#auth_example = {
+#	potential = {}									# requirements list, see ../readme_requirements.txt
+#	possible = {}									# requirements list, see ../readme_requirements.txt
+#
+#	has_heir = yes / no								# default: no; you can either have a hereditary system (has_heir = yes), or an election system (has_heir = no)
+#	election_type = oligarchic / democratic	/ none	# default: none; oligarchic generate candidates only from leaders in the country
+#	election_term_years = 40						# default: 0
+#	election_term_variance = 10						# default: 0; actual election term = election_term_years +/- election_term_variance
+#	re_election_allowed = yes / no					# default: no
+#	can_have_emergency_elections = yes / no			# default: no
+#	emergency_election_cost = 42.5					# default: 0; influence cost for starting an emergency election
+#	max_election_candidates = 5						# default: -1; -1 == no limit
+#
+#	has_agendas = yes / no							# default: no
+#	uses_mandates = yes / no						# default: no
+#}

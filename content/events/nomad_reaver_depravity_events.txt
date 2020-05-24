@@ -1,0 +1,190 @@
+##################################################################################################################################
+#####Adding traits bonus to eligible nations.
+##################################################################################################################################
+namespace = reaver_purge
+
+#####################
+# Country Type Ref
+######################
+# nomad
+# pirate
+# fallen_empire
+# awakened_fallen_empire
+# primitive
+# enclave
+# tiyanki
+# amoeba
+# crystal
+# drone
+# cloud
+#######################
+
+# Reaver government: purging pops yields unity
+planet_event = {
+	id = reaver_purge.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			OR = {
+				has_valid_civic = civic_reavers
+				has_swapped_tradition = tr_purity_natural_order
+			}
+		}
+		FROMFROM = {
+			is_robot_pop = no
+			NOT = {
+				is_same_species = owner_species
+			}
+		}
+		is_controlled_by = FROM
+	}
+	
+	immediate = {
+		FROM = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 1.5
+				min = 5
+				max = 100
+			}
+		}
+	}
+}
+
+# Reaver government: purging pops yields food
+planet_event = {
+	id = reaver_purge.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			OR = {
+				has_valid_civic = civic_reavers
+				has_swapped_tradition = tr_purity_natural_order
+			}
+		}
+		FROMFROM = {
+			is_robot_pop = no
+			NOT = {
+				is_same_species = owner_species
+			}
+		}
+		is_controlled_by = FROM
+	}
+	
+	immediate = {
+		FROM = {
+			add_monthly_resource_mult = {
+				resource = food
+				value = 1.5
+				min = 5
+				max = 100
+			}
+		}
+	}
+}
+
+# Reaver government: purging pops yields minerals
+planet_event = {
+	id = reaver_purge.3
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			OR = {
+				has_valid_civic = civic_reavers
+				has_swapped_tradition = tr_purity_natural_order
+			}
+		}
+		FROMFROM = {
+			is_robot_pop = no
+			NOT = {
+				is_same_species = owner_species
+			}
+		}
+		is_controlled_by = FROM
+	}
+	
+	immediate = {
+		FROM = {
+			add_monthly_resource_mult = {
+				resource = minerals
+				value = 1.5
+				min = 5
+				max = 50
+			}
+		}
+	}
+}
+
+# Reaver government: purging robot pops yields minerals
+planet_event = {
+	id = reaver_purge.4
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			OR = {
+				has_valid_civic = civic_reavers
+				has_swapped_tradition = tr_purity_natural_order
+			}
+		}
+		FROMFROM = {
+			is_robot_pop = yes
+			NOT = {
+				is_same_species = owner_species
+			}
+		}
+		is_controlled_by = FROM
+	}
+	
+	immediate = {
+		FROM = {
+			add_monthly_resource_mult = {
+				resource = minerals
+				value = 1.5
+				min = 5
+				max = 150
+			}
+		}
+	}
+}
+
+# Reaver government: purging robot pops yields energy
+planet_event = {
+	id = reaver_purge.5
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			OR = {
+				has_valid_civic = civic_reavers
+				has_swapped_tradition = tr_purity_natural_order
+			}
+		}
+		FROMFROM = {
+			is_robot_pop = yes
+			NOT = {
+				is_same_species = owner_species
+			}
+		}
+		is_controlled_by = FROM
+	}
+	
+	immediate = {
+		FROM = {
+			add_monthly_resource_mult = {
+				resource = energy
+				value = 1.5
+				min = 5
+				max = 50
+			}
+		}
+	}
+}

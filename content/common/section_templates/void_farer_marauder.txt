@@ -1,0 +1,484 @@
+### Pirate ###
+
+### Corvette
+ship_section_template = {
+	key = "VF_MARAUDER_CORVETTE_MID_M1S1"
+	ship_size = vf_marauder_corvette
+	fits_on_slot = mid
+	entity = "vf_marauder_corvette_M1S1_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "small_gun_01"
+	}	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		locatorname = "medium_gun_01"
+	}
+	
+	small_utility_slots = 3
+	medium_utility_slots = 2
+	aux_utility_slots = 1
+	
+	cost = 70
+}
+
+ship_section_template = {
+	key = "VF_MARAUDER_CORVETTE_MID_S3"
+	ship_size = vf_marauder_corvette
+	fits_on_slot = mid
+	entity = "vf_marauder_corvette_S3_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "small_gun_01"
+	}	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "small_gun_02"
+	}	
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		locatorname = "small_gun_03"
+	}
+	
+	small_utility_slots = 3
+	medium_utility_slots = 2
+	aux_utility_slots = 1
+	
+	cost = 70
+}
+
+ship_section_template = {
+	key = "VF_MARAUDER_CORVETTE_MID_S1"
+	ship_size = vf_marauder_corvette
+	fits_on_slot = mid
+	entity = "vf_marauder_corvette_S1_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "small_gun_01"
+	}
+	
+	small_utility_slots = 3
+	medium_utility_slots = 3
+	aux_utility_slots = 1
+	
+	cost = 30
+}
+
+### Destroyer
+ship_section_template = {
+	key = "VF_MARAUDER_DESTROYER_MID_L1S2"
+	ship_size = vf_marauder_frigate
+	fits_on_slot = mid
+	entity = "vf_marauder_frigate_artiliery_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "small_gun_01"
+	}	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "small_gun_02"
+	}	
+	
+	small_utility_slots = 4
+	medium_utility_slots = 4
+	aux_utility_slots = 1
+	
+	cost = 120
+}
+
+ship_section_template = {
+	key = "VF_MARAUDER_DESTROYER_MID_M1S2M1"
+	ship_size = vf_marauder_frigate
+	fits_on_slot = mid
+	entity = "vf_marauder_frigate_intercepter_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		locatorname = "medium_gun_01"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		locatorname = "medium_gun_02"
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "small_gun_01"
+	}
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		locatorname = "small_gun_02"
+	}
+	
+	small_utility_slots = 4
+	medium_utility_slots = 4
+	aux_utility_slots = 1
+	
+	cost = 120
+}
+
+ship_section_template = {
+	key = "VF_MARAUDER_DESTROYER_MID_TORPEDO"
+	ship_size = vf_marauder_frigate
+	fits_on_slot = mid
+	entity = "vf_marauder_frigate_artiliery_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "medium_missile_turret"
+		locatorname = "large_gun_01"
+	}	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "small_gun_01"
+	}	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "small_gun_02"
+	}	
+	
+	small_utility_slots = 4
+	medium_utility_slots = 4
+	aux_utility_slots = 1
+	
+	cost = 120
+}
+
+### Pirate Cruiser
+ship_section_template = {
+	key = "VF_MARAUDER_CRUISER_TEMPLATE"
+	ship_size = vf_marauder_cruiser
+	fits_on_slot = mid
+	entity = "vf_marauder_cruiser_hull_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		locatorname = "medium_gun_01"
+	}	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "small_gun_01"
+	}	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "small_gun_02"
+	}	
+	
+	medium_utility_slots = 6
+	large_utility_slots = 3
+	aux_utility_slots = 2
+	
+	cost = 360
+}
+
+#Marauder Galleon
+ship_section_template = {
+	key = "vf_marauder_galleon_key"
+	ship_size = vf_marauder_galleon
+	fits_on_slot = mid
+	entity = "vf_marauder_galleon_hull_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		locatorname = "hangar_bay_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_GUN_01"
+		template = "invisible_extra_large_fixed
+		locatorname = "large_gun_00"
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "small_gun_01"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		is_side_slot = yes
+		locatorname = "medium_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		locatorname = "large_gun_02"
+	}
+	component_slot = {
+		name = "LARGE_GUN_03"
+		template = "large_turret"
+		locatorname = "large_gun_03"
+	}
+	component_slot = {
+		name = "LARGE_GUN_04"
+		template = "large_turret"
+		locatorname = "large_gun_04"
+	}
+	component_slot = {
+		name = "LARGE_GUN_05"
+		template = "large_turret"
+		locatorname = "large_gun_05"
+	}
+	component_slot = {
+		name = "LARGE_GUN_06"
+		template = "large_turret"
+		locatorname = "large_gun_06"
+	}
+	component_slot = {
+		name = "LARGE_GUN_07"
+		template = "large_turret"
+		locatorname = "large_gun_07"
+	}
+	component_slot = {
+		name = "LARGE_GUN_08"
+		template = "large_turret"
+		is_side_slot = yes
+		locatorname = "large_gun_08"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		is_side_slot = yes
+		locatorname = "small_gun_02"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		is_side_slot = yes
+		locatorname = "small_gun_03"
+	}
+	component_slot = {
+		name = "SMALL_GUN_04"
+		template = "small_turret"
+		is_side_slot = yes
+		locatorname = "small_gun_04"
+	}
+	
+	medium_utility_slots = 3
+	large_utility_slots = 9
+	aux_utility_slots = 2
+	
+	cost = 1000
+}
+
+### Hideout
+ship_section_template = {
+	key = "MARAUDER_HIDEOUT_SECTION"
+	ship_size = pirate_station
+	fits_on_slot = west
+	entity = "pirate_base_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "PD_01"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "small_gun_01"
+	}	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_02"
+	}  
+	component_slot = {
+		name = "LARGE_GUN_02"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_03"
+	}
+
+	large_utility_slots = 6
+}
+
+### Large Station
+ship_section_template = {
+	key = "vf_station_pirate_large_key"
+	ship_size = void_farer_marauder_void_dwelling
+	
+	fits_on_slot = "mid"
+	entity = "station_generic_01_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "LARGE_GUN_03"
+		template = "large_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "LARGE_GUN_04"
+		template = "large_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "LARGE_GUN_05"
+		template = "large_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "LARGE_GUN_06"
+		template = "large_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		template = "medium_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_04"
+		template = "medium_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_05"
+		template = "medium_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_06"
+		template = "medium_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "PD_02"
+		template = "point_defence_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "PD_03"
+		template = "point_defence_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "PD_04"
+		template = "point_defence_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "SMALL_GUN_04"
+		template = "small_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "SMALL_GUN_05"
+		template = "small_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "SMALL_GUN_06"
+		template = "small_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "medium_missile_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "TORPEDO_03"
+		template = "medium_missile_turret"
+		locatorname = "part1"
+	}
+	component_slot = {
+		name = "TORPEDO_04"
+		template = "medium_missile_turret"
+		locatorname = "part1"
+	}	
+	
+	large_utility_slots = 10
+	aux_utility_slots = 1
+}

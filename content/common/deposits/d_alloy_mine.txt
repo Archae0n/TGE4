@@ -1,0 +1,89 @@
+d_alloy_mine_1 = {
+	is_for_colonizeable = yes
+	icon = "d_alloy_mine"
+	category = deposit_cat_rare
+
+	potential = {
+		can_have_habitable_deposits = yes
+	}
+
+	planet_modifier = {
+		building_alloy_recycling_max = 1
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_alloy_mine_2 = {
+	is_for_colonizeable = yes
+	icon = "d_alloy_mine"
+	category = deposit_cat_rare
+
+	potential = {
+		can_have_habitable_deposits = yes
+	}
+
+	planet_modifier = {
+		building_alloy_recycling_max = 2
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_alloy_mine_3 = {
+	is_for_colonizeable = yes
+	icon = "d_alloy_mine"
+	category = deposit_cat_rare
+
+	potential = {
+		can_have_habitable_deposits = yes
+	}
+
+	planet_modifier = {
+		building_alloy_recycling_max = 3
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_alloy_mine_4 = {
+	is_for_colonizeable = yes
+	icon = "d_alloy_mine"
+	category = deposit_cat_rare
+
+	potential = {
+		can_have_habitable_deposits = yes
+	}
+
+	planet_modifier = {
+		building_alloy_recycling_max = 4
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_alloy_mine_5 = {
+	is_for_colonizeable = yes
+	icon = "d_alloy_mine"
+	category = deposit_cat_rare
+
+	potential = {
+		can_have_habitable_deposits = yes
+	}
+
+	planet_modifier = {
+		building_alloy_recycling_max = 5
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}

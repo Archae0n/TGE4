@@ -1,0 +1,24 @@
+on_leader_spawned = {
+	events = {
+		sge.6 #change gender
+		#sge.501 #heir test
+	}
+
+}
+
+# Executed as new ruler has been set
+# This = Country
+on_ruler_set = {
+	events = {
+		sge.7
+	}
+}
+
+# Executed when the ruler is ousted and goes back to their pre-ruler class
+# From = Previous Ruler, already has the new class
+# This = Country
+on_ruler_back_to_pre_ruler_class = {
+	events = {
+		sge.8
+	}
+}

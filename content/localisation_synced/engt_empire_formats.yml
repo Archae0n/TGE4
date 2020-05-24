@@ -1,0 +1,13 @@
+﻿l_default:
+ format.adherent_imp.1: "<adherent_imp> of [This.Capital.System.GetName]"
+ format.adherent_imp.2: "<adherent_imp> of [This.Capital.GetName]"
+ format.adherent_imp.3: "[This.GetSpeciesName] <adherent_imp>"
+ format.adherent_imp.4: "<adherent_imp> [This.GetSpeciesName] <adherent_imp_desc>"
+ format.adherent_imp.5: "[This.GetSpeciesName] <adherent_imp_desc> <adherent_imp>"
+ 
+ format.enigmtic_imp.1: "<enigmtic_imp> of [This.Capital.System.GetName]"
+ format.enigmtic_imp.2: "<enigmtic_imp> of [This.Capital.GetName]"
+ format.enigmtic_imp.3: "[This.GetSpeciesName] <enigmtic_imp>"
+ format.enigmtic_imp.4: "<enigmtic_imp> [This.GetSpeciesName] <enigmat_imp_desc>"
+ format.enigmtic_imp.5: "[This.GetSpeciesName] <enigmat_imp_desc> <enigmtic_imp>"
+ 

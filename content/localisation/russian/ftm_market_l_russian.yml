@@ -1,0 +1,608 @@
+﻿l_russian:
+ 
+ 
+ 
+ ### РЫНОК ### 
+ ftm_market_window_title:0 "РЫНОК ФЛОТОВ" 
+ 
+ # общее
+ ftm_market_slot_no_info:0 "Этот cлот свободен. Нажмите, чтобы предложить на продажу один из своих флотов." 
+ ftm_market_slot_in_progress_info:0 "§RВ данный момент в этот слот выставляется флот. Пожалуйста, подождите.§!" 
+ ftm_market_slot_info:0 "Одна из империй выставила флот на продажу. Для получения подробной информации нажмите на это сообщение." 
+ ftm_market_slot_info_seller:0 "Один из наших флотов выставлен на продажу. Для получения подробной информации нажмите на это сообщение." 
+ ftm_market_slot_buy:0 "КУПИТЬ" 
+ 
+ # слот 1
+ ftm_market_slot_1_no_info:0 "§R$ftm_market_slot_no_info$§!" 
+ ftm_market_slot_1_info:0 "§R$ftm_market_slot_info$§!" 
+ ftm_market_slot_1_info_seller:0 "§R$ftm_market_slot_info_seller$§!" 
+ ftm_market_slot_1_buy:0 "§R$ftm_market_slot_buy$§!"  
+ ftm_market_slot_1_buy_info:0 "Купить флотилию §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§! за §Y[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§!£energy£" 
+ 
+ # слот 2
+ ftm_market_slot_2_no_info:0 "§H$ftm_market_slot_no_info$§!" 
+ ftm_market_slot_2_info:0 "§H$ftm_market_slot_info$§!" 
+ ftm_market_slot_2_info_seller:0 "§H$ftm_market_slot_info_seller$§!" 
+ ftm_market_slot_2_buy:0 "§H$ftm_market_slot_buy$§!" 
+ ftm_market_slot_2_buy_info:0 "Купить флотилию §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§! за §Y[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§!£energy£" 
+ 
+ # слот 3
+ ftm_market_slot_3_no_info:0 "§Y$ftm_market_slot_no_info$§!" 
+ ftm_market_slot_3_info:0 "§Y$ftm_market_slot_info$§!" 
+ ftm_market_slot_3_info_seller:0 "§Y$ftm_market_slot_info_seller$§!" 
+ ftm_market_slot_3_buy:0 "§Y$ftm_market_slot_buy$§!" 
+ ftm_market_slot_3_buy_info:0 "Купить флотилию §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§! за §Y[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§!£energy£" 
+ 
+ # слот 4
+ ftm_market_slot_4_no_info:0 "§G$ftm_market_slot_no_info$§!" 
+ ftm_market_slot_4_info:0 "§G$ftm_market_slot_info$§!" 
+ ftm_market_slot_4_info_seller:0 "§G$ftm_market_slot_info_seller$§!" 
+ ftm_market_slot_4_buy:0 "§G$ftm_market_slot_buy$§!" 
+ ftm_market_slot_4_buy_info:0 "Купить флотилию §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§! за §Y[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§!£energy£" 
+ 
+ # слот 5
+ ftm_market_slot_5_no_info:0 "§B$ftm_market_slot_no_info$§!" 
+ ftm_market_slot_5_info:0 "§B$ftm_market_slot_info$§!" 
+ ftm_market_slot_5_info_seller:0 "§B$ftm_market_slot_info_seller$§!" 
+ ftm_market_slot_5_buy:0 "§B$ftm_market_slot_buy$§!" 
+ ftm_market_slot_5_buy_info:0 "Купить флотилию §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§! за §Y[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§!£energy£" 
+ 
+ # слот 6
+ ftm_market_slot_6_no_info:0 "§M$ftm_market_slot_no_info$§!" 
+ ftm_market_slot_6_info:0 "§M$ftm_market_slot_info$§!" 
+ ftm_market_slot_6_info_seller:0 "§M$ftm_market_slot_info_seller$§!" 
+ ftm_market_slot_6_buy:0 "§M$ftm_market_slot_buy$§!" 
+ ftm_market_slot_6_buy_info:0 "Купить флотилию §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§! за §Y[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§!£energy£" 
+ 
+ 
+ 
+ 
+ 
+ 
+ # Кнопка открытия окна в окне указов
+ edict_ftm_open_market_window:0 "§HРынок флотов§!"
+ edict_ftm_open_market_window_desc:0 "Нажмите, чтобы открыть окно рынка флотов"
+ 
+ # Страна-продажу
+ ftm_market_country_name:0 "§BЭта флотилия в данный момент находится на рынке§!"
+ FTM_MARKET_EMPIRE:0 "Нажмите, чтобы открыть окно рынка флотов"
+ FTM_MARKET_EMPIRE_DESC:0 " "
+ 
+ 
+ ### СООБЩЕНИЯ ###  
+ 
+ ## СЛОТ 1 ##
+ 
+ # 1 - окно выбора флота для продажи
+ ftm_market.101.title:0 "§BВЫБЕРИТЕ ФЛОТ§!" 
+ ftm_market.101.desc:0 "Флотилию можно выставить на продажу, только если выполнены следующие условия:\n§Y1. Флотилия находится на своей территории;\n2. Флотилией не управляет адмирал;\n2. Нельзя выставить на продажу Колосса или Джаггернаута§!\n\nСписок доступных для продажи флотилий приведен ниже:" 
+ # выбор флотилии
+ ftm_market.101.fleet_01:0 "§Y[event_target:ftm_marketed_fleet_slot_1_01.GetFleetName]§!" 
+ ftm_market.101.fleet_01.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_1_01.GetName]§! может быть выставлена на продажу"
+ ftm_market.101.fleet_02:0 "§Y[event_target:ftm_marketed_fleet_slot_1_02.GetFleetName]§!" 
+ ftm_market.101.fleet_02.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_1_02.GetName]§! может быть выставлена на продажу"
+ ftm_market.101.fleet_03:0 "§Y[event_target:ftm_marketed_fleet_slot_1_03.GetFleetName]§!" 
+ ftm_market.101.fleet_03.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_1_03.GetName]§! может быть выставлена на продажу"
+ ftm_market.101.fleet_04:0 "§Y[event_target:ftm_marketed_fleet_slot_1_04.GetFleetName]§!" 
+ ftm_market.101.fleet_04.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_1_04.GetName]§! может быть выставлена на продажу"
+ ftm_market.101.fleet_05:0 "§Y[event_target:ftm_marketed_fleet_slot_1_05.GetFleetName]§!" 
+ ftm_market.101.fleet_05.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_1_05.GetName]§! может быть выставлена на продажу"
+ ftm_market.101.nope:0 "Я передумал" 
+ 
+ # 2 - ручная настройка стартовой цены продажи
+ ftm_market.102.title:0 "§BУСТАНОВИТЕ ЦЕНУ§!" 
+ ftm_market.102.desc:0 "Установите цену вручную.\n\n§YТЕКУЩАЯ ЦЕНА:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost_manual]§!\n§YРЕСУРС:§! §Y£energy£ энергокредиты§!" 
+ # выбор вариантов
+ ftm_market.102.minus10000:0 "§R-10000§!" 
+ ftm_market.102.minus10000.tooltip:0 "§YСнизить цену на 10000 единиц§!"  
+ ftm_market.102.minus1000:0 "§R-1000§!" 
+ ftm_market.102.minus1000.tooltip:0 "§YСнизить цену на 1000 единиц§!"  
+ ftm_market.102.minus100:0 "§R-100§!" 
+ ftm_market.102.minus100.tooltip:0 "§YСнизить цену на 100 единиц§!"  
+ ftm_market.102.minus10:0 "§R-10§!" 
+ ftm_market.102.minus10.tooltip:0 "§YСнизить цену на 10 единиц§!"   
+ ftm_market.102.plus10:0 "§G+10§!" 
+ ftm_market.102.plus10.tooltip:0 "§YУвеличить цену на 10 единиц§!"   
+ ftm_market.102.plus100:0 "§G+100§!" 
+ ftm_market.102.plus100.tooltip:0 "§YУвеличить цену на 100 единиц§!"   
+ ftm_market.102.plus1000:0 "§G+1000§!" 
+ ftm_market.102.plus1000.tooltip:0 "§YУвеличить цену на 1000 единиц§!"   
+ ftm_market.102.plus10000:0 "§G+10000§!" 
+ ftm_market.102.plus10000.tooltip:0 "§YУвеличить цену на 10000 единиц§!"  
+ ftm_market.102.done:0 "§YПринять цену§!" 
+ ftm_market.102.done.tooltip:0 "§YУстановить текущую цену§!" 
+ 
+ # 3 - запрос подтверждения продажи
+ ftm_market.103.title:0 "§RТРЕБУЕТСЯ ПОДТВЕРЖДЕНИЕ§!" 
+ ftm_market.103.desc:0 "Будет выставлена следующая флотилия:\n\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§! £energy£\n\n§RВНИМАНИЕ!§!\n§YВремя нахождения флота на продаже составляет 5 лет (60 месяцев). Все это время флотилия не будет подчиняться нам, а при покупке отойдет покупателю.§!" 
+ # выбор вариантов
+ ftm_market.103.confirm:0 "Подтверждаю предложение" 
+ ftm_market.103.confirm.tooltip:0 "Флотилия §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§! будет выставлена на продажу.\n§RВНИМАНИЕ! ФЛОТИЛИЯ ПЕРЕСТАНЕТ СЧИТАТЬСЯ НАШЕЙ!§!"
+ ftm_market.103.nope:0 "Я передумал" 
+ 
+ # 5 - сообщение при недостатке энергии для покупки
+ ftm_market.105.title:0 "§RНЕДОСТАТОЧНО ЭНЕРГИИ§!" 
+ ftm_market.105.desc:0 "Недостаточно энергии чтобы приобрести флотилию.\n\n§YТребуется:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§!£energy£\n§YВ наличии:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_buyer_marketed_fleet_slot_1_energy_current_count]§!£energy£" 
+ # выбор вариантов
+ ftm_market.105.ok:0 "Я понял" 
+ 
+ # 10 - сообщение с информацией о флоте
+ ftm_market.110.title:0 "§RИНФОРМАЦИЯ: СЛОТ 1§!" 
+ ftm_market.110.desc:0 "§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§!£energy£\n§YОсталось месяцев:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_market_slot_1_time_in_months]§!\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_titan_count]§!" 
+ ftm_market.110.desc_mod:0 "§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§!£energy£\n§YОсталось месяцев:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_market_slot_1_time_in_months]§!" 
+ # выбор вариантов
+ ftm_market.110.ok:0 "Закрыть" 
+ 
+ # 11 - сообщение с информацией о покупке
+ ftm_market.111.title:0 "§GПОКУПКА ЗАВЕРШЕНА§!" 
+ ftm_market.111.desc:0 "Мы успешно приобрели следующую флотилию:\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§!£energy£\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_titan_count]§!" 
+ ftm_market.111.desc_mod:0 "Мы успешно приобрели следующую флотилию:\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§!£energy£" 
+ # выбор вариантов
+ ftm_market.111.ok:0 "Закрыть" 
+ 
+ # 12 - сообщение с информацией об успешной продаже флота (+ начисление денег продавцу)
+ ftm_market.112.title:0 "§GПРОДАЖА ЗАВЕРШЕНА§!" 
+ ftm_market.112.desc:0 "Мы успешно продали одну из наших флотилий на рынке.\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§!£energy£\n§YПокупатель:§! §H[event_target:ftm_market_slot_1_buyer.GetName]§!\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_titan_count]§!" 
+ ftm_market.112.desc_mod:0 "Мы успешно продали одну из наших флотилий на рынке.\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§!£energy£\n§YПокупатель:§! §H[event_target:ftm_market_slot_1_buyer.GetName]§!" 
+ # выбор вариантов
+ ftm_market.112.ok:0 "Закрыть" 
+ ftm_market.112.ok.tooltip:0 "Мы получим цену сделки в размере §H[event_target:ftm_marketed_fleet_slot_1_seller.ftm_marketed_fleet_slot_1_cost]§!£energy£" 
+ 
+ # 13 - сообщение что продать флот не удалось
+ ftm_market.113.title:0 "§RВРЕМЯ ВЫШЛО§!" 
+ ftm_market.113.desc:0 "Время, отведенное на размещение флотилии §H[event_target:ftm_marketed_fleet_slot_1.GetFleetName]§! на рынке, вышло. Никто не захотел сделать покупку. Флот возвращен." 
+ # выбор вариантов
+ ftm_market.113.ok:0 "Закрыть" 
+ 
+ # уведомления
+ FTM_MARKET_SLOT_1_NOTIFICATION:0 "Империя §H$COUNTRY$§! выставила на продажу флотилию §Y$FLEET$§!\n "
+ 
+ 
+ 
+ 
+ 
+ ## СЛОТ 2 ##
+ 
+ # 1 - окно выбора флота для продажи
+ ftm_market.201.title:0 "§BВЫБЕРИТЕ ФЛОТ§!" 
+ ftm_market.201.desc:0 "Флотилию можно выставить на продажу, только если выполнены следующие условия:\n§Y1. Флотилия находится на своей территории;\n2. Флотилией не управляет адмирал;\n2. Нельзя выставить на продажу Колосса или Джаггернаута§!\n\nСписок доступных для продажи флотилий приведен ниже:" 
+ # выбор флотилии
+ ftm_market.201.fleet_01:0 "§Y[event_target:ftm_marketed_fleet_slot_2_01.GetFleetName]§!" 
+ ftm_market.201.fleet_01.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_2_01.GetName]§! может быть выставлена на продажу"
+ ftm_market.201.fleet_02:0 "§Y[event_target:ftm_marketed_fleet_slot_2_02.GetFleetName]§!" 
+ ftm_market.201.fleet_02.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_2_02.GetName]§! может быть выставлена на продажу"
+ ftm_market.201.fleet_03:0 "§Y[event_target:ftm_marketed_fleet_slot_2_03.GetFleetName]§!" 
+ ftm_market.201.fleet_03.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_2_03.GetName]§! может быть выставлена на продажу"
+ ftm_market.201.fleet_04:0 "§Y[event_target:ftm_marketed_fleet_slot_2_04.GetFleetName]§!" 
+ ftm_market.201.fleet_04.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_2_04.GetName]§! может быть выставлена на продажу"
+ ftm_market.201.fleet_05:0 "§Y[event_target:ftm_marketed_fleet_slot_2_05.GetFleetName]§!" 
+ ftm_market.201.fleet_05.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_2_05.GetName]§! может быть выставлена на продажу"
+ ftm_market.201.nope:0 "Я передумал" 
+ 
+ # 2 - ручная настройка стартовой цены продажи
+ ftm_market.202.title:0 "§BУСТАНОВИТЕ ЦЕНУ§!" 
+ ftm_market.202.desc:0 "Установите цену вручную.\n\n§YТЕКУЩАЯ ЦЕНА:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost_manual]§!\n§YРЕСУРС:§! §Y£energy£ энергокредиты§!" 
+ # выбор вариантов
+ ftm_market.202.minus10000:0 "§R-10000§!" 
+ ftm_market.202.minus10000.tooltip:0 "§YСнизить цену на 10000 единиц§!"  
+ ftm_market.202.minus1000:0 "§R-1000§!" 
+ ftm_market.202.minus1000.tooltip:0 "§YСнизить цену на 1000 единиц§!"  
+ ftm_market.202.minus100:0 "§R-100§!" 
+ ftm_market.202.minus100.tooltip:0 "§YСнизить цену на 100 единиц§!"  
+ ftm_market.202.minus10:0 "§R-10§!" 
+ ftm_market.202.minus10.tooltip:0 "§YСнизить цену на 10 единиц§!"   
+ ftm_market.202.plus10:0 "§G+10§!" 
+ ftm_market.202.plus10.tooltip:0 "§YУвеличить цену на 10 единиц§!"   
+ ftm_market.202.plus100:0 "§G+100§!" 
+ ftm_market.202.plus100.tooltip:0 "§YУвеличить цену на 100 единиц§!"   
+ ftm_market.202.plus1000:0 "§G+1000§!" 
+ ftm_market.202.plus1000.tooltip:0 "§YУвеличить цену на 1000 единиц§!"   
+ ftm_market.202.plus10000:0 "§G+10000§!" 
+ ftm_market.202.plus10000.tooltip:0 "§YУвеличить цену на 10000 единиц§!"  
+ ftm_market.202.done:0 "§YПринять цену§!" 
+ ftm_market.202.done.tooltip:0 "§YУстановить текущую цену§!" 
+ 
+ # 3 - запрос подтверждения продажи
+ ftm_market.203.title:0 "§RТРЕБУЕТСЯ ПОДТВЕРЖДЕНИЕ§!" 
+ ftm_market.203.desc:0 "Будет выставлена следующая флотилия:\n\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§! £energy£\n\n§RВНИМАНИЕ!§!\n§YВремя нахождения флота на продаже составляет 5 лет (60 месяцев). Все это время флотилия не будет подчиняться нам, а при покупке отойдет покупателю.§!" 
+ # выбор вариантов
+ ftm_market.203.confirm:0 "Подтверждаю предложение" 
+ ftm_market.203.confirm.tooltip:0 "Флотилия §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§! будет выставлена на продажу.\n§RВНИМАНИЕ! ФЛОТИЛИЯ ПЕРЕСТАНЕТ СЧИТАТЬСЯ НАШЕЙ!§!"
+ ftm_market.203.nope:0 "Я передумал" 
+ 
+ # 5 - сообщение при недостатке энергии для покупки
+ ftm_market.205.title:0 "§RНЕДОСТАТОЧНО ЭНЕРГИИ§!" 
+ ftm_market.205.desc:0 "Недостаточно энергии чтобы приобрести флотилию.\n\n§YТребуется:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§!£energy£\n§YВ наличии:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_buyer_marketed_fleet_slot_2_energy_current_count]§!£energy£" 
+ # выбор вариантов
+ ftm_market.205.ok:0 "Я понял" 
+ 
+ # 10 - сообщение с информацией о флоте
+ ftm_market.210.title:0 "§HИНФОРМАЦИЯ: СЛОТ 2§!" 
+ ftm_market.210.desc:0 "§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§!£energy£\n§YОсталось месяцев:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_market_slot_2_time_in_months]§!\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_titan_count]§!" 
+ ftm_market.210.desc_mod:0 "§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§!£energy£\n§YОсталось месяцев:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_market_slot_2_time_in_months]§!" 
+ # выбор вариантов
+ ftm_market.210.ok:0 "Закрыть" 
+ 
+ # 11 - сообщение с информацией о покупке
+ ftm_market.211.title:0 "§GПОКУПКА ЗАВЕРШЕНА§!" 
+ ftm_market.211.desc:0 "Мы успешно приобрели следующую флотилию:\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§!£energy£\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_titan_count]§!" 
+ ftm_market.211.desc_mod:0 "Мы успешно приобрели следующую флотилию:\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§!£energy£" 
+ # выбор вариантов
+ ftm_market.211.ok:0 "Закрыть" 
+ 
+ # 12 - сообщение с информацией об успешной продаже флота (+ начисление денег продавцу)
+ ftm_market.212.title:0 "§GПРОДАЖА ЗАВЕРШЕНА§!" 
+ ftm_market.212.desc:0 "Мы успешно продали одну из наших флотилий на рынке.\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§!£energy£\n§YПокупатель:§! §H[event_target:ftm_market_slot_2_buyer.GetName]§!\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_titan_count]§!" 
+ ftm_market.212.desc_mod:0 "Мы успешно продали одну из наших флотилий на рынке.\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§!£energy£\n§YПокупатель:§! §H[event_target:ftm_market_slot_2_buyer.GetName]§!" 
+ # выбор вариантов
+ ftm_market.212.ok:0 "Закрыть" 
+ ftm_market.212.ok.tooltip:0 "Мы получим цену сделки в размере §H[event_target:ftm_marketed_fleet_slot_2_seller.ftm_marketed_fleet_slot_2_cost]§!£energy£" 
+ 
+ # 13 - сообщение что продать флот не удалось
+ ftm_market.213.title:0 "§RВРЕМЯ ВЫШЛО§!" 
+ ftm_market.213.desc:0 "Время, отведенное на размещение флотилии §H[event_target:ftm_marketed_fleet_slot_2.GetFleetName]§! на рынке, вышло. Никто не захотел сделать покупку. Флот возвращен." 
+ # выбор вариантов
+ ftm_market.213.ok:0 "Закрыть"
+ 
+ # уведомления
+ FTM_MARKET_SLOT_2_NOTIFICATION:0 "Империя §H$COUNTRY$§! выставила на продажу флотилию §Y$FLEET$§!\n " 
+ 
+ 
+ 
+ 
+ 
+ ## СЛОТ 3 ##
+ 
+ # 1 - окно выбора флота для продажи
+ ftm_market.301.title:0 "§BВЫБЕРИТЕ ФЛОТ§!" 
+ ftm_market.301.desc:0 "Флотилию можно выставить на продажу, только если выполнены следующие условия:\n§Y1. Флотилия находится на своей территории;\n2. Флотилией не управляет адмирал;\n2. Нельзя выставить на продажу Колосса или Джаггернаута§!\n\nСписок доступных для продажи флотилий приведен ниже:" 
+ # выбор флотилии
+ ftm_market.301.fleet_01:0 "§Y[event_target:ftm_marketed_fleet_slot_3_01.GetFleetName]§!" 
+ ftm_market.301.fleet_01.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_3_01.GetName]§! может быть выставлена на продажу"
+ ftm_market.301.fleet_02:0 "§Y[event_target:ftm_marketed_fleet_slot_3_02.GetFleetName]§!" 
+ ftm_market.301.fleet_02.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_3_02.GetName]§! может быть выставлена на продажу"
+ ftm_market.301.fleet_03:0 "§Y[event_target:ftm_marketed_fleet_slot_3_03.GetFleetName]§!" 
+ ftm_market.301.fleet_03.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_3_03.GetName]§! может быть выставлена на продажу"
+ ftm_market.301.fleet_04:0 "§Y[event_target:ftm_marketed_fleet_slot_3_04.GetFleetName]§!" 
+ ftm_market.301.fleet_04.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_3_04.GetName]§! может быть выставлена на продажу"
+ ftm_market.301.fleet_05:0 "§Y[event_target:ftm_marketed_fleet_slot_3_05.GetFleetName]§!" 
+ ftm_market.301.fleet_05.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_3_05.GetName]§! может быть выставлена на продажу"
+ ftm_market.301.nope:0 "Я передумал" 
+ 
+ # 2 - ручная настройка стартовой цены продажи
+ ftm_market.302.title:0 "§BУСТАНОВИТЕ ЦЕНУ§!" 
+ ftm_market.302.desc:0 "Установите цену вручную.\n\n§YТЕКУЩАЯ ЦЕНА:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost_manual]§!\n§YРЕСУРС:§! §Y£energy£ энергокредиты§!" 
+ # выбор вариантов
+ ftm_market.302.minus10000:0 "§R-10000§!" 
+ ftm_market.302.minus10000.tooltip:0 "§YСнизить цену на 10000 единиц§!"  
+ ftm_market.302.minus1000:0 "§R-1000§!" 
+ ftm_market.302.minus1000.tooltip:0 "§YСнизить цену на 1000 единиц§!"  
+ ftm_market.302.minus100:0 "§R-100§!" 
+ ftm_market.302.minus100.tooltip:0 "§YСнизить цену на 100 единиц§!"  
+ ftm_market.302.minus10:0 "§R-10§!" 
+ ftm_market.302.minus10.tooltip:0 "§YСнизить цену на 10 единиц§!"   
+ ftm_market.302.plus10:0 "§G+10§!" 
+ ftm_market.302.plus10.tooltip:0 "§YУвеличить цену на 10 единиц§!"   
+ ftm_market.302.plus100:0 "§G+100§!" 
+ ftm_market.302.plus100.tooltip:0 "§YУвеличить цену на 100 единиц§!"   
+ ftm_market.302.plus1000:0 "§G+1000§!" 
+ ftm_market.302.plus1000.tooltip:0 "§YУвеличить цену на 1000 единиц§!"   
+ ftm_market.302.plus10000:0 "§G+10000§!" 
+ ftm_market.302.plus10000.tooltip:0 "§YУвеличить цену на 10000 единиц§!"  
+ ftm_market.302.done:0 "§YПринять цену§!" 
+ ftm_market.302.done.tooltip:0 "§YУстановить текущую цену§!" 
+ 
+ # 3 - запрос подтверждения продажи
+ ftm_market.303.title:0 "§RТРЕБУЕТСЯ ПОДТВЕРЖДЕНИЕ§!" 
+ ftm_market.303.desc:0 "Будет выставлена следующая флотилия:\n\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§! £energy£\n\n§RВНИМАНИЕ!§!\n§YВремя нахождения флота на продаже составляет 5 лет (60 месяцев). Все это время флотилия не будет подчиняться нам, а при покупке отойдет покупателю.§!" 
+ # выбор вариантов
+ ftm_market.303.confirm:0 "Подтверждаю предложение" 
+ ftm_market.303.confirm.tooltip:0 "Флотилия §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§! будет выставлена на продажу.\n§RВНИМАНИЕ! ФЛОТИЛИЯ ПЕРЕСТАНЕТ СЧИТАТЬСЯ НАШЕЙ!§!"
+ ftm_market.303.nope:0 "Я передумал" 
+ 
+ # 5 - сообщение при недостатке энергии для покупки
+ ftm_market.305.title:0 "§RНЕДОСТАТОЧНО ЭНЕРГИИ§!" 
+ ftm_market.305.desc:0 "Недостаточно энергии чтобы приобрести флотилию.\n\n§YТребуется:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§!£energy£\n§YВ наличии:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_buyer_marketed_fleet_slot_3_energy_current_count]§!£energy£" 
+ # выбор вариантов
+ ftm_market.305.ok:0 "Я понял" 
+ 
+ # 10 - сообщение с информацией о флоте
+ ftm_market.310.title:0 "§YИНФОРМАЦИЯ: СЛОТ 3§!" 
+ ftm_market.310.desc:0 "§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§!£energy£\n§YОсталось месяцев:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_market_slot_3_time_in_months]§!\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_titan_count]§!" 
+ ftm_market.310.desc_mod:0 "§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§!£energy£\n§YОсталось месяцев:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_market_slot_3_time_in_months]§!" 
+ # выбор вариантов
+ ftm_market.310.ok:0 "Закрыть" 
+ 
+ # 11 - сообщение с информацией о покупке
+ ftm_market.311.title:0 "§GПОКУПКА ЗАВЕРШЕНА§!" 
+ ftm_market.311.desc:0 "Мы успешно приобрели следующую флотилию:\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§!£energy£\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_titan_count]§!" 
+ ftm_market.311.desc_mod:0 "Мы успешно приобрели следующую флотилию:\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§!£energy£" 
+ # выбор вариантов
+ ftm_market.311.ok:0 "Закрыть" 
+ 
+ # 12 - сообщение с информацией об успешной продаже флота (+ начисление денег продавцу)
+ ftm_market.312.title:0 "§GПРОДАЖА ЗАВЕРШЕНА§!" 
+ ftm_market.312.desc:0 "Мы успешно продали одну из наших флотилий на рынке.\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§!£energy£\n§YПокупатель:§! §H[event_target:ftm_market_slot_3_buyer.GetName]§!\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_titan_count]§!" 
+ ftm_market.312.desc_mod:0 "Мы успешно продали одну из наших флотилий на рынке.\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§!£energy£\n§YПокупатель:§! §H[event_target:ftm_market_slot_3_buyer.GetName]§!" 
+ # выбор вариантов
+ ftm_market.312.ok:0 "Закрыть" 
+ ftm_market.312.ok.tooltip:0 "Мы получим цену сделки в размере §H[event_target:ftm_marketed_fleet_slot_3_seller.ftm_marketed_fleet_slot_3_cost]§!£energy£" 
+ 
+ # 13 - сообщение что продать флот не удалось
+ ftm_market.313.title:0 "§RВРЕМЯ ВЫШЛО§!" 
+ ftm_market.313.desc:0 "Время, отведенное на размещение флотилии §H[event_target:ftm_marketed_fleet_slot_3.GetFleetName]§! на рынке, вышло. Никто не захотел сделать покупку. Флот возвращен." 
+ # выбор вариантов
+ ftm_market.313.ok:0 "Закрыть" 
+ 
+ # уведомления
+ FTM_MARKET_SLOT_3_NOTIFICATION:0 "Империя §H$COUNTRY$§! выставила на продажу флотилию §Y$FLEET$§!\n "
+ 
+ 
+ 
+ 
+ 
+ ## СЛОТ 4 ##
+ 
+ # 1 - окно выбора флота для продажи
+ ftm_market.401.title:0 "§BВЫБЕРИТЕ ФЛОТ§!" 
+ ftm_market.401.desc:0 "Флотилию можно выставить на продажу, только если выполнены следующие условия:\n§Y1. Флотилия находится на своей территории;\n2. Флотилией не управляет адмирал;\n2. Нельзя выставить на продажу Колосса или Джаггернаута§!\n\nСписок доступных для продажи флотилий приведен ниже:" 
+ # выбор флотилии
+ ftm_market.401.fleet_01:0 "§Y[event_target:ftm_marketed_fleet_slot_4_01.GetFleetName]§!" 
+ ftm_market.401.fleet_01.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_4_01.GetName]§! может быть выставлена на продажу"
+ ftm_market.401.fleet_02:0 "§Y[event_target:ftm_marketed_fleet_slot_4_02.GetFleetName]§!" 
+ ftm_market.401.fleet_02.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_4_02.GetName]§! может быть выставлена на продажу"
+ ftm_market.401.fleet_03:0 "§Y[event_target:ftm_marketed_fleet_slot_4_03.GetFleetName]§!" 
+ ftm_market.401.fleet_03.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_4_03.GetName]§! может быть выставлена на продажу"
+ ftm_market.401.fleet_04:0 "§Y[event_target:ftm_marketed_fleet_slot_4_04.GetFleetName]§!" 
+ ftm_market.401.fleet_04.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_4_04.GetName]§! может быть выставлена на продажу"
+ ftm_market.401.fleet_05:0 "§Y[event_target:ftm_marketed_fleet_slot_4_05.GetFleetName]§!" 
+ ftm_market.401.fleet_05.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_4_05.GetName]§! может быть выставлена на продажу"
+ ftm_market.401.nope:0 "Я передумал" 
+ 
+ # 2 - ручная настройка стартовой цены продажи
+ ftm_market.402.title:0 "§BУСТАНОВИТЕ ЦЕНУ§!" 
+ ftm_market.402.desc:0 "Установите цену вручную.\n\n§YТЕКУЩАЯ ЦЕНА:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost_manual]§!\n§YРЕСУРС:§! §Y£energy£ энергокредиты§!" 
+ # выбор вариантов
+ ftm_market.402.minus10000:0 "§R-10000§!" 
+ ftm_market.402.minus10000.tooltip:0 "§YСнизить цену на 10000 единиц§!"  
+ ftm_market.402.minus1000:0 "§R-1000§!" 
+ ftm_market.402.minus1000.tooltip:0 "§YСнизить цену на 1000 единиц§!"  
+ ftm_market.402.minus100:0 "§R-100§!" 
+ ftm_market.402.minus100.tooltip:0 "§YСнизить цену на 100 единиц§!"  
+ ftm_market.402.minus10:0 "§R-10§!" 
+ ftm_market.402.minus10.tooltip:0 "§YСнизить цену на 10 единиц§!"   
+ ftm_market.402.plus10:0 "§G+10§!" 
+ ftm_market.402.plus10.tooltip:0 "§YУвеличить цену на 10 единиц§!"   
+ ftm_market.402.plus100:0 "§G+100§!" 
+ ftm_market.402.plus100.tooltip:0 "§YУвеличить цену на 100 единиц§!"   
+ ftm_market.402.plus1000:0 "§G+1000§!" 
+ ftm_market.402.plus1000.tooltip:0 "§YУвеличить цену на 1000 единиц§!"   
+ ftm_market.402.plus10000:0 "§G+10000§!" 
+ ftm_market.402.plus10000.tooltip:0 "§YУвеличить цену на 10000 единиц§!"  
+ ftm_market.402.done:0 "§YПринять цену§!" 
+ ftm_market.402.done.tooltip:0 "§YУстановить текущую цену§!" 
+ 
+ # 3 - запрос подтверждения продажи
+ ftm_market.403.title:0 "§RТРЕБУЕТСЯ ПОДТВЕРЖДЕНИЕ§!" 
+ ftm_market.403.desc:0 "Будет выставлена следующая флотилия:\n\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§! £energy£\n\n§RВНИМАНИЕ!§!\n§YВремя нахождения флота на продаже составляет 5 лет (60 месяцев). Все это время флотилия не будет подчиняться нам, а при покупке отойдет покупателю.§!" 
+ # выбор вариантов
+ ftm_market.403.confirm:0 "Подтверждаю предложение" 
+ ftm_market.403.confirm.tooltip:0 "Флотилия §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§! будет выставлена на продажу.\n§RВНИМАНИЕ! ФЛОТИЛИЯ ПЕРЕСТАНЕТ СЧИТАТЬСЯ НАШЕЙ!§!"
+ ftm_market.403.nope:0 "Я передумал" 
+ 
+ # 5 - сообщение при недостатке энергии для покупки
+ ftm_market.405.title:0 "§RНЕДОСТАТОЧНО ЭНЕРГИИ§!" 
+ ftm_market.405.desc:0 "Недостаточно энергии чтобы приобрести флотилию.\n\n§YТребуется:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§!£energy£\n§YВ наличии:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_buyer_marketed_fleet_slot_4_energy_current_count]§!£energy£" 
+ # выбор вариантов
+ ftm_market.405.ok:0 "Я понял" 
+ 
+ # 10 - сообщение с информацией о флоте
+ ftm_market.410.title:0 "§GИНФОРМАЦИЯ: СЛОТ 4§!" 
+ ftm_market.410.desc:0 "§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§!£energy£\n§YОсталось месяцев:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_market_slot_4_time_in_months]§!\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_titan_count]§!" 
+ ftm_market.410.desc_mod:0 "§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§!£energy£\n§YОсталось месяцев:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_market_slot_4_time_in_months]§!" 
+ # выбор вариантов
+ ftm_market.410.ok:0 "Закрыть" 
+ 
+ # 11 - сообщение с информацией о покупке
+ ftm_market.411.title:0 "§GПОКУПКА ЗАВЕРШЕНА§!" 
+ ftm_market.411.desc:0 "Мы успешно приобрели следующую флотилию:\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§!£energy£\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_titan_count]§!" 
+ ftm_market.411.desc_mod:0 "Мы успешно приобрели следующую флотилию:\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§!£energy£" 
+ # выбор вариантов
+ ftm_market.411.ok:0 "Закрыть" 
+ 
+ # 12 - сообщение с информацией об успешной продаже флота (+ начисление денег продавцу)
+ ftm_market.412.title:0 "§GПРОДАЖА ЗАВЕРШЕНА§!" 
+ ftm_market.412.desc:0 "Мы успешно продали одну из наших флотилий на рынке.\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§!£energy£\n§YПокупатель:§! §H[event_target:ftm_market_slot_4_buyer.GetName]§!\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_titan_count]§!" 
+ ftm_market.412.desc_mod:0 "Мы успешно продали одну из наших флотилий на рынке.\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§!£energy£\n§YПокупатель:§! §H[event_target:ftm_market_slot_4_buyer.GetName]§!" 
+ # выбор вариантов
+ ftm_market.412.ok:0 "Закрыть" 
+ ftm_market.412.ok.tooltip:0 "Мы получим цену сделки в размере §H[event_target:ftm_marketed_fleet_slot_4_seller.ftm_marketed_fleet_slot_4_cost]§!£energy£" 
+ 
+ # 13 - сообщение что продать флот не удалось
+ ftm_market.413.title:0 "§RВРЕМЯ ВЫШЛО§!" 
+ ftm_market.413.desc:0 "Время, отведенное на размещение флотилии §H[event_target:ftm_marketed_fleet_slot_4.GetFleetName]§! на рынке, вышло. Никто не захотел сделать покупку. Флот возвращен." 
+ # выбор вариантов
+ ftm_market.413.ok:0 "Закрыть" 
+ 
+ # уведомления
+ FTM_MARKET_SLOT_4_NOTIFICATION:0 "Империя §H$COUNTRY$§! выставила на продажу флотилию §Y$FLEET$§!\n "
+ 
+ 
+ 
+ 
+ 
+ ## СЛОТ 5 ##
+ 
+ # 1 - окно выбора флота для продажи
+ ftm_market.501.title:0 "§BВЫБЕРИТЕ ФЛОТ§!" 
+ ftm_market.501.desc:0 "Флотилию можно выставить на продажу, только если выполнены следующие условия:\n§Y1. Флотилия находится на своей территории;\n2. Флотилией не управляет адмирал;\n2. Нельзя выставить на продажу Колосса или Джаггернаута§!\n\nСписок доступных для продажи флотилий приведен ниже:" 
+ # выбор флотилии
+ ftm_market.501.fleet_01:0 "§Y[event_target:ftm_marketed_fleet_slot_5_01.GetFleetName]§!" 
+ ftm_market.501.fleet_01.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_5_01.GetName]§! может быть выставлена на продажу"
+ ftm_market.501.fleet_02:0 "§Y[event_target:ftm_marketed_fleet_slot_5_02.GetFleetName]§!" 
+ ftm_market.501.fleet_02.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_5_02.GetName]§! может быть выставлена на продажу"
+ ftm_market.501.fleet_03:0 "§Y[event_target:ftm_marketed_fleet_slot_5_03.GetFleetName]§!" 
+ ftm_market.501.fleet_03.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_5_03.GetName]§! может быть выставлена на продажу"
+ ftm_market.501.fleet_04:0 "§Y[event_target:ftm_marketed_fleet_slot_5_04.GetFleetName]§!" 
+ ftm_market.501.fleet_04.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_5_04.GetName]§! может быть выставлена на продажу"
+ ftm_market.501.fleet_05:0 "§Y[event_target:ftm_marketed_fleet_slot_5_05.GetFleetName]§!" 
+ ftm_market.501.fleet_05.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_5_05.GetName]§! может быть выставлена на продажу"
+ ftm_market.501.nope:0 "Я передумал" 
+ 
+ # 2 - ручная настройка стартовой цены продажи
+ ftm_market.502.title:0 "§BУСТАНОВИТЕ ЦЕНУ§!" 
+ ftm_market.502.desc:0 "Установите цену вручную.\n\n§YТЕКУЩАЯ ЦЕНА:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost_manual]§!\n§YРЕСУРС:§! §Y£energy£ энергокредиты§!" 
+ # выбор вариантов
+ ftm_market.502.minus10000:0 "§R-10000§!" 
+ ftm_market.502.minus10000.tooltip:0 "§YСнизить цену на 10000 единиц§!"  
+ ftm_market.502.minus1000:0 "§R-1000§!" 
+ ftm_market.502.minus1000.tooltip:0 "§YСнизить цену на 1000 единиц§!"  
+ ftm_market.502.minus100:0 "§R-100§!" 
+ ftm_market.502.minus100.tooltip:0 "§YСнизить цену на 100 единиц§!"  
+ ftm_market.502.minus10:0 "§R-10§!" 
+ ftm_market.502.minus10.tooltip:0 "§YСнизить цену на 10 единиц§!"   
+ ftm_market.502.plus10:0 "§G+10§!" 
+ ftm_market.502.plus10.tooltip:0 "§YУвеличить цену на 10 единиц§!"   
+ ftm_market.502.plus100:0 "§G+100§!" 
+ ftm_market.502.plus100.tooltip:0 "§YУвеличить цену на 100 единиц§!"   
+ ftm_market.502.plus1000:0 "§G+1000§!" 
+ ftm_market.502.plus1000.tooltip:0 "§YУвеличить цену на 1000 единиц§!"   
+ ftm_market.502.plus10000:0 "§G+10000§!" 
+ ftm_market.502.plus10000.tooltip:0 "§YУвеличить цену на 10000 единиц§!"  
+ ftm_market.502.done:0 "§YПринять цену§!" 
+ ftm_market.502.done.tooltip:0 "§YУстановить текущую цену§!" 
+ 
+ # 3 - запрос подтверждения продажи
+ ftm_market.503.title:0 "§RТРЕБУЕТСЯ ПОДТВЕРЖДЕНИЕ§!" 
+ ftm_market.503.desc:0 "Будет выставлена следующая флотилия:\n\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§! £energy£\n\n§RВНИМАНИЕ!§!\n§YВремя нахождения флота на продаже составляет 5 лет (60 месяцев). Все это время флотилия не будет подчиняться нам, а при покупке отойдет покупателю.§!" 
+ # выбор вариантов
+ ftm_market.503.confirm:0 "Подтверждаю предложение" 
+ ftm_market.503.confirm.tooltip:0 "Флотилия §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§! будет выставлена на продажу.\n§RВНИМАНИЕ! ФЛОТИЛИЯ ПЕРЕСТАНЕТ СЧИТАТЬСЯ НАШЕЙ!§!"
+ ftm_market.503.nope:0 "Я передумал" 
+ 
+ # 5 - сообщение при недостатке энергии для покупки
+ ftm_market.505.title:0 "§RНЕДОСТАТОЧНО ЭНЕРГИИ§!" 
+ ftm_market.505.desc:0 "Недостаточно энергии чтобы приобрести флотилию.\n\n§YТребуется:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§!£energy£\n§YВ наличии:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_buyer_marketed_fleet_slot_5_energy_current_count]§!£energy£" 
+ # выбор вариантов
+ ftm_market.505.ok:0 "Я понял" 
+ 
+ # 10 - сообщение с информацией о флоте
+ ftm_market.510.title:0 "§BИНФОРМАЦИЯ: СЛОТ 5§!" 
+ ftm_market.510.desc:0 "§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§!£energy£\n§YОсталось месяцев:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_market_slot_5_time_in_months]§!\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_titan_count]§!" 
+ ftm_market.510.desc_mod:0 "§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§!£energy£\n§YОсталось месяцев:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_market_slot_5_time_in_months]§!" 
+ # выбор вариантов
+ ftm_market.510.ok:0 "Закрыть" 
+ 
+ # 11 - сообщение с информацией о покупке
+ ftm_market.511.title:0 "§GПОКУПКА ЗАВЕРШЕНА§!" 
+ ftm_market.511.desc:0 "Мы успешно приобрели следующую флотилию:\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§!£energy£\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_titan_count]§!" 
+ ftm_market.511.desc_mod:0 "Мы успешно приобрели следующую флотилию:\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§!£energy£" 
+ # выбор вариантов
+ ftm_market.511.ok:0 "Закрыть" 
+ 
+ # 12 - сообщение с информацией об успешной продаже флота (+ начисление денег продавцу)
+ ftm_market.512.title:0 "§GПРОДАЖА ЗАВЕРШЕНА§!" 
+ ftm_market.512.desc:0 "Мы успешно продали одну из наших флотилий на рынке.\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§!£energy£\n§YПокупатель:§! §H[event_target:ftm_market_slot_5_buyer.GetName]§!\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_titan_count]§!" 
+ ftm_market.512.desc_mod:0 "Мы успешно продали одну из наших флотилий на рынке.\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§!£energy£\n§YПокупатель:§! §H[event_target:ftm_market_slot_5_buyer.GetName]§!" 
+ # выбор вариантов
+ ftm_market.512.ok:0 "Закрыть" 
+ ftm_market.512.ok.tooltip:0 "Мы получим цену сделки в размере §H[event_target:ftm_marketed_fleet_slot_5_seller.ftm_marketed_fleet_slot_5_cost]§!£energy£" 
+ 
+ # 13 - сообщение что продать флот не удалось
+ ftm_market.513.title:0 "§RВРЕМЯ ВЫШЛО§!" 
+ ftm_market.513.desc:0 "Время, отведенное на размещение флотилии §H[event_target:ftm_marketed_fleet_slot_5.GetFleetName]§! на рынке, вышло. Никто не захотел сделать покупку. Флот возвращен." 
+ # выбор вариантов
+ ftm_market.513.ok:0 "Закрыть" 
+ 
+ # уведомления
+ FTM_MARKET_SLOT_5_NOTIFICATION:0 "Империя §H$COUNTRY$§! выставила на продажу флотилию §Y$FLEET$§!\n "
+ 
+ 
+ 
+ 
+ 
+ ## СЛОТ 6 ##
+ 
+ # 1 - окно выбора флота для продажи
+ ftm_market.601.title:0 "§BВЫБЕРИТЕ ФЛОТ§!" 
+ ftm_market.601.desc:0 "Флотилию можно выставить на продажу, только если выполнены следующие условия:\n§Y1. Флотилия находится на своей территории;\n2. Флотилией не управляет адмирал;\n2. Нельзя выставить на продажу Колосса или Джаггернаута§!\n\nСписок доступных для продажи флотилий приведен ниже:" 
+ # выбор флотилии
+ ftm_market.601.fleet_01:0 "§Y[event_target:ftm_marketed_fleet_slot_6_01.GetFleetName]§!" 
+ ftm_market.601.fleet_01.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_6_01.GetName]§! может быть выставлена на продажу"
+ ftm_market.601.fleet_02:0 "§Y[event_target:ftm_marketed_fleet_slot_6_02.GetFleetName]§!" 
+ ftm_market.601.fleet_02.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_6_02.GetName]§! может быть выставлена на продажу"
+ ftm_market.601.fleet_03:0 "§Y[event_target:ftm_marketed_fleet_slot_6_03.GetFleetName]§!" 
+ ftm_market.601.fleet_03.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_6_03.GetName]§! может быть выставлена на продажу"
+ ftm_market.601.fleet_04:0 "§Y[event_target:ftm_marketed_fleet_slot_6_04.GetFleetName]§!" 
+ ftm_market.601.fleet_04.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_6_04.GetName]§! может быть выставлена на продажу"
+ ftm_market.601.fleet_05:0 "§Y[event_target:ftm_marketed_fleet_slot_6_05.GetFleetName]§!" 
+ ftm_market.601.fleet_05.tooltip:0 "Флотилия §Y[event_target:ftm_marketed_fleet_slot_6_05.GetName]§! может быть выставлена на продажу"
+ ftm_market.601.nope:0 "Я передумал" 
+ 
+ # 2 - ручная настройка стартовой цены продажи
+ ftm_market.602.title:0 "§BУСТАНОВИТЕ ЦЕНУ§!" 
+ ftm_market.602.desc:0 "Установите цену вручную.\n\n§YТЕКУЩАЯ ЦЕНА:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost_manual]§!\n§YРЕСУРС:§! §Y£energy£ энергокредиты§!" 
+ # выбор вариантов
+ ftm_market.602.minus10000:0 "§R-10000§!" 
+ ftm_market.602.minus10000.tooltip:0 "§YСнизить цену на 10000 единиц§!"  
+ ftm_market.602.minus1000:0 "§R-1000§!" 
+ ftm_market.602.minus1000.tooltip:0 "§YСнизить цену на 1000 единиц§!"  
+ ftm_market.602.minus100:0 "§R-100§!" 
+ ftm_market.602.minus100.tooltip:0 "§YСнизить цену на 100 единиц§!"  
+ ftm_market.602.minus10:0 "§R-10§!" 
+ ftm_market.602.minus10.tooltip:0 "§YСнизить цену на 10 единиц§!"   
+ ftm_market.602.plus10:0 "§G+10§!" 
+ ftm_market.602.plus10.tooltip:0 "§YУвеличить цену на 10 единиц§!"   
+ ftm_market.602.plus100:0 "§G+100§!" 
+ ftm_market.602.plus100.tooltip:0 "§YУвеличить цену на 100 единиц§!"   
+ ftm_market.602.plus1000:0 "§G+1000§!" 
+ ftm_market.602.plus1000.tooltip:0 "§YУвеличить цену на 1000 единиц§!"   
+ ftm_market.602.plus10000:0 "§G+10000§!" 
+ ftm_market.602.plus10000.tooltip:0 "§YУвеличить цену на 10000 единиц§!"  
+ ftm_market.602.done:0 "§YПринять цену§!" 
+ ftm_market.602.done.tooltip:0 "§YУстановить текущую цену§!" 
+ 
+ # 3 - запрос подтверждения продажи
+ ftm_market.603.title:0 "§RТРЕБУЕТСЯ ПОДТВЕРЖДЕНИЕ§!" 
+ ftm_market.603.desc:0 "Будет выставлена следующая флотилия:\n\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§! £energy£\n\n§RВНИМАНИЕ!§!\n§YВремя нахождения флота на продаже составляет 5 лет (60 месяцев). Все это время флотилия не будет подчиняться нам, а при покупке отойдет покупателю.§!" 
+ # выбор вариантов
+ ftm_market.603.confirm:0 "Подтверждаю предложение" 
+ ftm_market.603.confirm.tooltip:0 "Флотилия §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§! будет выставлена на продажу.\n§RВНИМАНИЕ! ФЛОТИЛИЯ ПЕРЕСТАНЕТ СЧИТАТЬСЯ НАШЕЙ!§!"
+ ftm_market.603.nope:0 "Я передумал" 
+ 
+ # 5 - сообщение при недостатке энергии для покупки
+ ftm_market.605.title:0 "§RНЕДОСТАТОЧНО ЭНЕРГИИ§!" 
+ ftm_market.605.desc:0 "Недостаточно энергии чтобы приобрести флотилию.\n\n§YТребуется:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§!£energy£\n§YВ наличии:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_buyer_marketed_fleet_slot_6_energy_current_count]§!£energy£" 
+ # выбор вариантов
+ ftm_market.605.ok:0 "Я понял" 
+ 
+ # 10 - сообщение с информацией о флоте
+ ftm_market.610.title:0 "§MИНФОРМАЦИЯ: СЛОТ 6§!" 
+ ftm_market.610.desc:0 "§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§!£energy£\n§YОсталось месяцев:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_market_slot_6_time_in_months]§!\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_titan_count]§!" 
+ ftm_market.610.desc_mod:0 "§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§!£energy£\n§YОсталось месяцев:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_market_slot_6_time_in_months]§!" 
+ # выбор вариантов
+ ftm_market.610.ok:0 "Закрыть" 
+ 
+ # 11 - сообщение с информацией о покупке
+ ftm_market.611.title:0 "§GПОКУПКА ЗАВЕРШЕНА§!" 
+ ftm_market.611.desc:0 "Мы успешно приобрели следующую флотилию:\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§!£energy£\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_titan_count]§!" 
+ ftm_market.611.desc_mod:0 "Мы успешно приобрели следующую флотилию:\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§!\n§YПродавец:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.GetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§!£energy£" 
+ # выбор вариантов
+ ftm_market.611.ok:0 "Закрыть" 
+ 
+ # 12 - сообщение с информацией об успешной продаже флота (+ начисление денег продавцу)
+ ftm_market.612.title:0 "§GПРОДАЖА ЗАВЕРШЕНА§!" 
+ ftm_market.612.desc:0 "Мы успешно продали одну из наших флотилий на рынке.\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§!£energy£\n§YПокупатель:§! §H[event_target:ftm_market_slot_6_buyer.GetName]§!\n\n§YСостав флотилии:§!\n  §H- корветы:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_corvette_count]§!\n  §H- эсминцы:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_destroyer_count]§!\n  §H- крейсера:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cruiser_count]§!\n  §H- линкоры:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_battleship_count]§!\n  §H- титаны:§! §R[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_titan_count]§!" 
+ ftm_market.612.desc_mod:0 "Мы успешно продали одну из наших флотилий на рынке.\n§YФлотилия:§! §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§!\n§YЦена:§! §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§!£energy£\n§YПокупатель:§! §H[event_target:ftm_market_slot_6_buyer.GetName]§!" 
+ # выбор вариантов
+ ftm_market.612.ok:0 "Закрыть" 
+ ftm_market.612.ok.tooltip:0 "Мы получим цену сделки в размере §H[event_target:ftm_marketed_fleet_slot_6_seller.ftm_marketed_fleet_slot_6_cost]§!£energy£" 
+ 
+ # 13 - сообщение что продать флот не удалось
+ ftm_market.613.title:0 "§RВРЕМЯ ВЫШЛО§!" 
+ ftm_market.613.desc:0 "Время, отведенное на размещение флотилии §H[event_target:ftm_marketed_fleet_slot_6.GetFleetName]§! на рынке, вышло. Никто не захотел сделать покупку. Флот возвращен." 
+ # выбор вариантов
+ ftm_market.613.ok:0 "Закрыть" 
+ 
+ # уведомления
+ FTM_MARKET_SLOT_6_NOTIFICATION:0 "Империя §H$COUNTRY$§! выставила на продажу флотилию §Y$FLEET$§!\n "

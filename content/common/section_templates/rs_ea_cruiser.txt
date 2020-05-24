@@ -1,0 +1,143 @@
+####################################
+### RS ELECTRONIC ATTACK CRUISER ###
+####################################
+
+@section_cost = 40
+@adv_section_cost = 60
+
+###########
+### BOW ###
+###########
+
+ship_section_template = {
+	key = "RS_EA_CRUISER_BOW_A1S2"
+	ship_size = rs_ea_cruiser
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "rs_ea_cruiser_bow_A1S2_entity"
+	icon = "GFX_ship_part_core_bow"
+	
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "PD_02"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_02"
+	}
+	
+	medium_utility_slots = 4
+
+	resources = {
+		category = ship_sections
+		
+		cost = {
+			alloys = @adv_section_cost
+		}
+	}
+}
+
+###########
+### MID ###
+###########
+
+ship_section_template = {
+	key = "RS_EA_CRUISER_MID_A2S2"
+	ship_size = rs_ea_cruiser
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = "rs_ea_cruiser_mid_A2S2_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		
+		locatorname = "small_gun_02"
+	}
+	
+	medium_utility_slots = 4
+	
+	resources = {
+		category = ship_sections
+		
+		cost = {
+			alloys = @adv_section_cost
+		}
+	}
+}
+
+#############
+### STERN ###
+#############
+
+ship_section_template = {
+	key = "RS_EA_CRUISER_STERN_M1"
+	ship_size = rs_ea_cruiser
+	fits_on_slot = stern
+	should_draw_components = yes
+	entity = "rs_ea_cruiser_stern_M1_entity"
+	icon = "GFX_ship_part_core_stern"
+
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_01"
+	}
+	
+	aux_utility_slots = 2
+		
+	resources = {
+		category = ship_sections
+		
+		cost = {
+			alloys = @section_cost
+		}
+	}
+}
+
+ship_section_template = {
+	key = "RS_EA_CRUISER_STERN_S2"
+	ship_size = rs_ea_cruiser
+	fits_on_slot = stern
+	should_draw_components = yes
+	entity = "rs_ea_cruiser_stern_S2_entity"
+	icon = "GFX_ship_part_core_stern"
+
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		
+		locatorname = "small_gun_02"
+	}
+	
+	aux_utility_slots = 2
+		
+	resources = {
+		category = ship_sections
+		
+		cost = {
+			alloys = @section_cost
+		}
+	}
+}

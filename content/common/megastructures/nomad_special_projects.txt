@@ -1,0 +1,188 @@
+# see README.txt for example
+
+###########################
+# Special Projects
+###########################
+
+###########################
+# Dragon Hatching
+###########################
+
+dragon_hatching = {
+	entity = ""
+	construction_entity = "orbital_habitat_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	entity_offset = { x = -7 y = -7 }
+	build_time = 60
+	build_cost = {
+		minerals = 20000
+		Food = 2500
+		influence = 0
+	}
+	construction_blocks_others = no
+
+	potential = {
+		has_technology = tech_dragon_armor
+		OR = {
+			has_country_flag = void_farers
+			has_country_flag = void_marauders
+		}
+	}
+
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_existing_megastructure"
+				#can_build_megastructure_on_planet = yes
+				NOR = {
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_orbital_station"
+				has_orbital_station = no
+			}
+ 			# balance for habitats
+			custom_tooltip = {
+				fail_text = "requires_not_star"
+				is_star = no
+			}
+		} # use these for all non-star megastructures
+	}
+	
+	ai_weight = {
+		factor = 0
+	}
+	
+	on_build_start = {}
+	on_build_cancel = {}
+	
+	on_build_complete = {
+		create_fleet = {
+			effect = {
+				set_owner = from
+				while = {
+					count = 1
+					create_ship = {
+					name = "NAME_Scile"
+					design = NAME_Dragonspawn
+					}
+				}
+				set_location = {
+					target = fromfrom
+					distance = 0
+				}
+			}
+		}
+		fromfrom.planet = {
+			set_planet_flag = has_megastructure
+		}
+		remove_megastructure = fromfrom
+	}
+}
+
+###############################
+# Fallen empire ship salvaging
+###############################
+
+salvage_fallen_empire_ships = {
+	entity = ""
+	construction_entity = "orbital_habitat_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	entity_offset = { x = -7 y = -7 }
+	build_time = 7200
+	build_cost = {
+		minerals = 25000
+		influence = 750
+	}
+	construction_blocks_others = no
+
+	potential = {
+		has_technology = "tech_dark_matter_power_core"
+		has_technology = "tech_dark_matter_propulsion"
+		has_technology = "tech_dark_matter_deflector"
+		OR = {
+			has_country_flag = void_farers
+			has_country_flag = void_marauders
+		}
+	}
+
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_existing_megastructure"
+				#can_build_megastructure_on_planet = yes
+				NOR = {
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_orbital_station"
+				has_orbital_station = no
+			}
+ 			# balance for habitats
+			custom_tooltip = {
+				fail_text = "requires_not_star"
+				is_star = no
+			}
+		} # use these for all non-star megastructures
+	}
+	
+	ai_weight = {
+		factor = 0
+	}
+	
+	on_build_start = {}
+	on_build_cancel = {}
+	
+	on_build_complete = {
+		create_fleet = {
+			effect = {
+				set_owner = from
+				while = {
+					count = 40
+					create_ship = {
+						name = "Ancient Escort"
+						design = NAME_Gamma
+						ftl = root.owner
+						graphical_culture = "fallen_empire_01"
+					}
+				}
+				set_location = {
+					target = fromfrom
+					distance = 0
+				}
+			}
+		}
+		create_fleet = {
+			effect = {
+				set_owner = from
+				while = {
+					count = 10
+					create_ship = {
+						name = "Ancient Battlecruiser"
+						design = NAME_Beta
+						ftl = root.owner
+						graphical_culture = "fallen_empire_01"
+					}
+				}
+				set_location = {
+					target = fromfrom
+					distance = 0
+				}
+			}
+		}
+		fromfrom.planet = {
+			set_planet_flag = has_megastructure
+		}
+		remove_megastructure = fromfrom
+	}
+}

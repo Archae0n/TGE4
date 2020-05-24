@@ -1,0 +1,388 @@
+﻿l_simp_chinese:
+ 
+ # Кнопка открытия окна в окне указов
+ edict_ftm_open_transfer_window:0 "§H舰队转移菜单§!"
+ edict_ftm_open_transfer_window_desc:0 "如果转移你的一支舰队，请按下。"
+ 
+ 
+ 
+ ### СООБЩЕНИЯ ###  
+ 
+ # 1 - окно выбора флота для передачи
+ ftm_transfer.1.title:0 "§B舰队转移菜单§!" 
+ ftm_transfer.1.desc:0 "只有满足下列条件，舰队才能移交:\n§Y1. 舰队位于建立外交联系的地区，以及没有战争的地区。;\n2. 对方是一个独立的帝国(不是坠落爸爸，商队等等);\n3. 舰队不是由提督（舰队司令）控制的。;\n4. 你不能把巨像交给已经有了的人。§!\n\n下面是供舰队转移的可用名单:" 
+ # выбор флотилии
+ ftm_transfer.1.fleet_01:0 "§Y[event_target:ftm_transfered_fleet_01.GetFleetName]§!" 
+ ftm_transfer.1.fleet_01.tooltip:0 "舰队 §Y[event_target:ftm_transfered_fleet_01.GetName]§! 可以移交给国家 §H[event_target:ftm_transfered_fleet_01_buyer.GetName]§!"
+ ftm_transfer.1.fleet_02:0 "§Y[event_target:ftm_transfered_fleet_02.GetFleetName]§!" 
+ ftm_transfer.1.fleet_02.tooltip:0 "舰队 §Y[event_target:ftm_transfered_fleet_02.GetName]§! 可以移交给国家 §H[event_target:ftm_transfered_fleet_02_buyer.GetName]§!"
+ ftm_transfer.1.fleet_03:0 "§Y[event_target:ftm_transfered_fleet_03.GetFleetName]§!" 
+ ftm_transfer.1.fleet_03.tooltip:0 "舰队 §Y[event_target:ftm_transfered_fleet_03.GetName]§! 可以移交给国家 §H[event_target:ftm_transfered_fleet_03_buyer.GetName]§!"
+ ftm_transfer.1.fleet_04:0 "§Y[event_target:ftm_transfered_fleet_04.GetFleetName]§!" 
+ ftm_transfer.1.fleet_04.tooltip:0 "舰队 §Y[event_target:ftm_transfered_fleet_04.GetName]§! 可以移交给国家 §H[event_target:ftm_transfered_fleet_04_buyer.GetName]§!"
+ ftm_transfer.1.fleet_05:0 "§Y[event_target:ftm_transfered_fleet_05.GetFleetName]§!" 
+ ftm_transfer.1.fleet_05.tooltip:0 "舰队 §Y[event_target:ftm_transfered_fleet_05.GetName]§! 可以移交给国家 §H[event_target:ftm_transfered_fleet_05_buyer.GetName]§!"
+ ftm_transfer.1.nope:0 "我改变主意了" 
+ ftm_transfer.1.options:0 "打开设置窗口" 
+ 
+ # 2 - определение цены передачи
+ ftm_transfer.2.title:0 "§B选择移交方式§!" 
+ # ОБЫЧНЫЙ ФЛОТ
+ ftm_transfer.2.desc:0 "选择舰队 §H[event_target:ftm_transfered_fleet.GetFleetName]§! 你可以免费赠送，也可以以一定的价格出售。 \n选择你愿意为舰队提供的资源，下一条信息将显示价格的选择。\n\n§Y舰队构成:§!\n  §H- 护卫舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_titan_count]§!" 
+ # 巨像
+ ftm_transfer.2.desc_colossus:0 "选择巨像 §H[event_target:ftm_transfered_fleet.GetFleetName]§! 你可以免费赠送，也可以以一定的价格出售。 \n选择你愿意提供的资源，下一条信息将显示价格的选择。\n\n§R小心转移大规模杀伤性武器!§!" 
+ # 主宰
+ ftm_transfer.2.desc_juggernaut:0 "选择主宰 §H[event_target:ftm_transfered_fleet.GetFleetName]§! 你可以免费赠送，也可以以一定的价格出售。 \n选择你愿意提供的资源，下一条信息将显示价格的选择。" 
+ # МОДОВСКИЙ ФЛОТ
+ ftm_transfer.2.desc_mod:0 "选择舰队 §H[event_target:ftm_transfered_fleet.GetFleetName]§! 你可以免费赠送，也可以以一定的价格出售。 \n选择你愿意为舰队提供的资源，下一条信息将显示价格的选择。" 
+ # выбор вариантов
+ ftm_transfer.2.free:0 "§W免费§!" 
+ ftm_transfer.2.free.tooltip:0 "我们需要确认转移。" 
+ ftm_transfer.2.energy:0 "§Y£energy£ 能量信用分值§!" 
+ ftm_transfer.2.energy.tooltip:0 "作为交易的货币，将使用 §Y£energy£ 能量信用分值§!." 
+ ftm_transfer.2.minerals:0 "§R£minerals£ 矿物§!" 
+ ftm_transfer.2.minerals.tooltip:0 "作为交易的货币，将使用 §Y£minerals£ 矿物§!." 
+ ftm_transfer.2.food:0 "§G£food£ 食物§!" 
+ ftm_transfer.2.food.tooltip:0 "作为交易的货币，将使用 §Y£food£ 食物§!." 
+ ftm_transfer.2.goods:0 "§H£consumer_goods£ 消费品§!" 
+ ftm_transfer.2.goods.tooltip:0 "作为交易的货币，将使用 §Y£consumer_goods£ 消费品§!." 
+ ftm_transfer.2.alloys:0 "§M£alloys£ 合金§!" 
+ ftm_transfer.2.alloys.tooltip:0 "作为交易的货币，将使用 §Y£alloys£ 合金§!." 
+ 
+ # 3 - запрос подтверждения продажи
+ ftm_transfer.3.title:0 "§R需要确认§!" 
+ ftm_transfer.3.desc_1:0 "提出以下建议:\n\n§Y舰队:§! §H[event_target:ftm_transfered_fleet.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_transfered_fleet_seller.GetName]§!\n§Y买方:§! §H[event_target:ftm_transfered_fleet_buyer.GetName]§!\n§Y花费:§! §H[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cost]§! " 
+ # ОБЫЧНЫЙ ФЛОТ
+ ftm_transfer.3.desc_2:0 "\n\n§Y舰队构成:§!\n  §H- 护卫舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_titan_count]§!\n\n没错?" 
+ ftm_transfer.3.desc_energy:0 "$ftm_transfer.3.desc_1$£energy£$ftm_transfer.3.desc_2$"  
+ ftm_transfer.3.desc_minerals:0 "$ftm_transfer.3.desc_1$£minerals£$ftm_transfer.3.desc_2$"  
+ ftm_transfer.3.desc_food:0 "$ftm_transfer.3.desc_1$£food£$ftm_transfer.3.desc_2$"  
+ ftm_transfer.3.desc_goods:0 "$ftm_transfer.3.desc_1$£consumer_goods£$ftm_transfer.3.desc_2$"  
+ ftm_transfer.3.desc_alloys:0 "$ftm_transfer.3.desc_1$£alloys£$ftm_transfer.3.desc_2$"
+ # 巨像
+ ftm_transfer.3.desc_colossus:0 "\n\n§Y舰队构成:§!\n  §R巨像§!\n\n没错?" 
+ ftm_transfer.3.desc_colossus_energy:0 "$ftm_transfer.3.desc_1$£energy£$ftm_transfer.3.desc_colossus$"  
+ ftm_transfer.3.desc_colossus_minerals:0 "$ftm_transfer.3.desc_1$£minerals£$ftm_transfer.3.desc_colossus$"  
+ ftm_transfer.3.desc_colossus_food:0 "$ftm_transfer.3.desc_1$£food£$ftm_transfer.3.desc_colossus$"  
+ ftm_transfer.3.desc_colossus_goods:0 "$ftm_transfer.3.desc_1$£consumer_goods£$ftm_transfer.3.desc_colossus$"  
+ ftm_transfer.3.desc_colossus_alloys:0 "$ftm_transfer.3.desc_1$£alloys£$ftm_transfer.3.desc_colossus$"
+ # 主宰
+ ftm_transfer.3.desc_juggernaut:0 "\n\n§Y舰队构成:§!\n  §H主宰§!\n\n没错?" 
+ ftm_transfer.3.desc_juggernaut_energy:0 "$ftm_transfer.3.desc_1$£energy£$ftm_transfer.3.desc_juggernaut$"  
+ ftm_transfer.3.desc_juggernaut_minerals:0 "$ftm_transfer.3.desc_1$£minerals£$ftm_transfer.3.desc_juggernaut$"  
+ ftm_transfer.3.desc_juggernaut_food:0 "$ftm_transfer.3.desc_1$£food£$ftm_transfer.3.desc_juggernaut$"  
+ ftm_transfer.3.desc_juggernaut_goods:0 "$ftm_transfer.3.desc_1$£consumer_goods£$ftm_transfer.3.desc_juggernaut$"  
+ ftm_transfer.3.desc_juggernaut_alloys:0 "$ftm_transfer.3.desc_1$£alloys£$ftm_transfer.3.desc_juggernaut$"
+ # МОДОВСКИЙ ФЛОТ
+ ftm_transfer.3.desc_mods:0 "\n\n没错?" 
+ ftm_transfer.3.desc_mod_energy:0 "$ftm_transfer.3.desc_1$£energy£$ftm_transfer.3.desc_mods$"  
+ ftm_transfer.3.desc_mod_minerals:0 "$ftm_transfer.3.desc_1$£minerals£$ftm_transfer.3.desc_mods$"  
+ ftm_transfer.3.desc_mod_food:0 "$ftm_transfer.3.desc_1$£food£$ftm_transfer.3.desc_mods$"  
+ ftm_transfer.3.desc_mod_goods:0 "$ftm_transfer.3.desc_1$£consumer_goods£$ftm_transfer.3.desc_mods$"  
+ ftm_transfer.3.desc_mod_alloys:0 "$ftm_transfer.3.desc_1$£alloys£$ftm_transfer.3.desc_mods$"
+ # выбор вариантов
+ ftm_transfer.3.confirm:0 "确认报价" 
+ ftm_transfer.3.confirm.tooltip:0 "§H[event_target:ftm_transfered_fleet_buyer.GetName]§! 他会得到我们的报价。"
+ 
+ # 4 - уведомление продавцу о продаже
+ ftm_transfer.4.title:0 "§Y提议已发送§!" 
+ ftm_transfer.4.desc:0 "提议针对国家 §H[event_target:ftm_transfered_fleet_buyer.GetName]§!. 我们只能等待他们的回答。" 
+ ftm_transfer.4.ok:0 "好的" 
+ 
+ # 5 - уведомление покупателю с предложением купить
+ ftm_transfer.5.title:0 "§Y已收到提议§!" 
+ ftm_transfer.5.desc_1:0 "国家 §H[event_target:ftm_transfered_fleet_seller.GetName]§! 他建议我们根据以下列表购买他的一支舰队:\n\n§Y舰队:§! §H[event_target:ftm_transfered_fleet.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_transfered_fleet_seller.GetName]§!\n§Y买方:§! §H[event_target:ftm_transfered_fleet_buyer.GetName]§!\n§Y花费:§! §H[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cost]§! " 
+ # ОБЫЧНЫЙ ФЛОТ
+ ftm_transfer.5.desc_2:0 "\n\n§Y舰队构成:§!\n  §H- 护卫舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_titan_count]§!\n  §H- колоссы:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_colossus_count]§!\n\nВыделить средства на покупку?" 
+ ftm_transfer.5.desc_energy:0 "$ftm_transfer.5.desc_1$£energy£$ftm_transfer.5.desc_2$"  
+ ftm_transfer.5.desc_minerals:0 "$ftm_transfer.5.desc_1$£minerals£!$ftm_transfer.5.desc_2$"  
+ ftm_transfer.5.desc_food:0 "$ftm_transfer.5.desc_1$£food£$ftm_transfer.5.desc_2$"  
+ ftm_transfer.5.desc_goods:0 "$ftm_transfer.5.desc_1$£consumer_goods£$ftm_transfer.5.desc_2$"  
+ ftm_transfer.5.desc_alloys:0 "$ftm_transfer.5.desc_1$£alloys£$ftm_transfer.5.desc_2$"
+ # 巨像
+ ftm_transfer.5.desc_colossus:0 "\n\n§Y舰队构成:§!\n  §R巨像§!\n\nВыделить средства на покупку?" 
+ ftm_transfer.5.desc_colossus_energy:0 "$ftm_transfer.5.desc_1$£energy£$ftm_transfer.5.desc_colossus$"  
+ ftm_transfer.5.desc_colossus_minerals:0 "$ftm_transfer.5.desc_1$£minerals£!$ftm_transfer.5.desc_colossus$"  
+ ftm_transfer.5.desc_colossus_food:0 "$ftm_transfer.5.desc_1$£food£$ftm_transfer.5.desc_colossus$"  
+ ftm_transfer.5.desc_colossus_goods:0 "$ftm_transfer.5.desc_1$£consumer_goods£$ftm_transfer.5.desc_colossus$"  
+ ftm_transfer.5.desc_colossus_alloys:0 "$ftm_transfer.5.desc_1$£alloys£$ftm_transfer.5.desc_colossus$"
+ # 主宰
+ ftm_transfer.5.desc_juggernaut:0 "\n\n§Y舰队构成:§!\n  §H主宰§!\n\nВыделить средства на покупку?" 
+ ftm_transfer.5.desc_juggernaut_energy:0 "$ftm_transfer.5.desc_1$£energy£$ftm_transfer.5.desc_juggernaut$"  
+ ftm_transfer.5.desc_juggernaut_minerals:0 "$ftm_transfer.5.desc_1$£minerals£!$ftm_transfer.5.desc_juggernaut$"  
+ ftm_transfer.5.desc_juggernaut_food:0 "$ftm_transfer.5.desc_1$£food£$ftm_transfer.5.desc_juggernaut$"  
+ ftm_transfer.5.desc_juggernaut_goods:0 "$ftm_transfer.5.desc_1$£consumer_goods£$ftm_transfer.5.desc_juggernaut$"  
+ ftm_transfer.5.desc_juggernaut_alloys:0 "$ftm_transfer.5.desc_1$£alloys£$ftm_transfer.5.desc_juggernaut$"
+ # МОДОВСКИЙ ФЛОТ
+ ftm_transfer.5.desc_mods:0 "\n\n拨出资金购买?" 
+ ftm_transfer.5.desc_mod_energy:0 "$ftm_transfer.5.desc_1$£energy£$ftm_transfer.5.desc_mods$"  
+ ftm_transfer.5.desc_mod_minerals:0 "$ftm_transfer.5.desc_1$£minerals£$ftm_transfer.5.desc_mods$"  
+ ftm_transfer.5.desc_mod_food:0 "$ftm_transfer.5.desc_1$£food£$ftm_transfer.5.desc_mods$"  
+ ftm_transfer.5.desc_mod_goods:0 "$ftm_transfer.5.desc_1$£consumer_goods£$ftm_transfer.5.desc_mods$"  
+ ftm_transfer.5.desc_mod_alloys:0 "$ftm_transfer.5.desc_1$£alloys£$ftm_transfer.5.desc_mods$"
+ # выбор вариантов
+ ftm_transfer.5.agree:0 "购买" 
+ ftm_transfer.5.decline:0 "放弃" 
+ 
+ # 6 - уведомление продавцу что покупатель отказался купить
+ ftm_transfer.6.title:0 "§R被拒绝了§!" 
+ ftm_transfer.6.desc:0 "国家 §H[event_target:ftm_transfered_fleet_buyer.GetName]§! 拒绝了我们购买舰队的提议 §H[event_target:ftm_transfered_fleet.GetFleetName]§!" 
+ ftm_transfer.6.ok:0 "很遗憾..." 
+ 
+ # 7 - запрос подтверждения бесплатной передачи флота
+ ftm_transfer.7.title:0 "§R需要确认§!" 
+ # ОБЫЧНЫЙ ФЛОТ
+ ftm_transfer.7.desc:0 "确认以下舰队的免费转移:\n\n§Y舰队:§! §H[event_target:ftm_transfered_fleet.GetFleetName]§!\n§Y授予者:§! §H[event_target:ftm_transfered_fleet_seller.GetName]§!\n§Y领取人:§! §H[event_target:ftm_transfered_fleet_buyer.GetName]§!\n\n§Y舰队构成:§!\n  §H- 护卫舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_titan_count]§!\n\n没错?"
+ # 巨像
+ ftm_transfer.7.desc_colossus:0 "确认以下舰队的免费转移:\n\n§Y舰队:§! §H[event_target:ftm_transfered_fleet.GetFleetName]§!\n§Y授予者:§! §H[event_target:ftm_transfered_fleet_seller.GetName]§!\n§Y领取人:§! §H[event_target:ftm_transfered_fleet_buyer.GetName]§!\n\n§Y舰队构成:§!\n  §R巨像§!\n\n没错?"
+ # 主宰
+ ftm_transfer.7.desc_juggernaut:0 "确认以下舰队的免费转移:\n\n§Y舰队:§! §H[event_target:ftm_transfered_fleet.GetFleetName]§!\n§Y授予者:§! §H[event_target:ftm_transfered_fleet_seller.GetName]§!\n§Y领取人:§! §H[event_target:ftm_transfered_fleet_buyer.GetName]§!\n\n§Y舰队构成:§!\n  §H主宰§!\n\n没错?"
+ # МОДОВСКИЙ ФЛОТ
+ ftm_transfer.7.desc_mod:0 "确认以下舰队的免费转移:\n\n§Y舰队:§! §H[event_target:ftm_transfered_fleet.GetFleetName]§!\n§Y授予者:§! §H[event_target:ftm_transfered_fleet_seller.GetName]§!\n§Y领取人:§! §H[event_target:ftm_transfered_fleet_buyer.GetName]§!\n\n没错?" 
+ # выбор вариантов
+ ftm_transfer.7.confirm:0 "确认" 
+ ftm_transfer.7.confirm.tooltip:0 "舰队 §H[event_target:ftm_transfered_fleet.GetFleetName]§! 它将被移交给国家 §H[event_target:ftm_transfered_fleet_buyer.GetName]§!" 
+ 
+ # 8 - уведомление получателю флота о подарке
+ ftm_transfer.8.title:0 "§G收到舰队§!" 
+ # ОБЫЧНЫЙ ФЛОТ
+ ftm_transfer.8.desc:0 "国家 §H[event_target:ftm_transfered_fleet_seller.GetName]§! 给了我们以下舰队:\n\n§Y舰队:§! §H[event_target:ftm_transfered_fleet.GetFleetName]§!\n\n§Y舰队构成:§!\n  §H- 护卫舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_titan_count]§!\n  §H- колоссы:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_colossus_count]§!" 
+ # 巨像
+ ftm_transfer.8.desc_colossus:0 "国家 §H[event_target:ftm_transfered_fleet_seller.GetName]§! 给了我们以下舰队:\n\n§Y舰队:§! §H[event_target:ftm_transfered_fleet.GetFleetName]§!\n\n§Y舰队构成:§!\n  §R巨像§!" 
+ # 主宰
+ ftm_transfer.8.desc_juggernaut:0 "国家 §H[event_target:ftm_transfered_fleet_seller.GetName]§! 给了我们以下舰队:\n\n§Y舰队:§! §H[event_target:ftm_transfered_fleet.GetFleetName]§!\n\n§Y舰队构成:§!\n  §H主宰§!" 
+ # МОДОВСКИЙ ФЛОТ
+ ftm_transfer.8.desc_mod:0 "国家 §H[event_target:ftm_transfered_fleet_seller.GetName]§! 给了我们以下舰队:\n\n§Y舰队:§! §H[event_target:ftm_transfered_fleet.GetFleetName]§!" 
+ # выбор вариантов
+ ftm_transfer.8.ok:0 "感谢" 
+ 
+ # 9 - уведомление покупателю о нехватке денег для покупки
+ ftm_transfer.9.title:0 "§R资金不足§!" 
+ ftm_transfer.9.desc:0 "不幸的是，我们没有足够的资金来完成购买国家 §H[event_target:ftm_transfered_fleet.GetFleetName]§! 舰队 §H[event_target:ftm_transfered_fleet_seller.GetName]§!的交易" 
+ ftm_transfer.9.ok:0 "很遗憾..." 
+ 
+ # 10 - уведомление продавцу о нехватке денег у покупателя
+ ftm_transfer.10.title:0 "§R提议无效§!" 
+ ftm_transfer.10.desc:0 "§H[event_target:ftm_transfered_fleet_buyer.GetName]§! 你介意买我们的舰队吗? §H[event_target:ftm_transfered_fleet.GetFleetName]§!, 但由于财政原因，我负担不起。." 
+ ftm_transfer.10.ok:0 "很遗憾..." 
+ 
+ # 11 - уведомление продавцу о совершенной сделке
+ ftm_transfer.11.title:0 "§G交易完成§!" 
+ ftm_transfer.11.desc_1:0 "我们成功地完成了以下舰队的销售:\n\n§Y舰队:§! §H[event_target:ftm_transfered_fleet.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_transfered_fleet_seller.GetName]§!\n§Y买方:§! §H[event_target:ftm_transfered_fleet_buyer.GetName]§!\n§Y花费:§! §H[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cost]§! " 
+ # ОБЫЧНЫЙ ФЛОТ
+ ftm_transfer.11.desc_2:0 "\n\n§Y舰队构成:§!\n  §H- 护卫舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_titan_count]§!" 
+ ftm_transfer.11.desc_energy:0 "$ftm_transfer.11.desc_1$£energy£$ftm_transfer.11.desc_2$"  
+ ftm_transfer.11.desc_minerals:0 "$ftm_transfer.11.desc_1$£minerals£!$ftm_transfer.11.desc_2$"  
+ ftm_transfer.11.desc_food:0 "$ftm_transfer.11.desc_1$£food£$ftm_transfer.11.desc_2$"  
+ ftm_transfer.11.desc_goods:0 "$ftm_transfer.11.desc_1$£consumer_goods£$ftm_transfer.11.desc_2$"  
+ ftm_transfer.11.desc_alloys:0 "$ftm_transfer.11.desc_1$£alloys£$ftm_transfer.11.desc_2$"
+ # 巨像
+ ftm_transfer.11.desc_colossus:0 "\n\n§Y舰队构成:§!\n  §R巨像§!" 
+ ftm_transfer.11.desc_colossus_energy:0 "$ftm_transfer.11.desc_1$£energy£$ftm_transfer.11.desc_colossus$"  
+ ftm_transfer.11.desc_colossus_minerals:0 "$ftm_transfer.11.desc_1$£minerals£!$ftm_transfer.11.desc_colossus$"  
+ ftm_transfer.11.desc_colossus_food:0 "$ftm_transfer.11.desc_1$£food£$ftm_transfer.11.desc_colossus$"  
+ ftm_transfer.11.desc_colossus_goods:0 "$ftm_transfer.11.desc_1$£consumer_goods£$ftm_transfer.11.desc_colossus$"  
+ ftm_transfer.11.desc_colossus_alloys:0 "$ftm_transfer.11.desc_1$£alloys£$ftm_transfer.11.desc_colossus$"
+ # 主宰
+ ftm_transfer.11.desc_juggernaut:0 "\n\n§Y舰队构成:§!\n  §H主宰§!" 
+ ftm_transfer.11.desc_juggernaut_energy:0 "$ftm_transfer.11.desc_1$£energy£$ftm_transfer.11.desc_juggernaut$"  
+ ftm_transfer.11.desc_juggernaut_minerals:0 "$ftm_transfer.11.desc_1$£minerals£!$ftm_transfer.11.desc_juggernaut$"  
+ ftm_transfer.11.desc_juggernaut_food:0 "$ftm_transfer.11.desc_1$£food£$ftm_transfer.11.desc_juggernaut$"  
+ ftm_transfer.11.desc_juggernaut_goods:0 "$ftm_transfer.11.desc_1$£consumer_goods£$ftm_transfer.11.desc_juggernaut$"  
+ ftm_transfer.11.desc_juggernaut_alloys:0 "$ftm_transfer.11.desc_1$£alloys£$ftm_transfer.11.desc_juggernaut$"
+ # МОДОВСКИЙ ФЛОТ
+ ftm_transfer.11.desc_mods:0 " " 
+ ftm_transfer.11.desc_mod_energy:0 "$ftm_transfer.11.desc_1$£energy£$ftm_transfer.11.desc_mods$"  
+ ftm_transfer.11.desc_mod_minerals:0 "$ftm_transfer.11.desc_1$£minerals£$ftm_transfer.11.desc_mods$"  
+ ftm_transfer.11.desc_mod_food:0 "$ftm_transfer.11.desc_1$£food£$ftm_transfer.11.desc_mods$"  
+ ftm_transfer.11.desc_mod_goods:0 "$ftm_transfer.11.desc_1$£consumer_goods£$ftm_transfer.11.desc_mods$"  
+ ftm_transfer.11.desc_mod_alloys:0 "$ftm_transfer.11.desc_1$£alloys£$ftm_transfer.11.desc_mods$"
+ # выбор вариантов
+ ftm_transfer.11.ok:0 "很好" 
+ 
+ # 12 - уведомление покупателю о совершенной сделке
+ ftm_transfer.12.title:0 "§G得到舰队§!" 
+ ftm_transfer.12.desc_1:0 "我们成功地接收到了以下舰队:\n\n§Y舰队:§! §H[event_target:ftm_transfered_fleet.GetFleetName]§!\n§Y卖方:§! §H[event_target:ftm_transfered_fleet_seller.GetName]§!\n§Y买方:§! §H[event_target:ftm_transfered_fleet_buyer.GetName]§!\n§Y花费:§! §H[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cost]§! " 
+ # ОБЫЧНЫЙ ФЛОТ
+ ftm_transfer.12.desc_2:0 "\n\n§Y舰队构成:§!\n  §H- 护卫舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_titan_count]§!" 
+ ftm_transfer.12.desc_energy:0 "$ftm_transfer.12.desc_1$£energy£$ftm_transfer.12.desc_2$"  
+ ftm_transfer.12.desc_minerals:0 "$ftm_transfer.12.desc_1$£minerals£!$ftm_transfer.12.desc_2$"  
+ ftm_transfer.12.desc_food:0 "$ftm_transfer.12.desc_1$£food£$ftm_transfer.12.desc_2$"  
+ ftm_transfer.12.desc_goods:0 "$ftm_transfer.12.desc_1$£consumer_goods£$ftm_transfer.12.desc_2$"  
+ ftm_transfer.12.desc_alloys:0 "$ftm_transfer.12.desc_1$£alloys£$ftm_transfer.12.desc_2$"
+ # 巨像
+ ftm_transfer.12.desc_colossus:0 "\n\n§Y舰队构成:§!\n  §R巨像§!" 
+ ftm_transfer.12.desc_colossus_energy:0 "$ftm_transfer.12.desc_1$£energy£$ftm_transfer.12.desc_colossus$"  
+ ftm_transfer.12.desc_colossus_minerals:0 "$ftm_transfer.12.desc_1$£minerals£!$ftm_transfer.12.desc_colossus$"  
+ ftm_transfer.12.desc_colossus_food:0 "$ftm_transfer.12.desc_1$£food£$ftm_transfer.12.desc_colossus$"  
+ ftm_transfer.12.desc_colossus_goods:0 "$ftm_transfer.12.desc_1$£consumer_goods£$ftm_transfer.12.desc_colossus$"  
+ ftm_transfer.12.desc_colossus_alloys:0 "$ftm_transfer.12.desc_1$£alloys£$ftm_transfer.12.desc_colossus$"
+ # 主宰
+ ftm_transfer.12.desc_juggernaut:0 "\n\n§Y舰队构成:§!\n  §H主宰§!" 
+ ftm_transfer.12.desc_juggernaut_energy:0 "$ftm_transfer.12.desc_1$£energy£$ftm_transfer.12.desc_juggernaut$"  
+ ftm_transfer.12.desc_juggernaut_minerals:0 "$ftm_transfer.12.desc_1$£minerals£!$ftm_transfer.12.desc_juggernaut$"  
+ ftm_transfer.12.desc_juggernaut_food:0 "$ftm_transfer.12.desc_1$£food£$ftm_transfer.12.desc_juggernaut$"  
+ ftm_transfer.12.desc_juggernaut_goods:0 "$ftm_transfer.12.desc_1$£consumer_goods£$ftm_transfer.12.desc_juggernaut$"  
+ ftm_transfer.12.desc_juggernaut_alloys:0 "$ftm_transfer.12.desc_1$£alloys£$ftm_transfer.12.desc_juggernaut$"
+ # МОДОВСКИЙ ФЛОТ
+ ftm_transfer.12.desc_mods:0 " " 
+ ftm_transfer.12.desc_mod_energy:0 "$ftm_transfer.12.desc_1$£energy£$ftm_transfer.12.desc_mods$"  
+ ftm_transfer.12.desc_mod_minerals:0 "$ftm_transfer.12.desc_1$£minerals£$ftm_transfer.12.desc_mods$"  
+ ftm_transfer.12.desc_mod_food:0 "$ftm_transfer.12.desc_1$£food£$ftm_transfer.12.desc_mods$"  
+ ftm_transfer.12.desc_mod_goods:0 "$ftm_transfer.12.desc_1$£consumer_goods£$ftm_transfer.12.desc_mods$"  
+ ftm_transfer.12.desc_mod_alloys:0 "$ftm_transfer.12.desc_1$£alloys£$ftm_transfer.12.desc_mods$"
+ # выбор вариантов
+ ftm_transfer.12.ok:0 "很好" 
+  
+ # 13 - показ возможных цен (после 2)
+ ftm_transfer.13.title:0 "§B选择价格§!" 
+ ftm_transfer.13.desc_1:0 "选择出售舰队的价格 §H[event_target:ftm_transfered_fleet.GetFleetName]§!  " 
+ # ОБЫЧНЫЙ ФЛОТ
+ ftm_transfer.13.desc_2:0 ".\n\n§Y舰队构成:§!\n  §H- 护卫舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_corvette_count]§!\n  §H- 驱逐舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_destroyer_count]§!\n  §H- 巡洋舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cruiser_count]§!\n  §H- 战列舰:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_battleship_count]§!\n  §H- 泰坦:§! §R[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_titan_count]§!" 
+ ftm_transfer.13.desc_energy:0 "$ftm_transfer.13.desc_1$§Y£energy£ 能源§!$ftm_transfer.13.desc_2$"  
+ ftm_transfer.13.desc_minerals:0 "$ftm_transfer.13.desc_1$§R£minerals£ 矿物§!$ftm_transfer.13.desc_2$"  
+ ftm_transfer.13.desc_food:0 "$ftm_transfer.13.desc_1$§G£food£ 食物§!$ftm_transfer.13.desc_2$"  
+ ftm_transfer.13.desc_goods:0 "$ftm_transfer.13.desc_1$§H£consumer_goods£ 消费品§!$ftm_transfer.13.desc_2$"  
+ ftm_transfer.13.desc_alloys:0 "$ftm_transfer.13.desc_1$§M£alloys£ 合金§!$ftm_transfer.13.desc_2$" 
+ # 巨像
+ ftm_transfer.13.desc_colossus:0 ".\n\n§Y舰队构成:§!\n  §R巨像§!§!" 
+ ftm_transfer.13.desc_colossus_energy:0 "$ftm_transfer.13.desc_1$§Y£energy£ 能源§!$ftm_transfer.13.desc_colossus$"  
+ ftm_transfer.13.desc_colossus_minerals:0 "$ftm_transfer.13.desc_1$§R£minerals£ 矿物§!$ftm_transfer.13.desc_colossus$"  
+ ftm_transfer.13.desc_colossus_food:0 "$ftm_transfer.13.desc_1$§G£food£ 食物§!$ftm_transfer.13.desc_colossus$"  
+ ftm_transfer.13.desc_colossus_goods:0 "$ftm_transfer.13.desc_1$§H£consumer_goods£ 消费品§!$ftm_transfer.13.desc_colossus$"  
+ ftm_transfer.13.desc_colossus_alloys:0 "$ftm_transfer.13.desc_1$§M£alloys£ 合金§!$ftm_transfer.13.desc_colossus$" 
+ # 主宰
+ ftm_transfer.13.desc_juggernaut:0 ".\n\n§Y舰队构成:§!\n  §H主宰§!§!" 
+ ftm_transfer.13.desc_juggernaut_energy:0 "$ftm_transfer.13.desc_1$§Y£energy£ 能源§!$ftm_transfer.13.desc_juggernaut$"  
+ ftm_transfer.13.desc_juggernaut_minerals:0 "$ftm_transfer.13.desc_1$§R£minerals£ 矿物§!$ftm_transfer.13.desc_juggernaut$"  
+ ftm_transfer.13.desc_juggernaut_food:0 "$ftm_transfer.13.desc_1$§G£food£ 食物§!$ftm_transfer.13.desc_juggernaut$"  
+ ftm_transfer.13.desc_juggernaut_goods:0 "$ftm_transfer.13.desc_1$§H£consumer_goods£ 消费品§!$ftm_transfer.13.desc_juggernaut$"  
+ ftm_transfer.13.desc_juggernaut_alloys:0 "$ftm_transfer.13.desc_1$§M£alloys£ 合金§!$ftm_transfer.13.desc_juggernaut$"
+ # МОДОВСКИЙ ФЛОТ
+ ftm_transfer.13.desc_mods:0 "." 
+ ftm_transfer.13.desc_mod_energy:0 "$ftm_transfer.13.desc_1$§Y£energy£ 能源§!$ftm_transfer.13.desc_mods$"  
+ ftm_transfer.13.desc_mod_minerals:0 "$ftm_transfer.13.desc_1$§R£minerals£ 矿物§!$ftm_transfer.13.desc_mods$"  
+ ftm_transfer.13.desc_mod_food:0 "$ftm_transfer.13.desc_1$§G£food£ 食物§!$ftm_transfer.13.desc_mods$"  
+ ftm_transfer.13.desc_mod_goods:0 "$ftm_transfer.13.desc_1$§H£consumer_goods£ 消费品§!$ftm_transfer.13.desc_mods$"  
+ ftm_transfer.13.desc_mod_alloys:0 "$ftm_transfer.13.desc_1$§M£alloys£ 合金§!$ftm_transfer.13.desc_mods$"
+ # выбор вариантов
+ ftm_transfer.13.25:0 "§Y[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cost_25]§!" 
+ ftm_transfer.13.25.tooltip:0 "§BH以低于市场价格25%的低价出售§!" 
+ ftm_transfer.13.50:0 "§Y[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cost_50]§!" 
+ ftm_transfer.13.50.tooltip:0 "§EH以低于市场价格50%的低价出售§!" 
+ ftm_transfer.13.75:0 "§Y[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cost_75]§!" 
+ ftm_transfer.13.75.tooltip:0 "§GH以低于市场价格75%的低价出售§!" 
+ ftm_transfer.13.100:0 "§Y[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cost_100]§!" 
+ ftm_transfer.13.100.tooltip:0 "§T以平均市场价格出售§!" 
+ ftm_transfer.13.125:0 "§Y[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cost_125]§!" 
+ ftm_transfer.13.125.tooltip:0 "§Y以25%的市场价格出售§!" 
+ ftm_transfer.13.150:0 "§Y[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cost_150]§!" 
+ ftm_transfer.13.150.tooltip:0 "§H以高于市场价格50%的高价出售§!" 
+ ftm_transfer.13.175:0 "§Y[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cost_175]§!" 
+ ftm_transfer.13.175.tooltip:0 "§P以高于市场价格75%的高价出售§!"
+ ftm_transfer.13.200:0 "§Y[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cost_200]§!" 
+ ftm_transfer.13.200.tooltip:0 "§R以高于市场价格100%的高价出售§!"  
+ ftm_transfer.13.manual:0 "§Y我想手动设定价格§!" 
+ ftm_transfer.13.manual.tooltip:0 "§G打开价格手动调整菜单§!"  
+ 
+ # 14 - сообщение что другой игрок уже передает флот
+ ftm_transfer.14.title:0 "§R转移阻隔§!" 
+ ftm_transfer.14.desc:0 "我们不能运行星际舰队的转移菜单，因为其中一个玩家已经启动了转移或出售舰队的过程。我们应该稍后再试一次。" 
+ ftm_transfer.14.ok:0 "很遗憾..." 
+ 
+ # 15 - ручная настройка цены
+ ftm_transfer.15.title:0 "§G定价§!" 
+ ftm_transfer.15.desc:0 "手动设定所需价格.\n\n§Y当前价格:§! §H[event_target:ftm_transfered_fleet_seller.ftm_transfered_fleet_cost_manual]§!\n§Y资源:§! " 
+ ftm_transfer.15.desc_energy:0 "$ftm_transfer.15.desc$§Y£energy£ 能源§!"  
+ ftm_transfer.15.desc_minerals:0 "$ftm_transfer.15.desc$§R£minerals£ 矿物§!"  
+ ftm_transfer.15.desc_food:0 "$ftm_transfer.15.desc$§G£food£ 食物§!"  
+ ftm_transfer.15.desc_goods:0 "$ftm_transfer.15.desc$§H£consumer_goods£ 消费品§!"  
+ ftm_transfer.15.desc_alloys:0 "$ftm_transfer.15.desc$§M£alloys£ 合金§!" 
+ # выбор вариантов
+ ftm_transfer.15.minus10000:0 "§R-10000§!" 
+ ftm_transfer.15.minus10000.tooltip:0 "§Y降低价格 10000 单位§!"  
+ ftm_transfer.15.minus1000:0 "§R-1000§!" 
+ ftm_transfer.15.minus1000.tooltip:0 "§Y降低价格 1000 单位§!"  
+ ftm_transfer.15.minus100:0 "§R-100§!" 
+ ftm_transfer.15.minus100.tooltip:0 "§Y降低价格 100 单位§!"  
+ ftm_transfer.15.minus10:0 "§R-10§!" 
+ ftm_transfer.15.minus10.tooltip:0 "§Y降低价格 10 单位§!"   
+ ftm_transfer.15.plus10:0 "§G+10§!" 
+ ftm_transfer.15.plus10.tooltip:0 "§Y增加价格 10 单位§!"   
+ ftm_transfer.15.plus100:0 "§G+100§!" 
+ ftm_transfer.15.plus100.tooltip:0 "§Y增加价格 100 单位§!"   
+ ftm_transfer.15.plus1000:0 "§G+1000§!" 
+ ftm_transfer.15.plus1000.tooltip:0 "§Y增加价格 1000 单位§!"   
+ ftm_transfer.15.plus10000:0 "§G+10000§!" 
+ ftm_transfer.15.plus10000.tooltip:0 "§Y增加价格 10000 单位§!"  
+ ftm_transfer.15.done:0 "§Y接受价格§!" 
+ ftm_transfer.15.done.tooltip:0 "§Y确定当前价格§!" 
+ 
+ 
+ 
+ # Влияние на отношения (дипломатия)
+ ftm_colossus_sale:0 "贩卖行星杀手级（巨像）船只"
+ ftm_free_fleet:0 "收到作为礼物的舰队"
+ 
+ 
+ 
+ ### SETUP ###
+ ftm_settings_only_for_server:0 "§R只有主机（服务器）可以更改FTM修改设置!§!"
+ # Main
+ ftm_transfer.999.title:0 "FTM: 设定" 
+ ftm_transfer.999.desc:0 "欢迎来到设置修改窗口 §YFleet Transfer Mod§!.\n根据您的喜好定制修改功能(仅对主机伺服器可用的选项)。" 
+ ftm_transfer.999.types:0 "功能选择" 
+ ftm_transfer.999.types.tooltip:0 "$ftm_transfer.991.desc$"  
+ ftm_transfer.999.ai_sale:0 "AI: 出售" 
+ ftm_transfer.999.ai_sale.tooltip:0 "$ftm_transfer.992.desc$"  
+ ftm_transfer.999.ai_buy:0 "AI: 购买" 
+ ftm_transfer.999.ai_buy.tooltip:0 "$ftm_transfer.993.desc$"  
+ ftm_transfer.999.close:0 "关闭窗口"  
+ ftm_transfer.999.BEBUG:0 "§R(重置MOD)§!"
+ ftm_transfer.999.BEBUG.tooltip:0 "似乎你在游戏开始后打开了这个MOD。为了避免大量的错误，为了充分利用MOD的功能，请按下这个按钮。"  
+ 
+ # abilities
+ ftm_transfer.991.title:0 "FTM: 功能选择" 
+ ftm_transfer.991.desc:0 "在这里你可以启用和禁用的功能模式:舰队转让，出售市场，租赁和拍卖的舰队" 
+ ftm_transfer.991.transfer:0 "舰队转移: §R无法关闭§!"  
+ ftm_transfer.991.market_on:0 "舰队市场: §G打开§!" 
+ ftm_transfer.991.market_off:0 "舰队市场: §R关闭§!" 
+ ftm_transfer.991.rent_on:0 "舰队租赁: §G打开§!" 
+ ftm_transfer.991.rent_off:0 "舰队租赁: §R关闭§!" 
+ ftm_transfer.991.auction_on:0 "舰队拍卖: §G打开§!"  
+ ftm_transfer.991.auction_off:0 "舰队拍卖: §R关闭§!"  
+ ftm_transfer.991.back:0 "返回" 
+ 
+ # AI: sale
+ ftm_transfer.992.title:0 "FTM: AI销售舰队" 
+ ftm_transfer.992.desc:0 "在这里你可以启用和禁用AI的功能，通过市场，租赁或拍卖以展示舰队出售。\n如果AI拥有大量舰队和很少的能源，并且没有持续的银河危机，那么AI就会展示出售的舰队。" 
+ ftm_transfer.992.market_on:0 "在舰队市场销售: §GYES§!" 
+ ftm_transfer.992.market_off:0 "在舰队市场销售: §RNO§!" 
+ ftm_transfer.992.rent_on:0 "在舰队租赁销售: §GYES§!" 
+ ftm_transfer.992.rent_off:0 "在舰队租赁销售: §RNO§!" 
+ ftm_transfer.992.auction_on:0 "在舰队拍卖销售: §GYES§!"  
+ ftm_transfer.992.auction_off:0 "在舰队拍卖销售: §RNO§!"   
+ ftm_transfer.992.back:0 "返回" 
+ 
+ # AI: purchase
+ ftm_transfer.993.title:0 "FTM: AI购买舰队" 
+ ftm_transfer.993.desc:0 "在这里你可以启用和禁用AI的功能，通过市场，租赁或拍卖以购买舰队。\n如果AI拥有大量的能源和少量的舰队，而AI却购买了一个舰队，而这种情况虽然比危险的情况更危险，但他愿意付出的代价却更大。" 
+ ftm_transfer.993.market_on:0 "在舰队市场购买: §GYES§!" 
+ ftm_transfer.993.market_off:0 "在舰队市场购买: §RNO§!" 
+ ftm_transfer.993.rent_on:0 "在舰队租赁购买: §GYES§!" 
+ ftm_transfer.993.rent_off:0 "在舰队租赁购买: §RNO§!" 
+ ftm_transfer.993.auction_on:0 "在舰队拍卖购买: §GYES§!"  
+ ftm_transfer.993.auction_off:0 "在舰队拍卖购买: §RNO§!"   
+ ftm_transfer.993.back:0 "返回" 
+ 
+ # ModMenu
+ modmenu_ftm:0 "Fleet Transfer Mod"
+ ftm_transfer.901.title:0 "菜单"
+ ftm_transfer.901.desc:0 "在此菜单中，您可以更改MOD所需的设置。"
+ ftm_transfer.901.transfer:0 "$edict_ftm_open_transfer_window$"
+ ftm_transfer.901.market:0 "$edict_ftm_open_market_window$"
+ ftm_transfer.901.rent:0 "$edict_ftm_open_rent_window$"
+ ftm_transfer.901.auction:0 "$edict_ftm_open_auction_window$"
+ ftm_transfer.901.settings:0 "$ftm_transfer.1.options$"
+ ftm_transfer.901.close:0 "$ftm_transfer.999.close$"
+

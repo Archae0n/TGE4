@@ -1,0 +1,31 @@
+# species_potential_add = {}
+# show the trait to add to species when genemodding or randomizing traits.
+# Scopes are this = species, from = country performing the modification.
+# default = always=yes
+
+# species_possible_remove = {}
+# allow to remove the trait when genemodding.
+# Scopes are this = species, from = country performing the modification.
+# default = always=yes
+
+trait_void_farer = {
+	cost = 0
+	initial = no
+	randomized = no
+	modification = no
+	allowed_archetypes = { BIOLOGICAL }
+	modifier = {
+	}
+}
+
+trait_bit_degradation = {
+	cost = 0
+	initial = no
+	randomized = no
+	modification = no
+	allowed_archetypes = { MACHINE }
+	
+	modifier = {
+		pop_environment_tolerance = -1.99
+	}
+}

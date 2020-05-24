@@ -1,0 +1,42 @@
+
+########################################
+########################################
+#####                              #####
+#####    Auto Gene Assimilation    #####
+#####                              #####
+#####    scripted_variables        #####
+#####                              #####
+########################################
+########################################
+
+### Deducted Society Research for Gene Assimilation
+# 
+# cf. Original Gene Modification @ ver.2.2.5
+#	
+#	Soc   = { 3000 + (5 + 20t + 60c)p } (1 - 0.25E - 0.25M)		@ ver.2.2.5
+#	      = ( 5 + 3000/p + 20t + 60c ) (1 - 0.25E - 0.25M) p
+#	
+#		p = Number of Modified Pops
+#		t = Changed Trait Points
+#		c = Changed Climate Preference
+#		E = ap_engineered_evolution
+#		M = ap_evolutionary_mastery
+#	
+#	Maximum Trait Points
+#		base:     2 	 2
+# 		tech: +1 +1 	 4
+# 		AP  : +3 +3 	10
+#	
+#	Trial Calculation
+#		  (Soc,   p, t, c   , E, M)
+#		= ( 90, 100, 2, 0.25, 0, 0)
+#		= (100, 100, 4, 0.25, 1, 0)
+#		= ( 85, 100, 6, 0.25, 1, 1)
+# 
+
+@AgaConstSocietyResearchForGeneAssimilation_1P =  100
+@AgaConstSocietyResearchForGeneAssimilation_2P =  200
+@AgaConstSocietyResearchForGeneAssimilation_3P =  300
+@AgaConstSocietyResearchForGeneAssimilation_1N = -100
+@AgaConstSocietyResearchForGeneAssimilation_2N = -200
+@AgaConstSocietyResearchForGeneAssimilation_3N = -300

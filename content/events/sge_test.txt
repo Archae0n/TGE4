@@ -1,0 +1,38 @@
+namespace = sgetest
+
+
+
+#TODO
+#done# -add code for alternate gender
+#done# -check what happens if a leader is created via event. result: on_action doesn't trigger. this is bad
+#
+#idea: create leader and delete leader after the gender of the other leaders have been changed to refresh the gui
+#and to avoid reloading the savegame. It seems this doesn't work for rulers. result: delete leader need a break of one day
+#idea: clone leader and exile leader for saving data from leader before they are elected
+#done#-test change_leader_portrait(current portrait to robot to current). result: this works properly if on day pass after changing the portrait to robot
+#I can add this to avoid the reloading after changing the ruler/heir gender
+#-are ther issues with non gender species
+
+
+
+country_event = {
+	id = sgetest.1
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		is_ai = no
+	}	
+	immediate = {
+		log = "sge population test"
+		every_owned_planet = {
+			every_pop = {
+				modify_species = {
+					portrait = human_female_01
+				}
+			}
+		}
+	}
+
+
+	
+}

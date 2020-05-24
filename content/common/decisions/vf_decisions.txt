@@ -1,0 +1,48 @@
+
+decision_add_replicators_law = {
+	owned_planets_only = yes
+	sound = event_machinery
+
+	resources = {
+		category = decisions
+		cost = {
+			minerials = 1000
+		}
+	}
+	
+	potential = {
+		owner = { is_void_ancient_drones = yes }
+		has_technology = tech_replication_logistics
+		NOT = { has_modifier = add_replicators }
+	}
+	
+	effect = {
+		add_modifier = { modifier = "add_replicators" days = -1 }
+	}
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+decision_remove_replicators_law = {
+	owned_planets_only = yes
+	sound = event_power_down
+
+	resources = {
+		category = decisions
+	}
+	
+	potential = {
+		#owner = { is_void_ancient_drones = yes } #if you conquer the planet as a different type you need to be able to disable it
+		has_modifier = add_replicators
+	}
+	
+	effect = {
+		remove_modifier = add_replicators
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}

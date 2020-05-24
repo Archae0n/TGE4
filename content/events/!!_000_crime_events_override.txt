@@ -1,0 +1,768 @@
+############################
+#
+# Crime and Punishment
+#
+############################
+
+namespace = crime
+
+# Criminal Underworld Appears (Unemployment)
+planet_event = {
+	id = crime.1
+	title = crime.1.name
+	desc = {
+		trigger = {
+			owner = {
+				NOT = { has_ethic = ethic_gestalt_consciousness }
+			}
+		}
+		text = crime.1.desc
+	}
+	desc = {
+		trigger = { 
+			owner = { has_authority = auth_hive_mind }
+		}
+		text = crime.1.b.desc
+	}
+	desc = {
+		trigger = { 
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		text = crime.1.c.desc
+	}
+	picture = {
+		trigger = { 
+			owner = {
+				NOT = { has_ethic = ethic_gestalt_consciousness }
+			}
+		}
+		picture = GFX_evt_dark_alley
+	}
+	picture = {
+		trigger = { 
+			owner = { has_authority = auth_hive_mind }
+		}
+		picture = GFX_evt_hive_mind
+	}
+	picture = {
+		trigger = { 
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		picture = GFX_evt_glitchy_matrix
+	}
+	show_sound = event_criminal_activity
+	location = root
+
+	trigger = {
+		has_owner = yes
+		is_under_colonization = no
+		owner = { is_country_type = default }
+		NOR = {
+			has_planet_flag = criminal_underworld_event_up
+			has_modifier = unemployment_benefits
+			has_modifier = activity_program
+			has_modifier = standby_mode
+			has_modifier = criminal_underworld
+			has_modifier = drone_deviancy
+			has_modifier = drone_corruption
+			has_modifier = gang_wars
+			has_modifier = center_of_drug_trade
+			has_modifier = mob_rule
+		}
+		NOT = { has_planet_flag = criminal_underworld_disappeared } # Cooldown
+		num_pops > 3
+		OR = {
+			AND = {
+				count_pops = {
+					limit = { 
+						is_shackled_robot = no
+						has_job = unemployed
+						NOR = {
+							has_living_standard = { type = living_standard_utopian }
+							has_living_standard = { type = living_standard_good }
+							has_living_standard = { type = living_standard_shared_burden }
+						}
+					}
+					count > 3
+				}
+				owner = { is_gestalt = no }
+			}
+			AND = {
+				count_pops = {
+					limit = { 
+						has_job = unemployed
+						NOT = { has_living_standard = { type = living_standard_organic_trophy } }
+					}
+					count > 10
+				}
+				owner = { is_gestalt = yes }
+			}
+		}
+	}
+
+	immediate = {
+		set_planet_flag = criminal_underworld_event_up
+	}
+
+	after = {
+		hidden_effect = { remove_planet_flag = criminal_underworld_event_up }
+	}
+
+	mean_time_to_happen = {
+		months = 180
+
+		modifier = {
+			factor = 0.5
+			owner = {
+				has_valid_civic = civic_criminal_heritage
+			}
+		}
+		modifier = {
+			factor = 0.5
+			count_pops = {
+				limit = { has_job = unemployed }
+				count > 4
+			}
+		}
+		modifier = {
+			factor = 0.5
+			count_pops = {
+				limit = { has_job = unemployed }
+				count > 5
+			}
+		}
+		modifier = {
+			factor = 0.5
+			count_pops = {
+				limit = { has_job = unemployed }
+				count > 7
+			}
+		}
+		modifier = {
+			factor = 0.5
+			count_pops = {
+				limit = { has_job = unemployed }
+				count > 9
+			}
+		}		
+		modifier = {
+			factor = 0.75
+			count_pops = {
+				limit = { has_job = unemployed }
+				count > 11
+			}
+		}
+		modifier = {
+			factor = 0.75
+			count_pops = {
+				limit = { has_job = unemployed }
+				count > 13
+			}
+		}	
+	}
+	
+	option = {
+		name = crime.1.a
+		trigger = {
+			owner = {
+				NOT = { has_ethic = ethic_gestalt_consciousness }
+			}
+		}
+		add_modifier = { modifier = "unemployment_benefits" days = 3600 }
+	}
+	option = {
+		name = crime.1.a2
+		trigger = { 
+			owner = { has_authority = auth_hive_mind }
+		}
+		add_modifier = { modifier = "activity_program" days = 3600 }
+	}
+	option = {
+		name = crime.1.a3
+		custom_tooltip = crime.1.a3.tooltip
+		trigger = { 
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		hidden_effect = { add_modifier = { modifier = "standby_mode" days = 3600 } }
+	}
+	option = {
+		name = crime.1.b
+		trigger = {
+			owner = {
+				NOT = { has_ethic = ethic_gestalt_consciousness }
+			}
+		}
+		add_modifier = { modifier = criminal_underworld days = -1 }
+	}
+	option = {
+		name = crime.1.b2
+		trigger = { 
+			owner = { has_authority = auth_hive_mind }
+		}
+		add_modifier = { modifier = drone_deviancy days = -1 }
+	}
+	option = {
+		name = crime.1.b3
+		trigger = { 
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		add_modifier = { modifier = drone_corruption days = -1 }
+	}
+}
+
+# GENERIC
+
+# Bribed Officials unchanged
+
+# Drug Trade unchanged
+
+# Gangs Clash unchanged
+
+# Smugglers unchanged
+
+# Crime Wave unchanged
+
+# Contraband Seized unchanged
+
+# Crime Boss Arrested unchanged
+
+# Criminal Underworld Appears (High Crime)
+planet_event = {
+	id = crime.40
+	title = crime.40.name
+	desc = {
+		trigger = {
+			owner = {
+				NOT = { has_ethic = ethic_gestalt_consciousness }
+			}
+		}
+		text = crime.40.desc
+	}
+	desc = {
+		trigger = { 
+			owner = { has_authority = auth_hive_mind }
+		}
+		text = crime.40.b.desc
+	}
+	desc = {
+		trigger = { 
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		text = crime.40.c.desc
+	}
+	picture = {
+		trigger = { 
+			owner = {
+				NOT = { has_ethic = ethic_gestalt_consciousness }
+			}
+		}
+		picture = GFX_evt_dark_alley
+	}
+	picture = {
+		trigger = { 
+			owner = { has_authority = auth_hive_mind }
+		}
+		picture = GFX_evt_hive_mind
+	}
+	picture = {
+		trigger = { 
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		picture = GFX_evt_glitchy_matrix
+	}
+	show_sound = event_criminal_activity
+	location = root
+
+	trigger = {
+		has_owner = yes
+		owner = { is_country_type = default }
+		NOR = {
+			has_planet_flag = criminal_underworld_event_up
+			AND = {
+				has_modifier = unemployment_benefits
+				planet_crime < 40
+			}
+			AND = {
+				has_modifier = activity_program
+				planet_crime < 60
+			}
+			AND = {
+				has_modifier = standby_mode
+				planet_crime < 80
+			}
+			has_modifier = criminal_underworld
+			has_modifier = drone_deviancy
+			has_modifier = drone_corruption
+			has_modifier = gang_wars
+			has_modifier = center_of_drug_trade
+			has_modifier = mob_rule
+		}
+		NOT = { has_planet_flag = criminal_underworld_disappeared } # Cooldown
+		num_pops > 0
+		OR = {
+			planet_crime >= 20
+			AND = {
+				planet_crime >= 15
+				owner = {
+					is_criminal_syndicate = yes
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 180
+
+		modifier = {
+			factor = 0.5
+			owner = {
+				is_criminal_syndicate = yes
+			}
+		}
+		modifier = {
+			factor = 1.3
+			OR = {
+				has_modifier = unemployment_benefits
+				has_modifier = activity_program
+				has_modifier = standby_mode
+			}
+		}
+		modifier = {
+			factor = 0.6
+			planet_crime >= 20
+		}
+		modifier = {
+			factor = 0.5
+			planet_crime >= 30
+		}
+		modifier = {
+			factor = 0.5
+			planet_crime >= 40
+		}
+		modifier = {
+			factor = 0.5
+			planet_crime >= 50
+		}
+		modifier = {
+			factor = 0.75
+			planet_crime >= 70
+		}
+		modifier = {
+			factor = 0.75
+			planet_crime >= 90
+		}	
+	}
+
+	immediate = {
+		set_planet_flag = criminal_underworld_event_up
+		set_timed_planet_flag = { flag = criminal_underworld_appeared days = 3600 }
+		if = {
+			limit = {
+				owner = {
+					NOT = { has_ethic = ethic_gestalt_consciousness }
+				}
+			}
+			add_modifier = { modifier = "criminal_underworld" days = -1 }
+			break = yes
+		}
+		if = {
+			limit = {
+				owner = { has_authority = auth_hive_mind }
+			}
+			add_modifier = { modifier = "drone_deviancy" days = -1 }
+			break = yes
+		}
+		if = {
+			limit = {
+				owner = { has_authority = auth_machine_intelligence }
+			}
+			add_modifier = { modifier = "drone_corruption" days = -1 }
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			remove_planet_flag = criminal_underworld_event_up
+		}
+	}
+	
+	option = {
+		name = crime.40.a
+		trigger = {
+			owner = {
+				NOT = { has_ethic = ethic_gestalt_consciousness }
+			}
+		}
+		tooltip = {
+			add_modifier = { modifier = "criminal_underworld" days = -1 }
+		}
+	}
+	option = {
+		name = crime.40.b
+		trigger = { 
+			owner = { has_authority = auth_hive_mind }
+		}
+		tooltip = {
+			add_modifier = { modifier = "drone_deviancy" days = -1 }
+		}
+	}
+	option = {
+		name = crime.40.c
+		trigger = { 
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		tooltip = {
+			add_modifier = { modifier = "drone_corruption" days = -1 }
+		}
+	}
+}
+
+# Criminal Underworld Disappears (Low Crime)
+planet_event = {
+	id = crime.41
+	title = crime.41.name
+	desc = {
+		trigger = {
+			owner = {
+				NOT = { has_ethic = ethic_gestalt_consciousness }
+			}
+		}
+		text = crime.41.desc
+	}
+	desc = {
+		trigger = { 
+			owner = { has_authority = auth_hive_mind }
+		}
+		text = crime.41.b.desc
+	}
+	desc = {
+		trigger = { 
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		text = crime.41.c.desc
+	}
+	picture = {
+		trigger = { 
+			owner = {
+				NOT = { has_ethic = ethic_gestalt_consciousness }
+			}
+		}
+		picture = GFX_evt_dark_alley
+	}
+	picture = {
+		trigger = { 
+			owner = { has_authority = auth_hive_mind }
+		}
+		picture = GFX_evt_hive_mind
+	}
+	picture = {
+		trigger = { 
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		picture = GFX_evt_circuitry_modification
+	}
+	show_sound = event_cityscape
+	location = root
+
+	trigger = {
+		has_owner = yes
+		owner = { is_country_type = default }
+		OR = {
+			has_modifier = criminal_underworld
+			has_modifier = drone_deviancy
+			has_modifier = drone_corruption
+			has_modifier = gang_wars
+			has_modifier = center_of_drug_trade
+			has_modifier = mob_rule
+		}
+		NOT = { has_planet_flag = criminal_underworld_appeared } # Cooldown
+		num_pops > 0
+		planet_crime <= 7
+	}
+
+	mean_time_to_happen = {
+		months = 180
+
+		modifier = {
+			factor = 0.7
+			OR = {
+				has_modifier = unemployment_benefits
+				has_modifier = activity_program
+				has_modifier = standby_mode
+			}
+		}
+		modifier = {
+			factor = 0.7
+			sector = {
+				leader = {
+					has_trait = leader_trait_righteous
+				}
+			}
+		}
+		modifier = {
+			factor = 0.75
+			count_pops = {
+				limit = { 
+					OR = {
+						has_job = enforcer
+						has_job = coordinator
+						has_job = synapse_drone
+						has_job = patrol_drone
+					}
+				}
+				count > 2
+			}
+		}
+		modifier = {
+			factor = 0.6
+			count_pops = {
+				limit = { 
+					OR = {
+						has_job = enforcer
+						has_job = coordinator
+						has_job = synapse_drone
+						has_job = patrol_drone
+					}
+				}
+				count > 3
+			}
+		}
+		modifier = {
+			factor = 0.7
+			count_pops = {
+				limit = { 
+					OR = {
+						has_job = enforcer
+						has_job = coordinator
+						has_job = synapse_drone
+						has_job = patrol_drone
+					}
+				}
+				count > 4
+			}
+		}
+		modifier = {
+			factor = 0.7
+			count_pops = {
+				limit = { 
+					OR = {
+						has_job = enforcer
+						has_job = coordinator
+						has_job = synapse_drone
+						has_job = patrol_drone
+					}
+				}
+				count > 7
+			}
+		}
+		modifier = {
+			factor = 0.5
+			planet_crime <= 1
+		}
+		modifier = {
+			factor = 0.8
+			planet_crime <= 4
+		}
+	}
+	
+	option = {
+		name = GOOD
+		trigger = {
+			owner = {
+				NOT = { has_ethic = ethic_gestalt_consciousness }
+			}
+		}
+		if = {
+			limit = { has_modifier = criminal_underworld }
+			remove_modifier = criminal_underworld
+		}
+		if = {
+			limit = { has_modifier = gang_wars }
+			remove_modifier = gang_wars
+		}
+		if = {
+			limit = { has_modifier = center_of_drug_trade }
+			remove_modifier = center_of_drug_trade
+		}
+		if = {
+			limit = { has_modifier = mob_rule }
+			remove_modifier = mob_rule
+		}
+		if = {
+			limit = { has_modifier = bribed_officials }
+			remove_modifier = bribed_officials
+		}
+		if = {
+			limit = { has_modifier = substance_abuse }
+			remove_modifier = substance_abuse
+		}
+		if = {
+			limit = { has_modifier = smuggler_activity }
+			remove_modifier = smuggler_activity
+		}
+		if = {
+			limit = { has_modifier = crime_wave }
+			remove_modifier = crime_wave
+		}
+		if = {
+			limit = { has_modifier = cartel_war }
+			remove_modifier = cartel_war
+		}
+		if = {
+			limit = { has_modifier = protection_racket }
+			remove_modifier = protection_racket
+		}
+		if = {
+			limit = { has_modifier = corrupt_administration }
+			remove_modifier = corrupt_administration
+		}
+		if = {
+			limit = { has_modifier = trade_pilfering }
+			remove_modifier = trade_pilfering
+		}
+		# BEGIN Expanded events compatibility
+		if = {
+			limit = { has_modifier = black_market }
+			remove_modifier = black_market
+		}
+		if = {
+			limit = { has_modifier = white_collar_crime }
+			remove_modifier = white_collar_crime
+		}
+		if = {
+			limit = { has_modifier = corrupt_cops }
+			remove_modifier = corrupt_cops
+			add_modifier = { modifier = "corrupt_cops_lingering" days = 3600 }
+		}
+		if = {
+			limit = { has_modifier = art_theft }
+			remove_modifier = art_theft
+		}
+		if = {
+			limit = { has_modifier = mirror_criminals }
+			remove_modifier = mirror_criminals
+		}
+		# END Expanded events compatibility
+		hidden_effect = {
+			set_timed_planet_flag = { flag = criminal_underworld_disappeared days = 3600 }
+		}
+	}
+	option = {
+		name = GOOD
+		trigger = { 
+			owner = { has_authority = auth_hive_mind }
+		}
+		if = {
+			limit = { has_modifier = drone_deviancy }
+			remove_modifier = drone_deviancy
+		}
+		if = {
+			limit = { has_modifier = deviant_interference }
+			remove_modifier = deviant_interference
+		}
+		# BEGIN Expanded events compatibility
+		if = {
+			limit = { has_modifier = diseased_synapses }
+			remove_modifier = diseased_synapses
+		}
+		if = {
+			limit = { has_modifier = scavenging_drones }
+			remove_modifier = scavenging_drones
+		}
+		# END Expanded events compatibility
+		hidden_effect = {
+			set_timed_planet_flag = { flag = criminal_underworld_disappeared days = 3600 }
+		}
+	}
+	option = {
+		name = GOOD
+		trigger = { 
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		if = {
+			limit = { has_modifier = drone_corruption }
+			remove_modifier = drone_corruption
+		}
+		if = {
+			limit = { has_modifier = drone_signal_interference }
+			remove_modifier = drone_signal_interference
+		}
+		# BEGIN Expanded events compatibility
+		if = {
+			limit = { has_modifier = software_error }
+			remove_modifier = software_error
+		}
+		if = {
+			limit = { has_modifier = malfunctioning_nexus }
+			remove_modifier = malfunctioning_nexus
+		}
+		if = {
+			limit = { has_modifier = scavenging_drones }
+			remove_modifier = scavenging_drones
+		}
+		# END Expanded events compatibility
+		hidden_effect = {
+			set_timed_planet_flag = { flag = criminal_underworld_disappeared days = 3600 }
+		}
+	}
+}
+
+# Crime Gatekeeper unchanged
+
+# Crime Gatekeeper (Normies) unchanged
+
+# Crime Gatekeeper (Hive Minds) unchanged
+
+# Crime Gatekeeper (Machine Intelligences) unchanged
+
+# Gang Wars unchanged
+
+# Gangs Ambush Enforcers unchanged
+
+# Gang Warfare Spreads into Space unchanged
+
+# Pitched Battle unchanged
+
+# Traders Steer Clear unchanged
+
+# Center of Drug Trade unchanged
+
+# Drug Related Deaths unchanged
+
+# Drug Cartels Clash unchanged
+
+# Drug Smuggler Crash unchanged
+
+# Drug Trade Continues unchanged
+
+# Mob Rule unchanged
+
+# Protection Racket unchanged
+
+# Corrupt Administration unchanged
+
+# Gangsters Assassinate Governor unchanged
+
+# Gangsters Take Control of Trade unchanged
+
+### Hive Mind Crime events
+
+# Stampeding Deviant Drones unchanged
+
+# Deviant Drone Interference unchanged
+
+# Deviant Drone Ringleader Killed unchanged
+
+### Machine Intelligence Crime events
+
+# Drone Unit Rampage unchanged
+
+# Drone Unit Signal Interference unchanged
+
+# Virus Terminates Deviant Network unchanged
+
+# Criminal Branch Office Closes unchanged
+
+# Criminal Branch Office Closes (Planet Owner) unchanged
+
+# Criminal Branch Office Closes (Office Owner) unchanged

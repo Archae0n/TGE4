@@ -1,0 +1,251 @@
+# ЦЕНА КОРАБЛЕЙ ДЛЯ РАССЧЕТА ПРОДАЖИ
+# БАЛАНС: 1 сплав = 2 ТМС = 4 минерала/еды = 5 энергии
+
+
+# присвоены цены кораблей в СПЛАВАХ
+# для других ресурсов - складывать цену несколько раз
+
+# присвоены наценки для 25% 
+# для 50, 75 и тд - просто складывается 25 несколько раз
+# для удобства наценки округлены до точности 0.25 (корветы, эсминцы, крейсера), до 0.5 (линкоры, титаны), до 1 (колоссы)
+
+
+### КОРВЕТЫ ###
+
+# базовая цена
+@ftm_corvette_cost_25 = 25
+@ftm_corvette_cost_50 = 50
+@ftm_corvette_cost_75 = 75
+@ftm_corvette_cost_100 = 100
+@ftm_corvette_cost_125 = 125
+@ftm_corvette_cost_150 = 150
+@ftm_corvette_cost_175 = 175
+@ftm_corvette_cost_200 = 200
+
+# 25%
+@ftm_corvette_tech_1_25 = 2.5
+@ftm_corvette_tech_2_25 = 2.25
+@ftm_corvette_tech_3_25 = 2.5
+@ftm_corvette_tech_4_25 = 2.25
+@ftm_corvette_tech_5_25 = 1.5
+@ftm_corvette_tech_6_25 = 1.5
+@ftm_corvette_tech_7_25 = 2.75
+@ftm_corvette_tech_8_25 = 6.5
+@ftm_corvette_tech_9_25 = 2.5
+@ftm_corvette_tech_10_25 = 1.75
+@ftm_corvette_tech_11_25 = 6.75
+@ftm_corvette_tech_12_25 = 1.75
+@ftm_corvette_tech_13_25 = 2.75
+@ftm_corvette_tech_14_25 = 5.25
+@ftm_corvette_tech_15_25 = 3.75
+@ftm_corvette_tech_16_25 = 5.75
+
+
+
+
+
+
+### ЭСМИНЦЫ ###
+
+# базовая цена
+@ftm_destroyer_cost_25 = 50
+@ftm_destroyer_cost_50 = 100
+@ftm_destroyer_cost_75 = 150
+@ftm_destroyer_cost_100 = 200
+@ftm_destroyer_cost_125 = 250
+@ftm_destroyer_cost_150 = 300
+@ftm_destroyer_cost_175 = 350
+@ftm_destroyer_cost_200 = 400
+
+# 25%
+@ftm_destroyer_tech_1_25 = 5.25
+@ftm_destroyer_tech_2_25 = 4.5
+@ftm_destroyer_tech_3_25 = 5.25
+@ftm_destroyer_tech_4_25 = 4.5
+@ftm_destroyer_tech_5_25 = 3
+@ftm_destroyer_tech_6_25 = 3
+@ftm_destroyer_tech_7_25 = 5.5
+@ftm_destroyer_tech_8_25 = 13.25
+@ftm_destroyer_tech_9_25 = 5.25
+@ftm_destroyer_tech_10_25 = 3.75
+@ftm_destroyer_tech_11_25 = 13.75
+@ftm_destroyer_tech_12_25 = 3.5
+@ftm_destroyer_tech_13_25 = 5.5
+@ftm_destroyer_tech_14_25 = 10.2
+@ftm_destroyer_tech_15_25 = 5
+@ftm_destroyer_tech_16_25 = 9.25
+
+
+
+
+
+
+### КРЕЙСЕРА ###
+
+# базовая цена
+@ftm_cruiser_cost_25 = 100
+@ftm_cruiser_cost_50 = 200
+@ftm_cruiser_cost_75 = 300
+@ftm_cruiser_cost_100 = 400
+@ftm_cruiser_cost_125 = 500
+@ftm_cruiser_cost_150 = 600
+@ftm_cruiser_cost_175 = 700
+@ftm_cruiser_cost_200 = 800
+
+# 25%
+@ftm_cruiser_tech_1_25 = 10.5
+@ftm_cruiser_tech_2_25 = 9
+@ftm_cruiser_tech_3_25 = 10.5
+@ftm_cruiser_tech_4_25 = 9
+@ftm_cruiser_tech_5_25 = 7
+@ftm_cruiser_tech_6_25 = 7
+@ftm_cruiser_tech_7_25 = 13
+@ftm_cruiser_tech_8_25 = 30.5
+@ftm_cruiser_tech_9_25 = 14
+@ftm_cruiser_tech_10_25 = 10
+@ftm_cruiser_tech_11_25 = 35.75
+@ftm_cruiser_tech_12_25 = 7
+@ftm_cruiser_tech_13_25 = 11
+@ftm_cruiser_tech_14_25 = 21
+@ftm_cruiser_tech_15_25 = 6.25
+@ftm_cruiser_tech_16_25 = 12.75
+
+
+
+
+
+
+### ЛИНКОРЫ ###
+
+# базовая цена
+@ftm_battleship_cost_25 = 200
+@ftm_battleship_cost_50 = 400
+@ftm_battleship_cost_75 = 600
+@ftm_battleship_cost_100 = 800
+@ftm_battleship_cost_125 = 1000
+@ftm_battleship_cost_150 = 1200
+@ftm_battleship_cost_175 = 1400
+@ftm_battleship_cost_200 = 1600
+
+# 25%
+@ftm_battleship_tech_1_25 = 21
+@ftm_battleship_tech_2_25 = 17
+@ftm_battleship_tech_3_25 = 21
+@ftm_battleship_tech_4_25 = 17
+@ftm_battleship_tech_5_25 = 10.5
+@ftm_battleship_tech_6_25 = 9.5
+@ftm_battleship_tech_7_25 = 19.5
+@ftm_battleship_tech_8_25 = 44.5
+@ftm_battleship_tech_9_25 = 21
+@ftm_battleship_tech_10_25 = 15
+@ftm_battleship_tech_11_25 = 53.5
+@ftm_battleship_tech_12_25 = 14
+@ftm_battleship_tech_13_25 = 22
+@ftm_battleship_tech_14_25 = 42
+@ftm_battleship_tech_15_25 = 8.5
+@ftm_battleship_tech_16_25 = 16
+
+
+
+
+
+
+### ТИТАНЫ ###
+
+# базовая цена
+@ftm_titan_cost_25 = 400
+@ftm_titan_cost_50 = 800
+@ftm_titan_cost_75 = 1200
+@ftm_titan_cost_100 = 1600
+@ftm_titan_cost_125 = 2000
+@ftm_titan_cost_150 = 2400
+@ftm_titan_cost_175 = 2800
+@ftm_titan_cost_200 = 3200
+
+# 25%
+@ftm_titan_tech_1_25 = 21
+@ftm_titan_tech_2_25 = 17
+@ftm_titan_tech_3_25 = 21
+@ftm_titan_tech_4_25 = 17
+@ftm_titan_tech_5_25 = 21
+@ftm_titan_tech_6_25 = 19.5
+@ftm_titan_tech_7_25 = 39
+@ftm_titan_tech_8_25 = 89
+@ftm_titan_tech_9_25 = 42
+@ftm_titan_tech_10_25 = 30
+@ftm_titan_tech_11_25 = 107
+@ftm_titan_tech_12_25 = 28
+@ftm_titan_tech_13_25 = 44
+@ftm_titan_tech_14_25 = 84.5
+@ftm_titan_tech_15_25 = 11
+@ftm_titan_tech_16_25 = 25
+
+
+
+
+
+
+### КОЛОСС ###
+
+# базовая цена
+@ftm_colossus_cost_25 = 2500
+@ftm_colossus_cost_50 = 5000
+@ftm_colossus_cost_75 = 7500
+@ftm_colossus_cost_100 = 10000
+@ftm_colossus_cost_125 = 12500
+@ftm_colossus_cost_150 = 15000
+@ftm_colossus_cost_175 = 17500
+@ftm_colossus_cost_200 = 20000
+
+# 25%
+@ftm_colossus_tech_1_25 = 0
+@ftm_colossus_tech_2_25 = 0
+@ftm_colossus_tech_3_25 = 0
+@ftm_colossus_tech_4_25 = 0
+@ftm_colossus_tech_5_25 = 10
+@ftm_colossus_tech_6_25 = 9
+@ftm_colossus_tech_7_25 = 19
+@ftm_colossus_tech_8_25 = 44
+@ftm_colossus_tech_9_25 = 21
+@ftm_colossus_tech_10_25 = 15
+@ftm_colossus_tech_11_25 = 53
+@ftm_colossus_tech_12_25 = 125
+@ftm_colossus_tech_13_25 = 75
+@ftm_colossus_tech_14_25 = 100
+@ftm_colossus_tech_15_25 = 16
+@ftm_colossus_tech_16_25 = 33
+
+
+
+
+
+
+### ДЖАГГЕРНАУТ ###
+
+# базовая цена
+@ftm_juggernaut_cost_25 = 750
+@ftm_juggernaut_cost_50 = 1500
+@ftm_juggernaut_cost_75 = 2250
+@ftm_juggernaut_cost_100 = 3000
+@ftm_juggernaut_cost_125 = 3750
+@ftm_juggernaut_cost_150 = 4500
+@ftm_juggernaut_cost_175 = 5250
+@ftm_juggernaut_cost_200 = 6000
+
+# 25%
+@ftm_juggernaut_tech_1_25 = 70
+@ftm_juggernaut_tech_2_25 = 58
+@ftm_juggernaut_tech_3_25 = 70
+@ftm_juggernaut_tech_4_25 = 58
+@ftm_juggernaut_tech_5_25 = 37
+@ftm_juggernaut_tech_6_25 = 35
+@ftm_juggernaut_tech_7_25 = 69
+@ftm_juggernaut_tech_8_25 = 156
+@ftm_juggernaut_tech_9_25 = 74
+@ftm_juggernaut_tech_10_25 = 53
+@ftm_juggernaut_tech_11_25 = 69
+@ftm_juggernaut_tech_12_25 = 75
+@ftm_juggernaut_tech_13_25 = 75
+@ftm_juggernaut_tech_14_25 = 75
+@ftm_juggernaut_tech_15_25 = 12
+@ftm_juggernaut_tech_16_25 = 25

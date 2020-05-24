@@ -1,0 +1,5 @@
+﻿l_german:
+
+ sm_warp_fluctuator:0 "Hyperraum Anweiser"
+ sm_warp_fluctuator_desc:0 "Unterstützt befreundete Schiffe im System bei ÜL-Reisen, indem ihnen ideale Bedingungen für den Eintritt in Hyperraumrouten bereitgestellt werden und Reiserouten optimiert werden.\n\n§GStabilisiert Hyperlanes. Es kommen keine weiteren Hyperlanes hinzu oder verschwinden\n§!"
+ pc_pulsar_desc:1 "Pulsare sind höchst magnetisierte Neutronensterne, die elektromagnetische Strahlen ausstoßen. Der Rotationsstrahl ist während der Rotation des Sterns nur sichtbar, wenn er direkt auf den Beobachter zeigt. Dies führt zu einem äußerst präzisen Pulsintervall, der manchmal derart exakt ist, dass man mit ihm die Zeit mit extremer Genauigkeit messen kann. Die von Pulsaren emittierte Strahlung stört die Schildtechnologie, wodurch Schiffs- und Stationsschilde funktionsunfähig werden. \n\n§GDestabilisiert Hyperlanes (Hyperlanes können auftauchen und verschwinden).\n§!"

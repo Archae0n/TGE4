@@ -1,0 +1,68 @@
+
+#########################################
+#########################################
+######                              #####
+######    Auto Gene Assimilation    #####
+######                              #####
+######    policies                  #####
+######                              #####
+#########################################
+#########################################
+
+
+AgaPolicyGeneAssimilation = {
+	
+	potential = { AgaTriggerPossibleCountry = yes }
+	allow = { always = yes }
+	
+	option = {
+		name = AgaPolicyGeneAssimilationForbidden
+		policy_flags = {}
+		valid = { always = yes }
+		AI_weight = { weight = 1 }
+		
+		on_enabled = {
+			hidden_effect = {
+				AgaEffectInitializationVariables = yes
+				if = {
+					limit = { always = @AgaConstResetFlagWhenGeneAssimilationForbidden }
+					every_country = {
+						limit = { any_owned_pop_species = { always = yes } }
+						every_owned_pop_species = {
+							limit = { has_species_flag = AgaFlagGeneAssimilationStandardSpecies@root }
+							remove_species_flag = AgaFlagGeneAssimilationStandardSpecies@root
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = AgaPolicyGeneAssimilationAllowed
+		policy_flags = { AgaFlagGeneAssimilationAllowed }
+		valid = { AgaTriggerCheckSocietyResearchIncome = yes }
+		AI_weight = { weight = 10 }
+		
+		on_enabled = {
+			hidden_effect = {
+				AgaEffectInitializationVariables = yes
+				AgaEffectAddGeneAssimilationDummyModifier = yes
+			}
+		}
+	}
+	
+	option = {
+		name = AgaPolicyGeneAssimilationForced
+		policy_flags = { AgaFlagGeneAssimilationAllowed AgaFlagGeneAssimilationForced }
+		valid = { AgaTriggerCheckSocietyResearchIncome = yes }
+		AI_weight = { weight = 100 }
+		
+		on_enabled = {
+			hidden_effect = {
+				AgaEffectInitializationVariables = yes
+				AgaEffectAddGeneAssimilationDummyModifier = yes
+			}
+		}
+	}
+}

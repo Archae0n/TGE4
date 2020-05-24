@@ -1,0 +1,38 @@
+portraits = {
+	raptor_01 = {	entity =  "Dromaeosauridae_large_entity"	clothes_selector = "no_texture" hair_selector = "no_texture" 
+		greeting_sound = "reptilian_01_greetings"
+		character_textures = {
+			"gfx/models/portraits/Dromaeosauridae/sauropsida_raptor_01.dds"
+			"gfx/models/portraits/Dromaeosauridae/sauropsida_raptor_01_alt1.dds"
+			"gfx/models/portraits/Dromaeosauridae/sauropsida_raptor_01_alt2.dds"
+			"gfx/models/portraits/Dromaeosauridae/sauropsida_raptor_01_alt3.dds"
+		}
+	}
+	raptor_02 = {	entity =  "Dromaeosauridae_small_entity"	clothes_selector = "no_texture" hair_selector = "no_texture" 
+		greeting_sound = "reptilian_01_greetings"
+		character_textures = {
+			"gfx/models/portraits/Dromaeosauridae/sauropsida_raptor_02.dds"
+			"gfx/models/portraits/Dromaeosauridae/sauropsida_raptor_02_alt1.dds"
+			"gfx/models/portraits/Dromaeosauridae/sauropsida_raptor_02_alt2.dds"
+			"gfx/models/portraits/Dromaeosauridae/sauropsida_raptor_02_alt3.dds"
+		}
+	}
+	raptor_01_clothed = {	entity =  "Dromaeosauridae_large_entity"	clothes_selector = "reptilian_massive_clothes_13" hair_selector = "no_texture" 
+		greeting_sound = "reptilian_01_greetings"
+		character_textures = {
+			"gfx/models/portraits/Dromaeosauridae/sauropsida_raptor_01.dds"
+			"gfx/models/portraits/Dromaeosauridae/sauropsida_raptor_01_alt1.dds"
+			"gfx/models/portraits/Dromaeosauridae/sauropsida_raptor_01_alt2.dds"
+			"gfx/models/portraits/Dromaeosauridae/sauropsida_raptor_01_alt3.dds"
+		}
+	}
+	raptor_02_clothed = {	entity =  "Dromaeosauridae_small_entity"	clothes_selector = "reptilian_massive_clothes_13" hair_selector = "no_texture" 
+		greeting_sound = "reptilian_01_greetings"
+		character_textures = {
+			"gfx/models/portraits/Dromaeosauridae/sauropsida_raptor_02.dds"
+			"gfx/models/portraits/Dromaeosauridae/sauropsida_raptor_02_alt1.dds"
+			"gfx/models/portraits/Dromaeosauridae/sauropsida_raptor_02_alt2.dds"
+			"gfx/models/portraits/Dromaeosauridae/sauropsida_raptor_02_alt3.dds"
+		}
+	}
+}

@@ -1,0 +1,4533 @@
+
+
+################################################################
+##### фон
+
+# картинка
+ftm_auction_window_background_effect = {
+	potential = {
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+	}
+}
+
+### Кнопка настройки ###
+ftm_auction_settings = {
+	potential = {
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		if = {
+			limit = {
+				has_country_flag = ftm_server_country
+			}
+			hidden_effect = {
+				country_event = { id = ftm_transfer.999 }
+			}
+		}
+		else = {
+			custom_tooltip = ftm_settings_only_for_server
+		}
+	}
+}
+
+
+################################################################
+##### лот 1
+
+# условие отображения когда лота нет
+ftm_auction_lot_1_no_info = {
+	potential = {
+		NOT = {
+			has_global_flag = ftm_auction_lot_1_selected
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = ftm_auction_lot_1_in_progress		
+				}			
+			}
+			hidden_effect = {
+				country_event = { id = ftm_auction.101 }
+				set_global_flag = ftm_auction_lot_1_in_progress
+			}
+		}
+		else = {
+			custom_tooltip = ftm_auction_lot_in_progress_info
+		}
+	}
+}
+
+# условие отображение информации (длЯ покупателей)
+ftm_auction_lot_1_info = {
+	potential = {
+		has_global_flag = ftm_auction_lot_1_selected
+		NOT = {
+			is_same_value = event_target:ftm_auctioned_fleet_lot_1_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		hidden_effect = {
+			country_event = { id = ftm_auction.110 }
+		}
+	}
+}
+
+# условие отображение информации (длЯ продавца)
+ftm_auction_lot_1_info_seller = {
+	potential = {
+		has_global_flag = ftm_auction_lot_1_selected
+		is_same_value = event_target:ftm_auctioned_fleet_lot_1_seller
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		hidden_effect = {
+			country_event = { id = ftm_auction.110 }
+		}
+	}
+}
+
+# условие отображение текста "текущаЯ цена"
+ftm_auction_lot_1_current_price = {
+	potential = {
+		has_global_flag = ftm_auction_lot_1_selected
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+	}
+}
+
+# условие отображение текста "(наведи курсор)"
+ftm_auction_lot_1_price_button = {
+	potential = {
+		has_global_flag = ftm_auction_lot_1_selected
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		if = {
+			limit = {
+				exists = event_target:ftm_auction_lot_1_max_price
+			}
+			custom_tooltip = ftm_auction_lot_1_price_button_info
+		}
+		else = {
+			custom_tooltip = ftm_auction_lot_1_price_button_info_0
+		}
+	}
+}
+
+# условие отображения кнопки "+100"
+ftm_auction_lot_1_price_100 = {
+	potential = {
+		has_global_flag = ftm_auction_lot_1_selected
+		NOT = {
+			is_same_value = event_target:ftm_auctioned_fleet_lot_1_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_auction_lot_1_price_100_info
+		hidden_effect = {
+			log = "[Root.GetName] want to add +100 for LOT-1 price."
+
+		### проверка наличиЯ энергии
+
+			set_variable = {
+				which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+				value = 0
+			}
+			#1	
+			while = {
+				count = 99
+				if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10000 }
+					}
+					add_resource = { energy = -10000 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = 10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1000 }
+					}
+					add_resource = { energy = -1000 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = 1000
+						}			
+					}			
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 100 }
+					}
+					add_resource = { energy = -100 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = 100
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10 }
+					}
+					add_resource = { energy = -10 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = 10
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1 }
+					}
+					add_resource = { energy = -1 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = 1
+						}
+					}					
+				}
+				else = {
+					#nothing
+				}
+			}
+			#2
+			event_target:ftm_auctioned_fleet_lot_1_seller = { 
+				set_variable = {
+					which = ftm_buyer_auctioned_fleet_lot_1_energy_current_count
+					value = ftm_buyer_auctioned_fleet_lot_1_check_energy
+				}
+			}
+			#3
+			while = {
+				count = 99
+				if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+								value >= 10000
+							}
+						}
+					}
+					add_resource = { energy = 10000 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = -10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+								value >= 1000
+							}
+						}
+					}
+					add_resource = { energy = 1000 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = -1000
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+								value >= 100
+							}
+						}
+					}
+					add_resource = { energy = 100 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = -100
+						}
+					}					
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+								value >= 10
+							}
+						}
+					}
+					add_resource = { energy = 10 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = -10
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+								value >= 1
+							}
+						}
+					}
+					add_resource = { energy = 1 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = -1
+						}					
+					}
+				}
+				else = {
+					#nothing
+				}
+			}	
+			log = "[Root.GetName]: energy_check complete. ENERGY: [event_target:ftm_auctioned_fleet_lot_1_seller.ftm_buyer_auctioned_fleet_lot_1_energy_current_count]."
+			
+			
+			### 
+			
+			#4
+			if = {
+				limit = {
+					is_same_value = event_target:ftm_auction_lot_1_max_price
+				}
+				country_event = { id = ftm_auction.108 }
+			}
+			if = {
+				limit = {
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						check_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_energy_current_count
+							value < ftm_auctioned_fleet_lot_1_cost_plus_100
+						}
+					}
+					NOT = {
+						is_same_value = event_target:ftm_auction_lot_1_max_price
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost_plus_100]... FAIL. NO ENERGY."
+				country_event = { id = ftm_auction.105 }
+			}
+			if = {
+				limit = {
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						check_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_energy_current_count
+							value >= ftm_auctioned_fleet_lot_1_cost_plus_100
+						}
+					}
+					NOT = {
+						is_same_value = event_target:ftm_auction_lot_1_max_price
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost_plus_100]... SUCCESS. ENERGY IN."
+				
+				
+				#возврат ресурсов при перебивании цены
+				
+				event_target:ftm_auction_lot_1_max_price = { 
+					save_event_target_as = ftm_auction_lot_1_last_price										
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						set_variable = {
+							which = ftm_auctioned_fleet_lot_1_returned_cost
+							value = ftm_auctioned_fleet_lot_1_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_returned_cost] energy received, LOT-1 has new owner. Old - [event_target:ftm_auction_lot_1_max_price.GetName]"
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_returned_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = 10000 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_returned_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_returned_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = 1000 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_returned_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_returned_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = 100 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_returned_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_returned_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = 10 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_returned_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_returned_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = 1 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_returned_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}			
+				}
+				event_target:ftm_auctioned_fleet_lot_1_seller = { 
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_1_cost
+						value = 100
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_1_cost_plus_100
+						value = 100
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_1_cost_plus_1000
+						value = 100
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_1_cost_plus_10000
+						value = 100
+					}
+				}				
+				save_global_event_target_as = ftm_auction_lot_1_max_price
+				
+				
+				# снятие ресурсов при установке цены				
+			
+				event_target:ftm_auction_lot_1_max_price = { 
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						set_variable = {
+							which = ftm_auctioned_fleet_lot_1_lot_cost
+							value = ftm_auctioned_fleet_lot_1_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_lot_cost] energy is LOT-1 cost"	
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_lot_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = -10000 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_lot_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_lot_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = -1000 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_lot_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_lot_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = -100 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_lot_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_lot_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = -10 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_lot_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_lot_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = -1 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_lot_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}	
+				}
+				event_target:ftm_auction_lot_1_last_price = {
+					country_event = { id = ftm_auction.198 }
+				}
+			}
+		}
+	}
+}
+
+# условие отображения кнопки "+1000"
+ftm_auction_lot_1_price_1000 = {
+	potential = {
+		has_global_flag = ftm_auction_lot_1_selected
+		NOT = {
+			is_same_value = event_target:ftm_auctioned_fleet_lot_1_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_auction_lot_1_price_1000_info
+		hidden_effect = {
+			log = "[Root.GetName] want to add +1000 for LOT-1 price."
+
+		### 
+
+			set_variable = {
+				which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+				value = 0
+			}
+			#1
+			while = {
+				count = 99
+				if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10000 }
+					}
+					add_resource = { energy = -10000 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = 10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1000 }
+					}
+					add_resource = { energy = -1000 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = 1000
+						}			
+					}			
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 100 }
+					}
+					add_resource = { energy = -100 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = 100
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10 }
+					}
+					add_resource = { energy = -10 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = 10
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1 }
+					}
+					add_resource = { energy = -1 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = 1
+						}
+					}					
+				}
+				else = {
+					#nothing
+				}
+			}
+			#2
+			event_target:ftm_auctioned_fleet_lot_1_seller = { 
+				set_variable = {
+					which = ftm_buyer_auctioned_fleet_lot_1_energy_current_count
+					value = ftm_buyer_auctioned_fleet_lot_1_check_energy
+				}
+			}
+			#3
+			while = {
+				count = 99
+				if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+								value >= 10000
+							}
+						}
+					}
+					add_resource = { energy = 10000 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = -10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+								value >= 1000
+							}
+						}
+					}
+					add_resource = { energy = 1000 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = -1000
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+								value >= 100
+							}
+						}
+					}
+					add_resource = { energy = 100 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = -100
+						}
+					}					
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+								value >= 10
+							}
+						}
+					}
+					add_resource = { energy = 10 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = -10
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+								value >= 1
+							}
+						}
+					}
+					add_resource = { energy = 1 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = -1
+						}					
+					}
+				}
+				else = {
+					#nothing
+				}
+			}	
+			log = "[Root.GetName]: energy_check complete. ENERGY: [event_target:ftm_auctioned_fleet_lot_1_seller.ftm_buyer_auctioned_fleet_lot_1_energy_current_count]."
+			
+			
+			### 
+			
+			#4
+			if = {
+				limit = {
+					is_same_value = event_target:ftm_auction_lot_1_max_price
+				}
+				country_event = { id = ftm_auction.108 }
+			}
+			if = {
+				limit = {
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						check_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_energy_current_count
+							value < ftm_auctioned_fleet_lot_1_cost_plus_1000
+						}
+					}
+					NOT = {
+						is_same_value = event_target:ftm_auction_lot_1_max_price
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost_plus_1000]... FAIL. NO ENERGY."
+				country_event = { id = ftm_auction.106 }
+			}
+			if = {
+				limit = {
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						check_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_energy_current_count
+							value >= ftm_auctioned_fleet_lot_1_cost_plus_1000
+						}
+					}
+					NOT = {
+						is_same_value = event_target:ftm_auction_lot_1_max_price
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost_plus_1000]... SUCCESS. ENERGY IN."
+				
+				
+				#возврат ресурсов при перебивании цены
+				
+				event_target:ftm_auction_lot_1_max_price = {
+					save_event_target_as = ftm_auction_lot_1_last_price									
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						set_variable = {
+							which = ftm_auctioned_fleet_lot_1_returned_cost
+							value = ftm_auctioned_fleet_lot_1_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_returned_cost] energy received, LOT-1 has new owner. Old - [event_target:ftm_auction_lot_1_max_price.GetName]"
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_returned_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = 10000 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_returned_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_returned_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = 1000 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_returned_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_returned_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = 100 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_returned_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_returned_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = 10 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_returned_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_returned_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = 1 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_returned_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}				
+				}
+				event_target:ftm_auctioned_fleet_lot_1_seller = { 
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_1_cost
+						value = 1000
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_1_cost_plus_100
+						value = 1000
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_1_cost_plus_1000
+						value = 1000
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_1_cost_plus_10000
+						value = 1000
+					}
+				}				
+				save_global_event_target_as = ftm_auction_lot_1_max_price
+				
+				
+				# снятие ресурсов при установке цены				
+			
+				event_target:ftm_auction_lot_1_max_price = { 
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						set_variable = {
+							which = ftm_auctioned_fleet_lot_1_lot_cost
+							value = ftm_auctioned_fleet_lot_1_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_lot_cost] energy is LOT-1 cost"	
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_lot_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = -10000 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_lot_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_lot_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = -1000 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_lot_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_lot_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = -100 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_lot_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_lot_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = -10 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_lot_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_lot_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = -1 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_lot_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}
+				}
+				event_target:ftm_auction_lot_1_last_price = {
+					country_event = { id = ftm_auction.198 }
+				}
+			}
+		}
+	}
+}
+
+# условие отображения кнопки "+10000"
+ftm_auction_lot_1_price_10000 = {
+	potential = {
+		has_global_flag = ftm_auction_lot_1_selected
+		NOT = {
+			is_same_value = event_target:ftm_auctioned_fleet_lot_1_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_auction_lot_1_price_10000_info
+		hidden_effect = {
+			log = "[Root.GetName] want to add +10000 for LOT-1 price."
+
+		### 
+
+			set_variable = {
+				which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+				value = 0
+			}
+			#1
+			log = "[Root.GetName]: energy_check: launch stage 1"	
+			while = {
+				count = 99
+				if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10000 }
+					}
+					add_resource = { energy = -10000 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = 10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1000 }
+					}
+					add_resource = { energy = -1000 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = 1000
+						}			
+					}			
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 100 }
+					}
+					add_resource = { energy = -100 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = 100
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10 }
+					}
+					add_resource = { energy = -10 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = 10
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1 }
+					}
+					add_resource = { energy = -1 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = 1
+						}
+					}					
+				}
+				else = {
+					#nothing
+				}
+			}
+			#2
+			event_target:ftm_auctioned_fleet_lot_1_seller = { 
+				set_variable = {
+					which = ftm_buyer_auctioned_fleet_lot_1_energy_current_count
+					value = ftm_buyer_auctioned_fleet_lot_1_check_energy
+				}
+			}
+			#3
+			while = {
+				count = 99
+				if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+								value >= 10000
+							}
+						}
+					}
+					add_resource = { energy = 10000 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = -10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+								value >= 1000
+							}
+						}
+					}
+					add_resource = { energy = 1000 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = -1000
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+								value >= 100
+							}
+						}
+					}
+					add_resource = { energy = 100 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = -100
+						}
+					}					
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+								value >= 10
+							}
+						}
+					}
+					add_resource = { energy = 10 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = -10
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_1_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+								value >= 1
+							}
+						}
+					}
+					add_resource = { energy = 1 }
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_check_energy
+							value = -1
+						}					
+					}
+				}
+				else = {
+					#nothing
+				}
+			}	
+			log = "[Root.GetName]: energy_check complete. ENERGY: [event_target:ftm_auctioned_fleet_lot_1_seller.ftm_buyer_auctioned_fleet_lot_1_energy_current_count]."
+			
+			
+			###
+			
+			#4
+			if = {
+				limit = {
+					is_same_value = event_target:ftm_auction_lot_1_max_price
+				}
+				country_event = { id = ftm_auction.108 }
+			}
+			if = {
+				limit = {
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						check_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_energy_current_count
+							value < ftm_auctioned_fleet_lot_1_cost_plus_10000
+						}
+					}
+					NOT = {
+						is_same_value = event_target:ftm_auction_lot_1_max_price
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost_plus_10000]... FAIL. NO ENERGY."
+				country_event = { id = ftm_auction.107 }
+			}
+			if = {
+				limit = {
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						check_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_1_energy_current_count
+							value >= ftm_auctioned_fleet_lot_1_cost_plus_10000
+						}
+					}
+					NOT = {
+						is_same_value = event_target:ftm_auction_lot_1_max_price
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_cost_plus_10000]... SUCCESS. ENERGY IN."
+				
+				
+				#возврат ресурсов при перебивании цены
+				
+				event_target:ftm_auction_lot_1_max_price = { 
+					save_event_target_as = ftm_auction_lot_1_last_price							
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						set_variable = {
+							which = ftm_auctioned_fleet_lot_1_returned_cost
+							value = ftm_auctioned_fleet_lot_1_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_returned_cost] energy received, LOT-1 has new owner. Old - [event_target:ftm_auction_lot_1_max_price.GetName]"
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_returned_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = 10000 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_returned_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_returned_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = 1000 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_returned_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_returned_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = 100 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_returned_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_returned_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = 10 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_returned_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_returned_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = 1 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_returned_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}			
+				}
+				event_target:ftm_auctioned_fleet_lot_1_seller = { 
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_1_cost
+						value = 10000
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_1_cost_plus_100
+						value = 10000
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_1_cost_plus_1000
+						value = 10000
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_1_cost_plus_10000
+						value = 10000
+					}
+				}				
+				save_global_event_target_as = ftm_auction_lot_1_max_price
+				
+				
+				# снятие ресурсов при установке цены				
+			
+				event_target:ftm_auction_lot_1_max_price = { 
+					event_target:ftm_auctioned_fleet_lot_1_seller = { 
+						set_variable = {
+							which = ftm_auctioned_fleet_lot_1_lot_cost
+							value = ftm_auctioned_fleet_lot_1_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_auctioned_fleet_lot_1_seller.ftm_auctioned_fleet_lot_1_lot_cost] energy is LOT-1 cost"	
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_lot_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = -10000 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_lot_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_lot_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = -1000 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_lot_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_lot_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = -100 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_lot_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_lot_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = -10 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_lot_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_1_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_1_lot_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = -1 }
+							event_target:ftm_auctioned_fleet_lot_1_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_1_lot_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}	
+				}
+				event_target:ftm_auction_lot_1_last_price = {
+					country_event = { id = ftm_auction.198 }
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+################################################################
+##### лот 2
+
+# условие отображения когда лота нет
+ftm_auction_lot_2_no_info = {
+	potential = {
+		NOT = {
+			has_global_flag = ftm_auction_lot_2_selected
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = ftm_auction_lot_2_in_progress		
+				}			
+			}
+			hidden_effect = {
+				country_event = { id = ftm_auction.201 }
+				set_global_flag = ftm_auction_lot_2_in_progress
+			}
+		}
+		else = {
+			custom_tooltip = ftm_auction_lot_in_progress_info
+		}
+	}
+}
+
+# условие отображение информации (длЯ покупателей)
+ftm_auction_lot_2_info = {
+	potential = {
+		has_global_flag = ftm_auction_lot_2_selected
+		NOT = {
+			is_same_value = event_target:ftm_auctioned_fleet_lot_2_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		hidden_effect = {
+			country_event = { id = ftm_auction.210 }
+		}
+	}
+}
+
+# условие отображение информации (длЯ продавца)
+ftm_auction_lot_2_info_seller = {
+	potential = {
+		has_global_flag = ftm_auction_lot_2_selected
+		is_same_value = event_target:ftm_auctioned_fleet_lot_2_seller
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		hidden_effect = {
+			country_event = { id = ftm_auction.210 }
+		}
+	}
+}
+
+# условие отображение текста "текущаЯ цена"
+ftm_auction_lot_2_current_price = {
+	potential = {
+		has_global_flag = ftm_auction_lot_2_selected
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+	}
+}
+
+# условие отображение текста "(наведи курсор)"
+ftm_auction_lot_2_price_button = {
+	potential = {
+		has_global_flag = ftm_auction_lot_2_selected
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		if = {
+			limit = {
+				exists = event_target:ftm_auction_lot_2_max_price
+			}
+			custom_tooltip = ftm_auction_lot_2_price_button_info
+		}
+		else = {
+			custom_tooltip = ftm_auction_lot_2_price_button_info_0
+		}
+	}
+}
+
+# условие отображения кнопки "+100"
+ftm_auction_lot_2_price_100 = {
+	potential = {
+		has_global_flag = ftm_auction_lot_2_selected
+		NOT = {
+			is_same_value = event_target:ftm_auctioned_fleet_lot_2_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_auction_lot_2_price_100_info
+		hidden_effect = {
+			log = "[Root.GetName] want to add +100 for LOT-1 price."
+
+		### проверка наличиЯ энергии
+
+			set_variable = {
+				which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+				value = 0
+			}
+			#1	
+			while = {
+				count = 99
+				if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10000 }
+					}
+					add_resource = { energy = -10000 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = 10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1000 }
+					}
+					add_resource = { energy = -1000 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = 1000
+						}			
+					}			
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 100 }
+					}
+					add_resource = { energy = -100 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = 100
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10 }
+					}
+					add_resource = { energy = -10 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = 10
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1 }
+					}
+					add_resource = { energy = -1 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = 1
+						}
+					}					
+				}
+				else = {
+					#nothing
+				}
+			}
+			#2
+			event_target:ftm_auctioned_fleet_lot_2_seller = { 
+				set_variable = {
+					which = ftm_buyer_auctioned_fleet_lot_2_energy_current_count
+					value = ftm_buyer_auctioned_fleet_lot_2_check_energy
+				}
+			}
+			#3
+			while = {
+				count = 99
+				if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+								value >= 10000
+							}
+						}
+					}
+					add_resource = { energy = 10000 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = -10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+								value >= 1000
+							}
+						}
+					}
+					add_resource = { energy = 1000 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = -1000
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+								value >= 100
+							}
+						}
+					}
+					add_resource = { energy = 100 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = -100
+						}
+					}					
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+								value >= 10
+							}
+						}
+					}
+					add_resource = { energy = 10 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = -10
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+								value >= 1
+							}
+						}
+					}
+					add_resource = { energy = 1 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = -1
+						}					
+					}
+				}
+				else = {
+					#nothing
+				}
+			}	
+			log = "[Root.GetName]: energy_check complete. ENERGY: [event_target:ftm_auctioned_fleet_lot_2_seller.ftm_buyer_auctioned_fleet_lot_2_energy_current_count]."
+			
+			
+			### 
+			
+			#4
+			if = {
+				limit = {
+					is_same_value = event_target:ftm_auction_lot_2_max_price
+				}
+				country_event = { id = ftm_auction.208 }
+			}
+			if = {
+				limit = {
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						check_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_energy_current_count
+							value < ftm_auctioned_fleet_lot_2_cost_plus_100
+						}
+					}
+					NOT = {
+						is_same_value = event_target:ftm_auction_lot_2_max_price
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost_plus_100]... FAIL. NO ENERGY."
+				country_event = { id = ftm_auction.205 }
+			}
+			if = {
+				limit = {
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						check_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_energy_current_count
+							value >= ftm_auctioned_fleet_lot_2_cost_plus_100
+						}
+					}
+					NOT = {
+						is_same_value = event_target:ftm_auction_lot_2_max_price
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost_plus_100]... SUCCESS. ENERGY IN."
+				
+				
+				#возврат ресурсов при перебивании цены
+				
+				event_target:ftm_auction_lot_2_max_price = { 	
+					save_event_target_as = ftm_auction_lot_2_last_price					
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						set_variable = {
+							which = ftm_auctioned_fleet_lot_2_returned_cost
+							value = ftm_auctioned_fleet_lot_2_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_returned_cost] energy received, LOT-1 has new owner. Old - [event_target:ftm_auction_lot_2_max_price.GetName]"
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_returned_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = 10000 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_returned_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_returned_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = 1000 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_returned_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_returned_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = 100 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_returned_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_returned_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = 10 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_returned_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_returned_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = 1 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_returned_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}			
+				}
+				event_target:ftm_auctioned_fleet_lot_2_seller = { 
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_2_cost
+						value = 100
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_2_cost_plus_100
+						value = 100
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_2_cost_plus_1000
+						value = 100
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_2_cost_plus_10000
+						value = 100
+					}
+				}				
+				save_global_event_target_as = ftm_auction_lot_2_max_price
+				
+				
+				# снятие ресурсов при установке цены				
+			
+				event_target:ftm_auction_lot_2_max_price = { 
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						set_variable = {
+							which = ftm_auctioned_fleet_lot_2_lot_cost
+							value = ftm_auctioned_fleet_lot_2_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_lot_cost] energy is LOT-1 cost"	
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_lot_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = -10000 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_lot_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_lot_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = -1000 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_lot_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_lot_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = -100 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_lot_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_lot_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = -10 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_lot_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_lot_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = -1 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_lot_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}	
+				}
+				event_target:ftm_auction_lot_2_last_price = {
+					country_event = { id = ftm_auction.298 }
+				}
+			}
+		}
+	}
+}
+
+# условие отображения кнопки "+1000"
+ftm_auction_lot_2_price_1000 = {
+	potential = {
+		has_global_flag = ftm_auction_lot_2_selected
+		NOT = {
+			is_same_value = event_target:ftm_auctioned_fleet_lot_2_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_auction_lot_2_price_1000_info
+		hidden_effect = {
+			log = "[Root.GetName] want to add +1000 for LOT-1 price."
+
+		### 
+
+			set_variable = {
+				which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+				value = 0
+			}
+			#1
+			while = {
+				count = 99
+				if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10000 }
+					}
+					add_resource = { energy = -10000 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = 10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1000 }
+					}
+					add_resource = { energy = -1000 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = 1000
+						}			
+					}			
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 100 }
+					}
+					add_resource = { energy = -100 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = 100
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10 }
+					}
+					add_resource = { energy = -10 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = 10
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1 }
+					}
+					add_resource = { energy = -1 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = 1
+						}
+					}					
+				}
+				else = {
+					#nothing
+				}
+			}
+			#2
+			event_target:ftm_auctioned_fleet_lot_2_seller = { 
+				set_variable = {
+					which = ftm_buyer_auctioned_fleet_lot_2_energy_current_count
+					value = ftm_buyer_auctioned_fleet_lot_2_check_energy
+				}
+			}
+			#3
+			while = {
+				count = 99
+				if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+								value >= 10000
+							}
+						}
+					}
+					add_resource = { energy = 10000 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = -10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+								value >= 1000
+							}
+						}
+					}
+					add_resource = { energy = 1000 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = -1000
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+								value >= 100
+							}
+						}
+					}
+					add_resource = { energy = 100 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = -100
+						}
+					}					
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+								value >= 10
+							}
+						}
+					}
+					add_resource = { energy = 10 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = -10
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+								value >= 1
+							}
+						}
+					}
+					add_resource = { energy = 1 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = -1
+						}					
+					}
+				}
+				else = {
+					#nothing
+				}
+			}	
+			log = "[Root.GetName]: energy_check complete. ENERGY: [event_target:ftm_auctioned_fleet_lot_2_seller.ftm_buyer_auctioned_fleet_lot_2_energy_current_count]."
+			
+			
+			### 
+			
+			#4
+			if = {
+				limit = {
+					is_same_value = event_target:ftm_auction_lot_2_max_price
+				}
+				country_event = { id = ftm_auction.208 }
+			}
+			if = {
+				limit = {
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						check_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_energy_current_count
+							value < ftm_auctioned_fleet_lot_2_cost_plus_1000
+						}
+					}
+					NOT = {
+						is_same_value = event_target:ftm_auction_lot_2_max_price
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost_plus_1000]... FAIL. NO ENERGY."
+				country_event = { id = ftm_auction.206 }
+			}
+			if = {
+				limit = {
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						check_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_energy_current_count
+							value >= ftm_auctioned_fleet_lot_2_cost_plus_1000
+						}
+					}
+					NOT = {
+						is_same_value = event_target:ftm_auction_lot_2_max_price
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost_plus_1000]... SUCCESS. ENERGY IN."
+				
+				
+				#возврат ресурсов при перебивании цены
+				
+				event_target:ftm_auction_lot_2_max_price = { 			
+					save_event_target_as = ftm_auction_lot_2_last_price			
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						set_variable = {
+							which = ftm_auctioned_fleet_lot_2_returned_cost
+							value = ftm_auctioned_fleet_lot_2_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_returned_cost] energy received, LOT-1 has new owner. Old - [event_target:ftm_auction_lot_2_max_price.GetName]"
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_returned_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = 10000 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_returned_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_returned_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = 1000 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_returned_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_returned_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = 100 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_returned_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_returned_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = 10 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_returned_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_returned_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = 1 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_returned_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}				
+				}
+				event_target:ftm_auctioned_fleet_lot_2_seller = { 
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_2_cost
+						value = 1000
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_2_cost_plus_100
+						value = 1000
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_2_cost_plus_1000
+						value = 1000
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_2_cost_plus_10000
+						value = 1000
+					}
+				}				
+				save_global_event_target_as = ftm_auction_lot_2_max_price
+				
+				
+				# снятие ресурсов при установке цены				
+			
+				event_target:ftm_auction_lot_2_max_price = { 
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						set_variable = {
+							which = ftm_auctioned_fleet_lot_2_lot_cost
+							value = ftm_auctioned_fleet_lot_2_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_lot_cost] energy is LOT-1 cost"	
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_lot_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = -10000 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_lot_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_lot_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = -1000 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_lot_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_lot_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = -100 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_lot_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_lot_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = -10 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_lot_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_lot_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = -1 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_lot_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}
+				}
+				event_target:ftm_auction_lot_2_last_price = {
+					country_event = { id = ftm_auction.298 }
+				}
+			}
+		}
+	}
+}
+
+# условие отображения кнопки "+10000"
+ftm_auction_lot_2_price_10000 = {
+	potential = {
+		has_global_flag = ftm_auction_lot_2_selected
+		NOT = {
+			is_same_value = event_target:ftm_auctioned_fleet_lot_2_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_auction_lot_2_price_10000_info
+		hidden_effect = {
+			log = "[Root.GetName] want to add +10000 for LOT-1 price."
+
+		### 
+
+			set_variable = {
+				which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+				value = 0
+			}
+			#1
+			log = "[Root.GetName]: energy_check: launch stage 1"	
+			while = {
+				count = 99
+				if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10000 }
+					}
+					add_resource = { energy = -10000 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = 10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1000 }
+					}
+					add_resource = { energy = -1000 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = 1000
+						}			
+					}			
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 100 }
+					}
+					add_resource = { energy = -100 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = 100
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10 }
+					}
+					add_resource = { energy = -10 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = 10
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1 }
+					}
+					add_resource = { energy = -1 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = 1
+						}
+					}					
+				}
+				else = {
+					#nothing
+				}
+			}
+			#2
+			event_target:ftm_auctioned_fleet_lot_2_seller = { 
+				set_variable = {
+					which = ftm_buyer_auctioned_fleet_lot_2_energy_current_count
+					value = ftm_buyer_auctioned_fleet_lot_2_check_energy
+				}
+			}
+			#3
+			while = {
+				count = 99
+				if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+								value >= 10000
+							}
+						}
+					}
+					add_resource = { energy = 10000 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = -10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+								value >= 1000
+							}
+						}
+					}
+					add_resource = { energy = 1000 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = -1000
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+								value >= 100
+							}
+						}
+					}
+					add_resource = { energy = 100 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = -100
+						}
+					}					
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+								value >= 10
+							}
+						}
+					}
+					add_resource = { energy = 10 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = -10
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_2_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+								value >= 1
+							}
+						}
+					}
+					add_resource = { energy = 1 }
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_check_energy
+							value = -1
+						}					
+					}
+				}
+				else = {
+					#nothing
+				}
+			}	
+			log = "[Root.GetName]: energy_check complete. ENERGY: [event_target:ftm_auctioned_fleet_lot_2_seller.ftm_buyer_auctioned_fleet_lot_2_energy_current_count]."
+			
+			
+			###
+			
+			#4
+			if = {
+				limit = {
+					is_same_value = event_target:ftm_auction_lot_2_max_price
+				}
+				country_event = { id = ftm_auction.208 }
+			}
+			if = {
+				limit = {
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						check_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_energy_current_count
+							value < ftm_auctioned_fleet_lot_2_cost_plus_10000
+						}
+					}
+					NOT = {
+						is_same_value = event_target:ftm_auction_lot_2_max_price
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost_plus_10000]... FAIL. NO ENERGY."
+				country_event = { id = ftm_auction.207 }
+			}
+			if = {
+				limit = {
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						check_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_2_energy_current_count
+							value >= ftm_auctioned_fleet_lot_2_cost_plus_10000
+						}
+					}
+					NOT = {
+						is_same_value = event_target:ftm_auction_lot_2_max_price
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_cost_plus_10000]... SUCCESS. ENERGY IN."
+				
+				
+				#возврат ресурсов при перебивании цены
+				
+				event_target:ftm_auction_lot_2_max_price = { 			
+					save_event_target_as = ftm_auction_lot_2_last_price			
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						set_variable = {
+							which = ftm_auctioned_fleet_lot_2_returned_cost
+							value = ftm_auctioned_fleet_lot_2_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_returned_cost] energy received, LOT-1 has new owner. Old - [event_target:ftm_auction_lot_2_max_price.GetName]"
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_returned_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = 10000 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_returned_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_returned_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = 1000 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_returned_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_returned_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = 100 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_returned_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_returned_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = 10 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_returned_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_returned_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = 1 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_returned_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}			
+				}
+				event_target:ftm_auctioned_fleet_lot_2_seller = { 
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_2_cost
+						value = 10000
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_2_cost_plus_100
+						value = 10000
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_2_cost_plus_1000
+						value = 10000
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_2_cost_plus_10000
+						value = 10000
+					}
+				}				
+				save_global_event_target_as = ftm_auction_lot_2_max_price
+				
+				
+				# снятие ресурсов при установке цены				
+			
+				event_target:ftm_auction_lot_2_max_price = { 
+					event_target:ftm_auctioned_fleet_lot_2_seller = { 
+						set_variable = {
+							which = ftm_auctioned_fleet_lot_2_lot_cost
+							value = ftm_auctioned_fleet_lot_2_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_auctioned_fleet_lot_2_seller.ftm_auctioned_fleet_lot_2_lot_cost] energy is LOT-1 cost"	
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_lot_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = -10000 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_lot_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_lot_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = -1000 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_lot_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_lot_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = -100 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_lot_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_lot_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = -10 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_lot_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_2_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_2_lot_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = -1 }
+							event_target:ftm_auctioned_fleet_lot_2_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_2_lot_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}	
+				}
+				event_target:ftm_auction_lot_2_last_price = {
+					country_event = { id = ftm_auction.298 }
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+################################################################
+##### лот 3
+
+# условие отображения когда лота нет
+ftm_auction_lot_3_no_info = {
+	potential = {
+		NOT = {
+			has_global_flag = ftm_auction_lot_3_selected
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = ftm_auction_lot_3_in_progress		
+				}			
+			}
+			hidden_effect = {
+				country_event = { id = ftm_auction.301 }
+				set_global_flag = ftm_auction_lot_3_in_progress
+			}
+		}
+		else = {
+			custom_tooltip = ftm_auction_lot_in_progress_info
+		}
+	}
+}
+
+# условие отображение информации (длЯ покупателей)
+ftm_auction_lot_3_info = {
+	potential = {
+		has_global_flag = ftm_auction_lot_3_selected
+		NOT = {
+			is_same_value = event_target:ftm_auctioned_fleet_lot_3_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		hidden_effect = {
+			country_event = { id = ftm_auction.310 }
+		}
+	}
+}
+
+# условие отображение информации (длЯ продавца)
+ftm_auction_lot_3_info_seller = {
+	potential = {
+		has_global_flag = ftm_auction_lot_3_selected
+		is_same_value = event_target:ftm_auctioned_fleet_lot_3_seller
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		hidden_effect = {
+			country_event = { id = ftm_auction.310 }
+		}
+	}
+}
+
+# условие отображение текста "текущаЯ цена"
+ftm_auction_lot_3_current_price = {
+	potential = {
+		has_global_flag = ftm_auction_lot_3_selected
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+	}
+}
+
+# условие отображение текста "(наведи курсор)"
+ftm_auction_lot_3_price_button = {
+	potential = {
+		has_global_flag = ftm_auction_lot_3_selected
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		if = {
+			limit = {
+				exists = event_target:ftm_auction_lot_3_max_price
+			}
+			custom_tooltip = ftm_auction_lot_3_price_button_info
+		}
+		else = {
+			custom_tooltip = ftm_auction_lot_3_price_button_info_0
+		}
+	}
+}
+
+# условие отображения кнопки "+100"
+ftm_auction_lot_3_price_100 = {
+	potential = {
+		has_global_flag = ftm_auction_lot_3_selected
+		NOT = {
+			is_same_value = event_target:ftm_auctioned_fleet_lot_3_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_auction_lot_3_price_100_info
+		hidden_effect = {
+			log = "[Root.GetName] want to add +100 for LOT-1 price."
+
+		### проверка наличиЯ энергии
+
+			set_variable = {
+				which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+				value = 0
+			}
+			#1	
+			while = {
+				count = 99
+				if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10000 }
+					}
+					add_resource = { energy = -10000 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = 10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1000 }
+					}
+					add_resource = { energy = -1000 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = 1000
+						}			
+					}			
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 100 }
+					}
+					add_resource = { energy = -100 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = 100
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10 }
+					}
+					add_resource = { energy = -10 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = 10
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1 }
+					}
+					add_resource = { energy = -1 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = 1
+						}
+					}					
+				}
+				else = {
+					#nothing
+				}
+			}
+			#2
+			event_target:ftm_auctioned_fleet_lot_3_seller = { 
+				set_variable = {
+					which = ftm_buyer_auctioned_fleet_lot_3_energy_current_count
+					value = ftm_buyer_auctioned_fleet_lot_3_check_energy
+				}
+			}
+			#3
+			while = {
+				count = 99
+				if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+								value >= 10000
+							}
+						}
+					}
+					add_resource = { energy = 10000 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = -10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+								value >= 1000
+							}
+						}
+					}
+					add_resource = { energy = 1000 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = -1000
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+								value >= 100
+							}
+						}
+					}
+					add_resource = { energy = 100 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = -100
+						}
+					}					
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+								value >= 10
+							}
+						}
+					}
+					add_resource = { energy = 10 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = -10
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+								value >= 1
+							}
+						}
+					}
+					add_resource = { energy = 1 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = -1
+						}					
+					}
+				}
+				else = {
+					#nothing
+				}
+			}	
+			log = "[Root.GetName]: energy_check complete. ENERGY: [event_target:ftm_auctioned_fleet_lot_3_seller.ftm_buyer_auctioned_fleet_lot_3_energy_current_count]."
+			
+			
+			### 
+			
+			#4
+			if = {
+				limit = {
+					is_same_value = event_target:ftm_auction_lot_3_max_price
+				}
+				country_event = { id = ftm_auction.308 }
+			}
+			if = {
+				limit = {
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						check_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_energy_current_count
+							value < ftm_auctioned_fleet_lot_3_cost_plus_100
+						}
+					}
+					NOT = {
+						is_same_value = event_target:ftm_auction_lot_3_max_price
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost_plus_100]... FAIL. NO ENERGY."
+				country_event = { id = ftm_auction.305 }
+			}
+			if = {
+				limit = {
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						check_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_energy_current_count
+							value >= ftm_auctioned_fleet_lot_3_cost_plus_100
+						}
+					}
+					NOT = {
+						is_same_value = event_target:ftm_auction_lot_3_max_price
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost_plus_100]... SUCCESS. ENERGY IN."
+				
+				
+				#возврат ресурсов при перебивании цены
+				
+				event_target:ftm_auction_lot_3_max_price = { 			
+					save_event_target_as = ftm_auction_lot_3_last_price		
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						set_variable = {
+							which = ftm_auctioned_fleet_lot_3_returned_cost
+							value = ftm_auctioned_fleet_lot_3_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_returned_cost] energy received, LOT-1 has new owner. Old - [event_target:ftm_auction_lot_3_max_price.GetName]"
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_returned_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = 10000 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_returned_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_returned_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = 1000 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_returned_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_returned_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = 100 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_returned_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_returned_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = 10 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_returned_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_returned_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = 1 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_returned_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}			
+				}
+				event_target:ftm_auctioned_fleet_lot_3_seller = { 
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_3_cost
+						value = 100
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_3_cost_plus_100
+						value = 100
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_3_cost_plus_1000
+						value = 100
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_3_cost_plus_10000
+						value = 100
+					}
+				}				
+				save_global_event_target_as = ftm_auction_lot_3_max_price
+				
+				
+				# снятие ресурсов при установке цены				
+			
+				event_target:ftm_auction_lot_3_max_price = { 
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						set_variable = {
+							which = ftm_auctioned_fleet_lot_3_lot_cost
+							value = ftm_auctioned_fleet_lot_3_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_lot_cost] energy is LOT-1 cost"	
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_lot_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = -10000 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_lot_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_lot_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = -1000 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_lot_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_lot_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = -100 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_lot_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_lot_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = -10 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_lot_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_lot_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = -1 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_lot_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}	
+				}
+				event_target:ftm_auction_lot_3_last_price = {
+					country_event = { id = ftm_auction.398 }
+				}
+			}
+		}
+	}
+}
+
+# условие отображения кнопки "+1000"
+ftm_auction_lot_3_price_1000 = {
+	potential = {
+		has_global_flag = ftm_auction_lot_3_selected
+		NOT = {
+			is_same_value = event_target:ftm_auctioned_fleet_lot_3_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_auction_lot_3_price_1000_info
+		hidden_effect = {
+			log = "[Root.GetName] want to add +1000 for LOT-1 price."
+
+		### 
+
+			set_variable = {
+				which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+				value = 0
+			}
+			#1
+			while = {
+				count = 99
+				if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10000 }
+					}
+					add_resource = { energy = -10000 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = 10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1000 }
+					}
+					add_resource = { energy = -1000 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = 1000
+						}			
+					}			
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 100 }
+					}
+					add_resource = { energy = -100 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = 100
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10 }
+					}
+					add_resource = { energy = -10 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = 10
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1 }
+					}
+					add_resource = { energy = -1 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = 1
+						}
+					}					
+				}
+				else = {
+					#nothing
+				}
+			}
+			#2
+			event_target:ftm_auctioned_fleet_lot_3_seller = { 
+				set_variable = {
+					which = ftm_buyer_auctioned_fleet_lot_3_energy_current_count
+					value = ftm_buyer_auctioned_fleet_lot_3_check_energy
+				}
+			}
+			#3
+			while = {
+				count = 99
+				if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+								value >= 10000
+							}
+						}
+					}
+					add_resource = { energy = 10000 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = -10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+								value >= 1000
+							}
+						}
+					}
+					add_resource = { energy = 1000 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = -1000
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+								value >= 100
+							}
+						}
+					}
+					add_resource = { energy = 100 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = -100
+						}
+					}					
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+								value >= 10
+							}
+						}
+					}
+					add_resource = { energy = 10 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = -10
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+								value >= 1
+							}
+						}
+					}
+					add_resource = { energy = 1 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = -1
+						}					
+					}
+				}
+				else = {
+					#nothing
+				}
+			}	
+			log = "[Root.GetName]: energy_check complete. ENERGY: [event_target:ftm_auctioned_fleet_lot_3_seller.ftm_buyer_auctioned_fleet_lot_3_energy_current_count]."
+			
+			
+			### 
+			
+			#4
+			if = {
+				limit = {
+					is_same_value = event_target:ftm_auction_lot_3_max_price
+				}
+				country_event = { id = ftm_auction.308 }
+			}
+			if = {
+				limit = {
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						check_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_energy_current_count
+							value < ftm_auctioned_fleet_lot_3_cost_plus_1000
+						}
+					}
+					NOT = {
+						is_same_value = event_target:ftm_auction_lot_3_max_price
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost_plus_1000]... FAIL. NO ENERGY."
+				country_event = { id = ftm_auction.306 }
+			}
+			if = {
+				limit = {
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						check_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_energy_current_count
+							value >= ftm_auctioned_fleet_lot_3_cost_plus_1000
+						}
+					}
+					NOT = {
+						is_same_value = event_target:ftm_auction_lot_3_max_price
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost_plus_1000]... SUCCESS. ENERGY IN."
+				
+				
+				#возврат ресурсов при перебивании цены
+				
+				event_target:ftm_auction_lot_3_max_price = { 	
+					save_event_target_as = ftm_auction_lot_3_last_price				
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						set_variable = {
+							which = ftm_auctioned_fleet_lot_3_returned_cost
+							value = ftm_auctioned_fleet_lot_3_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_returned_cost] energy received, LOT-1 has new owner. Old - [event_target:ftm_auction_lot_3_max_price.GetName]"
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_returned_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = 10000 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_returned_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_returned_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = 1000 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_returned_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_returned_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = 100 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_returned_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_returned_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = 10 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_returned_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_returned_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = 1 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_returned_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}				
+				}
+				event_target:ftm_auctioned_fleet_lot_3_seller = { 
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_3_cost
+						value = 1000
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_3_cost_plus_100
+						value = 1000
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_3_cost_plus_1000
+						value = 1000
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_3_cost_plus_10000
+						value = 1000
+					}
+				}				
+				save_global_event_target_as = ftm_auction_lot_3_max_price
+				
+				
+				# снятие ресурсов при установке цены				
+			
+				event_target:ftm_auction_lot_3_max_price = { 
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						set_variable = {
+							which = ftm_auctioned_fleet_lot_3_lot_cost
+							value = ftm_auctioned_fleet_lot_3_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_lot_cost] energy is LOT-1 cost"	
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_lot_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = -10000 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_lot_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_lot_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = -1000 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_lot_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_lot_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = -100 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_lot_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_lot_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = -10 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_lot_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_lot_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = -1 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_lot_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}
+				}
+				event_target:ftm_auction_lot_3_last_price = {
+					country_event = { id = ftm_auction.398 }
+				}
+			}
+		}
+	}
+}
+
+# условие отображения кнопки "+10000"
+ftm_auction_lot_3_price_10000 = {
+	potential = {
+		has_global_flag = ftm_auction_lot_3_selected
+		NOT = {
+			is_same_value = event_target:ftm_auctioned_fleet_lot_3_seller
+		}
+	}
+	allow = {
+		always = yes
+	}
+	effect = {
+		custom_tooltip = ftm_auction_lot_3_price_10000_info
+		hidden_effect = {
+			log = "[Root.GetName] want to add +10000 for LOT-1 price."
+
+		### 
+
+			set_variable = {
+				which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+				value = 0
+			}
+			#1
+			log = "[Root.GetName]: energy_check: launch stage 1"	
+			while = {
+				count = 99
+				if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10000 }
+					}
+					add_resource = { energy = -10000 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = 10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1000 }
+					}
+					add_resource = { energy = -1000 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = 1000
+						}			
+					}			
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 100 }
+					}
+					add_resource = { energy = -100 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = 100
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 10 }
+					}
+					add_resource = { energy = -10 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = 10
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						resource_stockpile_compare = { resource = energy value >= 1 }
+					}
+					add_resource = { energy = -1 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = 1
+						}
+					}					
+				}
+				else = {
+					#nothing
+				}
+			}
+			#2
+			event_target:ftm_auctioned_fleet_lot_3_seller = { 
+				set_variable = {
+					which = ftm_buyer_auctioned_fleet_lot_3_energy_current_count
+					value = ftm_buyer_auctioned_fleet_lot_3_check_energy
+				}
+			}
+			#3
+			while = {
+				count = 99
+				if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+								value >= 10000
+							}
+						}
+					}
+					add_resource = { energy = 10000 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = -10000
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+								value >= 1000
+							}
+						}
+					}
+					add_resource = { energy = 1000 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = -1000
+						}		
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+								value >= 100
+							}
+						}
+					}
+					add_resource = { energy = 100 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = -100
+						}
+					}					
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+								value >= 10
+							}
+						}
+					}
+					add_resource = { energy = 10 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = -10
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						event_target:ftm_auctioned_fleet_lot_3_seller = { 
+							check_variable = {
+								which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+								value >= 1
+							}
+						}
+					}
+					add_resource = { energy = 1 }
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						change_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_check_energy
+							value = -1
+						}					
+					}
+				}
+				else = {
+					#nothing
+				}
+			}	
+			log = "[Root.GetName]: energy_check complete. ENERGY: [event_target:ftm_auctioned_fleet_lot_3_seller.ftm_buyer_auctioned_fleet_lot_3_energy_current_count]."
+			
+			
+			###
+			
+			#4
+			if = {
+				limit = {
+					is_same_value = event_target:ftm_auction_lot_3_max_price
+				}
+				country_event = { id = ftm_auction.308 }
+			}
+			if = {
+				limit = {
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						check_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_energy_current_count
+							value < ftm_auctioned_fleet_lot_3_cost_plus_10000
+						}
+					}
+					NOT = {
+						is_same_value = event_target:ftm_auction_lot_3_max_price
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost_plus_10000]... FAIL. NO ENERGY."
+				country_event = { id = ftm_auction.307 }
+			}
+			if = {
+				limit = {
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						check_variable = {
+							which = ftm_buyer_auctioned_fleet_lot_3_energy_current_count
+							value >= ftm_auctioned_fleet_lot_3_cost_plus_10000
+						}
+					}
+					NOT = {
+						is_same_value = event_target:ftm_auction_lot_3_max_price
+					}
+				}
+				log = "Check [Root.GetName] energy: need [event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_cost_plus_10000]... SUCCESS. ENERGY IN."
+				
+				
+				#возврат ресурсов при перебивании цены
+				
+				event_target:ftm_auction_lot_3_max_price = {
+					save_event_target_as = ftm_auction_lot_3_last_price	
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						set_variable = {
+							which = ftm_auctioned_fleet_lot_3_returned_cost
+							value = ftm_auctioned_fleet_lot_3_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_returned_cost] energy received, LOT-1 has new owner. Old - [event_target:ftm_auction_lot_3_max_price.GetName]"
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_returned_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = 10000 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_returned_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_returned_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = 1000 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_returned_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_returned_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = 100 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_returned_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_returned_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = 10 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_returned_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_returned_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = 1 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_returned_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}			
+				}
+				event_target:ftm_auctioned_fleet_lot_3_seller = { 
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_3_cost
+						value = 10000
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_3_cost_plus_100
+						value = 10000
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_3_cost_plus_1000
+						value = 10000
+					}
+					change_variable = {
+						which = ftm_auctioned_fleet_lot_3_cost_plus_10000
+						value = 10000
+					}
+				}				
+				save_global_event_target_as = ftm_auction_lot_3_max_price
+				
+				
+				# снятие ресурсов при установке цены				
+			
+				event_target:ftm_auction_lot_3_max_price = { 
+					event_target:ftm_auctioned_fleet_lot_3_seller = { 
+						set_variable = {
+							which = ftm_auctioned_fleet_lot_3_lot_cost
+							value = ftm_auctioned_fleet_lot_3_cost
+						}
+					}
+					log = "[Root.GetName]: [event_target:ftm_auctioned_fleet_lot_3_seller.ftm_auctioned_fleet_lot_3_lot_cost] energy is LOT-1 cost"	
+					while = {
+						count = 99
+						if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_lot_cost
+										value >= 10000
+									}
+								}
+							}
+							add_resource = { energy = -10000 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_lot_cost
+									value = -10000
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_lot_cost
+										value >= 1000
+									}
+								}
+							}
+							add_resource = { energy = -1000 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_lot_cost
+									value = -1000
+								}		
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_lot_cost
+										value >= 100
+									}
+								}
+							}
+							add_resource = { energy = -100 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_lot_cost
+									value = -100
+								}
+							}					
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_lot_cost
+										value >= 10
+									}
+								}
+							}
+							add_resource = { energy = -10 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_lot_cost
+									value = -10
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								event_target:ftm_auctioned_fleet_lot_3_seller = { 
+									check_variable = {
+										which = ftm_auctioned_fleet_lot_3_lot_cost
+										value >= 1
+									}
+								}
+							}
+							add_resource = { energy = -1 }
+							event_target:ftm_auctioned_fleet_lot_3_seller = { 
+								change_variable = {
+									which = ftm_auctioned_fleet_lot_3_lot_cost
+									value = -1
+								}					
+							}
+						}
+						else = {
+							#nothing
+						}
+					}	
+				}
+				event_target:ftm_auction_lot_3_last_price = {
+					country_event = { id = ftm_auction.398 }
+				}
+			}
+		}
+	}
+}

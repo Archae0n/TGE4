@@ -1,0 +1,30 @@
+
+namespace = moonbase
+
+# Habitat Complete Notification
+country_event = {
+	id = "moonbase.00"
+	title = "moonbase.00.name"
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = already_built_pd_habitat }
+		}
+		text = "moonbase.00.desc.a"
+	}
+
+	desc = {
+		trigger = {
+			has_country_flag = already_built_pd_habitat
+		}
+		text = "moonbase.00.desc.b"
+	}
+	show_sound = event_mystic_reveal
+	picture = GFX_evt_colony_settlement
+	is_triggered_only = yes
+	location = FromFromFrom.Planet
+
+	option = {
+		name = EXCELLENT
+		hidden_effect = { set_country_flag = already_built_pd_habitat }
+	}
+}

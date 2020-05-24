@@ -1,0 +1,16 @@
+
+component_set = {
+	key = "VF_POWER_CORE"
+	
+	required_component_set = yes
+	icon = "GFX_ship_part_reactor_1"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "VF_THRUSTER"
+	
+	required_component_set = yes
+	icon = "GFX_ship_part_vf_reactor_2"
+	icon_frame = 1	
+}

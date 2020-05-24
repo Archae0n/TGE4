@@ -1,0 +1,15 @@
+sge_menu = {
+	potential = {NOT = {has_country_flag = hide_sge_edict}}
+	allow = {}
+	effect = {
+		set_temp_flags = yes
+		remove_country_flag = all_male#from old version
+		remove_country_flag = all_female#from old version
+		country_event = {id = sge.1}
+	}
+	
+	ai_weight = {
+		weight = 0	
+	}	
+}
+

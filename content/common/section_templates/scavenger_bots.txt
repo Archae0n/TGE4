@@ -1,0 +1,294 @@
+ship_section_template = {
+	key = "scavenger_drone_section"
+	ship_size = vf_scavenger_drone
+	fits_on_slot = mid
+	entity = "ancient_mining_drone_hull_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "small_gun_01"
+	}
+	
+	medium_utility_slots = 2
+	large_utility_slots = 1
+	aux_utility_slots = 1
+}
+
+ship_section_template = {
+	key = "scavenger_combat_drone_section"
+	ship_size = vf_scavenger_corvette
+	fits_on_slot = mid
+	entity = "ancient_corvette_hull_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		is_side_slot = yes
+		locatorname = "medium_gun_01"
+	}	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "root"
+	}
+	
+	medium_utility_slots = 3
+	large_utility_slots = 2
+	aux_utility_slots = 2
+}
+
+ship_section_template = {
+	key = "scavenger_drone_destroyer_section"
+	ship_size = vf_scavenger_destroyer
+	fits_on_slot = mid
+	entity = "ancient_destroyer_hull_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		is_side_slot = yes
+		locatorname = "medium_gun_01"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		slot_size = medium
+		slot_type = weapon
+		is_side_slot = yes
+		locatorname = "medium_gun_02"
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "root"
+	}
+	
+	medium_utility_slots = 5
+	large_utility_slots = 3
+	aux_utility_slots = 2
+}
+
+ship_section_template = {
+	key = "scavenger_battleship_section"
+	ship_size = vf_scavenger_battleship
+	fits_on_slot = mid
+	entity = "vf_scavenger_battleship_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		is_side_slot = yes
+		locatorname = "medium_gun_01"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		slot_size = medium
+		slot_type = weapon
+		is_side_slot = yes
+		locatorname = "medium_gun_02"
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "root"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "root"
+	}
+	
+	large_utility_slots = 9
+	aux_utility_slots = 3
+}
+
+ship_section_template = {
+	key = "DRONE_HOMEBASE"
+	ship_size = homebase
+	fits_on_slot = mid
+	entity = "drone_homebase_hull_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		slot_size = large
+		slot_type = weapon
+		is_side_slot = yes
+		locatorname = "large_gun_01"
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_02"
+		slot_size = large
+		slot_type = weapon
+		is_side_slot = yes
+		locatorname = "large_gun_02"
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		position = { x = 5.1 y= 3.7 }
+		locatorname = "strike_craft_locator_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = -90
+		position = { x = -5.0 y = 1.7 }
+		locatorname = "strike_craft_locator_02"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_03"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 180
+		position = { x = 0 y = -10.7 }
+		locatorname = "strike_craft_locator_03"
+	}
+
+	large_utility_slots = 5
+}
+
+####################
+# Scavenger Core
+####################
+
+# Scavenger Bot
+ ship_section_template = {
+ 	key = "scavenger_core_key"
+ 	ship_size = vf_scavenger_core
+ 	fits_on_slot = mid
+ 	entity = "leviathan_01_scavenger_bot_section_entity"
+ 	icon = "GFX_ship_part_core_mid"
+ 	
+ 	component_slot = {
+ 		name = "TITAN_01"
+ 		slot_size = titanic
+ 		slot_type = weapon
+ 		locatorname = "xl_gun_01"
+ 	}
+# 	component_slot = {
+# 		name = "TORPEDO_01"
+# 		slot_size = torpedo
+# 		slot_type = weapon
+# 		locatorname = "bot_1_locator"
+# 	}
+# 	component_slot = {
+# 		name = "TORPEDO_02"
+# 		slot_size = torpedo
+# 		slot_type = weapon
+# 		locatorname = "bot_2_locator"
+# 	}
+# 	component_slot = {
+# 		name = "TORPEDO_03"
+# 		slot_size = torpedo
+# 		slot_type = weapon
+# 		locatorname = "bot_3_locator"
+# 	}
+ 	component_slot = {
+ 		name = "TORPEDO_04"
+ 		slot_size = torpedo
+ 		slot_type = weapon
+ 		locatorname = "root"
+ 	}
+ 	component_slot = {
+ 		name = "TORPEDO_05"
+ 		slot_size = torpedo
+ 		slot_type = weapon
+ 		locatorname = "root"
+ 	}
+ 	component_slot = {
+ 		name = "TORPEDO_06"
+ 		slot_size = torpedo
+ 		slot_type = weapon
+ 		locatorname = "root"
+ 	}
+ 	component_slot = {
+ 		name = "TORPEDO_07"
+ 		slot_size = torpedo
+ 		slot_type = weapon
+ 		locatorname = "root"
+ 	}
+ 	
+ 	large_utility_slots = 20
+ 	aux_utility_slots = 3
+ }
+
+ ship_section_template = {
+ 	key = "scavenger_core_small_bot_1_key"
+ 	ship_size = vf_scavenger_core
+ 	fits_on_slot = bot_1
+ 	entity = "leviathan_01_scavenger_bot_helper_bot_entity"
+ 	icon = "GFX_ship_part_core_mid"
+	
+ 	component_slot = {
+ 		name = "TORPEDO_01"
+ 		slot_size = torpedo
+ 		slot_type = weapon
+ 		locatorname = "turret_muzzle_01"
+ 	}
+ }
+
+ ship_section_template = {
+ 	key = "scavenger_core_small_bot_2_key"
+ 	ship_size = vf_scavenger_core
+ 	fits_on_slot = bot_2
+ 	entity = "leviathan_01_scavenger_bot_helper_bot_entity"
+ 	icon = "GFX_ship_part_core_mid"
+	
+ 	component_slot = {
+ 		name = "TORPEDO_01"
+ 		slot_size = torpedo
+ 		slot_type = weapon
+ 		locatorname = "turret_muzzle_01"
+ 	}
+ }
+
+ ship_section_template = {
+ 	key = "scavenger_core_small_bot_3_key"
+ 	ship_size = vf_scavenger_core
+ 	fits_on_slot = bot_3
+ 	entity = "leviathan_01_scavenger_bot_helper_bot_entity"
+ 	icon = "GFX_ship_part_core_mid"
+	
+ 	component_slot = {
+ 		name = "TORPEDO_01"
+ 		slot_size = torpedo
+ 		slot_type = weapon
+ 		locatorname = "turret_muzzle_01"
+ 	}
+ }

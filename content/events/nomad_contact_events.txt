@@ -1,0 +1,296 @@
+##################################################################################################################################
+#####Contact events between voidfarers and non voidfarers
+##################################################################################################################################
+namespace = vfaction
+# First Contact Empires
+country_event = {
+	id = vfaction.10
+	location = FROMFROMFROM
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_country_type = void_farer
+		exists = capital_scope
+		NOT = { has_country_flag = day_0 }
+		from = { NOT = { has_country_flag = day_0 } }
+		FROM = {
+			OR = {
+				is_country_type = default
+				is_country_type = void_farer
+				#is_country_type = nomad
+			}
+		}
+		NOT = { has_country_flag = has_communications@from }
+	}
+
+	immediate = {
+		owner = { establish_communications = FROM }
+		FROM = {
+			set_country_flag = has_communications@root.owner
+		}
+	}
+	
+	option = {
+		name = "vfaction.10.a"
+	}
+}
+
+# First Contact Space Amoeba
+country_event = {
+	id = vfaction.15
+	location = FROMFROMFROM
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_country_type = amoeba }
+		is_country_type = void_farer
+		is_ai = no
+		NOT = { has_country_flag = amoeba_encountered }
+	}
+	
+	immediate = {
+		set_country_flag = amoeba_encountered
+		owner = { country_event = { id = story.100 } }
+	}
+}
+
+# First Contact Crystals
+country_event = {
+	id = vfaction.16
+	location = FROMFROMFROM
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_country_type = crystal }
+		is_country_type = void_farer
+		is_ai = no
+		NOT = { has_country_flag = crystal_encountered }
+	}
+	
+	immediate = {
+		set_country_flag = crystal_encountered
+		owner = { country_event = { id = story.200 } }
+	}
+	
+	option = {
+		name = "action.10.a"
+	}
+}
+
+# First Contact Drones
+country_event = {
+	id = vfaction.17
+	location = FROMFROMFROM
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_country_type = drone }
+		is_country_type = void_farer
+		is_ai = no
+		NOT = { has_country_flag = drone_encountered }
+		NOT = { has_country_flag = ancient_drones }
+	}
+	
+	immediate = {
+		set_country_flag = drone_encountered
+		owner = { country_event = { id = story.300 } }
+	}
+	
+	option = {
+		name = "action.10.a"
+	}
+}
+
+# First Contact Space Clouds
+country_event = {
+	id = vfaction.18
+	location = FROMFROMFROM
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_country_type = cloud }
+		is_country_type = void_farer
+		is_ai = no
+		NOT = { has_country_flag = cloud_encountered }
+	}
+	
+	immediate = {
+		set_country_flag = cloud_encountered
+		owner = { country_event = { id = story.400 } }
+	}
+	
+	option = {
+		name = "action.10.a"
+	}
+}
+
+# First Contact Tiyanki
+country_event = {
+	id = vfaction.25
+	location = FROMFROMFROM
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_country_type = tiyanki }
+		is_country_type = void_farer
+		is_ai = no
+		NOT = { has_country_flag = tiyanki_encountered }
+	}
+	
+	immediate = {
+		set_country_flag = tiyanki_encountered
+		owner = { country_event = { id = story.500 } }
+	}
+
+	option = {
+		name = "action.10.a"
+	}
+}
+
+# First Contact Marauders
+country_event = {
+	id = vfaction.26
+	location = FROMFROMFROM
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { is_country_type = dormant_marauders }
+		is_country_type = void_farer
+		NOT = { 
+			AND = {
+				has_country_flag = marauder_encountered_1
+				from = { has_country_flag = marauder_1 }
+			}
+			AND = {
+				has_country_flag = marauder_encountered_2
+				from = { has_country_flag = marauder_2 }
+			}
+			AND = {
+				has_country_flag = marauder_encountered_3
+				from = { has_country_flag = marauder_3 }
+			}
+		}
+	}
+	
+	immediate = {
+		from = { save_event_target_as = encountered_marauder }
+		owner = { country_event = { id = marauder.1 } }
+	}
+	
+	option = {
+		name = "action.10.a"
+	}
+}
+
+# Fallen Empire establishes communications
+country_event = {
+	id = vfaction.1
+	title = OK
+	desc = OK
+	
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	trigger = {
+		OR = {
+			is_country_type = fallen_empire
+			is_country_type = awakened_fallen_empire
+		}
+		is_at_war = no
+		any_country = {
+			OR = {
+				is_country_type = void_farer
+				is_country_type = fallen_empire
+			}
+			NOT = { has_communications = root }			
+			OR = {
+				AND = {
+					root = { has_ai_personality = fallen_empire_spiritualist }
+					any_owned_planet = {
+						has_modifier = "holy_planet"
+					}				
+				}
+				# if we're both fallen empires, we know of each other
+				is_country_type = fallen_empire
+				# also contact if we border them
+				any_system_within_border = {
+					root = {
+						any_system_within_border = {
+							has_hyperlane_to = prevprev
+						}					
+					}
+				}
+				# always if we're awakened
+				root = { is_country_type = awakened_fallen_empire }
+			}
+		}
+	}
+	
+	immediate = {
+		random_country = {
+			limit = {
+				is_country_type = void_farer
+				NOT = { has_communications = root }				
+				OR = {
+					AND = {
+						root = { has_ai_personality = fallen_empire_spiritualist }
+						any_owned_planet = {
+							has_modifier = "holy_planet"
+						}						
+					}					
+					AND = {
+						root = { has_ai_personality = fallen_empire_materialist }
+						OR = {
+							has_technology = tech_sapient_ai
+							has_technology = tech_synthetic_workers
+						}
+						any_system = {
+							distance = {
+								source = root.capital_scope
+								max_distance <= 200				
+							}
+						}						
+					}	
+					# also contact if we border them
+					OR = {
+						any_system_within_border = {
+							root = {
+								any_system_within_border = {
+									has_hyperlane_to = prevprev
+								}					
+							}
+						}
+						any_owned_fleet = {
+							is_ship_class = shipclass_starbase
+							distance_to_empire = {
+								who = root
+								distance = 75
+							}									
+						}	
+					}						
+				}					
+			}
+
+			establish_communications_no_message = root	
+			root = { save_event_target_as = contact_empire }
+			country_event = { id = action.1 }				
+		}
+	}
+}

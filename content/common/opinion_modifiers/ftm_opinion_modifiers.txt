@@ -1,0 +1,46 @@
+
+# продажа колосса - ШТРАФ (всем кроме того кто получил)
+ftm_colossus_sale = {
+	opinion = {
+		base = -50
+	}
+	decay = {
+		base = 1
+	}
+	accumulative = yes
+	unique = yes
+}
+
+# бесплатная передача флота - бонус (+1 корвет, +2 эсминец, +4 крейсер, +8 линкор, +16 титан, +100 колосс)
+ftm_free_fleet = {
+	opinion = {
+		base = 1
+	}
+	accumulative = yes
+	max = 100
+	decay = {
+		base = 1
+	}
+	monthly = yes	
+	unique = yes
+}
+
+# уничтожение арендованного флота
+ftm_destroy_rent_fleet = {
+	opinion = {
+		base = -100
+	}
+	decay = {
+		base = 2
+	}
+	accumulative = yes
+	unique = yes
+}
+
+# санкции на аренду флота
+ftm_rent_sanction = {
+	opinion = {
+		base = -100
+	}
+	unique = yes
+}

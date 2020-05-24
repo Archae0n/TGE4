@@ -1,0 +1,27 @@
+spriteTypes{
+	# Reactors
+	spriteType = {
+		name = "GFX_ship_part_vf_reactor_1"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_vf_reactor_1.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_reactor_2"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_vf_reactor_2.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_reactor_3"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_vf_reactor_3.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_reactor_4"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_vf_reactor_4.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_reactor_5"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_vf_reactor_5.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_dark_matter_power_core"
+		texturefile = "gfx/interface/icons/ship_parts/ship_part_vf_dark_matter_power_core.dds"
+	}
+}

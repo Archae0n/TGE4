@@ -1,0 +1,414 @@
+
+### Minerals
+
+building_vf_astro_mining_bay = {
+	base_buildtime = 360
+	category = resource
+	icon = building_private_shipyards
+	
+	potential = {
+		is_planet_class = pc_habitat
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_miner_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = no }
+			has_technology = tech_space_mining_1
+		}
+		modifier = {
+			job_miner_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = no }
+			has_technology = tech_space_mining_2
+		}
+		modifier = {
+			job_miner_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = no }
+			has_technology = tech_space_mining_3
+		}
+		modifier = {
+			job_miner_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = no }
+			has_technology = tech_space_mining_4
+		}
+		modifier = {
+			job_miner_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = no }
+			has_technology = tech_space_mining_5
+		}
+		modifier = {
+			job_miner_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_mining_drone_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = yes }
+			has_technology = tech_space_mining_1
+		}
+		modifier = {
+			job_mining_drone_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = yes }
+			has_technology = tech_space_mining_2
+		}
+		modifier = {
+			job_mining_drone_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = yes }
+			has_technology = tech_space_mining_3
+		}
+		modifier = {
+			job_mining_drone_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = yes }
+			has_technology = tech_space_mining_4
+		}
+		modifier = {
+			job_mining_drone_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = yes }
+			has_technology = tech_space_mining_5
+		}
+		modifier = {
+			job_mining_drone_add = 1
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 200
+		}
+		produces = {
+			minerals = 5
+		}	
+		upkeep = {
+			energy = 3
+		}
+	}
+	
+	prerequisites = {
+		tech_void_farer_engineering
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_mining_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_miner_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 2
+		modifier = 
+		{
+			factor = 5
+			owner = { 
+				has_monthly_income = {
+					resource = minerals
+					value < 5
+				}
+			}
+		}
+	}
+
+	ai_resource_production = {
+		minerals = 1
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+### Energy
+
+building_vf_power_conduits = {
+	base_buildtime = 360
+	category = resource
+	icon = building_power_plant
+	
+	potential = {
+		OR  {
+			is_planet_class = pc_habitat
+		}
+	}
+	
+	prerequisites = {
+		"tech_void_farer_engineering"
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_technician_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = no }
+			has_technology = tech_space_mining_1
+		}
+		modifier = {
+			job_technician_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = no }
+			has_technology = tech_space_mining_2
+		}
+		modifier = {
+			job_technician_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = no }
+			has_technology = tech_space_mining_3
+		}
+		modifier = {
+			job_technician_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = no }
+			has_technology = tech_space_mining_4
+		}
+		modifier = {
+			job_technician_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = no }
+			has_technology = tech_space_mining_5
+		}
+		modifier = {
+			job_technician_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_technician_drone_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = yes }
+			has_technology = tech_space_mining_1
+		}
+		modifier = {
+			job_technician_drone_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = yes }
+			has_technology = tech_space_mining_2
+		}
+		modifier = {
+			job_technician_drone_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = yes }
+			has_technology = tech_space_mining_3
+		}
+		modifier = {
+			job_technician_drone_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = yes }
+			has_technology = tech_space_mining_4
+		}
+		modifier = {
+			job_technician_drone_add = 1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_void_farer = yes }
+			owner = { is_gestalt = yes }
+			has_technology = tech_space_mining_5
+		}
+		modifier = {
+			job_technician_drone_add = 1
+		}
+	}
+	
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 200
+		}
+		produces = {
+			energy = 5
+		}
+	}
+	
+	prerequisites = {
+		tech_void_farer_engineering
+	}
+	
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_mining_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_miner_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 2
+		modifier = 
+		{
+			factor = 5
+			owner = { 
+				has_monthly_income = {
+					resource = minerals
+					value < 5
+				}
+			}
+		}
+	}
+
+	ai_resource_production = {
+		minerals = 1
+		trigger = {
+			always = yes
+		}
+	}
+}

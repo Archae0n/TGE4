@@ -1,0 +1,5 @@
+designed_habitation = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_default.dds"
+	icon_frame = 1
+	planet_max_buildings_add = 15
+}

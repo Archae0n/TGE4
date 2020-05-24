@@ -1,0 +1,374 @@
+@corvette_scale = 6.5
+@destroyer_scale = 7.5
+@cruiser_scale = 10.5
+@battleship_scale = 16.0
+
+entity = {
+	name = "vf_marauder_corvette_entity"
+	locator = { name = "part1"			position = {  0 0 0	} }
+	game_data = {
+		size = 8
+	}
+}
+
+entity = {
+	name = "vf_marauder_corvette_M1S1_entity"
+	pdxmesh = "pirate_01_corvette_M1S1_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0 node = "engine_small_01" particle = "pirate_01_1_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_small_02" particle = "pirate_01_1_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "moving" state_time = 5
+		event = { time = 0 node = "engine_small_01" particle = "pirate_01_1_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_small_02" particle = "pirate_01_1_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+	
+	}
+	state = { name = "death" state_time = 5 }
+	scale = 1.0
+	
+}
+
+entity = {
+	name = "vf_marauder_corvette_S3_entity"
+	pdxmesh = "pirate_01_corvette_S3_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0 node = "engine_small_01" particle = "pirate_01_1_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_small_02" particle = "pirate_01_1_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "space_pirate_small_ship" } }
+	}
+	state = { name = "moving" state_time = 5
+		event = { time = 0 node = "engine_small_01" particle = "pirate_01_1_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_small_02" particle = "pirate_01_1_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+	
+	}
+	state = { name = "death" state_time = 5 }
+	scale = 1.0
+	
+}
+
+entity = {
+	name = "vf_marauder_corvette_S1_entity"
+	pdxmesh = "pirate_01_corvette_S1_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0 node = "engine_small_01" particle = "pirate_01_1_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_small_02" particle = "pirate_01_1_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "moving" state_time = 5
+		event = { time = 0 node = "engine_small_01" particle = "pirate_01_1_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_small_02" particle = "pirate_01_1_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+	
+	}
+	state = { name = "death" state_time = 5 }
+	scale = 1.0
+	
+}
+
+## DESTROYER
+
+entity = {
+	name = "vf_marauder_frigate_entity"
+	locator = { name = "part1"			position = {  0 0 0	} }
+	game_data = {
+		size = 10
+	}
+}
+
+entity = {
+	name = "vf_marauder_frigate_artiliery_entity"
+	pdxmesh = "pirates_destroyer01_1l_2s_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0 node = "engine_medium_01" particle = "pirate_01_1_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "pirate_01_1_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "moving" state_time = 5
+		event = { time = 0 node = "engine_medium_01" particle = "pirate_01_1_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "pirate_01_1_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "death" state_time = 5 }
+	scale = 1.0
+	
+}
+
+entity = {
+	name = "vf_marauder_frigate_intercepter_entity"
+	pdxmesh = "pirates_destroyer01_1m_2s_1m_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		event = { time = 0 node = "engine_medium_01" particle = "pirate_01_1_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "pirate_01_1_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+	}
+	state = { name = "moving" state_time = 5
+		event = { time = 0 node = "engine_medium_01" particle = "pirate_01_1_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "pirate_01_1_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+	
+	}
+	state = { name = "death" state_time = 5 }
+	scale = 1.0
+	
+}
+
+## CRUISER
+
+entity = {
+	name = "vf_marauder_cruiser_entity"
+	locator = { name = "part1"			position = {  0 0 0	} }
+	game_data = {
+		size = 14
+	}
+}
+
+entity = {
+	name = "vf_marauder_cruiser_hull_entity"
+	pdxmesh = "pirate_01_cruiser_mesh"
+	scale = 1.0
+	
+	default_state = "idle"
+	state = { name = "idle"	 animation = "idle" animation_blend_time = 4 
+		event = { time = 0 node = "engine_medium_01" particle = "pirate_01_1_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "pirate_01_1_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "pirate_01_1_0_exhaust_idle_particle" trigger_once = yes keep_particle = yes }
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_cruiser_hum" } }
+	}
+	state = { name = "moving"	animation = "idle" animation_blend_time = 2 
+		event = { time = 0 node = "engine_medium_01" particle = "pirate_01_1_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "pirate_01_1_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "pirate_01_1_0_ship_exhaust_moving_particle" trigger_once = yes keep_particle = yes }
+		event = { trigger_once = yes sound = { soundeffect = "moving_out_cruiser" } }
+	}
+	state = { name = "death" animation = "death3" animation_blend_time = 0.0 chance = 1 looping = no
+		event = { time = 4.63 node = "ship_main" particle = "massive_ship_explosion_particle" }
+	
+		event = { time = 0.0 node = "explosion_1" particle = "ship_explosion_particle" sound = { soundeffect = "ship_explosion" } }
+		event = { time = 1.6 node = "explosion_2" particle = "ship_explosion_particle" }
+		event = { time = 2.83 node = "explosion_3" particle = "ship_explosion_particle" sound = { soundeffect = "ship_explosion" } }
+		event = { time = 3.26 node = "explosion_4" particle = "ship_explosion_particle" sound = { soundeffect = "ship_explosion_large" } }
+		event = { time = 3.9 node = "explosion_5" particle = "ship_explosion_particle" }
+		event = { time = 4.1 node = "explosion_6" particle = "ship_explosion_particle" sound = { soundeffect = "ship_destroyed" } }
+	}
+
+}
+
+### Marauder Galleon
+
+entity = {
+	name = "vf_marauder_galleon_entity"
+	locator = { name = "part1"			position = {  0 0 0	} }
+	game_data = {
+		size = 20
+	}
+}
+
+entity = {
+	name = "vf_marauder_galleon_hull_entity"
+	pdxmesh = "pirate_01_galleon_mesh"
+	scale = 1.0
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "pirate_battleship_idle" } }
+		event = { time = 0 node = "engine_medium_07" particle = "pirate_01_3_0_exhaust_idle_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_01" particle = "pirate_01_1_0_exhaust_idle_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "pirate_01_1_0_exhaust_idle_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "pirate_01_1_0_exhaust_idle_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_04" particle = "pirate_01_1_0_exhaust_idle_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_05" particle = "pirate_01_1_0_exhaust_idle_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_06" particle = "pirate_01_1_0_exhaust_idle_particle" keep_particle = yes trigger_once = yes }
+		
+		event = { time = 0 node = "engine_medium_08" particle = "pirate_01_1_0_exhaust_idle_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_09" particle = "pirate_01_1_0_exhaust_idle_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_010" particle = "pirate_01_1_0_exhaust_idle_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_011" particle = "pirate_01_1_0_exhaust_idle_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_012" particle = "pirate_01_1_0_exhaust_idle_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_013" particle = "pirate_01_1_0_exhaust_idle_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_014" particle = "pirate_01_1_0_exhaust_idle_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_015" particle = "pirate_01_1_0_exhaust_idle_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_016" particle = "pirate_01_1_0_exhaust_idle_particle" keep_particle = yes trigger_once = yes }
+	}
+	state = { name = "moving" animation = "idle"
+		event = { time = 0 node = "engine_medium_07" particle = "pirate_01_3_0_ship_exhaust_moving_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_01" particle = "pirate_01_1_0_ship_exhaust_moving_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_02" particle = "pirate_01_1_0_ship_exhaust_moving_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_03" particle = "pirate_01_1_0_ship_exhaust_moving_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_04" particle = "pirate_01_1_0_ship_exhaust_moving_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_05" particle = "pirate_01_1_0_ship_exhaust_moving_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_06" particle = "pirate_01_1_0_ship_exhaust_moving_particle" keep_particle = yes trigger_once = yes }
+		
+		event = { time = 0 node = "engine_medium_08" particle = "pirate_01_1_0_ship_exhaust_moving_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_09" particle = "pirate_01_1_0_ship_exhaust_moving_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_010" particle = "pirate_01_1_0_ship_exhaust_moving_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_011" particle = "pirate_01_1_0_ship_exhaust_moving_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_012" particle = "pirate_01_1_0_ship_exhaust_moving_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_013" particle = "pirate_01_1_0_ship_exhaust_moving_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_014" particle = "pirate_01_1_0_ship_exhaust_moving_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_015" particle = "pirate_01_1_0_ship_exhaust_moving_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "engine_medium_016" particle = "pirate_01_1_0_ship_exhaust_moving_particle" keep_particle = yes trigger_once = yes }
+	}
+	state = { name = "death" animation = "death" looping = no
+	#	start_event = { trigger_once = yes sound = { soundeffect = "pirate_battleship_idle" } }
+		event = { time = 0.0 node = "explosion1" particle = "ship_explosion_particle" keep_particle = yes sound = { soundeffect = "station_explosion_large" } }
+		event = { time = 1.6 node = "explosion2" particle = "ship_explosion_particle" keep_particle = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 2.0 node = "explosion3" particle = "ship_explosion_particle" keep_particle = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 2.6 node = "explosion4" particle = "ship_explosion_particle" keep_particle = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 3.1 node = "explosion5" particle = "ship_explosion_particle" keep_particle = yes sound = { soundeffect = "station_explosion_large" } }
+		event = { time = 3.7 node = "explosion6" particle = "ship_explosion_particle" keep_particle = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 4.0 node = "explosion7" particle = "ship_explosion_particle" keep_particle = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 4.3 node = "explosion8" particle = "ship_explosion_particle" keep_particle = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 5.6 node = "explosion9" particle = "ship_explosion_particle" keep_particle = yes sound = { soundeffect = "station_explosion_large" } }
+		event = { time = 6.0 node = "explosion10" particle = "ship_explosion_particle" keep_particle = yes sound = { soundeffect = "ship_destroyed_big_explosion" } }
+	}
+}
+
+## STATION
+
+entity = {
+	name = "pirate_01_pirate_station_entity"
+	locator = { name = "part1" 	position = { 0 0 0 } }
+	cull_radius = 1.0 
+		
+	default_state = "idle"
+	state = { name = "idle" state_time = 14
+		start_event = { trigger_once = yes sound = { soundeffect = "space_pirate_station" } }
+	}
+	state = { name = "death" state_time = 4 looping = no
+		event = { time = 3.9 particle = "large_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_large" } }
+	}
+}
+
+entity = {
+	name = "pirate_01_pirate_base_entity"
+	pdxmesh = "pirate_01_base_mesh"
+	
+	default_state = "idle"
+	state = { name = "idle" animation = "idle"
+		start_event = { trigger_once = yes sound = { soundeffect = "space_pirate_station" } }
+		event = { time = 0 node = "light_locator_01" particle = "ship_light_red_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_02" particle = "ship_light_red_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_03" particle = "ship_light_red_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_04" particle = "ship_light_red_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_05" particle = "ship_light_red_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "light_locator_06" particle = "ship_light_red_effect" keep_particle = yes trigger_once = yes }
+		
+		event = { time = 0 node = "industrial_fire_01" particle = "industry_flame_particle" keep_particle = yes trigger_once = yes }
+		event = { time = 1.0 node = "industrial_fire_02" particle = "industry_flame_particle" keep_particle = yes trigger_once = yes }
+	}
+	state = { name = "death" animation = "death" looping = no
+		event = { time = 0.2 node = "industrial_fire_02" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 0.5 node = "industrial_fire_01" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 0.8 node = "arm_1_explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 1.4 node = "arm_1_explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 1.0 node = "arm_2_explosion_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 1.8 node = "arm_2_explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 2.3 node = "arm_2_explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 3.0 node = "door_explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 1.5 node = "arm_3_explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
+		event = { time = 2.5 node = "door_explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_large" } }
+	}
+	
+	scale = 2.0
+	
+}
+
+#########################################
+#										#
+#			Marauder Starbases			#
+#										#
+#########################################
+
+entity = {
+	name = "starbase_marauder_outpost"
+	pdxmesh = "pirate_01_base_mesh"
+	scale = 1.0
+	
+	locator = { name = "slot1"				position = { 0	0  0 } }
+	
+	default_state = idle
+	state = { name = "idle"	animation = "idle" animation_speed = 0.5 
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_generic_station_idle" } } 
+	}
+	state = { name = "death" animation = "death" looping = no animation_blend_time = 10
+		#event = { time = 0.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+		#event = { time = 0.5 node = "explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+		#event = { time = 1.5 node = "explosion_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+	}
+}
+
+entity = {
+	name = "starbase_marauder_starport_entity"
+	pdxmesh = "station_generic_01_mesh"
+	scale = 1.0
+	
+	locator = { name = "slot1"				position = { 0	0  0 } }
+	
+	default_state = idle
+	state = { name = "idle"	animation = "idle" animation_speed = 0.5 
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_generic_station_idle" } } 
+	}
+	state = { name = "death" animation = "death" looping = no animation_blend_time = 10
+		#event = { time = 0.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+		#event = { time = 0.5 node = "explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+		#event = { time = 1.5 node = "explosion_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+	}
+}
+
+entity = {
+	name = "starbase_marauder_starhold_entity"
+	pdxmesh = "station_generic_01_mesh"
+	scale = 1.0
+	
+	locator = { name = "slot1"				position = { 0	0  0 } }
+	
+	default_state = idle
+	state = { name = "idle"	animation = "idle" animation_speed = 0.5 
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_generic_station_idle" } } 
+	}
+	state = { name = "death" animation = "death" looping = no animation_blend_time = 10
+		#event = { time = 0.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+		#event = { time = 0.5 node = "explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+		#event = { time = 1.5 node = "explosion_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+	}
+}
+
+entity = {
+	name = "starbase_marauder_starfortress_entity"
+	pdxmesh = "station_generic_01_mesh"
+	scale = 1.0
+	
+	locator = { name = "slot1"				position = { 0	0  0 } }
+	
+	default_state = idle
+	state = { name = "idle"	animation = "idle" animation_speed = 0.5 
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_generic_station_idle" } } 
+	}
+	state = { name = "death" animation = "death" looping = no animation_blend_time = 10
+		#event = { time = 0.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+		#event = { time = 0.5 node = "explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+		#event = { time = 1.5 node = "explosion_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+	}
+}
+
+entity = {
+	name = "starbase_marauder_citadel_entity"
+	pdxmesh = "station_generic_01_mesh"
+	scale = 1.0
+	
+	locator = { name = "slot1"				position = { 0	0  0 } }
+	
+	default_state = idle
+	state = { name = "idle"	animation = "idle" animation_speed = 0.5 
+		start_event = { trigger_once = yes sound = { soundeffect = "amb_generic_station_idle" } } 
+	}
+	state = { name = "death" animation = "death" looping = no animation_blend_time = 10
+		#event = { time = 0.0 node = "explosion_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+		#event = { time = 0.5 node = "explosion_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+		#event = { time = 1.5 node = "explosion_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
+	}
+}

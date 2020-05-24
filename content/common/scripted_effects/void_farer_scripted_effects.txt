@@ -1,0 +1,197 @@
+#	Example:
+#
+#	example_effect = {
+#		add_energy = -100
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		example_effect = yes
+#	}
+#
+
+# Debug scope printing
+print_scope_effect = {
+	log = "------------------------------"
+	log = "- Printing the current scopes (trigger) -"
+	log = "- This: [This.GetName]"
+	log = "- Root: [Root.GetName]"
+	log = "- Prev: [Prev.GetName]"
+	log = "- PrevPrev: [Prev.Prev.GetName]"
+	log = "- PrevPrevPrev: [Prev.Prev.Prev.GetName]"
+	log = "- PrevPrevPrevPrev: [Prev.Prev.Prev.Prev.GetName]"
+	log = "- From: [From.GetName]"
+	log = "- FromFrom: [From.From.GetName]"
+	log = "- FromFromFrom: [From.From.From.GetName]"
+	log = "- FromFromFromFrom: [From.From.From.From.GetName]"
+	log = "- This's Solar System: [This.GetStarName]"
+	log = "- This's Planet: [This.Planet.GetName]"
+	log = "- This's Sector: [This.Sector.GetName]"
+	log = "- Root's Solar System: [Root.GetStarName]"
+	log = "- Root's Owner's Name: [Root.Owner.GetName]"
+	log = "- Root's Owner's Capital's Name: [Root.Owner.Capital.GetName]"
+	log = "------------------------------"
+}
+
+# Checks if Reaver Shroud Entity country (global event target) exists
+# Creates the country and saves it if it does not
+create_create_reaver_shroud_country = {
+	if = {
+		limit = {
+			NOT = {
+				exists = event_target:reaver_shroud_country
+			}
+		}
+		create_country = {
+			name = "NAME_reaver_shroud"
+			type = reaver_shroud
+			flag = {
+				icon = {
+					category = "special"
+					file = "the_shroud.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "stripes.dds"
+				}
+				colors={
+					"dark_purple"dark_purple
+					"red"
+					"null"
+					"null"
+				}
+			}
+		}
+		last_created_country = {
+			save_global_event_target_as = reaver_shroud_country
+		}
+	}
+}
+
+#######################################
+#
+# Reaver Shroud Fleets
+#
+#######################################
+
+create_shroud_admiral = {
+	create_leader = {
+		type = admiral
+		species = event_target:marauder_species
+		name = random
+		event_leader = yes
+		skill = 3
+		leader_age_min = 25
+		leader_age_max = 45
+		traits = {
+			trait = leader_trait_mercenary_warrior
+			trait = random_trait
+		}
+	}
+	last_created_leader = {
+		set_leader_flag = marauder_merc_leader
+	}
+}
+
+create_reaver_shroud_fleet_small = {
+	while = {
+		count = 16
+		create_ship = {
+			name = random
+			design = "NAME_Outrider"
+			prefix = no
+			graphical_culture = "pirate_01"
+		}
+	}
+	while = {
+		count = 8
+		create_ship = {
+			name = random
+			design = "NAME_Lancer"
+			prefix = no
+			graphical_culture = "pirate_01"
+		}
+	}
+	while = {
+		count = 6
+		create_ship = {
+			name = random
+			design = "NAME_Void_Champion"
+			prefix = no
+			graphical_culture = "pirate_01"
+		}
+	}
+}
+
+remove_xuracorp_trades = {
+	remove_modifier = enclave_mineral_trade_1_xur
+	remove_modifier = enclave_mineral_trade_2_xur
+	remove_modifier = enclave_mineral_trade_3_xur
+	remove_modifier = enclave_energy_trade_1_xur
+	remove_modifier = enclave_energy_trade_2_xur
+	remove_modifier = enclave_energy_trade_3_xur
+	remove_modifier = enclave_mineral_food_trade_1_xur
+	remove_modifier = enclave_mineral_food_trade_2_xur
+	remove_modifier = enclave_mineral_food_trade_3_xur
+	remove_modifier = enclave_energy_food_trade_1_xur
+	remove_modifier = enclave_energy_food_trade_2_xur
+	remove_modifier = enclave_energy_food_trade_3_xur
+	remove_modifier = enclave_food_minerals_trade_1_xur
+	remove_modifier = enclave_food_minerals_trade_2_xur
+	remove_modifier = enclave_food_minerals_trade_3_xur
+	remove_modifier = enclave_food_energy_trade_1_xur
+	remove_modifier = enclave_food_energy_trade_2_xur
+	remove_modifier = enclave_food_energy_trade_3_xur
+}
+
+remove_riggan_trades = {
+	remove_modifier = enclave_mineral_trade_1_rig
+	remove_modifier = enclave_mineral_trade_2_rig
+	remove_modifier = enclave_mineral_trade_3_rig
+	remove_modifier = enclave_energy_trade_1_rig
+	remove_modifier = enclave_energy_trade_2_rig
+	remove_modifier = enclave_energy_trade_3_rig
+	remove_modifier = enclave_mineral_food_trade_1_rig
+	remove_modifier = enclave_mineral_food_trade_2_rig
+	remove_modifier = enclave_mineral_food_trade_3_rig
+	remove_modifier = enclave_energy_food_trade_1_rig
+	remove_modifier = enclave_energy_food_trade_2_rig
+	remove_modifier = enclave_energy_food_trade_3_rig
+	remove_modifier = enclave_food_minerals_trade_1_rig
+	remove_modifier = enclave_food_minerals_trade_2_rig
+	remove_modifier = enclave_food_minerals_trade_3_rig
+	remove_modifier = enclave_food_energy_trade_1_rig
+	remove_modifier = enclave_food_energy_trade_2_rig
+	remove_modifier = enclave_food_energy_trade_3_rig
+}
+
+remove_muutagan_trades = {
+	remove_modifier = enclave_mineral_trade_1_mut
+	remove_modifier = enclave_mineral_trade_2_mut
+	remove_modifier = enclave_mineral_trade_3_mut
+	remove_modifier = enclave_energy_trade_1_mut
+	remove_modifier = enclave_energy_trade_2_mut
+	remove_modifier = enclave_energy_trade_3_mut
+	remove_modifier = enclave_mineral_food_trade_1_mut
+	remove_modifier = enclave_mineral_food_trade_2_mut
+	remove_modifier = enclave_mineral_food_trade_3_mut
+	remove_modifier = enclave_energy_food_trade_1_mut
+	remove_modifier = enclave_energy_food_trade_2_mut
+	remove_modifier = enclave_energy_food_trade_3_mut
+	remove_modifier = enclave_food_minerals_trade_1_mut
+	remove_modifier = enclave_food_minerals_trade_2_mut
+	remove_modifier = enclave_food_minerals_trade_3_mut
+	remove_modifier = enclave_food_energy_trade_1_mut
+	remove_modifier = enclave_food_energy_trade_2_mut
+	remove_modifier = enclave_food_energy_trade_3_mut
+}
+
+# this = solar system to isolate
+isolate_system = {
+	every_system = {
+		limit = { has_hyperlane_to = prev }
+		remove_hyperlane = { from = this to = prev }
+	}
+}

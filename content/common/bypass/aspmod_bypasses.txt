@@ -1,0 +1,60 @@
+ASP_site_beyond_earth_purity_gateway_bypass = {
+	name = ASPMOD_GATEWAY_GALACTIC
+	is_pathfind = yes
+	uses_action = no
+	requires_exploration = no
+	always_active = no
+	windup_time = 0
+	winddown_time = 0
+	ftl_multiplier = 0			# 0 means instant
+	icon_frame = 25
+	remember_instances = no 	# whether countries remember meeting a specific instance of that type, or if they just remember seeing the type in general
+	galactic_map_tooltip_header = GATEWAY_GALACTIC
+	galactic_map_tooltip_desc = GATEWAY_GALACTIC_DESC
+	connection_type = any_other
+	animation_time = 1
+	ftl_ship_effect = "gateway_ftl_ship_effect_entity"
+	ftl_bypass_effect = "gateway_ftl_bypass_effect_entity"
+
+	country_can_use = {
+		always = yes
+	}
+	on_action = "on_entering_gateway"
+}
+
+trade_gate = {
+	name = TRADE_GATE
+	is_pathfind = yes
+	uses_action = no
+	requires_exploration = no
+	always_active = yes
+	windup_time = 90
+	winddown_time = 90
+	ftl_multiplier = 1			# 0 means instant
+	icon_frame = 25
+	remember_instances = no 	# whether countries remember meeting a specific instance of that type, or if they just remember seeing the type in general
+	galactic_map_tooltip_header=WORMHOLE_GATEWAY
+	galactic_map_tooltip_desc=WORMHOLE_GATEWAY_DESC
+	connection_type = any_other
+	animation_time = 1
+	ftl_ship_effect = "wormhole_ftl_ship_effect_entity"
+	ftl_bypass_effect = "wormhole_ftl_bypass_effect_entity"
+	prerequisites = {
+		tech_wormhole_stabilization
+	}
+	on_pre_explore = {
+	
+	}
+	country_can_use = {
+		custom_tooltip = {
+			fail_text = GATEWAY_NOT_OURS
+			AND = {
+				exists = from
+				from = {
+					is_same_value = root
+				}
+			}
+		}
+	}
+	on_action = "on_entering_gateway"
+}

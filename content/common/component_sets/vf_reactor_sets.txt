@@ -1,0 +1,42 @@
+
+component_set = {
+	key = "VF_FISSION_REACTOR"
+	
+	icon = "GFX_ship_part_reactor_1"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "VF_FUSION_REACTOR"
+	
+	icon = "GFX_ship_part_vf_reactor_2"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "VF_COLD_FUSION_REACTOR"
+	
+	icon = "GFX_ship_part_vf_reactor_3"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "VF_ANTIMATTER_REACTOR"
+	
+	icon = "GFX_ship_part_vf_reactor_4"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "VF_ZERO_POINT_REACTOR"
+	
+	icon = "GFX_ship_part_vf_reactor_5"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "VF_DARK_MATTER_REACTOR"
+	
+	icon = "GFX_ship_part_vf_dark_matter_power_core"
+	icon_frame = 1
+}

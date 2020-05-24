@@ -1,0 +1,37 @@
+##################################################################################################################################
+#####Adding traits bonus to eligible nations.
+##################################################################################################################################
+namespace = nomad_megastructure
+
+# Habitat Complete Notification
+country_event = {
+	id = nomad_megastructure.1
+	title = "nomad_megastructure.1.name"
+	desc = nomad_megastructure.1.desc
+	
+	show_sound = event_mystic_reveal
+	picture = GFX_evt_colony_settlement
+	is_triggered_only = yes
+	location = FromFromFrom
+
+	option = {
+		name = EXCELLENT
+	}
+}
+
+country_event = {
+	id = nomad_megastructure.2
+	title = "nomad_megastructure.2.name"
+	desc = nomad_megastructure.2.desc
+	
+	show_sound = event_mystic_reveal
+	picture = GFX_evt_colony_settlement
+	is_triggered_only = yes
+	location = FromFromFrom
+
+	option = {
+		name = nomad_ark_ship_build
+	}
+}
+
+### create_colony

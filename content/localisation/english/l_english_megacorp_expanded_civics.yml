@@ -1,0 +1,42 @@
+﻿l_english:
+
+  trade_policy_research:0 "R&D Reinvestment"
+  trade_policy_research_name:0 "$trade_policy_research$"
+  trade_policy_research_desc:0 "Nothing is of greater value in this universe than knowledge. By reinvesting our economic surplus into further research we can stay on the cutting edge and ensure that our knowledge continues producing dividends.\n\n§EEach collected £trade_value£ §YTrade Value§! earns us £energy£ §Y0.5§!, £physics_research£ §Y0.1§!, £society_research£ §Y0.1§!, and £engineering_research£ §Y0.1§!§!"
+
+
+  civic_technical_institute:0 "Research Institute"
+  civic_technical_institute_desc:0 "Research and development is this company's core competency, providing the strategic focus for many of its enterprises."
+  civic_tooltip_technical_institute_effects:1 "§Y$job_researcher_plural$§! produce §Y1§! £unity£ Unity and Branch Offices can build £building£ §Y$building_technical_campus$§! $BRANCH_OFFICE_BUILDING$\nGrants access to the §Y$trade_policy_research$§! Trade Policy.\n$mod_pop_ethic_materialist_attraction_mult$: §G+50%§!"
+
+ building_technical_campus:0 "Technical Campus"
+ building_technical_campus_desc:0 "An educational institute sharing the latest research and ad campaigns with the populace for a modest fee. Textbooks sold separately."
+
+ civic_entertainment_empire:0 "Entertainment Empire"
+ civic_entertainment_empire_desc:0 "This company specializes in crafting experiences and narratives that the galaxy's denizens will come to crave more than food."
+ civic_tooltip_entertainment_empire_effects:1 "§Y$job_entertainer_plural$§! produce £energy£ and additional £unity£ Unity and Branch Offices can build £building£ §Y$building_media_network$§! $BRANCH_OFFICE_BUILDING$\n"
+
+ building_media_network:0 "Media Network"
+ building_media_network_desc:0 "This media network injects nonstop infotainment directly into the planet's noosphere. Increased consumer tolerance and complacency are secondary to the direct profits, but still potentially useful."
+
+ civic_consumer_goods:0 "Consumer Products Dynamo"
+ civic_consumer_goods_desc:0 "Thanks to masterfully streamlined manufacturing processes, this megacorp mass-produces consumer products with unparalleled efficiency."
+ civic_tooltip_consumer_goods_effects:1 "§Y$job_artisan_plural$§! produce §Y2§! extra £consumer_goods£ Consumer Goods and Branch Offices can build £building£ §Y$building_mega_outlet_store$§! $BRANCH_OFFICE_BUILDING$\n"
+ 
+ building_mega_outlet_store:0 "Outlet Megastore"
+ building_mega_outlet_store_desc:0 "The outlet megastore sells everything a consumer could possibly want, even if they
+ 
+ civic_spaceship_guild:0 "Spaceship Pioneers"
+ civic_spaceship_guild_desc:0 "Not content with just reaching for the stars, this company is constantly reaching for better ways to traverse the stars, always pioneering new frontiers in interstellar travel."
+ civic_tooltip_spaceship_guild_effects:1 "§Y$mod_category_voidcraft_research_speed_mult$§!, §Y$mod_category_propulsion_research_speed_mult$§!, §Y$mod_category_materials_research_speed_mult$§!, and §Y$mod_category_particles_research_speed_mult$§! increased by §G+20%§!"
+
+ civic_heavy_industry:0 "Heavy Industry Titan"
+ civic_heavy_industry_desc:0 "This megacorp's ultra-lean forging processes allow them to excel in the production of alloys for industrial applications."
+ civic_tooltip_heavy_industry_effects:1 "§Y$job_foundry_plural$§! produce §Y1§! extra £alloys£ Alloy and Branch Offices can build £building£ §Y$building_industrial_distributor$§! $BRANCH_OFFICE_BUILDING$\n"
+
+ building_industrial_distributor:0 "Industrial Distributor"
+ building_industrial_distributor_desc:0 "This massive network of warehouses and logistical chains unloads the company's surplus alloy production to purchasers in heavy industry."
+
+ civic_construction_company:0 "Construction Company"
+ civic_construction_company_desc:0 "This company is building a stronger future, one block at a time, and that's barely a metaphor. Whether domiciles or dyson spheres, they construct structures quickly and efficiently."
+ civic_tooltip_construction_company_effects:1 "§Y+20%§! build speed and §Y-15%§! build cost for §YBuildings§!, §YStarbases§!, and §YStarbase Upgrades§!.\n §Y-15%§! build cost for §YDistricts§! and §YStarbase Modules§! \n§Y+20%§! build speed for §YMegastructures§!."

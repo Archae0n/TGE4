@@ -1,0 +1,121 @@
+# This is called in initializers for all standard empires, before the empire actually exists
+
+create_start_void_farer_ark = {
+	if = {
+		limit = {
+			owner = { is_void_farer = yes }
+		}
+		create_fleet = {
+			effect = {
+				set_owner = prev.owner
+				while = {
+					count = 1
+					create_ship = {
+						name = random
+						random_existing_design = capital_ark_ship
+					}
+					set_ship_flag = capital_ark_ship
+					set_location = prev.capital_star
+				}
+			}
+		}
+	}
+}
+
+create_void_farer_ark = {
+	if = {
+		limit = {
+			owner = { is_void_farer = yes }
+		}
+		create_ship = {
+			name = random
+			design = "NAME_ark"
+			graphical_culture = owner
+		}
+	}
+}
+
+generate_start_void_farer_buildings_and_districts = {
+	if = {
+		limit = {
+			owner = { is_void_farer = yes }
+		}
+		if = {
+			limit = { owner = { is_organic_void_farer = yes } }
+			while = {
+				limit = { num_pops < 26 }
+				create_pop = {
+					species = owner_main_species
+					ethos = random
+				}
+			}
+		}
+		else_if = {
+			limit = { owner = { has_civic = civic_ancient_drones } }
+			while = {
+				limit = { num_pops < 31 }
+				create_pop = {
+					species = owner_main_species
+					ethos = random
+				}
+			}
+		}
+		if = {
+			limit {
+				owner = {
+					is_void_farer = yes
+					is_gestalt = no
+				}
+			}
+			add_district = district_hab_housing # 8 housing
+			add_district = district_hab_housing # 8 housing
+			add_district = district_hab_vf_resource_bay
+			add_district = district_hab_vf_resource_bay
+			add_district = district_hab_vf_resource_bay
+			add_district = district_hab_vf_resource_bay
+			add_building = building_hab_major_capital
+			add_district = district_hab_commercial
+			# 4 jobs
+			add_building = building_hydroponics_farm
+			add_building = building_hydroponics_farm
+			# 4 jobs
+			add_building = building_foundry_1
+			# 2 jobs
+			add_building = building_factory_1
+			# 2 jobs
+			add_building = building_research_lab_1
+		}
+		# Scavenger bots
+		if = {
+			limit = { owner = { has_civic = civic_ancient_drones } }
+			add_modifier = {
+				modifier = designed_habitation
+				days = -1
+			}
+			add_district = district_hab_housing
+			add_district = district_hab_housing
+			add_district = district_hab_housing
+			# 8 jobs
+			add_district = district_hab_vf_resource_bay
+			add_district = district_hab_vf_resource_bay
+			add_district = district_hab_vf_resource_bay
+			add_district = district_hab_vf_resource_bay
+			# 6 jobs
+			add_district = district_hab_energy
+			add_district = district_hab_energy
+			# 2 jobs
+			add_building = building_foundry_1
+			# 2 jobs
+			add_building = building_research_lab_1
+			# 2 jobs
+			add_building = building_sentinel_posts
+			# 3 jobs
+			add_building = building_hab_major_capital
+			# 6 jobs
+			add_building = building_scavenger_assembly_plant_1
+			add_building = building_maintenance_depot
+			# 1 job
+			add_building = building_machine_assembly_plant
+		}
+	}
+}

@@ -1,0 +1,198 @@
+spriteTypes = {	
+
+	### ФОН ОКНА 800х600 - РЫНОК ###
+	spriteType = { # картинка
+		name = "GFX_ftm_market_window_background"
+		texturefile = "gfx/interface/buttons/ftm/ftm_market_window_background.dds"
+	}
+	### ФОН ОКНА 800х600 - АУКЦИОН ###
+	spriteType = { # картинка
+		name = "GFX_ftm_auction_window_background"
+		texturefile = "gfx/interface/buttons/ftm/ftm_auction_window_background.dds"
+	}
+	### ФОН ОКНА 800х600 - АРЕНДА ###
+	spriteType = { # картинка
+		name = "GFX_ftm_rent_window_background"
+		texturefile = "gfx/interface/buttons/ftm/ftm_rent_window_background.dds"
+	}
+	
+	
+	
+	### Невидимая кнопка-инфо для Рынка и Аренды ###
+	spriteType = {
+		name = "GFX_ftm_market_rent_info_button"
+		texturefile = "gfx/interface/buttons/ftm/ftm_market_rent_info_button.dds"
+	}
+	### Невидимая кнопка-инфо для Аукциона ###
+	spriteType = {
+		name = "GFX_ftm_auction_info_button"
+		texturefile = "gfx/interface/buttons/ftm/ftm_auction_info_button.dds"
+	}
+	### Невидимая кнопка-инфо для цены Аукциона ###
+	spriteType = {
+		name = "GFX_ftm_auction_price_info_button"
+		texturefile = "gfx/interface/buttons/ftm/ftm_auction_price_info_button.dds"
+	}
+	
+	
+	
+	### Кнопка - красная ###
+	spriteType = {
+		name = "GFX_ftm_red_button"
+		texturefile = "gfx/interface/buttons/ftm/ftm_red_button.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 2
+		animation = {
+			animationmaskfile = "gfx/interface/buttons/ftm/ftm_button_mask.dds"
+			animationtexturefile = "gfx/interface/buttons/ftm/ftm_red_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 15.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	
+	### Кнопка - оранжевая ###
+	spriteType = {
+		name = "GFX_ftm_orange_button"
+		texturefile = "gfx/interface/buttons/ftm/ftm_orange_button.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 2
+		animation = {
+			animationmaskfile = "gfx/interface/buttons/ftm/ftm_button_mask.dds"
+			animationtexturefile = "gfx/interface/buttons/ftm/ftm_orange_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 15.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	
+	### Кнопка - желтая ###
+	spriteType = {
+		name = "GFX_ftm_yellow_button"
+		texturefile = "gfx/interface/buttons/ftm/ftm_yellow_button.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 2
+		animation = {
+			animationmaskfile = "gfx/interface/buttons/ftm/ftm_button_mask.dds"
+			animationtexturefile = "gfx/interface/buttons/ftm/ftm_yellow_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 15.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	
+	### Кнопка - зеленая ###
+	spriteType = {
+		name = "GFX_ftm_green_button"
+		texturefile = "gfx/interface/buttons/ftm/ftm_green_button.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 2
+		animation = {
+			animationmaskfile = "gfx/interface/buttons/ftm/ftm_button_mask.dds"
+			animationtexturefile = "gfx/interface/buttons/ftm/ftm_green_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 15.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	
+	### Кнопка - синяя ###
+	spriteType = {
+		name = "GFX_ftm_blue_button"
+		texturefile = "gfx/interface/buttons/ftm/ftm_blue_button.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 2
+		animation = {
+			animationmaskfile = "gfx/interface/buttons/ftm/ftm_button_mask.dds"
+			animationtexturefile = "gfx/interface/buttons/ftm/ftm_blue_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 15.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	
+	### Кнопка - фиолетовая ###
+	spriteType = {
+		name = "GFX_ftm_violet_button"
+		texturefile = "gfx/interface/buttons/ftm/ftm_violet_button.dds"
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+		noOfFrames = 2
+		animation = {
+			animationmaskfile = "gfx/interface/buttons/ftm/ftm_button_mask.dds"
+			animationtexturefile = "gfx/interface/buttons/ftm/ftm_violet_texture.dds"
+			animationrotation = 180.0
+			animationlooping = yes
+			animationtime = 15.0
+			animationdelay = 0.0
+			animationblendmode = "overlay"       #add, multiply, overlay
+			animationtype = "scrolling"      #scrolling, rotating, pulsing
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+			animationframes = { 1 2 3 }
+		}
+	}
+	
+	
+	### Кнопка настройки ###
+	spriteType = {
+		name = "GFX_ftm_button_settings"
+		texturefile = "gfx/interface/buttons/ftm/ftm_button_settings.dds"
+		noOfFrames = 3
+		effectFile = "gfx/FX/buttonstate_onlydisable.lua"
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+} # закрывающая скобка - не потеряй
+	

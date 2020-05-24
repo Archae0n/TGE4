@@ -1,0 +1,10 @@
+	NGraphics = {
+		TRAILS_ALPHA_FADE		= 1.6
+		TRAILS_MISSILE_ALPHA_FADE	= 7.8
+		TRAILS_BASE_WIDTH		= 0.8
+		TRAILS_MISSILE_BASE_WIDTH	= 1.8
+		TRAILS_LOCATOR_NAME		= ""		#changed from "exhaust" to resolve trail location issue with humanoid dreadnought (and potentially others)
+		STRIKE_CRAFT_TRAIL_FADE_RATE 	= 1.8
+		PLANET_TILT_FROM_SUN		= -0.12		#because its annoying to have the rings tilt the other way from the planet tilt
+		PLANET_RING_TILT_FROM_SUN	= -0.24		#because its annoying to have the rings tilt the other way from the planet tilt
+	}

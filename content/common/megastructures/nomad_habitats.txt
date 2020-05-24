@@ -1,0 +1,150 @@
+# see README.txt for example
+
+habitat_nomad = {
+	entity = ""
+	construction_entity = "habitat_phase_01_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	entity_offset = { x = -7 y = -7 }
+	build_time = 1800
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 750
+			influence = 150
+		}
+	}
+	construction_blocks_others = no
+	potential = {
+		OR = {
+			has_country_flag = void_farers
+			has_country_flag = void_nomad
+			has_country_flag = void_marauders
+			has_country_flag = void_reavers
+		}
+		NOT = {
+			any_owned_planet = {
+				has_planet_flag = habitat
+			}
+		}
+	}
+	
+	possible = {
+		exists = starbase
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+	}
+
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "requires_surveyed_planet"
+				is_surveyed = {			# prevent leaking habitability information
+					who = prev.from
+					status = yes
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_existing_megastructure"
+				#can_build_megastructure_on_planet = yes
+				NOR = {
+					has_planet_flag = megastructure
+					has_planet_flag = has_megastructure
+					solar_system = {
+						has_star_flag = ring_world_built
+					}
+					is_planet_class = pc_ringworld_habitable
+					is_planet_class = pc_ringworld_habitable_damaged
+					is_planet_class = pc_ringworld_tech
+					is_planet_class = pc_ringworld_tech_damaged
+					is_planet_class = pc_ringworld_seam
+					is_planet_class = pc_ringworld_seam_damaged
+					is_planet_class = pc_habitat
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_orbital_station"
+				has_orbital_station = no
+			}
+
+ 			# balance for habitats
+			custom_tooltip = {
+				fail_text = "requires_not_minor_planetary_body"
+				NOR = {
+					is_asteroid = yes
+					is_moon = yes
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_star"
+				is_star = no
+			}
+		} # use these for all non-star megastructures
+	}
+	
+	ai_weight = {
+		factor = 5
+	}
+	
+	on_build_start = {}
+	on_build_cancel = {}
+	
+	on_build_complete = {
+		spawn_planet = {
+			class = "pc_habitat"
+			location = fromfrom.planet
+			orbit_location = yes
+			orbit_angle_offset = 45
+			orbit_distance_offset = 9.899
+			size = 6
+			has_ring = no
+			
+			init_effect = {
+				set_name = "HABITAT_PLANET_NAME"
+				set_planet_entity = {
+					entity = "habitat_phase_01_entity"
+					graphical_culture = fromfrom
+				}
+				surveyed = {
+					set_surveyed = yes
+					surveyor = FROM
+				}
+				set_all_comms_surveyed = yes
+				clear_blockers = yes
+				add_modifier = {
+					modifier = designed_habitation
+					days = -1
+				}
+				if = {
+					limit = {
+						from = { has_ascension_perk = ap_master_builders }
+						NOT = { has_modifier = master_builders_habitats }
+					}
+					add_modifier = {
+						modifier = master_builders_habitats
+						days = -1
+					}
+				}
+				create_colony = {
+					owner = from
+					species = owner_main_species
+					ethos = owner
+				}
+				copy_orbital_tile = fromfrom.planet
+				set_planet_flag = megastructure
+				set_planet_flag = habitat
+			}
+		}
+		fromfrom.planet = {
+			set_planet_flag = has_megastructure
+		}
+		remove_megastructure = fromfrom
+		from = { country_event =  { id = utopia.61 } }
+	}
+}

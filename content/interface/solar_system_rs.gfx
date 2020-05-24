@@ -1,0 +1,28 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_ship_counter_5"
+		textureFile = "gfx/interface/system/icon_rs_support_cruiser.dds"
+	}	
+
+	spriteType = {
+		name = "GFX_ship_counter_6"
+		textureFile = "gfx/interface/system/icon_rs_ea_cruiser.dds"
+	}	
+
+	spriteType = {
+		name = "GFX_ship_counter_7"
+		textureFile = "gfx/interface/system/icon_rs_battlecruiser.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_counter_10"
+		textureFile = "gfx/interface/system/icon_rs_dreadnought.dds"
+	}	
+
+	spriteType = {
+		name = "GFX_ship_counter_12"
+		textureFile = "gfx/interface/system/icon_rs_heavy_dreadnought.dds"
+	}	
+
+}

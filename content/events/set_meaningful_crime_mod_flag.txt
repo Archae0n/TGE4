@@ -1,0 +1,22 @@
+namespace = meaningful_crime_update
+
+# This doesn't fire until after the first day, but that is fine so long as we don't need to bother with any configuration menus.
+# If we do, we will want to make this an on_game_start on_action event.
+country_event = {
+	id = meaningful_crime_update.10
+	hide_window = yes
+	title = OK
+	desc = OK
+
+	fire_only_once = yes
+	
+	trigger = { 
+		NOT = { has_global_flag = meaningful_crime_update_installed }
+		is_ai = no
+	}
+
+	immediate = {
+		set_global_flag = meaningful_crime_update_installed
+	}
+}
+

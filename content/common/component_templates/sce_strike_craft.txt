@@ -1,0 +1,1637 @@
+@launch_time = 0.3
+
+@cost2 = 89
+@cost3 = 92
+@cost4 = 95
+@cost5 = 98
+@cost6 = 101
+@cost_gene = 100
+
+@power1 = -20
+@power2 = -25
+@power3 = -33
+@power4 = -45
+@power5 = -58
+@power6 = -60
+@power_gene = -59
+
+# [ INTERCEPTOR VARIABLES ] #
+@interceptor_count = 9
+@interceptor_attack_range = 8
+@interceptor_rotation_speed = 0.55
+@interceptor_acceleration_speed = 0.75
+@interceptor_regen = 0.3
+@interceptor_shield_damage_bonus = 1.2
+@interceptor_armor_damage_bonus = 1.2
+@interceptor_hull_damage_bonus = 1.0
+
+# [ FIGHTER VARIABLES ] #
+@fighter_count = 10
+@fighter_attack_range = 8
+@fighter_rotation_speed = 0.5
+@fighter_acceleration_speed = 0.6
+@fighter_regen = 0.4
+@fighter_shield_damage_bonus = 1.75
+@fighter_armor_damage_bonus = 0.5
+@fighter_hull_damage_bonus = 1.0
+
+# [ GUNSHIP VARIABLES ] #
+@gunship_count = 8
+@gunship_attack_range = 10
+@gunship_rotation_speed = 0.55
+@gunship_acceleration_speed = 0.75
+@gunship_regen = 0.34
+@gunship_shield_damage_bonus = 0.5
+@gunship_armor_damage_bonus = 1.75
+@gunship_hull_damage_bonus = 1.0
+
+# [ BOMBER VARIABLES ] #
+@bomber_count = 10
+@bomber_attack_range = 15
+@bomber_rotation_speed = 0.3
+@bomber_acceleration_speed = 0.5
+@bomber_regen = 0.34
+@bomber_shield_penetration_bonus = 1.0
+@bomber_shield_damage_bonus = 1.0
+@bomber_armor_damage_bonus = 1.0
+@bomber_hull_damage_bonus = 1.0
+
+
+###########################################################################################################
+
+# [ ACENSION PATH CRAFTS ] #
+# All Acension path crafts get a boost to speed over teir 4 crafts
+# They got no boost to damage/DPS over teir 4.
+# They get a boost to a specific type of damage bonus modifier (i.e. +damage to shields, armor, or hull)
+
+# [ PSIONIC VARIABLES ] #
+# Get's a 25% boost to shield damage, as well as a +20 boost to their personal defense shields.
+# Get's a slight boost to evasion.
+@psi_interceptor_shieled_damage_bonus = 1.25
+@psi_fighter_shieled_damage_bonus = 2.0
+@psi_bomber_armor_penetration_bonus = 1.1
+@psi_bomber_hull_penetration_bonus = 1.1
+@psi_gunship_shieled_damage_bonus = 0.75
+@psi_interceptor_evasion = 0.85
+@psi_fighter_evasion = 0.8
+@psi_bomber_evasion = 0.65
+@psi_gunship_evasion = 0.6
+
+@fighter_shieled_damage_bonus = 1.0
+@bomber_shieled_damage_bonus = 1.0
+@gunship_shieled_damage_bonus = 1.0
+
+
+# [ GENE VARIABLES ] #
+# Get's a 25% boost to armor damage, as well as a +20 boost to their personal armor.
+# Get's a slightly faster regen rate.
+@gene_interceptor_armor_damage_bonus = 1.25
+@gene_fighter_armor_damage_bonus = 2.0
+@gene_bomber_armor_damage_bonus = 1.25
+@gene_gunship_armor_damage_bonus = 0.75
+@gene_interceptor_regen_rate = 0.35
+@gene_fighter_regen_rate = 0.45
+@gene_bomber_regen_rate = 0.4
+@gene_gunship_regen_rate = 0.4
+
+# [ CYBER VARIABLES ] #
+# Get's a 25% boost to hull damage, as well as a +20 boost to their personal hull.
+# Get's a +0.1 to +0.15 boost to tracking.
+# Get's a +50 boost to speed.
+@cyber_interceptor_hull_damage_bonus = 1.25
+@cyber_fighter_hull_damage_bonus = 2.0
+@cyber_bomber_hull_damage_bonus = 1.25
+@cyber_gunship_hull_damage_bonus = 0.75
+@cyber_interceptor_tracking = 0.9
+@cyber_fighter_tracking = 0.85
+@cyber_bomber_tracking = 0.7
+@cyber_gunship_tracking = 0.9
+
+
+
+#-------------
+#INTERCEPTORS:
+#-------------
+
+# THESE NOTES ON DAMAGE ARE OUTDATED AND ARE THE NOT ACTUAL DAMAGE VALUES
+# Follows same pattern of increase in damage at tech levels.
+# Tech 1 Interceptors max DPS = 10.8
+# Tech 2 Interceptors max DPS = 12.27
+# Tech 3 Interceptors max DPS = 18
+# Tech Psionic Interceptors max DPS = 18
+
+strike_craft_component_template = {
+	key = "sce_INTERCEPTOR_HANGAR_1_start"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power2
+	cost = @cost2
+		
+	count = @interceptor_count
+	regeneration_per_day = @interceptor_regen
+	launch_time = @launch_time
+	
+	damage = { min = 1 max = 3 }
+	cooldown = 2.5
+	range = @interceptor_attack_range
+	accuracy = 1.0
+	tracking = 0.7
+	
+	health = 45
+	armor = 0
+	shield = 5
+	evasion = 0.7
+	
+	speed = 619
+	rotation_speed = @interceptor_rotation_speed
+	acceleration = @interceptor_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @interceptor_shield_damage_bonus
+	armor_damage = @interceptor_armor_damage_bonus
+	hull_damage = @interceptor_hull_damage_bonus
+	
+	ship_behavior = "sce_interceptor_behavior"
+	
+	weapon_type = point_defence
+	projectile_gfx = "auto_cannons_s"
+	
+	icon = "GFX_ship_part_strike_craft_fighter_1"
+	icon_frame = 1
+	component_set = "sce_INTERCEPTOR_HANGAR_1"
+	tags = { weapon_type_strike_craft }
+	upgrades_to = "sce_INTERCEPTOR_HANGAR1"
+}
+
+strike_craft_component_template = {
+	key = "sce_INTERCEPTOR_HANGAR_1"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power2
+	cost = @cost2
+		
+	count = @interceptor_count
+	regeneration_per_day = @interceptor_regen
+	launch_time = @launch_time
+	
+	damage = { min = 1 max = 3 }
+	cooldown = 2.5
+	range = @interceptor_attack_range
+	accuracy = 1.0
+	tracking = 0.7
+	
+	health = 45
+	armor = 0
+	shield = 5
+	evasion = 0.7
+	
+	speed = 619
+	rotation_speed = @interceptor_rotation_speed
+	acceleration = @interceptor_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @interceptor_shield_damage_bonus
+	armor_damage = @interceptor_armor_damage_bonus
+	hull_damage = @interceptor_hull_damage_bonus
+	
+	ship_behavior = "sce_interceptor_behavior"
+	
+	weapon_type = point_defence
+	projectile_gfx = "auto_cannons_s"
+	
+	icon = "GFX_ship_part_strike_craft_fighter_1"
+	icon_frame = 1
+	component_set = "sce_INTERCEPTOR_HANGAR_1"
+	prerequisites = { "tech_strike_craft_1" }
+	tags = { weapon_type_strike_craft }
+	upgrades_to = "sce_INTERCEPTOR_HANGAR_2"
+}
+
+strike_craft_component_template = {
+	key = "sce_INTERCEPTOR_HANGAR_2"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power3
+	cost = @cost3
+		
+	count = @interceptor_count
+	regeneration_per_day = @interceptor_regen
+	launch_time = @launch_time
+	
+	damage = { min = 1 max = 3 }
+	cooldown = 1.6
+	range = @interceptor_attack_range
+	accuracy = 1.0
+	tracking = 0.7
+	
+	health = 60
+	armor = 0
+	shield = 5
+	evasion = 0.75
+	
+	speed = 664
+	rotation_speed = @interceptor_rotation_speed
+	acceleration = @interceptor_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @interceptor_shield_damage_bonus
+	armor_damage = @interceptor_armor_damage_bonus
+	hull_damage = @interceptor_hull_damage_bonus
+	
+	ship_behavior = "sce_interceptor_behavior"
+	
+	weapon_type = point_defence
+	projectile_gfx = "ripper_auto_cannons_s"
+	
+	icon = "GFX_ship_part_strike_craft_fighter_2"
+	icon_frame = 1
+	component_set = "sce_INTERCEPTOR_HANGAR_2"
+	prerequisites = { "tech_strike_craft_2" }
+	tags = { weapon_type_strike_craft }
+	upgrades_to = "sce_INTERCEPTOR_HANGAR_3"
+}
+
+strike_craft_component_template = {
+	key = "sce_INTERCEPTOR_HANGAR_3"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power4
+	cost = @cost4
+		
+	count = @interceptor_count
+	regeneration_per_day = @interceptor_regen
+	launch_time = @launch_time
+	
+	damage = { min = 2 max = 4 }
+	cooldown = 1.6
+	range = @interceptor_attack_range
+	accuracy = 1.0
+	tracking = 0.75
+	
+	health = 75
+	armor = 0
+	shield = 5
+	evasion = 0.80
+	
+	speed = 708
+	rotation_speed = @interceptor_rotation_speed
+	acceleration = @interceptor_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @interceptor_shield_damage_bonus
+	armor_damage = @interceptor_armor_damage_bonus
+	hull_damage = @interceptor_hull_damage_bonus
+	
+	ship_behavior = "sce_interceptor_behavior"
+	
+	weapon_type = point_defence
+	projectile_gfx = "stormfire_auto_cannons_s"
+	
+	icon = "GFX_ship_part_strike_craft_fighter_3"
+	icon_frame = 1
+	component_set = "sce_INTERCEPTOR_HANGAR_3"
+	prerequisites = { "tech_strike_craft_3" }
+	tags = { weapon_type_strike_craft }
+}
+
+strike_craft_component_template = {
+	key = "sce_INTERCEPTOR_HANGAR_5_psionic"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power6
+	cost = @cost6
+		
+	count = @interceptor_count
+	regeneration_per_day = @interceptor_regen
+	launch_time = @launch_time
+	
+	damage = { min = 2 max = 4 }
+	cooldown = 1.6
+	range = @interceptor_attack_range
+	accuracy = 1.0
+	tracking = 0.75
+	
+	health = 75
+	armor = 0
+	shield = 25
+	evasion = @psi_interceptor_evasion
+	
+	speed = 751
+	rotation_speed = @interceptor_rotation_speed
+	acceleration = @interceptor_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @psi_interceptor_shieled_damage_bonus
+	armor_damage = @interceptor_armor_damage_bonus
+	hull_damage = @interceptor_hull_damage_bonus
+	
+	ship_behavior = "sce_interceptor_behavior"
+	
+	weapon_type = point_defence
+	projectile_gfx = "stormfire_auto_cannons_s"
+	
+	icon = "GFX_ship_part_strike_craft_fighter_5_psionic"
+	icon_frame = 1
+	
+	component_set = "sce_INTERCEPTOR_HANGAR_5_psionic"
+	prerequisites = { "tech_psi_strike_craft" }
+	tags = { weapon_type_strike_craft }
+}
+
+strike_craft_component_template = {
+	key = "sce_INTERCEPTOR_HANGAR_5_gene"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power_gene
+	cost = @cost_gene
+		
+	count = @interceptor_count
+	regeneration_per_day = @gene_interceptor_regen_rate
+	launch_time = @launch_time
+	
+	damage = { min = 2 max = 4 }
+	cooldown = 1.6
+	range = @interceptor_attack_range
+	accuracy = 1.0
+	tracking = 0.75
+	
+	health = 95
+	armor = 0
+	shield = 5
+	evasion = 0.80
+	
+	speed = 751
+	rotation_speed = @interceptor_rotation_speed
+	acceleration = @interceptor_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @interceptor_shield_damage_bonus
+	armor_damage = @gene_interceptor_armor_damage_bonus
+	hull_damage = @interceptor_hull_damage_bonus
+	
+	ship_behavior = "sce_interceptor_behavior"
+	
+	weapon_type = point_defence
+	projectile_gfx = "stormfire_auto_cannons_s"
+	
+	icon = "GFX_ship_part_strike_craft_fighter_5_gene"
+	icon_frame = 1
+	
+	component_set = "sce_INTERCEPTOR_HANGAR_5_gene"
+	prerequisites = { "tech_gene_strike_craft" }
+	tags = { weapon_type_strike_craft }
+}
+
+strike_craft_component_template = {
+	key = "sce_INTERCEPTOR_HANGAR_5_cyber"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power6
+	cost = @cost6
+		
+	count = @interceptor_count
+	regeneration_per_day = @interceptor_regen
+	launch_time = @launch_time
+	
+	damage = { min = 2 max = 4 }
+	cooldown = 1.6
+	range = @interceptor_attack_range
+	accuracy = 1.0
+	tracking = @cyber_interceptor_tracking
+	
+	health = 55
+	armor = 20
+	shield = 5
+	evasion = 0.80
+	
+	speed = 796
+	rotation_speed = @interceptor_rotation_speed
+	acceleration = @interceptor_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @interceptor_shield_damage_bonus
+	armor_damage = @interceptor_armor_damage_bonus
+	hull_damage = @cyber_interceptor_hull_damage_bonus
+	
+	ship_behavior = "sce_interceptor_behavior"
+	
+	weapon_type = point_defence
+	projectile_gfx = "stormfire_auto_cannons_s"
+	
+	icon = "GFX_ship_part_strike_craft_fighter_5_cyber"
+	icon_frame = 1
+	
+	component_set = "sce_INTERCEPTOR_HANGAR_5_cyber"
+	prerequisites = { "tech_cyber_strike_craft" }
+	tags = { weapon_type_strike_craft }
+}
+
+#---------
+#FIGHTERS:
+#---------
+# THESE NOTES ON DAMAGE ARE OUTDATED AND ARE THE NOT ACTUAL DAMAGE VALUES
+# Follows same pattern of increase in damage at tech levels.
+# Tech 1 fighters max DPS = 10
+# Tech 2 fighters max DPS = 13
+# Tech 3 fighters max DPS = 19
+# Tech Psionic fighters max DPS = 19
+
+strike_craft_component_template = {
+	key = "sce_FIGHTER_HANGAR_1_start"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power2
+	cost = @cost2
+		
+	count = @fighter_count
+	regeneration_per_day = @fighter_regen
+	launch_time = @launch_time
+	
+	damage = { min = 2 max = 3 }
+	cooldown = 3.0
+	range = @fighter_attack_range
+	accuracy = 1.0
+	tracking = 0.6
+	
+	health = 35
+	armor = 5
+	shield = 5
+	evasion = 0.65
+	
+	speed = 575
+	rotation_speed = @fighter_rotation_speed
+	acceleration = @fighter_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @fighter_shield_damage_bonus
+	armor_damage = @fighter_armor_damage_bonus
+	hull_damage = @fighter_hull_damage_bonus
+	
+	ship_behavior = "sce_fighter_behavior"
+	
+	weapon_type = point_defence
+	projectile_gfx = "auto_cannons_s"
+	
+	icon = "GFX_ship_part_strike_craft_fighter2_1"
+	icon_frame = 1
+	component_set = "sce_FIGHTER_HANGAR_1"
+	tags = { weapon_type_strike_craft }
+	upgrades_to = "sce_FIGHTER_HANGAR_1"
+}
+
+strike_craft_component_template = {
+	key = "sce_FIGHTER_HANGAR_1"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power2
+	cost = @cost2
+	
+	weapon_type = point_defence
+	projectile_gfx = "auto_cannons_s"
+	
+	count = @fighter_count
+	regeneration_per_day = @fighter_regen
+	launch_time = @launch_time
+	
+	damage = { min = 2 max = 3 }
+	cooldown = 3.0
+	range = @fighter_attack_range
+	accuracy = 1.0
+	tracking = 0.6
+	
+	health = 35
+	armor = 5
+	shield = 5
+	evasion = 0.65
+	
+	speed = 575
+	rotation_speed = @fighter_rotation_speed
+	acceleration = @fighter_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @fighter_shield_damage_bonus
+	armor_damage = @fighter_armor_damage_bonus
+	hull_damage = @fighter_hull_damage_bonus
+	
+	ship_behavior = "sce_fighter_behavior"
+	
+	icon = "GFX_ship_part_strike_craft_fighter2_1"
+	icon_frame = 1
+	component_set = "sce_FIGHTER_HANGAR_1"
+	prerequisites = { "tech_strike_craft_1" }
+	tags = { weapon_type_strike_craft }
+	upgrades_to = "sce_FIGHTER_HANGAR_2"
+}
+
+strike_craft_component_template = {
+	key = "sce_FIGHTER_HANGAR_2"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power3
+	cost = @cost3
+		
+	count = @fighter_count
+	regeneration_per_day = @fighter_regen
+	launch_time = @launch_time
+	
+	damage = { min = 3 max = 4 }
+	cooldown = 2.7
+	range = @fighter_attack_range
+	accuracy = 1.0
+	tracking = 0.65
+	
+	health = 40
+	armor = 10
+	shield = 10
+	evasion = 0.7
+	
+	speed = 619
+	rotation_speed = @fighter_rotation_speed
+	acceleration = @fighter_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @fighter_shield_damage_bonus
+	armor_damage = @fighter_armor_damage_bonus
+	hull_damage = @fighter_hull_damage_bonus
+	
+	ship_behavior = "sce_fighter_behavior"
+	
+	weapon_type = point_defence
+	projectile_gfx = "ripper_auto_cannons_s"
+	
+	icon = "GFX_ship_part_strike_craft_fighter2_2"
+	icon_frame = 1
+	component_set = "sce_FIGHTER_HANGAR_2"
+	prerequisites = { "tech_strike_craft_2" }
+	tags = { weapon_type_strike_craft }
+	upgrades_to = "sce_FIGHTER_HANGAR_3"
+}
+
+strike_craft_component_template = {
+	key = "sce_FIGHTER_HANGAR_3"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power4
+	cost = @cost4
+		
+	count = @fighter_count
+	regeneration_per_day = @fighter_regen
+	launch_time = @launch_time
+	
+	damage = { min = 4 max = 5 }
+	cooldown = 2.5
+	range = @fighter_attack_range
+	accuracy = 1.0
+	tracking = 0.7
+	
+	health = 50
+	armor = 15
+	shield = 15
+	evasion = 0.75
+	
+	speed = 664
+	rotation_speed = @fighter_rotation_speed
+	acceleration = @fighter_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @fighter_shield_damage_bonus
+	armor_damage = @fighter_armor_damage_bonus
+	hull_damage = @fighter_hull_damage_bonus
+	
+	ship_behavior = "sce_fighter_behavior"
+	
+	weapon_type = point_defence
+	projectile_gfx = "stormfire_auto_cannons_s"
+	
+	icon = "GFX_ship_part_strike_craft_fighter2_3"
+	icon_frame = 1
+	component_set = "sce_FIGHTER_HANGAR_3"
+	prerequisites = { "tech_strike_craft_3" }
+	tags = { weapon_type_strike_craft }
+}
+
+strike_craft_component_template = {
+	key = "sce_FIGHTER_HANGAR_5_psionic"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power6
+	cost = @cost6
+		
+	count = @fighter_count
+	regeneration_per_day = @fighter_regen
+	launch_time = @launch_time
+	
+	damage = { min = 4 max = 5 }
+	cooldown = 2.5
+	range = @fighter_attack_range
+	accuracy = 1.0
+	tracking = 0.7
+	
+	health = 50
+	armor = 15
+	shield = 35
+	evasion = @psi_fighter_evasion
+	
+	speed = 708
+	rotation_speed = @fighter_rotation_speed
+	acceleration = @fighter_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @psi_fighter_shieled_damage_bonus
+	armor_damage = @fighter_armor_damage_bonus
+	hull_damage = @fighter_hull_damage_bonus
+	
+	ship_behavior = "sce_fighter_behavior"
+	
+	weapon_type = point_defence
+	projectile_gfx = "stormfire_auto_cannons_s"
+	
+	icon = "GFX_ship_part_strike_craft_fighter2_5_psionic"
+	icon_frame = 1
+	component_set = "sce_FIGHTER_HANGAR_5_psionic"
+	prerequisites = { "tech_psi_strike_craft" }
+	tags = { weapon_type_strike_craft }
+}
+
+strike_craft_component_template = {
+	key = "sce_FIGHTER_HANGAR_5_gene"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power_gene
+	cost = @cost_gene
+		
+	count = @fighter_count
+	regeneration_per_day = @gene_fighter_regen_rate
+	launch_time = @launch_time
+	
+	damage = { min = 4 max = 5 }
+	cooldown = 2.5
+	range = @fighter_attack_range
+	accuracy = 1.0
+	tracking = 0.7
+	
+	health = 70
+	armor = 35
+	shield = 15
+	evasion = 0.75
+	
+	speed = 708
+	rotation_speed = @fighter_rotation_speed
+	acceleration = @fighter_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @fighter_shieled_damage_bonus
+	armor_damage = @gene_fighter_armor_damage_bonus
+	hull_damage = @fighter_hull_damage_bonus
+	
+	ship_behavior = "sce_fighter_behavior"
+	
+	weapon_type = point_defence
+	projectile_gfx = "stormfire_auto_cannons_s"
+	
+	icon = "GFX_ship_part_strike_craft_fighter2_5_gene"
+	icon_frame = 1
+	component_set = "sce_FIGHTER_HANGAR_5_gene"
+	prerequisites = { "tech_gene_strike_craft" }
+	tags = { weapon_type_strike_craft }
+}
+
+strike_craft_component_template = {
+	key = "sce_FIGHTER_HANGAR_5_cyber"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power6
+	cost = @cost6
+		
+	count = @fighter_count
+	regeneration_per_day = @fighter_regen
+	launch_time = @launch_time
+	
+	damage = { min = 4 max = 5 }
+	cooldown = 2.5
+	range = @fighter_attack_range
+	accuracy = 1.0
+	tracking = @cyber_fighter_tracking
+	
+	health = 50
+	armor = 35
+	shield = 15
+	evasion = 0.75
+	
+	speed = 751
+	rotation_speed = @fighter_rotation_speed
+	acceleration = @fighter_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @fighter_shieled_damage_bonus
+	armor_damage = @fighter_armor_damage_bonus
+	hull_damage = @cyber_fighter_hull_damage_bonus
+	
+	ship_behavior = "sce_fighter_behavior"
+	
+	weapon_type = point_defence
+	projectile_gfx = "stormfire_auto_cannons_s"
+	
+	icon = "GFX_ship_part_strike_craft_fighter2_5_cyber"
+	icon_frame = 1
+	component_set = "sce_FIGHTER_HANGAR_5_cyber"
+	prerequisites = { "tech_cyber_strike_craft" }
+	tags = { weapon_type_strike_craft }
+}
+
+#--------
+#BOMBERS:
+#--------
+# THESE NOTES ON DAMAGE ARE OUTDATED AND ARE THE NOT ACTUAL DAMAGE VALUES
+# Follows same pattern of increase in damage at tech levels.
+# Tech 1 Bombers max DPS = 11
+# Tech 2 Bombers max DPS = 15
+# Tech 3 Bombers max DPS = 20
+# Tech Psionic Bombers max DPS = 20
+
+strike_craft_component_template = {
+	key = "sce_BOMBER_HANGAR_1_start"
+	size = LARGE
+	entity = "bomber_entity"
+	power = @power2
+	cost = @cost2
+		
+	count = @bomber_count
+	regeneration_per_day = @bomber_regen
+	launch_time = @launch_time
+	
+	damage = { min = 8 max = 11 }
+	cooldown = 10.0
+	range = @bomber_attack_range
+	accuracy = 0.90
+	tracking = 0.4
+	
+	health = 70
+	armor = 10
+	shield = 10
+	evasion = 0.45
+	
+	speed = 530
+	rotation_speed = @bomber_rotation_speed
+	acceleration = @bomber_acceleration_speed
+	
+	shield_penetration = 1.25
+	shield_damage = @bomber_shield_damage_bonus
+	armor_damage = 1.15
+	hull_damage = 1.15
+	
+	ship_behavior = "sce_bomber_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "small_torpedo_sce"
+	
+	icon = "GFX_ship_part_strike_craft_bomber_1"
+	icon_frame = 1
+	component_set = "sce_BOMBER_HANGAR_1"
+	tags = { weapon_type_strike_craft }
+	upgrades_to = "sce_BOMBER_HANGAR_1"
+}
+
+strike_craft_component_template = {
+	key = "sce_BOMBER_HANGAR_1"
+	size = LARGE
+	entity = "bomber_entity"
+	power = @power2
+	cost = @cost2
+		
+	count = @bomber_count
+	regeneration_per_day = @bomber_regen
+	launch_time = @launch_time
+	
+	damage = { min = 8 max = 11 }
+	cooldown = 10.0
+	range = @bomber_attack_range
+	accuracy = 0.90
+	tracking = 0.4
+	
+	health = 70
+	armor = 10
+	shield = 10
+	evasion = 0.45
+	
+	speed = 530
+	rotation_speed = @bomber_rotation_speed
+	acceleration = @bomber_acceleration_speed
+	
+	shield_penetration = @bomber_shield_penetration_bonus
+	shield_damage = @bomber_shield_damage_bonus
+	armor_damage = @bomber_armor_damage_bonus
+	hull_damage = @bomber_hull_damage_bonus
+	
+	ship_behavior = "sce_bomber_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "small_torpedo_sce"
+	
+	icon = "GFX_ship_part_strike_craft_bomber_1"
+	icon_frame = 1
+	component_set = "sce_BOMBER_HANGAR_1"
+	prerequisites = { "tech_strike_craft_1" }
+	tags = { weapon_type_strike_craft }
+	upgrades_to = "sce_BOMBER_HANGAR_2"
+}
+
+strike_craft_component_template = {
+	key = "sce_BOMBER_HANGAR_2"
+	size = LARGE
+	entity = "bomber_entity"
+	power = @power3
+	cost = @cost3
+		
+	count = @bomber_count
+	regeneration_per_day = @bomber_regen
+	launch_time = @launch_time
+
+	damage = { min = 13 max = 15}
+	cooldown = 10.0
+	range = @bomber_attack_range
+	accuracy = 0.95
+	tracking = 0.45
+	
+	health = 80
+	armor = 20
+	shield = 20
+	evasion = 0.5
+	
+	speed = 575
+	rotation_speed = @bomber_rotation_speed
+	acceleration = @bomber_acceleration_speed
+	
+	shield_penetration = @bomber_shield_penetration_bonus
+	shield_damage = @bomber_shield_damage_bonus
+	armor_damage = @bomber_armor_damage_bonus
+	hull_damage = @bomber_hull_damage_bonus
+	
+	ship_behavior = "sce_bomber_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "small_torpedo_sce"
+	
+	icon = "GFX_ship_part_strike_craft_bomber_2"
+	icon_frame = 1
+	component_set = "sce_BOMBER_HANGAR_2"
+	prerequisites = { "tech_strike_craft_2" }
+	tags = { weapon_type_strike_craft }
+	upgrades_to = "sce_BOMBER_HANGAR_3"
+}
+
+strike_craft_component_template = {
+	key = "sce_BOMBER_HANGAR_3"
+	size = LARGE
+	entity = "bomber_entity"
+	power = @power4
+	cost = @cost4
+		
+	count = @bomber_count
+	regeneration_per_day = @bomber_regen
+	launch_time = @launch_time
+	
+	damage = { min = 18 max = 20}
+	cooldown = 10.0
+	range = @bomber_attack_range
+	accuracy = 0.95
+	tracking = 0.5
+	
+	health = 90
+	armor = 30
+	shield = 30
+	evasion = 0.55
+	
+	speed = 619
+	rotation_speed = @bomber_rotation_speed
+	acceleration = @bomber_acceleration_speed
+	
+	shield_penetration = @bomber_shield_penetration_bonus
+	shield_damage = @bomber_shield_damage_bonus
+	armor_damage = @bomber_armor_damage_bonus
+	hull_damage = @bomber_hull_damage_bonus
+	
+	ship_behavior = "sce_bomber_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "small_torpedo_sce"
+	
+	icon = "GFX_ship_part_strike_craft_bomber_3"
+	icon_frame = 1
+	component_set = "sce_BOMBER_HANGAR_3"
+	prerequisites = { "tech_strike_craft_3" }
+	tags = { weapon_type_strike_craft }
+}
+
+strike_craft_component_template = {
+	key = "sce_BOMBER_HANGAR_5_psionic"
+	size = LARGE
+	entity = "bomber_entity"
+	power = @power6
+	cost = @cost6
+		
+	count = @bomber_count
+	regeneration_per_day = @bomber_regen
+	launch_time = @launch_time
+	
+	damage = { min = 18 max = 20}
+	cooldown = 10.0
+	range = @bomber_attack_range
+	accuracy = 0.95
+	tracking = 0.5
+	
+	health = 90
+	armor = 30
+	shield = 50
+	evasion = @psi_bomber_evasion
+	
+	speed = 664
+	rotation_speed = @bomber_rotation_speed
+	acceleration = @bomber_acceleration_speed
+	
+	shield_penetration = 1.0
+	shield_damage = @bomber_shield_damage_bonus
+	armor_damage = @psi_bomber_armor_penetration_bonus
+	hull_damage = @psi_bomber_hull_penetration_bonus
+	
+	ship_behavior = "sce_bomber_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "small_torpedo_sce"
+	
+	icon = "GFX_ship_part_strike_craft_bomber_5_psionic"
+	icon_frame = 1
+	component_set = "sce_BOMBER_HANGAR_5_psionic"
+	prerequisites = { "tech_psi_strike_craft" }
+	tags = { weapon_type_strike_craft }
+}
+
+strike_craft_component_template = {
+	key = "sce_BOMBER_HANGAR_5_gene"
+	size = LARGE
+	entity = "bomber_entity"
+	power = @power_gene
+	cost = @cost_gene
+		
+	count = @bomber_count
+	regeneration_per_day = @gene_bomber_regen_rate
+	launch_time = @launch_time
+	
+	damage = { min = 18 max = 20}
+	cooldown = 10.0
+	range = @bomber_attack_range
+	accuracy = 0.95
+	tracking = 0.5
+	
+	health = 110
+	armor = 30
+	shield = 30
+	evasion = 0.55
+	
+	speed = 664
+	rotation_speed = @bomber_rotation_speed
+	acceleration = @bomber_acceleration_speed
+	
+	shield_penetration = @bomber_shield_penetration_bonus
+	shield_damage = @bomber_shieled_damage_bonus
+	armor_damage = @gene_bomber_armor_damage_bonus
+	hull_damage = @bomber_hull_damage_bonus
+	
+	ship_behavior = "sce_bomber_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "small_torpedo_sce"
+	
+	icon = "GFX_ship_part_strike_craft_bomber_5_gene"
+	icon_frame = 1
+	component_set = "sce_BOMBER_HANGAR_5_gene"
+	prerequisites = { "tech_gene_strike_craft" }
+	tags = { weapon_type_strike_craft }
+}
+
+strike_craft_component_template = {
+	key = "sce_BOMBER_HANGAR_5_cyber"
+	size = LARGE
+	entity = "bomber_entity"
+	power = @power6
+	cost = @cost6
+		
+	count = @bomber_count
+	regeneration_per_day = @bomber_regen
+	launch_time = @launch_time
+	
+	damage = { min = 18 max = 20}
+	cooldown = 10.0
+	range = @bomber_attack_range
+	accuracy = 1.0
+	tracking = 0.5
+	
+	health = 90
+	armor = 50
+	shield = 30
+	evasion = 0.55
+	
+	speed = 708
+	rotation_speed = @bomber_rotation_speed
+	acceleration = @bomber_acceleration_speed
+	
+	shield_penetration = @bomber_shield_penetration_bonus
+	shield_damage = @bomber_shieled_damage_bonus
+	armor_damage = @bomber_armor_damage_bonus
+	hull_damage = @cyber_bomber_hull_damage_bonus
+	
+	ship_behavior = "sce_bomber_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "small_torpedo_sce"
+	
+	icon = "GFX_ship_part_strike_craft_bomber_5_cyber"
+	icon_frame = 1
+	component_set = "sce_BOMBER_HANGAR_5_cyber"
+	prerequisites = { "tech_cyber_strike_craft" }
+	tags = { weapon_type_strike_craft }
+}
+
+#---------
+#GUNSHIPS:
+#---------
+# THESE NOTES ON DAMAGE ARE OUTDATED AND ARE THE NOT ACTUAL DAMAGE VALUES
+# Follows same pattern of increase in damage at tech levels.
+# Tech 1 gunships max DPS = 8.5
+# Tech 2 gunships max DPS = 11
+# Tech 3 gunships max DPS = 17.14
+# Tech Psionic gunships max DPS = 17.14
+
+strike_craft_component_template = {
+	key = "sce_GUNSHIP_HANGAR_1_start"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power2
+	cost = @cost2
+		
+	count = @gunship_count
+	regeneration_per_day = @gunship_regen
+	launch_time = @launch_time
+	
+	damage = { min = 1 max = 3 }
+	cooldown = 1.9
+	range = @gunship_attack_range
+	accuracy = 0.95
+	tracking = 0.60
+	
+	health = 80
+	armor = 20
+	shield = 20
+	evasion = 0.45
+	
+	speed = 538
+	rotation_speed = @gunship_rotation_speed
+	acceleration = @gunship_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @gunship_shield_damage_bonus
+	armor_damage = @gunship_armor_damage_bonus
+	hull_damage = @gunship_hull_damage_bonus
+	
+	ship_behavior = "sce_gunship_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "flak_pd_1"
+	
+	icon = "GFX_ship_part_strike_craft_fighter3_1"
+	icon_frame = 1
+	component_set = "sce_GUNSHIP_HANGAR_1"
+	tags = { weapon_type_strike_craft }
+	upgrades_to = "sce_GUNSHIP_HANGAR_1"
+}
+
+strike_craft_component_template = {
+	key = "sce_GUNSHIP_HANGAR_1"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power2
+	cost = @cost2
+		
+	count = @gunship_count
+	regeneration_per_day = @gunship_regen
+	launch_time = @launch_time
+	
+	damage = { min = 1 max = 3 }
+	cooldown = 1.9
+	range = @gunship_attack_range
+	accuracy = 0.95
+	tracking = 0.60
+	
+	health = 80
+	armor = 20
+	shield = 20
+	evasion = 0.45
+	
+	speed = 538
+	rotation_speed = @gunship_rotation_speed
+	acceleration = @gunship_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @gunship_shield_damage_bonus
+	armor_damage = @gunship_armor_damage_bonus
+	hull_damage = @gunship_hull_damage_bonus
+	
+	ship_behavior = "sce_gunship_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "flak_pd_1"
+	
+	icon = "GFX_ship_part_strike_craft_fighter3_1"
+	icon_frame = 1
+	component_set = "sce_GUNSHIP_HANGAR_1"
+	prerequisites = { "tech_strike_craft_1" }
+	tags = { weapon_type_strike_craft }
+	upgrades_to = "sce_GUNSHIP_HANGAR_2"
+}
+
+strike_craft_component_template = {
+	key = "sce_GUNSHIP_HANGAR_2"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power3
+	cost = @cost3
+		
+	count = @gunship_count
+	regeneration_per_day = @gunship_regen
+	launch_time = @launch_time
+	
+	damage = { min = 2 max = 4 }
+	cooldown = 2.0
+	range = @gunship_attack_range
+	accuracy = 0.95
+	tracking = 0.65
+	
+	health = 90
+	armor = 30
+	shield = 30
+	evasion = 0.5
+	
+	speed = 592
+	rotation_speed = @gunship_rotation_speed
+	acceleration = @gunship_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @gunship_shield_damage_bonus
+	armor_damage = @gunship_armor_damage_bonus
+	hull_damage = @gunship_hull_damage_bonus
+	
+	ship_behavior = "sce_gunship_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "flak_pd_2"
+	
+	icon = "GFX_ship_part_strike_craft_fighter3_2"
+	icon_frame = 1
+	component_set = "sce_GUNSHIP_HANGAR_2"
+	prerequisites = { "tech_strike_craft_2" }
+	tags = { weapon_type_strike_craft }
+	upgrades_to = "sce_GUNSHIP_HANGAR_3"
+}
+
+strike_craft_component_template = {
+	key = "sce_GUNSHIP_HANGAR_3"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power4
+	cost = @cost4
+		
+	count = @gunship_count
+	regeneration_per_day = @gunship_regen
+	launch_time = @launch_time
+	
+	damage = { min = 4 max = 6 }
+	cooldown = 2.3
+	range = @gunship_attack_range
+	accuracy = 0.95
+	tracking = 0.8
+	
+	health = 100
+	armor = 40
+	shield = 40
+	evasion = 0.55
+	
+	speed = 637
+	rotation_speed = @gunship_rotation_speed
+	acceleration = @gunship_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @gunship_shield_damage_bonus
+	armor_damage = @gunship_armor_damage_bonus
+	hull_damage = @gunship_hull_damage_bonus
+	
+	ship_behavior = "sce_gunship_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "flak_pd_3"
+	
+	icon = "GFX_ship_part_strike_craft_fighter3_3"
+	icon_frame = 1
+	component_set = "sce_GUNSHIP_HANGAR_3"
+	prerequisites = { "tech_strike_craft_3" }
+	tags = { weapon_type_strike_craft }
+}
+
+strike_craft_component_template = {
+	key = "sce_GUNSHIP_HANGAR_5_psionic"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power6
+	cost = @cost6
+		
+	count = @gunship_count
+	regeneration_per_day = @gunship_regen
+	launch_time = @launch_time
+	
+	damage = { min = 4 max = 6 }
+	cooldown = 2.3
+	range = @gunship_attack_range
+	accuracy = 0.95
+	tracking = 0.8
+	
+	health = 100
+	armor = 40
+	shield = 60
+	evasion = @psi_gunship_evasion
+	
+	speed = 680
+	rotation_speed = @gunship_rotation_speed
+	acceleration = @gunship_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @psi_gunship_shieled_damage_bonus
+	armor_damage = @gunship_armor_damage_bonus
+	hull_damage = @gunship_hull_damage_bonus
+	
+	ship_behavior = "sce_gunship_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "flak_pd_3"
+	
+	icon = "GFX_ship_part_strike_craft_fighter3_5_psionic"
+	icon_frame = 1
+	component_set = "sce_GUNSHIP_HANGAR_5_psionic"
+	prerequisites = { "tech_psi_strike_craft" }
+	tags = { weapon_type_strike_craft }
+}
+
+strike_craft_component_template = {
+	key = "sce_GUNSHIP_HANGAR_5_gene"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power_gene
+	cost = @cost_gene
+		
+	count = @gunship_count
+	regeneration_per_day = @gene_gunship_regen_rate
+	launch_time = @launch_time
+	
+	damage = { min = 4 max = 6 }
+	cooldown = 2.3
+	range = @gunship_attack_range
+	accuracy = 0.95
+	tracking = 0.8
+	
+	health = 120
+	armor = 40
+	shield = 20
+	evasion = 0.55
+	
+	speed = 680
+	rotation_speed = @gunship_rotation_speed
+	acceleration = @gunship_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @gunship_shieled_damage_bonus
+	armor_damage = @gene_gunship_armor_damage_bonus
+	hull_damage = @gunship_hull_damage_bonus
+	
+	ship_behavior = "sce_gunship_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "flak_pd_3"
+	
+	icon = "GFX_ship_part_strike_craft_fighter3_5_gene"
+	icon_frame = 1
+	component_set = "sce_GUNSHIP_HANGAR_5_gene"
+	prerequisites = { "tech_gene_strike_craft" }
+	tags = { weapon_type_strike_craft }
+}
+
+strike_craft_component_template = {
+	key = "sce_GUNSHIP_HANGAR_5_cyber"
+	size = LARGE
+	entity = "fighter_entity"
+	power = @power6
+	cost = @cost6
+		
+	count = @gunship_count
+	regeneration_per_day = @gunship_regen
+	launch_time = @launch_time
+	
+	damage = { min = 4 max = 6 }
+	cooldown = 2.3
+	range = @gunship_attack_range
+	accuracy = 1.0
+	tracking = @cyber_gunship_tracking
+	
+	health = 120
+	armor = 60
+	shield = 40
+	evasion = 0.55
+	
+	speed = 734
+	rotation_speed = @gunship_rotation_speed
+	acceleration = @gunship_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @gunship_shieled_damage_bonus
+	armor_damage = @gunship_armor_damage_bonus
+	hull_damage = @cyber_gunship_hull_damage_bonus
+	
+	ship_behavior = "sce_gunship_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "flak_pd_3"
+	
+	icon = "GFX_ship_part_strike_craft_fighter3_5_cyber"
+	icon_frame = 1
+	component_set = "sce_GUNSHIP_HANGAR_5_cyber"
+	prerequisites = { "tech_cyber_strike_craft" }
+	tags = { weapon_type_strike_craft }
+}
+
+
+
+#########################################################################################
+#########################################################################################
+#########################################################################################
+#      \      /     /\      |\   |   |   |       |         /\                           #
+#		\    /     /  \     | \  |   |   |       |        /  \                          #
+#		 \  /     /____\    |  \ |   |   |       |       /____\                         #
+#		  \/     /      \   |   \|   |   |____   |____  /      \                        #
+#########################################################################################
+#########################################################################################
+#########################################################################################
+
+
+
+
+###############################
+##### AMOEBA STRIKE CRAFT #####
+###############################
+
+strike_craft_component_template = {
+	key = "AMOEBA_STRIKE_CRAFT"
+	
+	size = LARGE
+	entity = "space_amoeba_small_entity"
+	power = @power3
+	cost = @cost3
+
+	count = @bomber_count
+	regeneration_per_day = @bomber_regen
+	launch_time = @launch_time
+	
+	damage = { min = 13 max = 15}
+	cooldown = 10.0
+	range = @bomber_attack_range
+	accuracy = 0.95
+	tracking = 0.45
+	
+	health = 80
+	armor = 20
+	shield = 20
+	evasion = 0.50
+	
+	speed = 620
+	rotation_speed = @bomber_rotation_speed
+	acceleration = @bomber_acceleration_speed
+	
+	shield_penetration = @bomber_shield_penetration_bonus
+	shield_damage = @bomber_shield_damage_bonus
+	armor_damage = @bomber_armor_damage_bonus
+	hull_damage = @bomber_hull_damage_bonus
+	
+	ship_behavior = "sce_bomber_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "small_space_amoeba_weapon"
+	
+	component_set = "AMOEBA_STRIKE_CRAFT_1"
+	prerequisites = { "tech_amoeba_strike_craft_1" }
+	
+	icon = "GFX_ship_part_amoeba_strike_craft_1"
+	icon_frame = 1
+	tags = { weapon_type_strike_craft }
+	ai_tags = { weapon_role_anti_shield }
+}
+
+
+##################################
+####### DRONE STRIKE CRAFT #######
+##################################
+## AKA Drone home base fighter ##
+
+strike_craft_component_template = {
+	key = "DRONE_STRIKE_CRAFT"
+	size = LARGE
+	entity = "ancient_corvette_hull_entity"
+	cost = 0
+	power = 0
+	hidden = yes
+	
+	count = 8
+	regeneration_per_day = @fighter_regen
+	launch_time = @launch_time
+	
+	damage = { min = 6 max = 9 }
+	cooldown = 2.5
+	range = @fighter_attack_range
+	accuracy = 0.90
+	tracking = 0.60
+			
+	health = 50
+	armor = 15
+	shield = 15
+	evasion = 0.75
+	
+	speed = 550
+	rotation_speed = @fighter_rotation_speed
+	acceleration = @fighter_acceleration_speed
+	
+	
+	shield_penetration = 0
+	shield_damage = @fighter_shield_damage_bonus
+	armor_damage = @fighter_armor_damage_bonus
+	hull_damage = @fighter_hull_damage_bonus
+	
+	ship_behavior = "sce_fighter_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "gamma_laser_s"
+	
+	component_set = "DRONE_STRIKE_CRAFT"
+	icon = "GFX_ship_part_strike_craft_scout_1"
+	icon_frame = 1
+	tags = { weapon_type_strike_craft }
+}
+
+
+###################################
+####### SWARM STRIKE CRAFT ########
+###################################
+### AKA Standard Swarm Fighter ###
+
+## It has bomber ai and damage stats in vanilla
+## But In this mod it will follow the Fighter AI and
+## damage(roughly the same DPS as vanilla though),
+## because it looks more swarm like that way.
+
+strike_craft_component_template = {
+	key = "SWARM_STRIKE_CRAFT"
+	size = LARGE
+	entity = "swarm_01_fighter_entity"
+	cost = 100
+	power = -80
+
+	count = @fighter_count
+	regeneration_per_day = @fighter_regen
+	launch_time = @launch_time
+	
+	damage = { min = 3 max = 4 }
+	cooldown = 2.7
+	range = @fighter_attack_range
+	accuracy = 1.0
+	tracking = 0.65
+	
+	health = 40
+	armor = 10
+	shield = 10
+	evasion = 0.7
+	
+	speed = 688
+	rotation_speed = @fighter_rotation_speed
+	acceleration = @fighter_acceleration_speed
+	
+	shield_penetration = 0
+	shield_damage = @fighter_shield_damage_bonus
+	armor_damage = @fighter_armor_damage_bonus
+	hull_damage = @fighter_hull_damage_bonus
+	
+	ship_behavior = "sce_fighter_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "small_space_amoeba_weapon"
+	
+	prerequisites = { "tech_swarm_strike_craft_1" }
+	component_set = "SWARM_STRIKE_CRAFT_1"
+	icon = "GFX_ship_part_swarm_strike_craft_1"
+	icon_frame = 1
+	tags = { weapon_type_strike_craft }
+}
+
+
+###########################################
+####### HIVE ASTEROID STRIKE CRAFT ########
+###########################################
+######## AKA Hive asteroid fighter ########
+
+## Left his one alone mostly, except for
+## giving it SCE ship behavior.
+
+strike_craft_component_template = {
+	key = "HIVE_STRIKE_CRAFT"
+	size = LARGE
+	entity = "hive_asteroid_05_entity"
+	cost = 50
+	power = -50
+
+	count = 20
+	regeneration_per_day = 0
+	launch_time = 0.2
+	
+	damage = { min = 2 max = 4 }
+	cooldown = 4.0
+	range = 40
+	attack_range = 120
+	accuracy = 1.0
+	
+	health = 100
+	armor = 50
+	shield = 0
+	evasion = 0.40
+	
+	speed = 300
+	rotation_speed = 0.3
+	acceleration = 2.5
+	
+	shield_damage = 1.0
+	shield_penetration = 1
+	armor_penetration = 0.66
+	
+	ship_behavior = "sce_bomber_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "small_space_amoeba_weapon"
+	
+	component_set = "SWARM_STRIKE_CRAFT_1"
+	icon = "GFX_ship_part_swarm_strike_craft_1"
+	icon_frame = 1
+	tags = { weapon_type_strike_craft }
+
+	hidden = yes
+}
+
+
+###########################################################
+################ CONTINGENCY STRIKE CRAFT #################
+###########################################################
+######## AKA Critter Weapons - Contingency Weapons ########
+
+strike_craft_component_template = {
+	key = "AI_STRIKE_CRAFT"
+	size = LARGE
+	entity = "ai_01_fighter_entity"
+	power = @power5
+	cost = @cost5
+	hidden = yes
+
+	count = @bomber_count
+	regeneration_per_day = @bomber_regen
+	launch_time = @launch_time
+	
+	damage = { min = 24 max = 26 }
+	cooldown = 10.0
+	range = @bomber_attack_range
+	accuracy = 1.0
+	tracking = 0.6
+	
+	health = 90
+	armor = 30
+	shield = 30
+	evasion = 0.55
+	
+	speed = 688
+	rotation_speed = @bomber_rotation_speed
+	acceleration = @bomber_acceleration_speed
+	
+	shield_penetration = @bomber_shield_penetration_bonus
+	shield_damage = @bomber_shield_damage_bonus
+	armor_damage = @bomber_armor_damage_bonus
+	hull_damage = @bomber_hull_damage_bonus
+	
+	ship_behavior = "sce_bomber_behavior"
+	
+	weapon_type = instant
+	projectile_gfx = "scout_laser_1"
+	
+	component_set = "AI_STRIKE_CRAFT_1"
+	icon = "GFX_ship_part_strike_craft_scout_1"
+	icon_frame = 1
+	tags = { weapon_type_strike_craft }
+}

@@ -1,0 +1,375 @@
+#reloadable with 'reload stats'
+# This file is where you start when you want to configure something new, then go to sections
+
+@civilian_ships_combat_speed = 0.5
+@corvette_combat_speed = 1.75 	# assault ships
+@corvette_combat_rotation = 0.08
+@corvette_collision_radius = 2.0
+@corvette_formation_priority = 3
+
+@destroyer_combat_speed = 1.50	 # picket ships
+@destroyer_combat_rotation = 0.05
+@destroyer_collision_radius = 2.5
+@destroyer_formation_priority = 2
+
+@cruiser_combat_speed = 1.25	 # ships of the line
+@cruiser_combat_rotation = 0.035
+@cruiser_collision_radius = 3
+@cruiser_formation_priority = 1
+
+@battleship_combat_speed = 0.75	
+@battleship_combat_rotation = 0.025
+@battleship_collision_radius = 3
+@battleship_formation_priority = 4
+
+@titan_combat_speed = 0.75
+@titan_combat_rotation = 0.02
+@titan_collision_radius = 15
+
+@build_block_radius_none = 0
+@build_block_radius_civilian = 20
+@build_block_radius_military = 200
+
+#################
+#    NOMADS     #
+#################
+
+probe = {
+	ftl = yes
+	max_speed = 160
+	rotation_speed = 0.15
+	acceleration = 0.35
+	modifier = {
+		ship_armor_add = 10
+		ship_evasion_add = 60
+	}
+	max_hitpoints = 600
+	size_multiplier = 1
+	fleet_slot_size = 1
+	section_slots = { "mid" = { locator = "root" } }
+	num_target_locators = 0
+	icon_frame = 2
+	class = shipclass_military
+	is_designable = no
+}
+
+######################
+# Civilian Ships
+######################
+
+# Nomad mining ship
+nomad_mining_ship = {
+	graphical_culture = no
+	entity = nomad_mining_ship_entity
+	max_speed = 160
+	acceleration = 0.3
+	rotation_speed = 0.2
+	modifier = {
+		ship_evasion_add = 5
+		ship_upkeep_mult = -0.25
+	}
+	max_hitpoints = 240
+	size_multiplier = 1
+	fleet_slot_size = 1
+	section_slots = { "mid" = { locator = "root" } }
+	num_target_locators = 0
+	is_space_station = no
+	icon_frame = 2
+	base_buildtime = 60	
+	is_civilian = no
+	class = shipclass_military
+	construction_type = starbase_shipyard
+	prerequisites = { "tech_nomad_ships" }
+	default_behavior = line
+	
+	combat_disengage_chance = 1.50
+	
+	is_designable = yes
+	enable_default_design = yes
+	
+	required_component_set = "power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "sensor_components"
+	required_component_set = "thruster_components"
+	auto_upgrade = yes
+	
+	resources = {
+		category = ships
+		cost = {
+			minerals = 300
+		}
+		produces = {
+			minerals = 3
+		}
+	}
+	
+	potential_country = {
+		is_void_nomads = yes
+	}
+}
+
+# Nomad Energy Ship
+nomad_energy_tanker = {
+	graphical_culture = no
+	entity = cargo_transport_tanker_entity
+	max_speed = 160
+	acceleration = 0.3
+	rotation_speed = 0.2
+	modifier = {
+		ship_evasion_add = 5
+		ship_upkeep_mult = -0.75
+	}
+	max_hitpoints = 240
+	size_multiplier = 1
+	fleet_slot_size = 1
+	section_slots = { "mid" = { locator = "root" } }
+	num_target_locators = 0
+	is_space_station = no
+	icon_frame = 2
+	base_buildtime = 60	
+	is_civilian = no
+	class = shipclass_military
+	construction_type = starbase_shipyard
+	is_designable = yes
+	enable_default_design = yes
+	prerequisites = { "tech_nomad_ships" }
+	default_behavior = line
+	
+	combat_disengage_chance = 1.50
+	
+	required_component_set = "power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "sensor_components"
+	required_component_set = "thruster_components"
+	auto_upgrade = yes
+	
+	resources = {
+		category = ships
+		cost = {
+			minerals = 250
+		}
+		produces = {
+			energy = 4
+		}
+		produces = {
+			trigger = {
+				has_technololgy = tech_reactor_boosters_1
+			}
+			energy = 1
+		}
+		produces = {
+			trigger = {
+				has_technololgy = tech_reactor_boosters_2
+			}
+			energy = 1
+		}
+		produces = {
+			trigger = {
+				has_technololgy = tech_reactor_boosters_3
+			}
+			energy = 1
+		}
+		produces = {
+			trigger = {
+				has_technololgy = tech_cold_fusion_power
+			}
+			energy = 1
+		}
+		produces = {
+			trigger = {
+				has_technololgy = tech_antimatter_power
+			}
+			energy = 1
+		}
+		produces = {
+			trigger = {
+				has_technololgy = tech_zero_point_power
+			}
+			energy = 1
+		}
+		produces = {
+			trigger = {
+				has_technololgy = tech_dar_matter_power_core
+			}
+			energy = 3
+		}
+	}
+	
+	potential_country = {
+		is_void_nomads = yes
+	}
+}
+
+#############
+### Space Ark
+#############
+
+capital_ark_ship = {
+	ftl = yes
+	max_speed = 160
+	rotation_speed = 0.15
+	acceleration = 0.3
+	modifier = {
+		ship_evasion_add = 15
+		ship_armor_add = 50
+		starbase_shipyard_capacity_add = 2
+	}
+	max_hitpoints = 5000
+	size_multiplier = 1
+	fleet_slot_size = 4
+	section_slots = { "mid" = { locator = "root" } }
+	num_target_locators = 0
+	icon_frame = 7
+	ship_class_icon_frame = 35
+	can_disable = no
+	base_buildtime = 1800
+	class = shipclass_starbase
+	construction_type = starbase_shipyard
+	is_designable = yes
+	enable_default_design = yes
+	default_behavior = artillery
+	
+	combat_disengage_chance = 1.25
+	
+	country_modifier = {
+		country_naval_cap_add = 40
+	}
+	
+	resources = {
+		category = ships
+		cost = {
+			alloys = 2500
+		}
+		produces = {
+			alloys = 10
+			food = 10
+			minerals = 30
+			energy = 40
+		}
+	}
+	
+	required_component_set = "power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "sensor_components"
+	auto_upgrade = yes
+	
+	empire_limit = {
+		base = 1
+		max = 1
+	}
+	
+	potential_country = {
+		is_country_type = void_farer
+	}
+}
+
+support_ark_ship = {
+	ftl = yes
+	max_speed = 160
+	rotation_speed = 0.15
+	acceleration = 0.3
+	modifier = {
+		ship_evasion_add = 15
+		ship_armor_add = 45
+		starbase_shipyard_capacity_add = 2
+		country_naval_cap_add = 20
+	}
+	max_hitpoints = 3500
+	size_multiplier = 0.5
+	fleet_slot_size = 4
+	section_slots = { "mid" = { locator = "root" } }
+	num_target_locators = 0
+	icon_frame = 7
+	ship_class_icon_frame = 35
+	can_disable = no
+	base_buildtime = 1080
+	class = shipclass_starbase
+	construction_type = starbase_shipyard
+	is_designable = yes
+	enable_default_design = yes
+	default_behavior = artillery
+	
+	resources = {
+		category = ships
+		cost = {
+			alloys = 750
+		}
+		produces = {
+			alloys = 5
+			food = 5
+			minerals = 15
+			energy = 20
+		}
+	}
+	
+	required_component_set = "power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "sensor_components"
+	auto_upgrade = yes
+	
+	potential_country = {
+		is_country_type = void_farer
+	}
+}
+
+factory_ship = {
+	entity = factory_ship_entity
+	max_speed = 160
+	rotation_speed = 0.15
+	acceleration = 0.3
+	modifier = {
+		ship_evasion_add = 15
+		ship_armor_add = 30
+	}
+	max_hitpoints = 3000
+	size_multiplier = 1
+	fleet_slot_size = 4
+	section_slots = { "mid" = { locator = "root" } }
+	num_target_locators = 0
+	icon_frame = 2
+	base_buildtime = 1080
+	class = shipclass_constructor
+	construction_type = starbase_shipyard
+	is_designable = yes
+	enable_default_design = yes
+	default_behavior = artillery
+	
+	combat_disengage_chance = 1.25
+	
+	required_component_set = "power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "sensor_components"
+	auto_upgrade = yes
+	
+	resources = {
+		category = ships
+		cost = {
+			minerals = 3000
+		}
+		produces = {
+			alloys = 20
+		}
+		produces = {
+			trigger = {
+				has_technololgy = tech_alloys_1
+			}
+			alloys = 5
+		}
+		produces = {
+			trigger = {
+				has_technololgy = tech_alloys_2
+			}
+			alloys = 5
+		}
+		upkeep = {
+			minerals = 40
+		}
+	}
+	
+	potential_country = {
+		is_country_type = void_farer
+	}
+}

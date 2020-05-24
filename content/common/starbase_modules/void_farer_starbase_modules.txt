@@ -1,0 +1,178 @@
+# possible section models:
+# SHIPYARD_STARBASE_SECTION
+# REFINERY_STARBASE_SECTION
+# SCIENCE_STARBASE_SECTION
+# HANGAR_STARBASE_SECTION
+# ASSEMBLYYARD_STARBASE_SECTION
+#
+
+nomad_trade_hub = {
+	icon = "GFX_solar_panel_network"
+	section = "REFINERY_STARBASE_SECTION"
+	construction_days = 180
+	
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_void_farer_engineering }
+	}
+	
+	resources = {
+		category = starbase_modules
+		cost = {
+			alloys = 50
+		}
+		produces = {
+			energy = 3
+		}
+	}
+	
+	produced_resource_trigger = {
+		modifier = {
+			hidden_trigger = { exists = this }
+			has_starbase_building = offworld_trading_company
+			resources = {
+				energy = 2
+			}
+		}
+		modifier = {
+			hidden_trigger = { exists = this }		
+			has_starbase_building = nomad_trading_company
+			resources = {
+				energy = 2
+			}
+		}
+		modifier = {
+			hidden_trigger = { exists = this }		
+			owner = { has_technology = tech_power_plant_2 }
+			resources = {
+				energy = 1
+			}
+		}
+		modifier = {
+			hidden_trigger = { exists = this }		
+			owner = { has_technology = tech_power_plant_3 }
+			resources = {
+				energy = 1
+			}
+		}
+		modifier = {
+			hidden_trigger = { exists = this }		
+			owner = { has_technology = tech_power_plant_4 }
+			resources = {
+				energy = 1
+			}
+		}
+		modifier = {
+			hidden_trigger = { exists = this }		
+			owner = { has_civic = civic_corporate_dominion }
+			resources = {
+				energy = 1
+			}
+		}
+		modifier = {
+			hidden_trigger = { exists = this }		
+			owner = { has_non_swapped_tradition = tr_prosperity_trans_stellar_corporations }
+			resources = {
+				energy = 1
+			}
+		}
+	}
+
+	
+	ai_build_at_chokepoint = no
+	ai_weight = {
+		weight = 15
+	}
+}
+
+nomad_production_hub = {
+	icon = "GFX_spaceport_nebula_refinery"
+	section = "REFINERY_STARBASE_SECTION"
+	construction_days = 180
+	
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_void_farer_engineering }
+	}
+
+	resources = {
+		category = starbase_modules
+		cost = {
+			alloys = 50
+		}
+		produces = {
+			minerals = 3
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+	
+	produced_resource_trigger = {
+		modifier = {
+			hidden_trigger = { exists = this }
+			has_starbase_building = offworld_trading_company
+			resources = {
+				minerals = 2
+			}
+		}
+		modifier = {
+			hidden_trigger = { exists = this }
+			has_starbase_building = nomad_trading_company
+			resources = {
+				minerals = 2
+			}
+		}
+		modifier = {
+			hidden_trigger = { exists = this }		
+			has_starbase_building = nebula_refinery
+			resources = {
+				minerals = 3
+			}
+		}
+		modifier = {
+			hidden_trigger = { exists = this }
+			owner = { has_technology = tech_mining_network_2 }
+			resources = {
+				minerals = 1
+			}
+		}
+		modifier = {
+			hidden_trigger = { exists = this }
+			owner = { has_technology = tech_mining_network_3 }
+			resources = {
+				minerals = 1
+			}
+		}
+		modifier = {
+			hidden_trigger = { exists = this }
+			owner = { has_technology = tech_mining_network_4 }
+			resources = {
+				minerals = 1
+			}
+		}
+		modifier = {
+			hidden_trigger = { exists = this }		
+			owner = { has_civic = civic_corporate_dominion }
+			resources = {
+				minerals = 1
+			}
+		}
+		modifier = {
+			hidden_trigger = { exists = this }		
+			owner = { has_non_swapped_tradition = tr_prosperity_trans_stellar_corporations }
+			resources = {
+				minerals = 1
+			}
+		}
+	}
+	
+	upkeep_resources = {
+		energy = 2
+	}
+	
+	ai_build_at_chokepoint = no
+	ai_weight = {
+		weight = 15
+	}
+}
