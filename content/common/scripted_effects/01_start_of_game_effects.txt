@@ -881,6 +881,12 @@ generate_start_buildings_and_districts = {
 				district = district_generator
 			}
 		}
+		if = {
+			limit = { owner = { has_origin = origin_codominant_evolution } }
+			add_district_and_planet_size_if_needed_effect = {
+				district = district_generator
+			}
+		}
 
 		if = {
 			limit = {
@@ -1522,6 +1528,7 @@ generate_start_pops = {
 			limit = { owner = { has_origin = origin_codominant_evolution } }
 
 			last_created_species = {
+				set_species_flag = syncretic_species@root.owner
 				set_citizenship_type = {
 					country = root.owner
 					type = citizenship_limited
@@ -1613,7 +1620,7 @@ generate_start_pops = {
 		limit = { owner = { has_origin = origin_mechanists } }
 		owner = { create_built_robot_species = yes }
 		while = {
-			count = 10
+			count = 12
 			create_pop = {
 				species = last_created_species
 			}
