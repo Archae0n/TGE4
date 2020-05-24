@@ -26,6 +26,7 @@ per_relation = {
 	rivalry = {
 		trigger = {
 			has_rival = FROM
+			NOT = { is_harming_relations_with = FROM }
 		}
 		resources = {
 			category = rivalries
@@ -34,11 +35,27 @@ per_relation = {
 			}
 		}
 	}
+	
+	rivalry_envoy = {
+		trigger = {
+			has_rival = FROM
+			is_harming_relations_with = FROM
+		}
+		resources = {
+			category = rivalries
+			produces = {
+				influence = 1.0
+			}
+		}
+	}
 
 	non_aggression_pact = {
 		trigger = {
 			has_non_aggression_pact = FROM
-			NOR = { has_valid_civic = civic_peacekeepers }
+			NOR = { 
+				has_valid_civic = civic_peacekeepers
+				is_improving_relations_with = FROM
+			}
 		}
 		resources = {
 			category = non_aggression_pacts
@@ -47,10 +64,27 @@ per_relation = {
 			}
 		}
 	}
+	
+	non_aggression_pact_envoy = {
+		trigger = {
+			has_non_aggression_pact = FROM
+			is_improving_relations_with = FROM
+			NOR = { 
+				has_valid_civic = civic_peacekeepers				
+			}
+		}
+		resources = {
+			category = non_aggression_pacts
+			upkeep = {
+				influence = 0.125
+			}
+		}
+	}	
 
 	migration_pact = {
 		trigger = {
 			has_diplo_migration_treaty = FROM
+			NOT = { is_improving_relations_with = FROM }
 			NOT = {
 				AND = {
 					has_federation = yes
@@ -73,10 +107,38 @@ per_relation = {
 			}
 		}
 	}
+	
+	migration_pact_envoy = {
+		trigger = {
+			has_diplo_migration_treaty = FROM
+			is_improving_relations_with = FROM
+			NOT = {
+				AND = {
+					has_federation = yes
+					federation = { has_federation_perk = diplomacy_upkeep_1 }
+					federation = { any_member = { is_same_value = FROM } }
+				}
+			}
+			NOT = {
+				AND = {
+					has_federation = yes
+					federation = { has_federation_law = free_migration_yes }
+					federation = { any_member = { is_same_value = FROM } }
+				}
+			}
+		}
+		resources = {
+			category = migration_pacts
+			upkeep = {
+				influence = 0.125
+			}
+		}
+	}
 
 	research_agreement = {
 		trigger = {
 			has_research_agreement = FROM
+			NOT = { is_improving_relations_with = FROM }
 			NOR = { has_valid_civic = civic_peacekeepers }
 			NOT = {
 				AND = {
@@ -94,11 +156,37 @@ per_relation = {
 			}
 		}
 	}
+	
+	research_agreement_envoy = {
+		trigger = {
+			has_research_agreement = FROM
+			is_improving_relations_with = FROM
+			NOR = { has_valid_civic = civic_peacekeepers }
+			NOT = {
+				AND = {
+					has_federation = yes
+					federation = { has_federation_perk = diplomacy_upkeep_1 }
+					federation = { any_member = { is_same_value = FROM } }
+				}
+			}
+		}
+
+		resources = {
+			category = research_agreements
+			upkeep = {
+				influence = 0.125
+			}
+		}
+	}
 
 	commercial_pact = {
 		trigger = {
 			has_commercial_pact = FROM
-			NOR = { has_ascension_perk = ap_universal_transactions   has_valid_civic = civic_globalism }
+			NOR = { 
+				has_ascension_perk = ap_universal_transactions   
+				has_valid_civic = civic_globalism 
+				is_improving_relations_with = FROM
+			}
 		}
 
 		resources = {
@@ -108,11 +196,29 @@ per_relation = {
 			}
 		}
 	}
+	
+	commercial_pact_envoy = {
+		trigger = {
+			has_commercial_pact = FROM
+			is_improving_relations_with = FROM
+			NOR = { has_ascension_perk = ap_universal_transactions   has_valid_civic = civic_globalism }
+		}
+
+		resources = {
+			category = commercial_pacts
+			upkeep = {
+				influence = 0.125
+			}
+		}
+	}	
 
 	defensive_pact = {
 		trigger = {
 			has_defensive_pact = FROM
-			NOT = { has_valid_civic = civic_xeno_militarist }
+			NOR = { 
+				has_valid_civic = civic_xeno_militarist
+				is_improving_relations_with = FROM
+			}
 		}
 
 		resources = {
@@ -122,16 +228,48 @@ per_relation = {
 			}
 		}
 	}
+	
+	defensive_pact_envoy = {
+		trigger = {
+			has_defensive_pact = FROM
+			is_improving_relations_with = FROM
+			NOT = { has_valid_civic = civic_xeno_militarist }
+		}
+
+		resources = {
+			category = defensive_pacts
+			upkeep = {
+				influence = 0.5
+			}
+		}
+	}
 
 	guarantee = {
 		trigger = {
 			is_guaranteeing = FROM
-			NOR = { has_valid_civic = civic_xeno_militarist }
+			NOR = { 
+				has_valid_civic = civic_xeno_militarist
+				is_improving_relations_with = FROM
+			}
 		}
 		resources = {
 			category = guarantees
 			upkeep = {
 				influence = 0.5
+			}
+		}
+	}
+	
+	guarantee_envoy = {
+		trigger = {
+			is_guaranteeing = FROM
+			is_improving_relations_with = FROM
+			NOR = { has_valid_civic = civic_xeno_militarist }
+		}
+		resources = {
+			category = guarantees
+			upkeep = {
+				influence = 0.25
 			}
 		}
 	}
