@@ -11,3 +11,11 @@ new_starborn_colony = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_landing_ship.dds"
 	icon_frame = 1
 }
+
+depleting_energy_reserves = {
+	name = "Depleting Arkship Energy Reserves"
+	country_base_energy_produces_add = 20
+	
+	icon = "gfx/interface/icons/planet_modifiers/pm_landing_ship.dds"
+	icon_frame = 1
+}

@@ -1,0 +1,27 @@
+# Triggers when the game starts
+on_game_start = {
+	events = {
+		KO.1 # Spawn origin bonuses
+	}
+}
+
+empire_init_capital_planet = {
+	events = {
+		# game_start.12 # vanilla starting buildings, districts & pops
+		KO.4 # spawns codom pops
+	}
+}
+
+empire_init_capital_planet = {
+	events = {
+		# game_start.12 # vanilla starting buildings, districts & pops
+		KO.6 # spawns slaved pops
+		KO.7 # spawn building
+	}
+}
+
+empire_init_create_ships = {
+	events = {
+		KO.5
+	}
+}
