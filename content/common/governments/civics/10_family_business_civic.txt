@@ -5,9 +5,9 @@ civic_family_business = {
 	possible = {
 		ethics = {
 			NOR = {
-				text = civic_tooltip_not_egalitarian
-				value = ethic_egalitarian
-				value = ethic_fanatic_egalitarian
+				text = civic_tooltip_elitist
+				value = ethic_elitist
+				value = ethic_fanatic_elitist
 			}
 		}
 	}

@@ -1,7 +1,5 @@
 # Special civic for authoritarian "Sister Republics".
 civic_staged_elections = {
-	pickable_at_start = no
-	playable = { always = no }
 	potential = {
 		authority = {
 			OR = {

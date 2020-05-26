@@ -641,3 +641,57 @@ origin_lost_colony = {
 		base = 5
 	}
 }
+
+origin_symbiotic_race = {
+	is_origin = yes
+	description = "origin_symbiotic_race_desc"
+	picture = evt_circuitry_modification
+	modification = no
+	potential = {
+		ethics = { NOT = {  value = ethic_gestalt_consciousness } }
+	}
+	possible = {
+
+		ethics = {
+
+			OR = {
+				text = civic_tooltip_xenophile
+				value = ethic_xenophile
+				value = ethic_fanatic_xenophile
+			}
+			
+			OR = {
+				text = civic_tooltip_materialist
+				value = ethic_materialist
+				value = ethic_fanatic_materialist
+			}			
+
+		}
+
+		civics = {
+			NOR = {
+				 value = civic_fanatic_purifiers
+				 value = civic_agrarian_idyll
+				 value = civic_shared_burden
+				 value = civic_slaver_guilds
+				 value = civic_reeducated_labor
+				 value = civic_slave_race			}
+		}
+
+		origin = {
+			NOR = {
+				value = origin_syncretic_evolution
+			}
+		}
+	}
+	random_weight = {
+		base = 1 # Should be fairly rare
+	}
+
+	has_secondary_species = {
+		title = civic_symbiotic_race_secondary_species
+		traits = {
+			trait = trait_symbiotic
+		}
+	}
+}

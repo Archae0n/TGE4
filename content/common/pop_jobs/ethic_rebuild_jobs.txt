@@ -895,8 +895,8 @@ geoengineer = {
 	resources = {
 		category = planet_researchers
 		produces = {
-			physics_research = 4
-			engineering_research = 4
+			physics_research = 2
+			engineering_research = 2
 		}
 		upkeep = {
 			consumer_goods = 1
@@ -980,7 +980,7 @@ xenobiologist  = {
 		category = planet_researchers
 		produces = {
 
-			society_research = 7
+			society_research = 4
 		}
 
 		upkeep = {

@@ -533,6 +533,14 @@ enforcer = {
 			}
 			unity = 1
 		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { has_valid_civic = civic_mass_surveillance_network }
+			}
+			energy = 4
+			unity = 1
+		}
 		upkeep = {
 			trigger = {
 				exists = planet

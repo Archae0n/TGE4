@@ -14,7 +14,7 @@
 
  civic_entertainment_empire:0 "Entertainment Empire"
  civic_entertainment_empire_desc:0 "This company specializes in crafting experiences and narratives that the galaxy's denizens will come to crave more than food."
- civic_tooltip_entertainment_empire_effects:1 "§Y$job_entertainer_plural$§! produce £energy£ and additional £unity£ Unity and Branch Offices can build £building£ §Y$building_media_network$§! $BRANCH_OFFICE_BUILDING$\n"
+ civic_tooltip_entertainment_empire_effects:1 "§Y$job_entertainer_plural$§! produce £energy£ and additional £unity£ Unity and Branch Offices can build £building£ §Y$building_broadcast_centre$§! $BRANCH_OFFICE_BUILDING$\n"
 
  building_media_network:0 "Media Network"
  building_media_network_desc:0 "This media network injects nonstop infotainment directly into the planet's noosphere. Increased consumer tolerance and complacency are secondary to the direct profits, but still potentially useful."

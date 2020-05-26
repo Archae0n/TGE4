@@ -1,0 +1,135 @@
+civic_environmental_specialists = {
+	potential = { authority = { value = auth_corporate } }
+	description = "civic_tooltip_environmental_specialists_effects"
+	random_weight = { base = 5 }
+
+	possible = {
+          ethics = {
+			   OR = {
+			     value = ethic_green
+			     value = ethic_fanatic_green
+			   }
+		  }
+	}
+		modifier = {
+		terraform_speed_mult = 0.25
+		deposit_blockers_energy_cost_mult = -0.25
+		job_eco_technician_per_pop = 0.04
+	}
+}
+
+civic_bounty_hunters = {
+	potential = { authority = { value = auth_corporate } }
+	description = "civic_tooltip_bounty_hunter_effects"
+	random_weight = { base = 5 }
+
+	possible = {
+          ethics = {
+			   OR = {
+			     value = ethic_militarist
+			     value = ethic_fanatic_militarist
+			   }
+		  }
+	}
+		modifier = {
+	country_naval_cap_mult = 0.10
+	job_bounty_hunter_per_pop = 0.04
+	}
+}
+
+civic_networked_administration = {
+	potential = { authority = { value = auth_corporate } }
+	description = "civic_tooltip_networked_administration_effects"
+	random_weight = { base = 5 }
+
+	possible = {
+          ethics = {
+			   OR = {
+			     value = ethic_materialist
+			     value = ethic_fanatic_materialist
+			   }
+		  }
+	}
+		modifier = {
+	country_admin_cap_mult = 0.10
+	job_ai_administrator_per_pop = 0.04
+	}
+}
+
+civic_genetic_tailors = {
+	potential = { authority = { value = auth_corporate } }
+	description = "civic_tooltip_genetic_tailors_effects"
+	random_weight = { base = 5 }
+
+	possible = {
+          ethics = {
+			   OR = {
+			     value = ethic_materialist
+			     value = ethic_fanatic_materialist
+			   }
+		  }
+	}
+		modifier = {
+	modify_species_cost_mult = -0.25
+	job_gene_therapist_per_pop = 0.04
+	}
+}
+
+civic_mass_surveillance_network = {
+	potential = { authority = { value = auth_corporate } }
+	description = "civic_tooltip_mass_surveillance_network_effects"
+	random_weight = { base = 5 }
+
+	possible = {
+          ethics = {
+			   OR = {
+			     value = ethic_authoritarian
+			     value = ethic_fanatic_authoritarian
+			   }
+		  }
+	}
+		modifier = {
+	planet_stability_add = 5
+	job_panopticon_overseer_per_pop = 0.04
+	}
+}
+
+civic_galactic_peacemakers = {
+	potential = { authority = { value = auth_corporate } }
+	description = "civic_tooltip_galactic_peacemakers_effects"
+	random_weight = { base = 5 }
+
+	possible = {
+          ethics = {
+			   OR = {
+			     value = ethic_pacifist
+			     value = ethic_fanatic_pacifist
+			   }
+		  }
+	}
+		modifier = {
+	diplo_weight_mult = 0.10
+	job_negotiator_per_pop = 0.04
+	}
+}
+
+civic_leadership_experts = {
+	potential = { authority = { value = auth_corporate } }
+	description = "civic_tooltip_leadership_experts_effects"
+	random_weight = { base = 5 }
+
+	possible = {
+          ethics = {
+			   OR = {
+			     value = ethic_pluralist
+			     value = ethic_fanatic_pluralist
+			   }
+		  }
+	}
+		modifier = {
+	ruler_skill_levels = 1
+	leader_skill_levels = 1
+	job_training_provider_per_pop = 0.04
+	}
+}
+

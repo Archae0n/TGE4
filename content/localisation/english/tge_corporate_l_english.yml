@@ -1,0 +1,77 @@
+﻿l_english:
+ civic_environmental_specialists:0 "Environmental Specialists"
+ civic_environmental_specialists_desc:0 "This company specializes in environmental engineering and clean energy production methods."
+ civic_tooltip_environmental_specialists_effects:1 "Gain 1 eco-technician every 25 pops. Eco-technicians produce 6 energy, 2 trade and increase habitability by 2.5% each. Can build Ecology Plants on branch offices that produce 10 energy and two eco-technician jobs."
+ 
+ job_eco_technician:0 "Eco-Technician"
+ job_eco_technician_plural:0 "Eco-Technicians"
+ 
+ building_ecology_plant:0 "Ecology Plant"
+ building_ecology_plant_desc:0 "A massive private facility containing vast arrays of power-generation, small-scale terraforming and landscaping equipment."
+ 
+ civic_bounty_hunters:0 "Bounty Hunters"
+ civic_bounty_hunters_desc:0 "This company specializes in discreet elimination of high-profile targets"
+ civic_tooltip_bounty_hunters_effects:1 "Gain 1 bounty hunter every 25 pops. Bounty Hunters produce 3 unity, 4 trade, 6 naval cap and reduce crime by 10. Can build Bounty Offices on branch offices that produce 8 energy and two bounty hunter jobs."
+ 
+ job_bounty_hunter:0 "Bounty Hunter"
+ job_bounty_hunter_plural:0 "Bounty Hunters"
+ 
+ building_bounty_office:0 "Bounty Office"
+ building_bounty_office_desc:0 "A central hub for the recruitment of bounty hunters and distribution of bounties. Armour and weapons not included."
+ 
+ civic_networked_administration:0 "Networked Administration"
+ civic_networked_administration_desc:0 "This company is in possession of an advanced AI algorithm capable of administrating an entire system,"
+ civic_tooltip_networked_administration_effects:1 "Gain 1 AI Administrator every 25 pops. AI administrators produce 4 engineering, 2 trade, increase admin cap by 5, decrease robot upkeep by 2.5% and increase robot output by 2.5%. Can build Bureaucratic Engines on branch offices that produce 10 admin cap and 5 energy."
+ 
+ job_ai_administrator:0 "AI Administrator"
+ job_ai_administrator_plural:0 "AI Administrators"
+ 
+ building_bureaucratic_engine:0 "Bureaucratic Engine"
+ building_bureaucratic_engine_desc:0 "A massive complex housing an AI Administrative Network."
+ 
+ civic_genetic_tailors:0 "Genetic Tailors"
+ civic_genetic_tailors_desc:0 "This corporation specializes in genetic engineering and bio-modification."
+ civic_tooltip_genetic_tailors_effects:1 "Gain 1 Gene Therapist every 25 pops. Gene Therapists produce 4 society, 4 trade, increase amenities by 6 and add 5% growth speed. Can build Genetic Therapy Clinics on branch offices that produce 6 energy credits and adds two gene therapist jobs."
+ 
+ job_gene_therapist:0 "Gene Therapist"
+ job_gene_therapist_plural:0 "Gene Therapists"
+ 
+ building_gene_therapy_clinic:0 "Gene Therapy Clinic"
+ building_gene_therapy_clinic_desc:0 "A private gene therapy clinic providing higher quality medical service than most publicly-run equivalents."
+ 
+ civic_mass_surveillance_network:0 "Mass Surveillance Network"
+ civic_mass_surveillance_network_desc:0 "This corporation manufactures high-quality surveillance equipment and related networking technology for paranoid customers."
+ civic_mass_surveillance_network_effects:1 "Gain 1 Panopticon Overseer every 25 pops. Panopticon Overseers produce 2 stability, 5 trade, and reduce crime by 25. Can build Panopticon Networks on branch offices that produce 5 unity and 5 energy credits and adds two overseer jobs."
+ 
+ job_panopticon_overseer:0 "Panopticon Overseer"
+ job_panopticon_overseer_plural:0 "Panopticon Overseers"
+ 
+ building_panopticon_network:0 "Panopticon Network"
+ building_panopticon_network_desc:0 "A planet-wide surveillance system keeping tabs on all planetary inhabitants. For their own protection, of course..."
+ 
+ civic_galactic_peacemakers:0 "Galactic Peacemakers"
+ civic_galactic_peacemakers_network_desc:0 "This corporation has turned diplomacy into both an art and a business."
+ civic_galactic_peacemakers_effects:1 "Gain 1 Negotiator every 25 pops. Negotiators produce 5 admin cap, 5 trade, 2 stability and 5 amenities. Can build Peace Centres on branch offices that produce 8 unity and 5 energy credits and adds two negotiator jobs."
+ 
+ job_negotiator:0 "Negotiator"
+ job_negotiator_plural:0 "Negotiators"
+ 
+ building_peace_centre:0 "Peace Centre"
+ building_peace_centre_desc:0 "A regional facility for the arbitration of disputes between private and public entities away from the jurisdiction of the local legal system."
+ 
+ job_virtual_celebrity:0 "Virtual Celebrity"
+ job_virtual_celebrity_plural:0 "Virtual Celebrities"
+ job_virtual_celebrity_desc:0 "Hai domo virtual youtuber kizuna ai desu"
+ 
+ building_broadcast_centre:0 "Broadcast Centre"
+ building_broadcast_centre_desc:0 "A broadcasting facility managing the live-shows of hundreds of corporate and independent virtual streamers."
+ 
+ civic_leadership_experts:0 "Leadership Experts"
+ civic_galactic_peacemakers_network_desc:0 "This corporation specializes in nurturing the leaders of tomorrow."
+ civic_galactic_peacemakers_effects:1 "Gain 1 Training Provider every 25 pops. Training Providers produce 3 trade, increase ruler output by 5% and specialist output by 2.5%. Can build Leadership Academies on branch offices that produce 6 energy, increases leader xp gain by 10% and adds two training provider jobs."
+ 
+ job_training_provider:0 "Training Provider"
+ job_training_provider_plural:0 "Training Providers"
+ 
+ building_leadership_academy:0 "Leadership Academy"
+ building_leadership_academy_desc:0 "An academy training the best and brightest of the system to be the leaders of tomorrow. Disclaimer: Success in acquiring leadership positions not guaranteed." 
