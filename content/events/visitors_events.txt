@@ -27,6 +27,10 @@ country_event = {
 			tech = tech_wormhole_stabilization
 			message = no
 		}
+		add_modifier = {
+			modifier = "depleting_energy_reserves"
+			days = 3600
+		}
 		## destroy every ship and create only what we want
 		every_owned_ship = {
 		limit = {
