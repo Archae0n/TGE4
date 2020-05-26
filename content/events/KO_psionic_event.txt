@@ -1,0 +1,197 @@
+namespace = KO
+
+### Hidden Game Start Event
+event = {
+	id = KO.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = ko_origins_game_started
+
+		# Shroud Touched
+		every_playable_country = {
+			limit = { has_origin = origin_shroud_touched }
+			country_event = { id = KO.2 }
+		}
+		# Planetary Ascendants
+		every_playable_country = {
+			limit = { has_origin = origin_planetary_ascendants }
+			country_event = { id = KO.3 }
+		}
+		# Planetary Conquerors
+		every_playable_country = {
+			limit = { has_origin = origin_codominant_evolution }
+			country_event = { id = KO.5 }
+		}
+		# Hive Amalgamation
+		every_playable_country = {
+			limit = { has_origin = origin_hive_am }
+			country_event = { id = KO.8 }
+		}
+	}
+}
+
+# Shroud Touched - Gives tech and modifiers to Shroud Touched Origin users.
+country_event = {
+	id = KO.2
+	hide_window = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			has_origin = origin_shroud_touched
+		}
+		is_gestalt = no
+	}
+
+	immediate = {
+		give_technology = { message = no tech = tech_psionic_theory }
+		add_tradition = tr_harmony_adopt
+		add_tradition = tr_harmony_mind_and_body
+		random_owned_planet ={
+			limit = { is_capital = yes }
+			add_deposit = d_zro_deposit_2
+		}
+	}
+}
+
+# Planetary Ascendants - Gives tech
+country_event = {
+	id = KO.3
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = { 
+			has_origin = origin_planetary_ascendants
+		}
+		is_gestalt = no
+	}
+	
+	immediate = {
+		give_technology = { message = no tech = tech_ascension_theory }
+		give_technology = { message = no tech = tech_planetary_unification }
+		}
+}		
+
+#Codominant Evolution
+planet_event = {
+	id = KO.4
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					has_origin = origin_codominant_evolution
+				}
+			}
+			generate_origin_codominant_evolution_second_species = yes # see scripted_effects
+		}
+	}
+}
+
+# Planetary Conquerors
+country_event = {
+	id = KO.5
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			has_origin = origin_plan_con
+		}
+	}
+	
+	immediate = {
+		create_fleet = {
+		set_take_point = yes
+			effect = {
+				set_owner = prev
+					while = {
+					count = 3
+					create_ship = {
+						name = random
+						random_existing_design = corvette
+						prefix = yes
+					}
+				}
+			set_location = prev.capital_star
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = KO.6
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					has_origin = origin_plan_con
+				}
+			}
+			generate_plan_con_slaves = yes # see scripted_effects
+		}
+	}
+}
+
+planet_event = {
+	id = KO.7
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					has_origin = origin_plan_con
+					}
+				}
+			add_building = building_fragment_of_armageddon
+			add_district = district_mining
+		}
+	}
+}
+
+#Hive Amalgamation
+country_event = {
+	id = KO.8
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					has_origin = origin_hive_am
+					}
+				}
+			random_owned_planet = {
+			limit = { is_capital = yes }
+			remove_district = district_mining
+			remove_district = district_mining
+			remove_district = district_farming
+			remove_district = district_farming
+			remove_district = district_generator
+			remove_district = district_generator
+			remove_district = district_hive
+			add_district = district_farming_uncapped
+			add_district = district_farming_uncapped
+			add_district = district_mining_uncapped
+			add_district = district_mining_uncapped
+			add_district = district_generator_uncapped
+			add_district = district_generator_uncapped
+			set_planet_size = 25
+			}
+		}
+	}
+}

@@ -192,9 +192,6 @@ generate_start_deposits_and_blockers = {
 		}
 		add_deposit = d_tomb_world_ruins
 		add_deposit = d_tomb_world_wasteland
-		add_deposit = d_nuked_battlefield1
-		add_deposit = d_nuked_battlefield2
-		add_deposit = d_nuked_battlefield3
 	}
 	else_if = {
 		limit = {
@@ -343,7 +340,7 @@ generate_start_deposits_and_blockers = {
 			}
 		}
 
-		set_planet_size = 22
+		set_planet_size = 25
 
 		# 5 + 3 energy
 		add_deposit = d_searing_desert
@@ -374,9 +371,9 @@ generate_start_deposits_and_blockers = {
 			33 = { add_deposit = d_fertile_lands }
 		}
 
-		add_deposit = d_dust_desert
-		add_deposit = d_crystal_forest
-		add_deposit = d_fuming_bog
+		add_deposit = d_dust_caverns
+		add_deposit = d_bubbling_swamp
+		add_deposit = d_crystalline_caverns
 	}
 
 	if = {
@@ -740,6 +737,1297 @@ generate_start_deposits_and_blockers = {
 
 	if = {
 		limit = {
+			is_planet_class = pc_cascadian
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs			
+		add_deposit = d_rushing_waterfalls
+		add_deposit = d_tempestous_mountain	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_rushing_waterfalls		
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+		
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs 		
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming
+		add_deposit = d_rugged_woods	
+		add_deposit = d_fertile_lands
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_rugged_woods
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_black_soil
+			}
+		}		
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_biolumen
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs			
+		add_deposit = d_rushing_waterfalls
+		add_deposit = d_tempestous_mountain	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_rushing_waterfalls		
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields			
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_submerged_ore_veins
+		
+		# 4 + 3 farming
+		add_deposit = d_green_hills	
+		add_deposit = d_lush_jungle	
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_tropical_island
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			else = {
+				add_deposit = d_tropical_island
+			}
+		}
+		add_deposit = d_biolumen_nature_preserve
+		if = { limit = { not = { has_modifier = biolumen } } add_modifier = { modifier = biolumen days = -1 } }
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_hajungle
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs			
+		add_deposit = d_rushing_waterfalls
+		add_deposit = d_tempestous_mountain	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_rushing_waterfalls		
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs			
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming
+		add_deposit = d_green_hills	
+		add_deposit = d_lush_jungle	
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_tropical_island
+			}
+		}		
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_mangrove
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs			
+		add_deposit = d_rushing_waterfalls
+		add_deposit = d_underwater_vent	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_rushing_waterfalls		
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields			
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_submerged_ore_veins
+		
+		# 4 + 3 farming
+		add_deposit = d_green_hills	
+		add_deposit = d_lush_jungle	
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			else = {
+				add_deposit = d_tropical_island
+			}
+		}	
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_subarctic
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs			
+		add_deposit = d_rushing_waterfalls
+		add_deposit = d_underwater_vent	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_rushing_waterfalls		
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields			
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_submerged_ore_veins
+		
+		# 4 + 3 farming
+		add_deposit = d_boggy_fens
+		add_deposit = d_fungal_caves
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			else = {
+				add_deposit = d_teeming_reef
+			}
+		}	
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_desertislands
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs			
+		add_deposit = d_rushing_waterfalls
+		add_deposit = d_underwater_vent	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_rushing_waterfalls		
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields			
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_submerged_ore_veins
+		
+		# 4 + 3 farming
+		add_deposit = d_green_hills
+		add_deposit = d_lush_jungle	
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			else = {
+				add_deposit = d_teeming_reef
+			}
+		}		
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_retinal
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs			
+		add_deposit = d_rushing_waterfalls
+		add_deposit = d_tempestous_mountain	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_rushing_waterfalls		
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+		
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs 		
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming
+		add_deposit = d_rugged_woods	
+		add_deposit = d_fertile_lands
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_rugged_woods
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+			add_deposit = d_black_soil	
+			}
+		}			
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_forest
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs			
+		add_deposit = d_rushing_waterfalls
+		add_deposit = d_tempestous_mountain	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_rushing_waterfalls		
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}
+		
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs 		
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming
+		add_deposit = d_rugged_woods	
+		add_deposit = d_fertile_lands
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			add_deposit = d_black_soil	
+		}			
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_frozen_desert
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs 		
+		add_deposit = d_frozen_gas_lake
+		add_deposit = d_geothermal_vent	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_frozen_gas_lake			
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs		
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs		
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming	
+		add_deposit = d_lichen_fields	
+		add_deposit = d_fungal_caves
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			add_deposit = d_fungal_forest	
+		}	
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_antarctic
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs 		
+		add_deposit = d_frozen_gas_lake
+		add_deposit = d_geothermal_vent	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_frozen_gas_lake			
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs		
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs		
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming	
+		add_deposit = d_lichen_fields	
+		add_deposit = d_fungal_caves
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			add_deposit = d_fungal_forest	
+		}	
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_glacial
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs 		
+		add_deposit = d_frozen_gas_lake
+		add_deposit = d_geothermal_vent	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_frozen_gas_lake			
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs		
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs		
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_submerged_ore_veins
+		
+		# 4 + 3 farming	
+		add_deposit = d_lichen_fields	
+		add_deposit = d_fungal_caves
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			add_deposit = d_fungal_forest	
+		}		
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_swamp
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs			
+		add_deposit = d_frozen_gas_lake
+		add_deposit = d_geothermal_vent	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_frozen_gas_lake			
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs		
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields			
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming
+		add_deposit = d_boggy_fens
+		add_deposit = d_fungal_caves
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			add_deposit = d_fungal_forest	
+		}	
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_mushroom
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs			
+		add_deposit = d_frozen_gas_lake
+		add_deposit = d_geothermal_vent	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_frozen_gas_lake			
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs		
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields			
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming
+		add_deposit = d_fungal_caves
+		add_deposit = d_fungal_caves
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			add_deposit = d_fungal_forest	
+		}		
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_hadesert
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs			
+		add_deposit = d_frozen_gas_lake
+		add_deposit = d_tempestous_mountain	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_frozen_gas_lake
+		}	
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs		
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs		
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming
+		add_deposit = d_forgiving_tundra		
+		add_deposit = d_fungal_caves
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			add_deposit = d_fungal_forest	
+		}			
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_boreal
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs			
+		add_deposit = d_frozen_gas_lake
+		add_deposit = d_tempestous_mountain	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_frozen_gas_lake
+		}	
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs		
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs		
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming
+		add_deposit = d_forgiving_tundra		
+		add_deposit = d_fertile_lands
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			add_deposit = d_fertile_lands	
+		}			
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_snow
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs			
+		add_deposit = d_frozen_gas_lake
+		add_deposit = d_tempestous_mountain	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_frozen_gas_lake
+		}	
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs		
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs		
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming
+		add_deposit = d_forgiving_tundra		
+		add_deposit = d_fertile_lands
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			add_deposit = d_black_soil	
+		}		
+	}
+		
+	if = {
+		limit = {
+			is_planet_class = pc_sandsea
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_arid_highlands			
+		add_deposit = d_searing_desert
+		add_deposit = d_geothermal_vent	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields			
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming
+		add_deposit = d_nutritious_mudland			
+		add_deposit = d_great_river
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			add_deposit = d_marvelous_oasis	
+		}			
+	}	
+		
+	if = {
+		limit = {
+			is_planet_class = pc_oasis
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_arid_highlands			
+		add_deposit = d_searing_desert
+		add_deposit = d_geothermal_vent	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields			
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming
+		add_deposit = d_nutritious_mudland			
+		add_deposit = d_great_river
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			add_deposit = d_marvelous_oasis	
+		}		
+	}			
+	
+	if = {
+		limit = {
+			is_planet_class = pc_mesa
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_arid_highlands			
+		add_deposit = d_searing_desert 
+		add_deposit = d_tempestous_mountain	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}	
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs			
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming
+		add_deposit = d_bountiful_plains	
+		add_deposit = d_great_river	
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			add_deposit = d_marvelous_oasis	
+		}		
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_steppe
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_arid_highlands			
+		add_deposit = d_searing_desert
+		add_deposit = d_geothermal_vent	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}	
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields			
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_submerged_ore_veins
+		
+		# 4 + 3 farming
+		add_deposit = d_bountiful_plains	
+		add_deposit = d_fertile_lands	
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			add_deposit = d_black_soil	
+		}	
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_prairie
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_arid_highlands			
+		add_deposit = d_searing_desert
+		add_deposit = d_geothermal_vent	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}	
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields			
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_submerged_ore_veins
+		
+		# 4 + 3 farming
+		add_deposit = d_bountiful_plains	
+		add_deposit = d_fertile_lands	
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			add_deposit = d_black_soil	
+		}	
+	}			
+	
+	if = {
+		limit = {
+			is_planet_class = pc_med
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_arid_highlands			
+		add_deposit = d_searing_desert 
+		add_deposit = d_tempestous_mountain	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}	
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs			
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming
+		add_deposit = d_bountiful_plains	
+		add_deposit = d_great_river		
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			add_deposit = d_marvelous_oasis	
+		}			
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_ammonia
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_arid_highlands			
+		add_deposit = d_frozen_gas_lake
+		add_deposit = d_tempestous_mountain	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_frozen_gas_lake
+		}	
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields			
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming
+		add_deposit = d_nutritious_mudland	
+		add_deposit = d_fertile_lands		
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			add_deposit = d_black_soil	
+		}	
+		add_deposit = d_ammonia_sea
+		if = { limit = { not = { has_modifier = ammonia } } add_modifier = { modifier = ammonia days = -1 } }
+	}
+
+	if = {
+		limit = {
+			is_planet_class = pc_methane
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_arid_highlands			
+		add_deposit = d_frozen_gas_lake
+		add_deposit = d_tempestous_mountain	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_frozen_gas_lake
+		}	
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields			
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming
+		add_deposit = d_nutritious_mudland	
+		add_deposit = d_fertile_lands		
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			add_deposit = d_black_soil	
+		}			
+		add_deposit = d_frozen_gas_mountain
+		if = { limit = { not = { has_modifier = methane } } add_modifier = { modifier = methane days = -1 } }
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_ash
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_arid_highlands			
+		add_deposit = d_powerful_geyser
+		add_deposit = d_tempestous_mountain	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_powerful_geyser
+		}	
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields			
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming
+		add_deposit = d_lichen_fields	
+		add_deposit = d_fungal_caves		
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			add_deposit = d_black_soil	
+		}		
+		add_deposit = d_lava_lakes
+		if = { limit = { not = { has_modifier = ash } } add_modifier = { modifier = ash days = -1 } }
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_primal
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs			
+		add_deposit = d_powerful_geyser
+		add_deposit = d_geothermal_vent	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_powerful_geyser
+		}	
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs			
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming
+		add_deposit = d_nutritious_mudland	
+		add_deposit = d_lush_jungle			
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			add_deposit = d_black_soil	
+		}	
+		add_deposit = d_lava_lakes
+		if = { limit = { not = { has_modifier = primal } } add_modifier = { modifier = primal days = -1 } }
+	}
+
+	if = {
+		limit = {
+			is_planet_class = pc_salt
+		}
+
+		# 3 + 3 energy
+		add_deposit = d_arid_highlands
+		add_deposit = d_searing_desert
+		add_deposit = d_geothermal_vent
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}
+
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+
+		# 4 + 3 farming (lithoids swap 3 for minerals)
+		add_deposit = d_nutritious_mudland
+		add_deposit = d_great_river		
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_nutritious_mudland
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_marvelous_oasis
+			}
+		}
+		add_deposit = d_salt_caves
+		if = { limit = { not = { has_modifier = pdsalt } } add_modifier = { modifier = pdsalt days = -1 } }
+	}
+
+	if = {
+		limit = {
+			is_planet_class = pc_geothermal
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs			
+		add_deposit = d_powerful_geyser
+		add_deposit = d_geothermal_vent	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_powerful_geyser
+		}	
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_mineral_fields			
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming
+		add_deposit = d_green_hills	
+		add_deposit = d_lush_jungle		
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_green_hills
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+			}
+			else = {
+				add_deposit = d_black_soil
+			}
+		}	
+		add_deposit = d_geothermal_slurry_site
+		if = { limit = { not = { has_modifier = geothermal } } add_modifier = { modifier = geothermal days = -1 } }
+	}
+
+	if = {
+		limit = {
+			is_planet_class = pc_superhabitable
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs			
+		add_deposit = d_rushing_waterfalls
+		add_deposit = d_underwater_vent	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_rushing_waterfalls
+		}	
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs			
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_submerged_ore_veins
+		
+		# 4 + 3 farming
+		add_deposit = d_rugged_woods	
+		add_deposit = d_lush_jungle		
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_rugged_woods
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			else = {
+				add_deposit = d_teeming_reef
+			}
+		}		
+		add_deposit = d_ancient_motes
+		if = { limit = { not = { has_modifier = superhabitable } } add_modifier = { modifier = superhabitable days = -1 } }
+	}
+
+	if = {
+		limit = {
+			is_planet_class = pc_karst
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs			
+		add_deposit = d_rushing_waterfalls
+		add_deposit = d_geothermal_vent	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_rushing_waterfalls
+		}	
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_hot_springs
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs			
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_submerged_ore_veins
+		
+		# 4 + 3 farming
+		add_deposit = d_lichen_fields	
+		add_deposit = d_fungal_caves	
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_lichen_fields
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			else = {
+				add_deposit = d_fungal_caves
+			}
+		}
+		add_deposit = d_karst_cave
+		if = { limit = { not = { has_modifier = karst } } add_modifier = { modifier = karst days = -1 } }
+	}
+	
+	if = {
+		limit = {
+			is_planet_class = pc_aquatic
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_strong_currents			
+		add_deposit = d_underwater_jets
+		add_deposit = d_underwater_vent	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_underwater_jets		
+		}
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_strong_currents
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_coral_deposit			
+		add_deposit = d_submerged_caves
+		add_deposit = d_submerged_ore_veins
+		
+		# 4 + 3 farming
+		add_deposit = d_sea_grass
+		add_deposit = d_kelp_forests
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_kelp_forests
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			else = {
+				add_deposit = d_teeming_reef
+			}
+		}	
+		add_deposit = d_aquatic_trench
+		if = { limit = { not = { has_modifier = aquatic } } add_modifier = { modifier = aquatic days = -1 } }
+	}
+
+	if = {
+		limit = {
+			is_planet_class = pc_irradiated
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_hot_springs		
+		add_deposit = d_searing_desert
+		add_deposit = d_underwater_vent		
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}	
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_underwater_vent
+		}	
+		
+		# 3 + 4 mining
+		add_deposit = d_veiny_cliffs		
+		add_deposit = d_ore_rich_caverns
+		add_deposit = d_submerged_ore_veins
+		
+		# 3 + 2 farming
+		add_deposit = d_lichen_fields	
+		add_deposit = d_fungal_caves 	
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_fungal_caves
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_submerged_ore_veins
+			}
+			else = {
+				add_deposit = d_fungal_forest
+			}
+		}	
+		add_deposit = d_rad_blooms
+		if = { limit = { not = { has_modifier = radiotrophic } } add_modifier = { modifier = radiotrophic days = -1 } }
+	}
+
+	if = {
+		limit = {
+			is_planet_class = pc_tidallylocked
+		}
+		
+		# 3 + 3 energy		
+		add_deposit = d_arid_highlands			
+		add_deposit = d_searing_desert
+		add_deposit = d_tempestous_mountain	
+		if = {
+			limit = { owner = { is_machine_empire = yes } }
+			add_deposit = d_searing_desert
+		}	
+		if = {
+			limit = { owner = { has_valid_civic = civic_machine_servitor } }
+			add_deposit = d_arid_highlands
+		}		
+		
+		# 3 + 3 mining
+		add_deposit = d_veiny_cliffs			
+		add_deposit = d_prosperous_mesa
+		add_deposit = d_rich_mountain
+		
+		# 4 + 3 farming
+		add_deposit = d_rugged_woods	
+		add_deposit = d_fertile_lands
+		if = {
+			limit = { owner = { is_machine_empire = no } }
+			add_deposit = d_rugged_woods
+
+			if = {
+				limit = { owner = { is_lithoid_empire = yes } }
+				add_deposit = d_rich_mountain
+		
+			}
+			else = {
+				add_deposit = d_black_soil
+			}
+		}	
+
+		add_deposit = d_nightside_mining_operations
+		if = { limit = { not = { has_modifier = tidal_locked2 } } add_modifier = { modifier = tidal_locked2 days = -1 } }
+	}
+
+	if = {
+		limit = {
+			owner = {
+				has_origin = origin_tree_of_life
+			}
+		}
+		owner = {
+			capital_scope = {
+				add_deposit = d_tree_of_life_home
+			}
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				has_origin = origin_lithoid
+			}
+		}
+		owner = {
+			capital_scope = {
+				add_deposit = d_lithoid_crater
+				add_deposit = d_buried_lithoids
+				add_deposit = d_buried_lithoids
+				add_deposit = d_buried_lithoids
+				add_deposit = d_buried_lithoids
+			}
+		}
+	}
+
+	if = {
+		limit = {
 			is_planet_class = pc_relic
 			owner = {
 				has_origin = origin_remnants
@@ -839,11 +2127,11 @@ generate_earth_deposits_and_blockers = {
 			}
 		}
 
-		set_planet_size = 22
+		set_planet_size = 25
 
-		add_deposit = d_dust_desert
-		add_deposit = d_crystal_forest
-		add_deposit = d_fuming_bog
+		add_deposit = d_dust_caverns
+		add_deposit = d_bubbling_swamp
+		add_deposit = d_crystalline_caverns
 	}
 }
 
@@ -867,6 +2155,12 @@ generate_start_buildings_and_districts = {
 				owner = {
 					set_country_flag = lithoid_subspecies
 				}
+				if = {
+					limit = { owner = { last_created_species = { has_trait = "trait_organic_symbiote" } } }
+					owner = {
+						set_country_flag = organic_symbiote_lithoids
+					}
+				}
 			}
 			else = {
 				owner = {
@@ -876,15 +2170,18 @@ generate_start_buildings_and_districts = {
 		}
 
 		if = {
-			limit = { owner = { has_origin = origin_syncretic_evolution } }
-			add_district_and_planet_size_if_needed_effect = {
-				district = district_generator
+			limit = {
+				owner = {
+					owner_species = {
+						and = {
+							is_lithoid = yes
+							has_trait = "trait_organic_symbiote"
+						}
+					}
+				}
 			}
-		}
-		if = {
-			limit = { owner = { has_origin = origin_codominant_evolution } }
-			add_district_and_planet_size_if_needed_effect = {
-				district = district_generator
+			owner = {
+				set_country_flag = organic_symbiote_lithoids
 			}
 		}
 
@@ -922,6 +2219,22 @@ generate_start_buildings_and_districts = {
 				}
 			}
 			else = {
+				add_district_and_planet_size_if_needed_effect = {
+					district = district_farming
+				}
+			}
+
+			#spawning a farming district so organic symbiote lithoids don't start with negative food
+			if = {
+				limit = {
+					owner = { has_country_flag = organic_symbiote_lithoids }
+					NOT = { 
+						OR = {
+							is_lithoid_empire = no
+							has_country_flag = non_lithoid_subspecies
+						}
+					}
+				}
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_farming
 				}
@@ -968,7 +2281,6 @@ generate_start_buildings_and_districts = {
 					}
 				}
 			}
-
 			# 4 jobs
 			while = {
 				count = 2
@@ -976,12 +2288,10 @@ generate_start_buildings_and_districts = {
 					district = district_mining
 				}
 			}
-
 			# 2 jobs
 			add_district_and_planet_size_if_needed_effect = {
 				district = district_generator
 			}
-
 			# 2 jobs
 			if = {
 				limit = { owner = { is_megacorp = no } }
@@ -992,7 +2302,6 @@ generate_start_buildings_and_districts = {
 					}
 				}
 			}
-
 			# 2 jobs
 			if = {
 				limit = {
@@ -1002,22 +2311,16 @@ generate_start_buildings_and_districts = {
 					district = district_generator
 				}
 			}
-
 			# 3 jobs
 			add_building = building_capital
-
 			# 2 jobs
 			add_building = building_bureaucratic_1
-
 			# 2 jobs
 			add_building = building_research_lab_1
-
 			# 2 jobs
 			add_building = building_foundry_1
-
 			# 2 jobs
 			add_building = building_factory_1
-
 			# 4 jobs
 			if = {
 				limit = { owner = { is_megacorp = yes } }
@@ -1027,12 +2330,9 @@ generate_start_buildings_and_districts = {
 				add_building = building_commercial_zone
 			}
 		}
-
 		if = {
 			limit = { owner = { is_hive_empire = yes } }
-
 			# total - 34 jobs
-
 			# 4 jobs
 			while = {
 				count = 2
@@ -1040,7 +2340,6 @@ generate_start_buildings_and_districts = {
 					district = district_hive
 				}
 			}
-
 			# 6-9 jobs
 			if = {
 				limit = { owner = { is_lithoid_empire = no } }
@@ -1071,7 +2370,6 @@ generate_start_buildings_and_districts = {
 					}
 				}
 			}
-
 			# 6 jobs
 			while = {
 				count = 2
@@ -1079,7 +2377,6 @@ generate_start_buildings_and_districts = {
 					district = district_mining
 				}
 			}
-
 			if = {
 				limit = {
 					owner = { has_origin = origin_tree_of_life }
@@ -1090,7 +2387,6 @@ generate_start_buildings_and_districts = {
 					district_type = district_farming
 				}
 			}
-
 			# 6 jobs
 			while = {
 				count = 2
@@ -1098,7 +2394,6 @@ generate_start_buildings_and_districts = {
 					district = district_generator
 				}
 			}
-
 			# 3 jobs
 			if = {
 				limit = {
@@ -1108,25 +2403,18 @@ generate_start_buildings_and_districts = {
 					district = district_generator
 				}
 			}
-
 			# 5 jobs
 			add_building = building_hive_capital
-
 			# 2 jobs
 			add_building = building_hive_node
-
 			# 2 jobs
 			add_building = building_research_lab_1
-
 			# 2 jobs
 			add_building = building_foundry_1
-
 			# 1 job
 			add_building = building_spawning_pool
-
 			# 1 job
 			add_building = building_hive_warren
-
 			# 1 jobs
 			if = {
 				limit = {
@@ -1135,18 +2423,14 @@ generate_start_buildings_and_districts = {
 				add_building = building_hive_warren
 			}
 		}
-
 		# Replace capital building for machine empires
 		if = {
 			limit = { owner = { is_machine_empire = yes } }
-
 			# total - 27 jobs
-
 			# 3 jobs
 			add_district_and_planet_size_if_needed_effect = {
 				district = district_nexus
 			}
-
 			# 4 jobs
 			while = {
 				count = 2
@@ -1154,7 +2438,6 @@ generate_start_buildings_and_districts = {
 					district = district_mining
 				}
 			}
-
 			# 2 jobs
 			if = {
 				limit = {
@@ -1164,7 +2447,6 @@ generate_start_buildings_and_districts = {
 					district = district_mining
 				}
 			}
-
 			# 10 jobs
 			while = {
 				count = 5
@@ -1172,7 +2454,6 @@ generate_start_buildings_and_districts = {
 					district = district_generator
 				}
 			}
-
 			# 2 jobs
 			if = {
 				limit = {
@@ -1182,27 +2463,20 @@ generate_start_buildings_and_districts = {
 					district = district_generator
 				}
 			}
-
 			# 6 jobs
 			add_building = building_machine_capital
-
 			# 1 job
 			add_building = building_machine_assembly_plant
-
 			# 2 job
 			add_building = building_uplink_node
-
 			# 2 jobs
 			add_building = building_research_lab_1
-
 			# 2 jobs
 			add_building = building_foundry_1
-
 			#Assimilators
 			if = {
 				limit = { owner = { has_civic = civic_machine_assimilator } }
 				remove_district = district_generator
-
 				if = {
 					limit = { owner = { has_country_flag = lithoid_subspecies } }
 					add_district_and_planet_size_if_needed_effect = {
@@ -1215,11 +2489,9 @@ generate_start_buildings_and_districts = {
 					}
 				}
 			}
-
 			#Servitors
 			if = {
 				limit = { owner = { has_civic = civic_machine_servitor } }
-
 				if = {
 					limit = { owner = { has_country_flag = lithoid_subspecies } }
 					add_district_and_planet_size_if_needed_effect = {
@@ -1231,7 +2503,6 @@ generate_start_buildings_and_districts = {
 						district = district_farming
 					}
 				}
-
 				add_district_and_planet_size_if_needed_effect = {
 					district = district_generator
 				}
@@ -1241,8 +2512,6 @@ generate_start_buildings_and_districts = {
 			}
 			if = {
 				limit = { owner = { has_origin = origin_machine } }
-
-				set_planet_size = 22
 
 				remove_district = district_generator
 				remove_district = district_generator
@@ -1278,23 +2547,9 @@ generate_start_buildings_and_districts = {
 		limit = { owner = { has_origin = origin_shattered_ring } }
 		add_district = district_rw_farming
 		add_deposit = d_arcane_generator
-		add_deposit = d_shattered_ring_superblocker
 		add_deposit = d_decrepit_tunnels_1
 		add_deposit = d_decrepit_tunnels_2
 		add_deposit = d_decrepit_tunnels_3
-
-		if = {
-			limit = { owner = { is_regular_empire = yes } }
-			add_district = district_rw_city
-		}
-		if = {
-			limit = { owner = { is_hive_empire = yes } }
-			add_district = district_rw_hive
-		}
-		if = {
-			limit = { owner = { is_machine_empire = yes } }
-			add_district = district_rw_nexus
-		}
 
 		if = {
 			limit = {
@@ -1320,6 +2575,17 @@ generate_start_buildings_and_districts = {
 				count = 2
 				add_deposit = d_hibernating_lithoids
 			}
+		}
+
+		if = {
+			limit = {
+				owner = {
+					is_lithoid_empire = yes
+					is_hive_empire = yes
+				}
+			}
+			remove_district = district_rw_farming
+			add_district = district_rw_generator
 		}
 
 		if = {
@@ -1349,7 +2615,6 @@ generate_start_buildings_and_districts = {
 
 		if = {
 			limit = { owner = { is_hive_empire = yes } }
-			add_district = district_rw_generator
 
 			# 5 jobs
 			add_building = building_hive_capital
@@ -1395,6 +2660,10 @@ generate_start_buildings_and_districts = {
 			if = {
 				limit = { owner = { has_civic = civic_machine_assimilator } }
 				add_district = district_rw_farming
+				add_deposit = d_segment_rubble_1
+				add_deposit = d_segment_rubble_1
+				add_deposit = d_segment_rubble_2
+				add_deposit = d_segment_rubble_2
 			}
 
 			#Servitors
@@ -1402,6 +2671,10 @@ generate_start_buildings_and_districts = {
 				limit = { owner = { has_civic = civic_machine_servitor } }
 				add_building = building_organic_sanctuary
 				add_district = district_rw_farming
+				add_deposit = d_segment_rubble_1
+				add_deposit = d_segment_rubble_1
+				add_deposit = d_segment_rubble_2
+				add_deposit = d_segment_rubble_2
 			}
 		}
 	}
@@ -1464,8 +2737,8 @@ generate_start_pops = {
 		limit = {
 			owner = {
 				OR = {
-					has_origin = origin_codominant_evolution
 					has_origin = origin_syncretic_evolution
+					has_origin = origin_codominant_evolution
 					has_valid_civic = civic_machine_servitor
 					has_valid_civic = civic_machine_assimilator
 				}
@@ -1498,37 +2771,12 @@ generate_start_pops = {
 					ethos = random
 				}
 			}
-			if = {
-				limit = {
-					owner = { is_megacorp = yes }
-				}
-				while = {
-					limit = { num_pops < 32 }
-					create_pop = {
-						species = owner_main_species
-						ethos = random
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					owner = { is_megacorp = no }
-				}
-				while = {
-					limit = { num_pops < 30 }
-					create_pop = {
-						species = owner_main_species
-						ethos = random
-					}
-				}
-			}
 		}
-		
+
 		if = {
 			limit = { owner = { has_origin = origin_codominant_evolution } }
 
 			last_created_species = {
-				set_species_flag = syncretic_species@root.owner
 				set_citizenship_type = {
 					country = root.owner
 					type = citizenship_limited
@@ -1541,30 +2789,6 @@ generate_start_pops = {
 					ethos = random
 				}
 			}
-			if = {
-				limit = {
-					owner = { is_megacorp = yes }
-				}
-				while = {
-					limit = { num_pops < 32 }
-					create_pop = {
-						species = owner_main_species
-						ethos = random
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					owner = { is_megacorp = no }
-				}
-				while = {
-					limit = { num_pops < 30 }
-					create_pop = {
-						species = owner_main_species
-						ethos = random
-					}
-				}
-			}			
 		}
 
 		if = {
@@ -1620,7 +2844,7 @@ generate_start_pops = {
 		limit = { owner = { has_origin = origin_mechanists } }
 		owner = { create_built_robot_species = yes }
 		while = {
-			count = 12
+			count = 8
 			create_pop = {
 				species = last_created_species
 			}
@@ -1630,30 +2854,17 @@ generate_start_pops = {
 		add_district_and_planet_size_if_needed_effect = {
 			district = district_generator
 		}
-		if = {
-			limit = {
-				owner = { is_megacorp = yes }
-			}
-			while = {
-				limit = { num_pops < 32 }
-				create_pop = {
-					species = owner_main_species
-					ethos = random
-				}
+		while = {
+			limit = { num_pops < 27 }
+			create_pop = {
+				species = owner_main_species
+				ethos = random
 			}
 		}
-		else_if = {
-			limit = {
-				owner = { is_megacorp = no }
-			}
-			while = {
-				limit = { num_pops < 30 }
-				create_pop = {
-					species = owner_main_species
-					ethos = random
-				}
-			}
-		}
+	}
+	if = {
+		limit = { owner = { has_origin = origin_rapid_cybernetification } }
+		owner = { create_built_robot_species = yes }
 	}
 	if = {
 		limit = { owner = { is_hive_empire = yes } }
@@ -1708,75 +2919,9 @@ generate_start_pops = {
 	if = {
 		limit = {
 			owner = { has_origin = origin_default }
-			owner = { is_regular_empire = yes }
 		}
 		while = {
-			limit = { num_pops < 32 }
-			create_pop = {
-				species = owner_main_species
-				ethos = random
-			}
-		}
-	}
-	if = {
-		limit = {
-			owner = { has_origin = origin_default }
-			owner = { is_machine_empire = yes }
-		}
-		while = {
-			limit = { num_pops < 33 }
-			create_pop = {
-				species = owner_main_species
-				ethos = random
-			}
-		}
-	}
-	if = {
-		limit = {
-			owner = { has_origin = origin_default }
-			owner = { is_hive_empire = yes }
-		}
-		while = {
-			limit = { num_pops < 35 }
-			create_pop = {
-				species = owner_main_species
-				ethos = random
-			}
-		}
-	}
-	if = {
-		limit = {
-			owner = { has_origin = origin_default }
-			owner = { is_megacorp = yes }
-		}
-		while = {
-			limit = { num_pops < 34 }
-			create_pop = {
-				species = owner_main_species
-				ethos = random
-			}
-		}
-	}
-	if = {
-		limit = {
-			owner = { has_origin = origin_default }
-			owner = { has_valid_civic = civic_machine_servitor }
-		}
-		while = {
-			limit = { num_pops < 37 }
-			create_pop = {
-				species = owner_main_species
-				ethos = random
-			}
-		}
-	}
-	if = {
-		limit = {
-			owner = { has_origin = origin_default }
-			owner = { has_valid_civic = civic_machine_assimilator }
-		}
-		while = {
-			limit = { num_pops < 33 }
+			count = 4
 			create_pop = {
 				species = owner_main_species
 				ethos = random
@@ -1784,7 +2929,6 @@ generate_start_pops = {
 		}
 	}
 }
-
 
 generate_home_planet_final_pass = {
 	# Adjust life-seeded colonies
@@ -1871,7 +3015,7 @@ generate_home_planet_final_pass = {
 		}
 		owner = {
 			capital_scope = {
-				add_modifier = { modifier = prosp_uni_mod2 }
+				add_modifier = { modifier = prosp_uni_mod }
 			}
 		}
 	}
@@ -1998,7 +3142,7 @@ void_dweller_home_planet_setup = {
 	}
 	else = {
 		add_building = building_factory_1
-		add_district = district_hab_cultural
+		add_building = building_factory_1
 	}
 
 	add_deposit = d_arcane_replicator

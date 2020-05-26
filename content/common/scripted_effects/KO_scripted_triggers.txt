@@ -1,0 +1,69 @@
+generate_origin_codominant_evolution_second_species = {
+	if = {
+		limit = { owner = { has_origin = origin_codominant_evolution } }
+			last_created_species = {
+			set_species_flag = syncretic_species@root.owner #SHOULD be fine to keep
+			set_citizenship_type = {
+				country = root.owner
+				type = citizenship_full
+			}
+		}
+			while = {
+				count = 14
+				# replace pops instead of create new pops
+				random_pop = {
+					limit = { NOT = { is_same_species = last_created_species } }
+					change_species = last_created
+			}
+		}
+	}
+}
+
+generate_plan_con_slaves = {
+	if = {
+		limit = { owner = { has_origin = origin_plan_con } }
+			last_created_species = {
+			set_species_flag = syncretic_species@root.owner #SHOULD be fine to keep
+			set_citizenship_type = {
+				country = root.owner
+				type = citizenship_slavery
+			}
+		}
+	}
+	while = {
+		count = 4
+		create_pop = {
+		species = last_created_species
+		}
+	}
+}
+
+generate_hive_am = {
+	if = {
+		limit = { owner = { has_origin = origin_hive_am } }
+			while = {
+			remove_district = district_generator
+			remove_district = district_generator
+
+			remove_district = district_farming
+			remove_district = district_farming
+
+			remove_district = district_mining
+			remove_district = district_mining
+
+			add_district = district_generator_uncapped
+			add_district = district_generator_uncapped
+
+			add_district = district_mining_uncapped
+			add_district = district_mining_uncapped
+			
+			add_district = district_farming_uncapped
+			add_district = district_farming_uncapped
+				
+			set_planet_size = 25
+		}
+	}
+}
+
+		
+	
