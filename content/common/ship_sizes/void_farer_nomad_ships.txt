@@ -91,7 +91,7 @@ nomad_mining_ship = {
 	required_component_set = "ftl_components"
 	required_component_set = "sensor_components"
 	required_component_set = "thruster_components"
-	auto_upgrade = yes
+	auto_upgrade = no
 	
 	resources = {
 		category = ships
@@ -141,7 +141,7 @@ nomad_energy_tanker = {
 	required_component_set = "ftl_components"
 	required_component_set = "sensor_components"
 	required_component_set = "thruster_components"
-	auto_upgrade = yes
+	auto_upgrade = no
 	
 	resources = {
 		category = ships
@@ -252,7 +252,7 @@ capital_ark_ship = {
 	required_component_set = "ftl_components"
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
-	auto_upgrade = yes
+	auto_upgrade = no
 	
 	empire_limit = {
 		base = 1
@@ -307,7 +307,7 @@ support_ark_ship = {
 	required_component_set = "ftl_components"
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
-	auto_upgrade = yes
+	auto_upgrade = no
 	
 	potential_country = {
 		is_country_type = void_farer
@@ -342,7 +342,7 @@ factory_ship = {
 	required_component_set = "ftl_components"
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
-	auto_upgrade = yes
+	auto_upgrade = no
 	
 	resources = {
 		category = ships
