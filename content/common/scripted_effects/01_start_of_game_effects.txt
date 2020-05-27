@@ -2844,7 +2844,7 @@ generate_start_pops = {
 		limit = { owner = { has_origin = origin_mechanists } }
 		owner = { create_built_robot_species = yes }
 		while = {
-			count = 8
+			count = 10
 			create_pop = {
 				species = last_created_species
 			}
@@ -2855,7 +2855,7 @@ generate_start_pops = {
 			district = district_generator
 		}
 		while = {
-			limit = { num_pops < 27 }
+			limit = { num_pops < 30 }
 			create_pop = {
 				species = owner_main_species
 				ethos = random
@@ -2889,7 +2889,7 @@ generate_start_pops = {
 	if = {
 		limit = { owner = { is_machine_empire = yes } }
 		while = {
-			limit = { num_pops < 29 }
+			limit = { num_pops < 30 }
 			create_pop = {
 				species = owner_main_species
 				ethos = random
@@ -2909,7 +2909,7 @@ generate_start_pops = {
 	if = {
 		limit = { owner = { is_regular_empire = yes } }
 		while = {
-			limit = { num_pops < 28 }
+			limit = { num_pops < 30 }
 			create_pop = {
 				species = owner_main_species
 				ethos = random
@@ -2921,7 +2921,7 @@ generate_start_pops = {
 			owner = { has_origin = origin_default }
 		}
 		while = {
-			count = 4
+			count = 2
 			create_pop = {
 				species = owner_main_species
 				ethos = random

@@ -149,17 +149,6 @@ living_standard_utopian = {
 	
 	allow = {
 		hidden_trigger = { exists = from }
-		
-		custom_tooltip = {
-			fail_text = empire_socialism_utopia_non_market
-			from = {
-			    has_ethic = ethic_fanatic_socialism
-				OR = {
-				    has_ethic = ethic_pluralist
-					has_ethic = ethic_fanatic_pluralist
-				}									
-			}
-		}
 		NOR = {
 			custom_tooltip = {
 				has_citizenship_type = { country = from type = citizenship_slavery }
@@ -251,16 +240,6 @@ living_standard_shared_burden = {
 	}
 	
 	allow = {
-		custom_tooltip = {
-			fail_text = empire_not_pluralist_collectivist
-			from = {
-			    has_ethic = ethic_fanatic_socialism
-				NOR = {
-				    has_ethic = ethic_elitist
-					has_ethic = ethic_fanatic_elitist
-				}			
-			}
-		}	
 		hidden_trigger = { exists = from }
 		NOR = {
 			custom_tooltip = {
@@ -536,35 +515,7 @@ living_standard_stratified = {
 	}
 	
 	allow = {
-		hidden_trigger = { exists = from }
-		
-		custom_tooltip = {
-			fail_text = empire_not_capitalist_authoritarian
-			from = {
-				OR = {				
-				 AND = {
-				  has_ethic = ethic_fanatic_capitalism
-				  NOR = {
-				    has_ethic = ethic_pluralist
-					has_ethic = ethic_fanatic_pluralist
-				  }						  
-                 }	
-
-				 AND = {
-				 OR = {
-				  has_ethic = ethic_authoritarian
-				  has_ethic = ethic_fanatic_authoritarian			  
-				  }
-		          NOR = {
-					has_ethic = ethic_socialism
-					has_ethic = ethic_fanatic_socialism
-					has_ethic = ethic_fanatic_pluralist
-				  }	
-                 }				 
-				}
-			
-			}
-		}		
+		hidden_trigger = { exists = from }		
 	
 		NOR = {
 			custom_tooltip = {
