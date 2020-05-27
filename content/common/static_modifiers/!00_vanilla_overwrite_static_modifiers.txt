@@ -109,3 +109,6 @@ high_gravity = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_high_gravity.dds"
 	icon_frame = 2
 }
+
+planet_forced_growth = {
+}
