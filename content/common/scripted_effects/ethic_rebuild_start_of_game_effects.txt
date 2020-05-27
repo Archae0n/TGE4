@@ -9,8 +9,7 @@ generate_start_pops = {
 					has_origin = origin_syncretic_evolution
 					has_valid_civic = civic_machine_servitor
 					has_valid_civic = civic_machine_assimilator
-					has_valid_civic = civic_symbiotic_race
-					has_valid_civic = civic_slave_race
+					has_origin = origin_symbiotic_race
 				}
 			}
 		}
