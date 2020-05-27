@@ -80,8 +80,7 @@ tr_plentiful_assault_3 = {
 tr_plentiful_assault_4 = {
 #	cost = { unity = @cost }
 	modifier = {
-		leader_skill_levels = 1
-		ruler_skill_levels = 1
+		ship_weapon_damage = 0.2
 	}
 	
 	ai_weight = {

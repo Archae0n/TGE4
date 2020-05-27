@@ -185,8 +185,7 @@ tr_plentiful_mysticism_4 = {
 		}
 
 		modifier = {
-			country_unity_produces_mult = 0.05
-			damage_vs_country_type_drone_mult = 0.15
+			country_unity_produces_mult = 0.15
 		}
 		
 		weight = {

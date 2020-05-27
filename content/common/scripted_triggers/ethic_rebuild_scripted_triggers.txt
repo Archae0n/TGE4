@@ -45,7 +45,7 @@ has_encountered_other_species = {
 	OR = {
 		has_origin = origin_syncretic_evolution
 		has_civic = civic_machine_servitor
-		has_valid_civic = civic_symbiotic_race
+		has_origin = origin_symbiotic_race
 		has_valid_civic = civic_slave_race
 		num_communications > 0
 		any_owned_pop = {

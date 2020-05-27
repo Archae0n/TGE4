@@ -9,28 +9,28 @@ modifier_transformation_mastery = {
 modifier_plentiful_traditions_blockchain_1 = {
     icon = "gfx/interface/icons/planet_modifiers/pm_blockchain_1.dds"
 	icon_frame = 1
-	planet_pop_assembly_mult = 0.05
+	planet_pop_assembly_mult = 0.025
 	planet_jobs_robotic_produces_mult = 0.025
 }
 
 modifier_plentiful_traditions_blockchain_2 = {
     icon = "gfx/interface/icons/planet_modifiers/pm_blockchain_1.dds"
 	icon_frame = 1
-	planet_pop_assembly_mult = 0.1
+	planet_pop_assembly_mult = 0.05
 	planet_jobs_robotic_produces_mult = 0.05
 }
 
 modifier_plentiful_traditions_blockchain_3 = {
     icon = "gfx/interface/icons/planet_modifiers/pm_blockchain_1.dds"
 	icon_frame = 1
-	planet_pop_assembly_mult = 0.15
+	planet_pop_assembly_mult = 0.075
 	planet_jobs_robotic_produces_mult = 0.075
 }
 
 modifier_plentiful_traditions_blockchain_4 = {
     icon = "gfx/interface/icons/planet_modifiers/pm_blockchain_4.dds"
 	icon_frame = 1
-	planet_pop_assembly_mult = 0.2
+	planet_pop_assembly_mult = 0.1
 	planet_jobs_robotic_produces_mult = 0.1
 }
 
@@ -228,7 +228,7 @@ modifier_plentiful_traditions_empathetic = {
 modifier_plentiful_traditions_pathfinder = {
     icon = "gfx/interface/icons/modifiers/mod_country_all_tech_research_speed.dds"
 	icon_frame = 1
-	all_technology_research_speed = 0.03
+	all_technology_research_speed = 0.10
 }
 
 modifier_plentiful_traditions_sequence = {
@@ -416,4 +416,22 @@ modifier_plentiful_perks_feeding = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_feeding.dds"
 	icon_frame = 1
 	planet_pop_assembly_mult = 1
+}
+
+modifier_plentiful_traditions_credence = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_feeding.dds"
+	icon_frame = 1
+	trade_value_mult = 0.2
+}
+
+modifier_plentiful_traditions_cohesion_brings_unity = {
+    icon = "gfx/interface/icons/planet_modifiers/pm_plentiful_deeds.dds"
+	icon_frame = 1
+	country_unity_produces_mult = 0.10
+}
+
+modifier_plentiful_traditions_war_profiteering = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_feeding.dds"
+	icon_frame = 1
+	trade_value_mult = 0.25
 }

@@ -21,8 +21,8 @@ planet_event = {
 		owner = {
 			add_monthly_resource_mult = {
 				resource = unity
-				value = 2
-				min = 10
+				value = 6
+				min = 50
 			}
 		}
 		set_planet_flag = plentiful_faith_1

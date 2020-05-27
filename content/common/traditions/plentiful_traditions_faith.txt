@@ -70,6 +70,8 @@ tr_plentiful_faith_5 = {
 #	cost = { unity = @cost }
 	modifier = {
 		defensive_war_influence_gain_add = 0.5
+		ship_home_territory_fire_rate_mult = 0.10
+		pop_happiness = 0.1
 	}
 	
 	ai_weight = {
@@ -94,8 +96,9 @@ tr_plentiful_faith_2 = {
 tr_plentiful_faith_1 = {
 #	cost = { unity = @cost }
 	modifier = {
-		planet_sensor_range_add = 2
-		ship_sensor_range_add = 2
+		planet_sensor_range_add = 1
+		ship_sensor_range_add = 1
+		country_unity_produces_mult = 0.10
 	}
 	
 	ai_weight = {

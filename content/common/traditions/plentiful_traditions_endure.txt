@@ -43,7 +43,7 @@ tr_plentiful_endure_finish = {
 tr_plentiful_endure_1 = {
 #	cost = { unity = @cost }
 	modifier = {
-		country_unity_produces_mult = 0.05
+		country_unity_produces_mult = 0.15
 	}
 	
 	ai_weight = {
@@ -77,6 +77,7 @@ tr_plentiful_endure_3 = {
 	
 	modifier = {
 		#fallen-empire-tech
+		ship_sensor_range_add = 1
 	}
 	
 	ai_weight = {

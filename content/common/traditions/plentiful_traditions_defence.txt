@@ -30,9 +30,7 @@ tr_plentiful_defence_adopt = {
 tr_plentiful_defence_finish = {
 	modifier = {
 		army_starting_experience_add = 100
-		planet_structures_cost_mult = -0.1
-		planet_building_build_speed_mult = 0.10
-		starbase_defense_platform_capacity_add = 2
+		job_soldier_per_pop = 0.05
 		ascension_perks_add = 1
 	}
 }
@@ -55,7 +53,7 @@ tr_plentiful_defence_1 = {
 tr_plentiful_defence_2 = {
 #	cost = { unity = @cost }
 	modifier = {
-		army_defense_morale_mult = 0.2
+		planet_orbital_bombardment_damage = -0.45
 	}
 	
 	ai_weight = {
@@ -101,6 +99,7 @@ tr_plentiful_defence_5 = {
 	}
 	modifier = {
 		#megastructure_build_speed_mult = 0.25
+		country_starbase_capacity_add = 5
 	}
 	
 	ai_weight = {

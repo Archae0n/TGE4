@@ -82,8 +82,8 @@ tr_plentiful_order_4 = {
 		has_tradition = tr_plentiful_order_2
 	}
 	modifier = {
-		starbase_module_build_speed_mult = 0.15
-		category_statecraft_research_speed_mult = 0.15
+		starbase_module_build_speed_mult = 0.25
+		starbase_shipyard_build_speed_mult = 0.25
 	}
 	
 	ai_weight = {

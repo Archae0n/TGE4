@@ -70,7 +70,8 @@ tr_plentiful_aspiration_finish = {
 tr_plentiful_aspiration_1 = {
 #	cost = { unity = @cost }
 	modifier = {
-		country_border_friction_mult = -0.25
+		envoys_add = 1
+		diplo_weight_mult = 0.1
 	}
 	
 	ai_weight = {
@@ -84,7 +85,6 @@ tr_plentiful_aspiration_2 = {
 		has_tradition = tr_plentiful_aspiration_1
 	}
 	modifier = {
-		country_trust_growth = 0.20
 	}
 	
 	ai_weight = {

@@ -24,3 +24,40 @@ planet_event = {
 		}
 	}
 }
+
+event = {
+	id = plentiful_traditions_overcharge_pedict.2
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_tradition = tr_plentiful_kleptocracy_4
+			}
+			if = {
+				limit = {
+					is_at_war = yes
+				}
+				if = {
+					limit = {
+						Not = {
+							has_modifier = modifier_plentiful_traditions_war_profiteering
+						}
+					}
+				}
+				add_modifier = {
+					modifier = "modifier_plentiful_traditions_war_profiteering"
+				}
+				else = {
+					if = {
+						limit = {
+							has_modifier = modifier_plentiful_traditions_war_profiteering
+						}
+					}
+					remove_modifier = "modifier_plentiful_traditions_war_profiteering"
+				}
+			}
+		}
+	}
+}

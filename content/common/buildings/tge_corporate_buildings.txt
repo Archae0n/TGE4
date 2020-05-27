@@ -302,7 +302,7 @@ building_broadcast_centre = {
 	}
 	
 		planet_modifier = {
-		    job_virtual_celeb_add = 2
+		    job_virtual_celebrity_add = 2
 
 	}	
 	resources = {

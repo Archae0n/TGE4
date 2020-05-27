@@ -508,3 +508,77 @@ planet_event = {
 		}
 	}  
 }
+
+event = {
+	id = plentiful_traditions_aspiration.5
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_tradition = tr_plentiful_aspiration_2
+			}
+			if = {
+				limit = {
+					is_at_war = no
+				}
+				if = {
+					limit = {
+						Not = {
+							has_modifier = modifier_plentiful_traditions_credence
+						}
+					}
+				}
+				add_modifier = {
+					modifier = "modifier_plentiful_traditions_credence"
+				}
+				else = {
+					if = {
+						limit = {
+							has_modifier = modifier_plentiful_traditions_credence
+						}
+					}
+					remove_modifier = "modifier_plentiful_traditions_credence"
+				}
+			}
+		}
+	}
+}
+
+event = {
+	id = plentiful_traditions_aspiration.6
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				has_tradition = tr_plentiful_endure_1
+			}
+			if = {
+				limit = {
+					is_at_war = yes
+				}
+				if = {
+					limit = {
+						Not = {
+							has_modifier = modifier_plentiful_traditions_cohesion_brings_unity
+						}
+					}
+				}
+				add_modifier = {
+					modifier = "modifier_plentiful_traditions_cohesion_brings_unity"
+				}
+				else = {
+					if = {
+						limit = {
+							has_modifier = modifier_plentiful_traditions_cohesion_brings_unity
+						}
+					}
+					remove_modifier = "modifier_plentiful_traditions_cohesion_brings_unity"
+				}
+			}
+		}
+	}
+}

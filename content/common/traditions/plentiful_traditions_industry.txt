@@ -4,7 +4,7 @@ tr_plentiful_industry_adopt = {
 #	cost = { unity = @cost }
 	modifier = {
 		category_industry_research_speed_mult = 0.15
-		station_gatherers_minerals_produces_mult = 0.1
+		station_gatherers_minerals_produces_mult = 0.5
 	}
 	on_enabled = {
 		give_technology = { message = no tech = tech_plentiful_traditions_orbital_fracking_cannon }
@@ -36,7 +36,7 @@ tr_plentiful_industry_finish = {
 tr_plentiful_industry_1 = {
 #	cost = { unity = @cost }
 	modifier = {
-		station_gatherers_cost_mult = -0.15
+		station_gatherers_cost_mult = -0.5
 	}
 	
 	ai_weight = {
@@ -50,7 +50,8 @@ tr_plentiful_industry_2 = {
 		has_tradition = tr_plentiful_industry_1
 	}
 	modifier = {
-		country_admin_cap_mult = 0.15
+		country_admin_cap_mult = 0.10
+		country_starbase_influence_cost_mult = -0.05
 	}
 	
 	ai_weight = {

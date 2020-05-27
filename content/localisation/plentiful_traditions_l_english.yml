@@ -37,11 +37,11 @@ tr_plentiful_mysticism_3_desc:0 "§Y$mod_pc_nuked_habitability$§! increased by 
 tr_plentiful_mysticism_3_delayed:0 "A natural fear of death, brings out an unquestioned love for life. Even places void of life and filled with destruction deserve a chance for redemption."
 
 tr_plentiful_mysticism_4:0 "Keys of Life"
-tr_plentiful_mysticism_4_desc:0 "§Y$mod_country_unity_produces_mult$§! increased by §G+5%§! and §Y$mod_damage_vs_country_type_drone_mult$§! increased by §G+15%§!"
+tr_plentiful_mysticism_4_desc:0 "§Y$mod_country_unity_produces_mult$§! increased by §G+15%§!"
 tr_plentiful_mysticism_4_delayed:0 "Abscence of compassion, frugality and modesty may lead to a future that is dark and empty."
 
 tr_plentiful_mysticism_5:0 "Unwavering Will"
-tr_plentiful_mysticism_5_desc:1 "§Y$mod_damage_vs_country_type_ai_empire_mult$§! increased by §G+15%§!.\n\n§HUnlocks Building:§! £building  $building_plentiful_traditions_sanctum_of_keys$, a planet unique building that slightly increases the planet's £happiness  §Y$MOD_POP_HAPPINESS$§!, §Y$MOD_POP_ENVIRONMENT_TOLERANCE$§! and produces £unity  §YUnity§!."
+tr_plentiful_mysticism_5_desc:1 "\n§HUnlocks Building:§! £building  $building_plentiful_traditions_sanctum_of_keys$, a planet unique building that slightly increases the planet's £happiness  §Y$MOD_POP_HAPPINESS$§!, §Y$MOD_POP_ENVIRONMENT_TOLERANCE$§! and produces £unity  §YUnity§!."
 tr_plentiful_mysticism_5_delayed:0 "Embrace the Keys of Life to avoid an obsession with power or self-interest."
 
 sm_orbital_cosmic_rays_shield:0 "Cosmic Rays Shield"
@@ -323,7 +323,7 @@ tr_plentiful_faith_finish:0 "Faith Traditions Finished"
 tr_plentiful_faith_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_plentiful_faith_adopt$ increases our £influence  §Y$mod_country_base_influence_produces_add$§! by §G+1§!.\n\n§HUnlocks Building:§! £building  $building_plentiful_traditions_house_of_prayer$, an empire unique building that increases the planet's £unity  §YUnity§!, §Y$mod_pop_ethic_spiritualist_attraction_mult$§! and the empire's £influence  §YInfluence§! production."
  
 tr_plentiful_faith_1:0 "Strength in Mind"
-tr_plentiful_faith_1_desc:0 "§Y$MOD_PLANET_SENSOR_RANGE_ADD$§! and §Y$MOD_SHIP_SENSOR_RANGE_ADD$§! increased by §G+2§!."
+tr_plentiful_faith_1_desc:0 "§Y$MOD_PLANET_SENSOR_RANGE_ADD$§! and §Y$MOD_SHIP_SENSOR_RANGE_ADD$§! increased by §G+1§!. Unity output increased by 10%."
 tr_plentiful_faith_1_delayed:0 "Control of mind, strength in mind."
  
 tr_plentiful_faith_2:0 "Advent Awakening"
@@ -335,11 +335,11 @@ tr_plentiful_faith_3_desc:0 "£influence §Y$mod_edicts_cost_mult$§! decreased 
 tr_plentiful_faith_3_delayed:0 "Live by absolution and take comfort in the truth."
  
 tr_plentiful_faith_4:0 "Contribution"
-tr_plentiful_faith_4_desc:0 "Whenever a £building  §Y$building_holotemple$§! or §Y$building_system_conflux$§! is built within our empire, we gain bonus  £unity  §YUnity§! equal to §Y2§! times our monthly £unity  §YUnity§!. This effect only works once per planet. In addition, laborer's yield of £minerals with §Y$mod_planet_jobs_minerals_produces_mult$§! is increased by §G10%§!."
+tr_plentiful_faith_4_desc:0 "Whenever a £building  §Y$building_holotemple$§! or §Y$building_system_conflux$§! is built within our empire, we gain bonus  £unity  §YUnity§! equal to §Y6§! times our monthly £unity  §YUnity§!. This effect only works once per planet. In addition, laborer's yield of £minerals with §Y$mod_planet_jobs_minerals_produces_mult$§! is increased by §G10%§!."
 tr_plentiful_faith_4_delayed:0 "Contributions to the truth bring people together."
  
 tr_plentiful_faith_5:0 "Path of Enlightenment"
-tr_plentiful_faith_5_desc:1 "When our empire is in a §GDefensive§! war, our monthly £influence  §YInfluence§! is increased by §G+0.5§!."
+tr_plentiful_faith_5_desc:1 "When our empire is in a §GDefensive§! war, our monthly £influence  §YInfluence§! is increased by §G+0.5§, happiness and fire rate increased by 10%."
 tr_plentiful_faith_5_delayed:0 "To know our own nature, the true nature of the universe, and the purpose and meaning of life, is a journey better known as the path of enlightenment."
 
 # Faith Swapped
@@ -388,7 +388,7 @@ tr_plentiful_order_3_desc:0 "§Y$mod_category_voidcraft_research_speed_mult$§! 
 tr_plentiful_order_3_delayed:0 "Order unites even the less fortunate, sacrifices for the cause will make us whole."
 
 tr_plentiful_order_4:0 "Antagonism"
-tr_plentiful_order_4_desc:0 "§Y$MOD_STARBASE_MODULE_BUILD_SPEED_MULT$§! and §Y$mod_category_statecraft_research_speed_mult$§! increased by §G+15%§!."
+tr_plentiful_order_4_desc:0 "§Y$MOD_STARBASE_MODULE_BUILD_SPEED_MULT$§! and Ship Build Speed increased by +25%."
 tr_plentiful_order_4_delayed:0 "We welcome any enemy of order with our empire's iron fist."
 
 tr_plentiful_order_5:0 "Inner Workings"
@@ -447,15 +447,15 @@ tr_plentiful_malice_1_desc:0 "§Y$mod_pop_cat_slave_happiness$§! increased by �
 tr_plentiful_malice_1_delayed:0 "Even our slaves are without hope. How exhilarating!"
  
 tr_plentiful_malice_2:0 "Iniquity"
-tr_plentiful_malice_2_desc:0 "£influence §Y$MOD_COUNTRY_MAX_RIVALRIES$§! increased by §G+4§!."
-tr_plentiful_malice_2_delayed:0 "The screams of our rivals will be heard loudly, even in space."
+tr_plentiful_malice_2_desc:0 "Slave Political Power reduced by -50%."
+tr_plentiful_malice_2_delayed:0 "Slavery? No, no! These are merely contract workers."
  
 tr_plentiful_malice_3:0 "Dread"
 tr_plentiful_malice_3_desc:0 "§Y$mod_planet_jobs_slave_produces_mult$§! increased by §G+10%§!."
 tr_plentiful_malice_3_delayed:0 "Our slaves seem to be working themselves to death, but why? Death is only a waste of good suffering."
  
 tr_plentiful_malice_4:0 "Wrath"
-tr_plentiful_malice_4_desc:0 "§Y$MOD_COUNTRY_MAX_RIVALRIES$§! increased by §G+4§!. Additionally, the §Y$mod_planet_jobs_slave_minerals_produces_mult$§! increases by §G+15%§!."
+tr_plentiful_malice_4_desc:0 "§Y$MOD_COUNTRY_MAX_RIVALRIES$§! increased by §G+2§!. Additionally, the §Y$mod_planet_jobs_slave_minerals_produces_mult$§! increases by §G+15%§!."
 tr_plentiful_malice_4_delayed:0 "We'll read their pain slowly, page by page. Much enemy, much honor. While our government is driven to increase the number of our enemies, the mines continue to drive the slaves to collect more £minerals §Yminerals§!."
  
 tr_plentiful_malice_5:0 "Spite"
@@ -506,11 +506,11 @@ tr_plentiful_aspiration_finish:0 "Aspiration Traditions Finished"
 tr_plentiful_aspiration_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_plentiful_aspiration_adopt$ increases the £trade_value£ §Y$MOD_TRADE_VALUE_MULT$§! production of our £pop Pops by §G+5%§!.\n\n§HUnlocks Building:§! £building  $building_plentiful_traditions_trading_terminal$, which allows the use of the §Y$plentiful_traditions_plentiful_deeds$§! planetary edict."
  
 tr_plentiful_aspiration_1:0 "Charismatic"
-tr_plentiful_aspiration_1_desc:0 "§Y$MOD_COUNTRY_BORDER_FRICTION_MULT$§! decreased by §G-25%§!. In addition, empire £opinion  §YOpinion§! is increased by §G+20§!."
+tr_plentiful_aspiration_1_desc:0 "+1 Envoy and +10% Diplomatic Weight"
 tr_plentiful_aspiration_1_delayed:0 "In a galaxy full of dangers, sometimes a friendly gesture and some charisma is the difference between war and peace."
   
 tr_plentiful_aspiration_2:0 "Credence"
-tr_plentiful_aspiration_2_desc:1 "§Y$MOD_COUNTRY_TRUST_GROWTH$§! increased by §G+20%§!."
+tr_plentiful_aspiration_2_desc:1 "§Trade Value increased by 20% whilst at peace."
 tr_plentiful_aspiration_2_delayed:0 "Remember past ventures and acts of kindness, as they will remember you."
 
 tr_plentiful_aspiration_3:0 "Persuasion"
@@ -586,11 +586,11 @@ tr_plentiful_affinity_2_desc:0 "When our empire is at §GPeace§!, the £happine
 tr_plentiful_affinity_2_delayed:0 "The understanding and sharing of feelings between other species, is what brings us forward."
  
 tr_plentiful_affinity_3:0 "Mercy"
-tr_plentiful_affinity_3_desc:0 "§Y$MOD_POP_GROWTH_FROM_IMMIGRATION$§! increased by §G+10%§!."
+tr_plentiful_affinity_3_desc:0 "§Y$MOD_POP_GROWTH_FROM_IMMIGRATION$§! increased by §G+20%§!."
 tr_plentiful_affinity_3_delayed:0 "Allowing all species to migrate freely, may break the chains of the unfortunate."
  
 tr_plentiful_affinity_4:0 "Pathfinder"
-tr_plentiful_affinity_4_desc:0 "Our £physics  £society  £engineering §Y$MOD_COUNTRY_ALL_TECH_RESEARCH_SPEED$§! is increased by §G+3%§!. Wen our empire is at §GPeace§! this is doubled for a total of §G+6%§!."
+tr_plentiful_affinity_4_desc:0 "Our science output is increased by 10%."
 tr_plentiful_affinity_4_delayed:0 "The discovery of new worlds, is what brings us closer together and allows us to share thoughts and knowledge."
  
 tr_plentiful_affinity_5:0 "United Passion"
@@ -680,7 +680,7 @@ tradition_plentiful_mutagenesis_desc:0 "We care little for the concern of others
 #Other living organisms are nothing but building blocks towards the perfection of our collective.
 tr_plentiful_mutagenesis_adopt:0 "Mutagenesis Traditions"
 tr_plentiful_mutagenesis_adopt_desc:0 "$tradition_plentiful_mutagenesis_desc$\n\n$tr_plentiful_mutagenesis_adopt_effect$\n\n$tr_plentiful_mutagenesis_finish_effect$"
-tr_plentiful_mutagenesis_adopt_effect:0 "§E$TRADITIONS_ADOPT$:§!\n§Y$MOD_POP_GROWTH_SPEED$§! increased by §G+20%§!."
+tr_plentiful_mutagenesis_adopt_effect:0 "§E$TRADITIONS_ADOPT$:§!\n§Y$MOD_POP_FOOD_MULT$§! increased by §G+20%§!. 
 
 tr_plentiful_mutagenesis_finish:0 "Mutagenesis Traditions Finished"
 tr_plentiful_mutagenesis_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_plentiful_mutagenesis_adopt$ allows us to gain £food  §YFood§! from purging Xeno £pop  Pops. The effect §Y$MOD_TRADITION_COST_EMPIRE_SIZE_MULT$§! is reduced by §G-15%§!."
@@ -702,7 +702,7 @@ tr_plentiful_mutagenesis_4_desc:0 "§HUnlocks Building:§! £building  $building
 tr_plentiful_mutagenesis_4_delayed:0 "There is no need for others to waste sources of energy on reproduction, as they too are or will become an ingredient to the collective."
 
 tr_plentiful_mutagenesis_5:0 "Breeding Pool"
-tr_plentiful_mutagenesis_5_desc:1 "§Y$MOD_POP_FOOD_MULT$§! increased by §G+15%§!."
+tr_plentiful_mutagenesis_5_desc:1 "§Y$MOD_POP_FOOD_MULT$§! increased by §G+15%§!. §!\n§Y$MOD_POP_GROWTH_SPEED$§! increased by §G+15%§!."
 tr_plentiful_mutagenesis_5_delayed:0 "The galaxy's sources of energy are meant to make our empire thrive, so that we can discover a multitude of ways to further mutate our collective into perfection."
 
 # Mutagenesis Swapped
@@ -725,22 +725,22 @@ tradition_plentiful_industry:0 "Industry"
 tradition_plentiful_industry_desc:0 "We must specialize in mining, extraction, cargo and raw ingenuity to get things done without wasting effort and materials on too much elegance."
 tr_plentiful_industry_adopt:0 "Industry Traditions"
 tr_plentiful_industry_adopt_desc:0 "$tradition_plentiful_industry_desc$\n\n$tr_plentiful_industry_adopt_effect$\n\n$tr_plentiful_industry_finish_effect$"
-tr_plentiful_industry_adopt_effect:0 "§E$TRADITIONS_ADOPT$:§!\n£engineering  §Y$mod_category_industry_research_speed_mult$§! increased by §G+15%§! and §Y$mod_station_gatherers_minerals_produces_mult$§! increased by §G+10%§!.\n\n§HUnlocks Spaceport Module:§! $sm_orbital_fracking_cannon$, a spaceport module that adds to the planet's and gatherers £minerals  §YMinerals§! production."
+tr_plentiful_industry_adopt_effect:0 "§E$TRADITIONS_ADOPT$:§!\n£engineering  §Y$mod_category_industry_research_speed_mult$§! increased by §G+15%§! and §Y$mod_station_gatherers_minerals_produces_mult$§! increased by §G+50%§!.\n\n§HUnlocks Spaceport Module:§! $sm_orbital_fracking_cannon$, a spaceport module that adds to the planet's and gatherers £minerals  §YMinerals§! production."
 
 tr_plentiful_industry_finish:0 "Industry Traditions Finished"
 tr_plentiful_industry_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\n§HUnlocks Planetary Edict:§! $plentiful_traditions_ionized_excavation$, boosting the planet's mining facilities with a chance of adding additional £minerals  §YMinerals§! deposits and gives a temporary §G+10%§! bonus to their mineral production at the cost of £influence  §YInfluence§!.\n\n§HUnlocks Planetary Edict:§! $plentiful_traditions_harvest_erupt$, detonates a well-stablished colony to erupt from within, destroying the colony and the planet completely to reveal £minerals  §YMineral§! deposits that are often deeply buried within a planet's core."
 
 tr_plentiful_industry_1:0 "Hydro-Magnetic Digging"
-tr_plentiful_industry_1_desc:0 "§Y$mod_station_gatherers_cost_mult$§! decreased by §G-15%§!."
+tr_plentiful_industry_1_desc:0 "§Y$mod_station_gatherers_cost_mult$§! decreased by §G-50%§!."
 tr_plentiful_industry_1_delayed:0 "Our engineers and physicists have come up with new blueprints that should make our mineral harvesting more cost-effective."
 
 tr_plentiful_industry_2:0 "Multi-Functional administive ships"
-tr_plentiful_industry_2_desc:0 "§Y$MOD_COUNTRY_ADMIN_CAP_MULT$§! increased by §G15%§!."
+tr_plentiful_industry_2_desc:0 "§Y$MOD_COUNTRY_ADMIN_CAP_MULT$§! increased by §G10%§! and starbase influence cost decreased by -5%"
 tr_plentiful_industry_2_delayed:0 "Industrialized administrative ships may not have all the latest features, but you get what you pay for."
 
 tr_plentiful_industry_3:0 "Crystalline Guidance Systems"
 tr_plentiful_industry_3_desc:0 "§Y$MOD_POP_RESETTLEMENT_COST_MULT$§! decreased by §G-30%§!. Additionally §Y$MOD_PLANET_HOUSING_ADD$§! and §HMiners Jobs§! are increased by §G+1§! in $district_mining$."
-tr_plentiful_industry_3_delayed:0 "Resettlement doesn't require ships with beautiful rooms, the best cryo chambers, good nutrition and the latest media. Also you could live in $district_mining$."
+tr_plentiful_industry_3_delayed:0 "Resettlement doesn't require ships with beautiful rooms, the best cryo chambers, good nutrition and the latest media. Also you can live in a $district_mining$."
 
 tr_plentiful_industry_4:0 "Beam-Focused Metallurgy"
 tr_plentiful_industry_4_desc:0 "§Y$mod_station_gatherers_minerals_produces_mult$§! increased by §G+10%§! and §HUnlocks Building:§! £building  $building_plentiful_traditions_purification_facility$, a planet unique building that increases the planet's £minerals §YMinerals§! output."
@@ -752,7 +752,7 @@ tr_plentiful_industry_5_delayed:0 "The right accountant is useful even in space.
 
 # Industry buildings
 building_plentiful_traditions_purification_facility:0 "Purification Facility"
-building_plentiful_traditions_purification_facility_desc:0 "Purification Facilities increase the overall production of minerals of a planet."
+building_plentiful_traditions_purification_facility_desc:0 "Purification Facilities increase the overall production of minerals and alloys of a planet."
 
 sm_orbital_fracking_cannon:0 "Orbital Fracking Cannon"
 
@@ -794,7 +794,7 @@ tradition_plentiful_kleptocracy:0 "Kleptocracy"
 tradition_plentiful_kleptocracy_desc:0 "Business is done more frequent and effective when our business-partners are 'convinced' to do so by any means."
 tr_plentiful_kleptocracy_adopt:0 "Kleptocracy Traditions"
 tr_plentiful_kleptocracy_adopt_desc:0 "$tradition_plentiful_kleptocracy_desc$\n\n$tr_plentiful_kleptocracy_adopt_effect$\n\n$tr_plentiful_kleptocracy_finish_effect$"
-tr_plentiful_kleptocracy_adopt_effect:0 "§E$TRADITIONS_ADOPT$:§!\n§Y$MOD_SHIP_FIRE_RATE_MULT$§! increased by §G+8%§!."
+tr_plentiful_kleptocracy_adopt_effect:0 "§E$TRADITIONS_ADOPT$:§!\n§Y$MOD_SHIP_FIRE_RATE_MULT$§! increased by §G+10%§!."
 
 tr_plentiful_kleptocracy_finish:0 "Kleptocracy Traditions Finished"
 tr_plentiful_kleptocracy_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_plentiful_kleptocracy_adopt$ increases our §Y$MOD_COUNTRY_TRADE_ATTRACTIVENESS$§! by §G+25%§!.\nIncreases §Y$MOD_PIRACY_SUPPRESSION_MULT$§! by §G+10%§!"
@@ -811,9 +811,9 @@ tr_plentiful_kleptocracy_3:0 "Reckless Greed"
 tr_plentiful_kleptocracy_3_desc:0 "§HUnlocks Planetary Edict:§! $plentiful_traditions_overcharge$, boosting the planet's energy production with a chance of adding additional £energy  §YEnergy§! deposits and gives a temporary §G+10%§! bonus to their energy production at the cost of £influence  §YInfluence§!."
 tr_plentiful_kleptocracy_3_delayed:0 "Energy production and its logistics are carefully monitored to keep stability within the empire. However, temporarily overcharging the planet's energy production might not always be noticed."
 
-tr_plentiful_kleptocracy_4:0 "Partners in Crime"
-tr_plentiful_kleptocracy_4_desc:0 "£influence  §Y$mod_diplomacy_upkeep_mult$§! reduced by §G-15%§! and §Y$MOD_COUNTRY_TRUST_GROWTH$§! increased by §G+15%§!. In addition, empire £opinion  §YOpinion§! is increased by §G+10§!."
-tr_plentiful_kleptocracy_4_delayed:0 "Trading agreements don't always need to be formalized in order for them to be effective. Sometimes a little bit of credits is all you need to in order to convince the right people."
+tr_plentiful_kleptocracy_4:0 "War Profiteering"
+tr_plentiful_kleptocracy_4_desc:0 "£influence  §Y$mod_diplomacy_upkeep_mult$§! reduced by §G-15%§! and trade value whilst at war increased by 25%."
+tr_plentiful_kleptocracy_4_delayed:0 "When two sides are at war, the sale of weapons, equipment and resources can be very profitable. We'll turn war profiteering from a simple business model into an art."
 
 tr_plentiful_kleptocracy_5:0 "Ominous Operators"
 tr_plentiful_kleptocracy_5_desc:1 "§Y$MOD_STARBASE_SHIPYARD_BUILD_SPEED_MULT$§! increased by §G-15%§!.\n\n§HUnlocks Building:§! £building  $building_plentiful_traditions_syndicate_quarters$, a planet unique building that provides the empire with a greater amount of §Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!.\n\n"
@@ -866,11 +866,11 @@ tr_plentiful_anguish_finish:0 "Anguish Traditions Finished"
 tr_plentiful_anguish_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_plentiful_anguish_adopt$ increases our damage to the §YPrethoryn§!, §YUnbidden§!, §YAberrant§! and §YVehement§! by §G+15%§!. Gains £influence  §YInfluence§! from purging Xeno £pop  Pops."
 
 tr_plentiful_anguish_1:0 "Precise Calibrations"
-tr_plentiful_anguish_1_desc:0 "§Y$MOD_SHIP_WEAPON_RANGE_MULT$§! increased by §G+10%§!."
+tr_plentiful_anguish_1_desc:0 "§Y$MOD_SHIP_WEAPON_RANGE_MULT$§! increased by §G+20%§!."
 tr_plentiful_anguish_1_delayed:0 "While difficult in their use, long-range weaponry are dangerously effective to turn the tide of battle."
 
 tr_plentiful_anguish_2:0 "Dimensional Folding"
-tr_plentiful_anguish_2_desc:0 "§Y$MOD_SHIP_WEAPON_DAMAGE$§! increased by §G+8%§!."
+tr_plentiful_anguish_2_desc:0 "§Y$MOD_SHIP_WEAPON_DAMAGE$§! increased by §G+15%§!."
 tr_plentiful_anguish_2_delayed:0 "Understanding the offensive applications of zero-point fields, lets us keep our weaponry systems intact while increasing their damage."
 
 tr_plentiful_anguish_3:0 "Accelerated War Operations"
@@ -881,8 +881,8 @@ tr_plentiful_anguish_4:0 "Militarist Negotiations"
 tr_plentiful_anguish_4_desc:0 "§Y$mod_category_military_theory_research_speed_mult$§! increased by §G+20%§! and §Y$mod_shipclass_starbase_hull_mult$§! increased by §G+50%§!."
 tr_plentiful_anguish_4_delayed:0 "The complexities of running a military and its strategic, tactical and operational elements is not possible without the experience of generals that have a tested understanding of war."
 
-tr_plentiful_anguish_5:0 "Special Tactics"
-tr_plentiful_anguish_5_desc:1 "Damage to §YFallen§! and §YAwakened Empires§! increased by §G+15%§!."
+tr_plentiful_anguish_5:0 "Assymetric Warfare"
+tr_plentiful_anguish_5_desc:1 "Disengagement Chance increased by 25%, sublight speed by 15% and emergency jump cooldown decreased by 50%."
 tr_plentiful_anguish_5_delayed:0 "When faced with more powerful adversaries we must use special tactics to stay ahead."
 
 modifier_plentiful_traditions_enraged:0 "Enraged"
@@ -898,21 +898,21 @@ modifier_plentiful_traditions_doctrine5:0 "Naval Doctrine V"
 #####################
 
 tradition_plentiful_defence:0 "Defense"
-tradition_plentiful_defence_desc:0 "You can not trust anyone. NEVER! Bunkers are the only way to escape the enemy."
+tradition_plentiful_defence_desc:0 "Self-defense is not only our right, it is our duty."
 tr_plentiful_defence_adopt:0 "Defense Traditions"
 tr_plentiful_defence_adopt_desc:0 "$tradition_plentiful_defence_desc$\n\n$tr_plentiful_defence_adopt_effect$\n\n$tr_plentiful_defence_finish_effect$"
 tr_plentiful_defence_adopt_effect:0 "§E$TRADITIONS_ADOPT$:§!\nWe get the opportunity to add three more §Y$MOD_STARBASE_DEFENSE_PLATFORM_CAPACITY_ADD$§! to be build in our starbases."
 
 tr_plentiful_defence_finish:0 "Defense Traditions finished"
-tr_plentiful_defence_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\nArmies start with §G100§! §Y$MOD_ARMY_STARTING_EXPERIENCE_ADD$§!.\n§Y$mod_planet_structures_cost_mult$§! decreased by  §G+10%§!.\n§Y$MOD_PLANET_BUILDING_BUILD_SPEED_MULT$§! increased by §G+10%§!.\n\n"
+tr_plentiful_defence_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\nArmies start with §G100§! §Y$MOD_ARMY_STARTING_EXPERIENCE_ADD$§ and you gain 1 soldier for every 20 pops!"
 
 tr_plentiful_defence_1:0 "Precise armor plates"
 tr_plentiful_defence_1_desc:0 "The §Y$MOD_SHIP_HULL_ADD$§! of our ships increases (Corvette 100 destroyer 200 cruiser 500 battleship 800 military station small 500)."
 tr_plentiful_defence_1_delayed:0 "For protection against our enemies, it is important to equip our ships and defense platforms with additional armor plates."
 
-tr_plentiful_defence_2:0 "Deep operation"
-tr_plentiful_defence_2_desc:0 "Our §Y$MOD_ARMY_DEFENSE_MORALE_MULT$§! increases by §G+20%§!."
-tr_plentiful_defence_2_delayed:0 "Deep operation (Russian: glubokaya operatsiya), also known as Soviet Deep Battle, was a military theory developed by the Soviet Union for its armed forces during the 1920s and 1930s. It was a tenet that emphasized destroying, suppressing or disorganizing enemy forces not only at the line of contact, but throughout the depth of the battlefield."
+tr_plentiful_defence_2:0 "Deep Operation"
+tr_plentiful_defence_2_desc:0 "Orbital Bombardment Damage reduced by 45%."
+tr_plentiful_defence_2_delayed:0 "What cannot be bombarded cannot fall."
 
 tr_plentiful_defence_3:0 "Adaptive material supply"
 tr_plentiful_defence_3_desc:0 "Our §Y$mod_category_materials_research_speed_mult$§! increased by §G+20%§!."
@@ -923,8 +923,8 @@ tr_plentiful_defence_4_desc:0 "Our §Y$MOD_ARMY_DEFENSE_HEALTH_MULT$§! increase
 tr_plentiful_defence_4_delayed:0 "By selecting the right troops, no enemy can harm us."
 
 tr_plentiful_defence_5:0 "Bunkermentalität"
-tr_plentiful_defence_5_desc:1 "Access to £building §YZitadom§!."
-tr_plentiful_defence_5_delayed:0 "No one can take this fortress, which is bigger and better fortified than the fattest citadel. \n\nRequires technology £society£ §M$tech_global_defense_grid$§!."
+tr_plentiful_defence_5_desc:1 "Access to £building §YZitadom§ and orbital bombardment damage is reduced by 45%."
+tr_plentiful_defence_5_delayed:0 "No one can take this fortress, which is bigger and better fortified than the mightiest of citadels \n\nRequires technology £society£ §M$tech_global_defense_grid$§!."
 
 # Defence buildings
 building_plentiful_traditions_zitadom:0 "Zitadom"
@@ -956,7 +956,7 @@ tr_plentiful_assault_3_desc:0 "§Y$MOD_COUNTRY_LEADER_POOL_SIZE$§! increased by
 tr_plentiful_assault_3_delayed:0 "The Leadership Academy is the highest military and central training center for the education, further training and advanced training of all staff officers and generals / admirals."
 
 tr_plentiful_assault_4:0 "Leadership at the front"
-tr_plentiful_assault_4_desc:0 "§Y$MOD_LEADER_SKILL_LEVELS$§! increased by §G+1§! and §Y$MOD_LEADER_RULER_SKILL_LEVELS$§! increased by §G+1§!."
+tr_plentiful_assault_4_desc:0 "Weapon Damage increased by 20%!."
 tr_plentiful_assault_4_delayed:0 "The leadership from the front is the oldest of all forms of leadership: A commander actively participates in the battles at the front and passes his commands directly to the persons under his authority."
 
 tr_plentiful_assault_5:0 "Blitzkrieg"
@@ -1049,15 +1049,15 @@ tr_plentiful_endure_finish:0 "Endurance Traditions finished"
 tr_plentiful_endure_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\n§Y$mod_pc_nuked_habitability$§! increases by §G+10%§!.\n\n"
 
 tr_plentiful_endure_1:0 "Cohesion brings unity"
-tr_plentiful_endure_1_desc:0 "Our §Y$mod_country_unity_produces_mult$§! is increased by §G+5%§!"
+tr_plentiful_endure_1_desc:0 "Our §Y$mod_country_unity_produces_mult$§! is increased by §G+15%§ and an additional §G+10%§ while at war."
 tr_plentiful_endure_1_delayed:0 "Our residents are very keen to define and achieve common goals."
 
 tr_plentiful_endure_2:0 "Blood, Sweat & Tears"
 tr_plentiful_endure_2_desc:0 "Our §Y$MOD_COUNTRY_WAR_EXHAUSTION_MULT$§! is decreased by §G-25%§!"
-tr_plentiful_endure_2_delayed:0 "I have nothing to offer but blood, toil, tears and sweat. - Sir Winston Churchill"
+tr_plentiful_endure_2_delayed:0 "I have nothing to offer but blood, toil, tears and sweat."
 
 tr_plentiful_endure_3:0 "The glace into the abyss"
-tr_plentiful_endure_3_desc:0 "We have access to the technology §G$DARK_MATTER_REACTOR$§!.\n\n§HUnlocks Spaceport Module:§! $sm_orbital_fertilizer_array$, a spaceport module that adds to the planets and gathers £food §Yfood§! production."
+tr_plentiful_endure_3_desc:0 "We have access to the technology §G$DARK_MATTER_REACTOR$§!.\n\n§HUnlocks Spaceport Module:§! $sm_orbital_fertilizer_array$, a spaceport module that adds to the planets and gathers £food §Yfood§! production. Sensor range increased by 1"
 tr_plentiful_endure_3_delayed:0 "The §G$DARK_MATTER_REACTOR$§! offers us a large amount of energy."
 
 tr_plentiful_endure_4:0 "Homefront"

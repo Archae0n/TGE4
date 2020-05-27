@@ -3,7 +3,7 @@
 tr_plentiful_kleptocracy_adopt = {
 #	cost = { unity = @cost }
 	modifier = {
-		ship_fire_rate_mult = 0.08
+		ship_fire_rate_mult = 0.1
 	}
 	
 	ai_weight = {
@@ -86,7 +86,6 @@ tr_plentiful_kleptocracy_4 = {
 	}
 	modifier = {
 		diplomacy_upkeep_mult = -0.15
-		country_trust_growth = 0.15
 # Opinion
 	}
 	
