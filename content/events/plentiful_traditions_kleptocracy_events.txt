@@ -30,6 +30,10 @@ event = {
 	hide_window = yes
 	is_triggered_only = yes
 	
+	trigger = { 
+			is_at_war = yes
+		}
+	
 	immediate = {
 		every_country = {
 			limit = {

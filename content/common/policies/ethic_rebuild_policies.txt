@@ -660,7 +660,10 @@ economic_stance = {
 		}
 
 		valid = {
+			or = {
 			is_country_type = default
+			is_country_type = void_farer
+			}
 			or = {
 				has_policy_flag = trade_policy_default
 				has_policy_flag = trade_conversion_consumer_goods
@@ -737,7 +740,10 @@ economic_stance = {
 		}
 
 		valid = {
+			or = {
 			is_country_type = default
+			is_country_type = void_farer
+			}
 			or = {
 			has_policy_flag = trade_conversion_growth_dev
 			has_policy_flag = trade_conversion_development
@@ -797,7 +803,6 @@ trade_policy = {
 				is_country_type = celestial
 				is_country_type = dimensional
 			}
-			is_country_type = default
 			NOR = {
 				has_policy_flag = "economic_stance_planned"
 				has_ethic = "ethic_fanatic_socialism"
@@ -1642,7 +1647,10 @@ transportation_logistics = {
 				has_ethic = ethic_fanatic_pacifist
 				has_valid_civic = civic_corporate_dominion
 			}
-		is_country_type = default
+			or = {
+			is_country_type = default
+			is_country_type = void_farer
+			}
 		}
 
 		modifier = {
@@ -1715,7 +1723,10 @@ gun_rights = {
 
 
 		valid = {
-		is_country_type = default
+		or = {
+			is_country_type = default
+			is_country_type = void_farer
+			}
 		}
 
 
@@ -2583,7 +2594,10 @@ border_policy = {
 		}
 
 		valid = {
+			or = {
 			is_country_type = default
+			is_country_type = void_farer
+			}
 			NOR = {
 				has_valid_civic = civic_machine_terminator
 				has_valid_civic = civic_hive_devouring_swarm
