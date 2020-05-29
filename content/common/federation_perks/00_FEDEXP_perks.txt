@@ -17,6 +17,7 @@ FEDEXP_spiritualist_federation_passive = {
 	members_modifier = {
 		pop_ethic_spiritualist_attraction_mult = 0.30
 		pop_ethics_shift_speed_mult = 0.50
+		country_unity_produces_mult = 0.25
 	}
 }
 
@@ -37,7 +38,7 @@ FEDEXP_egalitarian_federation_passive = {
 FEDEXP_pacifist_federation_passive = {
 	members_modifier = {
 		description = FEDEXP_pacifist_federation_passive_effect
-		federation_naval_cap_contribution_mult = 1.0
+		federation_naval_cap_contribution_mult = 0.95
 	}
 }
 

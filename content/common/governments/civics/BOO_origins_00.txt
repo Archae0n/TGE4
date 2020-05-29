@@ -10,6 +10,10 @@ BOO_origin_antediluvian_knowledge = {
 
 	possible = {
 	}
+	
+	modifier = {
+		country_base_minor_artifacts_produces_add = 0.2
+	}	
 
 	random_weight = {
 		base = 15

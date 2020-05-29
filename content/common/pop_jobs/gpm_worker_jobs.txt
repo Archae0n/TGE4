@@ -597,7 +597,7 @@ gpm_archaeologist = {
 			society_research = 4
 		}
 		upkeep = {
-			consumer_goods = 1.5
+			consumer_goods = 2.5
 		}
 	}
 	
@@ -660,7 +660,7 @@ gpm_archaeologist_drone = {
 			society_research = 4
 		}
 		upkeep = {
-			energy = 2
+			energy = 3
 		}		
 	}
 	
@@ -724,7 +724,7 @@ gpm_precursor_archaeologist = {
 			minor_artifacts = 0.2
 		}
 		upkeep = {
-			consumer_goods = 3
+			consumer_goods = 5
 		}
 	}
 	
@@ -788,7 +788,7 @@ gpm_precursor_archaeologist_drone = {
 			minor_artifacts = 0.2
 		}
 		upkeep = {
-			energy = 4
+			energy = 6
 		}		
 	}
 	
