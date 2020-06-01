@@ -680,7 +680,7 @@ tradition_plentiful_mutagenesis_desc:0 "We care little for the concern of others
 #Other living organisms are nothing but building blocks towards the perfection of our collective.
 tr_plentiful_mutagenesis_adopt:0 "Mutagenesis Traditions"
 tr_plentiful_mutagenesis_adopt_desc:0 "$tradition_plentiful_mutagenesis_desc$\n\n$tr_plentiful_mutagenesis_adopt_effect$\n\n$tr_plentiful_mutagenesis_finish_effect$"
-tr_plentiful_mutagenesis_adopt_effect:0 "§E$TRADITIONS_ADOPT$:§!\n§Y$MOD_POP_FOOD_MULT$§! increased by §G+20%§!. 
+tr_plentiful_mutagenesis_adopt_effect:0 "Adoption Effect: Food output increased by 20%!. 
 
 tr_plentiful_mutagenesis_finish:0 "Mutagenesis Traditions Finished"
 tr_plentiful_mutagenesis_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\nAdopting all $tr_plentiful_mutagenesis_adopt$ allows us to gain £food  §YFood§! from purging Xeno £pop  Pops. The effect §Y$MOD_TRADITION_COST_EMPIRE_SIZE_MULT$§! is reduced by §G-15%§!."

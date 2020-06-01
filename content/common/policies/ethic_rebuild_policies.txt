@@ -649,9 +649,7 @@ economic_stance = {
 		}
 
 		modifier = {
-		    job_mogul_per_pop = 0.03
-			job_merchant_per_pop = 0.04
-            job_clerk_per_pop = 0.06
+		    job_mogul_per_pop = 0.02
 			country_trade_fee = -0.1
 			country_trade_attractiveness = 0.33
 			country_base_influence_produces_add = -0.5
@@ -735,7 +733,6 @@ economic_stance = {
 			planet_building_build_speed_mult = 0.15
 			starbase_shipyard_build_speed_mult = 0.15
 		    planet_colony_development_speed_mult = 0.15
-			country_trade_fee = 0.2
 			pop_ethic_socialism_attraction_mult = 0.2
 		}
 
@@ -839,7 +836,7 @@ trade_policy = {
 				is_country_type = dimensional
 			}
 			NOR = {
-				has_policy_flag = "economic_stance_planned"
+				has_policy_flag = "economic_stance_market"
 				has_ethic = "ethic_fanatic_socialism"
 			}
 		}
@@ -876,7 +873,6 @@ trade_policy = {
 				is_country_type = dimensional
 			}
 			NOR = {
-				has_policy_flag = "economic_stance_market"
 				has_policy_flag = "economic_stance_planned"
 			}
 		}
@@ -1124,7 +1120,7 @@ bureaucracy = {
 
 		modifier = {
 
-		country_base_influence_produces_add = 1
+		country_base_influence_produces_add = 0.5
 		empire_size_penalty_mult = 0.15
 		pop_ethic_authoritarian_attraction_mult = 0.15
 
@@ -1177,7 +1173,6 @@ bureaucracy = {
 
 		country_admin_cap_mult = 0.2
         governor_skill_levels = 1
-		edicts_cost_mult = 0.25
 		pop_ethic_egalitarian_attraction_mult = 0.15
 
 
@@ -1371,7 +1366,7 @@ education = {
 		modifier = {
 
 
-		planet_jobs_specialist_produces_mult = 0.15	
+		planet_jobs_specialist_produces_mult = 0.05
 		planet_crime_add = 10
 		pop_ethic_capitalism_attraction_mult = 0.05
 		pop_ethic_elitist_attraction_mult = 0.1
@@ -1417,6 +1412,7 @@ education = {
 		modifier = {
 
         pop_government_ethic_attraction = 0.1
+		planet_jobs_worker_produces_mult = 0.1
         country_unity_produces_mult = 0.1
         planet_crime_add = -10
 		country_energy_produces_mult = -0.05
@@ -1538,6 +1534,7 @@ industrial = {
                   planet_jobs_alloys_produces_mult = 0.1
 				  planet_jobs_consumer_goods_produces_mult = 0.1
 				  planet_stability_add = -5
+				  pop_environment_tolerance = -0.05
 		}
 
       AI_weight = {
@@ -1819,7 +1816,7 @@ interstellar_telecom = {
 		modifier = {
 
         country_admin_cap_mult = 0.1
-		station_researchers_produces_mult = 0.2
+		planet_researchers_produces_mult = 0.1
 		science_ship_survey_speed = 0.33
 		country_naval_cap_mult = -0.5
 		pop_ethic_pacifist_attraction_mult = 0.25
@@ -1945,7 +1942,6 @@ interstellar_media = {
 
 		pop_factions_produces_mult = 0.2
 		job_entertainer_per_pop = 0.03
-        planet_stability_add = -5
         pop_ethic_egalitarian_attraction_mult = 0.15
 
 
@@ -1999,7 +1995,7 @@ interstellar_media = {
 
         pop_government_ethic_attraction = 0.2
 		country_war_exhaustion_mult = -0.2
-		pop_factions_produces_mult = -0.15
+		planet_stability_add = 5
         pop_ethic_authoritarian_attraction_mult = 0.15
 
 
