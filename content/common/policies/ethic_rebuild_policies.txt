@@ -2491,6 +2491,7 @@ slavery = {
 				has_valid_civic = civic_reeducated_labor
 				has_valid_civic = civic_divine_order
 				has_valid_civic = civic_indentured_assets
+				has_valud_civic = civic_deep_state
 			}
 		}
 
@@ -2520,6 +2521,7 @@ slavery = {
 				has_valid_civic = civic_slaver_guilds
 				has_valid_civic = civic_divine_order
 				has_valid_civic = civic_reeducated_labor
+				has_valud_civic = civic_deep_state
 			}
 		}
 

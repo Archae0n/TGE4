@@ -1481,6 +1481,7 @@ purge = {
 				has_ethic = ethic_gestalt_consciousness
 				has_ethic = ethic_xenophobe
 				has_ethic = ethic_fanatic_xenophobe
+				has_valid_civic = civic_deep_state
 			}			
 		}
 		
