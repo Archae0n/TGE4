@@ -210,7 +210,7 @@ trait_ruler_land_of_the_free = {
 		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
 	}
 	modifier = {
-		planet_jobs_produces_mult = 0.10
+		planet_jobs_produces_mult = 0.05
 		country_trade_attractiveness = 0.20
 		pop_ethics_shift_speed_mult = 1.00
 		planet_jobs_slave_produces_mult = -0.25
@@ -231,7 +231,7 @@ trait_ruler_land_of_the_free2 = {
 		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
 	}
 	modifier = {
-		planet_jobs_produces_mult = 0.10
+		planet_jobs_produces_mult = 0.05
 		country_trade_attractiveness = 0.20
 		pop_ethics_shift_speed_mult = 1.00
 		planet_jobs_slave_produces_mult = -0.25
@@ -400,7 +400,7 @@ trait_ruler_manifest_destiny = {
 		NOT = { from = { has_ethic = "ethic_gestalt_consciousness" } }
 	}
 	modifier = {
-		ship_colonizer_cost_mult = -0.50
+		ship_colonizer_cost_mult = -0.25
 		planet_colony_development_speed_mult = 0.50
 		colony_start_num_pops_add = 1
 	}

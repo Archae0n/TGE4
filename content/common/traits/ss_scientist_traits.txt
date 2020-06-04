@@ -14,8 +14,8 @@
 # Balance #
 ###########
 #effects on research traits
-@categorybonus = 0.30
-@secondcatbonus = 0.20
+@categorybonus = 0.20
+@secondcatbonus = 0.10
 @secondcatpenalty = -0.10
 
 trait_scientist_analytical = {
