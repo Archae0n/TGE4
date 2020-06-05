@@ -1,6 +1,9 @@
 family_xeno_acceptance = {
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         owner = {has_civic = civic_family_business}
     }
     option = {
