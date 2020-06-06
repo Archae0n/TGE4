@@ -4,7 +4,6 @@ origin_void_nomads = {
 	icon = "gfx/interface/icons/origins/origin_void_dwellers.dds"
 	picture = GFX_origin_void_nomads
 
-	starting_colony = pc_habitat
 	habitability_preference = pc_habitat
 	max_once_global = yes
 	preferred_planet_class_neighbor = no
@@ -54,7 +53,6 @@ origin_void_marauders = {
 	icon = "gfx/interface/icons/origins/origin_void_dwellers.dds"
 	picture = GFX_origin_void_marauders
 
-	starting_colony = pc_habitat
 	habitability_preference = pc_habitat
 	max_once_global = yes
 	preferred_planet_class_neighbor = no
@@ -111,7 +109,6 @@ origin_void_reavers = {
 	icon = "gfx/interface/icons/origins/origin_void_dwellers.dds"
 	picture = GFX_origin_void_reavers
 
-	starting_colony = pc_habitat
 	habitability_preference = pc_habitat
 	max_once_global = yes
 	preferred_planet_class_neighbor = no
@@ -170,7 +167,6 @@ origin_ancient_drones = {
 	icon = "gfx/interface/icons/origins/origin_void_dwellers.dds"
 	picture = GFX_origin_ancient_drones
 
-	starting_colony = pc_habitat
 	habitability_preference = pc_habitat
 	max_once_global = yes
 	preferred_planet_class_neighbor = no

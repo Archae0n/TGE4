@@ -2,7 +2,10 @@ cb_dragon_trophy = {
     show_in_diplomacy = yes
     show_notification = yes
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         is_subject = no
         NOT = { has_ethic = ethic_gestalt_consciousness }
     }
@@ -20,7 +23,10 @@ cb_khans_throne = {
     show_in_diplomacy = yes
     show_notification = yes
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         is_subject = no
         NOT = { has_ethic = ethic_gestalt_consciousness }
     }
@@ -38,7 +44,10 @@ cb_worm_scales = {
     show_in_diplomacy = yes
     show_notification = yes
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         is_subject = no
         NOT = { has_ethic = ethic_gestalt_consciousness }
     }
@@ -56,7 +65,10 @@ cb_rubricator = {
     show_in_diplomacy = yes
     show_notification = yes
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         is_subject = no
         NOT = { has_ethic = ethic_gestalt_consciousness }
     }
@@ -74,7 +86,10 @@ cb_galaxy = {
     show_in_diplomacy = yes
     show_notification = yes
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         is_subject = no
         NOT = { has_ethic = ethic_gestalt_consciousness }
     }
@@ -92,7 +107,10 @@ cb_omnicodex = {
     show_in_diplomacy = yes
     show_notification = yes
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         is_subject = no
         NOT = { has_ethic = ethic_gestalt_consciousness }
     }
@@ -110,7 +128,10 @@ cb_surveyor = {
     show_in_diplomacy = yes
     show_notification = yes
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         is_subject = no
         NOT = { has_ethic = ethic_gestalt_consciousness }
     }
@@ -128,7 +149,10 @@ cb_ancient_sword = {
     show_in_diplomacy = yes
     show_notification = yes
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         is_subject = no
         NOT = { has_ethic = ethic_gestalt_consciousness }
     }
@@ -146,7 +170,10 @@ cb_severed_head = {
     show_in_diplomacy = yes
     show_notification = yes
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         is_subject = no
         NOT = { has_ethic = ethic_gestalt_consciousness }
     }
@@ -164,7 +191,10 @@ cb_prethoryn_queen = {
     show_in_diplomacy = yes
     show_notification = yes
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         is_subject = no
         NOT = { has_ethic = ethic_gestalt_consciousness }
     }
@@ -182,7 +212,10 @@ cb_unbidden_warlock = {
     show_in_diplomacy = yes
     show_notification = yes
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         is_subject = no
         NOT = { has_ethic = ethic_gestalt_consciousness }
     }
@@ -200,7 +233,10 @@ cb_contingency_core = {
     show_in_diplomacy = yes
     show_notification = yes
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         is_subject = no
         NOT = { has_ethic = ethic_gestalt_consciousness }
     }
@@ -218,7 +254,10 @@ cb_zro_crystal = {
     show_in_diplomacy = yes
     show_notification = yes
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         is_subject = no
         NOT = { has_ethic = ethic_gestalt_consciousness }
     }
@@ -236,7 +275,10 @@ cb_the_last_baol = {
     show_in_diplomacy = yes
     show_notification = yes
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         is_subject = no
         NOT = { has_ethic = ethic_gestalt_consciousness }
     }
@@ -254,7 +296,10 @@ cb_the_defragmentor = {
     show_in_diplomacy = yes
     show_notification = yes
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         is_subject = no
         NOT = { has_ethic = ethic_gestalt_consciousness }
     }
@@ -272,7 +317,10 @@ cb_reality_perforator = {
     show_in_diplomacy = yes
     show_notification = yes
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         is_subject = no
         NOT = { has_ethic = ethic_gestalt_consciousness }
     }
@@ -290,7 +338,10 @@ cb_pox_sample = {
     show_in_diplomacy = yes
     show_notification = yes
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         is_subject = no
         NOT = { has_ethic = ethic_gestalt_consciousness }
     }
@@ -308,7 +359,10 @@ cb_cryo_core = {
     show_in_diplomacy = yes
     show_notification = yes
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         is_subject = no
         NOT = { has_ethic = ethic_gestalt_consciousness }
     }
@@ -326,7 +380,10 @@ cb_war_forge = {
     show_in_diplomacy = yes
     show_notification = yes
     potential = {
-        is_country_type = default
+        OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
         is_subject = no
         NOT = { has_ethic = ethic_gestalt_consciousness }
     }

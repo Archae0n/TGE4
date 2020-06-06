@@ -1,0 +1,103 @@
+namespace = nomads_h
+
+#First pass
+planet_event = {
+	id = nomads_h.100
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+#Skrenn Wanderers
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_industrial
+					has_ethic = ethic_elitist
+
+					has_valid_civic = civic_industrial_economy
+					has_valid_civic = civic_exploration
+					has_valid_civic = civic_aristocratic_elite
+				}
+			}
+
+			add_modifier = { modifier = "gpm_living_planet" days = -1 }
+			add_modifier = { modifier = "hostile_animal_life" days = -1 }
+			add_modifier = { modifier = "gpm_lingering_pollution" days = -1 }
+
+			owner = { country_event = { id = nomads_h.101 days = 1 } }
+
+			change_pc = pc_nuked
+
+			set_planet_flag = skrenn_homeworld
+			set_planet_flag = forbid_guillis_planet_modifiers
+
+			remove_all_buildings = yes
+			remove_all_districts = yes
+			clear_blocker = yes
+
+			destroy_colony = yes
+		}
+#Default
+		else = {
+			remove_all_buildings = yes
+			remove_all_districts = yes
+			every_owned_pop = {
+				kill_pop = yes
+			}
+
+			change_pc = pc_barren
+
+			destroy_colony = yes
+		}
+	}
+}
+#Second Pass
+country_event = {
+	id = nomads_h.101
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+#Skrenn Wanderers
+		random_planet = {
+			limit = { has_planet_flag = skrenn_homeworld}
+
+			add_deposit = gpm_d_garbage_patch
+			add_deposit = gpm_d_industrial_ruins
+			add_deposit = gpm_d_garbage_patch
+			add_deposit = gpm_d_industrial_ruins
+			add_deposit = gpm_d_radioactive_dump
+			add_deposit = gpm_tb_automated_turrets
+			add_deposit = gpm_tb_deprecated_infrastructure
+			add_deposit = d_infestation
+			add_deposit = d_dangerous_wildlife_blocker
+
+			create_species = {
+				name = "Feral Reptilians"
+				class = "REP"
+				portrait="rep2"
+				traits = {
+					trait = trait_pc_irradiated_preference
+					trait = trait_conservational
+					trait = trait_communal
+					trait = trait_oligotroph
+					trait = trait_fleeting
+					trait = trait_endemic
+				}
+				homeworld = root
+				sapient = no
+			}
+
+			create_pop = { species = last_created }
+
+			random_pop = {
+				limit = { NOT = { has_trait = trait_endemic } }
+				kill_pop = yes
+			}
+		}
+	}
+}

@@ -53,8 +53,8 @@ planet_event = {
 	immediate = {
 		if = {
 			limit = { owner = { is_void_farer = yes } }
-			destroy_colony = yes
-			change_pc = pc_barren
+
+			planet_event = { id = nomads_h.100 }
 		}
 	}
 }
