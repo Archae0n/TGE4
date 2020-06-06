@@ -52,6 +52,12 @@ trade_gate = {
 			fail_text = "requires_technology_wormholes"
 			from = { has_technology = tech_wormhole_stabilization}
 		}
+			custom_tooltip = {
+			fail_text = "requires_no_existing_gateway"
+			NOR = {
+				has_megastructure = trade_gate
+			}
+		}
 	}
 	upgrade_from = {
 		
@@ -67,6 +73,50 @@ trade_gate = {
 			energy = 20
 		}
 	}
+
+
+	construction_blocks_others = no
+	construction_blocked_by_others = no
+
+	bypass_type = trade_gate
+}
+
+trade_gate_destroy = {
+	entity = "wormhole_station_entity"
+	construction_entity = "wormhole_station_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_outside_gravity_well = yes 						# indicates this will use "free" placement between the system's inner and outer ring
+															# if this option is active, the placement_rules will be completely ignored
+	show_galactic_map_icon = no
+	potential = {
+		always_yes
+	possible = {	
+		custom_tooltip = {
+			fail_text = "requires_technology_wormholes"
+			from = { has_technology = tech_wormhole_stabilization}
+		}
+			custom_tooltip = {
+			fail_text = "requires_no_existing_gateway"
+			NOR = {
+				has_megastructure = trade_gate
+			}
+		}
+	}
+	upgrade_from = {
+		trade_gate
+	}
+	build_time = 30
+	resources = {
+		category = megastructures
+		cost = {
+			influence = 25
+		}
+	}
+	
+	on_build_complete = {
+		remove_megastructure = fromfrom
+	}	
 
 
 	construction_blocks_others = no
