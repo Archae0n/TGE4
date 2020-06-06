@@ -91,6 +91,7 @@ trade_gate_destroy = {
 	show_galactic_map_icon = no
 	potential = {
 		always_yes
+	}
 	possible = {	
 		custom_tooltip = {
 			fail_text = "requires_technology_wormholes"
