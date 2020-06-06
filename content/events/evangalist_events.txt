@@ -5,7 +5,6 @@ namespace = evangalist
 # 	id = evangalist.0
 # 	hide_window = yes	
 # 	is_triggered_only = yes
-
 # 	trigger = {
 # 		NOT = { has_global_flag = evangalist_active }		
 # 	}
@@ -15,19 +14,19 @@ namespace = evangalist
 # }
 
 #Start Evangalizing
-event = {
+country_event = {
 	id = evangalist.1
 	hide_window = yes	
 	is_triggered_only = yes
 
 	trigger = {
-		has_policy_flag = diplo_stance_evangalist		
+		has_policy_flag = diplo_stance_evangalist
 	}
 	immediate = {
 		every_country = {
 			limit = {
 				root = {
-					is_improving_relations_with = prev					
+					is_improving_relations_with = prev
 				}
 			}
 			if = {
@@ -77,7 +76,7 @@ event = {
 			if = {
 				limit = {
 					root = {
-						has_ethic = ethic_fanatic_materialist
+						has_ethic = ethic_materialist
 					}
 				}
 				add_modifier = {
@@ -206,6 +205,92 @@ event = {
 					days = 360
 				}
 			}
+########################################
+			if = {
+				limit = {
+					root = {
+						OR = {
+							has_ethic = ethic_green
+							has_ethic = ethic_fanatic_green
+						}
+					}
+				}
+				add_modifier = {
+					modifier = green_propaganda
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						OR = {
+							has_ethic = ethic_industrial
+							has_ethic = ethic_fanatic_industrial
+						}
+					}
+				}
+				add_modifier = {
+					modifier = industrial_propaganda
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						OR = {
+							has_ethic = ethic_elitist
+							has_ethic = ethic_fanatic_elitist
+						}
+					}
+				}
+				add_modifier = {
+					modifier = elitist_propaganda
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						OR = {
+							has_ethic = ethic_pluralist
+							has_ethic = ethic_fanatic_pluralist
+						}
+					}
+				}
+				add_modifier = {
+					modifier = pluralist_propaganda
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						OR = {
+							has_ethic = ethic_socialism
+							has_ethic = ethic_fanatic_socialism
+						}
+					}
+				}
+				add_modifier = {
+					modifier = socialism_propaganda
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						OR = {
+							has_ethic = ethic_capitalism
+							has_ethic = ethic_capitalism_socialism
+						}
+					}
+				}
+				add_modifier = {
+					modifier = capitalism_propaganda
+					days = 360
+				}
+			}
+########################################
 		}
 		every_country = {
 			limit = {
@@ -301,8 +386,76 @@ event = {
 					days = 360
 				}
 			}
+########################################
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_green
+					}
+				}
+				add_modifier = {
+					modifier = fanatic_green_propaganda
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_industrial
+					}
+				}
+				add_modifier = {
+					modifier = fanatic_industrial_propaganda
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_elitist
+					}
+				}
+				add_modifier = {
+					modifier = fanatic_elitist_propaganda
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_pluralist
+					}
+				}
+				add_modifier = {
+					modifier = fanatic_pluralist_propaganda
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_fanatic_socialism
+					}
+				}
+				add_modifier = {
+					modifier = fanatic_socialism_propaganda
+					days = 360
+				}
+			}
+			if = {
+				limit = {
+					root = {
+						has_ethic = ethic_capitalism_socialism
+					}
+				}
+				add_modifier = {
+					modifier = fanatic_capitalism_propaganda
+					days = 360
+				}
+			}
+########################################
 		}
-		country_event ={
+		country_event =	{
 			id = evangalist.1
 			days = 360
 		}
