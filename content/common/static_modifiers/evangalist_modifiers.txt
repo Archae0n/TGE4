@@ -97,7 +97,7 @@ fanatic_green_propaganda = {
 	pop_ethic_green_attraction_mult = 0.15
 	pop_ethics_shift_speed_mult = 0.3
 
-	icon = "gfx\interface\icons\ethics\ethic_green.dds"
+	icon = "gfx\interface\icons\ethics\ethic_fanatic_green.dds"
 }
 industrial_propaganda = {
 	pop_ethic_industrial_attraction_mult = 0.1
@@ -109,7 +109,7 @@ fanatic_industrial_propaganda = {
 	pop_ethic_industrial_attraction_mult = 0.15
 	pop_ethics_shift_speed_mult = 0.3
 
-	icon = "gfx\interface\icons\ethics\ethic_industrial.dds"
+	icon = "gfx\interface\icons\ethics\ethic_fanatic_industrial.dds"
 }
 elitist_propaganda = {
 	pop_ethic_elitist_attraction_mult = 0.1
@@ -121,7 +121,7 @@ fanatic_elitist_propaganda = {
 	pop_ethic_elitist_attraction_mult = 0.15
 	pop_ethics_shift_speed_mult = 0.3
 
-	icon = "gfx\interface\icons\ethics\ethic_elitist.dds"
+	icon = "gfx\interface\icons\ethics\ethic_fanatic_elitist.dds"
 }
 pluralist_propaganda = {
 	pop_ethic_pluralist_attraction_mult = 0.1
@@ -133,7 +133,7 @@ fanatic_pluralist_propaganda = {
 	pop_ethic_pluralist_attraction_mult = 0.15
 	pop_ethics_shift_speed_mult = 0.3
 
-	icon = "gfx\interface\icons\ethics\ethic_pluralist.dds"
+	icon = "gfx\interface\icons\ethics\ethic_fanatic_pluralist.dds"
 }
 socialist_propaganda = {
 	pop_ethic_socialist_attraction_mult = 0.1
@@ -145,7 +145,7 @@ fanatic_socialist_propaganda = {
 	pop_ethic_socialist_attraction_mult = 0.15
 	pop_ethics_shift_speed_mult = 0.3
 
-	icon = "gfx\interface\icons\ethics\ethic_socialist.dds"
+	icon = "gfx\interface\icons\ethics\ethic_fanatic_socialist.dds"
 }
 capitalist_propaganda = {
 	pop_ethic_capitalist_attraction_mult = 0.1
@@ -157,5 +157,5 @@ fanatic_capitalist_propaganda = {
 	pop_ethic_capitalist_attraction_mult = 0.15
 	pop_ethics_shift_speed_mult = 0.3
 
-	icon = "gfx\interface\icons\ethics\ethic_capitalist.dds"
+	icon = "gfx\interface\icons\ethics\ethic_fanatic_capitalist.dds"
 }
