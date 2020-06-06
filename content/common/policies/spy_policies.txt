@@ -1,11 +1,8 @@
 espionage_stance = {
 	potential = {
-		is_country_type = default
-		NOR = {
-			is_country_type = fallen_empire
-			is_country_type = awakened_fallen_empire
-			is_country_type = primitive
-			is_country_type = awakened_marauders
+		OR = {
+    			is_country_type = default
+			is_country_type = void_farer
 		}
 	}
 
