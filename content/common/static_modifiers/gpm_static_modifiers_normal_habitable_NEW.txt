@@ -19,7 +19,8 @@
 ##########################################################################
 
 gpm_frequent_thunderstorms = {
-	planet_jobs_energy_produces_mult = 0.20
+	planet_jobs_physics_research_produces_mult = 0.05
+	planet_jobs_energy_produces_mult = 0.10
 	district_generator_max = 2
 	icon = "gfx/interface/icons/planet_modifiers/gpm_frequent_thunderstorms.dds"
 	icon_frame = 2
@@ -37,9 +38,7 @@ gpm_highly_charged_air_particles = {
 	icon_frame = 1
 }
 gpm_time_displaced_planet = {
-	planet_jobs_physics_research_produces_mult = 0.20
-	planet_jobs_society_research_produces_mult = 0.20
-	planet_jobs_engineering_research_produces_mult = 0.20
+	planet_jobs_physics_research_produces_mult = 0.10
 	planet_jobs_society_research_produces_mult = 0.10
 	planet_jobs_engineering_research_produces_mult = 0.10
 	icon = "gfx/interface/icons/planet_modifiers/gpm_time_displaced.dds"
