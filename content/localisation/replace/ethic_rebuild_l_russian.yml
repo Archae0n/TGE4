@@ -3611,11 +3611,11 @@ civic_slaver_guilds_desc:1 "Это общество традиционно ис�
 
 living_standard_shared_burden:1 "Социальное Равенство"
 
-SOCIAL_WELFARE_POP_EFFECTS:0 "$RULERS$: $VERY_HIGH_LUXURIES$, $10_HAPPINESS$\n$SPECIALISTS$: $HIGH_LUXURIES$, $7_HAPPINESS$\n$WORKERS$: $HIGH_LUXURIES$, $5_HAPPINESS$\n$SLAVES$: $LOW_LUXURIES$, $5_HAPPINESS$"
+SOCIAL_WELFARE_POP_EFFECTS:0 "$RULERS$: $VERY_HIGH_LUXURIES$, $10_HAPPINESS$\n$SPECIALISTS$: $HIGH_LUXURIES$, $7_HAPPINESS$\n$WORKERS$: $HIGH_LUXURIES$, §G+4%§! £happiness£ \n$SLAVES$: $LOW_LUXURIES$, §G+4%§! £happiness£ "
 
 7_HAPPINESS:0 "§G+7%§! £happiness£ "
 
-SHARED_BURDEN_POP_EFFECTS:0 "$RULERS$: $SHARED_BURDEN_LUXURIES$, $6_HAPPINESS$\n$SPECIALISTS$: $SHARED_BURDEN_LUXURIES$, $6_HAPPINESS$\n$WORKERS$: $SHARED_BURDEN_LUXURIES$, $6_HAPPINESS$"
+SHARED_BURDEN_POP_EFFECTS:0 "$RULERS$: $SHARED_BURDEN_LUXURIES$, $5_HAPPINESS$\n$SPECIALISTS$: $SHARED_BURDEN_LUXURIES$, $5_HAPPINESS$\n$WORKERS$: $SHARED_BURDEN_LUXURIES$, $5_HAPPINESS$"
 
 empire_socialism_utopia_non_market:0 "$TRIGGER_FAIL$У нашей Империи нет комбинации этик §YФанатичная Кооперация§! и §YПлюрализм§!."
 
