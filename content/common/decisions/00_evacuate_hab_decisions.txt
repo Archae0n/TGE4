@@ -1,0 +1,69 @@
+decision_evacuate_planet = {
+	owned_planets_only = yes
+	icon = decision_expel_population
+
+	enactment_time = 360
+	resources = {
+		category = decisions
+		cost = {
+			influence = 100
+		}
+	}
+
+	potential = {
+		NOT = {
+			is_planet_class = pc_habitat
+		}
+		exists = owner
+		owner = {
+			is_country_type = void_farer
+		}
+		has_ground_combat = no
+		is_occupied_flag = no
+	}
+
+	allow = {
+	}
+
+	effect = {
+		hidden_effect = { planet_event = { id = evacuate_hab.100 } }
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_evacuate_habitat = {
+	owned_planets_only = yes
+	icon = decision_expel_population
+
+	enactment_time = 360
+	resources = {
+		category = decisions
+		cost = {
+			influence = 100
+		}
+	}
+
+	potential = {
+		is_planet_class = pc_habitat
+		exists = owner
+		owner = {
+			is_country_type = void_farer
+		}
+		has_ground_combat = no
+		is_occupied_flag = no
+	}
+
+	allow = {
+	}
+
+	effect = {
+		hidden_effect = { planet_event = { id = evacuate_hab.100 } }
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
