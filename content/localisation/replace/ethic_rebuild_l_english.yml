@@ -141,7 +141,7 @@
  agri_consortium_desc:0 "Oligarchic government, representing a conglomerate of giant interstellar corporations, engaged in agriculture and food production."
 
  div_imperium:0 "Divine Ascendancy"
- div_imperium_desc:0 "Ultimate spiritualistic Autocracy. Society is build around the idea of it's total spiritual supremacy, serving the almighty Gods and spreading their will all over the Galaxy. The Holy Inquisition keeps a watchful eye on the society, protecting the Emperor and occasionally banning fundamental research, being recognized as dangerous and godless."
+ div_imperium_desc:0 "Ultimate spiritualistic Autocracy. Society is build around the idea of it's total spiritual supremacy, serving the almighty Gods and spreading their will all over the Galaxy. The Holy Inquisition keeps a watchful eye on the society, protecting the Emperor and occasionally banning fundamental research, being recognized as dangerous."
  div_imperium_special:0 "Each Ruler can build an Elite Inquisition Force"
 
  adv_technocratic:0 "Cybernetic Commonwealth"
@@ -3384,7 +3384,7 @@ EDUCATION_CAMPAIGN_DESC:0 "Invoking §YEducation Campaign§! pleases the [Root.G
 
 
 
-SOCIAL_WELFARE_POP_EFFECTS:0 "$RULERS$: $VERY_HIGH_LUXURIES$, $10_HAPPINESS$\n$SPECIALISTS$: $HIGH_LUXURIES$, $7_HAPPINESS$\n$WORKERS$: $HIGH_LUXURIES$, $5_HAPPINESS$\n$SLAVES$: $LOW_LUXURIES$, $5_HAPPINESS$"
+SOCIAL_WELFARE_POP_EFFECTS:0 "$RULERS$: $VERY_HIGH_LUXURIES$, $10_HAPPINESS$\n$SPECIALISTS$: $HIGH_LUXURIES$, $7_HAPPINESS$\n$WORKERS$: $HIGH_LUXURIES$, §G+4%§! £happiness£ \n$SLAVES$: $LOW_LUXURIES$, §G+4%§! £happiness£ "
 
 LIBERATION_PHILOSOPHY:0 "Galactic Liberators"
 LIBERATION_NO_PHILOSOPHY:0 "Galactic Liberators"
@@ -3430,7 +3430,7 @@ living_standard_shared_burden:1 "Social Equality"
 
 7_HAPPINESS:0 "§G+7%§! £happiness£ "
 
-SHARED_BURDEN_POP_EFFECTS:0 "$RULERS$: $SHARED_BURDEN_LUXURIES$, $6_HAPPINESS$\n$SPECIALISTS$: $SHARED_BURDEN_LUXURIES$, $6_HAPPINESS$\n$WORKERS$: $SHARED_BURDEN_LUXURIES$, $6_HAPPINESS$"
+SHARED_BURDEN_POP_EFFECTS:0 "$RULERS$: $SHARED_BURDEN_LUXURIES$, $5_HAPPINESS$\n$SPECIALISTS$: $SHARED_BURDEN_LUXURIES$, $5_HAPPINESS$\n$WORKERS$: $SHARED_BURDEN_LUXURIES$, $5_HAPPINESS$"
 
 empire_socialism_utopia_non_market:0 "$TRIGGER_FAIL$Our Empire is reqiured to have §YFanatic Cooperative§! and §YPluralism§! ethic combination."
 

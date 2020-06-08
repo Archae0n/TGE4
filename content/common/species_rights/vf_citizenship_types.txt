@@ -168,6 +168,15 @@ citizenship_limited = {
 citizenship_slavery = {
 	token = citizenship_slavery
 
+	in_breach_of = {
+		{
+			key = resolution_greatergood_balance_in_the_middle
+		}
+		{
+			key = resolution_greatergood_universal_prosperity_mandate
+		}
+	}
+
 	potential = {
 		NAND = {
 			exists = this
@@ -206,9 +215,12 @@ citizenship_slavery = {
 		custom_tooltip = {
 			fail_text = empire_xenophile
 			from = {
-				NOR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
+				OR = { 
+					has_valid_civic = civic_deep_state 
+					NOR = {
+						has_ethic = ethic_xenophile
+						has_ethic = ethic_fanatic_xenophile
+					}
 				}
 			}
 		}
@@ -236,6 +248,8 @@ citizenship_slavery = {
 					has_ethic = ethic_authoritarian
 					has_ethic = ethic_fanatic_authoritarian
 					has_ethic = ethic_gestalt_consciousness
+
+					has_valid_civic = civic_deep_state
 				}
 			}
 		}
