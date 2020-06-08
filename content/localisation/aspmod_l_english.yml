@@ -730,13 +730,13 @@
  
  ## Wormhole Gen localization ##
  
- trade_gate:0 "Wormhole Generator"
- trade_gate_DESC:0 "A primitive form of gateway network that only works for the gateway owner and their own generators."
+ trade_gate_0:0 "Wormhole Generator"
+ trade_gate_0_DESC:0 "A primitive form of gateway network that only works for the gateway owner and their own generators."
  GATEWAY_NOT_OURS:0 "We can only travel to wormhole generators that we own!"
  requires_technology_wormholes:0 "Requires Wormhole Stabilization Technology"
  WORMHOLE_GATEWAY:0 "Wormhole Generator"
  WORMHOLE_GATEWAY_DESC:0 "This system contains a Wormhole Generator"
- trade_gate_MEGASTRUCTURE_DETAILS:0 "Generates quasi-stable wormholes allowing for instantaneous transportation between different owned wormhole stations"
+ trade_gate_0_MEGASTRUCTURE_DETAILS:0 "Generates quasi-stable wormholes allowing for instantaneous transportation between different owned wormhole stations"
  trade_gate_destroy: "Disassemble Wormhole Generator"
  trade_gate_destroy_DESC:0 "Disassembles this wormhole generator and removes the costly upkeep of maintaining the wormhole link."
  trade_gate_destroy_MEGASTRUCTURE_DETAILS:0 "Disables this wormhole generator permanently, saving us upkeep."
