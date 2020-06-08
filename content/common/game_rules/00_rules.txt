@@ -10,7 +10,12 @@ is_valid_rival = {
 		fail_text = INVALID_RIVAL_DESC
 		root = {
 			OR = {
-				prev = { NOT = { is_country_type = default } }
+				prev = {
+					NOR = {
+						is_country_type = default
+						is_country_type = void_farer
+					}
+				}
 				AND = {
 					relative_power = { who = prev value >= inferior }
 					relative_power = { who = prev value <= superior }
@@ -20,14 +25,18 @@ is_valid_rival = {
 	}
 }
 
-
 # Root = claimer
 # This = system
 can_add_claim = {
 	hidden_trigger = {
 		if = {
 			limit = {
-				root = { NOT = { is_country_type = default } }
+				root = {
+					NOR = {
+						is_country_type = default
+						is_country_type = void_farer
+					}
+				}
 			}
 			always = yes
 		}
@@ -58,6 +67,7 @@ can_add_claim = {
 			owner = {
 				NOR = {
 					is_country_type = default
+					is_country_type = void_farer
 					is_country_type = fallen_empire
 					is_country_type = awakened_fallen_empire
 				}
@@ -135,12 +145,14 @@ can_get_claim_from_lost_system = {
 		fail_text = CANNOT_ADD_CLAIM_NOT_VALID_EMPIRE
 		OR = {
 			is_country_type = default
+			is_country_type = void_farer
 			is_country_type = fallen_empire
 			is_country_type = awakened_fallen_empire
 		}
 		root = {
 			OR = {
 				is_country_type = default
+				is_country_type = void_farer
 				is_country_type = fallen_empire
 				is_country_type = awakened_fallen_empire
 			}
@@ -205,14 +217,8 @@ species_can_live_on_planet = {
 		NOR = {
 			has_trait = trait_machine_unit
 			has_trait = trait_mechanical
-			AND = {
-				has_trait = trait_cybernetic
-				exists = root.owner
-				root.owner = {
-					has_authority = auth_machine_intelligence
-					has_civic = civic_machine_assimilator # Assimilator empire
-				}
-			}
+			#Cyborgs can live on machine worlds now I think (+40% machine hab from trait)			
+			has_trait = trait_cybernetic
 		}
 	}
 	NAND = {
@@ -235,6 +241,7 @@ can_vote_in_democratic_election = {
 can_generate_leader_from_pop = {
 	has_citizenship_rights = yes
 	NOT = { has_trait = trait_syncretic_proles }
+	NOT = { has_trait = trait_slave_gene }
 	NOT = { has_trait = trait_nerve_stapled }
 	OR = {
 		is_robot_pop = no
@@ -307,7 +314,11 @@ can_release_vassal_from_species = {
 		NOR = {
 			has_trait = trait_machine_unit
 			has_trait = trait_hive_mind
-			has_trait = trait_mechanical
+			#Free the robits \(^-^)/
+			AND =
+				has_trait = trait_mechanical
+				NOT = { from = { has_technology = "tech_synthetic_workers" } }	
+			}
 			has_trait = trait_nerve_stapled
 		}
 	}
@@ -337,6 +348,7 @@ can_modify_species = {
 #Root = country, overlord
 #From = target solar system
 #This rule is a condition for when subjects that normally cannot colonize outside their borders are allowed to
+
 subject_can_expand = {
 	root = { has_valid_civic = civic_feudal_realm }
 }
@@ -378,7 +390,10 @@ can_take_hostile_actions = {
 		#attacking primitives with non-interference
 		limit = {
 			ROOT = {
-				is_country_type = default
+				OR = {
+					is_country_type = default
+					is_country_type = void_farer
+				}
 				OR = {
 					has_policy_flag = interference_passive
 					has_policy_flag = interference_active
@@ -394,7 +409,12 @@ can_take_hostile_actions = {
 	else_if = {
 		limit = {
 			is_primitive = yes
-			ROOT = { is_country_type = default }
+			ROOT = {
+				OR = {
+					is_country_type = default
+					is_country_type = void_farer
+				}
+			}
 			capital_scope = {
 				root = {
 					NOT = {
@@ -584,15 +604,17 @@ species_has_happiness = {
 		has_trait = trait_machine_unit
 		has_trait = trait_hive_mind
 		has_trait = trait_nerve_stapled
+
 		AND = {
 			has_trait = trait_mechanical
 			OR = {
 				NOT = { exists = from }
 				from = { has_authority = auth_machine_intelligence }
-				from = { NOT = { has_technology = tech_synthetic_workers } }
+				from = { NOT = { has_technology = "tech_synthetic_workers" } }
 				from = { has_policy_flag = ai_outlawed }
 			}
 		}
+
 		AND = {
 			has_trait = trait_cybernetic
 			exists = from
@@ -926,7 +948,11 @@ can_orbitable_repair_ships = {
 # this = ship
 # root = country that kills ship
 can_spawn_debris = {
-	root = { is_country_type = default }
+	root = {
+		OR = {
+			is_country_type = default
+			is_country_type = void_farer
+		}
 	exists = owner
 	owner = { NOT = { has_ascension_perk = ap_enigmatic_engineering } }
 }
@@ -985,6 +1011,7 @@ can_jump_drive = {
 can_spawn_occupation_armies = {
 	OR = {
 		is_country_type = default
+		is_country_type = void_farer
 		is_country_type = fallen_empire
 		is_country_type = awakened_fallen_empire
 	}
@@ -1269,8 +1296,8 @@ is_criminal_syndicate_rule = {
 can_crossbreed_species_on_planet = {
     exists = owner
     OR = {
-        has_building = building_brothel_house
-        has_building = building_brothel_house_branch_office 
+        #has_building = building_brothel_house
+        #has_building = building_brothel_house_branch_office 
         owner = { has_ascension_perk = ap_xeno_compatibility }
     }
     count_species = {
@@ -1307,7 +1334,10 @@ can_win_timed_victory = {
 
 # This = country
 can_use_galactic_market = {
-	is_country_type = default
+	OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
 	NOR = {
 		has_civic = civic_fanatic_purifiers
 		has_civic = civic_hive_devouring_swarm
@@ -1323,7 +1353,7 @@ can_be_sold_on_slave_market = {
 		is_non_sapient_robot = yes
 		is_shackled_robot = yes
 	}
-	OR ={
+	OR = {
 		ROOT = { is_ai = no }
 		has_citizenship_rights = no
 		AND = {
@@ -1336,15 +1366,31 @@ can_be_sold_on_slave_market = {
 			}
 		}
 	}
+	if = {
+		limit = {
+			has_global_flag = organic_slave_trade_banned_flag
+		}
+		is_organic_species = no
+	}
+	if = {
+		limit = {
+			has_global_flag = sentient_slave_trade_banned_flag
+		}
+		is_sapient = no
+	}
 }
 
 # This = country
 can_be_part_of_galactic_community = {
-	is_country_type = default
+	OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
 	NOR = {
 		has_civic = civic_fanatic_purifiers
 		has_civic = civic_hive_devouring_swarm
 		has_civic = civic_machine_terminator
+		has_origin = origin_galactic_reavers
 	}
 }
 
@@ -1359,11 +1405,15 @@ can_see_galactic_community = {
 
 # This = country
 can_be_part_of_galactic_council = {
-	is_country_type = default
+	OR = {
+		is_country_type = default
+		is_country_type = void_farer
+	}
 	NOR = {
 		has_civic = civic_fanatic_purifiers
 		has_civic = civic_hive_devouring_swarm
 		has_civic = civic_machine_terminator
+		has_origin = origin_galactic_reavers
 	}
 }
 
