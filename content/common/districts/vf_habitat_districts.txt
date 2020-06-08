@@ -8,10 +8,10 @@ district_hab_vf_resource_bay = {
 		exists = from
 		from = {
 			OR = {
-				has_civic = civic_nomads
-				has_civic = civic_marauders
-				has_civic = civic_reavers
-				has_civic = civic_ancient_drones
+				has_origin = origin_void_nomads
+				has_origin = origin_void_marauders
+				has_origin = origin_void_reavers
+				has_origin = origin_ancient_drones
 			}
 		}
 	}
@@ -21,10 +21,10 @@ district_hab_vf_resource_bay = {
 		exists = owner
 		owner = {
 			OR = {
-				has_civic = civic_nomads
-				has_civic = civic_marauders
-				has_civic = civic_reavers
-				has_civic = civic_ancient_drones
+				has_origin = origin_void_nomads
+				has_origin = origin_void_marauders
+				has_origin = origin_void_reavers
+				has_origin = origin_ancient_drones
 			}
 		}
 		NOT = {
