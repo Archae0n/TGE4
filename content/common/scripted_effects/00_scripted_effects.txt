@@ -4455,7 +4455,10 @@ add_awakened_fallen_empire_fleet = {
 	if = {
 		limit = {
 			any_country = {
-				is_country_type = default
+				OR = {
+					is_country_type = default
+					is_country_type = void_farer
+				}
 				OR = {
 					fleet_power > 80000
 					AND = {
@@ -4479,7 +4482,10 @@ add_awakened_fallen_empire_fleet = {
 	if = {
 		limit = {
 			any_country = {
-				is_country_type = default
+				OR = {
+					is_country_type = default
+					is_country_type = void_farer
+				}
 				OR = {
 					fleet_power > 150000
 					AND = {
@@ -4503,7 +4509,10 @@ add_awakened_fallen_empire_fleet = {
 	if = {
 		limit = {
 			any_country = {
-				is_country_type = default
+				OR = {
+					is_country_type = default
+					is_country_type = void_farer
+				}
 				OR = {
 					fleet_power > 200000
 					AND = {
@@ -4531,7 +4540,10 @@ add_awakened_fallen_empire_fleet_small = {
 	if = {
 		limit = {
 			any_country = {
-				is_country_type = default
+				OR = {
+					is_country_type = default
+					is_country_type = void_farer
+				}
 				OR = {
 					fleet_power > 150000
 					AND = {
@@ -6776,7 +6788,10 @@ fire_warning_sign = {
 			NOR = {
 				has_ethic = ethic_gestalt_consciousness
 				has_country_flag = synthetic_empire
-				has_ascension_perk = ap_the_flesh_is_weak
+
+				#Cybernetics won't save you from the robit ° °
+				#has_ascension_perk = ap_the_flesh_is_weak
+
 				has_policy_flag = ai_full_rights
 				has_country_flag = no_machine_uprising
 				has_policy_flag = robots_outlawed
