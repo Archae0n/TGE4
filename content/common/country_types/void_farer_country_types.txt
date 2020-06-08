@@ -246,11 +246,11 @@ void_farer = {
 					}
 					modifier = {
 						add = -100
-						has_civic = civic_marauders
+						has_origin = origin_void_marauders
 					}
 					modifier = {
 						add = -100
-						has_civic = civic_reavers
+						has_origin = origin_void_reavers
 					}
 				}
 			}
@@ -267,11 +267,11 @@ void_farer = {
 					}
 					modifier = {
 						add = -100
-						has_civic = civic_marauders
+						has_origin = origin_void_marauders
 					}
 					modifier = {
 						add = -100
-						has_civic = civic_reavers
+						has_origin = origin_void_reavers
 					}
 				}
 			}
@@ -292,11 +292,11 @@ void_farer = {
 					}
 					modifier = {
 						add = -100
-						has_civic = civic_marauders
+						has_origin = origin_void_marauders
 					}
 					modifier = {
 						add = -100
-						has_civic = civic_reavers
+						has_origin = origin_void_reavers
 					}
 				}
 			}
@@ -318,11 +318,11 @@ void_farer = {
 					}
 					modifier = {
 						add = -100
-						has_civic = civic_marauders
+						has_origin = origin_void_marauders
 					}
 					modifier = {
 						add = -100
-						has_civic = civic_reavers
+						has_origin = origin_void_reavers
 					}
 				}
 			}
@@ -335,7 +335,7 @@ void_farer = {
 					}
 					modifier = {
 						add = -100
-						has_civic = civic_nomads
+						has_origin = origin_void_nomads
 					}
 				}
 			}
@@ -352,7 +352,7 @@ void_farer = {
 					}
 					modifier = {
 						add = -100
-						has_civic = civic_nomads
+						has_origin = origin_void_nomads
 					}
 				}
 			}
@@ -373,7 +373,7 @@ void_farer = {
 					}
 					modifier = {
 						add = -100
-						has_civic = civic_nomads
+						has_origin = origin_void_nomads
 					}
 				}
 			}
@@ -395,7 +395,7 @@ void_farer = {
 					}
 					modifier = {
 						add = -100
-						has_civic = civic_nomads
+						has_origin = origin_void_nomads
 					}
 				}
 			}
