@@ -7,7 +7,7 @@ gpm_d_gargantuan_sinkhole = {
 
 	planet_modifier = {
 		district_mining_max = 4
-		planet_jobs_minerals_produces_mult = 0.1
+		planet_jobs_minerals_produces_mult = 0.05
 	}
 
 	# weight 0: event added
@@ -23,7 +23,7 @@ gpm_d_discharging_field = {
 
 	planet_modifier = {
 		district_generator_max = 4
-		planet_jobs_energy_produces_mult = 0.1
+		planet_jobs_energy_produces_mult = 0.05
 	}
 
 	# weight 0: event added
@@ -39,7 +39,7 @@ gpm_d_giant_trees = {
 
 	planet_modifier = {
 		district_farming_max = 4
-		planet_jobs_food_produces_mult = 0.1
+		planet_jobs_food_produces_mult = 0.05
 	}
 
 	# weight 0: event added
@@ -55,7 +55,7 @@ gpm_d_crystal_jungle = {
 
 	planet_modifier = {
 		building_crystal_mines_max = 2
-		planet_jobs_specialist_rare_crystals_produces_mult = 0.1
+		planet_jobs_specialist_rare_crystals_produces_mult = 0.05
 	}
 
 	# weight 0: event added
@@ -70,7 +70,7 @@ gpm_d_floating_islands = {
 	should_swap_deposit_on_terraforming = no
 
 	planet_modifier = {
-		planet_max_districts_add = 6
+		planet_max_districts_add = 5
 	}
 
 	# weight 0: event added
@@ -85,7 +85,7 @@ gpm_d_amoeba_sea = {
 	should_swap_deposit_on_terraforming = no
 
 	planet_modifier = {
-		planet_jobs_physics_research_produces_mult = 0.15
+		planet_jobs_physics_research_produces_mult = 0.1
 	}
 
 	triggered_planet_modifier = {
@@ -94,7 +94,7 @@ gpm_d_amoeba_sea = {
 			owner = { is_regular_empire = yes }
 		}
 		modifier = {
-			job_researcher_add = 3
+			job_researcher_add = 2
 		}
 	}
 	
@@ -104,7 +104,7 @@ gpm_d_amoeba_sea = {
 			owner = { is_hive_empire = yes }
 		}
 		modifier = {
-			job_brain_drone_add = 3
+			job_brain_drone_add = 2
 		}
 	}
 	
@@ -114,7 +114,7 @@ gpm_d_amoeba_sea = {
 			owner = { is_machine_empire = yes }
 		}
 		modifier = {	
-			job_calculator_add = 3
+			job_calculator_add = 2
 		}
 	}
 
@@ -146,7 +146,7 @@ gpm_d_howling_peaks = {
 
 	planet_modifier = {
 		district_mining_max = 4
-		planet_jobs_minerals_produces_mult = 0.1
+		planet_jobs_minerals_produces_mult = 0.05
 	}
 
 	# weight 0: event added
@@ -191,7 +191,7 @@ gpm_d_titanic_cave = {
 	should_swap_deposit_on_terraforming = no
 
 	planet_modifier = {
-		planet_max_districts_add = 2
+		planet_max_districts_add = 1
 		district_mining_max = 3
 	}
 
@@ -216,7 +216,7 @@ gpm_d_abandoned_stargate = {
 			owner = { is_regular_empire = yes }
 		}
 		modifier = {
-			job_researcher_add = 4
+			job_researcher_add = 2
 		}
 	}
 	
@@ -226,7 +226,7 @@ gpm_d_abandoned_stargate = {
 			owner = { is_hive_empire = yes }
 		}
 		modifier = {
-			job_brain_drone_add = 4
+			job_brain_drone_add = 2
 		}
 	}
 	
@@ -236,7 +236,7 @@ gpm_d_abandoned_stargate = {
 			owner = { is_machine_empire = yes }
 		}
 		modifier = {	
-			job_calculator_add = 4
+			job_calculator_add = 2
 		}
 	}
 
@@ -338,7 +338,7 @@ gpm_d_ruined_arcology = {
 	should_swap_deposit_on_terraforming = no
 
 	planet_modifier = {
-		planet_max_districts_add = 6
+		planet_max_districts_add = 5
 	}
 
 	# weight 0: event added

@@ -50,8 +50,8 @@ gpm_precursor_shipyards_uplink = {
 	
 	station_modifier = {
 		starbase_shipyard_build_speed_mult = 0.20
-		starbase_shipyard_build_cost_mult = -0.10
-		starbase_shipyard_capacity_add = 6
+		starbase_shipyard_build_cost_mult = -0.05
+		starbase_shipyard_capacity_add = 2
 	}
 	
 	ai_build_at_chokepoint = yes
