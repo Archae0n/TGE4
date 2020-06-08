@@ -9,18 +9,26 @@ district_generator = {
 
 	show_on_uncolonized = {
 		habitable_structure = no
-		NOT = { is_planet_class = pc_machine }
-		NOT = { is_planet_class = pc_hive }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_ringworld_habitable }
+		NOR = {
+			is_planet_class = pc_machine
+			is_planet_class = pc_hive
+			is_planet_class = pc_pdhive1
+			is_planet_class = pc_pdhive2	
+			is_planet_class = pc_city
+			is_planet_class = pc_ringworld_habitable
+		}
 	}
 
 	potential = {
 		habitable_structure = no
-		NOT = { is_planet_class = pc_machine }
-		NOT = { is_planet_class = pc_hive }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_ringworld_habitable }
+		NOR = {
+			is_planet_class = pc_machine
+			is_planet_class = pc_hive
+			is_planet_class = pc_pdhive1
+			is_planet_class = pc_pdhive2	
+			is_planet_class = pc_city
+			is_planet_class = pc_ringworld_habitable
+		}
 	}
 
 	allow = {
@@ -265,18 +273,26 @@ district_mining = {
 
 	show_on_uncolonized = {
 		habitable_structure = no
-		NOT = { is_planet_class = pc_machine }
-		NOT = { is_planet_class = pc_hive }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_ringworld_habitable }
+		NOR = {
+			is_planet_class = pc_machine
+			is_planet_class = pc_hive
+			is_planet_class = pc_pdhive1
+			is_planet_class = pc_pdhive2	
+			is_planet_class = pc_city
+			is_planet_class = pc_ringworld_habitable
+		}
 	}
 
 	potential = {
 		habitable_structure = no
-		NOT = { is_planet_class = pc_machine }
-		NOT = { is_planet_class = pc_hive }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_ringworld_habitable }
+		NOR = {
+			is_planet_class = pc_machine
+			is_planet_class = pc_hive
+			is_planet_class = pc_pdhive1
+			is_planet_class = pc_pdhive2	
+			is_planet_class = pc_city
+			is_planet_class = pc_ringworld_habitable
+		}
 	}
 
 	allow = {
@@ -557,18 +573,26 @@ district_farming = {
 
 	show_on_uncolonized = {
 		habitable_structure = no
-		NOT = { is_planet_class = pc_machine }
-		NOT = { is_planet_class = pc_hive }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_ringworld_habitable }
+		NOR = {
+			is_planet_class = pc_machine
+			is_planet_class = pc_hive
+			is_planet_class = pc_pdhive1
+			is_planet_class = pc_pdhive2	
+			is_planet_class = pc_city
+			is_planet_class = pc_ringworld_habitable
+		}
 	}
 
 	potential = {
 		habitable_structure = no
-		NOT = { is_planet_class = pc_machine }
-		NOT = { is_planet_class = pc_hive }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_ringworld_habitable }
+		NOR = {
+			is_planet_class = pc_machine
+			is_planet_class = pc_hive
+			is_planet_class = pc_pdhive1
+			is_planet_class = pc_pdhive2	
+			is_planet_class = pc_city
+			is_planet_class = pc_ringworld_habitable
+		}
 	}
 
 	allow = {
@@ -1229,7 +1253,6 @@ district_farming_uncapped = {
 	potential = { 
 		OR = {
 			is_planet_class = pc_hive
-			is_planet_class = pc_machine
 			is_planet_class = pc_pdhive1
 			is_planet_class = pc_pdhive2			
 		}	
