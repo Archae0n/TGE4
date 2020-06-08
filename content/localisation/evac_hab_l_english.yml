@@ -1,0 +1,17 @@
+﻿l_english:
+
+evacuate_hab.101.name:0 "Back on track"
+evacuate_hab.101.desc:0 "In just a few months we have successfully evacuated all our colonist and robots from [Root.GetName] back to our ships and now we are ready to continue our travels among the stars."
+evacuate_hab.101.a:0 "Skedaddle!"
+evacuate_hab.101.b:0 "We need to clean up first!"
+evacuate_cleanup_planet_tooltip:0 "Destroy buildings and districts and gain some minerals!"
+
+evacuate_hab.102.name:0 "Back on track"
+evacuate_hab.102.desc:0 "In just a few months we have successfully evacuated all our colonist and robots from [Root.GetName] back to our ships and now we are ready to continue our travels among the stars."
+evacuate_hab.102.b:0 "Let's dismantle the habitat too!"
+evacuate_cleanup_hab_tooltip:0 "Destroy the habitat and gain some alloys!"
+
+decision_evacuate_planet:0 "Evacuate the planet"
+decision_evacuate_planet_desc:0 "WARNING: This will eliminate all pops, be sure to resettle theme elsewhere if you want to keep them!"
+decision_evacuate_habitat:0 "Evacuate the habitat"
+decision_evacuate_habitat_desc:0 "WARNING: This will eliminate all pops, be sure to resettle theme elsewhere if you want to keep them!"

@@ -1,0 +1,142 @@
+namespace = evacuate_hab
+
+#check for conditions and type
+planet_event = {
+	id = evacuate_hab.100
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				has_owner = yes
+				has_ground_combat = no
+				is_occupied_flag = no
+				owner = {
+					is_country_type = void_farer
+				}
+				NOT = {
+					is_planet_class = pc_habitat
+				}
+			}
+			planet_event = { id = evacuate_hab.101 }
+		}
+		else if = {
+			limit = {
+				has_owner = yes
+				has_ground_combat = no
+				is_occupied_flag = no
+				owner = {
+					is_country_type = void_farer
+				}
+				is_planet_class = pc_habitat
+			}
+			planet_event = { id = evacuate_hab.102 }
+		}
+		
+	}
+}
+
+#evac planet
+planet_event = {
+	id = evacuate_hab.101
+	title = evacuate_hab.101.name
+	desc = evacuate_hab.101.desc
+	picture = GFX_evt_fleet_from_surface
+	show_sound = event_ship_thrusters
+	location = from
+
+	is_triggered_only = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = evacuate_hab.101.a
+		hidden_effect = {
+			every_owned_pop = {
+				kill_pop = yes
+			}
+		}
+	}
+
+	option = {
+		name = evacuate_hab.101.b
+		custom_tooltip = evacuate_cleanup_planet_tooltip
+		owner = { add_resource = { minerals = 500 } }
+		hidden_effect = {
+			remove_all_buildings = yes
+			remove_all_districts = yes
+			every_owned_pop = {
+				kill_pop = yes
+			}
+		}
+		
+		
+	}
+}
+
+#evac hab
+planet_event = {
+	id = evacuate_hab.102
+	title = evacuate_hab.102.name
+	desc = evacuate_hab.102.desc
+	picture = GFX_evt_hangar_bay
+	show_sound = event_ship_thrusters 
+	location = from
+
+	is_triggered_only = yes
+
+	immediate = {
+		
+	}
+
+	option = {
+		name = evacuate_hab.101.a
+		hidden_effect = {
+			every_owned_pop = {
+				kill_pop = yes
+			}
+		}
+	}
+
+	option = {
+		name = evacuate_hab.102.b
+		custom_tooltip = evacuate_cleanup_hab_tooltip
+		trigger = { is_planet_class = pc_habitat }
+		owner = { add_resource = { alloys = 500 } }
+		set_planet_flag = habitat_to_evac
+
+		hidden_effect = { owner = { country_event = { id = evacuate_hab.104 } } }
+	}
+}
+
+#bug fix
+country_event = {
+	id = evacuate_hab.104
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		random_planet = {
+			limit = {
+				has_moon = yes
+				has_planet_flag = has_megastructure
+				any_moon = {
+					has_planet_flag = habitat_to_evac
+				}
+			}
+			remove_planet_flag = has_megastructure
+		}
+
+		random_planet = {
+			limit = {
+				is_planet_class = pc_habitat
+				has_planet_flag = habitat_to_evac
+			}
+			remove_planet = yes
+		}
+	}
+}
