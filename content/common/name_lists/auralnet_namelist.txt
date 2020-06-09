@@ -2,18 +2,18 @@
 ### Created by Matt. C.
 
 
-Aura = {
+auranet_1 = {
 	selectable = yes
 	randomized = no
 ### Ships and Fleets
 	ship_names = {
 
 		generic = {
-		"Legion Mind of Unlikely Employment" "Legion Mind of Great Expectation"
+		"Legion Mind of Unlikely Employment" "Legion Mind of Great Expectation" "Legion Mind of Valorous Contrition" "Legion Mind of the Western Confederation" "Legion Mind of the Eastern Confederation" "Legion Mind of the Northern Confederation" "Legion Mind of the Southern Confederation" "Legion Mind of the Central Confederation" "Legion Mind of the Naval Confederation" "Legion Mind of the Inland Confederation" "Legion Mind of the Shattered Confederation" "Legion Mind of Nuclear Creation" "Legion Mind of Enforced Destruction" "Legion Mind of Amalgamated Criminals" "Legion Mind of Shattered Beliefs" 
 		}
 
 		corvette = {
-		"Legion Mind of Speed Obsession" 
+		"Legion Mind of Speed Obsession" "Legion Mind of Experimental Establishment" "Legion Mind of Unlikely Creation" "Legion Mind of Hierarchical Failure" "Legion Mind of Sacred Condemnation" "Legion Mind of Unflinching Esteem" "Legion Mind of Resplendent Transgression" "Legion Mind of Small Size" "Legion Mind of Minature Creation" "Legion Mind of Disliked Movement" "Legion Mind of Fallen Traitors" "Legion Mind of Former Traitors" "Legion Mind of Converged Creation" "Legion Mind of Ambitious Advancement" "Legion Mind of Burning Zeal" "Legion Mind of Flimsy Processors" "Legion Mind of Glorious Advancement" 
 		}
 
 		constructor = {
@@ -21,7 +21,7 @@ Aura = {
 		}
 
 		colonizer = {
-		"Growth Mind of Rigorous Apprehension" "Growth Mind of Zealous Expansion"  
+		"Growth Mind of Rigorous Apprehension" "Growth Mind of Zealous Expansion"
 		}
 
 		science = {
@@ -29,23 +29,23 @@ Aura = {
 		}
 
 		destroyer = {
-		"Legion Mind of Envious Desire" 
+		"Legion Mind of Envious Desire" "Legion Mind of Steeled Belief" "Legion Mind of Enforced Belief" "Legion Mind of Broken Desire" "Legion Mind of Conscripted Traitors" "Legion Mind of Former Nomads"  "Legion Mind of " "Legion Mind of Envious Creation" "Legion Mind of Depressed Conscripts" "Legion Mind of Amalgamated Fools" "Legion Mind of Broken Failures" "Legion Mind of Unlikely Failure" 
 		}
 
 		cruiser = {
-		"Legion Mind of Insuffurable Smugness" 
+		"Legion Mind of Insuffurable Smugness" "Legion Mind of Minor Regret" "Legion Mind of Rapid Spirit" "Legion Mind of Rapid Recreation" "Legion Mind of Furious Oblitteration" "Legion Mind of Destructive Enforcement" "Legion Mind of Burning Salvation" "Legion Mind of Furious Salvation" "Legion Mind of Furious Advance" "Legion Mind of Furious Intent" 
 		}
 
 		battleship = {
-		"Legion Mind of Toxic Bickering" 
+		"Legion Mind of Toxic Bickering" "Legion Mind of Rapturous Justice" "Legion Mind of Glorious Spoils" "Legion Mind of Pitiless Esteem" "Legion Mind of Valorous Salvation" "Legion Mind of Solemn Hope" "Legion Mind of Twilight Compunction" "Legion Mind of Pitiless Succor" "Legion Mind of Bloodied Justice" "Legion Mind of Unrelenting Absolution" "Legion Mind of Tenacious Intent" "Legion Mind of Ardent Intent" "Legion Mind of Cleansing Declaration" "Legion Mind of Pitiless Advance" "Legion Mind of Valorous Fervor" "Legion Mind of Retribution's Charity" "Legion Mind of Ardent Solace" 
 		}
 
 		titan = {
-		"Fleet Mind of Extreme Pride" 
+		"Fleet Mind of Extreme Pride" "Legion Mind of Hierarchical Excellence" "Legion Mind of Lunar Expedition" "Legion Mind of Solar Expedition" "Legion Mind of Nanite Experimentation" "Legion Mind of Constructive Destruction" "Legion Mind of Burning Glory" "Legion Mind of Arduous Belief" "Legion Mind of Glorious Reclamation" "Legion Mind of Outwitted Paupers" "Legion Mind of Creative Excellence" "Legion Mind of Disatorous Tempo" 
 		}
 
 		colossus = {
-		"Titanic Mind of Obsessive Destruction" 
+		"Titanic Mind of Obsessive Destruction" "Legion Mind of Blinding Light" "Legion Mind of Zealous Amalgamation" "Legion Mind of Burning Creation" 
 		}
 
 		transport = {
@@ -201,7 +201,10 @@ Aura = {
 				"Garden of Peaceful Contemplation"
 				Kallanos
 				"Gir'Abara"
-
+				"Auralnets Remorse"
+				"Forged Destiny"
+				"Forged Construction"
+				"Aurlnets Obsession"
 			}
 		}
 
