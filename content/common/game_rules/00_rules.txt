@@ -322,7 +322,6 @@ can_release_vassal_from_species = {
 			has_trait = trait_nerve_stapled
 		}
 	}
-}
 
 # Root = species
 # This = country
@@ -956,6 +955,7 @@ can_spawn_debris = {
 	exists = owner
 	owner = { NOT = { has_ascension_perk = ap_enigmatic_engineering } }
 }
+}
 
 # this = system
 # root = country
@@ -980,7 +980,7 @@ ai_should_restrict_system = {
 					is_country_type = awakened_marauders
 				}
 			}
-			any_ship_in_system = {
+			any_fleet_in_system = {
 				exists = owner
 				owner = {
 					OR = {
@@ -1295,11 +1295,7 @@ is_criminal_syndicate_rule = {
 # This = planet
 can_crossbreed_species_on_planet = {
     exists = owner
-    OR = {
-        #has_building = building_brothel_house
-        #has_building = building_brothel_house_branch_office 
-        owner = { has_ascension_perk = ap_xeno_compatibility }
-    }
+    owner = { has_ascension_perk = ap_xeno_compatibility }
     count_species = {
         limit = { 
             is_crossbreeding_possible = yes
@@ -1313,6 +1309,10 @@ can_crossbreed_species_on_planet = {
 can_crossbreed_species = {
 	is_crossbreeding_possible = yes
 	root = { is_crossbreeding_possible = yes }
+	NOR = {
+		is_subspecies = root
+		root = { is_subspecies = prev }
+}
 }
 
 # No scope
