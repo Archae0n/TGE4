@@ -1205,6 +1205,7 @@ can_force_decline_species = {
 }
 
 # This = country
+# This = country
 can_build_branch_offices = {
 	custom_tooltip = {
 		fail_text = BRANCH_OFFICE_NOT_MEGACORP

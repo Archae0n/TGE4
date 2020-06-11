@@ -104,7 +104,8 @@ nomad_mining_ship = {
 	}
 	
 	potential_country = {
-		is_void_nomads = yes
+		#is_country_type = void_farer
+		always = no
 	}
 }
 
@@ -196,7 +197,8 @@ nomad_energy_tanker = {
 	}
 	
 	potential_country = {
-		is_void_nomads = yes
+		#is_country_type = void_farer
+		always = no
 	}
 }
 
@@ -370,6 +372,7 @@ factory_ship = {
 	}
 	
 	potential_country = {
-		is_country_type = void_farer
+		#is_country_type = void_farer
+		always = no
 	}
 }

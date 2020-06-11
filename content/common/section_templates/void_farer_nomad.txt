@@ -13,10 +13,15 @@ ship_section_template = {
 	
 	prerequisites = { tech_nomad_ships }
 	
-	small_utility_slots = 2
-	medium_utility_slots = 2
-	large_utility_slots = 2
-	aux_utility_slots = 2
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"		
+		rotation = 90
+		locatorname = "root"
+	}	
+	
+	large_utility_slots = 6
+	aux_utility_slots = 6
 }
 
 ship_section_template = {
@@ -29,57 +34,34 @@ ship_section_template = {
 	prerequisites = { tech_arm_civilian_fleet }
 	
 	component_slot = {
-		name = "SMALL_GUN_01"
-		template = "medium_turret"
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"		
+		rotation = 90
 		locatorname = "root"
 	}
 	component_slot = {
-		name = "SMALL_GUN_02"
-		template = "medium_turret"
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"		
+		rotation = 90
 		locatorname = "root"
 	}
 	component_slot = {
-		name = "SMALL_GUN_03"
-		template = "large_turret"
+		name = "STRIKE_CRAFT_03"
+		template = "large_strike_craft"		
+		rotation = 270
 		locatorname = "root"
 	}
+	component_slot = {
+		name = "STRIKE_CRAFT_04"
+		template = "large_strike_craft"		
+		rotation = 270
+		locatorname = "root"
+	}	
 	
-	small_utility_slots = 2
-	medium_utility_slots = 2
-	large_utility_slots = 2
-	aux_utility_slots = 3
+	large_utility_slots = 6
+	aux_utility_slots = 6
 }
 
-ship_section_template = {
-	key = "capital_ark_ship_XL_section"
-	ship_size = capital_ark_ship
-	fits_on_slot = mid
-	entity = "colony_ship_entity"
-	icon = "GFX_ship_part_core_mid"
-	
-	prerequisites = { tech_arm_civilian_fleet }
-	
-	component_slot = {
-		name = "SMALL_GUN_01"
-		template = "large_strike_craft"
-		locatorname = "root"
-	}
-	component_slot = {
-		name = "SMALL_GUN_02"
-		template = "large_strike_craft"
-		locatorname = "root"
-	}
-	component_slot = {
-		name = "SMALL_GUN_03"
-		template = "invisible_extra_large_fixed"
-		locatorname = "root"
-	}
-	
-	small_utility_slots = 2
-	medium_utility_slots = 2
-	large_utility_slots = 2
-	aux_utility_slots = 3
-}
 
 #
 ### Support ark
@@ -91,12 +73,16 @@ ship_section_template = {
 	entity = "colony_ship_entity"
 	icon = "GFX_ship_part_core_mid"
 	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"		
+		rotation = 90
+		locatorname = "root"
+	}
 	prerequisites { tech_nomad_ships }
 	
-	small_utility_slots = 2
-	medium_utility_slots = 2
-	large_utility_slots = 2
-	aux_utility_slots = 2
+	large_utility_slots = 6
+	aux_utility_slots = 3
 }
 
 ship_section_template = {
@@ -109,57 +95,34 @@ ship_section_template = {
 	prerequisites = { tech_arm_civilian_fleet }
 	
 	component_slot = {
-		name = "SMALL_GUN_01"
-		template = "large_strike_craft"
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"		
+		rotation = 90
 		locatorname = "root"
 	}
 	component_slot = {
-		name = "SMALL_GUN_02"
-		template = "large_strike_craft"
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"		
+		rotation = 90
 		locatorname = "root"
 	}
 	component_slot = {
-		name = "SMALL_GUN_03"
-		template = "large_turret"
+		name = "STRIKE_CRAFT_03"
+		template = "large_strike_craft"		
+		rotation = 270
 		locatorname = "root"
 	}
+	component_slot = {
+		name = "STRIKE_CRAFT_04"
+		template = "large_strike_craft"		
+		rotation = 270
+		locatorname = "root"
+	}	
 	
-	small_utility_slots = 2
-	medium_utility_slots = 2
-	large_utility_slots = 2
+	large_utility_slots = 6
 	aux_utility_slots = 3
 }
 
-ship_section_template = {
-	key = "ark_ship_support_xl_section"
-	ship_size = support_ark_ship
-	fits_on_slot = mid
-	entity = "colony_ship_entity"
-	icon = "GFX_ship_part_core_mid"
-	
-	prerequisites = { tech_arm_civilian_fleet }
-	
-	component_slot = {
-		name = "SMALL_GUN_01"
-		template = "large_strike_craft"
-		locatorname = "root"
-	}
-	component_slot = {
-		name = "SMALL_GUN_02"
-		template = "large_strike_craft"
-		locatorname = "root"
-	}
-	component_slot = {
-		name = "SMALL_GUN_03"
-		template = "small_turret"
-		locatorname = "root"
-	}
-	
-	small_utility_slots = 2
-	medium_utility_slots = 2
-	large_utility_slots = 2
-	aux_utility_slots = 3
-}
 
 #########################
 # Factory Ship

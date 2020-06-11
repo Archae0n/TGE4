@@ -112,7 +112,15 @@ colonies = {
 ships = {
 	use_for_ai_budget = yes
 	generate_mult_modifiers = {
+		produces
 		upkeep
+		cost
+	}
+	
+	generate_add_modifiers = {
+		produces
+		upkeep
+		cost
 	}
 
 	ai_use_parent_for_resources_upkeep = {

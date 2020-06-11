@@ -1,0 +1,57 @@
+﻿l_english:
+
+ # Nomad Labs
+ 
+ NOMAD_LABS_1:0 "Nomad Labs Component Set"
+ NOMAD_SCIENCE_T1:0 "Tier 1 Nomad Labs Component (Make same as above)"
+ NOMAD_LABS_1_DESC:0 "Nomad Labs Component Set Description"
+ NOMAD_SCIENCE_1_DESC:0 "Nomad Labs Component Description (Make same as above)"
+ 
+ NOMAD_LABS_2:0 "Nomad Labs Component Set"
+ NOMAD_SCIENCE_T2:0 "Tier 2 Nomad Labs Component (Make same as above)"
+ NOMAD_LABS_2_DESC:0 "Nomad Labs Component Set Description"
+ NOMAD_SCIENCE_2_DESC:0 "Nomad Labs Component Description (Make same as above)"
+ 
+ NOMAD_LABS_3:0 "Nomad Labs Component Set"
+ NOMAD_SCIENCE_T3:0 "Tier 3 Nomad Labs Component (Make same as above)"
+ NOMAD_LABS_3_DESC:0 "Nomad Labs Component Set Description"
+ NOMAD_SCIENCE_3_DESC:0 "Nomad Labs Component Description (Make same as above)"
+ 
+ NOMAD_MINERALS:0 "Nomad Mineral Production Component and Component Set"
+ NOMAD_MINERALS_DESC:0 "Nomad Mineral Production Component Description"
+ 
+ NOMAD_FOOD:0 "Nomad Food Production Component and Component Set"
+ NOMAD_FOOD_DESC:0 "Nomad Food Production Component Description"
+ 
+ NOMAD_ENERGY:0 "Nomad Energy Production Component and Component Set Name"
+ NOMAD_ENERGY_DESC:0 "Nomad Energy Production Component Description"
+ 
+ NOMAD_ALLOY_T1:0 "Abcd"
+ NOMAD_ALLOYS_1:0 "Same as above"
+ NOMAD_ALLOY_T1_DESC:0 "Abcd"
+ NOMAD_ALLOYS_1_DESC:0 "Same as above"
+ 
+ NOMAD_ALLOY_T2:0 "Abcd"
+ NOMAD_ALLOYS_2:0 "Same as above"
+ NOMAD_ALLOY_T2_DESC:0 "Abcd"
+ NOMAD_ALLOYS_2_DESC:0 "Same as above"
+ 
+ NOMAD_ALLOY_T3:0 "Abcd"
+ NOMAD_ALLOYS_3:0 "Same as above"
+ NOMAD_ALLOY_T3_DESC:0 "Abcd"
+ NOMAD_ALLOYS_3_DESC:0 "Same as above"
+ 
+ NOMAD_CG_T1:0 "Abcd"
+ NOMAD_CGS_1:0 "Same as above"
+ NOMAD_CG_T1_DESC:0 "Abcd"
+ NOMAD_CGS_1_DESC:0 "Same as above"
+ 
+ NOMAD_UNITY_T1:0 "Abcd"
+ NOMAD_UNITY_1:0 "Same as above"
+ NOMAD_UNITY_T1_DESC:0 "Abcd"
+ NOMAD_UNITY_1_DESC:0 "Same as above"
+ 
+ NOMAD_UNITY_T2:0 "Abcd"
+ NOMAD_UNITY_2:0 "Same as above"
+ NOMAD_UNITY_T2_DESC:0 "Abcd"
+ NOMAD_UNITY_2_DESC:0 "Same as above"

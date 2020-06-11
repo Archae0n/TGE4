@@ -19,3 +19,115 @@ component_set = {
 	icon = "GFX_ship_part_auto_repair"
 	icon_frame = 1	
 }
+
+component_set = {
+	key = "NOMAD_LABS_1"
+
+	icon = "GFX_ship_part_nomad_science_t1"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_LABS_2"
+
+	icon = "GFX_ship_part_nomad_science_t2"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_LABS_3"
+
+	icon = "GFX_ship_part_nomad_science_t3"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_MINERALS"
+
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_ENERGY"
+
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_FOOD"
+
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_ALLOYS_1"
+
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_ALLOYS_2"
+
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_ALLOYS_3"
+
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_CGS_1"
+
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_CGS_2"
+
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_CGS_3"
+
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1	
+}
+
+#component_set = {
+#	key = "NOMAD_ADMINCAP"
+#
+#	icon = "GFX_ship_part_auto_repair"
+#	icon_frame = 1	
+#}
+
+#component_set = {
+#	key = "NOMAD_FLEETCAP"
+#
+#	icon = "GFX_ship_part_auto_repair"
+#	icon_frame = 1	
+#}
+
+component_set = {
+	key = "NOMAD_UNITY_1"
+
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_UNITY_2"
+
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1	
+}
