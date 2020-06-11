@@ -18,7 +18,7 @@ gpm_edict_pop_assembly  = {
 	}
 
 	modifier = {
-		planet_pop_assembly_mult = 0.50
+		planet_pop_assembly_mult = 0.25
 	}
 
 	ai_weight = {
@@ -39,7 +39,7 @@ gpm_edict_tech_alternatives  = {
 	}
 
 	modifier = {
-		num_tech_alternatives_add = 3
+		num_tech_alternatives_add = 2
 	}
 	
 	ai_weight = {
@@ -77,7 +77,7 @@ gpm_edict_alloy_production  = {
 	}
 
 	modifier = {
-		planet_jobs_alloys_produces_mult = 0.25
+		planet_jobs_alloys_produces_mult = 0.15
 	}
 	
 	ai_weight = {
@@ -98,7 +98,7 @@ gpm_edict_consumer_goods_production  = {
 	}
 
 	modifier = {
-		planet_jobs_consumer_goods_produces_mult = 0.33
+		planet_jobs_consumer_goods_produces_mult = 0.25
 	}
 	
 	ai_weight = {
@@ -119,9 +119,9 @@ gpm_edict_exotic_production  = {
 	}
 
 	modifier = {
-		country_volatile_motes_produces_mult = 0.25
-        country_exotic_gases_produces_mult = 0.25
-        country_rare_crystals_produces_mult = 0.25
+		country_volatile_motes_produces_mult = 0.15
+        country_exotic_gases_produces_mult = 0.15
+        country_rare_crystals_produces_mult = 0.15
 	}
 	
 	ai_weight = {
@@ -164,7 +164,7 @@ gpm_edict_terraform_speed  = {
 	}
 
 	modifier = {
-		terraform_speed_mult = 0.50
+		terraform_speed_mult = 0.30
 	}
 	
 	ai_weight = {

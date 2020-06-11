@@ -22,5 +22,5 @@ gpm_relic_activation_cooldown_time_relic = {
 	icon = "gfx/interface/icons/modifiers/mod_gpm_relic_activation_cooldown_time_relic.dds"
 }
 gpm_time_displacer_relic_bonus = {
-	ship_interstellar_speed_mult = 5.00
+	ship_interstellar_speed_mult = 2.00
 }
