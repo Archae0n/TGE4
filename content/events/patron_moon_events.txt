@@ -754,6 +754,57 @@ planet_event = {
 	}
 }
 
+#Make moon
+planet_event = {
+	id = patronmoon.120
+	title = patronmoon.120.name
+	desc = patronmoon.120.desc
+	picture = GFX_evt_space_monster
+	show_sound = pc_hive
+	location = from
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_modifier = pm_patron_moon_young
+		remove_modifier = pm_patron_moon_mature
+		remove_modifier = pm_patron_moon_elder
+		remove_modifier = pm_patron_moon_young_hostile
+		remove_modifier = pm_patron_moon_mature_hostile
+		remove_modifier = pm_patron_moon_elder_hostile
+		remove_modifier = pm_patron_moon_young_frozen
+		remove_modifier = pm_patron_moon_mature_frozen
+		remove_modifier = pm_patron_moon_elder_frozen
+		remove_modifier = pm_no_patron_moon
+
+		while = {
+			count = 10
+			random_pop = {
+				limit = { is_robot_pop = no }
+				kill_pop = yes
+			}
+		}
+
+		solar_system = {
+			spawn_planet = {
+				class = pc_patronmoon
+				location = root
+				orbit_location = yes
+				orbit_distance_offset = 7
+				size = 4
+				init_effect = {
+					set_name = "Infant Moon"
+					set_planet_flag = young_moon
+				}
+			}	
+		}
+	}
+
+	option = {
+		name = patronmoon.nice
+		add_modifier = { modifier = "pm_patron_moon_young" }
+	}
+}
+
 #Failure
 planet_event = {
 	id = patronmoon.200
