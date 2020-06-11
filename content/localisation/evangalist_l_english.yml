@@ -34,7 +34,7 @@
  fanatic_xenophile_evangalist_desc: "$foriegn_influence$"
  
 
- foriegn_influence: "§LA foriegn empire is trying to influence our beliefs.§!"
+ foriegn_influence: "§LA foreign empire is trying to influence our beliefs.§!"
 
  diplo_stance_evangalist: "Evangelist"
  diplo_stance_evangalist_name: "$diplo_stance_evangalist$"
