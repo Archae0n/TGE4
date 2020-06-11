@@ -37,7 +37,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = authoritarian_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -48,7 +48,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = authoritarian_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -59,7 +59,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = egalitarian_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -70,7 +70,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = egalitarian_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -81,7 +81,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = materialist_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -92,7 +92,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = materialist_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -103,7 +103,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = militarist_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -114,7 +114,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = militarist_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -125,7 +125,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = pacifist_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -136,7 +136,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = pacifist_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -147,7 +147,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = spiritualist_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -158,7 +158,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = spiritualist_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -169,7 +169,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = xenophile_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -180,7 +180,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = xenophile_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -191,7 +191,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = xenophobe_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -202,7 +202,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = xenophobe_evangalist
-					days = 360
+					days = 31
 				}
 			}
 ########################################
@@ -217,7 +217,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = green_propaganda
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -231,7 +231,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = industrial_propaganda
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -245,7 +245,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = elitist_propaganda
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -259,7 +259,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = pluralist_propaganda
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -273,7 +273,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = socialism_propaganda
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -281,13 +281,13 @@ country_event = {
 					root = {
 						OR = {
 							has_ethic = ethic_capitalism
-							has_ethic = ethic_capitalism_socialism
+							has_ethic = ethic_fanatic_capitalism
 						}
 					}
 				}
 				add_modifier = {
 					modifier = capitalism_propaganda
-					days = 360
+					days = 31
 				}
 			}
 ########################################
@@ -306,7 +306,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = fanatic_authoritarian_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -317,7 +317,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = fanatic_egalitarian_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -328,7 +328,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = fanatic_materialist_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -339,7 +339,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = fanatic_militarist_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -350,7 +350,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = fanatic_pacifist_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -361,7 +361,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = fanatic_spiritualist_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -372,7 +372,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = fanatic_xenophile_evangalist
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -383,7 +383,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = fanatic_xenophobe_evangalist
-					days = 360
+					days = 31
 				}
 			}
 ########################################
@@ -395,7 +395,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = fanatic_green_propaganda
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -406,7 +406,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = fanatic_industrial_propaganda
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -417,7 +417,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = fanatic_elitist_propaganda
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -428,7 +428,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = fanatic_pluralist_propaganda
-					days = 360
+					days = 31
 				}
 			}
 			if = {
@@ -439,25 +439,25 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = fanatic_socialism_propaganda
-					days = 360
+					days = 31
 				}
 			}
 			if = {
 				limit = {
 					root = {
-						has_ethic = ethic_capitalism_socialism
+						has_ethic = ethic_fanatic_capitalism
 					}
 				}
 				add_modifier = {
 					modifier = fanatic_capitalism_propaganda
-					days = 360
+					days = 31
 				}
 			}
 ########################################
 		}
 		country_event =	{
 			id = evangalist.1
-			days = 360
+			days = 31
 		}
 	}
 }

@@ -1,7 +1,7 @@
 
 empire_init_capital_planet = {
 	events = {
-	patronmoon.1
+		patronmoon.1
 	}
 }
 
@@ -9,7 +9,7 @@ empire_init_capital_planet = {
 # Scope = Planet
 on_colonized = {
 	events = {
-	patronmoon.2
+		patronmoon.4
 	}
 }
 
@@ -19,14 +19,14 @@ on_colonized = {
 #This = Planet scope
 on_planet_transfer = {
 	events = {
-		patronmoon.3
+		patronmoon.4
 	}
 }
 
 
 on_monthly_pulse = {
 	events = {
-		patronmoon.4
+		#patronmoon.4
 	}
 }
 

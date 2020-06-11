@@ -1,24 +1,101 @@
 ﻿l_english:
   
-  origin_patronmoon: "Patron Moon"
-  origin_patronmoon_desc: "This species evolved in the shadow of a super organism that envelops their moon. They have a symbiotic relationship with it. This Patron grants them many benefits hoping that one day, they might help it grow and spread, covering all that exists, until everything is... it."
-  origin_tooltip_patronmoon_effects: "Starts with a §YPatron Moon§! orbiting your homeworld.\n§YPatron Moons§! give your species a £science£ §YResearch§!, £unity£ §YUnity§! and £stability£ §YStability§! bonus, or penalties if your empire can't feed them.\nEnables the §Y$decision_patronmoon$§! planetary decision.\nOther empires owning a planet with a §YPatron Moon§! will recieve penalties."
+origin_patronmoon: "Patron Moon"
+origin_patronmoon_desc: "This species evolved in the shadow of a super organism that envelops their moon. They have a symbiotic relationship with it. This Patron grants them many benefits hoping that one day, they might help it grow and spread, covering all that exists, until everything is... it."
+origin_tooltip_patronmoon_effects: "Starts with a §YPatron Moon§! orbiting your homeworld.\n§YPatron Moons§! give your species a £science£ §YResearch§!, £unity£ §YUnity§! and £stability£ §YStability§! bonus, or penalties if your empire can't feed them.\nEnables the §Y$decision_patronmoon$§! planetary decision.\nOther empires owning a planet with a §YPatron Moon§! will recieve penalties."
   
+START_SCREEN_PATRONMOON:0 "The moon spoke, and we heard. Moons have always affected the planets they orbit, but for us more than others. Our Patron has communicated with us since the earliest times, encouraging cooperation and luring our species out into the stars. If the Patron is good or evil, none of us truly knows, but still it calls us..."
 
-  START_SCREEN_PATRONMOON:0 "The moon spoke, and we heard. Moons have always affected the planets they orbit, but for us more than others. Our Patron has communicated with us since the earliest times, encouraging cooperation and luring our species out into the stars. If the Patron is good or evil, none of us truly knows, but still it calls us..."
-  d_patronmoon: "Patron Moon"
-  d_patronmoon_desc: "An organic super organism orbits this planet."
-  d_patronmoon_bad: "Patron Moon"
-  d_patronmoon_bad_desc: "An organic super organism orbits this planet."
+pc_patronmoon: "Patron Moon"
+pc_patronmoon_desc: "An organic super organism inhabits this moon, the surface is so hostile that landing is a suicidal decision."
 
-  no_patronmoon: "Missing Patron Moon"
-  no_patronmoon_desc: "Your species desires the guidance of a Patron Moon."
+pm_patron_moon_young: "Patron Moon"
+pm_patron_moon_mature: "Patron Moon"
+pm_patron_moon_elder: "Patron Moon"
+pm_patron_moon_young_hostile: "Malevolent Moon"
+pm_patron_moon_mature_hostile: "Malevolent Moon"
+pm_patron_moon_elder_hostile: "Malevolent Moon"
+pm_patron_moon_young_frozen: "Hybernating Moon"
+pm_patron_moon_mature_frozen: "Hybernating Moon"
+pm_patron_moon_elder_frozen: "Hybernating Moon"
+pm_no_patron_moon: "Guideless"
 
-  pc_patronmoon: "Patron Moon"
-  pc_patronmoon_desc: "An organic super organism inhabits this moon."
+pm_patron_moon_young_desc: "Our master is young. But his power is immense. With enough work we can help him grow. He will reach greatness."
+pm_patron_moon_mature_desc: "The power of the patron moon is growing. His presence is all around us. We will reach even greater power with enough help."
+pm_patron_moon_elder_desc: "The patron moon rules absolute. His power above all and his gifts even so plentiful. He watches over us. §RHe's still hungry.§!"
+pm_patron_moon_young_hostile_desc: "A moon-sized spaceborn creature is consuming the planet's biosphere."
+pm_patron_moon_mature_hostile_desc: "A giant spaceborn monster has devastated the planet biosphere."
+pm_patron_moon_elder_hostile_desc: "A planet-sized monstrosity has destroyed the biosphere of this planet."
+pm_patron_moon_young_frozen_desc: "A great power rests beneath the ice. It awaits to be awoken. One must take a moment to think if he wants to wake it."
+pm_patron_moon_mature_frozen_desc: "A great power rests beneath the ice. It awaits to be awoken. One must take a moment to think if he wants to wake it."
+pm_patron_moon_elder_frozen_desc: "A great power rests beneath the ice. It awaits to be awoken. One must take a moment to think if he wants to wake it."
+pm_no_patron_moon_desc: "Without our Patron, the people lack their will to work on anything but the efforts to establish a new one over our colony."
 
-  decision_patronmoon: "Grow Patron Moon"
-  decision_patronmoon_desc:0 "A super organism must grow in one of this planet's moons for our kind to flourish."
+decision_pm_turn_base_moon: "Infect Moon"
+decision_pm_turn_habitat: "Infect Habitat"
+decision_pm_turn_inhabited_moon: "Consume Moon"
+decision_pm_turn_inhabited_habitat: "Consume Habitat"
+decision_pm_young_to_mature: "Develop the power of the Patron Moon"
+decision_pm_mature_to_elder: "Awaken the true might of the Patron Moon"
+decision_pm_freeze_young: "Freeze the Patron"
+decision_pm_freeze_mature: "Freeze the Patron"
+decision_pm_freeze_elder: "Freeze the Patron"
+decision_pm_young_unfreeze: "Awaken the Patron"
+decision_pm_mature_unfreeze: "Awaken the Patron"
+decision_pm_elder_unfreeze: "Awaken the Patron"
 
-  MESSAGE_STARVING_MOONS_TITLE:0 "Starving Patrons"
-  MESSAGE_STARVING_MOONS:0 "Your Patron Moons are starving!\nCitizens were advised not to look at the night sky and remain indoors.\nDO NOT LOOK AT THE MOON."
+
+decision_pm_turn_base_moon_desc: "Turns one of the planet's moons into a Patron Moon!"
+decision_pm_turn_habitat_desc: "Turns one of the planet's habitats into a Patron Moon!"
+decision_pm_turn_inhabited_moon_desc: "Turns one of the planet's §Rinhabited§! moons into a Patron Moon! This will sacrifice §RALL§! the population on the planet!"
+decision_pm_turn_inhabited_habitat_desc: "Turns one of the planet's §Rinhabited§! habitats into a Patron Moon! This will sacrifice §RALL§! the population on the station!"
+decision_pm_young_to_mature_desc: "Our master requires sustenance. Once we gather enough, it should be able to grow ever stronger."
+decision_pm_mature_to_elder_desc: "We are one step away from greatness, this is but a matter of time and resources until our master reaches a state none ever dreamt of."
+decision_pm_freeze_young_desc: "We must stop this terrible monstrosity from causing harm to our people. With enough effort we should be able to lower its power over our planet. If all else falls we should look for a way to destroy it before it causes irreversible damage to our society."
+decision_pm_freeze_mature_desc: "We must stop this terrible monstrosity from causing harm to our people. With enough effort we should be able to lower its power over our planet. If all else falls we should look for a way to destroy it before it causes irreversible damage to our society."
+decision_pm_freeze_elder_desc: "We must stop this terrible monstrosity from causing harm to our people. With enough effort we should be able to lower its power over our planet. If all else falls we should look for a way to destroy it before it causes irreversible damage to our society."
+decision_pm_young_unfreeze_desc: "Our master lies in his sleep. The time has come to wake him up. He will awaken and he will show those who froze him that it was but a small setback to his great plan."
+decision_pm_mature_unfreeze_desc: "Our master lies in his sleep. The time has come to wake him up. He will awaken and he will show those who froze him that it was but a small setback to his great plan."
+decision_pm_elder_unfreeze_desc: "Our master lies in his sleep. The time has come to wake him up. He will awaken and he will show those who froze him that it was but a small setback to his great plan."
+
+patronmoon.100.name:0 "Moon Infected"
+patronmoon.100.desc:0 "The project is complete. The transportation of the servants, plants and animals provided enough biomass to meld into the consciousness of a new patron. In hours it comsumed the entire surface, growing and starting to create a mental link with everyone on the planet. The presence spread across the surface and made sure to catch all those that were against it. They were the first to become the new servants of its glory and power. We are part of it now. We hear our master above us. His whispers in our heads when we wake, work, sleep and share intimate moments. It speaks to us. §RIt's hungry.§!"
+
+patronmoon.101.name:0 "Moon Consumed"
+patronmoon.101.desc:0 "§RExcellent§!, the population of the moon of [Root.GetName] has provided our Patron with enough nourishment to propagate itself all over the moon's surface in an even shorter timespan that it would have took, should we had put in on a lifeless world. The inhabitants of the moon have struggled up until the very last moment to try and flee or fight back the expansion of our Patron...hypocrites! They should have been honored to have become part of our master's body, alas, it's not our time to join them...not yet. The new embodiment of our Patron has already established a psychic link with all the other living moons in the galaxy and we are ready to serve it with the same vehemency of its original form. Unfortunatly, even with our best efforts, the new Patron moon is still young and hasn't reach its full potential yet...§Rit's still hungry§!"
+
+patronmoon.102.name:0 "Habitat Infected"
+patronmoon.102.desc:0 "Rejoice! Thanks to our advanced technology, not doubt fruit of our Patron's inspiration, we were able to propagade our master's biomass without the need of a solid moon as a base! With the aboundant supplies of food we have filled the habitat of [Root.GetName] with, our Patron was able to grow and expand up until engulfing completely the habitat's structure! The new embodiment of our Patron has already established a psychic link with all the other living moons in the galaxy and we are ready to serve it with the same vehemency of its original form. Unfortunatly, even with our best efforts, the new Patron moon is still young and hasn't reach its full potential yet...§Rit's hungry§!"
+
+patronmoon.104.name:0 "Habitat Consumed"
+patronmoon.104.desc:0 "§RExcellent§!, the population of the habitat of [Root.GetName] has provided our Patron with enough nourishment to propagate itself all over the habitat's structure in an even shorter timespan that it would have took, should we had put in an empty facility. The inhabitants of the habitat have struggled up until the very last moment to try and flee or fight back the expansion of our Patron...hypocrites! They should have been honored to have become part of our master's body, alas, it's not our time to join them...not yet. The new embodiment of our Patron has already established a psychic link with all the other living moons in the galaxy and we are ready to serve it with the same vehemency of its original form. Unfortunatly, even with our best efforts, the new Patron moon is still young and hasn't reach its full potential yet...§Rit's still hungry§!"
+
+patronmoon.105.name:0 "Patron Fed"
+patronmoon.105.desc:0 "The power of the link was amplified. We hear our master as if he was next to us. Every second. Every minute. Every hour. Every day. He is part of us now. He helps, he gives advice, he teaches. We are as much part of it as if it was in our genome. His power expanded over the system. He feels everything in the system. Tells us in detail if we want to know. We speak, we discuss, we share even our most intimate moments. Those unwilling to do so are sent away. They will not be part of this collective. They will join others unwilling to cooperate in creation of a new patron moon. All will serve. §RMaster is still hungry.§!"
+
+patronmoon.108.name:0 "Patron Fed"
+patronmoon.108.desc:0 "The power of the will swept aside all doubts. The patron moon that gave us protection for so long has reached his final form. Its power dwarfs even the power of the initial patron. What the first of their kind provided hides in the shadow of this newfound power. We bask in the glory as the tenderils graze the surface, accepting offerings in flesh. We are one with it. It is with us at any moment now. We are one with our patron and its power is beyond even our strongest psychics. He knows all, he sees all, he feels all... §RHe's hungry.§!"
+
+patronmoon.110.name:0 "Frozen the Patron"
+patronmoon.110.desc:0 "The monster now lies in ice. Its power stopped, at least for now. The damage it caused is terrible and the devotion of those who worship it is highly disgusting. They allowed themselves to be afflicted like this, but we will not. Maybe in time we can find a way to get rid of it. But the damage once caused, may never be repaired."
+
+patronmoon.115.name:0 "Unfrozen the Patron"
+patronmoon.115.desc:0 "It took incredible effort. Those pesky aliens were crafty in their attempts but we are the royal subjects and as such we found a way to bring out master back to life.
+As the icecaps melt, the crystalline formations shatter and the presence is felt again we ecstatically join the celebrations. Our master is satisfied. He expeced its
+children to wake him up despite all the odds against us. We bow, we fall to the ground, we cheer. But we know what must happen now. Those caught in attempts to stop
+us will be first. After all. The best thing after one wakes up is... §RA nutritious snack.§!"
+
+patronmoon.120.name:0 "The Patron Moon"
+patronmoon.120.desc:0 "The acquisition of a new planet was paired with many celebrations, but they were short-lived. Our people found out that the moon orbiting this planet is different. It thinks, it lives and it consumes. Many foolish fall prey to its whispers and empty promises. We must get rid of it before it causes major damage to our society on this planet or even worse..."
+
+patronmoon.125.name:0 "Patron Frozen"
+patronmoon.125.desc:0 "The sin of those foolish enough to attempt stopping our glorious plans is beyond understanding. They encased our master in ice shell. Their pathetic abilities not
+enough to cause any harm to it. Stalling is not going to save them. We will reach them. We will smite them down and awaken our master once more. And they will see
+that he is not picky when it comes to the source of his nutrition. In their foolishness they chose to become part of his great plan. Their choices brought it upon
+themselves."
+
+patronmoon.200.name:0 "Lack of Partecipation"
+patronmoon.200.desc:0 "Blast it! We couldn't find enough "nourishment" to continue the feeding process of our Patron, now we'll have to start all over again!"
+
+patronmoon.nice:0 "Excellent"
+patronmoon.worry:0 "Worrying"

@@ -1,7 +1,7 @@
 ﻿l_english:
 
 diplo_stance_nomadic:0 "Nomadic"
-diplo_stance_nomadic_desc:0 "This remains indifferent to the matters of planet-dwellers, they rather just travel the galaxy in peace."
+diplo_stance_nomadic_desc:0 "This empire remains indifferent to the matters of planet-dwellers, they rather just travel the galaxy in peace."
 
 green_propaganda:0 "Ecocentric Awareness"
 fanatic_green_propaganda:0 "Radical Ecocentrism"
@@ -15,8 +15,8 @@ fanatic_elitist_propaganda:0 "Elitist Classism"
 pluralist_propaganda:0 "Pluralist Concerns"
 fanatic_pluralist_propaganda:0 "Pluralist Class Struggle"
 
-socialist_propaganda:0 "Socialist Movement"
-fanatic_socialist_propaganda:0 "Socialist Uprising"
+socialism_propaganda:0 "Socialist Movement"
+fanatic_socialism_propaganda:0 "Socialist Uprising"
 
 capitalism_propaganda:0 "Capitalist Liberalism"
 fanatic_capitalism_propaganda:0 "Capitalist Corporatocracy"

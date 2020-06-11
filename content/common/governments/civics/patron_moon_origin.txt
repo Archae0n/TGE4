@@ -1,0 +1,25 @@
+# patronmoon
+
+origin_patronmoon = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_patronmoon.dds"
+	picture = GFX_origin_patronmoon
+
+	max_once_global = yes
+
+	playable = {
+		always = yes
+	}
+
+	possible = {
+		authority = { NOT = { value = auth_machine_intelligence } }
+	}
+
+	flags = { custom_start_screen }
+
+	random_weight = {
+		base = 1
+	}
+			
+	advanced_start = no
+}

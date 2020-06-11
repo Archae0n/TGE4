@@ -1,0 +1,585 @@
+decision_pm_turn_base_moon = {
+
+	owned_planets_only = yes
+	icon = decision_surreal_visions
+	enactment_time = 1500
+
+	resources = {
+		category = decisions
+		cost = {
+			food = 1000
+  		}
+ 	}
+
+	potential = {
+		owner = { has_origin = origin_patronmoon }
+
+		has_moon = yes
+		NOT = { any_moon = { is_planet_class = pc_patronmoon } }
+        	any_moon = {
+           		NOT = { is_planet_class = pc_habitat }
+			NOR = {
+				has_owner = yes
+				count_pops = {
+					count > 4
+					limit = {
+						is_robot_pop = no
+					}
+				}
+			}
+		}
+	}
+
+	allow = {
+		count_pops = {
+			count > 5
+			limit = {
+				is_robot_pop = no
+			}
+		}	
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = {
+					count_pops = {
+						count > 5
+						limit = {
+							is_robot_pop = no
+						}
+					}
+				}
+				planet_event = { id = patronmoon.100 }
+			}
+			else = { planet_event = { id = patronmoon.200 } }
+		}
+	}
+
+	ai_weight = {
+		   weight = 1000
+	}
+}
+
+#P L A N E T  V O R E
+decision_pm_turn_inhabited_moon = {
+
+	owned_planets_only = yes
+	icon = decision_surreal_visions
+	enactment_time = 750
+
+	resources = {
+		category = decisions
+		cost = {
+			food = 500
+  		}
+ 	}
+
+	potential = {
+		owner = { has_origin = origin_patronmoon }
+		has_moon = yes
+		NOT = { any_moon = { is_planet_class = pc_patronmoon } }
+        	any_moon = {
+         		NOT = { is_planet_class = pc_habitat }
+        
+            		has_owner = yes
+
+            		count_pops = {
+               			count > 4
+               			limit = {
+                    			is_robot_pop = no
+                		}
+            		}
+		}
+    	}
+
+	allow = {
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = {
+					has_moon = yes
+					any_moon = {
+						limit = {
+							NOT = { is_planet_class = pc_habitat }
+							count_pops = {
+								count > 4
+								limit = {
+									is_robot_pop = no
+								}
+							}
+						}
+					}
+                		}
+				planet_event = { id = patronmoon.101 }
+			}
+			else = { planet_event = { id = patronmoon.200 } }
+		}
+	}
+
+	ai_weight = {
+		   weight = 1000
+	}
+}
+
+decision_pm_turn_habitat = {
+
+	owned_planets_only = yes
+	icon = decision_surreal_visions
+	enactment_time = 1500
+
+	resources = {
+		category = decisions
+		cost = {
+			food = 1000
+  		}
+ 	}
+
+	potential = {
+		owner = { has_origin = origin_patronmoon }
+		has_moon = yes
+		NOT = { any_moon = { is_planet_class = pc_patronmoon } }
+		any_moon = {
+			is_planet_class = pc_habitat
+			NOR = {
+				has_owner = yes
+				count_pops = {
+					count > 4
+					limit = {
+						is_robot_pop = no
+					}
+				}
+			}
+		}
+	}
+
+	allow = {
+		count_pops = {
+			count > 5
+			limit = {
+				is_robot_pop = no
+			}
+		}	
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = {
+					count_pops = {
+						count > 5
+						limit = {
+							is_robot_pop = no
+						}
+					}
+				}
+				planet_event = { id = patronmoon.102 }
+			}
+			else = { planet_event = { id = patronmoon.200 } }
+		}
+	}
+
+	ai_weight = {
+		   weight = 1000
+	}
+}
+
+#H A B I T A T  V O R E
+decision_pm_turn_inhabited_habitat = {
+
+	owned_planets_only = yes
+	icon = decision_surreal_visions
+	enactment_time = 750
+
+	resources = {
+		category = decisions
+		cost = {
+			food = 500
+  		}
+ 	}
+
+	potential = {
+		owner = { has_origin = origin_patronmoon }
+		has_moon = yes
+		NOT = { any_moon = { is_planet_class = pc_patronmoon } }
+		any_moon = {
+			is_planet_class = pc_habitat
+
+			has_owner = yes
+			count_pops = {
+				count > 4
+				limit = {
+					is_robot_pop = no
+				}
+			}
+       		}
+	}
+
+	allow = {
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = {
+					has_moon = yes
+					any_moon = {
+						is_planet_class = pc_habitat
+						count_pops = {
+							count > 4
+							limit = {
+								is_robot_pop = no
+							}
+						}
+						
+					}
+					
+				}
+				planet_event = { id = patronmoon.104 }
+			}
+			else = { planet_event = { id = patronmoon.200 } }
+		}
+	}
+
+	ai_weight = {
+		   weight = 1000
+	}
+}
+
+#decision_pm_spawn_base_moon = {
+#
+#	owned_planets_only = yes
+#	icon = decision_surreal_visions
+#	enactment_time = 1500
+#
+#	resources = {
+#		category = decisions
+#		cost = {
+#			food = 1000
+# 		}
+#	}
+#
+#	potential = {
+#		has_modifier = pm_no_patron_moon
+#		owner = { has_origin = origin_patronmoon }
+#		has_moon = no
+#	}
+#
+#	allow = {
+#	}
+#
+#	effect = {
+#		add_modifier = { modifier = "pm_patron_moon_young" }
+#		remove_modifier = pm_no_patron_moon
+#		hidden_effect = {
+#			#spawn_planet = planet_class pc_toxic
+#			#random_moon = { planet_size = 5 }
+#			random_moon = {change_pc = pc_patronmoon}
+#		}
+#	}
+#
+#	ai_weight = {
+#		   weight = 1000
+#	}
+#}
+
+decision_pm_young_to_mature = {
+
+	owned_planets_only = yes
+	icon = decision_surreal_visions
+	enactment_time = 1500
+
+	resources = {
+		category = decisions
+		cost = {
+			food = 2500
+  		}
+ 	}
+
+	potential = {
+		has_moon = yes
+		any_moon = { has_planet_flag = young_moon }
+		has_modifier = pm_patron_moon_young
+		owner = { has_origin = origin_patronmoon }
+	}
+
+	allow = {
+		count_pops = {
+			count > 10
+			limit = {
+				is_robot_pop = no
+			}
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = {
+					count_pops = {
+						count > 10
+						limit = {
+							is_robot_pop = no
+						}
+					}
+				}
+				planet_event = { id = patronmoon.105 }
+			}
+			else = { planet_event = { id = patronmoon.200 } }
+		}
+	}
+
+	ai_weight = {
+		   weight = 1000
+	}
+}
+
+decision_pm_mature_to_elder = {
+
+	owned_planets_only = yes
+	icon = decision_surreal_visions
+	enactment_time = 1500
+
+	resources = {
+		category = decisions
+		cost = {
+			food = 5000
+  		}
+ 	}
+
+	potential = {
+		has_moon = yes
+		any_moon = { has_planet_flag = mature_moon }
+		has_modifier = pm_patron_moon_mature
+		owner = { has_origin = origin_patronmoon }
+	}
+
+	allow = {
+		count_pops = {
+			count > 20
+			limit = {
+				is_robot_pop = no
+			}
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = {
+					count_pops = {
+						count > 20
+						limit = {
+							is_robot_pop = no
+						}
+					}
+				}
+				planet_event = { id = patronmoon.108 }
+			}
+			else = { planet_event = { id = patronmoon.200 } }
+		}
+	}
+
+	ai_weight = {
+		weight = 1000
+	}
+}
+#FREEZE MOON
+decision_pm_freeze_young = {
+
+	owned_planets_only = yes
+	icon = decision_planet_beam
+	enactment_time = 360
+
+	resources = {
+		category = decisions
+		cost = {
+			alloys = 500
+			energy = 500
+  		}
+ 	}
+
+	potential = {
+		has_modifier = pm_patron_moon_young_hostile
+		owner = { NOT = { has_origin = origin_patronmoon } }
+	}
+
+	allow = {
+	}
+
+	effect = {
+		hidden_effect = {
+			planet_event = { id = patronmoon.110 }
+		}
+	}
+
+	ai_weight = {
+		   weight = 1000
+	}
+}
+
+decision_pm_freeze_mature = {
+
+	owned_planets_only = yes
+	icon = decision_planet_beam
+	enactment_time = 720
+
+	resources = {
+		category = decisions
+		cost = {
+			alloys = 500
+			energy = 1000
+  		}
+ 	}
+
+	potential = {
+		has_modifier = pm_patron_moon_mature_hostile
+		owner = { NOT = { has_origin = origin_patronmoon } }
+	}
+
+	allow = {
+	}
+
+	effect = {
+		hidden_effect = {
+			planet_event = { id = patronmoon.110 }
+		}
+	}
+
+	ai_weight ={
+		   weight = 1000
+	}
+}
+
+decision_pm_freeze_elder = {
+
+	owned_planets_only = yes
+	icon = decision_planet_beam
+	enactment_time = 1500
+
+	resources = {
+		category = decisions
+		cost = {
+			alloys = 500
+			energy = 2000
+  		}
+ 	}
+
+	potential = {
+		has_modifier = pm_patron_moon_elder_hostile
+		owner = { NOT = { has_origin = origin_patronmoon } }
+	}
+
+	allow = {
+	}
+
+	effect = {
+		hidden_effect = {
+			planet_event = { id = patronmoon.110 }
+		}
+	}
+
+	ai_weight ={
+		weight = 1000
+	}
+}
+
+decision_pm_young_unfreeze = {
+
+	owned_planets_only = yes
+	icon = decision_surreal_visions
+	enactment_time = 1500
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 1000
+  		}
+ 	}
+
+	potential = {
+		has_modifier = pm_patron_moon_young_frozen
+		owner = { has_origin = origin_patronmoon }
+	}
+
+	allow = {
+	}
+
+	effect ={
+		hidden_effect = {
+			planet_event = { id = patronmoon.115 }
+		}
+	}
+
+	ai_weight ={
+		weight = 1000
+	}
+
+}
+
+decision_pm_mature_unfreeze = {
+
+	owned_planets_only = yes
+	icon = decision_surreal_visions
+	enactment_time = 1500
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 2500
+  		}
+ 	}
+
+	potential = {
+		has_modifier = pm_patron_moon_mature_frozen
+		owner = { has_origin = origin_patronmoon }
+	}
+
+	allow = {
+	}
+
+	effect ={
+		hidden_effect = {
+			planet_event = { id = patronmoon.115 }
+		}
+	}
+
+	ai_weight ={
+		weight = 1000
+	}
+
+}
+
+decision_pm_elder_unfreeze = {
+
+	owned_planets_only = yes
+	icon = decision_surreal_visions
+	enactment_time = 1500
+
+	resources = {
+		category = decisions
+		cost = {
+			energy = 5000
+  		}
+ 	}
+
+	potential = {
+		has_modifier = pm_patron_moon_elder_frozen
+		owner = { has_origin = origin_patronmoon }
+	}
+
+	allow = {
+	}
+
+	effect ={
+		hidden_effect = {
+			planet_event = { id = patronmoon.115 }
+		}
+	}
+
+	ai_weight ={
+		   weight = 1000
+	}
+}

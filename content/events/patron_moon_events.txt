@@ -1,0 +1,773 @@
+namespace = patronmoon
+
+planet_event = {
+	id = patronmoon.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = { 
+				owner = { 
+					has_origin = origin_patronmoon
+				} 
+			}
+			add_modifier = { modifier = "pm_patron_moon_young" }
+
+			## replace the moon with its patron moon
+
+			if = {
+				limit= { has_moon = yes }
+				random_moon = {
+					change_pc = pc_patronmoon
+					clear_deposits = yes
+					set_planet_flag = young_moon
+					set_planet_size = 5
+				}
+			}
+			else = {
+				solar_system = {
+					spawn_planet = {
+						class = pc_patronmoon
+						location = root
+						orbit_location = yes
+						orbit_distance_offset = 7
+						size = 5
+						init_effect = {
+							set_name = "Monak"
+							set_planet_flag = young_moon
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#Check for moon
+planet_event = {
+	id = patronmoon.4
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+	}
+	
+	immediate = {
+
+#MOON LOVERS
+		if = {
+			limit = { owner = { has_origin = origin_patronmoon } }
+			if = {
+				limit = {
+                			has_moon = yes
+					AND = {
+						any_moon = {
+							has_planet_flag = young_moon
+							is_planet_class = pc_patronmoon
+						}
+					}
+					NOR = {
+						has_modifier = pm_patron_moon_young
+						has_modifier = pm_patron_moon_young_frozen
+					}
+				}
+				add_modifier = { modifier = "pm_patron_moon_young" }
+				remove_modifier = pm_patron_moon_mature
+				remove_modifier = pm_patron_moon_elder
+				remove_modifier = pm_patron_moon_young_hostile
+				remove_modifier = pm_patron_moon_mature_hostile
+				remove_modifier = pm_patron_moon_elder_hostile
+				remove_modifier = pm_no_patron_moon
+			}
+			else_if = {
+				limit = {
+              				has_moon = yes
+					AND = {
+						any_moon = {
+							has_planet_flag = mature_moon
+							is_planet_class = pc_patronmoon
+						}
+						NOR = {
+							has_modifier = pm_patron_moon_mature
+							has_modifier = pm_patron_moon_mature_frozen
+						}
+					}
+				}
+					remove_modifier = pm_patron_moon_young
+				add_modifier = { modifier = "pm_patron_moon_mature" }
+				remove_modifier = pm_patron_moon_elder
+				remove_modifier = pm_patron_moon_young_hostile
+				remove_modifier = pm_patron_moon_mature_hostile
+				remove_modifier = pm_patron_moon_elder_hostile
+				remove_modifier = pm_no_patron_moon
+			}
+      				else_if = {
+				limit = {
+             					has_moon = yes
+					AND = {
+						any_moon = {
+							has_planet_flag = elder_moon
+							is_planet_class = pc_patronmoon
+						}
+						NOR = {
+							has_modifier = pm_patron_moon_elder
+							has_modifier = pm_patron_moon_elder_frozen
+						}
+					}
+				}
+				remove_modifier = pm_patron_moon_young
+           			remove_modifier = pm_patron_moon_mature
+				add_modifier = { modifier = "pm_patron_moon_elder" }
+				remove_modifier = pm_patron_moon_young_hostile
+				remove_modifier = pm_patron_moon_mature_hostile
+				remove_modifier = pm_patron_moon_elder_hostile
+				remove_modifier = pm_no_patron_moon
+			}
+			else_if = {
+				limit = {
+					has_moon = yes
+					any_moon = { is_planet_class = pc_patronmoon }
+					NOT = {
+						any_moon = {
+							OR = {
+								has_planet_flag = young_moon
+								has_planet_flag = mature_moon
+								has_planet_flag = elder_moon
+							}
+						}
+					}
+				}
+				random_moon = {
+					limit = { is_planet_class = pc_patronmoon }
+					set_planet_flag = young_moon
+					set_planet_size = 5
+				}
+				add_modifier = { modifier = "pm_patron_moon_young" }
+				remove_modifier = pm_patron_moon_mature
+				remove_modifier = pm_patron_moon_elder
+				remove_modifier = pm_patron_moon_young_hostile
+				remove_modifier = pm_patron_moon_mature_hostile
+				remove_modifier = pm_patron_moon_elder_hostile
+				remove_modifier = pm_no_patron_moon
+			}
+			else_if = {
+				limit = {
+					OR = {
+						NOT = { has_moon = yes }
+						AND = {
+							has_moon = yes
+							NOT = { any_moon = { is_planet_class = pc_patronmoon } }
+						}
+					}
+					NOT = { has_modifier = pm_no_patron_moon }
+				}
+				remove_modifier = pm_patron_moon_young
+				remove_modifier = pm_patron_moon_mature
+				remove_modifier = pm_patron_moon_elder
+				remove_modifier = pm_patron_moon_young_hostile
+				remove_modifier = pm_patron_moon_mature_hostile
+				remove_modifier = pm_patron_moon_elder_hostile
+				remove_modifier = pm_patron_moon_young_frozen
+				remove_modifier = pm_patron_moon_mature_frozen
+				remove_modifier = pm_patron_moon_elder_frozen
+				add_modifier = { modifier = "pm_no_patron_moon" }
+			}
+		}
+
+#MOON HATERS
+		else = {
+			if = {
+				limit = {
+                			has_moon = yes
+					AND = {
+						any_moon = {
+							has_planet_flag = young_moon
+							is_planet_class = pc_patronmoon
+						}
+						NOR = {
+							has_modifier = pm_patron_moon_young_hostile
+							has_modifier = pm_patron_moon_young_frozen
+						}
+					}
+				}
+				add_modifier = { modifier = "pm_patron_moon_young_hostile" }
+				remove_modifier = pm_patron_moon_mature
+				remove_modifier = pm_patron_moon_elder
+				remove_modifier = pm_patron_moon_young
+				remove_modifier = pm_patron_moon_mature_hostile
+				remove_modifier = pm_patron_moon_elder_hostile
+				remove_modifier = pm_no_patron_moon
+			}
+			else_if = {
+				limit = {
+               				has_moon = yes
+					AND = {
+						any_moon = {
+							has_planet_flag = mature_moon
+							is_planet_class = pc_patronmoon
+						}
+						NOR = {
+							has_modifier = pm_patron_moon_mature_hostile
+							has_modifier = pm_patron_moon_mature_frozen
+						}
+					}
+				}
+				remove_modifier = pm_patron_moon_young
+				add_modifier = { modifier = "pm_patron_moon_mature_hostile" }
+				remove_modifier = pm_patron_moon_elder
+				remove_modifier = pm_patron_moon_young_hostile
+				remove_modifier = pm_patron_moon_mature
+				remove_modifier = pm_patron_moon_elder_hostile
+				remove_modifier = pm_no_patron_moon
+			}
+       			else_if = {
+				limit = {
+              				has_moon = yes
+					AND = {
+						any_moon = {
+							has_planet_flag = elder_moon
+							is_planet_class = pc_patronmoon
+						}
+						NOR = {
+							has_modifier = pm_patron_moon_elder_hostile
+							has_modifier = pm_patron_moon_elder_frozen
+						}
+					}
+				}
+				remove_modifier = pm_patron_moon_young
+            			remove_modifier = pm_patron_moon_mature
+				add_modifier = { modifier = "pm_patron_moon_elder_hostile" }
+				remove_modifier = pm_patron_moon_young_hostile
+				remove_modifier = pm_patron_moon_mature_hostile
+				remove_modifier = pm_patron_moon_elder
+				remove_modifier = pm_no_patron_moon
+			}
+			else_if = {
+				limit = {
+					has_moon = yes
+					any_moon = { is_planet_class = pc_patronmoon }
+					NOT = {
+						any_moon = {
+							OR = {
+								has_planet_flag = young_moon
+								has_planet_flag = mature_moon
+								has_planet_flag = elder_moon
+							}
+						}
+					}
+				}
+				random_moon = {
+					limit = { is_planet_class = pc_patronmoon }
+					set_planet_flag = young_moon
+				}
+				add_modifier = { modifier = "pm_patron_moon_young_hostile" }
+				remove_modifier = pm_patron_moon_mature
+				remove_modifier = pm_patron_moon_elder
+				remove_modifier = pm_patron_moon_young
+				remove_modifier = pm_patron_moon_mature_hostile
+				remove_modifier = pm_patron_moon_elder_hostile
+				remove_modifier = pm_no_patron_moon
+			}
+			else_if = {
+				limit = {
+					OR = {
+						NOT = { has_moon = yes }
+						AND = {
+							has_moon = yes
+							NOT = { any_moon = { is_planet_class = pc_patronmoon } }
+						}
+					}
+				}
+				remove_modifier = pm_patron_moon_young
+				remove_modifier = pm_patron_moon_mature
+				remove_modifier = pm_patron_moon_elder
+				remove_modifier = pm_patron_moon_young_hostile
+				remove_modifier = pm_patron_moon_mature_hostile
+				remove_modifier = pm_patron_moon_elder_hostile
+				remove_modifier = pm_patron_moon_young_frozen
+				remove_modifier = pm_patron_moon_mature_frozen
+				remove_modifier = pm_patron_moon_elder_frozen
+				remove_modifier = pm_no_patron_moon
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = patronmoon.5
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		solar_system = {
+			random_system_planet = {
+				limit = {
+					OR = {
+						has_modifier = pm_patron_moon_young
+						has_modifier = pm_patron_moon_mature
+						has_modifier = pm_patron_moon_elder
+						has_modifier = pm_patron_moon_young_hostile
+						has_modifier = pm_patron_moon_mature_hostile
+						has_modifier = pm_patron_moon_elder_hostile
+						has_modifier = pm_patron_moon_young_frozen
+						has_modifier = pm_patron_moon_mature_frozen
+						has_modifier = pm_patron_moon_elder_frozen
+						has_modifier = pm_no_patron_moon
+					}
+					NOT = { any_moon = { is_planet_class = pc_patronmoon } }
+				}
+				remove_modifier = pm_patron_moon_young
+				remove_modifier = pm_patron_moon_mature
+				remove_modifier = pm_patron_moon_elder
+				remove_modifier = pm_patron_moon_young_hostile
+				remove_modifier = pm_patron_moon_mature_hostile
+				remove_modifier = pm_patron_moon_elder_hostile
+				remove_modifier = pm_patron_moon_young_frozen
+				remove_modifier = pm_patron_moon_mature_frozen
+				remove_modifier = pm_patron_moon_elder_frozen
+				remove_modifier = pm_no_patron_moon
+			}
+		}
+	}
+}
+
+#FLAVOUR MESSAGES
+
+#Infect Planet
+planet_event = {
+	id = patronmoon.100
+	title = patronmoon.100.name
+	desc = patronmoon.100.desc
+	picture = GFX_evt_space_monster
+	show_sound = pc_hive
+	location = from
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_modifier = pm_patron_moon_young
+		remove_modifier = pm_patron_moon_mature
+		remove_modifier = pm_patron_moon_elder
+		remove_modifier = pm_patron_moon_young_hostile
+		remove_modifier = pm_patron_moon_mature_hostile
+		remove_modifier = pm_patron_moon_elder_hostile
+		remove_modifier = pm_patron_moon_young_frozen
+		remove_modifier = pm_patron_moon_mature_frozen
+		remove_modifier = pm_patron_moon_elder_frozen
+		remove_modifier = pm_no_patron_moon
+
+		while = {
+			count = 4
+			random_pop = {
+				limit = { is_robot_pop = no }
+				kill_pop = yes
+			}
+		}
+
+		random_moon = {
+			limit = { NOT = { is_planet_class = pc_habitat } }
+			change_pc = pc_patronmoon
+			clear_deposits = yes
+			set_planet_flag = young_moon
+			set_planet_size = 5
+		}
+	}
+
+	option = {
+		name = patronmoon.nice
+		add_modifier = { modifier = "pm_patron_moon_young" }
+	}
+}
+
+#Vore Planet
+planet_event = {
+	id = patronmoon.101
+	title = patronmoon.101.name
+	desc = patronmoon.101.desc
+	picture = GFX_evt_space_monster
+	show_sound = event_screams
+	location = from
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_modifier = pm_patron_moon_young
+		remove_modifier = pm_patron_moon_mature
+		remove_modifier = pm_patron_moon_elder
+		remove_modifier = pm_patron_moon_young_hostile
+		remove_modifier = pm_patron_moon_mature_hostile
+		remove_modifier = pm_patron_moon_elder_hostile
+		remove_modifier = pm_patron_moon_young_frozen
+		remove_modifier = pm_patron_moon_mature_frozen
+		remove_modifier = pm_patron_moon_elder_frozen
+		remove_modifier = pm_no_patron_moon
+		random_moon = {
+			limit = { NOT = { is_planet_class = pc_habitat } }
+			change_pc = pc_patronmoon
+			remove_deposits = yes
+			set_planet_flag = young_moon
+			set_planet_size = 5
+			destroy_colony = yes
+		}
+	}
+
+	option = {
+		name = patronmoon.nice
+		add_modifier = { modifier = "pm_patron_moon_young" }
+	}
+}
+
+#Infect Habitat
+planet_event = {
+	id = patronmoon.102
+	title = patronmoon.102.name
+	desc = patronmoon.102.desc
+	picture = GFX_evt_ruined_system
+	show_sound = pc_hive
+	location = from
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_modifier = pm_patron_moon_young
+		remove_modifier = pm_patron_moon_mature
+		remove_modifier = pm_patron_moon_elder
+		remove_modifier = pm_patron_moon_young_hostile
+		remove_modifier = pm_patron_moon_mature_hostile
+		remove_modifier = pm_patron_moon_elder_hostile
+		remove_modifier = pm_patron_moon_young_frozen
+		remove_modifier = pm_patron_moon_mature_frozen
+		remove_modifier = pm_patron_moon_elder_frozen
+		remove_modifier = pm_no_patron_moon
+
+		remove_planet_flag = has_megastructure
+
+		while = {
+			count = 4
+			random_pop = {
+				limit = { is_robot_pop = no }
+				kill_pop = yes
+			}
+		}
+
+		random_moon = {
+			limit = { is_planet_class = pc_habitat }
+			remove_planet = yes
+		}
+
+		solar_system = {
+			spawn_planet = {
+				class = pc_patronmoon
+				location = root
+				orbit_location = yes
+				orbit_distance_offset = 7
+				size = 5
+				init_effect = {
+					set_name = "Corrupted Habitat"
+					set_planet_flag = young_moon
+				}
+			}	
+		}
+	}
+
+	option = {
+		name = patronmoon.nice
+		add_modifier = { modifier = "pm_patron_moon_young" }
+	}
+}
+
+#Vore Habitat
+planet_event = {
+	id = patronmoon.104
+	title = patronmoon.104.name
+	desc = patronmoon.104.desc
+	picture = GFX_evt_ruined_system
+	show_sound = event_screams
+	location = from
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_modifier = pm_patron_moon_young
+		remove_modifier = pm_patron_moon_mature
+		remove_modifier = pm_patron_moon_elder
+		remove_modifier = pm_patron_moon_young_hostile
+		remove_modifier = pm_patron_moon_mature_hostile
+		remove_modifier = pm_patron_moon_elder_hostile
+		remove_modifier = pm_patron_moon_young_frozen
+		remove_modifier = pm_patron_moon_mature_frozen
+		remove_modifier = pm_patron_moon_elder_frozen
+		remove_modifier = pm_no_patron_moon
+
+		remove_planet_flag = has_megastructure	
+
+		random_moon = {
+			limit = { is_planet_class = pc_habitat }
+			remove_planet = yes
+		}
+
+          	solar_system = {
+                	spawn_planet = {
+                  		class = pc_patronmoon
+                    		location = root
+                    		orbit_location = yes
+                   		orbit_distance_offset = 7
+                    		size = 5
+				init_effect = {
+					set_name = "Corrupted Habitat"
+					set_planet_flag = young_moon
+				}
+			}
+		}
+	}
+
+	option = {
+		name = patronmoon.nice
+		add_modifier = { modifier = "pm_patron_moon_young" }
+	}
+}
+
+#Mature 1
+planet_event = {
+	id = patronmoon.105
+	title = patronmoon.105.name
+	desc = patronmoon.105.desc
+	picture = GFX_evt_gray_gooed_planet
+	show_sound = pc_hive
+	location = from
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_modifier = pm_patron_moon_young
+		remove_modifier = pm_patron_moon_mature
+		remove_modifier = pm_patron_moon_elder
+		remove_modifier = pm_patron_moon_young_hostile
+		remove_modifier = pm_patron_moon_mature_hostile
+		remove_modifier = pm_patron_moon_elder_hostile
+		remove_modifier = pm_no_patron_moon
+
+		if = {
+			limit = {
+				any_moon = {
+					has_planet_flag = young_moon
+					is_planet_class = pc_patronmoon
+				}
+			}
+			random_moon = {
+				limit = { is_planet_class = pc_patronmoon }
+				set_planet_flag = mature_moon
+				remove_planet_flag = young_moon
+				set_planet_size = 9
+			}
+			add_modifier = { modifier = "pm_patron_moon_mature" }
+
+			while = {
+				count = 10
+				random_pop = {
+					limit = { is_robot_pop = no }
+					kill_pop = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				any_moon = {
+					has_planet_flag = mature_moon
+					is_planet_class = pc_patronmoon
+				}
+			}
+			random_moon = {
+				limit = { is_planet_class = pc_patronmoon }
+				set_planet_flag = elder_moon
+				remove_planet_flag = mature_moon
+				set_planet_size = 14
+			}
+			add_modifier = { modifier = "pm_patron_moon_elder" }
+
+			while = {
+				count = 20
+				random_pop = {
+					limit = { is_robot_pop = no }
+					kill_pop = yes
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = patronmoon.nice
+	}
+}
+
+#Mature 2
+planet_event = {
+	id = patronmoon.108
+	title = patronmoon.108.name
+	desc = patronmoon.108.desc
+	picture = GFX_evt_gray_gooed_planet
+	show_sound = pc_hive
+	location = from
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_modifier = pm_patron_moon_young
+		remove_modifier = pm_patron_moon_mature
+		remove_modifier = pm_patron_moon_elder
+		remove_modifier = pm_patron_moon_young_hostile
+		remove_modifier = pm_patron_moon_mature_hostile
+		remove_modifier = pm_patron_moon_elder_hostile
+		remove_modifier = pm_no_patron_moon
+
+		if = {
+			limit = {
+				any_moon = {
+					has_planet_flag = young_moon
+					is_planet_class = pc_patronmoon
+				}
+			}
+			random_moon = {
+				limit = { is_planet_class = pc_patronmoon }
+				set_planet_flag = mature_moon
+				remove_planet_flag = young_moon
+				set_planet_size = 9
+			}
+			add_modifier = { modifier = "pm_patron_moon_mature" }
+
+			while = {
+				count = 10
+				random_pop = {
+					limit = { is_robot_pop = no }
+					kill_pop = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				any_moon = {
+					has_planet_flag = mature_moon
+					is_planet_class = pc_patronmoon
+				}
+			}
+			random_moon = {
+				limit = { is_planet_class = pc_patronmoon }
+				set_planet_flag = elder_moon
+				remove_planet_flag = mature_moon
+				set_planet_size = 14
+			}
+			add_modifier = { modifier = "pm_patron_moon_elder" }
+
+			while = {
+				count = 20
+				random_pop = {
+					limit = { is_robot_pop = no }
+					kill_pop = yes
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = patronmoon.nice
+	}
+}
+
+#Freeze moon
+planet_event = {
+	id = patronmoon.110
+	title = patronmoon.110.name
+	desc = patronmoon.110.desc
+	picture = GFX_evt_shattered_planet
+	show_sound = event_airlock
+	location = from
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_modifier = pm_patron_moon_young
+		remove_modifier = pm_patron_moon_mature
+		remove_modifier = pm_patron_moon_elder
+		remove_modifier = pm_patron_moon_young_hostile
+		remove_modifier = pm_patron_moon_mature_hostile
+		remove_modifier = pm_patron_moon_elder_hostile
+		remove_modifier = pm_patron_moon_young_frozen
+		remove_modifier = pm_patron_moon_mature_frozen
+		remove_modifier = pm_patron_moon_elder_frozen
+		remove_modifier = pm_no_patron_moon
+
+		if = {
+			limit = {
+				any_moon = {
+					has_planet_flag = young_moon
+					is_planet_class = pc_patronmoon
+				}
+			}
+			add_modifier = { modifier = "pm_patron_moon_young_frozen" }
+		}
+		else_if = {
+			limit = {
+				any_moon = {
+					has_planet_flag = mature_moon
+					is_planet_class = pc_patronmoon
+				}
+			}
+			add_modifier = { modifier = "pm_patron_moon_mature_frozen" }
+		}
+		else_if = {
+			limit = {
+				any_moon = {
+					has_planet_flag = elder_moon
+					is_planet_class = pc_patronmoon
+				}
+			}
+			add_modifier = { modifier = "pm_patron_moon_elder_frozen" }
+		}
+	}
+	
+	option = {
+		name = patronmoon.nice
+	}
+}
+
+#Unfreeze moon
+planet_event = {
+	id = patronmoon.115
+	title = patronmoon.115.name
+	desc = patronmoon.115.desc
+	picture = GFX_evt_space_monster
+	show_sound = pc_hive
+	location = from
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_modifier = pm_patron_moon_young
+		remove_modifier = pm_patron_moon_mature
+		remove_modifier = pm_patron_moon_elder
+		remove_modifier = pm_patron_moon_young_hostile
+		remove_modifier = pm_patron_moon_mature_hostile
+		remove_modifier = pm_patron_moon_elder_hostile
+		remove_modifier = pm_patron_moon_young_frozen
+		remove_modifier = pm_patron_moon_mature_frozen
+		remove_modifier = pm_patron_moon_elder_frozen
+		remove_modifier = pm_no_patron_moon
+	}
+	
+	option = {
+		name = patronmoon.nice
+		hidden_effect = { planet_event = { id = patronmoon.4 } }
+	}
+}
+
+#Failure
+planet_event = {
+	id = patronmoon.200
+	title = patronmoon.200.name
+	desc = patronmoon.200.desc
+	picture = GFX_evt_alien_propaganda
+	show_sound = event_public_unrest
+	location = from
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = patronmoon.worry
+	}
+}
