@@ -1,0 +1,90 @@
+objectTypes = {
+
+	#############################
+	#		TALL_WHITE			#
+	#############################
+	
+	pdxmesh = {
+		name = "mem_ancient_01_outpost_frame_mesh"
+		file = "gfx/models/ships/starbases/mem_ancient_01_outpost_frame.mesh"
+		scale = 1.0
+
+	}
+		
+	pdxmesh = {
+		name = "mem_ancient_01_starport_frame_mesh"
+		file = "gfx/models/ships/starbases/mem_ancient_01_outpost_frame.mesh"
+		scale = 3.0
+
+	}
+	
+	pdxmesh = {
+		name = "mem_ancient_01_starhold_frame_mesh"
+		file = "gfx/models/ships/starbases/mem_ancient_01_outpost_frame.mesh"
+		scale = 3.0
+
+	}
+	
+	pdxmesh = {
+		name = "mem_ancient_01_starfort_frame_mesh"
+		file = "gfx/models/ships/starbases/mem_ancient_01_citadel_frame.mesh"
+		scale = 3.0
+
+	}
+	
+	pdxmesh = {
+		name = "mem_ancient_01_citadel_frame_mesh"
+		file = "gfx/models/ships/starbases/mem_ancient_01_citadel_frame.mesh"
+		scale = 3.0
+
+	}
+	
+	pdxmesh = {
+		name = "mem_ancient_01_outpost_mesh"
+		file = "gfx/models/ships/starbases/mem_ancient_01_outpost.mesh"
+		scale = 1.0
+
+	}
+		
+	pdxmesh = {
+		name = "mem_ancient_01_starport_mesh"
+		file = "gfx/models/ships/starbases/mem_ancient_01_starport.mesh"
+		scale = 3.0
+
+	}
+	
+	pdxmesh = {
+		name = "mem_ancient_01_starhold_mesh"
+		file = "gfx/models/ships/starbases/mem_ancient_01_starhold.mesh"
+		scale = 3.0
+
+	}
+	
+	pdxmesh = {
+		name = "mem_ancient_01_starfort_mesh"
+		file = "gfx/models/ships/starbases/mem_ancient_01_starfort.mesh"
+		scale = 3.0
+
+	}
+	
+	pdxmesh = {
+		name = "mem_ancient_01_citadel_mesh"
+		file = "gfx/models/ships/starbases/mem_ancient_01_citadel.mesh"
+		scale = 3.0
+
+	}
+	
+	pdxmesh = {
+		name = "mem_ancient_01_starbase_turret_section_mesh"
+		file = "gfx/models/ships/starbases/mem_ancient_01_starbase_turret_section.mesh"
+
+	}
+	
+		
+	pdxmesh = {
+		name = "mem_ancient_01_ion_cannon_mesh"
+		file = "gfx/models/ships/starbases/mem_ancient_01_ion_cannon.mesh"
+		scale = 5.0
+	}
+
+}

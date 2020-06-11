@@ -1,0 +1,26 @@
+objectTypes = {
+
+#######  SCX  #######	
+	
+pdxmesh = {
+		name = "mem_ancient_01_carrier_mesh"
+		file = "gfx/models/ships/mem_ancient/mem_ancient_01_carrier.mesh"
+		scale = 4.0
+		meshsettings = {
+			shader = "PdxMeshShip"
+		
+		#Mipmap tweaking
+		#texture_diffuse = "512x512.dds"
+		}
+}
+pdxmesh = {
+		name = "mem_ancient_01_dreadnought_mesh"
+		file = "gfx/models/ships/mem_ancient/mem_ancient_01_dreadnought.mesh"
+		scale = 6.0
+		meshsettings = {
+			shader = "PdxMeshShip"
+		
+		#Mipmap tweaking
+		#texture_diffuse = "512x512.dds"
+		}
+}
