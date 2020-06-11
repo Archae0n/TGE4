@@ -135,27 +135,27 @@ fanatic_pluralist_propaganda = {
 
 	icon = "gfx\interface\icons\ethics\ethic_fanatic_pluralist.dds"
 }
-socialist_propaganda = {
-	pop_ethic_socialist_attraction_mult = 0.1
+socialism_propaganda = {
+	pop_ethic_socialism_attraction_mult = 0.1
 
-	icon = "gfx\interface\icons\ethics\ethic_socialist.dds"
+	icon = "gfx\interface\icons\ethics\ethic_socialism.dds"
 }
-fanatic_socialist_propaganda = {
+fanatic_socialism_propaganda = {
 
-	pop_ethic_socialist_attraction_mult = 0.15
+	pop_ethic_socialism_attraction_mult = 0.15
 	pop_ethics_shift_speed_mult = 0.3
 
-	icon = "gfx\interface\icons\ethics\ethic_fanatic_socialist.dds"
+	icon = "gfx\interface\icons\ethics\ethic_fanatic_socialism.dds"
 }
-capitalist_propaganda = {
-	pop_ethic_capitalist_attraction_mult = 0.1
+capitalism_propaganda = {
+	pop_ethic_capitalism_attraction_mult = 0.1
 
-	icon = "gfx\interface\icons\ethics\ethic_capitalist.dds"
+	icon = "gfx\interface\icons\ethics\ethic_capitalism.dds"
 }
-fanatic_capitalist_propaganda = {
+fanatic_capitalism_propaganda = {
 
-	pop_ethic_capitalist_attraction_mult = 0.15
+	pop_ethic_capitalism_attraction_mult = 0.15
 	pop_ethics_shift_speed_mult = 0.3
 
-	icon = "gfx\interface\icons\ethics\ethic_fanatic_capitalist.dds"
+	icon = "gfx\interface\icons\ethics\ethic_fanatic_capitalism.dds"
 }
