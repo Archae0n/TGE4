@@ -1,0 +1,357 @@
+### TGE4 Solar System Initializers
+
+#Base Definitions
+@distance = 50
+@jumps = 3
+@planet_min_size = 10
+@planet_max_size = 25
+@base_moon_distance = 10
+@moon_min_size = 6
+@moon_max_size = 10
+
+@kru_rock_belt = 60
+@kru_icy_belt = 150
+
+
+tge4_cluster_kru = {
+    class = "sc_g"
+
+    name = "Siorros System"
+
+    asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = @kru_rock_belt
+	}
+    asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = @kru_icy_belt
+	}
+
+    usage = custom_empire
+    
+    init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		
+		generate_home_system_resources = yes
+	}
+
+	flags = { empire_home_system }
+
+	planet = {
+		name = "Siorros"
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+	}
+
+	#Colonized Planet
+
+	planet = {
+		name = "Laconia"
+		count = 1
+		orbit_distance = 40
+		size = 14
+		class = pc_toxic
+		orbit_angle = { min = 90 max = 270 }
+	}
+
+	#Homeplanet
+
+	planet = {
+		name = "Seandar"
+		count = 1
+		orbit_distance = 50
+		home_planet = yes
+		class = ideal_planet_class
+		orbit_angle = { min = 90 max = 270 }
+		size = { min = 16 max = 20 }
+		deposit_blockers = none
+		modifiers = none
+		
+		init_effect = {
+			generate_empire_home_planet = yes			
+			prevent_anomaly = yes
+		}
+		
+		#change_orbit = @kru_moon
+
+		moon = {
+			name = "Mierin"
+			count = 1
+			size = 5
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 10
+		}
+	}
+
+	#Destroyed Planet + Debris
+	
+	planet = {
+		size = 14
+		name = "Illos"
+		count = 1
+		orbit_distance = 40
+		class = pc_shattered
+		orbit_angle = 90
+	}
+
+	#Gas Giant 01
+
+	planet = {
+		name = "Vrukos"
+		count = 1
+		size = 30
+		orbit_distance = 75
+		class = pc_gas_giant
+		orbit_angle = { min = 90 max = 270 }
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 2 max = 4 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	#Gas Giant 02
+
+	planet = {
+		name = "Leres"
+		count = 1
+		size = 25
+		orbit_distance = 50
+		class = pc_gas_giant
+		orbit_angle = { min = 90 max = 270 }
+		has_ring = yes
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 1 max = 3 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	#Frozen_Planet
+
+	planet = {
+		Name = "Zirkos"
+		count = 1
+		size = 15
+		orbit_distance = 50
+		class = pc_frozen
+		orbit_angle = { min = 90 max = 270 }
+		
+		change_orbit = @base_moon_distance
+
+		moon = {
+			count = { min = 0 max = 2 }
+			class = random_non_colonizable
+			orbit_angle = { min = 90 max = 270 }
+			orbit_distance = 5
+		}
+	}
+
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 2 }
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t1"
+	}
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 1 }
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t1_first_colony"
+	}
+}
+
+#Edited SSI for Planetary Habs
+
+tge4_habs_kru = {
+    class = "sc_g"
+
+name = "Whatever System"
+
+asteroid_belt = {
+	type = rocky_asteroid_belt
+	radius = @kru_rock_belt
+}
+asteroid_belt = {
+	type = icy_asteroid_belt
+	radius = @kru_icy_belt
+}
+
+usage = origin
+
+init_effect = {
+	every_neighbor_system = {
+		set_star_flag = empire_cluster
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+		}
+	}
+	
+	generate_home_system_resources = yes
+}
+
+flags = { empire_home_system }
+
+planet = {
+	name = "Siorros"
+	count = 1
+	class = star
+	orbit_distance = 0
+	orbit_angle = 1
+}
+
+#Colonized Planet
+
+planet = {
+	name = "Laconia"
+	count = 1
+	orbit_distance = 40
+	size = 13
+	class = "pc_pd_hothouse_hab"
+	orbit_angle = { min = 90 max = 270 }
+	flags = { pd_habitat_start_mars }
+
+	init_effect = {
+		add_modifier = {
+			modifier = "terraforming_candidate"
+			days = -1
+		}
+		add_deposit = d_bblock5
+		add_deposit = d_bblock4
+	}
+}
+
+#Homeplanet
+
+planet = {
+	name = "Seandar"
+	count = 1
+	orbit_distance = 50
+	home_planet = yes
+	class = ideal_planet_class
+	orbit_angle = { min = 90 max = 270 }
+	size = { min = 16 max = 20 }
+	deposit_blockers = none
+	modifiers = none
+	flags = { pd_habitat_start }
+	
+	init_effect = {
+		generate_empire_home_planet = yes			
+		prevent_anomaly = yes
+	}
+	
+	#change_orbit = @kru_moon
+
+	moon = {
+		name = "Mierin"
+		class = "pc_pd_barren_cold_hab"
+		size = 5
+		orbit_distance = 12
+		orbit_angle = 40
+		has_ring = no
+		flags = { pd_habitat_start_luna }
+	
+		init_effect = {
+			add_deposit = d_bblock3
+			set_planet_entity = { entity = "pdcmoon2_planet_01_entity" picture = pc_pd_barren_moon	}
+		}
+	}
+}
+
+#Destroyed Planet + Debris
+
+planet = {
+	size = 14
+	name = "Illos"
+	count = 1
+	orbit_distance = 40
+	class = pc_shattered
+	orbit_angle = 90
+}
+
+#Gas Giant 01
+
+planet = {
+	name = "Vrukos"
+	count = 1
+	size = 30
+	orbit_distance = 75
+	class = pc_gas_giant
+	orbit_angle = { min = 90 max = 270 }
+	
+	change_orbit = @base_moon_distance
+
+	moon = {
+		count = { min = 2 max = 4 }
+		class = random_non_colonizable
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 5
+	}
+}
+
+#Gas Giant 02
+
+planet = {
+	name = "Leres"
+	count = 1
+	size = 25
+	orbit_distance = 50
+	class = pc_gas_giant
+	orbit_angle = { min = 90 max = 270 }
+	has_ring = yes
+	
+	change_orbit = @base_moon_distance
+
+	moon = {
+		count = { min = 1 max = 3 }
+		class = random_non_colonizable
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 5
+	}
+}
+
+#Frozen_Planet
+
+planet = {
+	name = "Zirkos"
+	count = 1
+	size = 15
+	orbit_distance = 50
+	class = pc_frozen
+	orbit_angle = { min = 90 max = 270 }
+	
+	change_orbit = @base_moon_distance
+
+	moon = {
+		count = { min = 0 max = 2 }
+		class = random_non_colonizable
+		orbit_angle = { min = 90 max = 270 }
+		orbit_distance = 5
+	}
+}
+
+neighbor_system = {
+	trigger = { num_guaranteed_colonies >= 2 }
+	hyperlane_jumps = { min = 1 max = @jumps }
+	initializer = "neighbor_t1"
+}
+neighbor_system = {
+	trigger = { num_guaranteed_colonies >= 1 }
+	hyperlane_jumps = { min = 1 max = @jumps }
+	initializer = "neighbor_t1_first_colony"
+}
+}
