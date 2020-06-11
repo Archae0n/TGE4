@@ -315,13 +315,14 @@ can_release_vassal_from_species = {
 			has_trait = trait_machine_unit
 			has_trait = trait_hive_mind
 			#Free the robits \(^-^)/
-			AND =
+			AND = {
 				has_trait = trait_mechanical
 				NOT = { from = { has_technology = "tech_synthetic_workers" } }	
 			}
 			has_trait = trait_nerve_stapled
 		}
 	}
+}
 
 # Root = species
 # This = country
