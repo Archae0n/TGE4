@@ -20,8 +20,8 @@ ship_section_template = {
 		locatorname = "root"
 	}	
 	
-	large_utility_slots = 6
-	aux_utility_slots = 6
+	large_utility_slots = 9
+	aux_utility_slots = 9
 }
 
 ship_section_template = {
@@ -58,8 +58,8 @@ ship_section_template = {
 		locatorname = "root"
 	}	
 	
-	large_utility_slots = 6
-	aux_utility_slots = 6
+	large_utility_slots = 9
+	aux_utility_slots = 9
 }
 
 
@@ -82,7 +82,7 @@ ship_section_template = {
 	prerequisites { tech_nomad_ships }
 	
 	large_utility_slots = 6
-	aux_utility_slots = 3
+	aux_utility_slots = 6
 }
 
 ship_section_template = {
@@ -120,7 +120,7 @@ ship_section_template = {
 	}	
 	
 	large_utility_slots = 6
-	aux_utility_slots = 3
+	aux_utility_slots = 6
 }
 
 
