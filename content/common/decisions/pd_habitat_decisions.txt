@@ -122,7 +122,10 @@ decision_energy2hab = {
 			is_planet_class = pc_pd_gas_giant_hab
 			is_planet_class = pc_pd_asteroid_hab
 		}
-		NOT = { has_planet_flag = pd_energy2_hab }
+		NOR = {
+			has_planet_flag = pd_energy_hab
+			has_planet_flag = pd_energy2_hab
+		}
 		NOT = { has_planet_flag = pd_hab_d2 }
 		owner = { NOT = { has_authority = auth_hive_mind } }
 	}
@@ -166,7 +169,10 @@ decision_mining2hab = {
 			is_planet_class = pc_pd_molten_hab
 			is_planet_class = pc_pd_asteroid_hab
 		}
-		NOT = { has_planet_flag = pd_mining2_hab }
+		NOR = {
+			has_planet_flag = pd_mining_hab
+			has_planet_flag = pd_mining2_hab
+		}
 		NOT = { has_planet_flag = pd_hab_d2 }
 		owner = { NOT = { has_authority = auth_hive_mind } }
 	}
