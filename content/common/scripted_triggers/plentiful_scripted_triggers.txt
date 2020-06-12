@@ -19,14 +19,6 @@ is_hive_world = {
 	}
 }
 
-habitable_structure = {
-	OR = {
-		is_planet_class = pc_ringworld_habitable
-		is_planet_class = pc_habitat
-		is_planet_class = pc_habitat_robot
-	}
-}
-
 can_take_servant_job = {
 	OR = {
 		is_domestic_robot = yes
@@ -65,5 +57,6 @@ specialist_job_check_trigger = {
 			owner = { has_technology = tech_droid_workers }
 		}
 		NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+		divinity_right_to_work_job_check_trigger_specialist = yes
 	}
 }

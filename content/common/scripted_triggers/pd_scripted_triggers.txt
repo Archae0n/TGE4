@@ -153,6 +153,9 @@ habitable_structure = {
 		#is_planet_class = pc_pd_toxic_hab
 		is_planet_class = pc_pd_hothouse_hab
 		is_planet_class = pc_pd_asteroid_hab
+
+		#Merged from plentiful
+		is_planet_class = pc_habitat_robot
 	}
 }
 
