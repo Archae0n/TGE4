@@ -203,21 +203,21 @@ country_event = {
 					}
 					else = { country_event = { id = utopia.3200 } }
 				}
-				20 = {
+				10 = {
 					if = {
 						limit = { NOT = { has_technology = tech_psionic_shield } }
 						country_event = { id = utopia.3170 }
 					}
 					else = { country_event = { id = utopia.3200 } }
 				}
-				20 = {
+				10 = {
 					if = {
 						limit = { NOT = { has_technology = tech_precognition_interface } }
 						country_event = { id = utopia.3180 }
 					}
 					else = { country_event = { id = utopia.3200 } }
 				}
-				20 = {
+				10 = {
 					if = {
 						limit = { NOT = { has_technology = tech_psi_jump_drive_1 } }
 						country_event = { id = utopia.3160 }
@@ -245,7 +245,7 @@ country_event = {
 					}
 					else = { country_event = { id = utopia.3200 } }
 				}
-				50 = {
+				20 = {
 					if = {
 						limit = { 
 							NOT = { 
@@ -265,7 +265,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = "shroud_cooldown"
-					days = 1200
+					days = 900
 				}
 			}				
 			else = {
@@ -352,7 +352,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = positive_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -408,7 +408,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = positive_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -452,7 +452,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -488,7 +488,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -634,7 +634,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = positive_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -643,7 +643,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_happiness"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -674,7 +674,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = positive_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -683,7 +683,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_ship_upkeep"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -714,7 +714,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = positive_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -723,7 +723,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_research_speed"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -754,7 +754,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = positive_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -763,7 +763,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_shield_boost"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -794,7 +794,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = positive_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -803,7 +803,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_weapon_boost"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -834,7 +834,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = positive_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -843,7 +843,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_firing_rate"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -874,7 +874,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = positive_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -883,7 +883,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_ethic_boost"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -914,7 +914,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = positive_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -923,7 +923,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_influence_boost"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -954,7 +954,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = positive_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -963,7 +963,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_unity_boost"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -994,7 +994,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = positive_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1003,7 +1003,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_evasion"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1034,7 +1034,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = positive_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1043,7 +1043,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_repair"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1074,7 +1074,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = positive_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1123,7 +1123,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = positive_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1132,7 +1132,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_speed"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1163,7 +1163,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = positive_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1172,7 +1172,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_morale"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1203,7 +1203,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = positive_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1212,7 +1212,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_sensors"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1245,7 +1245,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1282,7 +1282,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1291,7 +1291,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_happiness"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1322,7 +1322,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1331,7 +1331,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_ethic"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1362,7 +1362,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1371,7 +1371,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_armor"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1402,7 +1402,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1411,7 +1411,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_growth"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1442,7 +1442,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1451,7 +1451,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_research"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1482,7 +1482,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1491,7 +1491,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_influence"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1522,7 +1522,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1531,7 +1531,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_unity"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1562,7 +1562,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1571,7 +1571,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_speed"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1602,7 +1602,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1611,7 +1611,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_morale"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1642,7 +1642,7 @@ country_event = {
 			remove_country_flag = shroud_diplomacy_engaged
 			set_timed_country_flag = {
 				flag = negative_shroud_outcome
-				days = 3600 # 5 years
+				days = 1800 # 5 years
 			}
 		}
 	}
@@ -1651,7 +1651,7 @@ country_event = {
 		name = "exit.shroud"
 		add_modifier = {
 			modifier = "shroud_neg_sensors"
-			days = 3600
+			days = 1800
 		}
 		default_hide_option = yes
 	}
@@ -1913,6 +1913,7 @@ country_event = {
 	title = "utopia.3000.name"
 	desc = "utopia.3110.desc"
 	diplomatic = yes
+	diplomatic_title = BLANK_STRING
 	
 	picture_event_data = {
 		portrait = shroud1
@@ -1941,9 +1942,9 @@ country_event = {
 		custom_tooltip = "shroud.avatar.chances.high"
 		hidden_effect = {
 			random_list = {
-				45 = { country_event = { id = utopia.3020 }}
-				45 = { country_event = { id = utopia.3021 }}
-				0 = { 
+				35 = { country_event = { id = utopia.3020 }}
+				35 = { country_event = { id = utopia.3021 }}
+				20 = { 
 					modifier = {
 						factor = 0.5
 						has_relic = r_zro_crystal
@@ -3197,6 +3198,7 @@ country_event = {
 	title = "utopia.3000.name"
 	desc = "utopia.3152.desc"
 	diplomatic = yes
+	diplomatic_title = BLANK_STRING
 	force_open = yes
 	
 	picture_event_data = {
@@ -3296,8 +3298,8 @@ country_event = {
 		custom_tooltip = "shroud.unknown.chances.medium"
 		hidden_effect = {
 			random_list = {
-				80 = { country_event = { id = utopia.3161 } }
-				20 = { 
+				60 = { country_event = { id = utopia.3161 } }
+				40 = { 
 					modifier = {
 						factor = 0.5
 						has_relic = r_zro_crystal
@@ -3378,7 +3380,7 @@ country_event = {
 		default_hide_option = yes
 		add_modifier = {
 			modifier = "shroud_neg_speed"
-			days = 3600
+			days = 1800
 		}
 	}
 }
@@ -3414,10 +3416,10 @@ country_event = {
 		custom_tooltip = "shroud.unknown.chances.medium"
 		hidden_effect = {
 			random_list = {
-				80 = {
+				60 = {
 					country_event = { id = utopia.3171 }
 				}
-				20 = {
+				40 = {
 					modifier = {
 						factor = 0.5
 						has_relic = r_zro_crystal
@@ -3535,10 +3537,10 @@ country_event = {
 		custom_tooltip = "shroud.unknown.chances.medium"
 		hidden_effect = {
 			random_list = {
-				80 = {
+				60 = {
 					country_event = { id = utopia.3181 }
 				}
-				20 = {
+				40 = {
 					modifier = {
 						factor = 0.5
 						has_relic = r_zro_crystal
@@ -3625,7 +3627,7 @@ country_event = {
 				}
 				add_modifier = {
 					modifier = "shroud_precog_cooldown"
-					days = 3600
+					days = 1800
 				}
 			}				
 			else = {
@@ -3722,7 +3724,8 @@ country_event = {
 		event_target:leader_1 = { save_event_target_as = chosen_leader }
 		hidden_effect = {
 			random_list = {
-				90 = { country_event = { id = utopia.3191 }}
+				70 = { country_event = { id = utopia.3191 }}
+				20 = { country_event = { id = utopia.3192 }}
 				10 = { country_event = { id = utopia.3193 }}
 			}
 		}
@@ -3736,8 +3739,9 @@ country_event = {
 		event_target:leader_1 = { save_event_target_as = chosen_leader }
 		hidden_effect = {
 			random_list = {
-				60 = { country_event = { id = utopia.3191 }}
-				40 = { country_event = { id = utopia.3193 }}
+				50 = { country_event = { id = utopia.3191 }}
+				30 = { country_event = { id = utopia.3192 }}
+				20 = { country_event = { id = utopia.3193 }}
 			}
 		}
 	}
@@ -3751,7 +3755,8 @@ country_event = {
 		hidden_effect = {
 			random_list = {
 				30 = { country_event = { id = utopia.3191 }}
-				70 = { country_event = { id = utopia.3193 }}
+				40 = { country_event = { id = utopia.3192 }}
+				30 = { country_event = { id = utopia.3193 }}
 			}
 		}
 	}
@@ -3764,7 +3769,8 @@ country_event = {
 		event_target:leader_2 = { save_event_target_as = chosen_leader }
 		hidden_effect = {
 			random_list = {
-				90 = { country_event = { id = utopia.3191 }}
+				70 = { country_event = { id = utopia.3191 }}
+				20 = { country_event = { id = utopia.3192 }}
 				10 = { country_event = { id = utopia.3193 }}
 			}
 		}
@@ -3778,8 +3784,9 @@ country_event = {
 		event_target:leader_2 = { save_event_target_as = chosen_leader }
 		hidden_effect = {
 			random_list = {
-				60 = { country_event = { id = utopia.3191 }}
-				40 = { country_event = { id = utopia.3193 }}
+				50 = { country_event = { id = utopia.3191 }}
+				30 = { country_event = { id = utopia.3192 }}
+				20 = { country_event = { id = utopia.3193 }}
 			}
 		}
 	}
@@ -3793,7 +3800,8 @@ country_event = {
 		hidden_effect = {
 			random_list = {
 				30 = { country_event = { id = utopia.3191 }}
-				70 = { country_event = { id = utopia.3193 }}
+				40 = { country_event = { id = utopia.3192 }}
+				30 = { country_event = { id = utopia.3193 }}
 			}
 		}
 	}
@@ -3807,7 +3815,8 @@ country_event = {
 		event_target:leader_3 = { save_event_target_as = chosen_leader }
 		hidden_effect = {
 			random_list = {
-				90 = { country_event = { id = utopia.3191 }}
+				70 = { country_event = { id = utopia.3191 }}
+				20 = { country_event = { id = utopia.3192 }}
 				10 = { 
 					modifier = {
 						factor = 0
@@ -3827,8 +3836,9 @@ country_event = {
 		event_target:leader_3 = { save_event_target_as = chosen_leader }
 		hidden_effect = {
 			random_list = {
-				60 = { country_event = { id = utopia.3191 }}
-				40 = { 
+				50 = { country_event = { id = utopia.3191 }}
+				30 = { country_event = { id = utopia.3192 }}
+				20 = { 
 					modifier = {
 						factor = 0
 						has_relic = r_zro_crystal
@@ -3848,7 +3858,8 @@ country_event = {
 		hidden_effect = {
 			random_list = {
 				30 = { country_event = { id = utopia.3191 }}
-				70 = { 
+				40 = { country_event = { id = utopia.3192 }}
+				30 = { 
 					modifier = {
 						factor = 0
 						has_relic = r_zro_crystal
@@ -4437,8 +4448,9 @@ country_event = {
 		}
 		hidden_effect = {
 			random_list = {
-				90 = { country_event = { id = utopia.3303 }}
-				10 = { country_event = { id = utopia.3302 }}
+				70 = { country_event = { id = utopia.3303 }}
+				20 = { country_event = { id = utopia.3302 }}
+				10 = { country_event = { id = utopia.3301 }}
 			}
 		}
 	}
@@ -4450,8 +4462,9 @@ country_event = {
 		}
 		hidden_effect = {
 			random_list = {
-				60 = { country_event = { id = utopia.3303 }}
-				40 = { country_event = { id = utopia.3302 }}
+				50 = { country_event = { id = utopia.3303 }}
+				30 = { country_event = { id = utopia.3302 }}
+				20 = { country_event = { id = utopia.3301 }}
 			}
 		}
 	}
@@ -4464,7 +4477,8 @@ country_event = {
 		hidden_effect = {
 			random_list = {
 				30 = { country_event = { id = utopia.3303 }}
-				70 = { country_event = { id = utopia.3301 }}
+				40 = { country_event = { id = utopia.3302 }}
+				30 = { country_event = { id = utopia.3301 }}
 			}
 		}
 	}
@@ -4476,8 +4490,9 @@ country_event = {
 		}
 		hidden_effect = {
 			random_list = {
-				90 = { country_event = { id = utopia.3303 }}
-				10 = { country_event = { id = utopia.3301 }}
+				85 = { country_event = { id = utopia.3303 }}
+				10 = { country_event = { id = utopia.3302 }}
+				5 = { country_event = { id = utopia.3301 }}
 			}
 		}
 	}	
@@ -5035,7 +5050,7 @@ country_event = {
 				root = { set_country_flag = exile_world }
 				save_event_target_as = exile_world
 			}	
-		}			
+		}		
 		if = {
 			limit = { has_country_flag = exile_world }
 			event_target:exile_world = {
@@ -5195,7 +5210,10 @@ country_event = {
 		every_country = {
 			limit = { 
 				NOT = { is_same_value = root } 
-				is_country_type = default
+				OR = {
+					is_country_type = default
+					is_country_type = void_farer
+				}
 			}
 			add_opinion_modifier = {
 				modifier = opinion_doomed_us_all
@@ -6117,7 +6135,10 @@ country_event = {
 	show_sound = event_mystic_reveal
 	
 	trigger = {
-		is_country_type = default
+		OR = {
+			is_country_type = default
+			is_country_type = void_farer
+		}
 		NOT = { has_country_flag = chosen_one_ruler_event }
 		OR = {
 			has_authority = auth_democratic

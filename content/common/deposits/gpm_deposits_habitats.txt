@@ -221,7 +221,7 @@ gpm_d_time_research_infrastructure = {
 	resources = {
 		category = planet_deposits
 		produces = {
-			physics_research = 40
+			physics_research = 20
 		}
 	}
 
@@ -404,7 +404,7 @@ gpm_d_spice_collecting_infrastructure = {
 		}
 		modifier = {
 			job_gpm_orbital_spicer_add = 2
-			trade_value_add = 50
+			trade_value_add = 25
 		}
 	}
 	
