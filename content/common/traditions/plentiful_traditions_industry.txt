@@ -4,7 +4,7 @@ tr_plentiful_industry_adopt = {
 #	cost = { unity = @cost }
 	modifier = {
 		category_industry_research_speed_mult = 0.15
-		station_gatherers_minerals_produces_mult = 0.5
+		station_gatherers_minerals_produces_mult = 0.25
 	}
 	on_enabled = {
 		give_technology = { message = no tech = tech_plentiful_traditions_orbital_fracking_cannon }
