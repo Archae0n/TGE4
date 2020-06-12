@@ -8,7 +8,7 @@ district_city = {
 	show_on_uncolonized = {
 		exists = from
 		from = { is_regular_empire = yes }
-		NOT = { is_planet_class = pc_habitat }
+		habitable_structure = no
 		NOT = { is_planet_class = pc_city }
 		NOT = { is_planet_class = pc_ringworld_habitable }
 	}
@@ -16,7 +16,7 @@ district_city = {
 	potential = {
 		exists = owner
 		owner = { is_regular_empire = yes }
-		NOT = { is_planet_class = pc_habitat }
+		habitable_structure = no
 		NOT = { is_planet_class = pc_city }
 		NOT = { is_planet_class = pc_ringworld_habitable }
 	}
@@ -222,7 +222,7 @@ district_hive = {
 
 	show_on_uncolonized = {
 		from = { is_hive_empire = yes }
-		NOT = { is_planet_class = pc_habitat }
+		habitable_structure = no
 		NOT = { is_planet_class = pc_city }
 		NOT = { is_planet_class = pc_ringworld_habitable }
 	}
@@ -230,7 +230,7 @@ district_hive = {
 	potential = {
 		exists = owner
 		owner = { is_hive_empire = yes }
-		NOT = { is_planet_class = pc_habitat }
+		habitable_structure = no
 		NOT = { is_planet_class = pc_city }
 		NOT = { is_planet_class = pc_ringworld_habitable }
 	}
@@ -263,7 +263,11 @@ district_hive = {
 
 	triggered_planet_modifier = {
 		potential = {
-			is_planet_class = pc_hive
+			OR = {
+				is_planet_class = pc_hive
+				is_planet_class = pc_pdhive1
+				is_planet_class = pc_pdhive2
+			}
 		}
 		modifier = {
 			planet_housing_add = 6
@@ -374,7 +378,7 @@ district_nexus = {
 
 	show_on_uncolonized = {
 		from = { is_machine_empire = yes }
-		NOT = { is_planet_class = pc_habitat }
+		habitable_structure = no
 		NOT = { is_planet_class = pc_city }
 		NOT = { is_planet_class = pc_ringworld_habitable }
 	}
@@ -382,7 +386,7 @@ district_nexus = {
 	potential = {
 		exists = owner
 		owner = { is_machine_empire = yes }
-		NOT = { is_planet_class = pc_habitat }
+		habitable_structure = no
 		NOT = { is_planet_class = pc_city }
 		NOT = { is_planet_class = pc_ringworld_habitable }
 	}
