@@ -2894,7 +2894,7 @@ ap_universal_transactions = {
 	}
 	
 	modifier = {
-		planet_branch_offices_cost_mult = -0.25a
+		planet_branch_offices_cost_mult = -0.25
 	}
 	
 	on_enabled = {
