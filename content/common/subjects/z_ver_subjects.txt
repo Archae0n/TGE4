@@ -20,7 +20,12 @@ verautonomous = {
 	}
 
 	potential = {
-		from = { is_country_type = default }
+		from = {
+			OR = {
+				is_country_type = default
+				is_country_type = void_farer
+			}
+		}
 	}
 
 	effect = {
@@ -163,7 +168,12 @@ verbeneficiary = {
 	diplo_threat = 1.5
 
 	potential = {
-		from = { is_country_type = default }
+		from = {
+			OR = {
+				is_country_type = default
+				is_country_type = void_farer
+			}
+		}
 	}
 
 	effect = {
@@ -313,7 +323,12 @@ verjrpartner = {
 	}
 
 	potential = {
-		from = { is_country_type = default }
+		from = {
+			OR = {
+				is_country_type = default
+				is_country_type = void_farer
+			}
+		}
 	}
 
 	effect = {
@@ -460,7 +475,12 @@ verpuppet = {
 	}
 
 	potential = {
-		from = { is_country_type = default }
+		from = {
+			OR = {
+				is_country_type = default
+				is_country_type = void_farer
+			}
+		}
 	}
 
 	effect = {
@@ -609,7 +629,12 @@ verserf = {
 	}
 
 	potential = {
-		from = { is_country_type = default }
+		from = {
+			OR = {
+				is_country_type = default
+				is_country_type = void_farer
+			}
+		}
 	}
 
 	effect = {
@@ -751,7 +776,12 @@ versister = {
 	diplo_threat = 1.5
 
 	potential = {
-		from = { is_country_type = default }
+		from = {
+			OR = {
+				is_country_type = default
+				is_country_type = void_farer
+			}
+		}
 	}
 
 	effect = {
@@ -893,7 +923,12 @@ verblood = {
 	diplo_threat = 1.5
 
 	potential = {
-		from = { is_country_type = default }
+		from = {
+			OR = {
+				is_country_type = default
+				is_country_type = void_farer
+			}
+		}
 	}
 
 	effect = {
