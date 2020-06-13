@@ -12,7 +12,10 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				is_country_type = default
+				OR = {
+					is_country_type = default
+					is_country_type = void_farer
+				}
 				is_overlord = yes
 				any_subject = {
 					OR = {
@@ -42,7 +45,10 @@ country_event = {
 
 	trigger = {
 		overlord = {
-			is_country_type = default
+			OR = {
+				is_country_type = default
+				is_country_type = void_farer
+			}
 		}
 	}
 
@@ -917,7 +923,10 @@ country_event = {
 				}
 				is_at_war = no
 				any_neighbor_country = {
-					is_country_type = default
+					OR = {
+						is_country_type = default
+						is_country_type = void_farer
+					}
 					NOR = {
 						is_same_value = event_target:ver_puppeteer
 						has_defensive_pact = event_target:ver_puppeteer
@@ -1172,7 +1181,10 @@ country_event = {
 
 		every_neighbor_country = {
 			limit = {
-				is_country_type = default
+				OR = {
+					is_country_type = default
+					is_country_type = void_farer
+				}
 				NOR = {
 					is_same_value = event_target:ver_puppeteer
 					has_defensive_pact = event_target:ver_puppeteer

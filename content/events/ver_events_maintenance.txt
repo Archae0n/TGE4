@@ -9,7 +9,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_country_type = default
+		OR = {
+			is_country_type = default
+			is_country_type = void_farer
+		}
 		is_overlord = yes
 		any_subject = {
 			OR = {
@@ -105,7 +108,10 @@ event = {
 		# Remove taxes from subject empires that are no longer taxed or former subject empires
 		every_country = {
 			limit = {
-				is_country_type = default
+				OR = {
+					is_country_type = default
+					is_country_type = void_farer
+				}
 				OR = {
 					AND = {
 						is_subject = yes
@@ -125,7 +131,10 @@ event = {
 		# Remove Parallel Processors from machine authorities without subjects
 		every_country = {
 			limit = {
-				is_country_type = default
+				OR = {
+					is_country_type = default
+					is_country_type = void_farer
+				}
 				has_authority = auth_machine_intelligence
 				OR = {
 					is_overlord = no
@@ -210,7 +219,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_country_type = default
+		OR = {
+			is_country_type = default
+			is_country_type = void_farer
+		}
 		has_authority = auth_machine_intelligence
 		is_overlord = yes
 		any_subject = {	is_subject_type = verparallel }
@@ -275,7 +287,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_country_type = default
+		OR = {
+			is_country_type = default
+			is_country_type = void_farer
+		}
 		is_overlord = yes
 		OR = {
 			has_policy_flag = ver_light_taxes
@@ -410,7 +425,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_country_type = default
+		OR = {
+			is_country_type = default
+			is_country_type = void_farer
+		}
 		OR = {
 			is_overlord = no
 			NOT = {	any_subject = {	NOT = { is_at_war_with = overlord } } }
@@ -429,7 +447,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_country_type = default
+		OR = {
+			is_country_type = default
+			is_country_type = void_farer
+		}
 		is_subject = yes
 		NOT = { has_ethic = ethic_gestalt_consciousness }
 		overlord = {
@@ -486,7 +507,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_country_type = default
+		OR = {
+			is_country_type = default
+			is_country_type = void_farer
+		}
 		is_overlord = yes
 		any_subject = {
 			OR = {
