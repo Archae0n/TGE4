@@ -23,7 +23,7 @@ guiTypes = {
 		iconType = {
 			name = "hex_bg"
 			spriteType = "GFX_hex_bg"
-			position = { x = 5 y = -12 }
+			position = { x = 30 y = -12 }
 			alwaysTransparent = yes
 		}
 
@@ -36,7 +36,7 @@ guiTypes = {
 		instantTextBoxType={
 			name = "header"
 			font = "malgun_goth_24"
-			position = { x = 35 y = 5 }
+			position = { x = 65 y = 4 }
 			text = "topbar_button_contacts_name"
 			format = left
 		}
@@ -160,6 +160,8 @@ guiTypes = {
 							alwaysTransparent = yes
 						}
 					}
+
+					# removed relative power was here
 
 					# attitude
 					containerWindowType = {
@@ -484,7 +486,7 @@ guiTypes = {
 				font = "cg_16b"
 				spriteType = "GFX_galactic_object_button"
 				buttonText = "GALAXY_VIEW_EMPIRE_NAME"
-				position = { x = 345 y = 40 }
+				position = { x = 347 y = 40 }
 				pdx_tooltip = "GALAXY_VIEW_SORT_NAME"
 			}
 
@@ -509,16 +511,18 @@ guiTypes = {
 				#spriteType = "GFX_galactic_object_button"
 				spriteType = "GFX_button_164_24"
 				buttonText = "GALAXY_VIEW_EMPIRE_STATUS"
-				position = { x = 658 y = 33 }
+				position = { x = 656 y = 33 }
 				pdx_tooltip = "GALAXY_VIEW_SORT_DIPLOMACY"
 			}
+
+			#removed relative power button was here
 
 			buttonType={
 				name = "alliance_federation"
 				font = "cg_16b"
 				spriteType = "GFX_button_150_24"
 				buttonText = "GALAXY_VIEW_EMPIRE_ALLIANCE_FEDERATION"
-				position = { x = 982 y = @sort_button_height }
+				position = { x = 976 y = @sort_button_height }
 				pdx_tooltip = "GALAXY_VIEW_SORT_ALLIANCE_OR_FEDERATION"
 			}
 
@@ -527,7 +531,7 @@ guiTypes = {
 				font = "cg_16b"
 				spriteType = "GFX_button_95_24"
 				buttonText = "GALAXY_VIEW_EMPIRE_WAR_STATUS"
-				position = { x = 1137 y = @sort_button_height }
+				position = { x = 1128 y = @sort_button_height }
 				pdx_tooltip = "GALAXY_VIEW_SORT_WAR_STATUS"
 			}
 
@@ -652,6 +656,8 @@ guiTypes = {
 			format = left
 			spacing = 12.0
 		}
+
+		# RELATIVE POWER (removed)
 
 		# FEDERATION
 		

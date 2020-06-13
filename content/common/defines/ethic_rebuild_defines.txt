@@ -15,4 +15,31 @@ LEADER_MAX_SKILL_CAP	= 20
 		TRADITION_COST_TRADITION				= 8.8			# change this value if you want to increase all costs
 		TRADITION_COST_TRADITION_EXP			= 1.740 	# change this value if you want to increase costs at the end
 		TRADITION_COST_MULT_TRADITION_GROUP		= 0.06		# each adopted group adds +X% to total cost		
+		
+		FEDERATION_PERK_EXPERATION_MONTHS	= 12		#Month for picked perk to expire if level lost
+		FEDERATION_BASE_ETHICS				= 4		# count of unique ethics not penalized for federation cohesion
+		FEDERATION_ENVOY_BASE_EFFECT		= 1.0	# envoys base effect on cohesion
+		FEDERATION_MEMBERS_PENALTY			= -0.5	# penalty for each federation member
+		FEDERATION_NO_MEMBERS_PENALTY		= -100.0	# penalty if the federation has no members
+		FEDERATION_ETHICS_PENALTY			= -0.15	# Federation cohesion penalty for extra unique ethics
+		FEDERATION_OPPOSING_ETHICS_PENALTY	= -0.5	# Federation cohesion for opposing ethics
+		FEDERATION_BASE_COHESION			= 5.0 	# base federation cohesion
+		FEDERATION_COHESION_RANGE			= 200	# max cohesion range
+		FEDERATION_COHESION_TO_XP			= 0.2	# cohesion to xp conversion
+		FEDERATION_MAX_FLEET_SIZE			= 0
+		FEDERATION_JOIN_COHESION_PENALTY	= -50	# Cohesion loss every time a new member is added to the federation (after the first two)
+		FEDERATION_LEAVE_COHESION_PENALTY	= -50  # Cohesion loss every time a member leaves the federation
+		FEDERATION_SWITCH_COHESION_PENALTY	= -25	# Cohesion loss when you switch federation type	
+
+		LEADER_AGE_HEIR_MIN		= 15				# Min age of generated heirs in dynastic governments
+		LEADER_AGE_HEIR_MAX		= 18				# Max age of generated heirs in dynastic governments	
+
+		POLICY_YEARS						= 1 	# Years a set policy can not be changed for
+		SPECIES_POLICY_YEARS				= 1		
+		TRUCE_YEARS							= 1
+		MIN_RIVAL_YEARS						= 1
+		GOVERNMENT_COOLDOWN_YEARS			= 5	# Cooldown years after changing government before you can change it again
+		GOVERNMENT_CHANGE_INFLUENCE_COST	= 100	# The Influence it costs to change government typ		
 }
+
+

@@ -405,6 +405,8 @@ guiTypes = {
 				#	spriteType = "GFX_info_background_148"
 				#	position = { x = 5 y = 5}
 				#}
+
+
 			}
 		}
 	}
@@ -1002,6 +1004,7 @@ guiTypes = {
 
 					position = { x = 0 y = 0 }
 				}
+
 			}
 		}
 
@@ -1672,6 +1675,7 @@ guiTypes = {
 				#	spriteType = "GFX_info_background_148"
 				#	position = { x = 5 y = 5}
 				#}
+
 			}
 		}
 	}
