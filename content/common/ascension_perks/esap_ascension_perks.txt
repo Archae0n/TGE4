@@ -1285,8 +1285,8 @@ ap_esap_ct1_war = {
 	}
 
 	modifier = {
-		ship_experience_gain_mult = 0.50
-		army_experience_gain_mult = 0.50
+		ship_starting_experience_add = 100
+		army_starting_experience_add = 100
 	}
 	
 	potential = {
@@ -1319,8 +1319,8 @@ ap_esap_ct1_expansion = {
 	}
 
 	modifier = {
-		colony_start_num_pops_add = 2
-		planet_colony_development_speed_mult = 0.50
+		colony_start_num_pops_add = 1
+		planet_colony_development_speed_mult = 1.00
 	}
 	
 	potential = {
@@ -1389,7 +1389,7 @@ ap_esap_ct1_finance = {
 
 	modifier = {
 		description = ap_esap_ct1_finance_tooltip
-		planet_districts_cities_energy_upkeep_add = -1
+		planet_districts_energy_upkeep_add = -0.5
 	}
 	
 	potential = {
@@ -1476,13 +1476,9 @@ ap_esap_ct2_war_expansion = {
 
 	possible = {
 		custom_tooltip = {
-			fail_text = "ap_esap_ct2_war_expansion_req_1"
-			has_ascension_perk = ap_esap_ct1_war
-		}
-		custom_tooltip = {
-			fail_text = "ap_esap_ct2_war_expansion_req_2"
-			has_ascension_perk = ap_esap_ct1_expansion
-		}
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}	
 	}
 
 	modifier = {
@@ -1510,9 +1506,9 @@ ap_esap_ct2_expansion_diplomacy = {
 			has_ascension_perk = ap_esap_ct1_expansion
 		}
 		custom_tooltip = {
-			fail_text = "ap_esap_ct2_expansion_diplomacy_req_2"
-			has_ascension_perk = ap_esap_ct1_diplomacy
-		}
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}	
 	}
 
 	modifier = {
@@ -1537,9 +1533,9 @@ ap_esap_ct2_diplomacy_finance = {
 
 	possible = {
 		custom_tooltip = {
-			fail_text = "ap_esap_ct2_diplomacy_finance_req_1"
-			has_ascension_perk = ap_esap_ct1_diplomacy
-		}
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}	
 		custom_tooltip = {
 			fail_text = "ap_esap_ct2_diplomacy_finance_req_2"
 			has_ascension_perk = ap_esap_ct1_finance
@@ -1547,7 +1543,7 @@ ap_esap_ct2_diplomacy_finance = {
 	}
 
 	modifier = {
-		job_merchant_add = 1
+		job_merchant_per_pop = 0.04
 	}
 	
 	potential = {
@@ -1568,8 +1564,8 @@ ap_esap_ct2_finance_infrastructure = {
 
 	possible = {
 		custom_tooltip = {
-			fail_text = "ap_esap_ct2_finance_infrastructure_req_1"
-			has_ascension_perk = ap_esap_ct1_finance
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
 		}
 		custom_tooltip = {
 			fail_text = "ap_esap_ct2_finance_infrastructure_req_2"
@@ -1601,12 +1597,8 @@ ap_esap_ct2_infrastructure_war = {
 
 	possible = {
 		custom_tooltip = {
-			fail_text = "ap_esap_ct2_infrastructure_war_req_1"
-			has_ascension_perk = ap_esap_ct1_infrastructure
-		}
-		custom_tooltip = {
-			fail_text = "ap_esap_ct2_infrastructure_war_req_2"
-			has_ascension_perk = ap_esap_ct1_war
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
 		}
 	}
 
@@ -1636,13 +1628,8 @@ ap_esap_ct3_not_war = {
 
 	possible = {
 		custom_tooltip = {
-			fail_text = "ap_esap_ct3_not_war_req_1"
-			has_ascension_perk = ap_esap_ct2_expansion_diplomacy
-		}
-		custom_tooltip = {
-			fail_text = "ap_esap_ct3_not_war_req_2"
-			has_ascension_perk = ap_esap_ct2_finance_infrastructure
-		}
+			fail_text = "requires_ascension_perks_3"
+			num_ascension_perks > 2
 		custom_tooltip = {
 			fail_text = "ap_esap_ct3_not_war_req_3"
 			Not = {
@@ -1652,8 +1639,8 @@ ap_esap_ct3_not_war = {
 	}
 
 	modifier = {
-		pop_growth_speed = 0.20
-		country_starbase_influence_cost_mult = -0.15
+		pop_growth_speed = 0.10
+		country_starbase_influence_cost_mult = -0.10
 		all_technology_research_speed = 0.15	
 		planet_jobs_produces_mult = 0.10
 		ships_upkeep_mult = 0.25
@@ -1672,87 +1659,82 @@ ap_esap_ct3_not_war = {
 	}
 }
 
-ap_esap_ct3_not_expansion = {
-	on_enabled = {
-		#custom_tooltip = ap_esap_ct3_not_expansion_tooltip
-	}
+#ap_esap_ct3_not_expansion = {
+#	on_enabled = {
+#		#custom_tooltip = ap_esap_ct3_not_expansion_tooltip
+#	}
+#
+#	possible = {
+#		custom_tooltip = {
+#			fail_text = "requires_ascension_perks_3"
+#			num_ascension_perks > 4
+#		custom_tooltip = {
+#			fail_text = "ap_esap_ct3_not_expansion_req_3"
+#			Not = {
+#				has_ascension_perk = ap_esap_ct1_expansion
+#			}
+#		}
+#	}
+#
+#	modifier = {
+#		country_unity_produces_mult = 0.25
+#		planet_jobs_specialist_produces_mult = 0.10
+#		planet_stability_add = 5
+#		empire_size_penalty_mult = 0.50
+#	}
+#	
+#	potential = {
+#		NOT = {
+#			has_ascension_perk = ap_esap_ct3_not_expansion
+#		}
+#	}
+#	
+#	ai_weight = {
+#		factor = 0
+#	}
+#}
 
-	possible = {
-		custom_tooltip = {
-			fail_text = "ap_esap_ct3_not_expansion_req_1"
-			has_ascension_perk = ap_esap_ct2_diplomacy_finance
-		}
-		custom_tooltip = {
-			fail_text = "ap_esap_ct3_not_expansion_req_2"
-			has_ascension_perk = ap_esap_ct2_infrastructure_war
-		}
-		custom_tooltip = {
-			fail_text = "ap_esap_ct3_not_expansion_req_3"
-			Not = {
-				has_ascension_perk = ap_esap_ct1_expansion
-			}
-		}
-	}
-
-	modifier = {
-		country_unity_produces_mult = 0.25
-		planet_jobs_specialist_produces_mult = 0.20
-		planet_stability_add = 5
-		empire_size_penalty_mult = 0.50
-	}
-	
-	potential = {
-		NOT = {
-			has_ascension_perk = ap_esap_ct3_not_expansion
-		}
-	}
-	
-	ai_weight = {
-		factor = 0
-	}
-}
-
-ap_esap_ct3_not_diplomacy = {
-	on_enabled = {
-		#custom_tooltip = ap_esap_ct3_not_diplomacy_tooltip
-	}
-
-	possible = {
-		custom_tooltip = {
-			fail_text = "ap_esap_ct3_not_diplomacy_req_1"
-			has_ascension_perk = ap_esap_ct2_finance_infrastructure
-		}
-		custom_tooltip = {
-			fail_text = "ap_esap_ct3_not_diplomacy_req_2"
-			has_ascension_perk = ap_esap_ct2_war_expansion
-		}
-		custom_tooltip = {
-			fail_text = "ap_esap_ct3_not_diplomacy_req_3"
-			Not = {
-				has_ascension_perk = ap_esap_ct1_diplomacy
-			}
-		}
-	}
-
-	modifier = {
-		description = ap_esap_ct3_not_diplomacy_tooltip
-		planet_army_build_speed_mult = 1.0
-		starbase_shipyard_build_speed_mult = 1.0
-		country_naval_cap_mult = 0.25
-		country_command_limit_mult = 0.25
-		country_border_friction_mult = 1.0
-	}
-	
-	potential = {
-		NOT = {
-			has_ascension_perk = ap_esap_ct3_not_diplomacy
-		}
-	}
-	
-	ai_weight = {
-		factor = 0
-	}
-}
+#ap_esap_ct3_not_diplomacy = {
+#	on_enabled = {
+#		#custom_tooltip = ap_esap_ct3_not_diplomacy_tooltip
+#	}
+#
+#	possible = {
+#		custom_tooltip = {
+#			fail_text = "ap_esap_ct3_not_diplomacy_req_1"
+#			has_ascension_perk = ap_esap_ct2_finance_infrastructure
+#		}
+#		custom_tooltip = {
+#			fail_text = "ap_esap_ct3_not_diplomacy_req_2"
+#			has_ascension_perk = ap_esap_ct2_war_expansion
+#		}
+#		custom_tooltip = {
+#			fail_text = "ap_esap_ct3_not_diplomacy_req_3"
+#			Not = {
+#				has_ascension_perk = ap_esap_ct1_diplomacy
+#			}
+#		}
+#	}
+#
+#	modifier = {
+#		description = ap_esap_ct3_not_diplomacy_tooltip
+#		planet_army_build_speed_mult = 1.0
+#		starbase_shipyard_build_speed_mult = 1.0
+#		country_naval_cap_mult = 0.25
+#		country_command_limit_mult = 0.25
+#		country_border_friction_mult = 1.0
+#	}
+#	
+#	potential = {
+#		NOT = {
+#			has_ascension_perk = ap_esap_ct3_not_diplomacy
+#		}
+#	}
+#	
+#	ai_weight = {
+#		factor = 0
+#	}
+#}
 
 ap_esap_ct3_not_finance = {
 	on_enabled = {
@@ -1765,8 +1747,8 @@ ap_esap_ct3_not_finance = {
 			has_ascension_perk = ap_esap_ct2_infrastructure_war
 		}
 		custom_tooltip = {
-			fail_text = "ap_esap_ct3_not_finance_req_2"
-			has_ascension_perk = ap_esap_ct2_expansion_diplomacy
+			fail_text = "requires_ascension_perks_3"
+			num_ascension_perks > 2
 		}
 		custom_tooltip = {
 			fail_text = "ap_esap_ct3_not_finance_req_3"
@@ -1778,9 +1760,9 @@ ap_esap_ct3_not_finance = {
 
 	modifier = {
 		pop_government_ethic_attraction = 1.0
-		edict_length_mult = 1.0
-		country_unity_produces_mult = 0.25
-		edicts_cost_mult = -0.20
+		edict_length_mult = 0.5
+		country_unity_produces_mult = 0.15
+		edicts_cost_mult = -0.10
 		pop_amenities_usage_mult = 0.25
 		planet_pops_consumer_goods_upkeep_mult = 0.25
 	}
@@ -1807,8 +1789,8 @@ ap_esap_ct3_not_infrastructure = {
 			has_ascension_perk = ap_esap_ct2_war_expansion
 		}
 		custom_tooltip = {
-			fail_text = "ap_esap_ct3_not_infrastructure_req_2"
-			has_ascension_perk = ap_esap_ct2_diplomacy_finance
+			fail_text = "requires_ascension_perks_3"
+			num_ascension_perks > 2
 		}
 		custom_tooltip = {
 			fail_text = "ap_esap_ct3_not_infrastructure_req_3"
@@ -2117,8 +2099,8 @@ ap_arcology_project = {
 			has_technology = tech_housing_2
 		}
 		custom_tooltip = {
-			fail_text = "requires_ascension_perks_2"
-			num_ascension_perks > 1
+			fail_text = "requires_ascension_perks_4"
+			num_ascension_perks > 3
 		}		
 	}
 	
@@ -2381,6 +2363,10 @@ ap_esap_materialist_1 = {
 		custom_tooltip = {
 			fail_text = "requires_ascension_perks_1"
 			num_ascension_perks > 0
+		}
+		OR = { 
+		is_country_type = void_farer 
+		is_country_type = fallen_empire
 		}
 	}
 
@@ -2718,7 +2704,7 @@ ap_esap_hive_swarm = {
 
 	modifier = {
 		weapon_type_strike_craft_weapon_fire_rate_mult = 0.25
-		shipsize_corvette_build_speed_mult = 1.0
+		shipsize_corvette_build_speed_mult = 0.50
 	}
 	
 	potential = {
@@ -2809,8 +2795,8 @@ ap_hive_worlds = {
 			has_technology = tech_climate_restoration
 		}	
 		custom_tooltip = {
-			fail_text = "requires_ascension_perks_2"
-			num_ascension_perks > 1
+			fail_text = "requires_ascension_perks_4"
+			num_ascension_perks > 3
 		}
 	}
 	
@@ -2883,8 +2869,8 @@ ap_machine_worlds = {
 			has_technology = tech_climate_restoration
 		}	
 		custom_tooltip = {
-			fail_text = "requires_ascension_perks_2"
-			num_ascension_perks > 1
+			fail_text = "requires_ascension_perks_4"
+			num_ascension_perks > 3
 		}
 	}
 	
@@ -2908,7 +2894,7 @@ ap_universal_transactions = {
 	}
 	
 	modifier = {
-		planet_branch_offices_cost_mult = -0.15
+		planet_branch_offices_cost_mult = -0.25a
 	}
 	
 	on_enabled = {
@@ -3540,35 +3526,35 @@ ap_eternal_vigilance = {
 	}
 }
 
-ap_esap_smallworld = {
-	on_enabled = {
-		custom_tooltip = ap_esap_smallworld_tooltip
-		hidden_effect = {
-			every_owned_planet = {
-				planet_event = {
-					id = esap_generic.1
-				}
-			}
-		}
-	}
-
-	possible = {
-		custom_tooltip = {
-			fail_text = "requires_ascension_perks_3"
-			num_ascension_perks > 2
-		}
-	}
-	
-	potential = {
-		NOT = {
-			has_ascension_perk = ap_esap_smallworld
-		}
-	}
-	
-	ai_weight = {
-		factor = 0
-	}
-}
+#ap_esap_smallworld = {
+#	on_enabled = {
+#		custom_tooltip = ap_esap_smallworld_tooltip
+#		hidden_effect = {
+#			every_owned_planet = {
+#				planet_event = {
+#					id = esap_generic.1
+#				}
+#			}
+#		}
+#	}
+#
+#	possible = {
+#		custom_tooltip = {
+#			fail_text = "requires_ascension_perks_3"
+#			num_ascension_perks > 2
+#		}
+#	}
+#	
+#	potential = {
+#		NOT = {
+#			has_ascension_perk = ap_esap_smallworld
+#		}
+#	}
+#	
+#	ai_weight = {
+#		factor = 0
+#	}
+#}
 
 
 ap_xeno_compatibility = {

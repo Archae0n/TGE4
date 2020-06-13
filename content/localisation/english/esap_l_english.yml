@@ -55,14 +55,14 @@ ap_esap_gov_2:0 "$ap_transcendent_learning$"
  
  ap_esap_gov_3:0 "$ap_imperial_prerogative$"
  ap_esap_gov_3_desc:0 "$ap_imperial_prerogative_desc$"
- ap_esap_gov_3_tooltip:0 "§YGoverment Perk§!. Increase §YAdministrative Capacity§! by §G15§! for each §YGoverment Perk§! unlocked (including this one)."
+ ap_esap_gov_3_tooltip:0 "§YGoverment Perk§!. Increase §YAdministrative Capacity§! by §G15%§! for each §YGoverment Perk§! unlocked (including this one)."
  ap_esap_gov_3_corp:0 "$ap_esap_gov_3$"
  ap_esap_gov_3_corp_desc:0 "$ap_esap_gov_3_desc$"
- ap_esap_gov_3_corp_tooltip:0 "§YGoverment Perk§!. Increase §YAdministrative Capacity§! by §G15§! for each §YGoverment Perk§! unlocked (including this one)."
+ ap_esap_gov_3_corp_tooltip:0 "§YGoverment Perk§!. Increase §YAdministrative Capacity§! by §G15%§! for each §YGoverment Perk§! unlocked (including this one)."
 
  ap_esap_gov_4:0 "Righteous Rule"
  ap_esap_gov_4_desc:0 "We are convinced of our ruling class' right to their power. The aptitude for ruling that they have shown throughout the ages leaves us no doubt."
- ap_esap_gov_4_tooltip:0 "§YGoverment Perk§!. §YResource Output§! from £pop£ §YRuler Pops§! increased by §G+30%§! for each §YGoverment Perk§! unlocked (including this one)."
+ ap_esap_gov_4_tooltip:0 "§YGoverment Perk§!. §YResource Output§! from £pop£ §YRuler Pops§! increased by §G+25%§! for each §YGoverment Perk§! unlocked (including this one)."
 
  ap_esap_gov_5:0 "Ascendancy of the State"
  ap_esap_gov_5_desc:0 "Through the millennia since we formed the first cities our government have developed to something that could hardly be recognized by our predecessor before the age of space."
@@ -85,7 +85,6 @@ ap_esap_gov_2:0 "$ap_transcendent_learning$"
  
  ap_esap_ct1_expansion:0 "Settlers of the Galaxy"
  ap_esap_ct1_expansion_desc:0 "The galaxy is vast, but not endless. If we do not settle it, then someone else will"
- ap_esap_ct1_expansion_tooltip:0 "Generates an additional §YColonizer§! whenever a §YColonizer§! is built."
  ap_esap_ct1_expansion_req_1:0 "$TRIGGER_FAIL$Requires at least §G3§! planets." 
  ap_esap_ct1_expansion_req_2:0 "$TRIGGER_FAIL$May not have the §Y$ap_esap_ct3_not_expansion$§! Ascension Perk." 
 

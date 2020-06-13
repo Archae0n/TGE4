@@ -44,36 +44,36 @@ country_event = {
 }
 
 # Settlers of the Galaxy, bonus Colony Ship.
-ship_event = {
-	id = esap_combination_t1.2
-	hide_window = yes
-	is_triggered_only = yes
-	
-	trigger = {
-		owner = {
-			has_ascension_perk = ap_esap_ct1_expansion
-		}		
-		is_ship_size = colonizer	
-	}
-	
-	immediate = {
-		create_fleet = {
-			#name = "Colonizer"
-			#name = random
-			#settings = { spawn_debris = no }
-			effect = {
-				set_owner = root.owner
-				create_ship = {
-					name = random
-					design = random_existing_design
-					random_existing_design = colonizer
-					prefix = yes
-				}
-				set_location = root
-			}
-		}
-	}
-}
+#ship_event = {
+#	id = esap_combination_t1.2
+#	hide_window = yes
+#	is_triggered_only = yes
+#	
+#	trigger = {
+#		owner = {
+#			has_ascension_perk = ap_esap_ct1_expansion
+#		}		
+#		is_ship_size = colonizer	
+#	}
+#	
+#	immediate = {
+#		create_fleet = {
+#			#name = "Colonizer"
+#			#name = random
+#			#settings = { spawn_debris = no }
+#			effect = {
+#				set_owner = root.owner
+#				create_ship = {
+#					name = random
+#					design = random_existing_design
+#					random_existing_design = colonizer
+#					prefix = yes
+#				}
+#				set_location = root
+#			}
+#		}
+#	}
+#}
 
 # Builders of Nations, Bonus while there are new free district slots.
 country_event = {

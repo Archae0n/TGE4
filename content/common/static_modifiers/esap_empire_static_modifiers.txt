@@ -13,23 +13,23 @@ mod_esap_psi_1 = {
 
 mod_esap_gov_1_1 = {
 	edict_length_mult = 0.60
-	country_edict_cap_add = 2
+	country_edict_cap_add = 1
 }
 mod_esap_gov_1_2 = {
 	edict_length_mult = 0.70
-	country_edict_cap_add = 2
+	country_edict_cap_add = 1
 }
 mod_esap_gov_1_3 = {
 	edict_length_mult = 0.80
-	country_edict_cap_add = 3
+	country_edict_cap_add = 2
 }
 mod_esap_gov_1_4 = {
 	edict_length_mult = 0.90
-	country_edict_cap_add = 3
+	country_edict_cap_add = 2
 }
 mod_esap_gov_1_5 = {
 	edict_length_mult = 1.00
-	country_edict_cap_add = 4
+	country_edict_cap_add = 2
 }
 
 mod_esap_gov_2_1 = {
@@ -49,35 +49,35 @@ mod_esap_gov_2_5 = {
 }
 
 mod_esap_gov_3_1 = {
-	country_admin_cap_add = 15
+	country_admin_cap_mult = 15
 }
 mod_esap_gov_3_2 = {
-	country_admin_cap_add = 30
+	country_admin_cap_mult = 25
 }
 mod_esap_gov_3_3 = {
-	country_admin_cap_add = 45
+	country_admin_cap_mult = 35
 }
 mod_esap_gov_3_4 = {
-	country_admin_cap_add = 60
+	country_admin_cap_mult = 55
 }
 mod_esap_gov_3_5 = {
-	country_admin_cap_add = 75
+	country_admin_cap_mult = 70
 }
 
 mod_esap_gov_4_1 = {
-	planet_jobs_ruler_produces_mult = 0.30
+	planet_jobs_ruler_produces_mult = 0.25
 }
 mod_esap_gov_4_2 = {
-	planet_jobs_ruler_produces_mult = 0.60
+	planet_jobs_ruler_produces_mult = 0.50
 }
 mod_esap_gov_4_3 = {
-	planet_jobs_ruler_produces_mult = 0.90
+	planet_jobs_ruler_produces_mult = 0.75
 }
 mod_esap_gov_4_4 = {
-	planet_jobs_ruler_produces_mult = 1.20
+	planet_jobs_ruler_produces_mult = 1.00
 }
 mod_esap_gov_4_5 = {
-	planet_jobs_ruler_produces_mult = 1.50
+	planet_jobs_ruler_produces_mult = 1.25
 }
 
 mod_esap_gov_5_1 = {
