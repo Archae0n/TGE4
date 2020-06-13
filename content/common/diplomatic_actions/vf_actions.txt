@@ -36,9 +36,13 @@ action_improve_relation = {
 	potential = {
 		OR = {
 			is_country_type = default
-			from = { is_country_type = default }
 			is_country_type = void_farer
-			from = { is_country_type = void_farer }
+		}
+		from = {
+			OR = {
+				is_country_type = default
+				is_country_type = void_farer
+			}
 		}
 	}
 
@@ -129,9 +133,13 @@ action_harm_relation = {
 	potential = {
 		OR = {
 			is_country_type = default
-			from = { is_country_type = default }
 			is_country_type = void_farer
-			from = { is_country_type = void_farer }
+		}
+		from = {
+			OR = {
+				is_country_type = default
+				is_country_type = void_farer
+			}
 		}
 	}
 
@@ -682,8 +690,16 @@ action_form_research_agreement = {
 	AI_acceptance_base_value = -50
 	action_type = positive
 	potential = {
-		is_country_type = default
-		from = { is_country_type = default }
+		OR = {
+			is_country_type = default
+			is_country_type = void_farer
+		}
+		from = {
+			OR = {
+				is_country_type = default
+				is_country_type = void_farer
+			}
+		}
 	}
 
 	possible = {
@@ -1347,7 +1363,10 @@ action_invite_to_federation = {
 				has_authority = auth_machine_intelligence
 				has_federation = yes
 				has_non_swapped_tradition = tr_diplomacy_the_federation
-				NOT = { is_country_type = default }
+				NOR = {
+					is_country_type = default
+					is_country_type = void_farer
+				}
 			}
 		}
 		custom_tooltip = {
@@ -1356,7 +1375,10 @@ action_invite_to_federation = {
 				NOT = { has_authority = auth_machine_intelligence }
 				has_federation = yes
 				has_swapped_tradition = tr_versatility_universal_compatibility
-				NOT = { is_country_type = default }
+				NOR = {
+					is_country_type = default
+					is_country_type = void_farer
+				}
 			}
 		}
 		custom_tooltip = {
