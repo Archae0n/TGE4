@@ -702,13 +702,19 @@ building_colliseum = {
 
 	allow = {
 		has_upgraded_capital = yes
-		has_building = building_slave_processing
+		OR = {
+			has_building = building_slave_processing
+			has_building = building_plentiful_traditions_advanced_slave_processing
+		}
 	}
 
 	destroy_trigger = {
 		exists = owner
 		OR = {
-		    not = { has_building = building_slave_processing }
+			NOR = {
+				has_building = building_slave_processing
+				has_building = building_plentiful_traditions_advanced_slave_processing
+			}
 			owner = { not = {  has_valid_civic = civic_reeducated_labor  }	}
 		}
 	}
