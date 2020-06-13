@@ -160,7 +160,7 @@ objectTypes = {
 		pdxmesh = {
 		name = "mem_ancient_01_colony_mesh"
 		file = "gfx/models/ships/mem_ancient/mem_ancient_01_colony_ship.mesh"
-		scale = 3.0
+		scale = 1.0
 		meshsettings = {
 		shader = "PdxMeshShip"
 			#Mipmap tweaking
