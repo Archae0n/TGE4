@@ -1,0 +1,454 @@
+clear_egs_start_system_flags = {
+	remove_country_flag = EGS_START_SOL
+	remove_country_flag = EGS_START_DENEB
+	remove_country_flag = EGS_START_RANDOM
+	remove_country_flag = EGS_START_RANDOM_BINARY
+	remove_country_flag = EGS_START_RANDOM_TRINARY
+	remove_country_flag = EGS_START_RINGWORLD
+	remove_country_flag = EGS_START_STARBORN
+}
+
+clear_egs_cluster_flags = {
+	remove_country_flag = EGS_CLUSTER_APPRENTICE
+	remove_country_flag = EGS_CLUSTER_HEXAGON
+	remove_country_flag = EGS_CLUSTER_STEED
+	remove_country_flag = EGS_CLUSTER_BIG_DIPPER
+	remove_country_flag = EGS_CLUSTER_ATRONACH
+}
+
+clear_egs_kerbal_flags = {
+	remove_country_flag = EGS_KERBAL_YES
+	remove_country_flag = EGS_KERBAL_NO
+}
+
+clear_egs_gigastructure_flags = {
+	remove_country_flag = EGS_GIGA_YES
+	remove_country_flag = EGS_GIGA_NO
+}
+
+clear_egs_clusterlink_flags = {
+	remove_country_flag = EGS_LINK_WORMHOLE
+	remove_country_flag = EGS_LINK_MANY_WORMHOLE
+	remove_country_flag = EGS_LINK_L_GATE
+}
+
+clear_egs_diplo_hack_flags = {
+	remove_country_flag = EGS_DIPLO_HACK_YES
+	remove_country_flag = EGS_DIPLO_HACK_NO
+}
+
+clear_egs_silly_flags = {
+	remove_country_flag = EGS_SILLY_YES
+	remove_country_flag = EGS_SILLY_NO
+}
+
+clear_egs_resource_flags = {
+	remove_country_flag = EGS_SR_YES
+	remove_country_flag = EGS_SR_NO
+}
+
+clear_egs_egc_flags = {
+	remove_country_flag = EGS_EGC_YES
+	remove_country_flag = EGS_EGC_NO
+}
+
+
+clear_egs_egcconnection_flags = {
+	remove_country_flag = EGS_EGC_CONNECTION_DEFAULT
+	remove_country_flag = EGS_EGC_CONNECTION_ROUND_ROBIN
+	remove_country_flag = EGS_EGC_CONNECTION_L_GATE
+}
+
+
+create_and_share_l_gate = {
+	set_star_flag = lgate
+	spawn_megastructure = {
+		type = lgate_base
+		orbit_angle = 225
+		orbit_distance = 30
+		location = solar_system
+	}
+	every_system_planet = {
+		limit = {
+			is_star = yes
+		}
+		# everyone else needs to know the location of the Lgate
+		every_country = {
+			prev = {				
+				surveyed = {
+					set_surveyed = yes
+					surveyor = prev
+				}
+				set_all_comms_surveyed = yes
+			}
+		}
+	}
+}
+
+create_and_link_wormholes = {
+	event_target:egs_wormhole_1 = {
+		spawn_natural_wormhole = {
+			bypass_type = wormhole
+			random_pos = yes
+			orbit_angle = 360
+		}
+	}
+
+	event_target:egs_wormhole_2 = {
+		spawn_natural_wormhole = {
+			bypass_type = wormhole
+			random_pos = yes
+			orbit_angle = 360
+		}
+		link_wormholes = event_target:egs_wormhole_1
+	}
+}
+
+
+smart_match_planet_class = {
+	event_target:previous_home_planet = {
+		if = {
+			limit = {
+				OR = {
+					is_planet_class = pc_habitat
+					root = {
+						OR = {
+							has_country_flag = EGS_START_STARBORN
+						}
+					}
+				}
+			}
+			event_target:egs_target_planet = {
+				change_pc = pc_nuked
+			}
+		}
+		else = {
+			match_planet_class = yes
+		}
+	}
+}
+
+
+match_planet_class = {
+	event_target:previous_home_planet = {
+		switch = {
+			trigger = is_planet_class
+			pc_desert = {
+				event_target:egs_target_planet = {
+					change_pc = pc_desert
+				}
+			}
+
+			pc_arid = {
+				event_target:egs_target_planet = {
+					change_pc = pc_arid
+				}
+			}
+
+			pc_savannah = {
+				event_target:egs_target_planet = {
+					change_pc = pc_savannah
+				}
+			}
+
+			pc_ocean = {
+				event_target:egs_target_planet = {
+					change_pc = pc_ocean
+				}
+			}
+
+			pc_continental = {
+				event_target:egs_target_planet = {
+					change_pc = pc_continental
+				}
+			}
+
+			pc_tropical = {
+				event_target:egs_target_planet = {
+					change_pc = pc_tropical
+				}
+			}
+
+			pc_tundra = {
+				event_target:egs_target_planet = {
+					change_pc = pc_tundra
+				}
+			}
+
+			pc_arctic = {
+				event_target:egs_target_planet = {
+					change_pc = pc_arctic
+				}
+			}
+
+			pc_alpine = {
+				event_target:egs_target_planet = {
+					change_pc = pc_alpine
+				}
+			}
+
+			# special vanilla
+
+			pc_nuked = {
+				event_target:egs_target_planet = {
+					change_pc = pc_nuked
+				}
+			}
+
+			pc_gaia = {
+				event_target:egs_target_planet = {
+					change_pc = pc_gaia
+				}
+			}
+
+			pc_hive = {
+				event_target:egs_target_planet = {
+					change_pc = pc_hive
+				}
+			}
+
+			pc_machine = {
+				event_target:egs_target_planet = {
+					change_pc = pc_machine
+				}
+			}
+
+
+			#Planetary Diversity
+
+			pc_aquatic = {
+				event_target:egs_target_planet = {
+					change_pc = pc_aquatic
+				}
+			}
+
+			pc_prairie = {
+				event_target:egs_target_planet = {
+					change_pc = pc_prairie
+				}
+			}
+
+			pc_antarctic = {
+				event_target:egs_target_planet = {
+					change_pc = pc_antarctic
+				}
+			}
+
+			pc_snow = {
+				event_target:egs_target_planet = {
+					change_pc = pc_snow
+				}
+			}
+
+			pc_glacial = {
+				event_target:egs_target_planet = {
+					change_pc = pc_glacial
+				}
+			}
+
+			pc_frozen_desert = {
+				event_target:egs_target_planet = {
+					change_pc = pc_frozen_desert
+				}
+			}
+
+			pc_steppe = {
+				event_target:egs_target_planet = {
+					change_pc = pc_steppe
+				}
+			}
+
+			pc_hadesert = {
+				event_target:egs_target_planet = {
+					change_pc = pc_hadesert
+				}
+			}
+
+			pc_boreal = {
+				event_target:egs_target_planet = {
+					change_pc = pc_boreal
+				}
+			}
+
+			pc_sandsea = {
+				event_target:egs_target_planet = {
+					change_pc = pc_sandsea
+				}
+			}
+
+			pc_subarctic = {
+				event_target:egs_target_planet = {
+					change_pc = pc_subarctic
+				}
+			}
+
+			pc_cascadian = {
+				event_target:egs_target_planet = {
+					change_pc = pc_cascadian
+				}
+			}
+
+			pc_swamp = {
+				event_target:egs_target_planet = {
+					change_pc = pc_swamp
+				}
+			}
+
+			pc_mangrove = {
+				event_target:egs_target_planet = {
+					change_pc = pc_mangrove
+				}
+			}
+
+			pc_desertislands = {
+				event_target:egs_target_planet = {
+					change_pc = pc_desertislands
+				}
+			}
+
+			pc_mesa = {
+				event_target:egs_target_planet = {
+					change_pc = pc_mesa
+				}
+			}
+
+			pc_oasis = {
+				event_target:egs_target_planet = {
+					change_pc = pc_oasis
+				}
+			}
+
+			pc_hajungle = {
+				event_target:egs_target_planet = {
+					change_pc = pc_hajungle
+				}
+			}
+
+			pc_mushroom = {
+				event_target:egs_target_planet = {
+					change_pc = pc_mushroom
+				}
+			}
+
+			pc_retinal = {
+				event_target:egs_target_planet = {
+					change_pc = pc_retinal
+				}
+			}
+
+			pc_forest = {
+				event_target:egs_target_planet = {
+					change_pc = pc_forest
+				}
+			}
+
+			pc_med = {
+				event_target:egs_target_planet = {
+					change_pc = pc_med
+				}
+			}
+
+			pc_primal = {
+				event_target:egs_target_planet = {
+					change_pc = pc_primal
+				}
+			}
+
+			pc_karst = {
+				event_target:egs_target_planet = {
+					change_pc = pc_karst
+				}
+			}
+
+			pc_superhabitable = {
+				event_target:egs_target_planet = {
+					change_pc = pc_superhabitable
+				}
+			}
+
+			pc_tidallylocked = {
+				event_target:egs_target_planet = {
+					change_pc = pc_tidallylocked
+				}
+			}
+
+			pc_geothermal = {
+				event_target:egs_target_planet = {
+					change_pc = pc_geothermal
+				}
+			}
+
+			pc_biolumen = {
+				event_target:egs_target_planet = {
+					change_pc = pc_biolumen
+				}
+			}
+
+			pc_salt = {
+				event_target:egs_target_planet = {
+					change_pc = pc_salt
+				}
+			}
+
+			pc_crystal = {
+				event_target:egs_target_planet = {
+					change_pc = pc_crystal
+				}
+			}
+
+			pc_floating = {
+				event_target:egs_target_planet = {
+					change_pc = pc_floating
+				}
+			}
+
+			pc_graveyard = {
+				event_target:egs_target_planet = {
+					change_pc = pc_graveyard
+				}
+			}
+
+			pc_technoorganic = {
+				event_target:egs_target_planet = {
+					change_pc = pc_technoorganic
+				}
+			}
+
+			pc_archive = {
+				event_target:egs_target_planet = {
+					change_pc = pc_archive
+				}
+			}
+
+			pc_technoorganic = {
+				event_target:egs_target_planet = {
+					change_pc = pc_technoorganic
+				}
+			}
+
+			pc_ash = {
+				event_target:egs_target_planet = {
+					change_pc = pc_ash
+				}
+			}
+
+			pc_methane = {
+				event_target:egs_target_planet = {
+					change_pc = pc_methane
+				}
+			}
+
+			pc_ammonia = {
+				event_target:egs_target_planet = {
+					change_pc = pc_ammonia
+				}
+			}
+		}
+	}
+
+	event_target:egs_target_planet = {
+		reroll_deposits = yes
+		reroll_planet_modifiers = yes
+	}
+}
+

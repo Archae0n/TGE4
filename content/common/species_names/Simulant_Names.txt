@@ -1,0 +1,17 @@
+#su wh turi name listus, kiti neturi
+
+Simulant = {
+	Simulant = {
+		name = Simulant
+		plural = Simulants
+		home_planet = Core
+		home_system = Shell
+		name_list = "Simulant"
+	}
+	
+}
+
+	
+
+
+	

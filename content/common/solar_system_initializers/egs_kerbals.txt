@@ -1,0 +1,335 @@
+#taken from extragalatic cluster
+egs_kerbal_space_program = {
+	name = "Unus Kerbol"
+	class = sc_g
+	flags = { egs_kerbol egs_app_4 egs_hex_4 egs_ant_2 egs_ste_8 egs_big_2 }
+  
+	# star
+	planet = {
+	  name = "Kerbol"
+	  class = "pc_g_star"
+		  orbit_distance = 0
+		  orbit_angle = 1
+		  size = 30
+		  has_ring = no
+	}
+	change_orbit = 45
+	# Moho, barren
+	planet = {
+	  name = "Moho"
+	  class = pc_barren
+	  orbit_distance = 0
+	  orbit_angle = { min = 1 max = 359 }
+	  size = 11
+	  has_ring = no
+	}
+	# Eve, toxic
+	  # Gilly, barren
+	planet = {
+	  name = "Eve"
+	  class = pc_toxic
+	  orbit_distance = 20
+	  orbit_angle = { min = 80 max = 200 }
+	  size = 21
+	  has_ring = no
+	  moon = {
+		name = Gilly
+		class = pc_barren
+		orbit_distance = 11
+		orbit_angle = 125
+	  }
+	}
+	# Kerbin, continental
+	  # Mun, barren frozen
+	  # Minmus
+	planet = {
+	  name = "Kerbin"
+	  class = pc_continental
+	  orbit_distance = 20
+	  orbit_angle = { min = 120 max = 200 }
+	  size = 21
+	  has_ring = no
+	  moon = {
+		name = Mun
+		class = pc_barren_cold
+		orbit_distance = 11
+		orbit_angle = 30
+		size = 9
+		has_ring = no
+	  }
+	  moon = {
+		name = Minmus
+		class = pc_frozen
+		  orbit_distance = 4
+		  orbit_angle = 100
+		  size = 6
+		  has_ring = no
+	  }
+	  init_effect = {
+		create_species = {
+		  name = "Kerbal"
+		  plural = "Kerbals"
+		  adjective = "Kerbal"
+		  class = "REP"
+		  portrait = "rep4"
+		  homeworld = THIS
+		  traits = {
+			trait="trait_natural_engineers"
+				trait="trait_intelligent"
+				trait="trait_deviants"
+				trait="trait_wasteful"
+				trait="trait_quick_learners"
+		  }
+		}
+		create_country = {
+		  name = "Kerbal Space Program"
+		  authority = "auth_democratic"
+		  day_zero_contact = no
+		  civics = {
+			civic = civic_increasing_urbanization
+			civic = civic_atmospheric_pollution
+		  }
+		  species = last_created
+		  ethos = {
+			ethic = "ethic_fanatic_materialist"
+			  ethic = "ethic_egalitarian"
+		  }
+		  flag = {
+			icon={
+					category="domination"
+					file="domination_20.dds"
+				}
+				background={
+					category="backgrounds"
+					file="circle.dds"
+				}
+				colors={
+					"dark_green"
+					"black"
+					"null"
+					"null"
+				}
+		  }
+		  type = primitive
+		}
+		last_created_country = {
+		  set_graphical_culture = industrial_01
+		  set_country_flag = early_space_age
+		  set_primitive_age = early_space_age
+		}
+		set_owner = last_created_country
+		create_primitive_blockers = yes
+		if = {
+			limit = {
+				has_global_flag = retile_active
+			}
+			while = {
+				count = 15
+				create_pop = {
+					species = last_created
+				}
+			}
+		}
+		else = {
+			while = {
+				count = 30
+				create_pop = {
+					species = last_created
+				}
+			}
+		}
+		add_building = building_primitive_capital
+		add_building = building_urban_dwellings
+		add_building = building_primitive_farm
+		add_building = building_primitive_factory
+		add_building = building_primitive_mine
+		add_building = building_primitive_power_plant	
+		
+		while = {
+		  count = 6
+		  create_army = {
+			name = "Kerbal Task Forces"
+			owner = last_created
+			species = last_created
+			type = "postatomic_army"
+		  }
+		}
+		create_fleet = {
+		  name = "Kerbal Space Program"
+		  effect = {
+			set_owner = last_created_country
+			create_ship = {
+			  name = "Kerbal Space Program"
+			  design = "NAME_Space_Station"
+			}
+			set_location = PREV
+		  }
+		}
+	  }
+	}
+	# Duna, barren (mars)
+	  # Ike, barren cold
+	planet = {
+	  name = "Duna"
+	  class = pc_barren
+	  orbit_distance = 20
+	  orbit_angle = 100
+	  size = 15
+	  has_ring = no
+	  init_effect = {
+		add_modifier = {
+		  modifier = "terraforming_candidate"
+		  days = -1
+		}
+	  }
+	  moon = {
+		name = Ike
+		class = pc_barren_cold
+		orbit_distance = 11
+		orbit_angle = 30
+		size = 6
+		has_ring = no
+	  }
+	}
+	# Dres, barren cold
+	planet = {
+	  name = "Dres"
+	  class = pc_barren_cold
+	  orbit_distance = 30
+	  orbit_angle = { min = 120 max = 200 }
+	  size = 10
+	  has_ring = no
+	}
+	# Jool, gas
+	  # Laythe
+	  # Vall
+	  # Tylo
+	  # Bop
+	  # Pol
+	planet = {
+	  name = Jool
+	  class = pc_gas_giant
+	  orbit_distance = 40
+	  orbit_angle = 190
+	  size = 40
+	  has_ring = no
+	  change_orbit = 10
+	  moon = {
+		name = Vall
+		class = pc_frozen
+		size = 5
+		orbit_distance = 4
+		orbit_angle = { min = 80 max = 280 }
+	  }
+	  moon = {
+		name = Tylo
+		class = pc_barren_cold
+		size = 4
+		orbit_distance = 4
+		orbit_angle = { min = 80 max = 280 }
+	  }
+	  moon = {
+		name = Laythe
+		class = pc_toxic
+		size = 7
+		orbit_distance = 4
+		orbit_angle = { min = 80 max = 280 }
+	  }
+	  moon = {
+		name = Pol
+		class = pc_frozen
+		size = 3
+		orbit_distance = 4
+		orbit_angle = { min = 80 max = 280 }
+	  }
+	}
+  
+	#asteroids
+	asteroid_belt = {
+		  type = rocky_asteroid_belt
+		  radius = 210
+	  }
+  
+	change_orbit = 40
+	planet = {
+	  count = 5
+	  class = pc_asteroid
+	  orbit_distance = 0
+	  orbit_angle = 72
+	  has_ring =  no
+	}
+  
+	change_orbit = 40
+  
+	# Vool, gas with ring
+	  # Dieos, barren frozen
+	planet = {
+	  name = Vool
+	  class = pc_gas_giant
+	  orbit_distance = 0
+	  orbit_angle = { min = 1 max = 359 }
+	  size = 30
+	  has_ring = yes
+  
+	  change_orbit = 10
+	  moon = {
+		name = Dieos
+		class = pc_frozen
+		size = 10
+		orbit_angle = { min = 80 max = 280 }
+		has_ring = yes
+	  }
+	}
+  
+	# Oran, gas
+	planet = {
+	  name = Orab
+	  class = pc_gas_giant
+	  orbit_distance = 30
+	  orbit_angle = 200
+	  size = 25
+	  has_ring = no
+	  change_orbit = 10
+	}
+  
+	# Eeloo, ice
+	planet = {
+	  name = "Eeloo"
+	  class = pc_frozen
+	  orbit_distance = 20
+	  orbit_angle = { min = 80 max = 200 }
+	  size = 10
+	  has_ring = no
+	}
+  
+	# Nyssa, ice
+	planet = {
+	  name = "Nyssa"
+	  class = pc_frozen
+	  orbit_distance = 20
+	  orbit_angle = { min = 80 max = 200 }
+	  size = 10
+	  has_ring = no
+	}
+  
+	# Naal, gas
+	planet = {
+	  name = Naal
+	  class = pc_gas_giant
+	  orbit_distance = 20
+	  orbit_angle = 200
+	  size = 25
+	  has_ring = no
+	  change_orbit = 10
+	}
+  
+	# Kel, ice (large)
+	planet = {
+	  name = "Kel"
+	  class = pc_frozen
+	  orbit_distance = 20
+	  orbit_angle = { min = 80 max = 200 }
+	  size = 25
+	  has_ring = no
+	}
+  }

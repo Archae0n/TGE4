@@ -1,0 +1,80 @@
+egs_egc_default = {
+    length = 0
+    resources = {
+        category = edicts
+        cost = {
+            influence = 0
+        }
+    }
+    
+    potential = {
+		NOT = { has_global_flag = EGS_EGC_SPAWNED }
+		NOT = {
+			any_country = {
+				has_origin = origin_egs
+			}
+		}
+    }
+    
+	effect = {
+		country_event = { id =  extragalactic_cluster.101 }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+egs_egc_round_robin = {
+    length = 0
+    resources = {
+        category = edicts
+        cost = {
+            influence = 0
+        }
+    }
+    
+    potential = {
+		NOT = { has_global_flag = EGS_EGC_SPAWNED }
+		NOT = {
+			any_country = {
+				has_origin = origin_egs
+			}
+		}
+    }
+    
+	effect = {
+		country_event = { id =  extragalactic_cluster.102 }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+egs_egc_lgate = {
+    length = 0
+    resources = {
+        category = edicts
+        cost = {
+            influence = 0
+        }
+    }
+    
+    potential = {
+		NOT = { has_global_flag = EGS_EGC_SPAWNED }
+		NOT = {
+			any_country = {
+				has_origin = origin_egs
+			}
+		}
+    }
+    
+	effect = {
+		country_event = { id =  extragalactic_cluster.103 }
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}

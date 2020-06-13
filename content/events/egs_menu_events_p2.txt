@@ -1,0 +1,143 @@
+namespace = egs_menu_p2
+
+#main menu
+country_event = {
+	id = egs_menu_p2.1    
+	title = "egs_menu_p2.1.name"
+	desc = egs_menu_p2.1.desc
+
+	picture = GFX_evt_ancient_databank
+	is_triggered_only = yes
+
+	option = {
+		name = "egs_menu_p2.1.option.system"
+		hidden_effect = {
+			country_event = { id = egs_menu_p2.200 }
+		}
+	}
+
+	option = {
+		name = "egs_menu_p2.1.option.begin"
+		country_event = { id = egs_menu_p2.3 days = 2 }
+	}
+}
+
+country_event = {
+	id = egs_menu_p2.2    
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_ai = no
+		has_origin = origin_egs2
+	}
+
+	immediate = {
+		set_country_flag = EGS_START_DENEB
+		country_event = { id = egs_menu_p2.1  }
+	}
+}
+
+# Kickoff the event
+country_event = {
+	id = egs_menu_p2.3
+	hide_window = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = EGS_CLUSTER_APPRENTICE }				
+				country_event = { id = egs_p2_apprentice.1 }
+			}
+			else_if = {
+				limit = { has_country_flag = EGS_CLUSTER_ATRONACH }				
+				country_event = { id = egs_p2_atronach.1 }
+			}
+		}
+	}
+}
+
+
+#Home System Menu
+country_event = {
+	id = egs_menu_p2.200    
+	title = "egs_menu_p2.200.name"
+	desc = "egs_menu_p2.200.desc"
+	picture = GFX_evt_colony_settlement
+	is_triggered_only = yes
+
+	option = {
+		name = "egs_menu_p2.200.option.sol"
+		trigger = {
+			NOT = { has_country_flag = EGS_START_SOL }
+		}
+		hidden_effect = {
+			clear_egs_start_system_flags = yes
+			set_country_flag = EGS_START_SOL
+			country_event = { id = egs_menu_p2.1 }
+		}
+	}
+
+	option = {
+		name = "egs_menu_p2.200.option.sol.on"
+		trigger = {
+			has_country_flag = EGS_START_SOL
+		}
+		hidden_effect = {
+			clear_egs_start_system_flags = yes
+			set_country_flag = EGS_START_SOL
+			country_event = { id = egs_menu_p2.1 }
+		}
+	}
+
+	option = {
+		name = "egs_menu_p2.200.option.deneb"
+		trigger = {
+			NOT = { has_country_flag = EGS_START_DENEB }
+		}
+		hidden_effect = {
+			clear_egs_start_system_flags = yes
+			set_country_flag = EGS_START_DENEB
+			country_event = { id = egs_menu_p2.1 }
+		}
+	}
+
+	option = {
+		name = "egs_menu_p2.200.option.deneb.on"
+		trigger = {
+			has_country_flag = EGS_START_DENEB
+		}
+		hidden_effect = {
+			clear_egs_start_system_flags = yes
+			set_country_flag = EGS_START_DENEB
+			country_event = { id = egs_menu_p2.1 }
+		}
+	}
+
+	option = {
+		name = "egs_menu_p2.200.option.ringworld"
+		trigger = {
+			NOT = { has_country_flag = EGS_START_RINGWORLD }
+		}
+		hidden_effect = {
+			clear_egs_start_system_flags = yes
+			set_country_flag = EGS_START_RINGWORLD
+			country_event = { id = egs_menu_p2.1 }
+		}
+	}
+
+	option = {
+		name = "egs_menu_p2.200.option.ringworld.on"
+		trigger = {
+			has_country_flag = EGS_START_RINGWORLD
+		}
+		hidden_effect = {
+			clear_egs_start_system_flags = yes
+			set_country_flag = EGS_START_RINGWORLD
+			country_event = { id = egs_menu_p2.1 }
+		}
+	}	
+}
+

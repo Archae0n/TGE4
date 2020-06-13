@@ -1,0 +1,65 @@
+egs_p2_ringworld_init = {
+	class = "sc_neutron_star"
+
+	flags = { egs_p2_ringworld egs_p2_empire_home_system ring_world_built }
+
+	init_effect = {
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 0
+			orbit_distance = 45
+			location = planet
+		}
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 90
+			orbit_distance = 45
+			location = planet
+		}
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = 180
+			orbit_distance = 45
+			location = planet
+		}
+	}
+
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 0
+	}
+
+	change_orbit = 45
+	
+	planet = {
+		class = "pc_ringworld_seam"
+		name = "NAME_Ring_Section"
+		orbit_angle = 240
+		orbit_distance = 0
+	}
+
+	planet = {
+		name = "Habitable Section A"
+		class = "pc_ringworld_habitable"
+		orbit_angle = 30
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+		starting_planet = yes
+		size = 5
+		flags = { ignore_startup_effect megastructure egs_p2_ringworld egs_p2_home_planet_marker }
+		init_effect = {
+			generate_empire_home_planet = yes
+			prevent_anomaly = yes
+			trigger_megastructure_icon = yes
+		}
+	}
+
+	planet = {
+		class = "pc_ringworld_tech"
+		name = "NAME_Ring_Section"
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+}

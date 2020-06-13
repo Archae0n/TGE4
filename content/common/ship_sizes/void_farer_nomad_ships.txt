@@ -216,7 +216,7 @@ capital_ark_ship = {
 		ship_armor_add = 50
 		starbase_shipyard_capacity_add = 2
 	}
-	max_hitpoints = 5000
+	max_hitpoints = 50000
 	size_multiplier = 1
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "root" } }
@@ -240,13 +240,15 @@ capital_ark_ship = {
 	resources = {
 		category = ships
 		cost = {
-			alloys = 2500
+			alloys = 1000
 		}
 		produces = {
-			alloys = 10
-			food = 10
-			minerals = 30
-			energy = 40
+			alloys = 20
+			food = 20
+			minerals = 20
+			energy = 20
+			consumer_goods = 20
+			unity = 20
 		}
 	}
 	
@@ -277,7 +279,7 @@ support_ark_ship = {
 		starbase_shipyard_capacity_add = 2
 		country_naval_cap_add = 20
 	}
-	max_hitpoints = 3500
+	max_hitpoints = 35000
 	size_multiplier = 0.5
 	fleet_slot_size = 4
 	section_slots = { "mid" = { locator = "root" } }
@@ -297,11 +299,10 @@ support_ark_ship = {
 		cost = {
 			alloys = 750
 		}
-		produces = {
-			alloys = 5
+		upkeep = {
 			food = 5
-			minerals = 15
-			energy = 20
+			consumer_goods = 5
+			energy = 5
 		}
 	}
 	

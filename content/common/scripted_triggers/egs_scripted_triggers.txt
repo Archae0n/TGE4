@@ -1,0 +1,118 @@
+egs_has_random_start_system = {
+	OR = {
+		has_country_flag = EGS_START_RANDOM
+		has_country_flag = EGS_START_RANDOM_BINARY
+		has_country_flag = EGS_START_RANDOM_TRINARY
+	}
+}
+
+suitable_egs_planet_for_sr = {
+	is_star = no
+	has_deposit = no
+	is_colonizable = no
+	solar_system = {
+		egs_select_all_relevant_systems = yes
+		NOR = {
+			has_star_flag = egs_init_system
+			has_star_flag = egs_p2_init_system
+			has_star_flag = egs_empire_home
+			has_star_flag = egs_p2_empire_home
+		}
+	}
+}
+
+egs_suitable_system_for_wormhole = {
+	has_natural_wormhole = no
+	is_fe_cluster = no
+	NOR = {
+		has_star_flag = abandoned_gateway
+		has_star_flag = AI_hub
+		has_star_flag = empire_home_system
+		has_star_flag = empire_cluster
+		has_star_flag = hostile_system
+		has_star_flag = sol
+		has_star_flag = deneb_system
+		has_star_flag = egs_cluster
+		has_star_flag = marauder_system
+		has_star_flag = egs_wormhole
+	}
+}
+
+egs_multiplayer = {
+	any_country = {
+		has_origin = origin_egs2
+	}
+}
+
+egs_gigastructures = {
+	any_country = {
+		has_origin = origin_egs
+		has_country_flag = EGS_GIGA_YES
+	}
+}
+
+egs_resources = {
+	any_country = {
+		has_origin = origin_egs
+		has_country_flag = EGS_SR_YES
+	}
+}
+
+
+egs_link_single_wormhole = {
+	any_country = {
+		has_origin = origin_egs
+		has_country_flag = EGS_LINK_WORMHOLE
+	}
+}
+
+egs_link_many_wormhole = {
+	any_country = {
+		has_origin = origin_egs
+		has_country_flag = EGS_LINK_MANY_WORMHOLE
+	}
+}
+
+egs_link_l_gate = {
+	any_country = {
+		has_origin = origin_egs
+		has_country_flag = EGS_LINK_L_GATE
+	}
+}
+
+
+egs_select_all_relevant_systems = {
+	OR = {
+		AND = {
+			root = {
+				has_origin = origin_egs
+			}
+			has_star_flag = egs_cluster
+		}
+		AND = {
+			root = {
+				has_origin = origin_egs2
+			}
+			has_star_flag = egs_p2_cluster
+		}
+	}
+}
+
+egs_home_system = {
+	OR = {
+		has_star_flag = egs_empire_home_system
+		has_star_flag = egs_p2_empire_home
+	}
+}
+
+egs_county_player1 = {
+	root = {
+		has_origin = origin_egs
+	}
+}
+
+egs_county_player2 = {
+	root = {
+		has_origin = origin_egs2
+	}
+}

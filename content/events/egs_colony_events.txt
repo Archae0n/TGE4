@@ -1,0 +1,1008 @@
+namespace = egs_colony
+#move the home sysem
+country_event = {
+	id = egs_colony.1
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		# put everything into an empire cluster
+		every_system = {
+			limit = {
+				egs_select_all_relevant_systems = yes
+			}
+			set_star_flag = empire_cluster
+		}
+
+		# then tag our new ones
+		random_system = {
+			limit = {				
+				OR = {
+					AND = {
+						has_star_flag = egs_empire_home
+						egs_county_player1 = yes
+					}
+					AND = {
+						has_star_flag = egs_p2_empire_home
+						egs_county_player2 = yes
+					}
+				}
+			}
+			save_event_target_as = egs_home_system
+		}
+
+		random_planet = {
+			limit = {
+				OR = {
+					AND = {
+						has_planet_flag = egs_home_planet_marker
+						egs_county_player1 = yes
+					}
+					AND = {
+						has_planet_flag = egs_p2_home_planet_marker
+						egs_county_player2 = yes
+					}
+				}
+			}
+			save_event_target_as = egs_home_planet
+		}
+
+		#tag our old home planet
+		random_owned_planet = {
+			save_event_target_as = previous_home_planet
+			solar_system = {
+				save_event_target_as = previous_home_system
+			}
+		}
+
+		#set the correct planet class for home planet
+		event_target:egs_home_planet = {
+			save_event_target_as = egs_target_planet
+			if = {
+				limit = {
+					NOR = { 
+						has_planet_flag = egs_ringworld 
+						has_planet_flag = egs_p2_ringworld
+						has_planet_flag = starborn_orbital_city
+					}
+				}
+				smart_match_planet_class = yes
+			}
+		}
+
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = EGS_START_STARBORN
+				}
+			}
+			#Set the correct class for secondary planets
+			#Go developers putting a bloody flag on the secondary planet!
+			# starborn do not get secondary planets
+			every_planet = {
+				limit = {
+					has_planet_flag = prescripted_ideal
+					OR = {
+						AND = {
+							solar_system = {
+								has_star_flag = egs_cluster
+							}
+							egs_county_player1 = yes
+						}
+						AND = {
+							solar_system = {
+								has_star_flag = egs_p2_cluster
+							}
+							egs_county_player2 = yes
+						}
+					}				
+				}
+				save_event_target_as = egs_target_planet
+				smart_match_planet_class = yes
+
+				if = {
+					limit = {
+						root = {
+							has_country_flag = EGS_START_RINGWORLD
+							has_country_flag = EGS_START_STARBORN
+							has_country_flag = EGS_SILLY_YES
+						}
+					}
+					event_target:egs_target_planet = {
+						change_pc = pc_relic
+					}
+
+					event_target:egs_target_planet = {
+						reroll_planet = yes
+						clear_deposits = yes
+						add_deposit = d_relic_dense_ruins
+						add_deposit = d_collapsed_spire
+						add_deposit = d_massive_crevice
+						add_deposit = d_shattered_solar_array
+						add_deposit = d_flooded_reactor_pits
+						add_deposit = d_crumbling_mining_tunnels
+						add_deposit = d_relic_metal_boneyard
+					}
+				}
+
+			}
+		}
+		
+
+		#setup system modifiers for SI
+		if = {
+			limit = {
+				has_global_flag = retile_active 
+			}
+			country_event = {
+				id = egs_retile_generate.4
+			}
+		}
+
+
+		# Set up the spaceport
+		if = {
+			limit = {
+				has_global_flag = retile_active
+			}
+			event_target:egs_home_system = {
+				create_starbase = {
+					size = "starbase_starport"
+					module = "shipyard"
+					building = "default_network"
+					building = "fleet_hangar"
+					owner = root
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					is_gestalt = yes
+				}
+				event_target:egs_home_system = {
+					create_starbase = {
+						size = "starbase_starport"
+						module = "shipyard"
+						module = "solar_panel_network"
+						building = "crew_quarters"
+						owner = root
+					}
+				}
+			}
+			else = {
+				event_target:egs_home_system = {
+					create_starbase = {
+						size = "starbase_starport"
+						module = "shipyard"
+						module = "trading_hub"
+						building = "crew_quarters"
+						owner = root
+					}
+				}
+			}
+		}
+
+		# Set up the capital planet
+		event_target:egs_home_planet = {
+			remove_deposit = yes
+			remove_planet_flag = starting_deposit
+			remove_planet_flag = starting_mining_target
+			remove_planet_flag = starting_research_target
+			clear_planet_modifiers = yes
+			clear_blockers = yes
+			set_owner = root
+			set_controller = root
+			set_capital = yes
+			if = {
+				# Ringworld setup
+				limit = {
+					OR = {
+						has_planet_flag = egs_ringworld
+						has_planet_flag = egs_p2_ringworld
+					}
+				}
+				generate_start_buildings_and_districts = yes
+				if = { 
+					limit = {
+						has_global_flag = retile_active 
+					}
+
+					# always add 3 modules
+					set_variable = { which = module_count value = 3 }
+							
+					if = {	# robots
+						limit = {
+							owner = {
+								is_machine_empire = yes
+							}
+						}
+						if = {
+							limit = { owner = { OR = {
+								has_country_flag = biological_subspecies
+								has_country_flag = plantoid_subspecies
+							} } }
+							add_deposit = retile_module_generator_active
+							add_deposit = retile_module_farm_active
+							add_deposit = retile_module_mine_active
+						} else = {
+							add_deposit = retile_module_generator_active
+							add_deposit = retile_module_generator_active
+							add_deposit = retile_module_mine_active
+						}
+					}
+
+					if = { # Lithoids
+						limit = {
+							owner = {
+								is_lithoid_empire = yes
+							}
+						}
+						if = {
+							limit = { owner = { OR = {
+								has_country_flag = biological_subspecies
+								has_country_flag = plantoid_subspecies
+							} } }
+							add_deposit = retile_module_generator_active
+							add_deposit = retile_module_farm_active
+							add_deposit = retile_module_mine_active
+						} else = {
+							add_deposit = retile_module_generator_active
+							add_deposit = retile_module_mine_active
+							add_deposit = retile_module_mine_active
+						}
+					}
+
+					if = { # Biologicals/Plants
+						limit = {
+							owner = {
+								is_lithoid_empire = no
+								is_machine_empire = no
+							}
+						}
+						add_deposit = retile_module_generator_active
+						add_deposit = retile_module_farm_active
+						add_deposit = retile_module_mine_active
+					}
+
+				}
+				else = {		
+					remove_all_districts = yes			
+					if = {
+						limit = {
+							root = {
+								OR = {
+									is_robot_empire = yes
+									is_lithoid_empire = yes
+								}								
+							}
+						}
+						add_district = district_rw_generator
+						add_deposit = d_egs_rw_crystals
+					}
+					else = {
+						add_district = district_rw_farming
+						add_deposit = d_egs_rw_motes
+					}
+					set_planet_size = 5
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_planet_flag = starborn_orbital_city
+					}					
+					root = {
+						country_event = {
+							id = starborn_init.1
+						}
+					}
+					generate_start_buildings_and_districts = yes
+					planet_event = {
+						id = starborn_init.8
+					}	
+				}
+				else = {
+					#Normal Setup
+					if = {
+						limit = {
+							has_global_flag = retile_active 
+						}
+						#reroll_deposits = yes
+					}
+					if = {
+						limit = {
+							has_planet_flag = planet_earth
+						}
+						generate_earth_deposits_and_blockers = yes
+					}
+					else = {
+						generate_start_deposits_and_blockers = yes
+					}
+
+					generate_start_buildings_and_districts = yes
+				}
+			}
+
+			# rogue servitors get pops moved, veryone else gets them regenerated to avoid unemployment
+			if = {
+				limit = {
+					root = {
+						NOR = { 
+							has_civic = civic_machine_servitor 
+							has_civic = civic_machine_assimilator 
+						}
+					}
+				}
+				generate_start_pops = yes
+			}
+		}
+
+		event_target:egs_home_system = {
+			#need to regen as the home planet will have been barren and so probably got a resource deposit
+			generate_home_system_resources = yes
+			random_system_planet = {
+				limit = {
+					is_star = yes
+				}
+				save_event_target_as = egs_home_system_loc
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = starting_mining_target
+				}
+				create_mining_station = {
+					owner = root
+				}
+			}
+			every_system_planet = {
+				limit = {
+					has_planet_flag = starting_research_target
+				}
+				create_research_station = {
+					owner = root
+				}
+			}
+		}
+		
+		every_owned_fleet = {
+			limit = {
+				any_owned_ship = {
+					OR = {
+						is_ship_size = corvette
+						is_ship_size = constructor
+						is_ship_size = science
+					}
+				}
+			}
+			set_location = event_target:egs_home_system_loc
+		}
+		event_target:previous_home_planet = {
+			# non gestalts get new pops, gestalts get pops moved to make servitors work
+			if = {
+				limit = {
+					root = { 
+						OR = { 
+							has_civic = civic_machine_servitor 
+							has_civic = civic_machine_assimilator 
+						}
+					}
+				}
+				every_owned_pop = {
+					resettle_pop = {
+						pop = this
+						planet = event_target:egs_home_planet
+					}
+					unemploy_pop = yes
+				}
+			}
+			remove_planet = yes
+		}
+		event_target:previous_home_system = {
+			set_name = random
+			random_system_planet = {
+				limit = {
+					is_star = yes
+				}
+				set_name = solar_system
+			}
+			
+			remove_star_flag = sol
+			remove_star_flag = deneb_system
+		}
+
+		if = {
+			limit = {
+				NOT = { has_country_flag = EGS_DIPLO_HACK_YES }
+			}
+			event_target:previous_home_system = {
+				every_fleet_in_system = {
+					delete_fleet = this
+				}
+            }
+		}
+
+
+		owner_species = { 
+			set_species_homeworld = event_target:egs_home_planet 
+		}
+		every_owned_pop_species = {
+            set_species_homeworld = event_target:egs_home_planet
+        }
+		if = {
+			limit = {
+				has_country_flag = EGS_START_STARBORN
+			}
+			every_owned_pop = {
+				modify_species = {
+					species = this
+					add_trait = trait_starborn_positive
+					ideal_planet_class = pc_starborn_habitat_start
+				}
+				species = { save_event_target_as = target_species }
+			}
+			root = {
+				change_dominant_species = { species = event_target:target_species change_all = yes }
+			}
+		}
+
+
+		if = {
+			limit = {
+				has_country_flag = EGS_START_RINGWORLD
+				NOT = { has_global_flag = retile_active }
+			}
+			add_resource = {
+				energy = 5000
+				minerals = 5000				
+            }
+		}
+
+		country_event = {
+			id = egs_colony.100
+		}
+
+		if = {
+			limit = {
+				has_global_flag = planetarydiversity
+			}
+			country_event = {
+				id = egs_pdengine.03
+			}
+			country_event = {		
+				id = egs_pdengine.05
+			}
+			country_event = {
+				id = egs_pdengine.08
+			}
+		}
+
+		# put GPM modifiers on everything
+		if = {
+			limit = {
+				has_global_flag = guillis_planet_modifiers_active
+			}
+			every_system = {
+				limit = {
+					egs_select_all_relevant_systems = yes
+				}
+				every_system_planet = {
+					planet_event = {
+						id = gpm_engine.1
+					}
+				}
+			}
+		}
+	}
+}
+
+# setup bypasses
+country_event = {
+	id = egs_colony.100
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				egs_link_l_gate = no
+			}
+			event_target:previous_home_system = {
+				event_target:egs_cluster_root = {
+					spawn_natural_wormhole = {
+						bypass_type = wormhole
+						random_pos = yes
+						orbit_angle = 360
+					}
+				}
+				spawn_natural_wormhole = {
+					bypass_type = wormhole
+					random_pos = yes
+					orbit_angle = 360
+				}
+				link_wormholes = event_target:egs_cluster_root
+			}
+		}
+
+		if = {
+			limit = {
+				egs_link_many_wormhole = yes
+			}
+			
+			if = {
+				limit = {
+					OR = {
+						has_country_flag = EGS_CLUSTER_STEED
+						has_country_flag = EGS_CLUSTER_BIG_DIPPER
+					}
+				}
+				set_variable = { which = wormholeCount value = 2 }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_country_flag = EGS_CLUSTER_HEXAGON
+					}
+				}
+				set_variable = { which = wormholeCount value = 4 }
+			}
+			else = {
+				set_variable = { which = wormholeCount value = 3 }
+			}
+
+			while = {
+				limit = {
+					check_variable = { which = wormholeCount value > 0 }
+				}
+				subtract_variable = { which = wormholeCount value = 1 }
+
+				#set egs target
+				random_system = {
+					limit = {
+						OR = {
+							AND = {
+								has_star_flag = egs_cluster
+								egs_county_player1 = yes
+							}
+							AND = {
+								has_star_flag = egs_p2_cluster
+								egs_county_player2 = yes
+							}
+						}
+						
+						NOR = {
+							has_star_flag = egs_empire_home
+							has_star_flag = egs_p2_empire_home
+							has_star_flag = egs_init_system
+							has_star_flag = egs_p2_init_system
+							has_star_flag = egs_wormhole
+						}
+					}
+					set_star_flag = egs_wormhole
+					save_event_target_as = egs_wormhole_destination
+					spawn_natural_wormhole = {
+						bypass_type = wormhole
+						random_pos = yes
+						orbit_angle = 360
+					}
+				}
+				random_system = {
+					limit = {
+						egs_suitable_system_for_wormhole = yes
+					}
+					set_star_flag = egs_wormhole
+					spawn_natural_wormhole = {
+						bypass_type = wormhole
+						random_pos = yes
+						orbit_angle = 360
+					}
+					link_wormholes = event_target:egs_wormhole_destination
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				egs_link_l_gate = yes
+			}
+
+			# you need to know about every other Lgate so you can exit the L cluster.
+			every_system = {
+				limit = {
+					has_star_flag =  lgate
+				}
+				every_system_planet = {
+					limit = {
+						is_star = yes
+					}
+					surveyed = {
+						set_surveyed = yes
+						surveyor = root
+					}
+					set_all_comms_surveyed = yes
+				}
+
+			}
+
+			event_target:egs_cluster_root = {
+				set_star_flag = lgate
+				spawn_megastructure = {
+					type = lgate_base
+					orbit_angle = 225
+					orbit_distance = 30
+					location = solar_system
+				}
+			}
+			# everyone else needs to know the location of your Lgate so they can invade you
+			event_target:egs_cluster_root = {
+				every_system_planet = {
+					limit = {
+						is_star = yes
+					}
+					# everyone else needs to know the location of the Lgate
+					every_country = {
+						limit = {
+							NOT =  { is_same_empire = root }
+						}
+						prev = {				
+							surveyed = {
+								set_surveyed = yes
+								surveyor = prev
+							}
+							set_all_comms_surveyed = yes
+						}
+					}
+				}
+			}
+		}
+
+		country_event = { id = egs_colony.200 }
+	}
+}
+
+#setup guarenteed resources
+country_event = {
+	id = egs_colony.200
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				egs_resources = yes
+			}		
+			random_planet = {
+				limit = {
+					suitable_egs_planet_for_sr = yes			
+				}
+				add_deposit = d_rare_crystals_3
+			}
+
+			random_planet = {
+				limit = {
+					suitable_egs_planet_for_sr = yes			
+				}
+				add_deposit = d_volatile_motes_3
+			}
+
+			random_planet = {
+				limit = {
+					suitable_egs_planet_for_sr = yes			
+				}
+				add_deposit = d_exotic_gases_3
+			}
+
+			random_planet = {
+				limit = {
+					suitable_egs_planet_for_sr = yes			
+				}
+				add_deposit = d_zro_deposit_3
+			}
+
+			random_planet = {
+				limit = {
+					suitable_egs_planet_for_sr = yes			
+				}
+				add_deposit = d_living_metal_deposit
+				root = {
+					add_research_option = tech_mine_living_metal
+				}
+			}
+		}
+
+		# Set a planet suitable for an attack planet
+		if = {
+			limit = {
+				egs_gigastructures = yes
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_planet = {
+							solar_system = { egs_select_all_relevant_systems = yes }
+							planet_size >= 24
+							OR = {
+								is_planet_class = pc_barren
+								is_planet_class = pc_barren_cold
+							}
+						}
+					}
+				}
+				random_planet = {
+					limit = {
+						solar_system = { 
+							egs_select_all_relevant_systems = yes 
+							egs_home_system = no
+						}
+						OR = {
+							is_planet_class = pc_barren
+							is_planet_class = pc_barren_cold
+						}						
+					}
+					set_planet_size = 25
+				}
+			}
+		}
+		
+		country_event = { id = extragalactic_cluster.100 days = 30 }
+	}
+}
+
+
+# setup EGC bypasses
+country_event = {
+	id = egs_colony.300
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		if = {
+			limit = {
+				has_country_flag = EGS_EGC_CONNECTION_ROUND_ROBIN
+			}
+			
+			# Apprentice - Dipper - Hex - Steed - Ant -....
+			random_system = {
+				limit = {
+					has_star_flag = apprentice_cluster
+					has_natural_wormhole = no
+				}
+				save_event_target_as = egs_wormhole_1
+			}
+
+			random_system = {
+				limit = {
+					has_star_flag = big_dipper_cluster
+					has_natural_wormhole = no
+				}
+				save_event_target_as = egs_wormhole_2
+			}
+			create_and_link_wormholes = yes
+
+
+			random_system = {
+				limit = {
+					has_star_flag = big_dipper_cluster
+					has_natural_wormhole = no
+				}
+				save_event_target_as = egs_wormhole_1
+			}
+
+			random_system = {
+				limit = {
+					has_star_flag = hexagon_cluster
+					has_natural_wormhole = no
+				}
+				save_event_target_as = egs_wormhole_2
+			}
+			create_and_link_wormholes = yes
+
+
+			random_system = {
+				limit = {
+					has_star_flag = hexagon_cluster
+					has_natural_wormhole = no
+				}
+				save_event_target_as = egs_wormhole_1
+			}
+
+			random_system = {
+				limit = {
+					has_star_flag = steed_cluster
+					has_natural_wormhole = no
+				}
+				save_event_target_as = egs_wormhole_2
+			}
+			create_and_link_wormholes = yes
+
+
+			random_system = {
+				limit = {
+					has_star_flag = steed_cluster
+					has_natural_wormhole = no
+				}
+				save_event_target_as = egs_wormhole_1
+			}
+
+			random_system = {
+				limit = {
+					has_star_flag = atronach_cluster
+					has_natural_wormhole = no
+				}
+				save_event_target_as = egs_wormhole_2
+			}
+			create_and_link_wormholes = yes
+
+			random_system = {
+				limit = {
+					has_star_flag = atronach_cluster
+					has_natural_wormhole = no
+				}
+				save_event_target_as = egs_wormhole_1
+			}
+
+			random_system = {
+				limit = {
+					has_star_flag = apprentice_cluster
+					has_natural_wormhole = no
+				}
+				save_event_target_as = egs_wormhole_2
+			}
+			create_and_link_wormholes = yes
+
+
+			#link to the player-starting extra-galatic cluster
+			if = {
+				limit = {
+					egs_multiplayer = no
+				}
+				random_system = {
+					limit = {
+						has_star_flag = egs_cluster
+						has_natural_wormhole = no
+						NOT = {
+							has_star_flag = egs_empire_home_system
+						}
+					}
+					save_event_target_as = egs_wormhole_1
+				}
+	
+				random_system = {
+					limit = {
+						has_star_flag = extragalactic_cluster
+						has_natural_wormhole = no
+					}
+					save_event_target_as = egs_wormhole_2
+				}
+				create_and_link_wormholes = yes
+			}
+			else = {
+				#player apprentice link is always to steed, antronach to dipper
+				random_system = {
+					limit = {
+						OR = {
+							AND = {								
+								root = {
+									has_country_flag = EGS_CLUSTER_APPRENTICE
+								}
+								has_star_flag = egs_cluster
+							}
+							AND = {								
+								root = {
+									has_country_flag = EGS_CLUSTER_ATRONACH
+								}
+								has_star_flag = egs_p2_cluster
+							}							
+						}
+						
+						has_natural_wormhole = no
+						NOR = {
+							has_star_flag = egs_empire_home_system
+							has_star_flag = egs_p2_empire_home_system
+						}
+					}
+					save_event_target_as = egs_wormhole_1
+				}
+	
+				random_system = {
+					limit = {
+						has_star_flag = steed_cluster
+						has_natural_wormhole = no
+					}
+					save_event_target_as = egs_wormhole_2
+				}
+				create_and_link_wormholes = yes
+
+				random_system = {
+					limit = {
+						OR = {
+							AND = {								
+								root = {
+									has_country_flag = EGS_CLUSTER_APPRENTICE
+								}
+								has_star_flag = egs_p2_cluster
+							}
+							AND = {								
+								root = {
+									has_country_flag = EGS_CLUSTER_ATRONACH
+								}
+								has_star_flag = egs_cluster
+							}							
+						}
+						
+						has_natural_wormhole = no
+						NOR = {
+							has_star_flag = egs_empire_home_system
+							has_star_flag = egs_p2_empire_home_system
+						}
+					}
+					save_event_target_as = egs_wormhole_1
+				}
+	
+				random_system = {
+					limit = {
+						has_star_flag = big_dipper_cluster
+						has_natural_wormhole = no
+					}
+					save_event_target_as = egs_wormhole_2
+				}
+				create_and_link_wormholes = yes
+			}
+		}
+
+		# L-gate connectivity
+		if = {
+			limit = {
+				has_country_flag = EGS_EGC_CONNECTION_L_GATE
+			}
+
+			random_system = {
+				limit = {
+					has_star_flag = hexagon_cluster_09
+				}
+				create_and_share_l_gate = yes
+			}
+
+			random_system = {
+				limit = {
+					has_star_flag = steed_cluster_06
+				}
+				create_and_share_l_gate = yes
+			}
+
+			random_system = {
+				limit = {
+					has_star_flag = atronach_cluster_09
+				}
+				create_and_share_l_gate = yes
+			}
+
+			random_system = {
+				limit = {
+					has_star_flag = apprentice_cluster_08
+				}
+				create_and_share_l_gate = yes
+			}
+
+			random_system = {
+				limit = {
+					has_star_flag = big_dipper_cluster_01
+				}
+				create_and_share_l_gate = yes
+			}
+		}
+	}
+}
+
+
+#move the home sysem
+country_event = {
+	id = egs_colony.999
+	hide_window = yes
+	fire_only_once = yes
+	immediate = {
+		random_system = {
+			limit = {
+				has_star_flag = egs_ringworld
+			}
+			set_star_flag = ring_world_built
+		}
+	}
+}

@@ -1,0 +1,25 @@
+﻿
+ 
+l_english:
+
+ ####################################
+ # Species Classes
+ ####################################
+ 
+Simulant:0 "Simulant"
+ Simulant_desc:1 "Simulant race"
+ Simulant_plural:0 "Simulant races"
+ Simulant_insult_01:0 "scraphead"
+ Simulant_insult_plural_01:0 "scrapheads"
+ Simulant_compliment_01:0 "elegant automaton"
+ Simulant_compliment_plural_01:0 "technological marvels"
+ Simulant_spawn:0 "immature processing unit"
+ Simulant_spawn_plural:0 "young automata"
+ Simulant_sound_01:0 "whirring"
+ Simulant_sound_02:0 "chirping"
+ Simulant_sound_03:0 "scraping"
+ Simulant_sound_04:0 "beeping"
+ Simulant_sound_05:0 "chattering"
+ Simulant_organ:0 "motherboard"
+ Simulant_mouth:0 "maw"
+ Simulant_hand:0 "cybernetic claw"

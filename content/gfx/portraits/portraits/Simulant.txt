@@ -1,0 +1,188 @@
+portraits = {
+	Simulant1 = {greeting_sound = "robot_human_greetings"  texturefile = "gfx/models/portraits/Simulant/Simulant/Simulant1.dds"}
+	Simulant2 = {greeting_sound = "robot_human_greetings"  texturefile = "gfx/models/portraits/Simulant/Simulant/Simulant2.dds"}
+	Simulant3 = {greeting_sound = "robot_human_greetings"  texturefile = "gfx/models/portraits/Simulant/Simulant/Simulant3.dds"}
+	Simulant4 = {greeting_sound = "robot_human_greetings"  texturefile = "gfx/models/portraits/Simulant/Simulant/Simulant4.dds"}
+	Simulant5 = {greeting_sound = "robot_human_greetings"  texturefile = "gfx/models/portraits/Simulant/Simulant/Simulant5.dds"}
+	Simulant6 = {greeting_sound = "robot_human_greetings"  texturefile = "gfx/models/portraits/Simulant/Simulant/Simulant6.dds"}
+	Simulant7 = {greeting_sound = "robot_human_greetings"  texturefile = "gfx/models/portraits/Simulant/Simulant/Simulant7.dds"}
+	Simulant8 = {greeting_sound = "robot_human_greetings"  texturefile = "gfx/models/portraits/Simulant/Simulant/Simulant8.dds"}
+	Simulant9 = {greeting_sound = "robot_human_greetings"  texturefile = "gfx/models/portraits/Simulant/Simulant/Simulant9.dds"}
+	Simulant10 = {greeting_sound = "robot_human_greetings"  texturefile = "gfx/models/portraits/Simulant/Simulant/Simulant10.dds"}
+	Simulant11 = {greeting_sound = "robot_human_greetings"  texturefile = "gfx/models/portraits/Simulant/Simulant/Simulant11.dds"}
+	Simulant12 = {greeting_sound = "robot_human_greetings"  texturefile = "gfx/models/portraits/Simulant/Simulant/Simulant12.dds"}
+	Simulant13 = {greeting_sound = "robot_human_greetings"  texturefile = "gfx/models/portraits/Simulant/Simulant/Simulant13.dds"}
+	Simulant14 = {greeting_sound = "robot_human_greetings"  texturefile = "gfx/models/portraits/Simulant/Simulant/Simulant14.dds"}
+	Simulant15 = {greeting_sound = "robot_human_greetings"  texturefile = "gfx/models/portraits/Simulant/Simulant/Simulant15.dds"}
+	Simulant16 = {greeting_sound = "robot_human_greetings"  texturefile = "gfx/models/portraits/Simulant/Simulant/Simulant16.dds"}
+	Simulant17 = {greeting_sound = "robot_human_greetings"  texturefile = "gfx/models/portraits/Simulant/Simulant/Simulant17.dds"}
+	Simulant18 = {greeting_sound = "robot_human_greetings"  texturefile = "gfx/models/portraits/Simulant/Simulant/Simulant18.dds"}
+}
+
+portrait_groups = {
+	Simulant = {
+		default = Simulant3
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					Simulant1
+					Simulant2
+					Simulant3
+					Simulant4
+					Simulant5
+					Simulant6
+					Simulant7
+					Simulant8
+					Simulant9
+					Simulant10
+					Simulant11
+					Simulant12
+					Simulant13
+					Simulant14
+					Simulant15
+					Simulant16
+					Simulant17
+					Simulant18
+				}
+			}
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			set = {
+				portraits = {
+					Simulant1
+					Simulant2
+					Simulant3
+					Simulant4
+					Simulant5
+					Simulant6
+					Simulant7
+					Simulant8
+					Simulant9
+					Simulant10
+					Simulant11
+					Simulant12
+					Simulant13
+					Simulant14
+					Simulant15
+					Simulant16
+					Simulant17
+					Simulant18
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					Simulant1
+					Simulant2
+					Simulant3
+					Simulant4
+					Simulant5
+					Simulant6
+					Simulant7
+					Simulant8
+					Simulant9
+					Simulant10
+					Simulant11
+					Simulant12
+					Simulant13
+					Simulant14
+					Simulant15
+					Simulant16
+					Simulant17
+					Simulant18
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				trigger = {
+					leader_class = scientist
+				}
+				portraits = {
+					Simulant6
+					Simulant10
+					Simulant11
+					Simulant12
+					Simulant17
+				}
+			} 		
+			add = {
+				trigger = {
+					leader_class = general
+				}
+				portraits = {
+					Simulant2
+					Simulant5
+					Simulant6
+					Simulant8
+					Simulant10
+					Simulant11
+					Simulant12
+					Simulant13
+					Simulant15
+					Simulant16
+					Simulant17
+				}
+			}  
+			add = {
+				trigger = {
+					leader_class = admiral
+				}
+				portraits = {
+					Simulant2
+					Simulant3
+					Simulant9
+					Simulant10
+					Simulant11
+					Simulant17
+				}
+			} 
+			add = {
+				trigger = {
+					leader_class = governor
+				}
+				portraits = {
+					Simulant10
+					Simulant11
+					Simulant12
+				}
+			} 		
+
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				portraits = {
+					Simulant1
+					Simulant2
+					Simulant3
+					Simulant4
+					Simulant5
+					Simulant6
+					Simulant7
+					Simulant8
+					Simulant9
+					Simulant10
+					Simulant11
+					Simulant12
+					Simulant13
+					Simulant14
+					Simulant15
+					Simulant16
+					Simulant17
+					Simulant18
+				}
+			}
+		}
+	}	
+		
+}

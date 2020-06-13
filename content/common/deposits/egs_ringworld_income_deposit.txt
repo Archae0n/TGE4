@@ -1,0 +1,39 @@
+d_egs_rw_motes = {
+	icon = "unused/d_strategic_resources"
+	category = deposit_cat_rare
+	
+	potential = {
+	}
+	
+	resources = {
+		category = orbital_mining_deposits
+		produces = {
+			volatile_motes = 2
+		}
+	}
+	
+	drop_weight = {
+		weight = 0.01
+		#does not occur naturally, but needs a non-zero weight
+	}
+}
+
+d_egs_rw_crystals = {
+	icon = "unused/d_strategic_resources"
+	category = deposit_cat_rare
+	
+	potential = {
+	}
+	
+	resources = {
+		category = orbital_mining_deposits
+		produces = {
+			rare_crystals = 2
+		}
+	}
+	
+	drop_weight = {
+		weight = 0.01
+		#does not occur naturally, but needs a non-zero weight
+	}
+}

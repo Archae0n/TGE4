@@ -1,0 +1,15 @@
+#... gfx/models/portraits/Simulant/ ...
+
+Saxheelian = {
+	archetype = BIOLOGICAL
+	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
+	portraits = { #actually this is portrait_groups naming must match in "... gfx\portraits\portraits"
+	"Simulant"
+	}
+	
+	graphical_culture = mem_ancient_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+	
+	species_trait_points = @species_trait_points
+	species_max_traits = @species_max_traits
+}

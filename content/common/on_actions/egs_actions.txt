@@ -1,0 +1,7 @@
+on_game_start_country = {
+	events = {
+		egs_menu.9 # warning about failures
+		egs_menu.2 #spawn the egs menu
+		egs_menu_p2.2  #spawn the player 2 egs menu
+	}
+}
