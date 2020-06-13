@@ -553,11 +553,11 @@
  
  probe_section:0 "Fleet Probe"
  
- capital_ark_ship:0 "Capital Ark"
- capital_ark_ship_plural:0 "Capital Arks"
- capital_ark_ship_section:0 "Capital Ark"
- capital_ark_ship_armed_section:0 "Armed Capital Ark"
- capital_ark_ship_XL_section:0 "Ark Artillery Capital"
+ capital_ark_ship:0 "Arkship"
+ capital_ark_ship_plural:0 "Arkships"
+ capital_ark_ship_section:0 "Arkship"
+ capital_ark_ship_armed_section:0 "Armed Arkship"
+ capital_ark_ship_XL_section:0 "Artillery Arkship"
  
  void_farer_void_dwelling:0 "Void Dwelling"
  

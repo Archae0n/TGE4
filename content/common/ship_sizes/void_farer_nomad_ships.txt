@@ -234,21 +234,18 @@ capital_ark_ship = {
 	combat_disengage_chance = 1.25
 	
 	country_modifier = {
-		country_naval_cap_add = 40
+		country_naval_cap_add = 20
 	}
 	
 	resources = {
 		category = ships
 		cost = {
-			alloys = 1000
+			alloys = 750
 		}
-		produces = {
-			alloys = 20
-			food = 20
-			minerals = 20
-			energy = 20
-			consumer_goods = 20
-			unity = 20
+		upkeep = {
+			food = 5
+			consumer_goods = 5
+			energy = 5
 		}
 	}
 	
@@ -258,10 +255,6 @@ capital_ark_ship = {
 	required_component_set = "sensor_components"
 	auto_upgrade = no
 	
-	empire_limit = {
-		base = 1
-		max = 1
-	}
 	
 	potential_country = {
 		is_country_type = void_farer
@@ -313,7 +306,7 @@ support_ark_ship = {
 	auto_upgrade = no
 	
 	potential_country = {
-		is_country_type = void_farer
+		always = no
 	}
 }
 
