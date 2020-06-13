@@ -5,6 +5,7 @@ tech_spy_industrial = {
 	category = { statecraft }
 	prerequisites = { "tech_colonial_centralization" }
 	weight = @tier2weight3
+	start_tech = yes
 
 	prereqfor_desc = {
 		custom = {
@@ -61,6 +62,7 @@ tech_spy_tactical = {
 	category = { statecraft }
 	prerequisites = { "tech_colonial_centralization" }
 	weight = @tier2weight3
+	start_tech = yes
 
 	prereqfor_desc = {
 		custom = {
@@ -113,6 +115,7 @@ tech_spy_socialPropaganda = {
 	category = { statecraft }
 	prerequisites = { "tech_colonial_centralization" }
 	weight = @tier2weight3
+	start_tech = yes
 
 	prereqfor_desc = {
 		custom = {
