@@ -36,7 +36,7 @@ custom_tooltip = nanite_structures_tooltip
 		planet_districts_minerals_cost_mult = -0.2
 		planet_districts_nanites_cost_add = 10
 
-		planet_districts_cities_minerals_cost_mult = -1
+		planet_districts_cities_minerals_cost_mult = -0.3
 		planet_districts_cities_nanites_cost_add = 15
 		
 		
