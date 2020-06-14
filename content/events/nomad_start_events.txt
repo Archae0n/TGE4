@@ -30,7 +30,7 @@ country_event = {
 			give_technology = { message = no tech = "tech_powered_exoskeletons" }
 			give_technology = { message = no tech = "tech_hydroponics" }
 			set_country_flag = void_nomad
-			set_country_type = void_farer
+			set_country_flag = is_nomads
 			add_resource = { energy = 200 }
 			add_resource = { minerals = 100 }
 			add_resource = { consumer_goods = 100 }
@@ -81,7 +81,7 @@ country_event = {
 			give_technology = { message = no tech = "tech_robotic_workers" }
 			give_technology = { message = no tech = "tech_powered_exoskeletons" }
 			set_country_flag = void_marauders
-			set_country_type = void_farer
+			set_country_flag = is_nomads
 			add_resource = { energy = 200 }
 			add_resource = { minerals = 100 }
 			add_resource = { consumer_goods = 100 }
@@ -116,7 +116,7 @@ country_event = {
 			give_technology = { message = no tech = "tech_robotic_workers" }
 			give_technology = { message = no tech = "tech_powered_exoskeletons" }
 			set_country_flag = void_reavers
-			set_country_type = void_farer
+			set_country_flag = is_nomads
 			add_resource = { energy = 200 }
 			add_resource = { minerals = 100 }
 			add_resource = { consumer_goods = 100 }
@@ -151,7 +151,7 @@ country_event = {
 			give_technology = { message = no tech = "tech_robotic_workers" }
 			give_technology = { message = no tech = "tech_powered_exoskeletons" }
 			set_country_flag = void_scavenger_bots
-			set_country_type = void_farer
+			set_country_flag = is_nomads
 			add_resource = { energy = 300 }
 			add_resource = { minerals = 100 }
 			add_resource = { alloys = 200 }
@@ -174,7 +174,7 @@ country_event = {
 	
 	trigger = {
 		OR = {
-			is_country_type = void_farer
+			has_country_flag = is_nomads
 		}
 		any_country = {
 			OR = {
@@ -200,7 +200,7 @@ country_event = {
 			NOT = { has_communications = root }	
 			OR = {
 				# if we're both void farer empires, we know of each other
-				is_country_type = void_farer
+				has_country_flag = is_nomads
 				# also contact if we border them
 				any_owned_planet = {
 					is_neighbor_of = root			
@@ -286,7 +286,7 @@ country_event = {
 	immediate = {
 		#Ark
 		if = {
-			limit = { is_country_type = void_farer }
+			limit = { has_country_flag = is_nomads }
 			create_fleet = {
 				set_take_point = yes
 				effect = {

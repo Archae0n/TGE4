@@ -11,14 +11,14 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		is_country_type = void_farer
+		has_country_flag = is_nomads
 		exists = capital_scope
 		NOT = { has_country_flag = day_0 }
 		from = { NOT = { has_country_flag = day_0 } }
 		FROM = {
 			OR = {
 				is_country_type = default
-				is_country_type = void_farer
+				has_country_flag = is_nomads
 				#is_country_type = nomad
 			}
 		}
@@ -47,7 +47,7 @@ country_event = {
 	
 	trigger = {
 		FROM = { is_country_type = amoeba }
-		is_country_type = void_farer
+		has_country_flag = is_nomads
 		is_ai = no
 		NOT = { has_country_flag = amoeba_encountered }
 	}
@@ -68,7 +68,7 @@ country_event = {
 	
 	trigger = {
 		FROM = { is_country_type = crystal }
-		is_country_type = void_farer
+		has_country_flag = is_nomads
 		is_ai = no
 		NOT = { has_country_flag = crystal_encountered }
 	}
@@ -93,7 +93,7 @@ country_event = {
 	
 	trigger = {
 		FROM = { is_country_type = drone }
-		is_country_type = void_farer
+		has_country_flag = is_nomads
 		is_ai = no
 		NOT = { has_country_flag = drone_encountered }
 		NOT = { has_country_flag = ancient_drones }
@@ -119,7 +119,7 @@ country_event = {
 	
 	trigger = {
 		FROM = { is_country_type = cloud }
-		is_country_type = void_farer
+		has_country_flag = is_nomads
 		is_ai = no
 		NOT = { has_country_flag = cloud_encountered }
 	}
@@ -144,7 +144,7 @@ country_event = {
 	
 	trigger = {
 		FROM = { is_country_type = tiyanki }
-		is_country_type = void_farer
+		has_country_flag = is_nomads
 		is_ai = no
 		NOT = { has_country_flag = tiyanki_encountered }
 	}
@@ -169,7 +169,7 @@ country_event = {
 	
 	trigger = {
 		FROM = { is_country_type = dormant_marauders }
-		is_country_type = void_farer
+		has_country_flag = is_nomads
 		NOT = { 
 			AND = {
 				has_country_flag = marauder_encountered_1
@@ -216,7 +216,7 @@ country_event = {
 		is_at_war = no
 		any_country = {
 			OR = {
-				is_country_type = void_farer
+				has_country_flag = is_nomads
 				is_country_type = fallen_empire
 			}
 			NOT = { has_communications = root }			
@@ -246,7 +246,7 @@ country_event = {
 	immediate = {
 		random_country = {
 			limit = {
-				is_country_type = void_farer
+				has_country_flag = is_nomads
 				NOT = { has_communications = root }				
 				OR = {
 					AND = {

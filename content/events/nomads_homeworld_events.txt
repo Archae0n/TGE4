@@ -74,6 +74,8 @@ country_event = {
 			add_deposit = gpm_tb_automated_turrets
 			add_deposit = gpm_tb_deprecated_infrastructure
 			add_deposit = d_infestation
+			add_deposit = d_crater
+			add_deposit = d_crater
 			add_deposit = d_dangerous_wildlife_blocker
 
 			create_species = {
@@ -99,5 +101,95 @@ country_event = {
 				kill_pop = yes
 			}
 		}
+	}
+}
+
+#FIXES FOR NOMADS
+country_event = {
+	id = nomads_h.200
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = is_nomads
+		set_country_type = default
+
+		add_resource = { energy = 1000 }
+		add_resource = { minerals = 1000 }
+		add_resource = { food = 1000 }
+		add_resource = { consumer_goods = 500 }
+		add_resource = { alloys = 500 }
+		add_resource = { influence = 500 }
+	}
+}
+
+country_event = {
+	id = nomads_h.250
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				is_country_type = default
+				NOT = { has_country_flag = is_nomads }
+				num_owned_planets = 0
+			}
+			destroy_country = yes
+		}
+	}
+}
+
+#BECOME NOMADS!
+country_event = {
+	id = nomads_h.280
+	title = nomads_h.280.name
+	desc = nomads_h.280.desc
+	picture = GFX_evt_federation_fleet
+	show_sound = event_ship_bridge
+	location = from
+
+	is_triggered_only = yes
+
+	immediate = {
+	}
+
+	option = {
+		name = nomads_h.280.a
+		
+		add_resource = { energy = 1000 }
+		add_resource = { minerals = 1000 }
+		add_resource = { food = 1000 }
+		add_resource = { consumer_goods = 500 }
+		add_resource = { alloys = 500 }
+		add_resource = { influence = 500 }
+
+		give_technology = { message = no tech = "tech_void_farer_engineering" }
+
+		hidden_effect = {
+
+			set_country_flag = is_nomads
+			set_country_flag = void_farers
+
+			create_fleet = {
+				set_take_point = yes
+				effect = {
+					set_owner = prev
+					while = {
+						count = 1
+						create_ship = {
+							name = random
+							random_existing_design = capital_ark_ship
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = nomads_h.280.b
 	}
 }
