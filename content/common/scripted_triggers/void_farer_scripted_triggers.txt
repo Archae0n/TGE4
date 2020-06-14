@@ -33,17 +33,13 @@ print_scope_trigger = {
 }
 
 is_void_farer = {
-	is_country_type = void_farer
+	has_country_flag = is_nomads
 }
 
 is_organic_void_farer = {
 	AND = {
-		is_country_type = void_farer
-		OR = {
-			has_origin = origin_void_nomads
-			has_origin = origin_void_marauders
-			has_origin = origin_void_reavers
-		}
+		has_country_flag = is_nomads
+		NOT = {	has_authority = auth_machine_intelligence }
 	}
 }
 
@@ -68,12 +64,4 @@ is_void_reavers = {
 
 is_void_ancient_drones = {
 	has_civic = civic_ancient_drones
-}
-
-is_country_type_with_subjects = {
-	OR = {
-		is_country_type = default
-		is_country_type = void_farer
-		is_country_type = awakened_fallen_empire
-	}
 }
