@@ -104,7 +104,7 @@ nomad_mining_ship = {
 	}
 	
 	potential_country = {
-		#is_country_type = void_farer
+		#has_country_flag = is_nomads
 		always = no
 	}
 }
@@ -197,7 +197,7 @@ nomad_energy_tanker = {
 	}
 	
 	potential_country = {
-		#is_country_type = void_farer
+		#has_country_flag = is_nomads
 		always = no
 	}
 }
@@ -257,7 +257,7 @@ capital_ark_ship = {
 	
 	
 	potential_country = {
-		is_country_type = void_farer
+		has_country_flag = is_nomads
 	}
 }
 
@@ -366,7 +366,7 @@ factory_ship = {
 	}
 	
 	potential_country = {
-		#is_country_type = void_farer
+		#has_country_flag = is_nomads
 		always = no
 	}
 }

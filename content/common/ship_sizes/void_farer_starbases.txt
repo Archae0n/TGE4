@@ -627,7 +627,7 @@ void_farer_void_dwelling = {
 	required_component_set = "power_core"
 	
 	potential_country = {
-		is_void_farer = yes
+		has_country_flag = is_nomads
 	}
 }
 
@@ -676,7 +676,7 @@ vf_mining_station = {
 	
 	potential_country = {
 		OR = {
-			is_void_farer = yes
+			has_country_flag = is_nomads
 			has_ascension_perk = ap_voidborn
 		}
 	}
@@ -724,7 +724,7 @@ vf_alloy_station = {
 	
 	potential_country = {
 		OR = {
-			is_void_farer = yes
+			has_country_flag = is_nomads
 			has_ascension_perk = ap_voidborn
 		}
 	}
@@ -772,7 +772,7 @@ vf_factory_station = {
 	
 	potential_country = {
 		OR = {
-			is_void_farer = yes
+			has_country_flag = is_nomads
 			has_ascension_perk = ap_voidborn
 		}
 	}
@@ -816,7 +816,7 @@ vf_energy_station = {
 	
 	potential_country = {
 		OR = {
-			is_void_farer = yes
+			has_country_flag = is_nomads
 			has_ascension_perk = ap_voidborn
 		}
 	}
@@ -866,7 +866,7 @@ vf_research_station = {
 	
 	potential_country = {
 		OR = {
-			is_void_farer = yes
+			has_country_flag = is_nomads
 			has_ascension_perk = ap_voidborn
 		}
 	}

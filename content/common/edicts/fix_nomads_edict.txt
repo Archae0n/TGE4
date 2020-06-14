@@ -1,0 +1,72 @@
+nomad_fix_edict = {
+	length = 0
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = edicts
+		cost = {
+			influence = 1
+		}
+	}
+
+	effect = {
+		country_event = { id = nomads_h.200 }
+	}
+
+	potential = {
+		is_country_type = void_farer
+	}
+
+	ai_weight = {
+		weight = 5000
+	}
+}
+
+kill_non_nomads_edict = {
+	length = 0
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = edicts
+		cost = {
+			influence = 1
+		}
+	}
+
+	effect = {
+		country_event = { id = nomads_h.250 }
+	}
+
+	potential = {
+		is_country_type = default
+		NOT = { has_country_flag = is_nomads }
+		num_owned_planets = 0
+	}
+
+	ai_weight = {
+		weight = 5000
+	}
+}
+
+become_nomads_edict = {
+	length = 0
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = edicts
+		cost = {
+			influence = 1
+		}
+	}
+
+	effect = {
+		country_event = { id = nomads_h.280 }
+	}
+
+	potential = {
+		is_country_type = default
+		NOT = { has_country_flag = is_nomads }
+		num_owned_planets = 0
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
