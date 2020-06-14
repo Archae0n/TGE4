@@ -14,7 +14,7 @@ planet_event = {
 				has_ground_combat = no
 				is_occupied_flag = no
 				owner = {
-					is_country_type = void_farer
+					has_country_flag = is_nomads
 				}
 				NOT = {
 					is_planet_class = pc_habitat
@@ -28,7 +28,7 @@ planet_event = {
 				has_ground_combat = no
 				is_occupied_flag = no
 				owner = {
-					is_country_type = void_farer
+					has_country_flag = is_nomads
 				}
 				is_planet_class = pc_habitat
 			}
