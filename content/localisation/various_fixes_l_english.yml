@@ -1,7 +1,21 @@
 ﻿l_english:
 
 diplo_stance_nomadic:0 "Nomadic"
-diplo_stance_nomadic_desc:0 "This empire remains indifferent to the matters of planet-dwellers, they rather just travel the galaxy in peace."
+diplo_stance_nomadic_desc:0 "This remains indifferent to the matters of planet-dwellers, they rather just travel the galaxy in peace."
+
+edict_nomad_fix_edict:0 "§GFix the Nomads§!"
+edict_nomad_fix_edict_desc:0 "Press this to fix the nomads, §YWARNING:§! this will reset all your resources to 1000 £food£ £minerals£ £energy£ and 500 £consumer_goods£ £alloys£ £influence£, be sure to spend them beforehand!"
+
+edict_kill_non_nomads_edict:0 "§RDestroy your empire§!"
+edict_kill_non_nomads_edict_desc:0 "AIs will press this :D"
+
+edict_become_nomads_edict:0 "§GBecome Void Farers§!"
+edict_become_nomads_edict_desc:0 "Abandon planetary life and sail the stars as space Nomads!"
+
+nomads_h.280.name:0 "Stranded"
+nomads_h.280.desc:0 "Our fleet is destroyed, our armies scattered, and our once wealthy colonies have been lost. Yet, we are not yet finished, our ideals cannot be vanquished so easily. Our scientists and engineers have spent that last few years of the war preparing a large vessel to house our remaining population. This self-sustaining starship will allow us to keep our freedom, our sovereignty, and will allow us one day to reclaim what has been lost. While the [From.GetName] may have been pushed from their homes, it shall continue to exist bathing in the light of the stars."
+nomads_h.280.a:0 "To the Stars!"
+nomads_h.280.b:0 "Maybe another day..."
 
 green_propaganda:0 "Ecocentric Awareness"
 fanatic_green_propaganda:0 "Radical Ecocentrism"
@@ -15,8 +29,8 @@ fanatic_elitist_propaganda:0 "Elitist Classism"
 pluralist_propaganda:0 "Pluralist Concerns"
 fanatic_pluralist_propaganda:0 "Pluralist Class Struggle"
 
-socialism_propaganda:0 "Socialist Movement"
-fanatic_socialism_propaganda:0 "Socialist Uprising"
+socialist_propaganda:0 "Socialist Movement"
+fanatic_socialist_propaganda:0 "Socialist Uprising"
 
 capitalism_propaganda:0 "Capitalist Liberalism"
 fanatic_capitalism_propaganda:0 "Capitalist Corporatocracy"
