@@ -11,7 +11,7 @@ ship_section_template = {
 	entity = "colony_ship_entity"
 	icon = "GFX_ship_part_core_mid"
 	
-	prerequisites = { tech_nomad_ships }
+	prerequisites = {}
 	
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
@@ -31,7 +31,7 @@ ship_section_template = {
 	entity = "colony_ship_entity"
 	icon = "GFX_ship_part_core_mid"
 	
-	prerequisites = { tech_arm_civilian_fleet }
+	prerequisites = {}
 	
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
@@ -79,7 +79,7 @@ ship_section_template = {
 		rotation = 90
 		locatorname = "root"
 	}
-	prerequisites { tech_nomad_ships }
+	prerequisites = {}
 	
 	large_utility_slots = 6
 	aux_utility_slots = 6
@@ -92,7 +92,7 @@ ship_section_template = {
 	entity = "colony_ship_entity"
 	icon = "GFX_ship_part_core_mid"
 	
-	prerequisites = { tech_arm_civilian_fleet }
+	prerequisites = {}
 	
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
@@ -135,7 +135,7 @@ ship_section_template = {
 	entity = "factory_ship_entity"
 	icon = "GFX_ship_part_core_mid"
 	
-	prerequisites = { "tech_nomad_ships" }
+	prerequisites = {}
 	
 	small_utility_slots = 2
 	medium_utility_slots = 2
@@ -152,7 +152,7 @@ ship_section_template = {
 	entity = "factory_ship_entity"
 	icon = "GFX_ship_part_core_mid"
 	
-	prerequisites = { tech_arm_civilian_fleet }
+	prerequisites = {}
 	
 	component_slot = {
 		name = "SMALL_GUN_01"
@@ -188,7 +188,7 @@ ship_section_template = {
 	entity = "nomad_mining_ship_hull_entity"
 	icon = "GFX_ship_part_core_mid"
 	
-	prerequisites = { "tech_nomad_ships" }
+	prerequisites = {}
 	
 	small_utility_slots = 3
 	medium_utility_slots = 3
@@ -202,7 +202,7 @@ ship_section_template = {
 	entity = "nomad_mining_ship_hull_entity"
 	icon = "GFX_ship_part_core_mid"
 	
-	prerequisites = { "tech_nomad_ships" }
+	prerequisites = {}
 	
 	component_slot = {
 		name = "SMALL_GUN_01"
@@ -227,7 +227,7 @@ ship_section_template = {
 	entity = "nomad_energy_tanker_hull_entity"
 	icon = "GFX_ship_part_core_mid"
 	
-	prerequisites = { "tech_nomad_ships" }
+	prerequisites = {}
 	
 	small_utility_slots = 3
 	medium_utility_slots = 2
@@ -241,7 +241,7 @@ ship_section_template = {
 	entity = "nomad_energy_tanker_hull_entity"
 	icon = "GFX_ship_part_core_mid"
 	
-	prerequisites = { "tech_nomad_ships" }
+	prerequisites = {}
 	
 	component_slot = {
 		name = "SMALL_GUN_01"
