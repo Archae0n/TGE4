@@ -42,8 +42,8 @@ custom_tooltip = nanite_structures_tooltip
 		
 		##Starbase build
 
-		starbase_outpost_nanites_cost_add = 5
-		starbase_outpost_alloys_cost_mult = -0.1	
+		starbase_outpost_nanites_cost_add = 10
+		starbase_outpost_alloys_cost_mult = -0.2	
 	
 		
 		## starbases stuff require a nanites and energy, reduced alloys tho
@@ -61,8 +61,8 @@ custom_tooltip = nanite_structures_tooltip
 		
 		## WE ADD nanites TO SHIPS AND USE TRIGGERS TO EDIT THEIR COST
 				
-		colonies_alloys_cost_mult = -0.2
-		colonies_nanites_cost_add = 30
+		ship_colonizer_alloys_cost_mult = -0.2
+		ship_colonizer_nanites_cost_add = 25
 
 		
 		ship_constructor_alloys_cost_mult = -0.2
