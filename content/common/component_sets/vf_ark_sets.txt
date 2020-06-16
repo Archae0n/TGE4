@@ -23,84 +23,84 @@ component_set = {
 component_set = {
 	key = "NOMAD_LABS_1"
 
-	icon = "GFX_ship_part_archeology_lab"
+	icon = "GFX_ship_part_vf_lab_1"
 	icon_frame = 1	
 }
 
 component_set = {
 	key = "NOMAD_LABS_2"
 
-	icon = "GFX_ship_part_science_lab_1"
+	icon = "GFX_ship_part_vf_lab_2"
 	icon_frame = 1	
 }
 
 component_set = {
 	key = "NOMAD_LABS_3"
 
-	icon = "GFX_ship_part_curator_lab"
+	icon = "GFX_ship_part_vf_lab_3"
 	icon_frame = 1	
 }
 
 component_set = {
 	key = "NOMAD_MINERALS"
 
-	icon = "GFX_ship_part_crystal_armor_2"
+	icon = "GFX_ship_part_vf_minerals"
 	icon_frame = 1	
 }
 
 component_set = {
 	key = "NOMAD_ENERGY"
 
-	icon = "GFX_ship_part_reactor_5"
+	icon = "GFX_ship_part_vf_energy"
 	icon_frame = 1	
 }
 
 component_set = {
 	key = "NOMAD_FOOD"
 
-	icon = "GFX_ship_part_amoeba_strike_craft_1"
+	icon = "GFX_ship_part_vf_food"
 	icon_frame = 1	
 }
 
 component_set = {
 	key = "NOMAD_ALLOYS_1"
 
-	icon = "GFX_ship_part_aura_nanobot"
+	icon = "GFX_ship_part_vf_alloys_1"
 	icon_frame = 1	
 }
 
 component_set = {
 	key = "NOMAD_ALLOYS_2"
 
-	icon = "GFX_ship_part_aura_nanobot"
+	icon = "GFX_ship_part_vf_alloys_2"
 	icon_frame = 1	
 }
 
 component_set = {
 	key = "NOMAD_ALLOYS_3"
 
-	icon = "GFX_ship_part_aura_nanobot"
+	icon = "GFX_ship_part_vf_alloys_3"
 	icon_frame = 1	
 }
 
 component_set = {
 	key = "NOMAD_CGS_1"
 
-	icon = "GFX_ship_part_aura_strike_craft"
+	icon = "GFX_ship_part_vf_cgs_1"
 	icon_frame = 1	
 }
 
 component_set = {
 	key = "NOMAD_CGS_2"
 
-	icon = "GFX_ship_part_aura_strike_craft"
+	icon = "GFX_ship_part_vf_cgs_2"
 	icon_frame = 1	
 }
 
 component_set = {
 	key = "NOMAD_CGS_3"
 
-	icon = "GFX_ship_part_aura_strike_craft"
+	icon = "GFX_ship_part_vf_cgs_3"
 	icon_frame = 1	
 }
 
@@ -121,13 +121,76 @@ component_set = {
 component_set = {
 	key = "NOMAD_UNITY_1"
 
-	icon = "GFX_ship_part_dark_matter_power_core"
+	icon = "GFX_ship_part_vf_unity_1"
 	icon_frame = 1	
 }
 
 component_set = {
 	key = "NOMAD_UNITY_2"
 
-	icon = "GFX_ship_part_dark_matter_power_core"
+	icon = "GFX_ship_part_vf_unity_2"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_UNITY_3"
+
+	icon = "GFX_ship_part_vf_unity_3"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_UNITY_SPI_2"
+
+	icon = "GFX_ship_part_vf_unity_spi_2"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_UNITY_SPI_3"
+
+	icon = "GFX_ship_part_vf_unity_spi_3"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_UNITY_HIVE_1"
+
+	icon = "GFX_ship_part_vf_unity_hive_1"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_UNITY_HIVE_2"
+
+	icon = "GFX_ship_part_vf_unity_hive_2"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_UNITY_HIVE_3"
+
+	icon = "GFX_ship_part_vf_unity_hive_3"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_GAS"
+
+	icon = "GFX_ship_part_vf_gas"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_MOTES"
+
+	icon = "GFX_ship_part_vf_motes"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_CRYSTALS"
+
+	icon = "GFX_ship_part_vf_crystals"
 	icon_frame = 1	
 }

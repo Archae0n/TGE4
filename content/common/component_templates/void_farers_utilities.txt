@@ -98,29 +98,37 @@
 @platform_cost_6 = 74
 
 
-@research_t1_output = 4
-@research_t2_output = 8
-@research_t3_output = 16
+@research_t1_output = 8
+@research_t2_output = 20
+@research_t3_output = 32
 
-@research_t1_cost = 2
-@research_t2_cost = 4
-@research_t3_cost = 8
+@research_t1_cost = 4
+@research_t2_cost = 10
+@research_t3_cost = 16
 
-@alloy_t1_output = 3
-@alloy_t2_output = 6
-@alloy_t3_output = 12
+@unity_t1_output = 6
+@unity_t2_output = 15
+@unity_t3_output = 24
 
-@alloy_t1_cost = 6
-@alloy_t2_cost = 12
-@alloy_t3_cost = 24
+@unity_t1_cost = 4
+@unity_t2_cost = 10
+@unity_t3_cost = 16
 
-@cg_t1_output = 6
-@cg_t2_output = 12
-@cg_t3_output = 24
+@alloy_t1_output = 6
+@alloy_t2_output = 15
+@alloy_t3_output = 24
 
-@cg_t1_cost = 6
-@cg_t2_cost = 12
-@cg_t3_cost = 24
+@alloy_t1_cost = 12
+@alloy_t2_cost = 30
+@alloy_t3_cost = 48
+
+@cg_t1_output = 12
+@cg_t2_output = 30
+@cg_t3_output = 48
+
+@cg_t1_cost = 12
+@cg_t2_cost = 30
+@cg_t3_cost = 48
 
 @rares_t1_output = 2
 @rares_t2_output = 4
@@ -139,10 +147,20 @@
 
 @fleetcomm_upkeep = 3
 
-@default_upkeep_food = 1
-@default_upkeep_cg = 1
+@upkeep_food_X2 = 2
+@upkeep_cg_X2 = 2
 
-@dumb_labour_output = 5
+@upkeep_food_X5 = 10
+@upkeep_cg_X5 = 10
+
+@upkeep_food_X8 = 16
+@upkeep_cg_X8 = 16
+
+@food_output = 12
+@minerals_output = 8
+@energy_output = 8
+
+@base_cost = 300
 
 ######################
 # PRODUCTION MODULES #
@@ -155,76 +173,21 @@
 utility_component_template = {
 	key = "NOMAD_SCIENCE_T1"
 	size = aux
-	icon = "GFX_ship_part_archeology_lab"
+	icon = "GFX_ship_part_vf_lab_1"
 	icon_frame = 1
 	power = -10
 	resources = {
 		category = ship_components
 		cost = {
-			minerals = 200
-			consumer_goods = 50
+			minerals = @b1_minerals
 		}
 		produces = {
 			physics_research = @research_t1_output
 			society_research = @research_t1_output
 			engineering_research = @research_t1_output
 		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_physics_1
-			}
-			physics_research = @science_upgrade_t1_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_physics_2
-			}
-			physics_research = @science_upgrade_t1_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_physics_3
-			}
-			physics_research = @science_upgrade_t1_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_society_1
-			}
-			society_research = @science_upgrade_t1_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_society_2
-			}
-			society_research = @science_upgrade_t1_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_society_3
-			}
-			society_research = @science_upgrade_t1_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_engineering_1
-			}
-			engineering_research = @science_upgrade_t1_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_engineering_2
-			}
-			engineering_research = @science_upgrade_t1_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_engineering_3
-			}
-			engineering_research =@science_upgrade_t1_improvement
-		}		
 		upkeep = {
-			food = @default_upkeep_food		
+			food = @upkeep_food_X2
 			consumer_goods = @research_t1_cost
 		}
 	}
@@ -241,79 +204,19 @@ utility_component_template = {
 utility_component_template = {
 	key = "NOMAD_SCIENCE_T2"
 	size = aux
-	icon = "GFX_ship_part_science_lab_1"
+	icon = "GFX_ship_part_vf_lab_2"
 	icon_frame = 1
 	power = -20
 	resources = {
 		category = ship_components
 		cost = {
-			minerals = 400
-			consumer_goods = 100
-			exotic_gases = 50
+			minerals = @b2_minerals
+			exotic_gases = @b2_rare_cost
 		}
-		produces = {
-			physics_research = @research_t2_output
-			society_research = @research_t2_output
-			engineering_research = @research_t2_output
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_physics_1
-			}
-			physics_research = @science_upgrade_t2_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_physics_2
-			}
-			physics_research = @science_upgrade_t2_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_physics_3
-			}
-			physics_research = @science_upgrade_t2_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_society_1
-			}
-			society_research = @science_upgrade_t2_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_society_2
-			}
-			society_research = @science_upgrade_t2_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_society_3
-			}
-			society_research = @science_upgrade_t2_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_engineering_1
-			}
-			engineering_research = @science_upgrade_t2_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_engineering_2
-			}
-			engineering_research = @science_upgrade_t2_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_engineering_3
-			}
-			engineering_research = @science_upgrade_t2_improvement
-		}		
 		upkeep = {
-			food = @default_upkeep_food		
+			food = @upkeep_food_X5
 			consumer_goods = @research_t2_cost
-			exotic_gases = 1
+			exotic_gases = @b2_rare_upkeep
 		}
 	}
 	
@@ -329,79 +232,24 @@ utility_component_template = {
 utility_component_template = {
 	key = "NOMAD_SCIENCE_T3"
 	size = aux
-	icon = "GFX_ship_part_curator_lab"
+	icon = "GFX_ship_part_vf_lab_3"
 	icon_frame = 1
 	power = -40
 	resources = {
 		category = ship_components
 		cost = {
-			minerals = 600
-			consumer_goods = 150
-			exotic_gases = 100
+			minerals = @b3_minerals
+			exotic_gases = @b3_rare_cost
 		}
 		produces = {
 			physics_research = @research_t3_output
 			society_research = @research_t3_output
 			engineering_research = @research_t3_output
 		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_physics_1
-			}
-			physics_research = @science_upgrade_t3_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_physics_2
-			}
-			physics_research = @science_upgrade_t3_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_physics_3
-			}
-			physics_research = @science_upgrade_t3_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_society_1
-			}
-			society_research = @science_upgrade_t3_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_society_2
-			}
-			society_research = @science_upgrade_t3_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_society_3
-			}
-			society_research = @science_upgrade_t3_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_engineering_1
-			}
-			engineering_research = @science_upgrade_t3_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_engineering_2
-			}
-			engineering_research = @science_upgrade_t3_improvement
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_engineering_3
-			}
-			engineering_research @science_upgrade_t3_improvement
-		}		
 		upkeep = {
-			food = @default_upkeep_food
+			food = @upkeep_food_X8
 			consumer_goods = @research_t3_cost
-			exotic_gases = 2
+			exotic_gases = @b3_rare_upkeep
 		}
 	}
 	
@@ -421,51 +269,20 @@ utility_component_template = {
 utility_component_template = {
 	key = "NOMAD_MINERALS"
 	size = aux
-	icon = "GFX_ship_part_crystal_armor_2"
+	icon = "GFX_ship_part_vf_minerals"
 	icon_frame = 1
 	power = -10
 	resources = {
 		category = ship_components
 		cost = {
-			minerals = 200
-			consumer_goods = 25
+			minerals = @base_cost
 		}
 		produces = {
-			minerals = @dumb_labour_output
+			minerals = @minerals_output
 		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_space_mining_1
-			}
-			minerals = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_space_mining_2
-			}
-			minerals = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_space_mining_3
-			}
-			minerals = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_space_mining_4
-			}
-			minerals = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_space_mining_5
-			}
-			minerals = 1
-		}		
 		upkeep = {
-			food = @default_upkeep_food
-			consumer_goods = @default_upkeep_cg
+			food = @upkeep_food_X2
+			consumer_goods = @upkeep_cg_X2
 		}
 	}
 	
@@ -481,81 +298,20 @@ utility_component_template = {
 utility_component_template = {
 	key = "NOMAD_ENERGY"
 	size = aux
-	icon = "GFX_ship_part_reactor_5"
+	icon = "GFX_ship_part_vf_energy"
 	icon_frame = 1
 	power = -10
 	resources = {
 		category = ship_components
 		cost = {
-			minerals = 200
-			consumer_goods = 25
+			minerals = @base_cost
 		}
 		produces = {
-			energy = @dumb_labour_output
+			energy = @energy_output
 		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_power_plant_2
-			}
-			energy = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_power_plant_3
-			}
-			energy = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_power_plant_4
-			}
-			energy = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_reactor_boosters_1
-			}
-			energy = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_reactor_boosters_2
-			}
-			energy = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_reactor_boosters_3
-			}
-			energy = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_cold_fusion_power
-			}
-			energy = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_antimatter_power
-			}
-			energy = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_zero_point_power
-			}
-			energy = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_dar_matter_power_core
-			}
-			energy = 2
-		}		
 		upkeep = {
-			food = @default_upkeep_food
-			consumer_goods = @default_upkeep_cg
+			food = @upkeep_food_X2
+			consumer_goods = @upkeep_cg_X2
 		}
 	}
 	
@@ -571,45 +327,20 @@ utility_component_template = {
 utility_component_template = {
 	key = "NOMAD_FOOD"
 	size = aux
-	icon = "GFX_ship_part_amoeba_strike_craft_1"
+	icon = "GFX_ship_part_vf_food"
 	icon_frame = 1
 	power = -10
 	resources = {
 		category = ship_components
 		cost = {
-			minerals = 200
-			consumer_goods = 25
+			minerals = @base_cost
 		}
 		produces = {
-			food = @dumb_labour_output
+			food = @food_output
 		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_eco_simulation
-			}
-			food = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_gene_crops
-			}
-			food = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_nano_vitality_crops
-			}
-			food = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_nutrient_replication
-			}
-			food = 2
-		}		
 		upkeep = {
-			food = @default_upkeep_food
-			consumer_goods = @default_upkeep_cg
+			food = @upkeep_food_X2
+			consumer_goods = @upkeep_cg_X2
 		}
 	}
 	
@@ -629,33 +360,20 @@ utility_component_template = {
 utility_component_template = {
 	key = "NOMAD_ALLOY_T1"
 	size = aux
-	icon = "GFX_ship_part_aura_nanobot"
+	icon = "GFX_ship_part_vf_alloys_1"
 	icon_frame = 1
 	power = -10
 	resources = {
 		category = ship_components
 		cost = {
-			minerals = 200
-			consumer_goods = 50
+			minerals = @b1_minerals
 		}
 		produces = {
-			alloys = 3
+			alloys = @alloy_t1_output
 		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_advanced_metallurgy_1
-			}
-			alloys = 0.3
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_advanced_metallurgy_1
-			}
-			alloys = 0.3
-		}		
 		upkeep = {
-			food = @default_upkeep_food
-			consumer_goods = @default_upkeep_cg
+			food = @upkeep_food_X2
+			consumer_goods = @upkeep_cg_X2
 			minerals = @alloy_t1_cost
 		}
 	}
@@ -672,36 +390,23 @@ utility_component_template = {
 utility_component_template = {
 	key = "NOMAD_ALLOY_T2"
 	size = aux
-	icon = "GFX_ship_part_aura_nanobot"
+	icon = "GFX_ship_part_vf_alloys_2"
 	icon_frame = 1
 	power = -10
 	resources = {
 		category = ship_components
 		cost = {
-			minerals = 400
-			consumer_goods = 100
-			volatile_motes = 50
+			minerals = @b2_minerals
+			volatile_motes = @b2_rare_cost
 		}
 		produces = {
-			alloys = 7.5
+			alloys = @alloy_t2_output
 		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_advanced_metallurgy_1
-			}
-			alloys = 0.75
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_advanced_metallurgy_2
-			}
-			alloys = 0.75
-		}		
 		upkeep = {
-			food = @default_upkeep_food
-			consumer_goods = @default_upkeep_cg
+			food = @upkeep_food_X5
+			consumer_goods = @upkeep_cg_X5
 			minerals = @alloy_t2_cost
-			volatile_motes = 1
+			volatile_motes = @b2_rare_upkeep
 		}
 	}
 	
@@ -717,36 +422,23 @@ utility_component_template = {
 utility_component_template = {
 	key = "NOMAD_ALLOY_T3"
 	size = aux
-	icon = "GFX_ship_part_aura_nanobot"
+	icon = "GFX_ship_part_vf_alloys_3"
 	icon_frame = 1
 	power = -40
 	resources = {
 		category = ship_components
 		cost = {
-			minerals = 600
-			consumer_goods = 200
-			volatile_motes = 100
+			minerals = @b3_minerals
+			volatile_motes = @b3_rare_cost
 		}
 		produces = {
-			alloys = 12
+			alloys = @alloy_t3_output
 		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_advanced_metallurgy_1
-			}
-			alloys = 1.2
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_advanced_metallurgy_2
-			}
-			alloys = 1.2
-		}		
 		upkeep = {
-			food = @default_upkeep_food
-			consumer_goods = @default_upkeep_cg
+			food = @upkeep_food_X8
+			consumer_goods = @upkeep_cg_X8
 			minerals = @alloy_t3_cost
-			volatile_motes = 2
+			volatile_motes = @b3_rare_upkeep
 		}
 	}
 	
@@ -762,32 +454,19 @@ utility_component_template = {
 utility_component_template = {
 	key = "NOMAD_CG_T1"
 	size = aux
-	icon = "GFX_ship_part_aura_strike_craft"
+	icon = "GFX_ship_part_vf_cgs_1"
 	icon_frame = 1
 	power = -10
 	resources = {
 		category = ship_components
 		cost = {
-			minerals = 200
-			consumer_goods = 50
+			minerals = @b1_minerals
 		}
 		produces = {
-			consumer_goods = 6
+			consumer_goods = @cg_t1_output
 		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_consumer_good_refinement_1
-			}
-			consumer_goods = 0.6
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_consumer_good_refinement_2
-			}
-			consumer_goods = 0.6
-		}		
 		upkeep = {
-			food = @default_upkeep_food
+			food = @upkeep_food_X2
 			minerals = @cg_t1_cost
 		}
 	}
@@ -804,35 +483,22 @@ utility_component_template = {
 utility_component_template = {
 	key = "NOMAD_CG_T2"
 	size = aux
-	icon = "GFX_ship_part_aura_strike_craft"
+	icon = "GFX_ship_part_vf_cgs_2"
 	icon_frame = 1
 	power = -20
 	resources = {
 		category = ship_components
 		cost = {
-			minerals = 400
-			consumer_goods = 100
-			rare_crystals = 50
+			minerals = @b2_minerals
+			rare_crystals = @b2_rare_cost
 		}
 		produces = {
-			consumer_goods = 15
+			consumer_goods = @cg_t2_output
 		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_consumer_good_refinement_1
-			}
-			consumer_goods = 1.5
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_consumer_good_refinement_2
-			}
-			consumer_goods = 1.5
-		}		
 		upkeep = {
-			food = @default_upkeep_food
+			food = @upkeep_food_X5
 			minerals = @cg_t2_cost
-			rare_crystals = 1
+			rare_crystals = @b2_rare_upkeep
 		}
 	}
 	
@@ -848,36 +514,22 @@ utility_component_template = {
 utility_component_template = {
 	key = "NOMAD_CG_T3"
 	size = aux
-	icon = "GFX_ship_part_aura_strike_craft"
+	icon = "GFX_ship_part_vf_cgs_3"
 	icon_frame = 1
 	power = -40
 	resources = {
 		category = ship_components
 		cost = {
-			minerals = 600
-			consumer_goods = 150
-			rare_crystals = 100
+			minerals = @b3_minerals
+			rare_crystals = @b3_rare_cost
 		}
 		produces = {
-			consumer_goods = 24
+			consumer_goods = @cg_t3_output
 		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_consumer_good_refinement_1
-			}
-			consumer_goods = 2.4
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_consumer_good_refinement_2
-			}
-			consumer_goods = 12.4
-		}		
 		upkeep = {
-			food = @default_upkeep_food
+			food = @upkeep_food_X8
 			minerals = @cg_t3_cost
-			rare_crystals = 2
-			
+			rare_crystals = @b3_rare_upkeep	
 		}
 	}
 	
@@ -890,34 +542,30 @@ utility_component_template = {
 	}
 }
 
+#NORMAL EMPIRE UNITY
 utility_component_template = {
 	key = "NOMAD_UNITY_T1"
 	size = aux
-	icon = "GFX_ship_part_dark_matter_power_core"
+	icon = "GFX_ship_part_vf_unity_1"
 	icon_frame = 1
 	power = -10
 	resources = {
 		category = ship_components
 		cost = {
-			minerals = 200
-			consumer_goods = 50
+			minerals = @b1_minerals
 		}
 		produces = {
-			unity = 3
-			society_research = 3
+			unity = @unity_t1_output
+			society_research = @unity_t1_output
 		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_autocurating_vault
-			}
-			unity = 3
-		}		
 		upkeep = {
-			food = @default_upkeep_food
-			consumer_goods = 2
+			food = @upkeep_food_X2
+			consumer_goods = @unity_t1_cost
 		}
 	}
-	prerequisites = { tech_cultural_heritage }
+	prerequisites = {
+		tech_cultural_heritage
+	}
 	component_set = "NOMAD_UNITY_1"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
@@ -929,34 +577,29 @@ utility_component_template = {
 utility_component_template = {
 	key = "NOMAD_UNITY_T2"
 	size = aux
-	icon = "GFX_ship_part_dark_matter_power_core"
+	icon = "GFX_ship_part_vf_unity_2"
 	icon_frame = 1
 	power = -20
 	resources = {
 		category = ship_components
 		cost = {
-			minerals = 400
-			consumer_goods = 100
-			exotic_gases = 50
+			minerals = @b2_minerals
+			rare_crystals = @b2_rare_cost
 		}
 		produces = {
-			unity = 7.5
-			society_research = 7.5
+			unity = @unity_t2_output
+			society_research = @unity_t2_output
 		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_autocurating_vault
-			}
-			unity = 7.5
-		}		
 		upkeep = {
-			food = @default_upkeep_food
-			consumer_goods = 5
-			exotic_gases = 1
+			food = @upkeep_food_X5
+			consumer_goods = @unity_t2_cost
+			rare_crystals = @b2_rare_upkeep
 		}
 	}
 	
-	prerequisites = { tech_heritage_site }
+	prerequisites = {
+		tech_heritage_site
+	}
 	component_set = "NOMAD_UNITY_2"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
@@ -965,6 +608,297 @@ utility_component_template = {
 	}
 }
 
+utility_component_template = {
+	key = "NOMAD_UNITY_T3"
+	size = aux
+	icon = "GFX_ship_part_vf_unity_3"
+	icon_frame = 1
+	power = -20
+	resources = {
+		category = ship_components
+		cost = {
+			minerals = @b3_minerals
+			rare_crystals = @b3_rare_cost
+		}
+		produces = {
+			unity = @unity_t3_output
+			society_research = @unity_t3_output
+		}
+		upkeep = {
+			food = @upkeep_food_X8
+			consumer_goods = @unity_t3_cost
+			rare_crystals = 2
+		}
+	}
+	
+	prerequisites = {
+		tech_hypercomms_forum
+	}
+	component_set = "NOMAD_UNITY_3"
+	size_restriction = { capital_ark_ship support_ark_ship }
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+#SPI UNITY
+utility_component_template = {
+	key = "NOMAD_UNITY_SPI_T2"
+	size = aux
+	icon = "GFX_ship_part_vf_unity_spi_2"
+	icon_frame = 1
+	power = -20
+	resources = {
+		category = ship_components
+		cost = {
+			minerals = @b2_minerals
+			rare_crystals = @b2_rare_cost
+		}
+		produces = {
+			unity = @unity_t2_output
+			society_research = @unity_t2_output
+		}
+		upkeep = {
+			food = @upkeep_food_X5
+			consumer_goods = @unity_t2_cost
+			rare_crystals = @b2_rare_upkeep
+		}
+	}
+	
+	prerequisites = {
+		tech_holographic_rituals
+	}
+	component_set = "NOMAD_UNITY_SPI_2"
+	size_restriction = { capital_ark_ship support_ark_ship }
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "NOMAD_UNITY_SPI_T3"
+	size = aux
+	icon = "GFX_ship_part_vf_unity_spi_3"
+	icon_frame = 1
+	power = -20
+	resources = {
+		category = ship_components
+		cost = {
+			minerals = @b3_minerals
+			rare_crystals = @b3_rare_cost
+		}
+		produces = {
+			unity = @unity_t3_output
+			society_research = @unity_t3_output
+		}
+		upkeep = {
+			food = @upkeep_food_X8
+			consumer_goods = @unity_t3_cost
+			rare_crystals = 2
+		}
+	}
+	
+	prerequisites = {
+		tech_consecration_fields
+	}
+	component_set = "NOMAD_UNITY_SPI_3"
+	size_restriction = { capital_ark_ship support_ark_ship }
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+#HIVE UNITY
+utility_component_template = {
+	key = "NOMAD_UNITY_HIVE_T1"
+	size = aux
+	icon = "GFX_ship_part_vf_unity_hive_1"
+	icon_frame = 1
+	power = -10
+	resources = {
+		category = ship_components
+		cost = {
+			minerals = @b1_minerals
+		}
+		produces = {
+			unity = @unity_t1_output
+			society_research = @unity_t1_output
+		}
+		upkeep = {
+			food = @upkeep_food_X2
+			consumer_goods = @unity_t1_cost
+		}
+	}
+	prerequisites = {
+		tech_hive_node
+	}
+	component_set = "NOMAD_UNITY_HIVE_1"
+	size_restriction = { capital_ark_ship support_ark_ship }
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "NOMAD_UNITY_HIVE_T2"
+	size = aux
+	icon = "GFX_ship_part_vf_unity_hive_2"
+	icon_frame = 1
+	power = -20
+	resources = {
+		category = ship_components
+		cost = {
+			minerals = @b2_minerals
+			rare_crystals = @b2_rare_cost
+		}
+		produces = {
+			unity = @unity_t2_output
+			society_research = @unity_t2_output
+		}
+		upkeep = {
+			food = @upkeep_food_X5
+			consumer_goods = @unity_t2_cost
+			rare_crystals = @b2_rare_upkeep
+		}
+	}
+	
+	prerequisites = {
+		tech_hive_cluster		
+	}
+	component_set = "NOMAD_UNITY_HIVE_2"
+	size_restriction = { capital_ark_ship support_ark_ship }
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "NOMAD_UNITY_HIVE_T3"
+	size = aux
+	icon = "GFX_ship_part_vf_unity_hive_3"
+	icon_frame = 1
+	power = -20
+	resources = {
+		category = ship_components
+		cost = {
+			minerals = @b3_minerals
+			rare_crystals = @b3_rare_cost
+		}
+		produces = {
+			unity = @unity_t3_output
+			society_research = @unity_t3_output
+		}
+		upkeep = {
+			food = @upkeep_food_X8
+			consumer_goods = @unity_t3_cost
+			rare_crystals = 2
+		}
+	}
+	
+	prerequisites = {
+		tech_hive_confluence			
+	}
+	component_set = "NOMAD_UNITY_HIVE_3"
+	size_restriction = { capital_ark_ship support_ark_ship }
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "NOMAD_GAS"
+	size = aux
+	icon = "GFX_ship_part_vf_gas"
+	icon_frame = 1
+	power = -10
+	resources = {
+		category = ship_components
+		cost = {
+			minerals = 500
+		}
+		produces = {
+			exotic_gases = 2
+		}
+		upkeep = {
+			food = 1
+			consumer_goods = 1
+			minerals = 10
+		}
+	}
+	
+	prerequisites = { "tech_exotic_gases" }
+	component_set = "NOMAD_GAS"
+	size_restriction = { capital_ark_ship support_ark_ship }
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "NOMAD_MOTES"
+	size = aux
+	icon = "GFX_ship_part_vf_motes"
+	icon_frame = 1
+	power = -10
+	resources = {
+		category = ship_components
+		cost = {
+			minerals = 500
+		}
+		produces = {
+			volatile_motes = 2
+		}
+		upkeep = {
+			food = 1
+			consumer_goods = 1
+			minerals = 10
+		}
+	}
+	
+	prerequisites = { "tech_volatile_motes" }
+	component_set = "NOMAD_MOTES"
+	size_restriction = { capital_ark_ship support_ark_ship }
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "NOMAD_CRYSTALS"
+	size = aux
+	icon = "GFX_ship_part_vf_crystals"
+	icon_frame = 1
+	power = -10
+	resources = {
+		category = ship_components
+		cost = {
+			minerals = 500
+		}
+		produces = {
+			rare_crystals = 2
+		}
+		upkeep = {
+			food = 1
+			consumer_goods = 1
+			minerals = 10
+		}
+	}
+	
+	prerequisites = { "tech_rare_crystals" }
+	component_set = "NOMAD_CRYSTALS"
+	size_restriction = { capital_ark_ship support_ark_ship }
+	
+	ai_weight = {
+		weight = 100
+	}
+}
 
 #utility_component_template = {
 #	key = "NOMAD_ADMINCAP"
@@ -1770,7 +1704,7 @@ utility_component_template = {
 	size_restriction = { vf_marauder_corvette nomad_mining_ship nomad_energy_tanker factory_ship }
 	
 	ai_weight = {
-		weight = 6
+		weight = 8
 	}
 }
 
@@ -1797,7 +1731,7 @@ utility_component_template = {
 	size_restriction = { vf_marauder_frigate }
 	
 	ai_weight = {
-		weight = 6
+		weight = 8
 	}
 }
 
@@ -1824,7 +1758,7 @@ utility_component_template = {
 	size_restriction = { vf_marauder_cruiser }
 	
 	ai_weight = {
-		weight = 6
+		weight = 8
 	}
 }
 
@@ -1851,7 +1785,7 @@ utility_component_template = {
 	size_restriction = { vf_marauder_galleon capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
-		weight = 6
+		weight = 8
 	}
 }
 
@@ -1879,6 +1813,6 @@ utility_component_template = {
 	size_restriction = { void_farer_void_dwelling }
 
 	ai_weight = {
-		weight = 6
+		weight = 8
 	}
 }
