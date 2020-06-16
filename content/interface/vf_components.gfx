@@ -24,4 +24,104 @@ spriteTypes{
 		name = "GFX_ship_part_vf_dark_matter_power_core"
 		texturefile = "gfx/interface/icons/ship_parts/ship_part_vf_dark_matter_power_core.dds"
 	}
+#NEW
+	spriteType = {
+		name = "GFX_ship_part_vf_lab_1"
+		texturefile = "gfx/interface/icons/technologies/tech_basic_science_lab_1.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_lab_2"
+		texturefile = "gfx/interface/icons/technologies/tech_basic_science_lab_2.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_lab_3"
+		texturefile = "gfx/interface/icons/technologies/tech_basic_science_lab_3.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_vf_alloys_1"
+		texturefile = "gfx/interface/icons/technologies/tech_alloys_1.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_alloys_2"
+		texturefile = "gfx/interface/icons/technologies/tech_alloys_2.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_alloys_3"
+		texturefile = "gfx/interface/icons/technologies/tech_alloys_3.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_vf_cgs_1"
+		texturefile = "gfx/interface/icons/technologies/tech_luxuries_1.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_cgs_2"
+		texturefile = "gfx/interface/icons/technologies/tech_luxuries_2.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_cgs_3"
+		texturefile = "gfx/interface/icons/technologies/tech_consumer_good_refinement_2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_vf_minerals"
+		texturefile = "gfx/interface/icons/technologies/tech_mineral_purification_1.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_energy"
+		texturefile = "gfx/interface/icons/technologies/tech_power_hub_1.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_food"
+		texturefile = "gfx/interface/icons/technologies/tech_pure_seed_farming.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_vf_unity_1"
+		texturefile = "gfx/interface/icons/technologies/tech_symbol_unity.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_unity_2"
+		texturefile = "gfx/interface/icons/technologies/tech_heritage_site.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_unity_3"
+		texturefile = "gfx/interface/icons/technologies/tech_hypercomms_forum.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_vf_unity_hive_1"
+		texturefile = "gfx/interface/icons/technologies/tech_hive_node.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_unity_hive_2"
+		texturefile = "gfx/interface/icons/technologies/tech_hive_cluster.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_unity_hive_3"
+		texturefile = "gfx/interface/icons/technologies/tech_hive_confluence.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_vf_unity_spi_2"
+		texturefile = "gfx/interface/icons/technologies/tech_holographic_rituals.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_unity_spi_3"
+		texturefile = "gfx/interface/icons/technologies/tech_transcendent_faith.dds"
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_vf_motes"
+		texturefile = "gfx/interface/icons/technologies/tech_singularity_core.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_gas"
+		texturefile = "gfx/interface/icons/technologies/tech_xeno_zoo.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_crystals"
+		texturefile = "gfx/interface/icons/technologies/tech_probability_theory.dds"
+	}
 }
