@@ -2,7 +2,7 @@ pm_no_patron_moon = {
 
 	icon = "gfx/interface/icons/planet_modifiers/pm_shattered_planet.dds"
 
-	pop_happiness = -0.20
+	#pop_happiness = -0.20
 	planet_stability_add = -10
 	
 	icon_frame = 3
