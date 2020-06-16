@@ -15,6 +15,7 @@ ruler_job_check_trigger = {
 			}
 		}
 		NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+		divinity_right_to_work_job_check_trigger_ruler = yes
 	}
 }
 
@@ -29,7 +30,6 @@ complex_specialist_job_check_trigger = {
 				owner = { NOT = { has_policy_flag = ai_outlawed } }
 			}
 		}
-		NOT = { has_trait = trait_syncretic_proles }
 	}
 }
 
@@ -43,12 +43,14 @@ specialist_job_check_trigger = {
 		}
 		is_being_purged = no
 		is_being_assimilated = no
+		NOT = { has_trait = trait_syncretic_proles }
 		NOT = { has_trait = trait_nerve_stapled }
 		OR = {
 			NOT = { has_trait = trait_mechanical }
 			owner = { has_technology = tech_droid_workers }
 		}
 		NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+		divinity_right_to_work_job_check_trigger_specialist = yes
 	}
 }
 
@@ -62,12 +64,14 @@ entertainer_job_check_trigger = {
 		}
 		is_being_purged = no
 		is_being_assimilated = no
+		NOT = { has_trait = trait_syncretic_proles }
 		NOT = { has_trait = trait_nerve_stapled }
 		OR = {
 			NOT = { has_trait = trait_mechanical }
 			owner = { has_technology = tech_droid_workers }
 		}
 		NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+		divinity_right_to_work_job_check_trigger_specialist = yes
 	}
 }
 
@@ -81,12 +85,14 @@ battle_thrall_job_check_trigger = {
 		}
 		is_being_purged = no
 		is_being_assimilated = no
+		NOT = { has_trait = trait_syncretic_proles }
 		NOT = { has_trait = trait_nerve_stapled }
 		OR = {
 			NOT = { has_trait = trait_mechanical }
 			owner = { has_technology = tech_droid_workers }
 		}
 		NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+		divinity_right_to_work_job_check_trigger_specialist = yes
 	}
 }
 
@@ -115,6 +121,7 @@ worker_job_check_trigger = {
 				has_slavery_type = { type = slavery_matrix }
 			}
 		}
+		divinity_right_to_work_job_check_trigger_worker = yes
 	}
 }
 
@@ -127,6 +134,66 @@ drone_job_check_trigger = {
 		is_enslaved = no
 		is_being_assimilated = no
 		NOT = { has_citizenship_type = { type = citizenship_organic_trophy } }
+	}
+}
+
+divinity_right_to_work_job_check_trigger_exempt = {
+	hidden_trigger = {
+		OR = {
+			NOT = { has_global_flag = galactic_community_resolution_divinity_right_to_work }
+			is_robotic_species = no
+			AND = {
+				exists = owner
+				owner = { is_galactic_community_member = no }
+			}
+		}
+	}
+}
+
+divinity_right_to_work_job_check_trigger_worker = {
+	OR = {
+		divinity_right_to_work_job_check_trigger_exempt = yes
+		NOT = {
+			planet = {
+				any_owned_pop = {
+					is_robotic_species = no
+					is_unemployed = yes
+					is_pop_category = worker
+				}
+			}
+		}
+	}
+}
+
+divinity_right_to_work_job_check_trigger_specialist = {
+	OR = {
+		divinity_right_to_work_job_check_trigger_exempt = yes
+		NOT = {
+			planet = {
+				any_owned_pop = {
+					is_robotic_species = no
+					is_unemployed = yes
+					OR = {
+						is_pop_category = specialist
+						is_pop_category = worker
+					}
+				}
+			}
+		}
+	}
+}
+
+divinity_right_to_work_job_check_trigger_ruler = {
+	OR = {
+		divinity_right_to_work_job_check_trigger_exempt = yes
+		NOT = {
+			planet = {
+				any_owned_pop = {
+					is_robotic_species = no
+					is_unemployed = yes
+				}
+			}
+		}
 	}
 }
 
