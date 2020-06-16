@@ -6,6 +6,8 @@ ruler_job_check_trigger = {
 		is_being_purged = no
 		is_being_assimilated = no
 		NOT = { has_trait = trait_syncretic_proles }
+		NOT = { has_trait = trait_symbiotic }
+		NOT = { has_trait = trait_slave_gene }
 		NOT = { has_trait = trait_nerve_stapled }
 		OR = {
 			NOT = { has_trait = trait_mechanical }
@@ -39,11 +41,13 @@ specialist_job_check_trigger = {
 		exists = owner
 		OR = {
 			is_enslaved = no
+			is_slave_complex_possible = yes
 			has_slavery_type = { type = slavery_indentured }
 		}
 		is_being_purged = no
 		is_being_assimilated = no
 		NOT = { has_trait = trait_syncretic_proles }
+		NOT = { has_trait = trait_slave_gene }
 		NOT = { has_trait = trait_nerve_stapled }
 		OR = {
 			NOT = { has_trait = trait_mechanical }
@@ -65,6 +69,7 @@ entertainer_job_check_trigger = {
 		is_being_purged = no
 		is_being_assimilated = no
 		NOT = { has_trait = trait_syncretic_proles }
+		NOT = { has_trait = trait_slave_gene }
 		NOT = { has_trait = trait_nerve_stapled }
 		OR = {
 			NOT = { has_trait = trait_mechanical }
