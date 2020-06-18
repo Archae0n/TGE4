@@ -50,10 +50,6 @@ auth_direct_democratic = {
 
 	country_modifier = {
 		edicts_cost_mult = -0.2
-		 pop_cat_worker_political_power = 0.3
-		 pop_cat_specialist_political_power = 0.3
-		 pop_cat_ruler_political_power = 0.3
-
 	}
 
 	tags = {
@@ -83,9 +79,7 @@ auth_democratic = {
 
 	country_modifier = {
 		 edicts_cost_mult = -0.2
-			 pop_cat_worker_political_power = 0.3
-			 pop_cat_specialist_political_power = 0.3
-			 pop_cat_ruler_political_power = 0.5
+		 pop_cat_ruler_political_power = 2
 	}
 
 	tags = {
@@ -116,8 +110,8 @@ auth_oligarchic = {
 	country_modifier = {
 		 governor_skill_levels = 2
 		 pop_cat_worker_political_power = 0.25
-		 pop_cat_specialist_political_power = 0.3
-		 pop_cat_ruler_political_power = 0.5
+		 pop_cat_specialist_political_power = 3
+		 pop_cat_ruler_political_power = 5
 	}
 
 	tags = {
@@ -143,9 +137,8 @@ auth_dictatorial = {
 
 	country_modifier = {
 		 country_edict_cap_add = 1
-		 pop_cat_worker_political_power = 0.1
-		 pop_cat_specialist_political_power = 0.3
-		 pop_cat_ruler_political_power = 0.6			 
+		 pop_cat_specialist_political_power = 3
+		 pop_cat_ruler_political_power = 6			 
 	}
 
 	tags = {
@@ -171,8 +164,8 @@ auth_imperial = {
 	country_modifier = {
 		 country_edict_cap_add = 1
 		 pop_cat_worker_political_power = -0.5
-		 pop_cat_specialist_political_power = 0.5
-		 pop_cat_ruler_political_power = 1	 
+		 pop_cat_specialist_political_power = 5
+		 pop_cat_ruler_political_power = 9	 
 	}
 
 	tags = {
