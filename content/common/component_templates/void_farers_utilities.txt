@@ -147,18 +147,18 @@
 
 @fleetcomm_upkeep = 3
 
-@upkeep_food_X2 = 2
-@upkeep_cg_X2 = 2
+@upkeep_food_X2 = 1
+@upkeep_cg_X2 = 1
 
-@upkeep_food_X5 = 10
-@upkeep_cg_X5 = 10
+@upkeep_food_X5 = 5
+@upkeep_cg_X5 = 5
 
-@upkeep_food_X8 = 16
-@upkeep_cg_X8 = 16
+@upkeep_food_X8 = 8
+@upkeep_cg_X8 = 8
 
 @food_output = 12
-@minerals_output = 8
-@energy_output = 8
+@minerals_output = 12
+@energy_output = 12
 
 @base_cost = 300
 
