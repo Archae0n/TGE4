@@ -2364,10 +2364,6 @@ ap_esap_materialist_1 = {
 			fail_text = "requires_ascension_perks_1"
 			num_ascension_perks > 0
 		}
-		OR = { 
-		is_country_type = void_farer 
-		is_country_type = fallen_empire
-		}
 	}
 
 	potential = {
