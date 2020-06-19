@@ -90,7 +90,7 @@ ap_unquestioned_aquisitions = {
 		}
 		custom_tooltip = {
 			fail_text = "void_farer_only"
-			is_country_type = void_farer
+			has_country_flag = is_nomads
 		}
 	}
 }
