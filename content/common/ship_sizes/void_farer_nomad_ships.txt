@@ -215,6 +215,7 @@ capital_ark_ship = {
 		ship_evasion_add = 15
 		ship_armor_add = 50
 		starbase_shipyard_capacity_add = 2
+		country_naval_cap_add = 20
 	}
 	max_hitpoints = 50000
 	size_multiplier = 1
@@ -232,10 +233,6 @@ capital_ark_ship = {
 	default_behavior = artillery
 	
 	combat_disengage_chance = 1.25
-	
-	country_modifier = {
-		country_naval_cap_add = 20
-	}
 	
 	resources = {
 		category = ships

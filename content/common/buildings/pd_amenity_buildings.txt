@@ -15,7 +15,6 @@ building_luxury_residence = {
 			NOT = { is_planet_class = pc_pd_gas_giant_hab }
 			NOT = { is_planet_class = pc_pd_hothouse_hab }
 			NOT = { is_planet_class = pc_pd_molten_hab }
-			NOT = { is_planet_class = pc_pd_asteroid_hab }
 			has_planet_flag = advanced_habitat
 		}
 		NOT = { has_modifier = slave_colony }
@@ -122,7 +121,6 @@ building_paradise_dome = {
 			NOT = { is_planet_class = pc_pd_gas_giant_hab }
 			NOT = { is_planet_class = pc_pd_hothouse_hab }
 			NOT = { is_planet_class = pc_pd_molten_hab }
-			NOT = { is_planet_class = pc_pd_asteroid_hab }
 			AND = {
 				has_planet_flag = advanced_habitat
 				exists = owner
@@ -222,7 +220,6 @@ building_communal_housing = {
 			NOT = { is_planet_class = pc_pd_gas_giant_hab }
 			NOT = { is_planet_class = pc_pd_hothouse_hab }
 			NOT = { is_planet_class = pc_pd_molten_hab }
-			NOT = { is_planet_class = pc_pd_asteroid_hab }
 			has_planet_flag = advanced_habitat
 		}
 		NOT = { has_modifier = slave_colony }
@@ -255,7 +252,6 @@ building_communal_housing = {
 				is_planet_class = pc_pd_gas_giant_hab
 				is_planet_class = pc_pd_hothouse_hab
 				is_planet_class = pc_pd_molten_hab
-				is_planet_class = pc_pd_asteroid_hab
 				}
 				NOT = { has_planet_flag = advanced_habitat }
 			}
@@ -345,7 +341,6 @@ building_communal_housing_large = {
 			NOT = { is_planet_class = pc_pd_gas_giant_hab }
 			NOT = { is_planet_class = pc_pd_hothouse_hab }
 			NOT = { is_planet_class = pc_pd_molten_hab }
-			NOT = { is_planet_class = pc_pd_asteroid_hab }
 			AND = {
 				has_planet_flag = advanced_habitat
 				exists = owner

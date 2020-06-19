@@ -38,7 +38,6 @@ building_hydroponics_farm = {
 				NOT = { is_planet_class = pc_pd_gas_giant_hab }
 				NOT = { is_planet_class = pc_pd_hothouse_hab }
 				NOT = { is_planet_class = pc_pd_molten_hab }
-				NOT = { is_planet_class = pc_pd_asteroid_hab }
 				free_building_slots = 0
 				owner = {
 					is_ai = yes
@@ -122,7 +121,6 @@ building_hydroponics_farm = {
 				is_planet_class = pc_pd_gas_giant_hab
 				is_planet_class = pc_pd_hothouse_hab
 				is_planet_class = pc_pd_molten_hab
-				is_planet_class = pc_pd_asteroid_hab
 				is_planet_class = pc_city
 				is_planet_class = pc_relic
 			}
@@ -159,7 +157,6 @@ building_hydroponics_farm = {
 			is_planet_class = pc_pd_gas_giant_hab
 			is_planet_class = pc_pd_hothouse_hab
 			is_planet_class = pc_pd_molten_hab
-			is_planet_class = pc_pd_asteroid_hab
 			}
 			OR = {
 				owner = {
@@ -220,7 +217,6 @@ building_mineral_purification_plant = {
 		NOT = { is_planet_class = pc_pd_gas_giant_hab }
 		NOT = { is_planet_class = pc_pd_hothouse_hab }
 		NOT = { is_planet_class = pc_pd_molten_hab }
-		NOT = { is_planet_class = pc_pd_asteroid_hab }
 			has_planet_flag = mining_habitat
 		}
 	}
@@ -278,7 +274,6 @@ building_mineral_purification_plant = {
 				is_planet_class = pc_pd_gas_giant_hab
 				is_planet_class = pc_pd_hothouse_hab
 				is_planet_class = pc_pd_molten_hab
-				is_planet_class = pc_pd_asteroid_hab
 				is_planet_class = pc_machine
 				is_planet_class = pc_hive
 				is_planet_class = pc_city
@@ -438,7 +433,6 @@ building_mineral_purification_hub = {
 				is_planet_class = pc_pd_gas_giant_hab
 				is_planet_class = pc_pd_hothouse_hab
 				is_planet_class = pc_pd_molten_hab
-				is_planet_class = pc_pd_asteroid_hab
 				is_planet_class = pc_machine
 				is_planet_class = pc_hive
 				is_planet_class = pc_city
@@ -581,7 +575,6 @@ building_energy_nexus = {
 				is_planet_class = pc_pd_gas_giant_hab
 				is_planet_class = pc_pd_hothouse_hab
 				is_planet_class = pc_pd_molten_hab
-				is_planet_class = pc_pd_asteroid_hab
 				is_planet_class = pc_machine
 				is_planet_class = pc_hive
 				is_planet_class = pc_city

@@ -78,7 +78,7 @@ pdhabitat_sol_system_initializer = {
 		
 		moon = {
 			name = "NAME_Luna"
-			class = "_cold_hab"
+			class = "pc_pd_barren_cold_hab"
 			size = 5
 			orbit_distance = 12
 			orbit_angle = 40
