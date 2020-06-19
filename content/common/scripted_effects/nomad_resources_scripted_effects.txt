@@ -40,7 +40,7 @@ calculate_starbase_cost = {
 	if = { # > 7
 		limit = {
 			any_country = {
-				is_country_type = void_farer
+				has_country_flag = is_nomads
 				count_owned_starbase = {
 				count > 7
 				}
@@ -70,7 +70,7 @@ calculate_starbase_cost = {
 			if = { # > 6
 				limit = {
 					any_country = {
-						is_country_type = void_farer
+						has_country_flag = is_nomads
 						count_owned_starbase = {
 						count > 6
 						}
@@ -100,7 +100,7 @@ calculate_starbase_cost = {
 					if = { # > 5
 						limit = {
 							any_country = {
-								is_country_type = void_farer
+								has_country_flag = is_nomads
 								count_owned_starbase = {
 								count > 5
 								}
@@ -130,7 +130,7 @@ calculate_starbase_cost = {
 							if = { # > 4
 								limit = {
 									any_country = {
-										is_country_type = void_farer
+										has_country_flag = is_nomads
 										count_owned_starbase = {
 										count > 4
 										}
@@ -160,7 +160,7 @@ calculate_starbase_cost = {
 									if = { # > 3
 										limit = {
 											any_country = {
-												is_country_type = void_farer
+												has_country_flag = is_nomads
 												count_owned_starbase = {
 												count > 3
 												}
@@ -190,7 +190,7 @@ calculate_starbase_cost = {
 											if = { # > 2
 												limit = {
 													any_country = {
-														is_country_type = void_farer
+														has_country_flag = is_nomads
 														count_owned_starbase = {
 														count > 2
 														}
@@ -220,7 +220,7 @@ calculate_starbase_cost = {
 													if = { # > 1
 														limit = {
 															any_country = {
-																is_country_type = void_farer
+																has_country_flag = is_nomads
 																count_owned_starbase = {
 																count > 1
 																}
@@ -250,7 +250,7 @@ calculate_starbase_cost = {
 															if = { # > 0
 																limit = {
 																	any_country = {
-																		is_country_type = void_farer
+																		has_country_flag = is_nomads
 																		count_owned_starbase = {
 																		count > 0
 																		}
@@ -280,7 +280,7 @@ calculate_starbase_cost = {
 																	if = { # < 1
 																		limit = {
 																			any_country = {
-																				is_country_type = void_farer
+																				has_country_flag = is_nomads
 																				count_owned_starbase = {
 																				count < 1
 																				}
