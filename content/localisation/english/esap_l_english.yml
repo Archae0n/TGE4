@@ -55,10 +55,10 @@ ap_esap_gov_2:0 "$ap_transcendent_learning$"
  
  ap_esap_gov_3:0 "$ap_imperial_prerogative$"
  ap_esap_gov_3_desc:0 "$ap_imperial_prerogative_desc$"
- ap_esap_gov_3_tooltip:0 "§YGoverment Perk§!. Increase §YAdministrative Capacity§! by §G15%§! for each §YGoverment Perk§! unlocked (including this one)."
+ ap_esap_gov_3_tooltip:0 "§YGoverment Perk§!.Increase §YAdministrative Capacity§! by §G15%§! and increase §YAdministrative Capacity§! by §G15§! for each §YGoverment Perk§! unlocked (including this one)."
  ap_esap_gov_3_corp:0 "$ap_esap_gov_3$"
  ap_esap_gov_3_corp_desc:0 "$ap_esap_gov_3_desc$"
- ap_esap_gov_3_corp_tooltip:0 "§YGoverment Perk§!. Increase §YAdministrative Capacity§! by §G15%§! for each §YGoverment Perk§! unlocked (including this one)."
+ ap_esap_gov_3_corp_tooltip:0 "§YGoverment Perk§!. Increase §YAdministrative Capacity§! by §G15§! for each §YGoverment Perk§! unlocked (including this one)."
 
  ap_esap_gov_4:0 "Righteous Rule"
  ap_esap_gov_4_desc:0 "We are convinced of our ruling class' right to their power. The aptitude for ruling that they have shown throughout the ages leaves us no doubt."

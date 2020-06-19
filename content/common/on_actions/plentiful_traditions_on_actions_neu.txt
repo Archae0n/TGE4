@@ -18,6 +18,13 @@ on_monthly_pulse = {
 # No scope, like on_game_start
 on_yearly_pulse = {
 	events = {
+	plentiful_traditions_affinity.3
+	
+	plentiful_traditions_aspiration.5
+	
+	plentiful_traditions_aspiration.6
+	
+	plentiful_traditions_overcharge_pedict.2
 	}
 }
 
@@ -684,6 +691,13 @@ on_ship_upgraded = {
 # From = War
 on_war_beginning = {
 	events = {
+	plentiful_traditions_affinity.3
+	
+	plentiful_traditions_aspiration.5
+	
+	plentiful_traditions_aspiration.6
+	
+	plentiful_traditions_overcharge_pedict.2
 	}
 }
 
@@ -692,6 +706,13 @@ on_war_beginning = {
 # From = Main Winner
 on_war_ended = {
 	events = {
+	plentiful_traditions_affinity.3
+	
+	plentiful_traditions_aspiration.5
+	
+	plentiful_traditions_aspiration.6
+	
+	plentiful_traditions_overcharge_pedict.2
 	}
 }
 

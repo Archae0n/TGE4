@@ -524,27 +524,13 @@ event = {
 				has_tradition = tr_plentiful_aspiration_2
 			}
 			if = {
-				limit = {
-					is_at_war = no
-				}
-				if = {
-					limit = {
-						Not = {
-							has_modifier = modifier_plentiful_traditions_credence
-						}
-					}
-				}
-				add_modifier = {
-					modifier = "modifier_plentiful_traditions_credence"
-				}
-				else = {
-					if = {
-						limit = {
-							has_modifier = modifier_plentiful_traditions_credence
-						}
-					}
-					remove_modifier = "modifier_plentiful_traditions_credence"
-				}
+                limit = { is_at_war = no }
+                    add_modifier = {
+                        modifier = "modifier_plentiful_traditions_credence"
+                    }
+                else = {
+                    remove_modifier = "modifier_plentiful_traditions_credence"
+                }
 			}
 		}
 	}
@@ -565,25 +551,11 @@ event = {
 				has_tradition = tr_plentiful_endure_1
 			}
 			if = {
-				limit = {
-					is_at_war = yes
-				}
-				if = {
-					limit = {
-						Not = {
-							has_modifier = modifier_plentiful_traditions_cohesion_brings_unity
-						}
-					}
-				}
+				limit = { is_at_war = yes }
 				add_modifier = {
 					modifier = "modifier_plentiful_traditions_cohesion_brings_unity"
-				}
-				else = {
-					if = {
-						limit = {
-							has_modifier = modifier_plentiful_traditions_cohesion_brings_unity
-						}
 					}
+				else = {
 					remove_modifier = "modifier_plentiful_traditions_cohesion_brings_unity"
 				}
 			}
