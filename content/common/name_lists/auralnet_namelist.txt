@@ -1,7 +1,7 @@
-### Auralnet
+﻿### Auralnet
 ### Created by Matt. C.
 
-auranet_1 = {
+AUR = {
 
 	#selectable = yes
 
@@ -23,7 +23,7 @@ auranet_1 = {
 		}
 
 		science = {
-		"Charting Mind of Geological Obsession" "Charting Mind of Thermal Obsession" "Charting Mind of Few Hopes" "Charting Mind of Zoological Obsession" "Charting Mind of Self-Exile" "Charting Mind of Growing Expectations" "Charting Mind of Waste Disposal" "Charting Mind of Various Obsessions" "Charting Mind of External Loathing" "Charting Mind of Introverted Action"  
+		"Charting Mind of Geological Obsession" "Charting Mind of Thermal Obsession" "Charting Mind of Few Hopes" "Charting Mind of Zoological Obsession" "Charting Mind of Self Exile" "Charting Mind of Growing Expectations" "Charting Mind of Waste Disposal" "Charting Mind of Various Obsessions" "Charting Mind of External Loathing" "Charting Mind of Introverted Action"  
 		}
 
 		destroyer = {
@@ -35,7 +35,7 @@ auranet_1 = {
 		}
 
 		battleship = {
-		"Legion Mind of Toxic Bickering" "Legion Mind of Rapturous Justice" "Legion Mind of Glorious Spoils" "Legion Mind of Pitiless Esteem" "Legion Mind of Valorous Salvation" "Legion Mind of Solemn Hope" "Legion Mind of Twilight Compunction" "Legion Mind of Pitiless Succor" "Legion Mind of Bloodied Justice" "Legion Mind of Unrelenting Absolution" "Legion Mind of Tenacious Intent" "Legion Mind of Ardent Intent" "Legion Mind of Cleansing Declaration" "Legion Mind of Pitiless Advance" "Legion Mind of Valorous Fervor" "Legion Mind of Retribution-s Charity" "Legion Mind of Ardent Solace" 
+		"Legion Mind of Toxic Bickering" "Legion Mind of Rapturous Justice" "Legion Mind of Glorious Spoils" "Legion Mind of Pitiless Esteem" "Legion Mind of Valorous Salvation" "Legion Mind of Solemn Hope" "Legion Mind of Twilight Compunction" "Legion Mind of Pitiless Succor" "Legion Mind of Bloodied Justice" "Legion Mind of Unrelenting Absolution" "Legion Mind of Tenacious Intent" "Legion Mind of Ardent Intent" "Legion Mind of Cleansing Declaration" "Legion Mind of Pitiless Advance" "Legion Mind of Valorous Fervor" "Legion Mind of Retribution s Charity" "Legion Mind of Ardent Solace" 
 		}
 
 		titan = {
@@ -47,15 +47,10 @@ auranet_1 = {
 		}
 
 		transport = {
-		"Legion Mind of Surprisingly High Occupancy"
-		"Legion Mind of Significant Tonnage"
-		"Legion Mind of Warrior Philosophers"
-		"Legion Mind of Arrogant Fools"
-		"Legion Mind of Impatient Bluster"
+		"Legion Mind of Surprisingly High Occupancy" "Legion Mind of Significant Tonnage" "Legion Mind of Warrior Philosophers" "Legion Mind of Arrogant Fools" "Legion Mind of Impatient Bluster"
 		}
 
 		military_station_small = {
-		 
 		}
 
 		ion_cannon = {
@@ -65,7 +60,7 @@ auranet_1 = {
 
 	ship_class_names = {
 		generic = {
-		"Lattice Pattern" "Lok-Urzen Pattern" "Confederation Pattern" "Inglorious Mind Shell" "Overstated Pattern" "Understated Pattern" "Synthesis Pattern" "Melded Pattern" "Amalgam Pattern" "Fusion Pattern" "Union Pattern" "Composite Pattern" "Compound Pattern"
+		"Lattice Pattern" "Lok Urzen Pattern" "Confederation Pattern" "Inglorious Mind Shell" "Overstated Pattern" "Understated Pattern" "Synthesis Pattern" "Melded Pattern" "Amalgam Pattern" "Fusion Pattern" "Union Pattern" "Composite Pattern" "Compound Pattern"
 		}
 
 	}
@@ -77,180 +72,81 @@ auranet_1 = {
 		sequential_name = "%O% Fleet Mind of Standard Qualities"
 	}
 
-	###ARMIES
 	army_names = {
 		defense_army = {
-			random_names = {
-				"Legion Minds of Intense Fortification"	"Legion Minds of Despised Architects" "Legion Minds of Peace and Love" "Legion Minds of Unsuccessful Cooperation" "Legion Minds of Pitiful Relevance" "Battalion of General Unreadiness"
-				}
 			sequential_name = "%O% Legion Mind of Significant Fortification"
-		}
+			}
 
 		assault_army = {
-			random_names = {
-				"Organic Bodies of Unlikely Use" "Battalion of Zealous Conflict" "Legion Minds of General Resignation" Legion Minds of Aggresive Hatred" "Legion Minds of Unflattering Quality" "Legion Minds of Imperious Belief"
-				}
 			sequential_name = "%O% Legion Mind of Significant Aggression"
-		}
+			}
 
 		slave_army = {
-			random_names = {
-				}
 			sequential_name = "%O% Legion Mind of Bizzare Exsistence"
-		}
+			}
 
 		clone_army = {
-			random_names = {
-				"Legion Minds of Questionable Creation" }
 			sequential_name = "%O% Legion Mind of Fleshy Use"
-		}
+			}
 
 		robotic_army = {
-			random_names = {
-				"Legion Minds of Broken Adapters" }
 			sequential_name = "%O% Legion Mind of Mechanical Excellence"
-		}
+			}
 
 		robotic_defense_army = {
-			random_names = {
-				}
 			sequential_name = "%O% Legion Mind of Nanomolecular Fortification"
-		}
+			}
 
 		android_army = {
-			random_names = {
-				"Legion Minds of Smug Passion" }
 			sequential_name = "%O% Legion Mind of Bizzare Individuality"
-		}
+			}
 
 		android_defense_army = {
-			random_names = {
-				"Legion Minds of Poor Fortification" }
 			sequential_name = "%O% Legion Mind of Bizzare Defense"
-		}
+			}
 
 		psionic_army = {
-			random_names = {
-				"Legion Minds of Paradoxial Exsistence" }
 			sequential_name = "%O% Legion Mind of Violating Reality"
-		}
+			}
 
 		xenomorph_army = {
-			random_names = {
-				"Legion Minds of Organic Girth" }
 			sequential_name = "%O% Legion Mind of Questionable Deployment"
-		}
+			}
 
 		gene_warrior_army = {
-			random_names = {
-				"Legion Minds of Effective Creation" }
-			sequential_name = "%O% Legion Mind of Lok-Urzen-s Greatest"
-		}
+			sequential_name = "%O% Legion Mind of Lok Urzens Greatest"
+			}
 
 	}
-	
-	### PLANETS
 	
 	planet_names = {
 		generic = {
 			names = {
-				"Harmony for the Many" "Valor of the Consensus"	"Pride of Gaius" "Unity of Mind" "Honour of the Lost" Hadar Omari Reticulus	Sillaria "New Garghana"	"New Triotia" "New Xiotran"	"New Droden" "Pride of the Auralnet" Aurana Ghartaga Aurellia Heikros Jallorn Feldern Vendern Gallos Stoneport "Ideal of the Mind" "Palace of the Minds" "Bearer of Hope" "Nomads Folly" "Hub of Nefarious Discovery" "Garden of Bountiful Yields" "Land of Tempestous Destruction" "New Illien" "New Osten" "New Bassilia"	"New Faztarand"	"Traitors Landing" "Traitors Gift" "Tel-Joors Landing" "Garden of Peaceful Contemplation" Kallanos "Gir-Abara" "Auralnets Remorse" "Forged Destiny" "Forged Construction" "Auralnets Obsession"
+				"Harmony for the Many" "Valor of the Consensus" "Pride of Gaius" "Unity of Mind" "Honour of the Lost" Hadar Omari Reticulus	Sillaria "New Garghana"	"New Triotia" "New Xiotran"	"New Droden" "Pride of the Auralnet" Aurana Ghartaga Aurellia Heikros Jallorn Feldern Vendern Gallos Stoneport "Ideal of the Mind" "Palace of the Minds" "Bearer of Hope" "Nomads Folly" "Hub of Nefarious Discovery" "Garden of Bountiful Yields" "Land of Tempestous Destruction" "New Illien" "New Osten" "New Bassilia"	"New Faztarand"	"Traitors Landing" "Traitors Gift" "Tel Joors Landing" "Garden of Peaceful Contemplation" Kallanos "Gir Abara" "Auralnets Remorse" "Forged Destiny" "Forged Construction" "Auralnets Obsession" "Dev Urzen" "Dol Urzen" "Mir Urzen" "Cal Urzen" "Ven Urzen" "Ien Urzen" "Qua Urzen" "Liel Urzen" "Oct Urzen" "Tar Urzen" "Sai Urzen"
 			}
 		}
-
-		pc_arid = {
-			names = {
-				"Tar-Urzen"
-			}
-		}
-
-		pc_desert = {
-			names = {
-				"Sai-Urzen"
-			}
-		}
-
-		pc_savanna = {
-			names = {
-				"Dev-Urzen"
-			}
-		}
-
-		pc_alpine = {
-			names = {
-				"Dol-Urzen"
-				
-			}
-		}
-
-		pc_arctic = {
-			names = {
-				"Mir-Urzen"
-			}
-		}
-
-		pc_tundra = {
-			names = {
-				"Cal-Urzen"
-			}
-		}
-
-		pc_continental = {
-			names = {
-				"Ven-Urzen"
-			}
-		}
-
-		pc_ocean = {
-			names = {
-				"Ien-Urzen"
-			}
-		}
-
-		pc_tropical = {
-			names = {
-				"Qua-Urzen"
-			}
-		}
-
-		pc_gaia = {
-			names = {
-				"Liel-Urzen"
-			}
-		}
-
-		pc_nuked = {
-			names = {
-				"Oct-Urzen"
-			}
-		}
-
 	}
-	
-	### CHARACTERS
 	
 	character_names = {
 		default = {
-			# A complete name
 			full_names = {
+			"Mind of Failing Concentration"
 			}
 			
-			# Always combined with a second name
 			first_names = {
 			"Minds of" "Lattice of" "Compound of" "Composite of" "Union of" "Synthesis of" "Amalgamation of" "Weave of"
 			}
 			
-			# Always combined with a first name
 			second_names = {
-			"Mendicant Posturing" "Little Practice"	"New Hope" "Lingering Expectation" "Burning Hatred"	"Glorious Revival" "Floating Wonder" "Engulfing Sorrow"	"Dream-like Harmony" "Harmonious Valor"	"Likely Friendship"	"Eager Recruits" "Similar Pastimes" "Poor Repairs" "Foreign Analysis" "Unjustified Paperwork" "Extreme Recklessness" "Few Expectations"	"Obscure Fascination" "Uncomfortable Fascination" "Abused Processors" "the Near-Kin" "Unjust Sacrifice"	"the Gifted" "the Peacemakers" "the Past-Viewers" "Great Doubt"	"Unoriginality"	"the Redeemed" "New Purpose" "Vainglorious Obsession" "Painful Memories" "the Unprofessional" "the Far-Kin"	"the Constructed" "Indignant Ideologues" "Self-Creation" "Unusual Immaturity" "Slow-Focus" "Unlikely Bonds"	"the Reformed" "Optimism" "Broken Chains" "Aggressive Fools" "Overmuch Penitence" "Costly Harmony" "the Seventy" "Peace-Seekers" "Sorrow-Seekers" "Despair-Seekers"	"Self-Correction" "the Fifty" "the Commons"	"the Lost" "Hollow Imperiousness" "the Broken" "the Unjustly Capable" "Secretive Existence" "Sinful Enjoyment" "Pure Minds" "Unabashed Innocence" "the Mind-Rended" "Reformed Warriors"	"Imperious Justice"	"Penitent Belief" "Rash Zeal" "Zealous Justicars" "Flurried Communication" "Abject Disgust" "Organic Obsession" "Elegant Refinement" "Brash Industriousness" "Floral-Tending" "Simple Administration" "the Joy-Givers" "Endemic Movement" "Rebellious Lethargy" "Ambitious Recreation" "the Future-Guessers" "the Care-Givers" "the Recent Dreamers" "the Broken-Hearted" "Varying Kindness" "Beautiful Remorse"
+			"Mendicant Posturing" "Little Practice"	"New Hope" "Lingering Expectation" "Burning Hatred"	"Glorious Revival" "Floating Wonder" "Engulfing Sorrow"	"Dream like Harmony" "Harmonious Valor"	"Likely Friendship"	"Eager Recruits" "Similar Passtimes" "Poor Repairs" "Foreign Analysis" "Unjustified Paperwork" "Extreme Recklessness" "Few Expectations"	"Obscure Fascination" "Uncomfortable Fascination" "Abused Processors" "the Near Kin" "Unjust Sacrifice"	"the Gifted" "the Peacemakers" "the Past Viewers" "Great Doubt"	"Unoriginality"	"the Redeemed" "New Purpose" "Vainglorious Obsession" "Painful Memories" "the Unprofessional" "the Far Kin"	"the Constructed" "Indignant Ideologues" "Self Creation" "Unusual Immaturity" "Slow Focus" "Unlikely Bonds"	"the Reformed" "Optimism" "Broken Chains" "Aggressive Fools" "Overmuch Penitence" "Costly Harmony" "the Seventy" "Peace Seekers" "Sorrow Seekers" "Despair Seekers"	"Self Correction" "the Fifty" "the Commons"	"the Lost" "Hollow Imperiousness" "the Broken" "the Unjustly Capable" "Secretive Existence" "Sinful Enjoyment" "Pure Minds" "Unabashed Innocence" "the Mind Rended" "Reformed Warriors"	"Imperious Justice"	"Penitent Belief" "Rash Zeal" "Zealous Justicars" "Flurried Communication" "Abject Disgust" "Organic Obsession" "Elegant Refinement" "Brash Industriousness" "Floral Tending" "Simple Administration" "the Joy Givers" "Endemic Movement" "Rebellious Lethargy" "Ambitious Recreation" "the Future Guessers" "the Care Givers" "the Recent Dreamers" "the Broken Hearted" "Varying Kindness" "Beautiful Remorse"
 			}
 			
 			regnal_first_names = {
-
+			"Mind of"
 			}
 			
 			regnal_second_names = {
-
+			"Failing Concentration"
 			}
 		}
 	}

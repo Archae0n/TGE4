@@ -2,5 +2,5 @@ l_english:
  ####################################
  # Misc
  ####################################
- auranet_1:0 "Auralnet"
- auranet_1_desc:0 " "
+ name_list_AUR:0 "Auralnet"
+ name_list_AUR_desc:0 " "

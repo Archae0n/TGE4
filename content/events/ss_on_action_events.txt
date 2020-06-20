@@ -104,94 +104,94 @@ country_event = {
 }
 
 # Superior Species: Assimilate Pops on Monthly Pulse
-event = {
-	id = ss.4
-	hide_window = yes
-	is_triggered_only = yes
-
-	immediate = {
-		every_playable_country = {
-			if = {
-				limit = {
-					any_owned_pop_species = {
-						has_citizenship_type = {
-							type = citizenship_assimilation
-							country = prev
-						}
-					}
-				}
-				every_owned_planet = {
-					planet_event = { id = ss.5 }
-				}
-			}
-		}
-	}
-}
-
+#event = {
+#	id = ss.4
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	immediate = {
+#		every_playable_country = {
+#			if = {
+#				limit = {
+#					any_owned_pop_species = {
+#						has_citizenship_type = {
+#							type = citizenship_assimilation
+#							country = prev
+#						}
+#					}
+#				}
+#				every_owned_planet = {
+#					planet_event = { id = ss.5 }
+#				}
+#			}
+#		}
+#	}
+#}
+#
 # Superior Species Assimilate Pops
-planet_event = {
-	id = ss.5
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		any_owned_pop = {
-			has_citizenship_type = {
-				type = citizenship_assimilation
-				country = root.owner
-			}
-		}
-	}
-
-	immediate = {
-		random_list = {
-			1 = { # 1 pop
-				while = {
-					count = 1
-					limit = {
-						any_owned_pop = {
-							has_citizenship_type = {
-								type = citizenship_assimilation
-								country = root.owner
-							}
-						} 
-					}
-					assimilate_random_pop = yes
-				}
-			}
-
-			1 = { # 2 pops
-				while = {
-					count = 2
-					limit = {
-						any_owned_pop = {
-							has_citizenship_type = {
-								type = citizenship_assimilation
-								country = root.owner
-							}
-						} 
-					}
-					assimilate_random_pop = yes
-				}
-			}
-
-			1 = { # 4 pops
-				while = {
-					count = 4
-					limit = {
-						any_owned_pop = {
-							has_citizenship_type = {
-								type = citizenship_assimilation
-								country = root.owner
-							}
-						} 
-					}
-					assimilate_random_pop = yes
-				}
-			}
-		}
-	}
-}
+#planet_event = {
+#	id = ss.5
+#	hide_window = yes
+#	is_triggered_only = yes
+#
+#	trigger = {
+#		any_owned_pop = {
+#			has_citizenship_type = {
+#				type = citizenship_assimilation
+#				country = root.owner
+#			}
+#		}
+#	}
+#
+#	immediate = {
+#		random_list = {
+#			1 = { # 1 pop
+#				while = {
+#					count = 1
+#					limit = {
+#						any_owned_pop = {
+#							has_citizenship_type = {
+#								type = citizenship_assimilation
+#								country = root.owner
+#							}
+#						} 
+#					}
+#					assimilate_random_pop = yes
+#				}
+#			}
+#
+#			1 = { # 2 pops
+#				while = {
+#					count = 2
+#					limit = {
+#						any_owned_pop = {
+#							has_citizenship_type = {
+#								type = citizenship_assimilation
+#								country = root.owner
+#							}
+#						} 
+#					}
+#					assimilate_random_pop = yes
+#				}
+#			}
+#
+#			1 = { # 4 pops
+#				while = {
+#					count = 4
+#					limit = {
+#						any_owned_pop = {
+#							has_citizenship_type = {
+#								type = citizenship_assimilation
+#								country = root.owner
+#							}
+#						} 
+#					}
+#					assimilate_random_pop = yes
+#				}
+#			}
+#		}
+#	}
+#}
 
 # Removes Erudite leader traits if they would apply (as per event utopia.2509)
 country_event = {
