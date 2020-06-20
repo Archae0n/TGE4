@@ -254,7 +254,11 @@ nanites  = {
 
 minor_artifacts = {
 	tradable = yes
+	market_amount = 1
+	market_price = 500
 	max = 15000
+
+	visibility_prerequisite = { always = yes }
 	
 	ai_weight = {
 		weight = 1
