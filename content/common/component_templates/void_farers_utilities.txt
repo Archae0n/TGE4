@@ -150,11 +150,11 @@
 @upkeep_food_X2 = 1
 @upkeep_cg_X2 = 1
 
-@upkeep_food_X5 = 5
-@upkeep_cg_X5 = 5
+@upkeep_food_X5 = 2.5
+@upkeep_cg_X5 = 2.5
 
-@upkeep_food_X8 = 8
-@upkeep_cg_X8 = 8
+@upkeep_food_X8 = 4
+@upkeep_cg_X8 = 4
 
 @food_output = 12
 @minerals_output = 12
