@@ -13,9 +13,9 @@ karst = {
 }
 
 pdsalt = {	
-	planet_jobs_minerals_produces_mult = 0.75
-	planet_jobs_food_produces_mult = -0.25
-	district_mining_max = 6
+	planet_jobs_minerals_produces_mult = 0.33
+	planet_jobs_food_produces_mult = -0.15
+	district_mining_max = 4
 	district_farming_max = -2
 	icon = "gfx/interface/icons/planet_modifiers/pm_pdsalt.dds"
 	icon_frame = 1
