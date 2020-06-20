@@ -561,25 +561,12 @@ event = {
 				has_tradition = tr_plentiful_affinity_4
 			}
 			if = {
-				limit = {
-					is_at_war = no
-				}
-				if = {
-					limit = {
-						Not = {
-							has_modifier = modifier_plentiful_traditions_pathfinder
-						}
-					}
-				}
+				limit = 
+				{ is_at_war = no }
 				add_modifier = {
 					modifier = "modifier_plentiful_traditions_pathfinder"
 				}
 				else = {
-					if = {
-						limit = {
-							has_modifier = modifier_plentiful_traditions_pathfinder
-						}
-					}
 					remove_modifier = "modifier_plentiful_traditions_pathfinder"
 				}
 			}

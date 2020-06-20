@@ -283,8 +283,8 @@ unbalancedecosystem = {
 }
 
 technoorganic = {
-	planet_jobs_engineering_research_produces_mult = 0.5
-	planet_jobs_food_produces_mult = 0.5
+	planet_jobs_engineering_research_produces_mult = 0.25
+	planet_jobs_food_produces_mult = 0.25
 	district_farming_max = 6
 	
 	icon = "gfx/interface/icons/planet_modifiers/pm_technoorganic.dds"
@@ -292,8 +292,8 @@ technoorganic = {
 }
 
 technoorganic2 = {
-	planet_jobs_alloys_produces_mult = 0.25
-	planet_jobs_food_produces_mult = 0.50
+	planet_jobs_alloys_produces_mult = 0.15
+	planet_jobs_food_produces_mult = 0.25
 	district_farming_max = 6
 	
 	icon = "gfx/interface/icons/planet_modifiers/pm_technoorganic.dds"
@@ -364,10 +364,10 @@ engineered_environment_gaia = {
 }
 
 archive = {	
-	planet_jobs_engineering_research_produces_mult = 0.5
-	planet_jobs_physics_research_produces_mult = 0.5
-	planet_jobs_society_research_produces_mult = 0.5
-	planet_jobs_energy_produces_mult = 0.5
+	planet_jobs_engineering_research_produces_mult = 0.15
+	planet_jobs_physics_research_produces_mult = 0.15
+	planet_jobs_society_research_produces_mult = 0.15
+	planet_jobs_energy_produces_mult = 0.15
 	icon = "gfx/interface/icons/planet_modifiers/pm_archive.dds"
 	icon_frame = 1
 }
