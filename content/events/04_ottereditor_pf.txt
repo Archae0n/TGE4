@@ -1,0 +1,1553 @@
+namespace = ottereditor
+
+# Planetary features-Add
+country_event = {
+	id = ottereditor.9
+	title = ottereditor.1.name
+	desc = ottereditor.9.desc
+	picture = GFX_evt_mining_operations
+    is_triggered_only = yes
+        
+    option = {
+        name = ottereditor.9.a
+        
+         hidden_effect = {
+            country_event = { id = ottereditor.11 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.9.b     
+               
+         hidden_effect = {
+            country_event = { id = ottereditor.112 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.9.c
+        
+         hidden_effect = {
+            country_event = { id = ottereditor.113 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.9.d
+        
+         hidden_effect = {
+            country_event = { id = ottereditor.114 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.9.e
+
+         hidden_effect = {
+            country_event = { id = ottereditor.115 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.9.f
+
+         hidden_effect = {
+            country_event = { id = ottereditor.116 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.9.k
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.91 }
+        }
+    }    
+	
+	option = {
+        name = ottereditor.9.g
+        
+		trigger = {
+			event_target:ott_target = {is_colony = yes}
+		}
+			
+        hidden_effect = {
+            country_event = { id = ottereditor.92 }
+        }
+    }
+	
+    option = {
+        name = ottereditor.9.h
+
+        hidden_effect = {
+            country_event = { id = ottereditor.93 }
+        }   
+	}
+	
+	
+    option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+#PF Energy
+country_event = {
+	id = ottereditor.11
+	title = ottereditor.1.name
+	desc = ottereditor.9.desc
+	picture = GFX_evt_unity_symbol
+    is_triggered_only = yes
+	
+	option = {
+        name = d_arid_highlands
+        
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+				    is_planet_class = pc_desert
+				    is_planet_class = pc_savannah
+					is_planet_class = pc_arid
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_arid_highlands_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_arid_highlands
+            }
+            country_event = { id = ottereditor.11 }
+        }
+	}	
+	
+    option = {
+        name = d_hot_springs
+        
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+					is_planet_class = pc_alpine
+					is_planet_class = pc_tundra
+					is_planet_class = pc_arctic
+					is_planet_class = pc_continental
+					is_planet_class = pc_ocean
+					is_planet_class = pc_tropical
+					is_planet_class = pc_nuked
+					is_planet_class = pc_gaia
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_hot_springs
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_hot_springs
+            }
+            country_event = { id = ottereditor.11 }
+        }
+	}	
+
+    option = {
+        name = d_rushing_waterfalls
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+					is_planet_class = pc_continental
+					is_planet_class = pc_ocean
+					is_planet_class = pc_tropical
+					is_planet_class = pc_gaia
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_rushing_waterfalls_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_rushing_waterfalls
+            }
+            country_event = { id = ottereditor.11 }
+        }
+	}	
+
+    option = {
+        name = d_searing_desert
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+				    is_planet_class = pc_desert
+				    is_planet_class = pc_savannah
+					is_planet_class = pc_arid
+					is_planet_class = pc_nuked
+					is_planet_class = pc_gaia
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_searing_desert_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_searing_desert
+            }
+            country_event = { id = ottereditor.11 }
+        }
+	}	
+
+    option = {
+        name = d_frozen_gas_lake
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+					is_planet_class = pc_alpine
+					is_planet_class = pc_tundra
+					is_planet_class = pc_arctic
+					is_planet_class = pc_gaia
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_frozen_gas_lake_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_frozen_gas_lake
+            }
+            country_event = { id = ottereditor.11 }
+        }
+	}	
+
+    option = {
+        name = d_geothermal_vent
+          
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+				    is_planet_class = pc_desert
+				    is_planet_class = pc_savannah
+					is_planet_class = pc_arid
+					is_planet_class = pc_tundra
+					is_planet_class = pc_arctic
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_geothermal_vent_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_geothermal_vent
+            }
+            country_event = { id = ottereditor.11 }
+        }
+	}	
+
+    option = {
+        name = d_underwater_vent
+          
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+					is_planet_class = pc_ocean
+					is_planet_class = pc_nuked
+					is_planet_class = pc_gaia
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_underwater_vent_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_underwater_vent
+            }
+            country_event = { id = ottereditor.11 }
+        }
+	}	
+
+    option = {
+        name = d_tempestous_mountain
+          
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+
+					is_planet_class = pc_alpine
+					is_planet_class = pc_continental
+					is_planet_class = pc_tropical
+					is_planet_class = pc_gaia
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_tempestous_mountain_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_tempestous_mountain
+            }
+            country_event = { id = ottereditor.11 }
+        }
+	}	
+		
+    option = {
+        name = ottereditor.return
+		hidden_effect = {
+		    country_event = { id = ottereditor.9 }
+	    }
+	}
+    
+    option = {
+        name = ottereditor.return2
+		hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+#PF Minerals
+country_event = {
+	id = ottereditor.112
+	title = ottereditor.1.name
+	desc = ottereditor.9.desc
+	picture = GFX_evt_mining_operations
+    is_triggered_only = yes
+	
+    option = {
+        name = d_veiny_cliffs
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+					is_planet_class = pc_arid
+					is_planet_class = pc_alpine
+					is_planet_class = pc_arctic
+					is_planet_class = pc_continental
+					is_planet_class = pc_nuked
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_veiny_cliffs_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_veiny_cliffs
+            }
+            country_event = { id = ottereditor.112 }
+        }
+	}	
+
+    option = {
+        name = d_mineral_fields
+          
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+				    is_planet_class = pc_desert
+				    is_planet_class = pc_savannah
+					is_planet_class = pc_ocean
+					is_planet_class = pc_tundra
+					is_planet_class = pc_tropical
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_mineral_fields_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_mineral_fields
+            }
+            country_event = { id = ottereditor.112 }
+        }
+	}	
+
+    option = {
+        name = d_prosperous_mesa
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+				    is_planet_class = pc_desert
+				    is_planet_class = pc_savannah
+					is_planet_class = pc_continental
+					is_planet_class = pc_tropical
+					is_planet_class = pc_gaia
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_prosperous_mesa_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_prosperous_mesa
+            }
+            country_event = { id = ottereditor.112 }
+        }
+	}	
+
+    option = {
+        name = d_ore_rich_caverns
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+					is_planet_class = pc_arid
+					is_planet_class = pc_alpine
+					is_planet_class = pc_tundra
+					is_planet_class = pc_arctic
+					is_planet_class = pc_ocean
+					is_planet_class = pc_nuked
+					is_planet_class = pc_gaia
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_ore_rich_caverns_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_ore_rich_caverns
+            }
+            country_event = { id = ottereditor.112 }
+        }
+	}	
+
+    option = {
+        name = d_rich_mountain
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+				    is_planet_class = pc_desert
+					is_planet_class = pc_arid
+					is_planet_class = pc_alpine
+					is_planet_class = pc_tundra
+					is_planet_class = pc_arctic
+					is_planet_class = pc_continental
+					is_planet_class = pc_gaia
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_rich_mountain_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_rich_mountain
+            }
+            country_event = { id = ottereditor.112 }
+        }
+	}	
+
+    option = {
+        name = d_submerged_ore_veins
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+				    is_planet_class = pc_savannah
+					is_planet_class = pc_ocean
+					is_planet_class = pc_tropical
+					is_planet_class = pc_nuked
+					is_planet_class = pc_gaia
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_submerged_ore_veins_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_submerged_ore_veins
+            }
+            country_event = { id = ottereditor.112 }
+        }
+	}
+	
+    option = {
+        name = ottereditor.return
+		hidden_effect = {
+		    country_event = { id = ottereditor.9 }
+	    }
+	}
+    
+    option = {
+        name = ottereditor.return2
+		hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}	
+}
+
+#PF Food
+country_event = {
+	id = ottereditor.113
+	title = ottereditor.1.name
+	desc = ottereditor.9.desc
+	picture = GFX_evt_animal_wildlife
+    is_triggered_only = yes
+	
+    option = {
+        name = d_lichen_fields
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+					is_planet_class = pc_arctic
+					is_planet_class = pc_nuked
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_lichen_fields_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_lichen_fields
+            }
+            country_event = { id = ottereditor.113 }
+        }
+	}	
+
+    option = {
+        name = d_bountiful_plains
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+					is_planet_class = pc_arid
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_bountiful_plains_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_bountiful_plains
+            }
+            country_event = { id = ottereditor.113 }
+        }
+	}	
+
+    option = {
+        name = d_rugged_woods
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+					is_planet_class = pc_continental
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_rugged_woods_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_rugged_woods
+            }
+            country_event = { id = ottereditor.113 }
+        }
+	}	
+
+    option = {
+        name = d_green_hills
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+					is_planet_class = pc_ocean
+					is_planet_class = pc_tropical
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_green_hills_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_green_hills
+            }
+            country_event = { id = ottereditor.113 }
+        }
+	}	
+
+    option = {
+        name = d_forgiving_tundra
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+					is_planet_class = pc_alpine
+					is_planet_class = pc_tundra
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_forgiving_tundra_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_forgiving_tundra
+            }
+            country_event = { id = ottereditor.113 }
+        }
+	}	
+
+    option = {
+        name = d_boggy_fens
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+					is_planet_class = pc_ocean
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_boggy_fens_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_boggy_fens
+            }
+            country_event = { id = ottereditor.113 }
+        }
+	}	
+
+    option = {
+        name = d_nutritious_mudland
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+				    is_planet_class = pc_desert
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_nutritious_mudland_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_nutritious_mudland
+            }
+            country_event = { id = ottereditor.113 }
+        }
+	}	
+
+    option = {
+        name = d_fungal_caves
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+					is_planet_class = pc_nuked
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_fungal_caves_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_fungal_caves
+            }
+            country_event = { id = ottereditor.113 }
+        }
+	}	
+
+        option = {
+        name = d_lush_jungle
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+					is_planet_class = pc_ocean
+					is_planet_class = pc_tropical
+					is_planet_class = pc_gaia
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_lush_jungle_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_lush_jungle
+            }
+            country_event = { id = ottereditor.113 }
+        }
+	}	
+
+    option = {
+        name = d_fertile_lands
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+				    is_planet_class = pc_savannah
+					is_planet_class = pc_arid
+					is_planet_class = pc_continental
+					is_planet_class = pc_gaia
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_fertile_lands_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_fertile_lands
+            }
+            country_event = { id = ottereditor.113 }
+        }
+	}	
+
+    option = {
+        name = d_great_river
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+				    is_planet_class = pc_desert
+					is_planet_class = pc_arid
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_great_river_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_great_river
+            }
+            country_event = { id = ottereditor.113 }
+        }
+	}	
+
+    option = {
+        name = d_black_soil
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+				    is_planet_class = pc_savannah
+					is_planet_class = pc_continental
+					is_planet_class = pc_gaia
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_black_soil_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_black_soil
+            }
+            country_event = { id = ottereditor.113 }
+        }
+	}	
+
+    option = {
+        name = d_teeming_reef
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+					is_planet_class = pc_ocean
+					is_planet_class = pc_gaia
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_teeming_reef_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_teeming_reef
+            }
+            country_event = { id = ottereditor.113 }
+        }
+	}	
+
+    option = {
+        name = d_marvelous_oasis
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+				    is_planet_class = pc_desert
+					is_planet_class = pc_arid
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_marvelous_oasis_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_marvelous_oasis
+            }
+            country_event = { id = ottereditor.113 }
+        }
+	}	
+
+    option = {
+        name = d_tropical_island
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+				    is_planet_class = pc_desert
+					is_planet_class = pc_arid
+					is_planet_class = pc_tropical
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_tropical_island_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_tropical_island
+            }
+            country_event = { id = ottereditor.113 }
+        }
+	}	
+
+    option = {
+        name = d_fungal_forest
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+					is_planet_class = pc_continental
+					is_planet_class = pc_ocean
+					is_planet_class = pc_tropical
+					is_planet_class = pc_gaia
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_fungal_forest_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_fungal_forest
+            }
+            country_event = { id = ottereditor.113 }
+        }
+	}	
+		
+    option = {
+        name = ottereditor.return
+		hidden_effect = {
+		    country_event = { id = ottereditor.9 }
+	    }
+	}
+    
+    option = {
+        name = ottereditor.return2
+		hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+#PF motes
+country_event = {
+	id = ottereditor.114
+	title = ottereditor.1.name
+	desc = ottereditor.9.desc
+	picture = GFX_evt_busy_spaceport
+    is_triggered_only = yes
+	
+    option = {
+        name = d_dust_caverns
+
+		custom_tooltip = d_dust_caverns_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_dust_caverns
+            }
+            country_event = { id = ottereditor.114 }
+        }
+	}	
+
+    option = {
+        name = d_dust_desert
+
+		custom_tooltip = d_dust_desert_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_dust_desert
+            }
+            country_event = { id = ottereditor.114 }
+        }
+	}	
+		
+    option = {
+        name = ottereditor.return
+		hidden_effect = {
+		    country_event = { id = ottereditor.9 }
+	    }
+	}
+    
+    option = {
+        name = ottereditor.return2
+		hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+#PF Gas
+country_event = {
+	id = ottereditor.115
+	title = ottereditor.1.name
+	desc = ottereditor.9.desc
+	picture = GFX_evt_drilling_for_gas
+    is_triggered_only = yes
+	
+    option = {
+        name = d_bubbling_swamp
+
+		custom_tooltip = d_bubbling_swamp_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_bubbling_swamp
+            }
+            country_event = { id = ottereditor.115 }
+        }
+	}	
+
+    option = {
+        name = d_fuming_bog
+       		
+		custom_tooltip = d_fuming_bog_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_fuming_bog
+            }
+            country_event = { id = ottereditor.115 }
+        }
+	}	
+		
+    option = {
+        name = ottereditor.return
+		hidden_effect = {
+		    country_event = { id = ottereditor.9 }
+	    }
+	}
+    
+    option = {
+        name = ottereditor.return2
+		hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+#PF Crystal
+country_event = {
+	id = ottereditor.116
+	title = ottereditor.1.name
+	desc = ottereditor.9.desc
+	picture = GFX_evt_archaeological_dig
+    is_triggered_only = yes
+	
+    option = {
+        name = d_crystalline_caverns
+		
+		custom_tooltip = d_crystalline_caverns_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_crystalline_caverns
+            }
+            country_event = { id = ottereditor.116 }
+        }
+	}	
+
+    option = {
+        name = d_crystal_forest
+
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+				    is_planet_class = pc_desert
+				    is_planet_class = pc_savannah
+					is_planet_class = pc_arid
+					is_planet_class = pc_alpine
+					is_planet_class = pc_tundra
+					is_planet_class = pc_arctic
+					is_planet_class = pc_continental
+					is_planet_class = pc_tropical
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_crystal_forest_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_crystal_forest
+            }
+            country_event = { id = ottereditor.116 }
+        }
+	}	
+
+    option = {
+        name = d_crystal_reef
+          
+		  allow = {
+            event_target:ott_target = {
+                OR = {
+					is_planet_class = pc_ocean
+					is_planet_class = pc_nuked
+					is_planet_class = pc_gaia
+				}
+		
+			}
+		}
+		
+		custom_tooltip = d_crystal_reef_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                add_deposit = d_crystal_reef
+            }
+            country_event = { id = ottereditor.116 }
+        }
+	}	
+	
+    option = {
+        name = ottereditor.return
+		hidden_effect = {
+		    country_event = { id = ottereditor.9 }
+	    }
+	}
+    
+    option = {
+        name = ottereditor.return2
+		hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+#PF Special
+country_event = {
+	id = ottereditor.91
+	title = ottereditor.1.name
+	desc = ottereditor.9.desc
+	picture = GFX_evt_alien_wildlife
+    is_triggered_only = yes
+
+    option = {
+        name = ottereditor.9.j
+    
+        event_target:ott_target = {
+            add_deposit =d_betharian_deposit
+        }
+    
+        hidden_effect = {
+            country_event = { id = ottereditor.91 }
+        }
+    }
+
+    option = {
+        name = ottereditor.9.i    
+    
+        event_target:ott_target = {
+            add_deposit = d_alien_pets_deposit 
+        }
+    
+        hidden_effect = {
+            country_event = { id = ottereditor.91 }
+        }
+    }
+
+    option = {
+        name = ottereditor.return
+		hidden_effect = {
+		    country_event = { id = ottereditor.9 }
+	    }
+	}
+    
+    option = {
+        name = ottereditor.return2
+		hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+#PF Pop
+country_event = {
+	id = ottereditor.92
+	title = ottereditor.1.name
+	desc = ottereditor.9.desc
+	picture = GFX_evt_alien_wildlife
+    is_triggered_only = yes
+
+    option = {
+        name = ottereditor.5.a
+        
+		trigger = {
+			event_target:ott_target = {is_colony = yes}
+		}
+			
+        event_target:ott_target = {
+            random_pop = {
+                kill_pop = yes
+            }
+            random_pop = {
+                kill_pop = yes
+            }
+            random_pop = {
+                kill_pop = yes
+            }
+            random_pop = {
+                kill_pop = yes
+            }
+            random_pop = {
+                kill_pop = yes
+            }
+            
+		}
+			
+        hidden_effect = {
+            country_event = { id = ottereditor.92 }
+        }
+    }
+
+    option = {
+        name = ottereditor.5.b
+        
+		trigger = {
+			event_target:ott_target = {is_colony = yes}
+		}
+			
+        event_target:ott_target = {
+            random_pop = {
+                kill_pop = yes
+            }
+            random_pop = {
+                kill_pop = yes
+            }
+            
+		}
+			
+        hidden_effect = {
+            country_event = { id = ottereditor.92 }
+        }
+    }
+
+    option = {
+        name = ottereditor.5.c
+        
+		trigger = {
+			event_target:ott_target = {is_colony = yes}
+		}
+			
+        event_target:ott_target = {
+            random_pop = {
+                kill_pop = yes
+            }
+            
+		}
+			
+        hidden_effect = {
+            country_event = { id = ottereditor.92 }
+        }
+    }
+
+    option = {
+        name =  ottereditor.5.e
+        
+		trigger = {
+			event_target:ott_target = {is_colony = yes}
+		}
+			
+        event_target:ott_target = {
+            create_pop = {
+                species = target                
+			}
+		}
+			
+        hidden_effect = {
+            country_event = { id = ottereditor.92 }
+        }
+    }
+
+    option = {
+        name = ottereditor.5.f
+        
+		trigger = {
+			event_target:ott_target = {is_colony = yes}
+		}
+			
+        event_target:ott_target = {
+            create_pop = {
+                species = target                
+            }
+            create_pop = {
+                species = target                
+			}
+		}
+			
+        hidden_effect = {
+            country_event = { id = ottereditor.92 }
+        }
+    }
+
+    option = {
+        name = ottereditor.5.g
+        
+		trigger = {
+			event_target:ott_target = {is_colony = yes}
+		}
+			
+        event_target:ott_target = {
+            create_pop = {
+                species = target                
+            }
+            create_pop = {
+                species = target                
+            }
+            create_pop = {
+                species = target                
+            }
+            create_pop = {
+                species = target                
+            }
+            create_pop = {
+                species = target                
+			}
+		}
+			
+        hidden_effect = {
+            country_event = { id = ottereditor.92 }
+        }
+    }
+
+
+    option = {
+        name = ottereditor.return
+		hidden_effect = {
+		    country_event = { id = ottereditor.9 }
+	    }
+	}
+    
+    option = {
+        name = ottereditor.return2
+		hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+#Pre-S
+country_event = {
+	id = ottereditor.93
+	title = ottereditor.1.name
+	desc = ottereditor.9.desc
+	picture = GFX_evt_alien_wildlife
+    is_triggered_only = yes
+
+    option = {
+        name = ottereditor.5.a
+			
+        event_target:ott_target = {
+            random_pop = {
+                limit = {
+                    is_sapient = no
+                }
+
+                kill_pop = yes
+            }    
+
+            random_pop = {
+                limit = {
+                    is_sapient = no
+                }
+                
+                kill_pop = yes
+            }
+
+            random_pop = {
+                limit = {
+                    is_sapient = no
+                }
+                
+                kill_pop = yes
+            }
+
+            random_pop = {
+                limit = {
+                    is_sapient = no
+                }
+                
+                kill_pop = yes
+            }
+
+            random_pop = {
+                limit = {
+                    is_sapient = no
+                }
+                
+                kill_pop = yes
+            }
+		}
+			
+        hidden_effect = {
+            country_event = { id = ottereditor.93 }
+        }
+    }
+
+    option = {
+        name = ottereditor.5.b
+			
+        event_target:ott_target = {
+            random_pop = {
+                limit = {
+                    is_sapient = no
+                }
+                
+                kill_pop = yes
+            }
+
+            random_pop = {
+                limit = {
+                    is_sapient = no
+                }
+                
+                kill_pop = yes
+            }
+            
+		}
+			
+        hidden_effect = {
+            country_event = { id = ottereditor.93 }
+        }
+    }
+
+    option = {
+        name = ottereditor.5.c
+        
+		trigger = {
+			event_target:ott_target = {is_colony = yes}
+		}
+			
+        event_target:ott_target = {
+            random_pop = {
+                limit = {
+                    is_sapient = no
+                }
+                
+                kill_pop = yes
+            }
+		}
+			
+        hidden_effect = {
+            country_event = { id = ottereditor.93 }
+        }
+    }
+
+    option = {
+        name = ottereditor.93.a
+      
+      
+        hidden_effect = {
+			event_target:ott_target = {
+                create_species = {
+                    name = random
+                    class = random
+                    portrait = random
+                    traits = {
+                        trait = random_presapient_trait
+                    }
+                    homeworld = this
+                    sapient = no
+                }
+
+				while = {
+					count = 4
+					create_pop = {
+						species = last_created
+					}					
+				}
+            }
+            
+            event_target:ott_target = {
+                prevent_anomaly = yes
+                remove_planet_flag = ott_prevent_anomaly
+            }
+            
+            country_event = { id = ottereditor.93 }
+        }
+	}
+
+    option = {
+        name = ottereditor.93.b
+      
+      
+        hidden_effect = {
+			event_target:ott_target = {
+                create_species = {
+                    name = random
+                    class = random
+                    portrait = random
+                    traits = {
+                        trait = random_presapient_trait
+                    }
+                    homeworld = this
+                    sapient = no
+                }
+
+				while = {
+					count = 10
+					create_pop = {
+						species = last_created
+					}					
+				}
+            }
+            
+            event_target:ott_target = {
+                prevent_anomaly = yes
+                remove_planet_flag = ott_prevent_anomaly
+            }
+            
+            country_event = { id = ottereditor.93 }
+        }
+	}
+
+    option = {
+        name = ottereditor.93.c
+      
+      
+        hidden_effect = {
+			event_target:ott_target = {
+                create_species = {
+                    name = random
+                    class = random
+                    portrait = random
+                    traits = {
+                        trait = random_presapient_trait
+                    }
+                    homeworld = this
+                    sapient = no
+                }
+
+				while = {
+					count = 20
+					create_pop = {
+						species = last_created
+					}					
+				}
+            }
+            
+            event_target:ott_target = {
+                prevent_anomaly = yes
+                remove_planet_flag = ott_prevent_anomaly
+            }
+            
+            country_event = { id = ottereditor.93 }
+        }
+	}
+
+    option = {
+        name = ottereditor.return
+		hidden_effect = {
+		    country_event = { id = ottereditor.9 }
+	    }
+	}
+    
+    option = {
+        name = ottereditor.return2
+		hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+# PF - Remove
+country_event = {
+	id = ottereditor.10
+	title = ottereditor.1.name
+	desc = ottereditor.10.b
+	picture = GFX_evt_dark_alley
+    is_triggered_only = yes
+    
+ 
+    option = {
+        name = ottereditor.10.b
+        
+        
+        event_target:ott_target = { clear_deposits = yes }		 
+	    
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+	
+    option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+

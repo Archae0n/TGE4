@@ -1,0 +1,576 @@
+namespace = ottereditor
+
+# First Tick
+country_event = {
+    id = ottereditor.1002
+    hide_window = yes
+    fire_only_once = yes
+    
+    trigger = {
+        is_ai = no
+        is_country_type = default
+    }
+	
+	immediate = {
+	    country_event = { id = ottereditor.1001 }
+	}
+}
+
+# Welcome
+country_event = {
+    id = ottereditor.1001
+    title = ottereditor.1.name
+	desc = ottereditor.welcome
+	picture = GFX_evt_star_chart   
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+	    is_ai = no
+	    is_multiplayer = no
+	    is_country_type = default
+	    NOT = { exists = event_target:ott_player }
+	}
+	
+    immediate = {
+        save_global_event_target_as = ott_player
+	}
+	
+	option = {
+	    name = CLOSE
+	}
+}
+
+# Init (HIDDEN)
+planet_event = {
+    id = ottereditor.1
+    hide_window = yes
+    is_triggered_only = yes
+    
+    trigger = {
+        FROM = {
+            is_multiplayer = no
+        }
+    }
+
+    immediate = {
+        if = {
+            limit = {
+                is_multiplayer = no
+                
+                FROM = {
+                    is_ai = no
+                }
+            }
+            
+            save_event_target_as = ott_target
+            
+            if = {
+                limit = {
+                    NOT = { any_country = { is_country_type = ott_country } }
+                }
+                
+                create_species = {
+                    name = "Otter Editor Observer"
+                    class = OTT
+                    portrait = otterspace  
+                }
+
+                create_country = {
+                    name = "Otter Editor Observer"
+                    type = ott_country
+                    species = last_created
+                }
+            }
+        
+            random_country = {
+                limit = { is_country_type = ott_country }
+                save_event_target_as = ott_observer
+            }
+            
+            if = {
+                limit = {
+                    OR  = {
+                        NOT = { FROM = { is_same_value = event_target:ott_observer } }
+                        NOT = { exists = event_target:ott_player }
+                    }
+                }
+                FROM = { save_global_event_target_as = ott_player }
+            }
+            
+            FROM = { country_event = { id = ottereditor.1000 } }
+        }
+    }
+}
+
+country_event = {
+	id = ottereditor.intd
+	hide_window = yes
+	is_triggered_only = yes
+   
+   trigger = {
+        ROOT = {
+            is_multiplayer = no
+        }
+    }		
+	
+	immediate= {
+        if = {
+            limit = {
+                is_multiplayer = no
+                
+                ROOT = {
+                    is_ai = no
+                }
+            }
+        
+            random_planet = {
+			limit = { has_planet_flag = decision_ottereditor}
+			save_event_target_as = ott_target
+			remove_planet_flag = decision_ottereditor
+            }
+        
+            if = {
+                limit = {
+                NOT = { any_country = { is_country_type = ott_country } }
+                }
+
+                create_species = {
+                name = "Otter Editor Observer"
+                class = OTT
+                portrait = otterspace  
+                }
+
+                create_country = {
+                name = "Otter Editor Observer"
+                type = ott_country
+                species = last_created
+                }
+            }
+    
+            random_country = {
+            limit = { is_country_type = ott_country }
+            save_event_target_as = ott_observer
+            }
+
+            if = {
+                limit = {
+                    OR  = {
+                        NOT = { FROM = { is_same_value = event_target:ott_observer } }
+                        NOT = { exists = event_target:ott_player }
+                    }
+                }
+                ROOT = { save_global_event_target_as = ott_player }
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+    }
+}
+
+# Main Menu
+country_event = {
+    id = ottereditor.1000
+	title = ottereditor.1.name
+	desc = ottereditor.1.desc
+	picture = GFX_evt_shattered_planet  
+	is_triggered_only = yes
+	
+	option = {
+	    name = ottereditor.observe
+	    custom_tooltip = ottereditor.observe.desc
+	    
+	    trigger = {
+	        NOT = { ROOT = { is_same_value = event_target:ott_observer } }
+	    }
+	    
+	    hidden_effect = {
+	        every_country = {
+                limit = {
+                    NOT = { is_same_value = event_target:ott_observer }
+                    NOT = { has_communications = event_target:ott_observer }
+                }
+                establish_communications_no_message = event_target:ott_observer
+            }
+            
+            event_target:ott_observer = { set_player = ROOT }
+	        event_target:ott_observer = { country_event = { id = ottereditor.1000 } }
+	    }
+	}
+	
+	option = {
+	    name = ottereditor.country
+	    
+	    trigger = {
+	        ROOT = { is_same_value = event_target:ott_observer }
+	        NOT = { ROOT = { is_same_value = event_target:ott_player } }
+	    }
+	    
+	    event_target:ott_player = { set_player = ROOT }
+	    
+	    hidden_effect = {
+	        event_target:ott_player = { country_event = { id = ottereditor.1000 } }
+	    }
+	}
+
+		option = {
+	    name = ottereditor.1.a
+	    
+	    trigger = {
+	        NOT = { any_megastructure = { is_same_value = event_target:ott_target } }
+	        event_target:ott_target = {
+	            is_ringworld = no
+	            NOT = { has_planet_flag = megastructure }
+	            is_star = no
+	            is_asteroid = no
+	            OR = {
+                    is_preventing_anomaly = no
+                    has_planet_flag = ott_prevent_anomaly
+	            }
+	        }
+	    }
+	    
+	    allow = {
+	        event_target:ott_target = {
+	            has_anomaly = no
+	        }
+	    }
+	    
+        hidden_effect = {
+            country_event = { id = ottereditor.3 }
+        }
+    }
+	
+	#option = {
+	#    name = ottereditor.1.a
+	#    
+	#    trigger = {
+    #        event_target:ott_target = { is_star = yes }   
+	#    }
+	    
+	#    allow = {
+	#        event_target:ott_target = {
+	#            has_anomaly = no
+	#        }
+	#    }
+	    
+    #    hidden_effect = {
+    #        country_event = { id = ottereditor.3 }
+    #    }
+    #}
+    
+	#option = {
+	#    name = ottereditor.1.a
+	#    
+	#    trigger = {
+	#		event_target:ott_target = {
+	#        is_star = yes
+	#        }
+	#    }
+	    
+    #    hidden_effect = {
+    #        country_event = { id = ottereditor.33 }
+    #    }
+    #}
+	
+    option = {
+	    name = ottereditor.1.a
+	    
+	    trigger = {
+	        NOT = { any_megastructure = { is_same_value = event_target:ott_target } }
+	        event_target:ott_target = {
+	            is_ringworld = no
+	            NOT = { has_planet_flag = megastructure }
+	            is_asteroid = no
+				is_star = no
+	            is_preventing_anomaly = yes
+                NOT = { has_planet_flag = ott_prevent_anomaly }
+            }
+	    }
+	    
+	    allow = {
+	        event_target:ott_target = {
+	            has_anomaly = no
+	        }
+	    }
+	    
+        hidden_effect = {
+            country_event = { id = ottereditor.2 }
+        }
+    }
+    
+    option = {
+	    name = ottereditor.1.b
+	    
+	    trigger = {
+	        NOT = { any_megastructure = { is_same_value = event_target:ott_target } }
+	        event_target:ott_target = {
+	            is_ringworld = no
+	            NOT = { has_planet_flag = megastructure }
+                OR = {
+                    is_colonizable = yes
+                    is_colony = yes
+                }
+            }
+	    }
+	    
+        allow = {
+            event_target:ott_target = {
+                has_anomaly = no
+            }
+        }
+	    
+        hidden_effect = {
+            country_event = { id = ottereditor.4 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.1.e
+        
+        trigger = {
+	        NOT = { any_megastructure = { is_same_value = event_target:ott_target } }
+	        event_target:ott_target = {
+	            is_ringworld = no
+	            NOT = { has_planet_flag = megastructure }
+                OR = {
+                    is_colonizable = yes
+                    is_colony = yes
+                }
+            }
+	    }
+	    
+	    allow = {
+            event_target:ott_target = {
+                has_anomaly = no
+            }
+        }
+	    
+	    hidden_effect = {
+            country_event = { id = ottereditor.7 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.1.d
+        
+        trigger = {
+	        NOT = { any_megastructure = { is_same_value = event_target:ott_target } }
+	        event_target:ott_target = {
+	            is_ringworld = no
+	            NOT = { has_planet_flag = megastructure }
+	        }
+	    }
+        
+        allow = {
+            event_target:ott_target = {
+                is_colonizable = no
+                is_colony = no
+                has_anomaly = no
+            }
+        }
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.6 }
+		}
+	}
+	
+	option = {
+	    name = ottereditor.1.c
+	    
+	    trigger = {
+	        NOT = { any_megastructure = { is_same_value = event_target:ott_target } }
+	        event_target:ott_target = {
+	            is_ringworld = no
+	            NOT = { has_planet_flag = megastructure }
+	        }
+	    }
+	    
+	    allow = {
+            event_target:ott_target = {
+                is_colony = no
+                has_anomaly = no
+            }
+        }
+	    
+        hidden_effect = {
+            country_event = { id = ottereditor.5 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.1.g
+        
+        trigger = {
+            OR = {
+                event_target:ott_target = { is_ringworld = yes }
+                AND = { 
+                    NOT = { any_megastructure = { is_same_value = event_target:ott_target } }
+                    event_target:ott_target = { NOT = { has_planet_flag = megastructure } }
+                }
+            }
+            event_target:ott_target = {
+                OR = {
+                    is_colonizable = yes
+                    is_colony = yes
+                    is_planet_class = pc_ringworld_habitable
+                }
+            }
+        }
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.9 }
+		}
+	}
+	
+	option = {
+        name = ottereditor.1.h
+        
+        trigger = {
+            OR = {
+                event_target:ott_target = { is_ringworld = yes }
+                AND = { 
+                    NOT = { any_megastructure = { is_same_value = event_target:ott_target } }
+                    event_target:ott_target = { NOT = { has_planet_flag = megastructure } }
+                }
+            }
+            event_target:ott_target = {
+                OR = {
+                    is_colonizable = yes
+                    is_colony = yes
+                    is_planet_class = pc_ringworld_habitable
+                }
+            }
+        }
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.10 }
+		}
+	}
+	
+	option = {
+        name = ottereditor.1.j
+        
+        trigger = {
+            OR = {
+                event_target:ott_target = { is_ringworld = yes }
+                AND = { 
+                    NOT = { any_megastructure = { is_same_value = event_target:ott_target } }
+                    event_target:ott_target = { NOT = { has_planet_flag = megastructure } }
+                }
+            }
+            event_target:ott_target = {
+                OR = {
+                    AND = { 
+                        is_colony = no
+                        is_colonizable = yes
+                        OR = { 
+                            is_surveyed = { who = event_target:ott_player status = no }
+                            count_species = { count > 0 limit = { is_sapient = no } }
+                        }
+                    }
+                    AND = {
+                        is_colony = yes
+                        owner = { is_primitive = yes }
+                    }
+                }
+            }
+        }
+        
+        allow = {
+            event_target:ott_target = {
+                has_anomaly = no
+            }
+        }
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.19 }
+		}
+	}
+	
+	option = {
+	    name = PREVENT_ANOMALY
+	    
+	    custom_tooltip = ottereditor.1.noanomaly
+	    
+        trigger = {
+            event_target:ott_target = {
+                is_preventing_anomaly = no
+                NOT = { is_surveyed = { who = event_target:ott_player status = yes } }
+            }
+        }
+        
+        allow = {
+            event_target:ott_target = {
+                has_anomaly = no
+            }
+        }
+        
+        event_target:ott_target = { prevent_anomaly = yes }
+        
+        hidden_effect = {
+            event_target:ott_target = { set_planet_flag = ott_prevent_anomaly }
+            country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+	    name = PREVENT_ANOMALY_NOT
+	    
+        trigger = {
+            event_target:ott_target = {
+                is_preventing_anomaly = yes
+                NOT = { is_surveyed = { who = event_target:ott_player status = yes } }
+            }
+        }
+        
+        allow = {
+            event_target:ott_target = {
+                is_preventing_anomaly = yes
+                has_planet_flag = ott_prevent_anomaly
+	        }
+	    }
+            
+        event_target:ott_target = { prevent_anomaly = no }
+        
+        hidden_effect = {
+            event_target:ott_target = { remove_planet_flag = ott_prevent_anomaly }
+            country_event = { id = ottereditor.1000 }
+		}
+	}
+    
+	option = {
+	    name = ottereditor.1.i
+
+        hidden_effect = {
+            country_event = { id = ottereditor.12 }
+		}
+	}
+
+	option = {
+		name = ottereditor.exit
+	}
+}
+
+country_event = {
+    id = ottereditor.2
+	title = ottereditor.2.name
+	desc = ottereditor.2.desc
+	picture = GFX_evt_archaeological_dig   
+	is_triggered_only = yes
+	
+	option = {
+	    name = YES
+
+	    hidden_effect = {
+	        country_event = { id = ottereditor.3 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}

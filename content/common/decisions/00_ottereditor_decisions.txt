@@ -1,0 +1,34 @@
+decision_ottereditor = {
+	
+	resources = {
+		category = decisions
+		cost = {
+			influence = 0
+		}
+	}
+
+	potential = {
+		is_multiplayer = no
+		FROM = { is_ai = no	}
+	}
+			
+	allow = {
+		is_multiplayer = no
+		FROM = { is_ai = no	}
+	}		
+	
+	effect = { 
+	 	Root = {
+			set_planet_flag = decision_ottereditor
+		}
+
+		from = { 
+			country_event = { id = ottereditor.intd } 
+		}
+		
+	}
+		
+	ai_weight = {
+		weight = 0
+	}
+}

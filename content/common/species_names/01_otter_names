@@ -1,0 +1,9 @@
+OTT = {
+	Otter = {
+		name = Otter
+		plural = Otters
+		home_planet = Monterey
+		home_system = "Monterey Bay"
+		name_list = "OTT1"
+	}
+}

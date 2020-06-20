@@ -1,0 +1,62 @@
+namespace = clam
+
+planet_event = {
+    id = clam.1
+    hide_window = yes
+    is_triggered_only = yes
+    
+    #trigger = {
+        #FROM = {
+            #is_multiplayer = no
+        #}
+    #}
+
+    immediate = {
+        if = {
+            limit = {
+                #is_multiplayer = no
+                
+                FROM = {
+                    is_ai = no
+                }
+            }
+            
+            save_event_target_as = ott_target
+            
+            if = {
+                limit = {
+                    NOT = { any_country = { is_country_type = ott_country } }
+                }
+                
+                create_species = {
+                    name = "Otter Editor Observer"
+                    class = OTT
+                    portrait = otterspace  
+                }
+
+                create_country = {
+                    name = "Otter Editor Observer"
+                    type = ott_country
+                    species = last_created
+                }
+            }
+        
+            random_country = {
+                limit = { is_country_type = ott_country }
+                save_event_target_as = ott_observer
+            }
+            
+            if = {
+                limit = {
+                    OR  = {
+                        NOT = { FROM = { is_same_value = event_target:ott_observer } }
+                        NOT = { exists = event_target:ott_player }
+                    }
+                }
+                FROM = { save_global_event_target_as = ott_player }
+            }
+            
+            FROM = { country_event = { id = ottereditor.1000 } }
+        }
+    }
+}

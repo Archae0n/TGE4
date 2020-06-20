@@ -1,0 +1,11 @@
+on_press_begin = {
+	events = {
+		ottereditor.1001
+	}
+}
+
+on_survey = {
+    events = {
+        ottereditor.20
+    }
+}

@@ -1,0 +1,10 @@
+OTT = {
+	archetype = BIOLOGICAL
+	playable = { always = no }
+	randomized = no
+	portraits = {
+        "otterspace" 
+	}
+	graphical_culture = otter_01
+	move_pop_sound_effect = "moving_pop_confirmation"
+}

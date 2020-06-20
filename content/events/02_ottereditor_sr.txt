@@ -1,0 +1,1029 @@
+namespace = ottereditor
+
+# Strategic Resource
+country_event = {
+    id = ottereditor.6
+	title = ottereditor.1.name
+	desc = ottereditor.6.desc
+	picture = GFX_evt_mining_station
+	is_triggered_only = yes	
+	
+	option = {
+        name =  ottereditor.6.c
+        
+        allow = {
+            event_target:ott_target = {
+                or = {
+				    is_planet_class = pc_frozen
+                    is_planet_class = pc_ice_asteroid
+                }
+            }
+        }
+        
+		custom_tooltip = rare_crystals_desc
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.61 }
+        }
+	}
+	
+	option = {
+        name =  ottereditor.6.b
+		
+        allow = {
+            event_target:ott_target = {
+                or = {
+                    is_planet_class = pc_gas_giant
+                    is_planet_class = pc_toxic
+                }
+            }
+        }
+
+		custom_tooltip = exotic_gases_desc
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.62 }
+        }
+	}
+	
+	option = {
+        name =  ottereditor.6.e
+
+        allow = {
+            event_target:ott_target = {
+                or = {			
+			        is_planet_class = pc_molten
+                    is_planet_class = pc_asteroid
+                }
+            }
+        }	
+		
+		custom_tooltip = volatile_motes_desc
+		
+        hidden_effect = {
+            country_event = { id = ottereditor.63 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.6.d
+        
+        allow = {
+            event_target:ott_target = {
+				is_planet_class = pc_molten
+			}
+			
+		}
+		
+		custom_tooltip = nanites_desc
+            
+        hidden_effect = {            
+            country_event = { id = ottereditor.64 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.6.f
+        
+        allow = {
+            event_target:ott_target = {
+                is_planet_class = pc_toxic
+				
+			}
+		}
+		
+		custom_tooltip = sr_zro_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_zro_deposit_3
+            }
+            country_event = { id = ottereditor.65 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.6.g
+        
+        allow = {
+            event_target:ott_target = {
+				is_planet_class = pc_black_hole
+			}
+		}
+		
+		custom_tooltip = sr_dark_matter_desc
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.66 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.6.h
+        
+        allow = {
+            event_target:ott_target = {
+				is_asteroid = yes
+			}
+		}
+		
+		custom_tooltip = sr_living_metal
+            
+        hidden_effect = {          
+            country_event = { id = ottereditor.67 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.6.a
+        
+        allow = {
+            event_target:ott_target = {
+                has_deposit = yes
+            }
+        }
+        
+        event_target:ott_target = {
+            clear_deposits = yes
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.6 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+	
+}
+
+#Orbital Crystals
+country_event = {
+    id = ottereditor.61
+	title = ottereditor.1.name
+	desc = ottereditor.6.desc
+	picture = GFX_evt_mining_station
+	is_triggered_only = yes	
+	
+	option = {
+        name = ottereditor.11.a
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_rare_crystals_1
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.11.b
+
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_rare_crystals_2
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.11.c
+
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_rare_crystals_3
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.11.d
+
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_rare_crystals_4
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+	}	
+	
+	option = {
+        name = ottereditor.11.e
+
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_rare_crystals_5
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.6.a
+        
+        allow = {
+            event_target:ott_target = {
+                has_deposit = yes
+            }
+        }
+        
+        event_target:ott_target = {
+            clear_deposits = yes
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.6 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+	
+}
+
+#Orbital Gases
+country_event = {
+    id = ottereditor.62
+	title = ottereditor.1.name
+	desc = ottereditor.6.desc
+	picture = GFX_evt_mining_station
+	is_triggered_only = yes	
+	
+	option = {
+        name = ottereditor.11.a
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_exotic_gases_1
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.11.b
+
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_exotic_gases_2
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.11.c
+
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_exotic_gases_3
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.11.d
+
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_exotic_gases_4
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+	}	
+	
+	option = {
+        name = ottereditor.11.e
+
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_exotic_gases_5
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.6.a
+        
+        allow = {
+            event_target:ott_target = {
+                has_deposit = yes
+            }
+        }
+        
+        event_target:ott_target = {
+            clear_deposits = yes
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.6 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+	
+}
+
+#Orbital volatile motes
+country_event = {
+    id = ottereditor.63
+	title = ottereditor.1.name
+	desc = ottereditor.6.desc
+	picture = GFX_evt_mining_station
+	is_triggered_only = yes	
+	
+	option = {
+        name = ottereditor.11.a
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_volatile_motes_1
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.11.b
+
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_volatile_motes_2
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.11.c
+
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_volatile_motes_3
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.11.d
+
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_volatile_motes_4
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+	}	
+	
+	option = {
+        name = ottereditor.11.e
+
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_volatile_motes_5
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.6.a
+        
+        allow = {
+            event_target:ott_target = {
+                has_deposit = yes
+            }
+        }
+        
+        event_target:ott_target = {
+            clear_deposits = yes
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.6 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+	
+}
+
+#Nanties
+country_event = {
+    id = ottereditor.64
+	title = ottereditor.1.name
+	desc = ottereditor.6.desc
+	picture = GFX_evt_mining_station
+	is_triggered_only = yes	
+	
+	option = {
+        name = ottereditor.11.a
+		
+		custom_tooltip = nanites_desc
+            
+        hidden_effect = {
+            if = {
+                limit = { event_target:ott_target.solar_system = { NOT = { is_in_cluster = resource_cluster_0 } } }
+                create_cluster = {
+                    id = resource_cluster_0
+                    radius = 1
+                    center = event_target:ott_target.solar_system
+                }
+            }
+            
+            event_target:ott_target = {
+                set_deposit = d_nanites_deposit
+            }
+            
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.11.b
+        
+        allow = {
+            event_target:ott_target = {
+				is_planet_class = pc_molten
+			}
+		}
+		
+		custom_tooltip = nanites_desc
+            
+        hidden_effect = {
+            if = {
+                limit = { event_target:ott_target.solar_system = { NOT = { is_in_cluster = resource_cluster_0 } } }
+                create_cluster = {
+                    id = resource_cluster_0
+                    radius = 1
+                    center = event_target:ott_target.solar_system
+                }
+            }
+            
+            event_target:ott_target = {
+                set_deposit = d_nanites_deposit
+                add_deposit = d_nanites_deposit
+            }
+            
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.11.c
+		
+		custom_tooltip = nanites_desc
+            
+        hidden_effect = {
+            if = {
+                limit = { event_target:ott_target.solar_system = { NOT = { is_in_cluster = resource_cluster_0 } } }
+                create_cluster = {
+                    id = resource_cluster_0
+                    radius = 1
+                    center = event_target:ott_target.solar_system
+                }
+            }
+            
+            event_target:ott_target = {
+                set_deposit = d_nanites_deposit
+                add_deposit = d_nanites_deposit
+                add_deposit = d_nanites_deposit
+            }
+            
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.11.d
+		
+		custom_tooltip = nanites_desc
+            
+        hidden_effect = {
+            if = {
+                limit = { event_target:ott_target.solar_system = { NOT = { is_in_cluster = resource_cluster_0 } } }
+                create_cluster = {
+                    id = resource_cluster_0
+                    radius = 1
+                    center = event_target:ott_target.solar_system
+                }
+            }
+            
+            event_target:ott_target = {
+                set_deposit = d_nanites_deposit
+                add_deposit = d_nanites_deposit
+                add_deposit = d_nanites_deposit
+                add_deposit = d_nanites_deposit
+            }
+            
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.11.e
+		
+		custom_tooltip = nanites_desc
+            
+        hidden_effect = {
+            if = {
+                limit = { event_target:ott_target.solar_system = { NOT = { is_in_cluster = resource_cluster_0 } } }
+                create_cluster = {
+                    id = resource_cluster_0
+                    radius = 1
+                    center = event_target:ott_target.solar_system
+                }
+            }
+            
+            event_target:ott_target = {
+                set_deposit = d_nanites_deposit
+                add_deposit = d_nanites_deposit
+                add_deposit = d_nanites_deposit
+                add_deposit = d_nanites_deposit
+                add_deposit = d_nanites_deposit
+            }
+            
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.6.a
+        
+        allow = {
+            event_target:ott_target = {
+                has_deposit = yes
+            }
+        }
+        
+        event_target:ott_target = {
+            clear_deposits = yes
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.6 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+	
+}
+
+#Orbital Zro
+country_event = {
+    id = ottereditor.65
+	title = ottereditor.1.name
+	desc = ottereditor.6.desc
+	picture = GFX_evt_mining_station
+    is_triggered_only = yes	
+    
+    option = {
+        name = ottereditor.11.a
+		
+		custom_tooltip = sr_zro_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_zro_deposit_1
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.11.b
+		
+		custom_tooltip = sr_zro_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_zro_deposit_2
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+
+    option = {
+        name = ottereditor.11.c
+		
+		custom_tooltip = sr_zro_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_zro_deposit_3
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+
+    option = {
+        name = ottereditor.11.d
+		
+		custom_tooltip = sr_zro_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_zro_deposit_3
+                add_deposit = d_zro_deposit_1
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.11.e
+		
+		custom_tooltip = sr_zro_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_zro_deposit_3
+                add_deposit = d_zro_deposit_2
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.6.a
+        
+        allow = {
+            event_target:ott_target = {
+                has_deposit = yes
+            }
+        }
+        
+        event_target:ott_target = {
+            clear_deposits = yes
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.6 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+
+
+#Orbital Dark Matter
+country_event = {
+    id = ottereditor.66
+	title = ottereditor.1.name
+	desc = ottereditor.6.desc
+	picture = GFX_evt_mining_station
+    is_triggered_only = yes	
+
+    option = {
+        name = ottereditor.11.a
+        
+        allow = {
+            event_target:ott_target = {
+				is_planet_class = pc_black_hole
+			}
+		}
+		
+		custom_tooltip = sr_dark_matter_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_dark_matter_deposit_1
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.11.b
+        
+        allow = {
+            event_target:ott_target = {
+				is_planet_class = pc_black_hole
+			}
+		}
+		
+		custom_tooltip = sr_dark_matter_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_dark_matter_deposit_2
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+
+    option = {
+        name = ottereditor.11.c
+        
+        allow = {
+            event_target:ott_target = {
+				is_planet_class = pc_black_hole
+			}
+		}
+		
+		custom_tooltip = sr_dark_matter_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_dark_matter_deposit_3
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.11.d
+        
+        allow = {
+            event_target:ott_target = {
+				is_planet_class = pc_black_hole
+			}
+		}
+		
+		custom_tooltip = sr_dark_matter_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_dark_matter_deposit_3
+                add_deposit = d_dark_matter_deposit_1
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+	}
+
+    option = {
+        name = ottereditor.11.e
+        
+        allow = {
+            event_target:ott_target = {
+				is_planet_class = pc_black_hole
+			}
+		}
+		
+		custom_tooltip = sr_dark_matter_desc
+            
+        hidden_effect = {
+            event_target:ott_target = {
+                set_deposit = d_dark_matter_deposit_3
+                add_deposit = d_dark_matter_deposit_2
+            }
+            country_event = { id = ottereditor.1000 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.6.a
+        
+        allow = {
+            event_target:ott_target = {
+                has_deposit = yes
+            }
+        }
+        
+        event_target:ott_target = {
+            clear_deposits = yes
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.6 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+#Orbital Living Metal
+country_event = {
+    id = ottereditor.67
+	title = ottereditor.1.name
+	desc = ottereditor.6.desc
+	picture = GFX_evt_mining_station
+    is_triggered_only = yes	
+
+    option = {
+        name = ottereditor.11.a
+        
+        allow = {
+            event_target:ott_target = {
+				is_asteroid = yes
+			}
+		}
+		
+		custom_tooltip = sr_living_metal
+            
+        hidden_effect = {
+            if = {
+                limit = { event_target:ott_target.solar_system = { NOT = { is_in_cluster = resource_cluster_0 } } }
+                create_cluster = {
+                    id = resource_cluster_0
+                    radius = 1
+                    center = event_target:ott_target.solar_system
+                }
+            }
+            
+            event_target:ott_target = {
+                set_deposit = d_living_metal_deposit
+            }
+            
+            country_event = { id = ottereditor.1000 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.11.b
+        
+        allow = {
+            event_target:ott_target = {
+				is_asteroid = yes
+			}
+		}
+		
+		custom_tooltip = sr_living_metal
+            
+        hidden_effect = {
+            if = {
+                limit = { event_target:ott_target.solar_system = { NOT = { is_in_cluster = resource_cluster_0 } } }
+                create_cluster = {
+                    id = resource_cluster_0
+                    radius = 1
+                    center = event_target:ott_target.solar_system
+                }
+            }
+            
+            event_target:ott_target = {
+                set_deposit = d_living_metal_deposit
+                add_deposit = d_living_metal_deposit
+            }
+            
+            country_event = { id = ottereditor.1000 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.11.c
+        
+        allow = {
+            event_target:ott_target = {
+				is_asteroid = yes
+			}
+		}
+		
+		custom_tooltip = sr_living_metal
+            
+        hidden_effect = {
+            if = {
+                limit = { event_target:ott_target.solar_system = { NOT = { is_in_cluster = resource_cluster_0 } } }
+                create_cluster = {
+                    id = resource_cluster_0
+                    radius = 1
+                    center = event_target:ott_target.solar_system
+                }
+            }
+            
+            event_target:ott_target = {
+                set_deposit = d_living_metal_deposit
+                add_deposit = d_living_metal_deposit
+                add_deposit = d_living_metal_deposit
+            }
+            
+            country_event = { id = ottereditor.1000 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.11.d
+        
+        allow = {
+            event_target:ott_target = {
+				is_asteroid = yes
+			}
+		}
+		
+		custom_tooltip = sr_living_metal
+            
+        hidden_effect = {
+            if = {
+                limit = { event_target:ott_target.solar_system = { NOT = { is_in_cluster = resource_cluster_0 } } }
+                create_cluster = {
+                    id = resource_cluster_0
+                    radius = 1
+                    center = event_target:ott_target.solar_system
+                }
+            }
+            
+            event_target:ott_target = {
+                set_deposit = d_living_metal_deposit
+                add_deposit = d_living_metal_deposit
+                add_deposit = d_living_metal_deposit
+                add_deposit = d_living_metal_deposit
+            }
+            
+            country_event = { id = ottereditor.1000 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.11.e
+        
+        allow = {
+            event_target:ott_target = {
+				is_asteroid = yes
+			}
+		}
+		
+		custom_tooltip = sr_living_metal
+            
+        hidden_effect = {
+            if = {
+                limit = { event_target:ott_target.solar_system = { NOT = { is_in_cluster = resource_cluster_0 } } }
+                create_cluster = {
+                    id = resource_cluster_0
+                    radius = 1
+                    center = event_target:ott_target.solar_system
+                }
+            }
+            
+            event_target:ott_target = {
+                set_deposit = d_living_metal_deposit
+                add_deposit = d_living_metal_deposit
+                add_deposit = d_living_metal_deposit
+                add_deposit = d_living_metal_deposit
+                add_deposit = d_living_metal_deposit
+            }
+            
+            country_event = { id = ottereditor.1000 }
+        }
+    }
+
+    option = {
+        name = ottereditor.6.a
+        
+        allow = {
+            event_target:ott_target = {
+                has_deposit = yes
+            }
+        }
+        
+        event_target:ott_target = {
+            clear_deposits = yes
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.6 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}

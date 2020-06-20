@@ -1,0 +1,2005 @@
+namespace = ottereditor
+
+# Galaxy and Events Menu
+country_event = {
+    id = ottereditor.12
+	title = ottereditor.1.name
+	desc = ottereditor.12.desc
+	picture = GFX_evt_binary_stars
+	is_triggered_only = yes	
+
+	option = {
+        name = ottereditor.12.a
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.13 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.12.e
+        
+        allow = {
+            OR ={ 
+                host_has_dlc = "Utopia"
+                host_has_dlc = "Megacorp"
+            }
+
+        }
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.21 }
+        }
+	}
+	
+    option = {
+        name = ottereditor.12.f
+        
+        trigger = {
+            event_target:ott_target.solar_system = {
+                NOT = { has_star_flag = abandoned_gateway }
+            }
+        }
+        
+        custom_tooltip = ottereditor.12.gwt
+        
+        event_target:ott_target.solar_system = {
+            spawn_megastructure = {
+			    type = "gateway_ruined"
+			    random_pos = yes
+			    orbit_angle = 360		# range of the randomization
+		    }
+		}
+		    
+        hidden_effect = {
+            event_target:ott_target.solar_system = { set_star_flag = abandoned_gateway }
+            country_event = { id = ottereditor.12 }
+        }
+    }
+ 
+    option = {
+        name = ottereditor.12.h
+        
+        trigger = {
+            event_target:ott_target.solar_system = {
+                NOT = { has_star_flag = lgate }
+            }
+        }
+        
+        custom_tooltip = ottereditor.12.lgate
+        
+        event_target:ott_target.solar_system = {
+            spawn_megastructure = {
+			    type = "lgate_base"
+			    random_pos = yes
+                orbit_angle = 90	
+                orbit_distance = 40
+		    }
+		}
+		    
+        hidden_effect = {
+            event_target:ott_target.solar_system = { set_star_flag = lgate }
+            country_event = { id = ottereditor.12 }
+        }
+    } 
+	
+    option = {
+        name = ottereditor.12.g
+        
+        trigger = {
+            event_target:ott_target.solar_system = {
+                any_system_megastructure = { is_megastructure_type = gateway_ruined }
+            }
+        }
+        
+        event_target:ott_target.solar_system = {
+            random_system_megastructure = {
+                limit = { is_megastructure_type = gateway_ruined }
+                remove_megastructure = this
+            }
+        }
+                
+        hidden_effect = {
+            event_target:ott_target.solar_system = { remove_star_flag = abandoned_gateway }
+            country_event = { id = ottereditor.12 }
+        }
+    }
+
+    option = {
+        name = ottereditor.12.i
+        
+        trigger = {
+            event_target:ott_target.solar_system = {
+                any_system_megastructure = { is_megastructure_type = lgate_base }
+            }
+        }
+        
+        event_target:ott_target.solar_system = {
+            random_system_megastructure = {
+                limit = { is_megastructure_type = lgate_base }
+                remove_megastructure = this
+            }
+        }
+                
+        hidden_effect = {
+            event_target:ott_target.solar_system = { remove_star_flag = lgate }
+            country_event = { id = ottereditor.12 }
+        }
+    }	
+	
+	option = {
+        name = ottereditor.12.b
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.15 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.12.d
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.18 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+#Special Systems
+country_event = {
+    id = ottereditor.13
+	title = ottereditor.1.name
+	desc = ottereditor.13.desc
+	picture = GFX_evt_shrouded
+	is_triggered_only = yes	
+
+	option = {
+        name = ottereditor.130
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.130 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.131
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.131 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.132
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.132 }
+        }
+    }
+    
+    #option = {
+    #    name = ottereditor.133
+     #   
+      #  hidden_effect = {
+       #     country_event = { id = ottereditor.133 }
+        #}
+	#}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+#Normal Systems
+country_event = {
+    id = ottereditor.132
+	title = ottereditor.1.name
+	desc = ottereditor.132.desc
+	picture = GFX_evt_star_yellow
+	is_triggered_only = yes	
+	  
+    option = {
+        name = ottereditor.13.k
+        
+        custom_tooltip = ottereditor.13.sys_random
+        
+        trigger = {
+            NOT = { has_global_flag = ott_spawn_adjacent }
+        }
+        
+        hidden_effect = {
+            set_global_flag = ott_spawn_adjacent
+            country_event = { id = ottereditor.132 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.13.l
+        
+        custom_tooltip = ottereditor.13.sys_origin
+        
+        trigger = {
+            has_global_flag = ott_spawn_adjacent
+        }
+        
+        hidden_effect = {
+            remove_global_flag = ott_spawn_adjacent
+            country_event = { id = ottereditor.132 }
+        }
+    }
+
+    option = {
+        name = "Basic 1"
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "basic_init_01"
+                }
+            }
+            country_event = { id = ottereditor.132 }
+        }
+    }
+
+    option = {
+        name = "Basic 2"
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "basic_init_02"
+                }
+            }
+            country_event = { id = ottereditor.132 }
+        }
+    }
+
+    option = {
+        name = "Basic 3"
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "basic_init_03"
+                }
+            }
+            country_event = { id = ottereditor.132 }
+        }
+    }
+
+    option = {
+        name = "Basic 4"
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "basic_init_04"
+                }
+            }
+            country_event = { id = ottereditor.132 }
+        }
+    }
+
+    option = {
+        name = "Basic 5"
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "basic_init_05"
+                }
+            }
+            country_event = { id = ottereditor.132 }
+        }
+    }
+
+    option = {
+        name = "Basic 6"
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "basic_init_06"
+                }
+            }
+            country_event = { id = ottereditor.132 }
+        }
+    }
+
+    option = {
+        name = "Binary 1"
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "binary_init_01"
+                }
+            }
+            country_event = { id = ottereditor.132 }
+        }
+    }
+
+    option = {
+        name = "Binary 2"
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "binary_init_02"
+                }
+            }
+            country_event = { id = ottereditor.132 }
+        }
+    }
+
+    option = {
+        name = "Trinary 1"
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "trinary_init_01"
+                }
+            }
+            country_event = { id = ottereditor.132 }
+        }
+    }
+
+    option = {
+        name = "Trinary 2"
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "trinary_init_02"
+                }
+            }
+            country_event = { id = ottereditor.132 }
+        }
+    }
+
+    option = {
+        name = "Asteroid System"
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "asteroid_init_01"
+                }
+            }
+            country_event = { id = ottereditor.132 }
+        }
+    }
+
+    option = {
+        name = "Black Hole"
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "special_init_01"
+                }
+            }
+            country_event = { id = ottereditor.132 }
+        }
+    } 
+
+    option = {
+        name = "Neutron System"
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "special_init_08"
+                }
+            }
+            country_event = { id = ottereditor.132 }
+        }
+    } 
+
+    option = {
+        name = "Pulsar System"
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "special_init_09"
+                }
+            }
+            country_event = { id = ottereditor.132 }
+        }
+    } 
+
+    option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+            remove_global_flag = ott_spawn_adjacent
+		    country_event = { id = ottereditor.13 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.return2
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+	
+	option = {
+		name = ottereditor.exit
+		
+		hidden_effect = {
+            remove_global_flag = ott_spawn_adjacent
+	    }
+	}
+}
+
+#Unique Systems
+country_event = {
+    id = ottereditor.130
+	title = ottereditor.1.name
+	desc = ottereditor.13.desc
+	picture = GFX_evt_towel
+	is_triggered_only = yes	
+	
+	immediate = {
+        random_system = { limit = { has_star_flag = nuked_sol }
+            save_event_target_as = ott_sys_nuked_sol
+        }
+        random_system = { limit = { has_star_flag = primitive_sol }
+            save_event_target_as = ott_sys_primitive_sol
+        }
+        random_system = { limit = { has_star_flag = manufactory_system }
+            save_event_target_as = ott_sys_manufactory
+        }
+        random_system = { limit = { has_star_flag = ai_system }
+            save_event_target_as = ott_sys_ai
+        }
+        random_system = { limit = { has_star_flag = guardians_of_zanaam }
+            save_event_target_as = ott_sys_zanaam
+        }
+        random_system = { limit = { has_star_flag = sanctuary_system }
+            save_event_target_as = ott_sys_sanctuary
+        }
+        random_system = { limit = { has_star_flag = hostile_system }
+            save_event_target_as = ott_sys_crystal
+        }
+    }
+    
+    option = {
+        name = ottereditor.13.k
+        
+        custom_tooltip = ottereditor.13.sys_random
+        
+        trigger = {
+            NOT = { has_global_flag = ott_spawn_adjacent }
+        }
+        
+        hidden_effect = {
+            set_global_flag = ott_spawn_adjacent
+            country_event = { id = ottereditor.130 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.13.l
+        
+        custom_tooltip = ottereditor.13.sys_origin
+        
+        trigger = {
+            has_global_flag = ott_spawn_adjacent
+        }
+        
+        hidden_effect = {
+            remove_global_flag = ott_spawn_adjacent
+            country_event = { id = ottereditor.130 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.130.i
+        
+        trigger = {
+            NOT = { exists = event_target:ott_sys_nuked_sol }
+        }
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "special_init_04"
+                }
+            }
+            country_event = { id = ottereditor.130 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.130.j
+        
+        trigger = {
+            exists = event_target:ott_sys_nuked_sol
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_nuked_sol }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.130 }
+        }
+    } 
+
+    option = {
+        name = ottereditor.130.g
+        
+        trigger = {
+            NOT = { exists = event_target:ott_sys_primitive_sol }
+        }
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "special_init_03"
+                }
+            }
+            country_event = { id = ottereditor.130 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.130.h
+        
+        trigger = {
+            exists = event_target:ott_sys_primitive_sol
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_primitive_sol }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.130 }
+        }
+    } 
+    
+    option = {
+        name = ottereditor.130.e
+        
+        trigger = {
+            NOT = { exists = event_target:ott_sys_manufactory }
+        }
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "crystal_manufactory_system"
+                }
+            }
+            country_event = { id = ottereditor.130 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.130.f
+        
+        trigger = {
+            exists = event_target:ott_sys_manufactory
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_manufactory }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.130 }
+        }
+	} 
+	
+    option = {
+        name = ottereditor.130.c
+        
+        trigger = {
+            NOT = { exists = event_target:ott_sys_ai }
+        }
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "ai_system_1"
+                }
+            }
+            country_event = { id = ottereditor.130 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.130.d
+        
+        trigger = {
+            exists = event_target:ott_sys_ai
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_ai }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.130 }
+        }
+	}   
+	
+	option = {
+        name = ottereditor.130.a
+        
+        trigger = {
+            NOT = { exists = event_target:ott_sys_crystal }
+        }
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "special_init_07"
+                }
+            }
+            country_event = { id = ottereditor.130 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.130.b
+        
+        trigger = {
+            exists = event_target:ott_sys_crystal
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_crystal }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.130 }
+        }
+	}
+	
+	option = {
+        name = galactic_features.2.name
+        
+        trigger = {
+            NOT = { exists = event_target:ott_sys_zanaam }
+        }
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "special_init_06"
+                }
+            }
+            country_event = { id = ottereditor.130 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.13.h
+        
+        trigger = {
+            exists = event_target:ott_sys_zanaam
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_zanaam }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.130 }
+        }
+	}
+
+	option = {
+        name = ottereditor.13.sanctuary
+        
+        trigger = {
+            NOT = { exists = event_target:ott_sys_sanctuary }
+        }
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "sanctuary_system"
+                }
+            }
+            country_event = { id = ottereditor.130 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.13.i
+        
+        trigger = {
+            exists = event_target:ott_sys_sanctuary
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_sanctuary }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.130 }
+        }
+	}
+	
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+            remove_global_flag = ott_spawn_adjacent
+		    country_event = { id = ottereditor.13 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.return2
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+	
+	option = {
+		name = ottereditor.exit
+		
+		hidden_effect = {
+            remove_global_flag = ott_spawn_adjacent
+	    }
+	}
+}
+
+#Leviathans Systems
+country_event = {
+    id = ottereditor.131
+	title = ottereditor.1.name
+	desc = ottereditor.13.desc
+	picture = GFX_evt_space_dragon
+	is_triggered_only = yes	
+	
+	immediate = {
+        random_system = { limit = { has_star_flag = guardians_dreadnought_system }
+            save_event_target_as = ott_sys_dreadnought
+        }
+        random_system = { limit = { has_star_flag = guardians_stellarite_system }
+            save_event_target_as = ott_sys_stellarite
+        }
+        random_system = { limit = { has_star_flag = guardians_dragon_system }
+            save_event_target_as = ott_sys_dragon
+        }
+        random_system = { limit = { has_star_flag = guardians_horror_system }
+            save_event_target_as = ott_sys_horror
+        }
+        random_system = { limit = { has_star_flag = guardians_hive_system }
+            save_event_target_as = ott_sys_hive
+        }
+        random_system = { limit = { has_star_flag = guardians_technosphere_system }
+            save_event_target_as = ott_sys_sphere
+        }
+        random_system = { limit = { has_star_flag = guardians_fortress_system }
+            save_event_target_as = ott_sys_fortress
+        }
+        random_planet = { limit = { has_planet_flag = guardians_wraith_pulsar }
+            save_event_target_as = ott_sys_wraith
+        }
+    }
+    
+    option = {
+        name = ottereditor.13.k
+        
+        custom_tooltip = ottereditor.13.sys_random
+        
+        trigger = {
+            NOT = { has_global_flag = ott_spawn_adjacent }
+        }
+        
+        hidden_effect = {
+            set_global_flag = ott_spawn_adjacent
+            country_event = { id = ottereditor.131 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.13.l
+        
+        custom_tooltip = ottereditor.13.sys_origin
+        
+        trigger = {
+            has_global_flag = ott_spawn_adjacent
+        }
+        
+        hidden_effect = {
+            remove_global_flag = ott_spawn_adjacent
+            country_event = { id = ottereditor.131 }
+        }
+    }
+    
+    option = {
+        name = leviathans.1000.name
+        
+        trigger = {
+            NOT = { exists = event_target:ott_sys_stellarite }
+        }
+        
+        allow = {
+            has_leviathans = yes
+        }
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "guardians_init_stellarites"
+                }
+            }
+            country_event = { id = ottereditor.131 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.13.a
+        
+        trigger = {
+            exists = event_target:ott_sys_stellarite
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_stellarite }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.131 }
+        }
+	}
+	
+	option = {
+        name = leviathans.510.name
+        
+        trigger = {
+            NOT = { exists = event_target:ott_sys_dragon }
+        }
+        
+        allow = {
+            has_leviathans = yes
+        }
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "guardians_init_dragon"
+                }
+            }
+            country_event = { id = ottereditor.131 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.13.b
+        
+        trigger = {
+            exists = event_target:ott_sys_dragon
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_dragon }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.131 }
+        }
+	}
+	
+	option = {
+        name = leviathans.525.name
+        
+        trigger = {
+            NOT = { exists = event_target:ott_sys_horror }
+        }
+        
+        allow = {
+            has_leviathans = yes
+        }
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "guardians_init_horror"
+                }
+            }
+            country_event = { id = ottereditor.131 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.13.c
+        
+        trigger = {
+            exists = event_target:ott_sys_horror
+        }
+        
+       hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_horror }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.131 }
+        }
+	}
+
+	option = {
+        name = leviathans.540.name
+        
+        trigger = {
+            NOT = { exists = event_target:ott_sys_dreadnought }
+        }
+        
+        allow = {
+            has_leviathans = yes
+        }
+
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "guardians_init_dreadnought"
+                }
+            }
+            country_event = { id = ottereditor.131 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.13.d
+        
+        trigger = {
+            exists = event_target:ott_sys_dreadnought
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_dreadnought }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.131 }
+        }
+	}
+	
+	option = {
+        name = leviathans.530.name
+        
+        trigger = {
+            NOT = { exists = event_target:ott_sys_hive }
+        }
+        
+        allow = {
+            has_leviathans = yes
+        }
+
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "guardians_init_hive"
+                }
+            }
+            country_event = { id = ottereditor.131 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.13.e
+        
+        trigger = {
+            exists = event_target:ott_sys_hive
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_hive }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.131 }
+        }
+	}
+	
+	option = {
+        name = leviathans.535.name
+        
+        trigger = {
+            NOT = { exists = event_target:ott_sys_sphere }
+        }
+        
+        allow = {
+            has_leviathans = yes
+        }
+
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "guardians_init_technosphere"
+                }
+            }
+            country_event = { id = ottereditor.131 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.13.f
+        
+        trigger = {
+            exists = event_target:ott_sys_sphere
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_sphere }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.131 }
+        }
+	}
+	
+	option = {
+        name = leviathans.515.name
+        
+        trigger = {
+            NOT = { exists = event_target:ott_sys_fortress }
+        }
+        
+        allow = {
+            has_leviathans = yes
+        }
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "guardians_init_fortress"
+                }
+            }
+            country_event = { id = ottereditor.131 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.13.g
+        
+        trigger = {
+            exists = event_target:ott_sys_fortress
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_fortress }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.131 }
+        }
+	}
+
+	option = {
+        name = leviathans.545.name
+        
+        trigger = {
+            NOT = { exists = event_target:ott_sys_wraith }
+        }
+        
+        allow = {
+            has_leviathans = yes
+        }
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "guardians_init_wraith"
+                }
+            }
+            country_event = { id = ottereditor.131 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.13.j
+        
+        trigger = {
+            exists = event_target:ott_sys_wraith
+        }
+        
+        hidden_effect = {
+            random_planet = {
+                limit = { is_same_value = event_target:ott_sys_wraith }
+                save_event_target_as = ott_ping_target
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.131 }
+        }
+	}
+	
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+            remove_global_flag = ott_spawn_adjacent
+		    country_event = { id = ottereditor.13 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.return2
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+	
+	option = {
+		name = ottereditor.exit
+		
+		hidden_effect = {
+            remove_global_flag = ott_spawn_adjacent
+	    }
+	}
+}
+
+#Ruined Megastructures
+country_event = {
+    id = ottereditor.21
+	title = ottereditor.1.name
+	desc = ottereditor.13.desc
+	picture = GFX_evt_ringworld
+	is_triggered_only = yes	
+	
+	immediate = {
+        random_system = { limit = { has_star_flag = ruined_dyson_system }
+            save_event_target_as = ott_sys_dyson
+        }
+        random_system = { limit = { has_star_flag = ruined_nexus_system }
+            save_event_target_as = ott_sys_nexus
+        }
+        random_system = { limit = { has_star_flag = ruined_sentry_system }
+            save_event_target_as = ott_sys_sentry
+        }
+        random_system = { limit = { has_star_flag = ruined_ring_system }
+            save_event_target_as = ott_sys_ring
+        }
+        random_system = { limit = { has_star_flag = ruined_matter_decompressor_system }
+        save_event_target_as = ott_sys_matter_decompressor
+        }
+        random_system = { limit = { has_star_flag = ruined_strategic_coordination_center_system }
+        save_event_target_as = ott_sys_strategic_coordination_center
+        }
+        random_system = { limit = { has_star_flag = ruined_mega_art_installation_system }
+        save_event_target_as = ott_sys_mega_art_installation
+        }
+        random_system = { limit = { has_star_flag = ruined_interstellar_assembly_system }
+        save_event_target_as = ott_sys_interstellar_assembly
+        }
+    }
+    
+    option = {
+        name = ottereditor.13.k
+        
+        custom_tooltip = ottereditor.13.sys_random
+        
+        trigger = {
+            NOT = { has_global_flag = ott_spawn_adjacent }
+        }
+        
+        hidden_effect = {
+            set_global_flag = ott_spawn_adjacent
+            country_event = { id = ottereditor.21 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.13.l
+        
+        custom_tooltip = ottereditor.13.sys_origin
+        
+        trigger = {
+            has_global_flag = ott_spawn_adjacent
+        }
+        
+        hidden_effect = {
+            remove_global_flag = ott_spawn_adjacent
+            country_event = { id = ottereditor.21 }
+        }
+    }
+    
+    option = {
+        name = dyson_sphere_ruined
+        
+        trigger = {
+            host_has_dlc = "Utopia"
+            NOT = { exists = event_target:ott_sys_dyson }
+        }
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "dyson_sphere_init_01"
+                }
+            }
+            country_event = { id = ottereditor.21 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.21.c
+        
+        trigger = {
+            exists = event_target:ott_sys_dyson
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_dyson }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.21 }
+        }
+	}
+	
+	option = {
+        name = think_tank_ruined
+        
+        trigger = {
+            host_has_dlc = "Utopia"
+            NOT = { exists = event_target:ott_sys_nexus }
+        }
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "science_nexus_init_01"
+                }
+            }
+            country_event = { id = ottereditor.21 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.21.d
+        
+        trigger = {
+            host_has_dlc = "Utopia"
+            exists = event_target:ott_sys_nexus
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_nexus }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.21 }
+        }
+	}
+	
+	option = {
+        name = spy_orb_ruined
+        
+        trigger = {
+            host_has_dlc = "Utopia"
+            NOT = { exists = event_target:ott_sys_sentry }
+        }
+
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "sentry_array_init_01"
+                }
+            }
+            country_event = { id = ottereditor.21 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.21.e
+        
+        trigger = {
+            exists = event_target:ott_sys_sentry
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_sentry }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.21 }
+        }
+	}
+	
+	option = {
+        name = utopia.2016.name
+        
+        trigger = {
+            host_has_dlc = "Utopia"
+            NOT = { exists = event_target:ott_sys_ring }
+        }
+
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "ring_world_init_01"
+                }
+            }
+            country_event = { id = ottereditor.21 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.21.f
+        
+        trigger = {
+            exists = event_target:ott_sys_ring
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_ring }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.21 }
+        }
+    }
+    
+    option = {
+        name = matter_decompressor_ruined
+        
+        trigger = {
+            host_has_dlc = "MegaCorp"
+            NOT = { exists = event_target:ott_sys_matter_decompressor }
+        }
+
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "megacorp_matter_decompressor_init_01"
+                }
+            }
+            country_event = { id = ottereditor.21 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.21.g
+        
+        trigger = {
+            exists = event_target:ott_sys_matter_decompressor
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_matter_decompressor }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.21 }
+        }
+    }
+
+    option = {
+        name = strategic_coordination_center_ruined
+        
+        trigger = {
+            host_has_dlc = "MegaCorp"
+            NOT = { exists = event_target:ott_sys_strategic_coordination_center }
+        }
+
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "megacorp_strategic_coordination_center_init_01"
+                }
+            }
+            country_event = { id = ottereditor.21 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.21.h
+        
+        trigger = {
+            exists = event_target:ott_sys_strategic_coordination_center
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_strategic_coordination_center }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.21 }
+        }
+    }
+    
+    option = {
+        name = mega_art_installation_ruined
+        
+        trigger = {
+            host_has_dlc = "MegaCorp"
+            NOT = { exists = event_target:ott_sys_mega_art_installation }
+        }
+
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "megacorp_mega_art_installation_init_01"
+                }
+            }
+            country_event = { id = ottereditor.21 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.21.i
+        
+        trigger = {
+            exists = event_target:ott_sys_mega_art_installation
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_mega_art_installation }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.21 }
+        }
+    }
+    
+    option = {
+        name = interstellar_assembly_ruined
+        
+        trigger = {
+            host_has_dlc = "MegaCorp"
+            NOT = { exists = event_target:ott_sys_interstellar_assembly }
+        }
+
+        hidden_effect = {
+            country_event = { id = ottereditor.22 }
+            
+            event_target:ott_sys_origin = {
+                spawn_system = {
+                    min_distance = 20
+                    max_distance = 50
+                    initializer = "megacorp_interstellar_assembly_init_01"
+                }
+            }
+            country_event = { id = ottereditor.21 }
+        }
+	}
+	
+
+    
+	option = {
+        name = ottereditor.21.j
+        
+        trigger = {
+            exists = event_target:ott_sys_interstellar_assembly
+        }
+        
+        hidden_effect = {
+            random_system = {
+                limit = { is_same_value = event_target:ott_sys_interstellar_assembly }
+                random_system_planet = {
+                    limit = { is_star = yes }
+                    save_event_target_as = ott_ping_target
+                }
+            }
+		    country_event = { id = ottereditor.14 }
+		    country_event = { id = ottereditor.21 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+            remove_global_flag = ott_spawn_adjacent
+		    country_event = { id = ottereditor.12 }
+	    }
+	}
+	
+	option = {
+		name = ottereditor.exit
+		
+		hidden_effect = {
+            remove_global_flag = ott_spawn_adjacent
+	    }
+	}
+}
+
+country_event = {
+    id = ottereditor.14
+    hide_window = yes
+    is_triggered_only = yes
+    
+    immediate = {
+        create_message = { 
+			type = EVENT_MESSAGE_TYPE
+			localization = ottereditor.sys_ping_message
+			days = 0 
+			target = event_target:ott_ping_target
+		}
+	}
+}
+
+country_event = {
+    id = ottereditor.22
+    hide_window = yes
+    is_triggered_only = yes
+    
+    immediate = {
+        if = {
+            limit = { has_global_flag = ott_spawn_adjacent }
+            event_target:ott_target.solar_system = { save_event_target_as = ott_sys_origin}
+            
+            else = {
+                random_system = {
+                    limit = {
+                        NOR = {
+                            is_fe_cluster = yes
+                            has_star_flag = empire_cluster
+                        }
+                    }
+                    save_event_target_as = ott_sys_origin
+                }
+            }
+        }
+        
+        remove_global_flag = ott_spawn_adjacent
+    }
+}
+
+# Hyperlane Editor
+country_event = {
+    id = ottereditor.15
+    title = ottereditor.1.name
+	desc = ottereditor.15.desc
+	picture = GFX_evt_ship_in_orbit
+	is_triggered_only = yes
+        
+    option = {
+        name = ottereditor.15.a
+        
+        trigger = { NOT = { exists = event_target:ott_hyp_origin } }
+        
+        hidden_effect = {
+            event_target:ott_target.solar_system = { save_global_event_target_as = ott_hyp_origin }
+            country_event = { id = ottereditor.15 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.15.b
+        
+        trigger = { exists = event_target:ott_hyp_origin }
+        
+        allow = { NOT = { exists = event_target:ott_hyp_origin } }
+
+    }
+    
+    option = {
+        name = ottereditor.15.c
+        
+        trigger = { exists = event_target:ott_hyp_origin }
+        
+        allow = { NOT = { exists = event_target:ott_hyp_origin } }
+
+    }
+    
+    option = {
+        name = ottereditor.15.d
+        
+        trigger = {
+            exists = event_target:ott_hyp_origin
+            OR = {
+                event_target:ott_hyp_origin = { is_same_value = event_target:ott_target.solar_system }
+                event_target:ott_hyp_origin = { NOT = { has_hyperlane_to = event_target:ott_target.solar_system } }
+            }
+        }
+        
+        allow = {
+            event_target:ott_hyp_origin = {
+                NOT = {
+                    is_same_value = event_target:ott_target.solar_system
+                }
+                event_target:ott_hyp_origin = { NOT = { has_hyperlane_to = event_target:ott_target.solar_system } }
+            }
+        }
+        
+        add_hyperlane = { from = event_target:ott_hyp_origin to = event_target:ott_target.solar_system }
+        
+        hidden_effect = {
+            clear_global_event_target = ott_hyp_origin
+            country_event = { id = ottereditor.15 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.15.e
+        
+        trigger = {
+            exists = event_target:ott_hyp_origin
+            event_target:ott_hyp_origin = { NOT = { is_same_value = event_target:ott_target.solar_system } }
+            event_target:ott_hyp_origin = { has_hyperlane_to = event_target:ott_target.solar_system }
+        }
+        
+        remove_hyperlane = { from = event_target:ott_hyp_origin to = event_target:ott_target.solar_system }
+        
+        hidden_effect = {
+            clear_global_event_target = ott_hyp_origin
+            country_event = { id = ottereditor.15 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.15.f
+        
+        trigger = {
+            exists = event_target:ott_hyp_origin
+        }
+        
+        hidden_effect = {
+            clear_global_event_target = ott_hyp_origin
+            country_event = { id = ottereditor.15 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.12 }
+        }
+    }
+    
+    option = {
+		name = ottereditor.exit
+	}
+}
+
+# Wormholes
+country_event = {
+    id = ottereditor.18
+    title = ottereditor.1.name
+	desc = ottereditor.18.desc
+	picture = GFX_evt_wormhole
+	is_triggered_only = yes
+	
+	option = {
+        name = ottereditor.15.a
+        
+        trigger = { NOT = { exists = event_target:ott_whl_origin } }
+        
+        allow = { event_target:ott_target.solar_system = { has_natural_wormhole = no } }
+        
+        hidden_effect = {
+            event_target:ott_target.solar_system = { save_global_event_target_as = ott_whl_origin }
+            country_event = { id = ottereditor.18 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.18.a
+        
+        trigger = { exists = event_target:ott_whl_origin }
+        
+        allow = { NOT = { exists = event_target:ott_whl_origin } }
+        
+    }
+    
+    option = {
+        name = ottereditor.15.c
+        
+        trigger = { exists = event_target:ott_whl_origin }
+        
+        allow = { NOT = { exists = event_target:ott_whl_origin } }
+        
+    }
+    
+    option = {
+        name = ottereditor.18.b
+        
+        trigger = {
+            exists = event_target:ott_whl_origin
+        }
+        
+        allow = {
+            event_target:ott_whl_origin = {
+                NOT = {
+                    is_same_value = event_target:ott_target.solar_system
+                }
+            }
+            event_target:ott_target.solar_system = { has_natural_wormhole = no }
+        }
+        
+        event_target:ott_whl_origin = { 
+            spawn_natural_wormhole = { 
+                bypass_type = wormhole  
+                random_pos = yes  
+            }
+        }
+
+
+        event_target:ott_target.solar_system = { 
+			spawn_natural_wormhole = {
+                bypass_type = wormhole
+                random_pos = yes
+            }
+            link_wormholes = event_target:ott_whl_origin
+        }
+        
+        
+        hidden_effect = {
+            clear_global_event_target = ott_whl_origin
+            country_event = { id = ottereditor.18 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.15.f
+        
+        trigger = {
+            exists = event_target:ott_whl_origin
+        }
+        
+        hidden_effect = {
+            clear_global_event_target = ott_whl_origin
+            country_event = { id = ottereditor.18 }
+        }
+    }
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+            country_event = { id = ottereditor.12 }
+        }
+    }
+    
+    option = {
+		name = ottereditor.exit
+	}
+}

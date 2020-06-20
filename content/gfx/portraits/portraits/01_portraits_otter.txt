@@ -1,0 +1,16 @@
+portraits = {
+	otterspace = {
+		clothes_selector = "no_texture" 
+		hair_selector = "no_texture" 
+		greeting_sound = "mammalian_01_greetings"
+		texturefile = "gfx/models/portraits/otter/otterspacestock.dds"
+	}
+}	
+
+
+portrait_groups = {
+	
+	otterspace = {	
+		default = "otterspace"
+	}
+}

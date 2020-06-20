@@ -1,0 +1,42 @@
+ott_make_habitable = {
+    if = {
+        limit = {
+            is_colony = no
+            is_colonizable = no
+        }
+        clear_deposits = yes
+    }
+    
+    if = {
+        limit = {
+            OR = {
+                AND = {
+                    is_moon = yes
+                    planet_size > 50
+                }
+                planet_size > 100
+            }
+        }
+        set_planet_size = 50
+    }
+}
+
+ott_make_inhabitable = {
+   
+    if = {
+        limit = { num_pops > 0 }
+        kill_pop = yes
+    }
+   
+ 
+    
+    if = {
+        limit = { is_colony = yes }
+        destroy_colony = yes
+    }
+        
+    if = {
+        limit = {has_building = yes}
+        remove_all_buildings = yes
+    }
+}

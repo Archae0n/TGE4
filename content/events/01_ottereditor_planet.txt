@@ -1,0 +1,1404 @@
+namespace = ottereditor
+
+# Planet Type
+country_event = {
+	id = ottereditor.3
+	title = ottereditor.1.name
+	desc = ottereditor.3.desc
+	picture = GFX_evt_city_planet 
+    is_triggered_only = yes	
+	
+	option = {
+	    name = ottereditor.3.b
+	    
+        hidden_effect = {
+            country_event = { id = ottereditor.31 }
+        }
+    }
+	option = {
+	    name = ottereditor.3.c
+	   
+			
+        hidden_effect = {
+            country_event = { id = ottereditor.32 }
+        }
+    }
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+# Planet Habitable Classes
+country_event = {
+	id = ottereditor.31
+	title = ottereditor.1.name
+	desc = ottereditor.3.desc
+	picture = GFX_evt_gaia
+    is_triggered_only = yes	
+        
+	option = {
+		name = pc_desert
+		
+		event_target:ott_target = {
+		    ott_make_habitable = yes
+            change_pc = pc_desert
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_arid
+		
+		event_target:ott_target = {
+		    ott_make_habitable = yes
+            change_pc = pc_arid
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_savannah
+		
+		event_target:ott_target = {
+		    ott_make_habitable = yes
+            change_pc = pc_savannah
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_ocean
+		
+		event_target:ott_target = {
+		    ott_make_habitable = yes
+            change_pc = pc_ocean
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_continental
+		
+		event_target:ott_target = {
+		    ott_make_habitable = yes
+            change_pc = pc_continental
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_tropical
+		
+		event_target:ott_target = {
+		    ott_make_habitable = yes
+            change_pc = pc_tropical
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_arctic
+		
+		event_target:ott_target = {
+		    ott_make_habitable = yes
+            change_pc = pc_arctic
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_alpine
+		
+		event_target:ott_target = {
+		    ott_make_habitable = yes
+            change_pc = pc_alpine
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_tundra
+		
+		event_target:ott_target = {
+		    ott_make_habitable = yes
+            change_pc = pc_tundra
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_nuked
+		
+		event_target:ott_target = {
+		    ott_make_habitable = yes
+            change_pc = pc_nuked
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_machine
+		
+		event_target:ott_target = {
+		    ott_make_habitable = yes
+            change_pc = pc_machine
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+		option = {
+		name = pc_hive
+		
+		event_target:ott_target = {
+		    ott_make_habitable = yes
+            change_pc = pc_hive
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_gaia
+		
+		event_target:ott_target = {
+		    ott_make_habitable = yes
+            change_pc = pc_gaia
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+		option = {
+		name = pc_city
+		
+		event_target:ott_target = {
+		    ott_make_habitable = yes
+            change_pc = pc_city
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+
+	option = {
+        name = ottereditor.7.a
+        
+        trigger = { event_target:ott_target = { is_moon = no has_ring = no } }
+      
+        event_target:ott_target = { set_ring = yes }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.31 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.7.b
+        
+        trigger = { event_target:ott_target = { is_moon = no has_ring = yes } }
+      
+        event_target:ott_target = { set_ring = no }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.31 }
+	    }
+	}
+	
+	
+    option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+# Planet Inhabitable Classes
+country_event = {
+	id = ottereditor.32
+	title = ottereditor.1.name
+	desc = ottereditor.3.desc
+	picture = GFX_evt_gas_giant
+    is_triggered_only = yes	
+	
+	option = {
+		name = pc_toxic
+        
+		event_target:ott_target = {
+		    ott_make_inhabitable = yes
+            change_pc = pc_toxic
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_molten
+		
+		event_target:ott_target = {
+		    ott_make_inhabitable = yes
+            change_pc = pc_molten
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_gas_giant
+		
+		allow = {
+		    event_target:ott_target = { is_moon = no }
+		}
+		
+		event_target:ott_target = {
+		    ott_make_inhabitable = yes
+            change_pc = pc_gas_giant
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_frozen
+		
+		event_target:ott_target = {
+		    ott_make_inhabitable = yes
+            change_pc = pc_frozen
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_barren
+		
+		event_target:ott_target = {
+		    ott_make_inhabitable = yes
+            change_pc = pc_barren
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = ottereditor.3.a
+		
+		event_target:ott_target = {
+		    ott_make_inhabitable = yes
+            change_pc = pc_barren_cold
+            reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+		
+    option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+
+	option = {
+        name = ottereditor.7.a
+        
+        trigger = { event_target:ott_target = { is_moon = no has_ring = no } }
+      
+        event_target:ott_target = { set_ring = yes }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.32 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.7.b
+        
+        trigger = { event_target:ott_target = { is_moon = no has_ring = yes } }
+      
+        event_target:ott_target = { set_ring = no }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.32 }
+	    }
+	}
+}
+
+# Stars
+country_event = {
+	id = ottereditor.33
+	title = ottereditor.1.name
+	desc = ottereditor.3.desc
+	picture = GFX_evt_star_neutron
+    is_triggered_only = yes	
+				
+	option = {
+		name = pc_pulsar 
+        
+		event_target:ott_target = {
+		    ott_make_inhabitable = yes
+            change_pc = pc_pulsar
+			reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_neutron_star 
+		
+		event_target:ott_target = {
+		    ott_make_inhabitable = yes
+            change_pc = pc_neutron_star
+			reroll_planet_modifiers = yes
+			reroll_deposits = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_black_hole 
+		
+		allow = {
+		    event_target:ott_target = { is_moon = no }
+		}
+		
+		event_target:ott_target = {
+		    ott_make_inhabitable = yes
+            change_pc = pc_black_hole 
+            reset_planet = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_t_star 
+		
+		custom_tooltip = pc_t_star_desc
+		
+		event_target:ott_target = {
+		    ott_make_inhabitable = yes
+            change_pc = pc_t_star 
+            reset_planet = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_b_star
+		
+		custom_tooltip = pc_b_star_desc
+		
+		event_target:ott_target = {
+		    ott_make_inhabitable = yes
+            change_pc = pc_b_star
+            reset_planet = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_a_star
+		
+		custom_tooltip = pc_a_star_desc
+		
+		event_target:ott_target = {
+		    ott_make_inhabitable = yes
+            change_pc = pc_a_star
+            reset_planet = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_f_star
+		
+		custom_tooltip = pc_f_star_desc
+		
+		event_target:ott_target = {
+		    ott_make_inhabitable = yes
+            change_pc = pc_f_star
+            reset_planet = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_g_star
+		
+		custom_tooltip = pc_g_star_desc
+		
+		event_target:ott_target = {
+		    ott_make_inhabitable = yes
+            change_pc = pc_g_star
+            reset_planet = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_k_star
+		
+		custom_tooltip = pc_k_star_desc
+		
+		event_target:ott_target = {
+		    ott_make_inhabitable = yes
+            change_pc = pc_k_star
+            reset_planet = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_m_star
+		
+		custom_tooltip = pc_m_star_desc
+		
+		event_target:ott_target = {
+		    ott_make_inhabitable = yes
+            change_pc = pc_m_star
+            reset_planet = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = pc_m_giant_star
+		
+		custom_tooltip = pc_m_giant_star_desc
+		
+		event_target:ott_target = {
+		    ott_make_inhabitable = yes
+            change_pc = pc_m_giant_star
+            reset_planet = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+	
+	option = {
+		name = ottereditor.3.a
+		
+		custom_tooltip = pc_barren_cold_desc
+		
+		event_target:ott_target = {
+		    ott_make_inhabitable = yes
+            change_pc = pc_barren_cold
+            reset_planet = yes
+        }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.1000 }
+		}
+	}
+		
+    option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+# Planet Size
+country_event = {
+	id = ottereditor.4
+	title = ottereditor.1.name
+	desc = ottereditor.4.desc
+	picture = GFX_evt_star_chart
+	is_triggered_only = yes	
+
+	option = {
+		name = ottereditor.4.a
+		
+		allow = {
+		    event_target:ott_target = {
+		        OR = {
+		            AND = {
+		                is_moon = no
+		                planet_size < 100
+		            }
+		            planet_size < 50
+		        }
+		    }
+		}
+		
+		event_target:ott_target = { change_planet_size = 1 }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.4 }
+		}
+	}
+	
+	option = {
+		name = ottereditor.4.b
+		
+		allow = {
+		    event_target:ott_target = {
+		        OR = {
+		            AND = {
+		                is_moon = no
+		                planet_size < 99
+		            }
+		            planet_size < 49
+		        }
+		    }
+		}
+		
+		event_target:ott_target = { change_planet_size = 2 }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.4 }
+		}
+	}
+	
+	option = {
+		name = ottereditor.4.c
+		
+		allow = {
+		    event_target:ott_target = {
+		        OR = {
+		            AND = {
+		                is_moon = no
+		                planet_size < 96
+		            }
+		            planet_size < 46
+		        }
+		    }
+		}
+		
+		event_target:ott_target = { change_planet_size = 5 }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.4 }
+		}
+	}
+	
+	option = {
+		name = ottereditor.4.d
+		
+		allow = {
+		    event_target:ott_target = {
+		        OR = {
+		            AND = {
+		                is_moon = no
+		                planet_size < 91
+		            }
+		            planet_size < 41
+		        }
+		    }
+		}
+		
+		event_target:ott_target = { change_planet_size = 10 }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.4 }
+		}
+	}	
+	option = {
+		name = ottereditor.4.e
+		
+		allow = { event_target:ott_target = { planet_size > 1 } }
+		
+		event_target:ott_target = { change_planet_size = -1 }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.4 }
+		}
+	}
+	
+	option = {
+		name = ottereditor.4.f
+		
+		allow = { event_target:ott_target = { planet_size > 2 } }
+		
+		event_target:ott_target = { change_planet_size = -2 }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.4 }
+		}
+	}
+	
+	option = {
+		name = ottereditor.4.g
+		
+		allow = { event_target:ott_target = { planet_size > 5 } }
+		
+		event_target:ott_target = { change_planet_size = -5 }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.4 }
+		}
+	}
+ 	
+	option = {
+		name = ottereditor.4.h
+		
+		allow = { event_target:ott_target = { planet_size > 10 } }
+		
+		event_target:ott_target = { change_planet_size = -10 }
+		
+		hidden_effect = {
+			country_event = { id = ottereditor.4 }
+		}
+	}   
+    option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+# Planet Modifiers
+country_event = {
+	id = ottereditor.7
+	title = ottereditor.1.name
+	desc = ottereditor.7.desc
+	picture = GFX_evt_animal_wildlife
+	is_triggered_only = yes	
+	
+	option = {
+        name = ottereditor.71
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.71 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.72
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.72 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.73
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.73 }
+	    }
+	}
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+# Planet Green Modifiers
+country_event = {
+	id = ottereditor.71
+	title = ottereditor.1.name
+	desc = ottereditor.7.desc
+	picture = GFX_evt_alien_wildlife
+	is_triggered_only = yes	
+	
+	option = {
+        name = asteroid_belt
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "asteroid_belt" is_planet_class = pc_nuked } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "asteroid_belt" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = mineral_rich
+      
+        allow = {
+            event_target:ott_target = { NOT = { has_modifier = "mineral_rich" } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "mineral_rich" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = ultra_rich
+      
+        allow = {
+            event_target:ott_target = { NOT = { has_modifier = "ultra_rich" } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "ultra_rich" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+		
+	option = {
+        name = carbon_world
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "carbon_world" is_planet_class = pc_nuked } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "carbon_world" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}	
+	
+		option = {
+        name = extensive_moon_system
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "extensive_moon_system" is_planet_class = pc_nuked } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "extensive_moon_system" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}	
+	
+	option = {
+        name = lush_planet
+      
+        allow = {
+            event_target:ott_target = {
+                NOT = { has_modifier = "lush_planet" }
+                OR = {
+                        is_planet_class = pc_tropical
+				        is_planet_class = pc_continental
+				        is_planet_class = pc_ocean
+				        is_planet_class = pc_gaia
+                }
+            }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "lush_planet" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = natural_beauty
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "natural_beauty" is_planet_class = pc_nuked } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "natural_beauty" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = titanic_life
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "titanic_life" is_planet_class = pc_nuked } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "titanic_life" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = strong_magnetic_field
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "strong_magnetic_field" is_planet_class = pc_nuked } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "strong_magnetic_field" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = atmospheric_aphrodisiac
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "atmospheric_aphrodisiac" is_planet_class = pc_nuked } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "atmospheric_aphrodisiac" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}	
+	
+	option = {
+        name = low_gravity
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "low_gravity" is_planet_class = pc_nuked } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "low_gravity" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.7.a
+        
+        trigger = { event_target:ott_target = { is_moon = no has_ring = no } }
+      
+        event_target:ott_target = { set_ring = yes }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.7.b
+        
+        trigger = { event_target:ott_target = { is_moon = no has_ring = yes } }
+      
+        event_target:ott_target = { set_ring = no }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.7.r
+      
+        event_target:ott_target = {
+		    if = { limit = { has_modifier = "asteroid_belt"}                remove_modifier = "asteroid_belt" }
+			if = { limit = { has_modifier = "asteroid_impacts"}             remove_modifier = "asteroid_impacts" }
+			if = { limit = { has_modifier = "atmospheric_aphrodisiac"}      remove_modifier = "atmospheric_aphrodisiac" }
+			if = { limit = { has_modifier = "atmospheric_hallucinogen"}     remove_modifier = "atmospheric_hallucinogen" }
+			if = { limit = { has_modifier = "bleak_planet"}                 remove_modifier = "bleak_planet" }
+			if = { limit = { has_modifier = "hazardous_weather"}            remove_modifier = "hazardous_weather" }
+			if = { limit = { has_modifier = "high_gravity"}                 remove_modifier = "high_gravity" }
+			if = { limit = { has_modifier = "dangerous_wildlife"}           remove_modifier = "dangerous_wildlife" }
+			if = { limit = { has_modifier = "low_gravity"}                  remove_modifier = "low_gravity" }
+			if = { limit = { has_modifier = "lush_planet"}                  remove_modifier = "lush_planet" }
+			if = { limit = { has_modifier = "mineral_poor"}                 remove_modifier = "mineral_poor" }
+			if = { limit = { has_modifier = "mineral_rich"}                 remove_modifier = "mineral_rich" }
+			if = { limit = { has_modifier = "natural_beauty"}               remove_modifier = "natural_beauty" }
+			if = { limit = { has_modifier = "strong_magnetic_field"}        remove_modifier = "strong_magnetic_field" }
+			if = { limit = { has_modifier = "tidal_locked"}                 remove_modifier = "tidal_locked" }
+			if = { limit = { has_modifier = "titanic_life"}                 remove_modifier = "titanic_life" }
+			if = { limit = { has_modifier = "ultra_rich"}                   remove_modifier = "ultra_rich" }
+			if = { limit = { has_modifier = "unstable_tectonics"}           remove_modifier = "unstable_tectonics" }
+			if = { limit = { has_modifier = "weak_magnetic_field"}          remove_modifier = "weak_magnetic_field" }
+			if = { limit = { has_modifier = "wild_storms"}                  remove_modifier = "wild_storms" }
+			if = { limit = { has_modifier = "irradiated_planet"}            remove_modifier = "irradiated_planet" }
+			if = { limit = { has_modifier = "bleak_planet"}           		remove_modifier = "bleak_planet" }
+			if = { limit = { has_modifier = "extensive_moon_system"}        remove_modifier = "extensive_moon_system" }
+			if = { limit = { has_modifier = "carbon_world"}       			remove_modifier = "carbon_world" }
+		}
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.return2
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+# Planet Yellow Modifiers
+country_event = {
+	id = ottereditor.72
+	title = ottereditor.1.name
+	desc = ottereditor.7.desc
+	picture = GFX_evt_shattered_planet
+	is_triggered_only = yes	
+	
+	
+	
+	option = {
+        name = atmospheric_hallucinogen
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "atmospheric_hallucinogen" is_planet_class = pc_nuked } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "atmospheric_hallucinogen" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = asteroid_impacts
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "asteroid_impacts" is_planet_class = pc_nuked } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "asteroid_impacts" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = hazardous_weather
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "hazardous_weather" is_planet_class = pc_nuked } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "hazardous_weather" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = dangerous_wildlife
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "dangerous_wildlife" is_planet_class = pc_nuked is_planet_class = pc_gaia } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "dangerous_wildlife" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+		
+	option = {
+        name = wild_storms
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "wild_storms" is_planet_class = pc_nuked } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "wild_storms" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.7.a
+        
+        trigger = { event_target:ott_target = { is_moon = no has_ring = no } }
+      
+        event_target:ott_target = { set_ring = yes }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.7.b
+        
+        trigger = { event_target:ott_target = { is_moon = no has_ring = yes } }
+      
+        event_target:ott_target = { set_ring = no }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.7.r
+      
+        event_target:ott_target = {
+		    if = { limit = { has_modifier = "asteroid_belt"}                remove_modifier = "asteroid_belt" }
+			if = { limit = { has_modifier = "asteroid_impacts"}             remove_modifier = "asteroid_impacts" }
+			if = { limit = { has_modifier = "atmospheric_aphrodisiac"}      remove_modifier = "atmospheric_aphrodisiac" }
+			if = { limit = { has_modifier = "atmospheric_hallucinogen"}     remove_modifier = "atmospheric_hallucinogen" }
+			if = { limit = { has_modifier = "bleak_planet"}                 remove_modifier = "bleak_planet" }
+			if = { limit = { has_modifier = "hazardous_weather"}            remove_modifier = "hazardous_weather" }
+			if = { limit = { has_modifier = "high_gravity"}                 remove_modifier = "high_gravity" }
+			if = { limit = { has_modifier = "dangerous_wildlife"}           remove_modifier = "dangerous_wildlife" }
+			if = { limit = { has_modifier = "low_gravity"}                  remove_modifier = "low_gravity" }
+			if = { limit = { has_modifier = "lush_planet"}                  remove_modifier = "lush_planet" }
+			if = { limit = { has_modifier = "mineral_poor"}                 remove_modifier = "mineral_poor" }
+			if = { limit = { has_modifier = "mineral_rich"}                 remove_modifier = "mineral_rich" }
+			if = { limit = { has_modifier = "natural_beauty"}               remove_modifier = "natural_beauty" }
+			if = { limit = { has_modifier = "strong_magnetic_field"}        remove_modifier = "strong_magnetic_field" }
+			if = { limit = { has_modifier = "tidal_locked"}                 remove_modifier = "tidal_locked" }
+			if = { limit = { has_modifier = "titanic_life"}                 remove_modifier = "titanic_life" }
+			if = { limit = { has_modifier = "ultra_rich"}                   remove_modifier = "ultra_rich" }
+			if = { limit = { has_modifier = "unstable_tectonics"}           remove_modifier = "unstable_tectonics" }
+			if = { limit = { has_modifier = "weak_magnetic_field"}          remove_modifier = "weak_magnetic_field" }
+			if = { limit = { has_modifier = "wild_storms"}                  remove_modifier = "wild_storms" }
+			if = { limit = { has_modifier = "irradiated_planet"}            remove_modifier = "irradiated_planet" }
+			if = { limit = { has_modifier = "bleak_planet"}           		remove_modifier = "bleak_planet" }
+			if = { limit = { has_modifier = "extensive_moon_system"}        remove_modifier = "extensive_moon_system" }
+			if = { limit = { has_modifier = "carbon_world"}       			remove_modifier = "carbon_world" }
+		}
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.return2
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+# Planet Red Modifiers
+country_event = {
+	id = ottereditor.73
+	title = ottereditor.1.name
+	desc = ottereditor.7.desc
+	picture = GFX_evt_exploding_planet
+	is_triggered_only = yes	
+	
+		
+	option = {
+        name = unstable_tectonics
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "unstable_tectonics" is_planet_class = pc_nuked is_planet_class = pc_gaia } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "unstable_tectonics" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = weak_magnetic_field
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "weak_magnetic_field" is_planet_class = pc_nuked is_planet_class = pc_gaia } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "weak_magnetic_field" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = tidal_locked
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "tidal_locked" is_planet_class = pc_nuked is_planet_class = pc_gaia } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "tidal_locked" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = mineral_poor
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "mineral_poor" is_planet_class = pc_nuked is_planet_class = pc_gaia } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "mineral_poor" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = bleak_planet
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "bleak_planet" is_planet_class = pc_nuked is_planet_class = pc_gaia } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "bleak_planet" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = high_gravity
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "high_gravity" is_planet_class = pc_nuked is_planet_class = pc_gaia } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "high_gravity" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+		option = {
+        name = irradiated_planet
+      
+        allow = {
+            event_target:ott_target = { NOR = { has_modifier = "irradiated_planet" is_planet_class = pc_nuked is_planet_class = pc_gaia } }
+        }
+      
+        event_target:ott_target = { add_modifier = { modifier = "irradiated_planet" days = -1 } }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	option = {
+        name = ottereditor.7.a
+        
+        trigger = { event_target:ott_target = { is_moon = no has_ring = no } }
+      
+        event_target:ott_target = { set_ring = yes }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.7.b
+        
+        trigger = { event_target:ott_target = { is_moon = no has_ring = yes } }
+      
+        event_target:ott_target = { set_ring = no }
+      
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.7.r
+      
+        event_target:ott_target = {
+		    if = { limit = { has_modifier = "asteroid_belt"}                remove_modifier = "asteroid_belt" }
+			if = { limit = { has_modifier = "asteroid_impacts"}             remove_modifier = "asteroid_impacts" }
+			if = { limit = { has_modifier = "atmospheric_aphrodisiac"}      remove_modifier = "atmospheric_aphrodisiac" }
+			if = { limit = { has_modifier = "atmospheric_hallucinogen"}     remove_modifier = "atmospheric_hallucinogen" }
+			if = { limit = { has_modifier = "bleak_planet"}                 remove_modifier = "bleak_planet" }
+			if = { limit = { has_modifier = "hazardous_weather"}            remove_modifier = "hazardous_weather" }
+			if = { limit = { has_modifier = "high_gravity"}                 remove_modifier = "high_gravity" }
+			if = { limit = { has_modifier = "dangerous_wildlife"}           remove_modifier = "dangerous_wildlife" }
+			if = { limit = { has_modifier = "low_gravity"}                  remove_modifier = "low_gravity" }
+			if = { limit = { has_modifier = "lush_planet"}                  remove_modifier = "lush_planet" }
+			if = { limit = { has_modifier = "mineral_poor"}                 remove_modifier = "mineral_poor" }
+			if = { limit = { has_modifier = "mineral_rich"}                 remove_modifier = "mineral_rich" }
+			if = { limit = { has_modifier = "natural_beauty"}               remove_modifier = "natural_beauty" }
+			if = { limit = { has_modifier = "strong_magnetic_field"}        remove_modifier = "strong_magnetic_field" }
+			if = { limit = { has_modifier = "tidal_locked"}                 remove_modifier = "tidal_locked" }
+			if = { limit = { has_modifier = "titanic_life"}                 remove_modifier = "titanic_life" }
+			if = { limit = { has_modifier = "ultra_rich"}                   remove_modifier = "ultra_rich" }
+			if = { limit = { has_modifier = "unstable_tectonics"}           remove_modifier = "unstable_tectonics" }
+			if = { limit = { has_modifier = "weak_magnetic_field"}          remove_modifier = "weak_magnetic_field" }
+			if = { limit = { has_modifier = "wild_storms"}                  remove_modifier = "wild_storms" }
+			if = { limit = { has_modifier = "irradiated_planet"}            remove_modifier = "irradiated_planet" }
+			if = { limit = { has_modifier = "bleak_planet"}           				remove_modifier = "bleak_planet" }
+			if = { limit = { has_modifier = "extensive_moon_system"}        remove_modifier = "extensive_moon_system" }
+			if = { limit = { has_modifier = "carbon_world"}       			remove_modifier = "carbon_world" }
+		}
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.7 }
+	    }
+	}
+	
+	option = {
+        name = ottereditor.return2
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}

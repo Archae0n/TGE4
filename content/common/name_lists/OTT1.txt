@@ -1,0 +1,197 @@
+﻿### Otters
+
+OTT1 = {
+	ship_names = {
+
+		generic = {
+			"Fish Catcher"
+		}
+
+		corvette = {
+		}
+		
+		destroyer = {
+		}
+		
+		cruiser = {
+		}
+		
+		battleship = {
+		}
+
+		titan = {
+		}
+
+		colossus = {
+		}
+		
+		science = {
+		}
+		
+		colonizer = {
+		}
+		
+		constructor = {
+		}
+
+		transport = {
+		}
+	
+		military_station_small = {
+		}
+
+		ion_cannon = {
+		}
+	}
+
+	ship_class_names = {
+		generic = {
+			Cup
+		}		
+	}
+
+	fleet_names = {
+		random_names = {
+			"The Grand Raft"
+		}
+		sequential_name = "%O% Raft"
+	}
+	
+	army_names = {
+		defense_army = {
+			sequential_name = "%O% Ground Shield"
+		}
+			
+		assault_army = {
+			sequential_name = "%O% War Guild"
+		}
+		
+		slave_army = {
+			sequential_name = "%O% War Peons"
+		}
+		
+		clone_army = { 
+			sequential_name = "%O% Fighting Clones"
+		}
+		
+		robotic_army = {
+			sequential_name = "%O% Robotic Lancers"
+		}
+
+		robotic_defense_army = {
+			sequential_name = "%O% Robotic Protectors"
+		}
+		
+		psionic_army = { 
+			sequential_name = "%O% Warlock Company"
+		}
+		
+		xenomorph_army = {
+			sequential_name = "%O% Death Flock"
+		}
+		
+		gene_warrior_army = {
+			sequential_name = "%O% Star Knights"
+		}
+
+		occupation_army = {
+			sequential_name = "%O% Occupation Shield"
+		}
+
+		robotic_occupation_army = {
+			sequential_name = "%O% Robotic Occupiers"
+		}
+
+		primitive_army = {
+			sequential_name = "Primitive Army %C%"
+		}
+		industrial_army = {
+			sequential_name = "Industrial Army %C%"
+		}
+		postatomic_army = {
+			sequential_name = "Post-Atomic Army %C%"
+		}
+	}
+
+	planet_names = {
+
+		generic = {
+			names = {
+				"Northern" "Southern"
+			}
+		}
+		
+		pc_desert = {
+			names = {
+			}
+		}
+		
+		pc_tropical = {
+			names = {
+			}
+		}
+		
+		pc_arid = {
+			names = {
+			}
+		}
+		
+		pc_continental = {
+			names = {
+			}
+		}
+		
+		pc_ocean = {
+			names = {
+			}
+		}
+		
+		pc_tundra = {
+			names = {
+			}
+		}
+		
+		pc_arctic = {
+			names = {
+			}
+		}
+
+		pc_savannah = {
+			names = {
+			}
+		}
+
+		pc_alpine = {
+			names = {
+			}
+		}
+		
+	}
+
+	character_names = {
+		default = {
+			# A complete name
+			full_names_male = { 
+				Nellie
+			}
+			full_names_female = {
+				
+			}
+			
+			# Always combined with a second name
+			first_names = {
+			}
+			
+			# Always combined with a first name
+			second_names = {
+			}
+			
+			regnal_first_names = {
+
+			}
+			
+			regnal_second_names = {
+			}
+		}
+	}
+}

@@ -1,0 +1,151 @@
+namespace = ottereditor
+
+# Civilizations Menu
+country_event = {
+    id = ottereditor.19
+	title = ottereditor.1.name
+	desc = ottereditor.19.desc
+	picture = GFX_evt_alien_cavemen
+	is_triggered_only = yes
+	
+    option = {
+        name = ottereditor.19.d
+      
+        allow = {
+	        event_target:ott_target = {                
+                is_colony = no
+                is_colonizable = yes                    
+            }
+	    }
+      
+        hidden_effect = {
+			event_target:ott_target = {
+                create_species = {
+                    name = random
+                    class = random
+                    portrait = random
+                    traits = {trait = random_presapient_trait}
+                    homeworld = this
+                    sapient = no
+                }
+
+				while = {
+					count = 4
+					create_pop = {
+						species = last_created
+					}					
+				}
+            }
+            
+            event_target:ott_target = {
+                prevent_anomaly = yes
+                remove_planet_flag = ott_prevent_anomaly
+                #set_planet_flag = ott_presapients
+            }
+
+
+            
+            country_event = { id = ottereditor.1000 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.19.b
+        
+        allow = {
+	        event_target:ott_target = {
+                    is_colony = no                   
+					is_colonizable = yes
+            }
+        }
+        
+        hidden_effect = {event_target:ott_target = { set_planet_flag = ott_early_prim } }
+        hidden_effect = {                          
+            country_event = { id = ottereditor.191 }
+			
+		}
+	}
+	
+	
+	option = {
+        name = ottereditor.19.c
+        
+        allow = {
+	        event_target:ott_target = {
+                is_colony = no
+                is_colonizable = yes
+            }
+        }
+        
+        event_target:ott_target = { generate_late_primitives_on_planet = yes} 
+        hidden_effect = {
+            country_event = { id = ottereditor.1000 }
+		}
+	}
+
+	option = {
+        name = ottereditor.19.a
+        
+        custom_tooltip = ottereditor.19.gen        
+                        
+        event_target:ott_target = { ott_make_inhabitable = yes }
+        
+        hidden_effect = {
+            event_target:ott_target = {
+                remove_planet_flag = ott_presapients
+            }
+        }
+        
+		hidden_effect = {	
+		    country_event = { id = ottereditor.1000 }
+	    }
+		
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+country_event = {
+    id = ottereditor.191
+    hide_window = yes
+	is_triggered_only = yes
+
+    immediate = {
+        random_planet = {
+            limit = { has_planet_flag = ott_early_prim }
+            
+            generate_early_primitives_on_planet = yes
+            
+            remove_planet_flag = ott_early_prim
+        }
+
+        country_event = { id = ottereditor.1000 }
+    }
+
+}
+
+ship_event = {
+    id = ottereditor.20
+    hide_window = yes
+    is_triggered_only = yes
+    
+    immediate = {
+        if = {
+            limit = { owner = { is_same_value = event_target:ott_player } FROM = { has_planet_flag = ott_presapients } }
+            
+            event_target:ott_player = {
+                set_country_flag = found_presapients
+                country_event = { id = tutorial.57 days = 5 }
+                country_event = { id = story.4 days = 30 }
+            }
+            
+            FROM = { remove_planet_flag = ott_presapients }
+        }
+    }
+}

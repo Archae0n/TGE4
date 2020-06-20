@@ -1,0 +1,1140 @@
+namespace = ottereditor
+
+# Orbital Resource
+country_event = {
+	id = ottereditor.5
+	title = ottereditor.1.name
+	desc = ottereditor.5.desc
+	picture = GFX_evt_mining_station
+	is_triggered_only = yes	
+
+	option = {
+        name = ottereditor.or.1
+
+        allow = {
+            event_target:ott_target = {
+                OR = {
+                    is_planet_class = pc_a_star
+                    is_planet_class = pc_b_star
+                    is_planet_class = pc_f_star
+                    is_planet_class = pc_g_star
+                    is_planet_class = pc_k_star
+                    is_planet_class = pc_m_star
+                    is_planet_class = pc_m_giant_star
+                    is_planet_class = pc_t_star
+                    is_planet_class = pc_gas_giant
+                    is_planet_class = pc_molten
+                    is_planet_class = pc_ice_asteroid
+                }		
+            }	
+        }
+        
+        event_target:ott_target = {
+            set_deposit = d_energy_5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.51 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.or.2
+
+        allow = {
+            event_target:ott_target = {
+                OR = {
+                    is_planet_class = pc_asteroid
+                    is_planet_class = pc_molten
+                    is_planet_class = pc_toxic
+                    is_planet_class = pc_frozen
+                    is_planet_class = pc_barren
+                    is_planet_class = pc_barren_cold
+                    is_planet_class = pc_broken
+                    is_planet_class = pc_shattered	
+                }		
+            }	
+        }
+
+        event_target:ott_target = {
+            set_deposit = d_minerals_5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.52 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.or.3
+
+        allow = {
+            event_target:ott_target = {
+                OR = {
+                    is_planet_class = pc_asteroid
+                    is_planet_class = pc_molten		
+                }		
+            }	
+        }
+        
+        event_target:ott_target = {
+            set_deposit = d_alloys_5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.53 }
+        }
+    }
+
+    option = {
+        name = ottereditor.or.4
+        
+        event_target:ott_target = {
+            set_deposit = d_resource_5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.54 }
+        }
+    }
+	
+	option = {
+        name = ottereditor.or.5
+
+        allow = {
+            event_target:ott_target = {
+                OR = {
+                    is_planet_class = pc_a_star
+                    is_planet_class = pc_b_star
+                    is_planet_class = pc_f_star
+                    is_planet_class = pc_g_star
+                    is_planet_class = pc_k_star
+                    is_planet_class = pc_m_star
+                    is_planet_class = pc_m_giant_star
+                    is_planet_class = pc_t_star
+                    is_planet_class = pc_neutron_star
+                    is_planet_class = pc_pulsar
+                    is_planet_class = pc_black_hole		
+                }		
+            }	
+        }
+        
+        event_target:ott_target = {
+            set_deposit = d_physics_5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.55 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.or.6
+
+        allow = {
+            event_target:ott_target = {
+                OR = {
+                    is_planet_class = pc_toxic
+                    is_planet_class = pc_molten		
+                }		
+            }	
+        }
+        
+        event_target:ott_target = {
+            set_deposit = d_society_5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.56 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.or.7
+
+        allow = {
+            event_target:ott_target = {
+                OR = {
+                    is_planet_class = pc_frozen
+                    is_planet_class = pc_gas_giant
+                    is_planet_class = pc_neutron_star
+                    is_planet_class = pc_pulsar
+                    is_planet_class = pc_black_hole		
+                }		
+            }	
+        }
+        
+        event_target:ott_target = {
+            set_deposit = d_engineering_5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.57 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.or.8
+        
+        event_target:ott_target = {
+            set_deposit = d_research_5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.58 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.or.9
+        
+        allow = {
+            event_target:ott_target = {
+                OR = {
+                    is_planet_class = pc_gas_giant
+                    is_planet_class = pc_molten
+                    is_planet_class = pc_toxic
+                    is_asteroid = yes
+                }
+            }	
+        }
+        
+        event_target:ott_target = {
+            set_deposit = d_trade_value_5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.59 }
+        }
+    }
+	
+	option = {
+        name = ottereditor.6.a
+        
+        event_target:ott_target = {
+            clear_deposits = yes
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.5 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+# Orbital Energy
+country_event = {
+	id = ottereditor.51
+	title = ottereditor.1.name
+	desc = ottereditor.5.desc
+	picture = GFX_evt_mining_station
+	is_triggered_only = yes	
+
+	option = {
+        name = ottereditor.5.a
+        
+        event_target:ott_target = {
+            add_deposit = d_energy_n5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.51 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.b
+        
+        event_target:ott_target = {
+            add_deposit = d_energy_n2
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.51 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.c
+        
+        event_target:ott_target = {
+            add_deposit = d_energy_n1
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.51 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.e
+        
+        event_target:ott_target = {
+            add_deposit = d_energy_1
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.51 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.5.f
+        
+        event_target:ott_target = {
+            add_deposit = d_energy_2
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.51 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.5.g
+        
+        event_target:ott_target = {
+            add_deposit = d_energy_5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.51 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.6.a
+        
+        event_target:ott_target = {
+            clear_deposits = yes
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.5 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+# Orbital Minerals
+country_event = {
+	id = ottereditor.52
+	title = ottereditor.1.name
+	desc = ottereditor.5.desc
+	picture = GFX_evt_mining_station
+	is_triggered_only = yes	
+
+	option = {
+        name = ottereditor.5.a
+        
+        event_target:ott_target = {
+            add_deposit = d_minerals_n5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.52 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.b
+        
+        event_target:ott_target = {
+            add_deposit = d_minerals_n2
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.52 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.c
+        
+        event_target:ott_target = {
+            add_deposit = d_minerals_n1
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.52 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.e
+        
+        event_target:ott_target = {
+            add_deposit = d_minerals_1
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.52 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.5.f
+        
+        event_target:ott_target = {
+            add_deposit = d_minerals_2
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.52 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.5.g
+        
+        event_target:ott_target = {
+            add_deposit = d_minerals_5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.52 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.6.a
+        
+        event_target:ott_target = {
+            clear_deposits = yes
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.5 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+
+# Orbital alloys
+country_event = {
+	id = ottereditor.53
+	title = ottereditor.1.name
+	desc = ottereditor.5.desc
+	picture = GFX_evt_mining_station
+	is_triggered_only = yes	
+
+	option = {
+        name = ottereditor.5.a
+        
+        event_target:ott_target = {
+            add_deposit = d_alloys_n5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.53 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.b
+        
+        event_target:ott_target = {
+            add_deposit = d_alloys_n2
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.53 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.c
+        
+        event_target:ott_target = {
+            add_deposit = d_alloys_n1
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.53 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.e
+        
+        event_target:ott_target = {
+            add_deposit = d_alloys_1
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.53 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.5.f
+        
+        event_target:ott_target = {
+            add_deposit = d_alloys_2
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.53 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.5.g
+        
+        event_target:ott_target = {
+            add_deposit = d_alloys_5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.53 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.6.a
+        
+        event_target:ott_target = {
+            clear_deposits = yes
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.5 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+# Orbital Resources
+country_event = {
+	id = ottereditor.54
+	title = ottereditor.1.name
+	desc = ottereditor.5.desc
+	picture = GFX_evt_mining_station
+	is_triggered_only = yes	
+
+	option = {
+        name = ottereditor.5.a
+        
+        event_target:ott_target = {
+            add_deposit = d_resource_n5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.54 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.b
+        
+        event_target:ott_target = {
+            add_deposit = d_resource_n2
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.54 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.c
+        
+        event_target:ott_target = {
+            add_deposit = d_resource_n1
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.54 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.e
+        
+        event_target:ott_target = {
+            add_deposit = d_resource_1
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.54 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.5.f
+        
+        event_target:ott_target = {
+            add_deposit = d_resource_2
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.54 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.5.g
+        
+        event_target:ott_target = {
+            add_deposit = d_resource_5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.54 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.6.a
+        
+        event_target:ott_target = {
+            clear_deposits = yes
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.5 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+# Orbital Physics
+country_event = {
+	id = ottereditor.55
+	title = ottereditor.1.name
+	desc = ottereditor.5.desc
+	picture = GFX_evt_mining_station
+	is_triggered_only = yes	
+
+	option = {
+        name = ottereditor.5.a
+        
+        event_target:ott_target = {
+            add_deposit = d_physics_n5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.55 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.b
+        
+        event_target:ott_target = {
+            add_deposit = d_physics_n2
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.55 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.c
+        
+        event_target:ott_target = {
+            add_deposit = d_physics_n1
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.55 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.e
+        
+        event_target:ott_target = {
+            add_deposit = d_physics_1
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.55 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.5.f
+        
+        event_target:ott_target = {
+            add_deposit = d_physics_2
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.55 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.5.g
+        
+        event_target:ott_target = {
+            add_deposit = d_physics_5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.55 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.6.a
+        
+        event_target:ott_target = {
+            clear_deposits = yes
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.5 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+# Orbital Society
+country_event = {
+	id = ottereditor.56
+	title = ottereditor.1.name
+	desc = ottereditor.5.desc
+	picture = GFX_evt_mining_station
+	is_triggered_only = yes	
+
+	option = {
+        name = ottereditor.5.a
+        
+        event_target:ott_target = {
+            add_deposit = d_society_n5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.56 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.b
+        
+        event_target:ott_target = {
+            add_deposit = d_society_n2
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.56 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.c
+        
+        event_target:ott_target = {
+            add_deposit = d_society_n1
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.56 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.e
+        
+        event_target:ott_target = {
+            add_deposit = d_society_1
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.56 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.5.f
+        
+        event_target:ott_target = {
+            add_deposit = d_society_2
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.56 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.5.g
+        
+        event_target:ott_target = {
+            add_deposit = d_society_5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.56 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.6.a
+        
+        event_target:ott_target = {
+            clear_deposits = yes
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.5 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+# Orbital Engineering
+country_event = {
+	id = ottereditor.57
+	title = ottereditor.1.name
+	desc = ottereditor.5.desc
+	picture = GFX_evt_engineering_research
+	is_triggered_only = yes	
+
+	option = {
+        name = ottereditor.5.a
+        
+        event_target:ott_target = {
+            add_deposit = d_engineering_n5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.57 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.b
+        
+        event_target:ott_target = {
+            add_deposit = d_engineering_n2
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.57 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.c
+        
+        event_target:ott_target = {
+            add_deposit = d_engineering_n1
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.57 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.e
+        
+        event_target:ott_target = {
+            add_deposit = d_engineering_1
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.57 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.5.f
+        
+        event_target:ott_target = {
+            add_deposit = d_engineering_2
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.57 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.5.g
+        
+        event_target:ott_target = {
+            add_deposit = d_engineering_5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.57 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.6.a
+        
+        event_target:ott_target = {
+            clear_deposits = yes
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.5 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+# Orbital Research
+country_event = {
+	id = ottereditor.58
+	title = ottereditor.1.name
+	desc = ottereditor.5.desc
+	picture = GFX_evt_engineering_research
+	is_triggered_only = yes	
+
+	option = {
+        name = ottereditor.5.a
+        
+        event_target:ott_target = {
+            add_deposit = d_research_n5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.58 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.b
+        
+        event_target:ott_target = {
+            add_deposit = d_research_n2
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.58 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.c
+        
+        event_target:ott_target = {
+            add_deposit = d_research_n1
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.58 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.e
+        
+        event_target:ott_target = {
+            add_deposit = d_research_1
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.58 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.5.f
+        
+        event_target:ott_target = {
+            add_deposit = d_research_2
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.58 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.5.g
+        
+        event_target:ott_target = {
+            add_deposit = d_research_5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.58 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.6.a
+        
+        event_target:ott_target = {
+            clear_deposits = yes
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.5 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
+
+# Orbital Trade Value
+country_event = {
+	id = ottereditor.59
+	title = ottereditor.1.name
+	desc = ottereditor.5.desc
+	picture = GFX_evt_busy_spaceport
+	is_triggered_only = yes	
+
+	option = {
+        name = ottereditor.5.a
+        
+        event_target:ott_target = {
+            add_deposit = d_trade_value_n5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.59 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.b
+        
+        event_target:ott_target = {
+            add_deposit = d_trade_value_n2
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.59 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.c
+        
+        event_target:ott_target = {
+            add_deposit = d_trade_value_n1
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.59 }
+        }
+	}
+
+    option = {
+        name = ottereditor.5.e
+        
+        event_target:ott_target = {
+            add_deposit = d_trade_value_1
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.59 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.5.f
+        
+        event_target:ott_target = {
+            add_deposit = d_trade_value_2
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.59 }
+        }
+    }
+    
+    option = {
+        name = ottereditor.5.g
+        
+        event_target:ott_target = {
+            add_deposit = d_trade_value_5
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.59 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.6.a
+        
+        event_target:ott_target = {
+            clear_deposits = yes
+        }
+            
+        hidden_effect = {
+            country_event = { id = ottereditor.5 }
+        }
+	}
+	
+	option = {
+        name = ottereditor.return
+        
+        hidden_effect = {
+		    country_event = { id = ottereditor.1000 }
+	    }
+	}
+}
