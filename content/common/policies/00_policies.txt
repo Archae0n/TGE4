@@ -621,7 +621,7 @@ diplomatic_stance = {
 		icon = "GFX_diplomatic_stance_expansionist"
 
 		potential = {
-			is_country_type = void_farer
+			has_country_flag = is_nomads
 			is_homicidal = no
 		}
 
