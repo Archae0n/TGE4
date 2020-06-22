@@ -17,6 +17,9 @@ nomads_h.280.desc:0 "Our fleet is destroyed, our armies scattered, and our once 
 nomads_h.280.a:0 "To the Stars!"
 nomads_h.280.b:0 "Maybe another day..."
 
+self_destruction_inbound:0 "Imminent Planetary Eruption"
+self_destruction_inbound_desc:0 "§RWARNING: THE PLANET IS ABOUT TO EXPLODE§!"
+
 green_propaganda:0 "Ecocentric Awareness"
 fanatic_green_propaganda:0 "Radical Ecocentrism"
 
