@@ -56,6 +56,20 @@ component_set = {
 }
 
 component_set = {
+	key = "NOMAD_MINERALS_UPGRADE"
+
+	icon = "GFX_ship_part_vf_minerals_upgrade"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_ENERGY_UPGRADE"
+
+	icon = "GFX_ship_part_vf_energy_upgrade"
+	icon_frame = 1	
+}
+
+component_set = {
 	key = "NOMAD_FOOD"
 
 	icon = "GFX_ship_part_vf_food"

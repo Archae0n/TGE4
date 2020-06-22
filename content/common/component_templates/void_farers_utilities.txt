@@ -147,18 +147,17 @@
 
 @fleetcomm_upkeep = 3
 
-@upkeep_food_X2 = 1
-@upkeep_cg_X2 = 1
+@upkeep_cg_X2 = 2
 
-@upkeep_food_X5 = 2.5
-@upkeep_cg_X5 = 2.5
+@upkeep_cg_X5 = 10
 
-@upkeep_food_X8 = 4
-@upkeep_cg_X8 = 4
+@upkeep_cg_X8 = 16
 
-@food_output = 12
+@food_output = 8
 @minerals_output = 12
 @energy_output = 12
+@minerals_output_up = 24
+@energy_output_up = 24
 
 @base_cost = 300
 
@@ -187,7 +186,7 @@ utility_component_template = {
 			engineering_research = @research_t1_output
 		}
 		upkeep = {
-			food = @upkeep_food_X2
+			
 			consumer_goods = @research_t1_cost
 		}
 	}
@@ -214,7 +213,7 @@ utility_component_template = {
 			exotic_gases = @b2_rare_cost
 		}
 		upkeep = {
-			food = @upkeep_food_X5
+			
 			consumer_goods = @research_t2_cost
 			exotic_gases = @b2_rare_upkeep
 		}
@@ -247,7 +246,7 @@ utility_component_template = {
 			engineering_research = @research_t3_output
 		}
 		upkeep = {
-			food = @upkeep_food_X8
+			
 			consumer_goods = @research_t3_cost
 			exotic_gases = @b3_rare_upkeep
 		}
@@ -281,13 +280,41 @@ utility_component_template = {
 			minerals = @minerals_output
 		}
 		upkeep = {
-			food = @upkeep_food_X2
+			
 			consumer_goods = @upkeep_cg_X2
 		}
 	}
 	
 	prerequisites = { tech_mechanized_mining }
 	component_set = "NOMAD_MINERALS"
+	size_restriction = { capital_ark_ship support_ark_ship }
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "NOMAD_MINERALS_UPGRADE"
+	size = aux
+	icon = "GFX_ship_part_vf_minerals_up"
+	icon_frame = 1
+	power = -20
+	resources = {
+		category = ship_components
+		cost = {
+			minerals = @base_cost
+		}
+		produces = {
+			minerals = @minerals_output_up
+		}
+		upkeep = {
+			consumer_goods = @upkeep_cg_X2
+		}
+	}
+	
+	prerequisites = { tech_mineral_purification_2 }
+	component_set = "NOMAD_MINERALS_UPGRADE"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -310,13 +337,42 @@ utility_component_template = {
 			energy = @energy_output
 		}
 		upkeep = {
-			food = @upkeep_food_X2
+			
 			consumer_goods = @upkeep_cg_X2
 		}
 	}
 	
 	prerequisites = { tech_power_plant_1 }
 	component_set = "NOMAD_ENERGY"
+	size_restriction = { capital_ark_ship support_ark_ship }
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "NOMAD_ENERGY_UPGRADE"
+	size = aux
+	icon = "GFX_ship_part_vf_energy_up"
+	icon_frame = 1
+	power = -10
+	resources = {
+		category = ship_components
+		cost = {
+			minerals = @base_cost
+		}
+		produces = {
+			energy = @energy_output_up
+		}
+		upkeep = {
+			
+			consumer_goods = @upkeep_cg_X2
+		}
+	}
+	
+	prerequisites = { tech_power_hub_2 }
+	component_set = "NOMAD_ENERGY_UPGRADE"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -339,7 +395,7 @@ utility_component_template = {
 			food = @food_output
 		}
 		upkeep = {
-			food = @upkeep_food_X2
+			
 			consumer_goods = @upkeep_cg_X2
 		}
 	}
@@ -372,7 +428,7 @@ utility_component_template = {
 			alloys = @alloy_t1_output
 		}
 		upkeep = {
-			food = @upkeep_food_X2
+			
 			consumer_goods = @upkeep_cg_X2
 			minerals = @alloy_t1_cost
 		}
@@ -403,7 +459,7 @@ utility_component_template = {
 			alloys = @alloy_t2_output
 		}
 		upkeep = {
-			food = @upkeep_food_X5
+			
 			consumer_goods = @upkeep_cg_X5
 			minerals = @alloy_t2_cost
 			volatile_motes = @b2_rare_upkeep
@@ -435,7 +491,7 @@ utility_component_template = {
 			alloys = @alloy_t3_output
 		}
 		upkeep = {
-			food = @upkeep_food_X8
+			
 			consumer_goods = @upkeep_cg_X8
 			minerals = @alloy_t3_cost
 			volatile_motes = @b3_rare_upkeep
@@ -466,7 +522,7 @@ utility_component_template = {
 			consumer_goods = @cg_t1_output
 		}
 		upkeep = {
-			food = @upkeep_food_X2
+			
 			minerals = @cg_t1_cost
 		}
 	}
@@ -496,7 +552,7 @@ utility_component_template = {
 			consumer_goods = @cg_t2_output
 		}
 		upkeep = {
-			food = @upkeep_food_X5
+			
 			minerals = @cg_t2_cost
 			rare_crystals = @b2_rare_upkeep
 		}
@@ -527,7 +583,7 @@ utility_component_template = {
 			consumer_goods = @cg_t3_output
 		}
 		upkeep = {
-			food = @upkeep_food_X8
+			
 			minerals = @cg_t3_cost
 			rare_crystals = @b3_rare_upkeep	
 		}
@@ -559,7 +615,7 @@ utility_component_template = {
 			society_research = @unity_t1_output
 		}
 		upkeep = {
-			food = @upkeep_food_X2
+			
 			consumer_goods = @unity_t1_cost
 		}
 	}
@@ -591,7 +647,7 @@ utility_component_template = {
 			society_research = @unity_t2_output
 		}
 		upkeep = {
-			food = @upkeep_food_X5
+			
 			consumer_goods = @unity_t2_cost
 			rare_crystals = @b2_rare_upkeep
 		}
@@ -625,7 +681,7 @@ utility_component_template = {
 			society_research = @unity_t3_output
 		}
 		upkeep = {
-			food = @upkeep_food_X8
+			
 			consumer_goods = @unity_t3_cost
 			rare_crystals = 2
 		}
@@ -660,7 +716,7 @@ utility_component_template = {
 			society_research = @unity_t2_output
 		}
 		upkeep = {
-			food = @upkeep_food_X5
+			
 			consumer_goods = @unity_t2_cost
 			rare_crystals = @b2_rare_upkeep
 		}
@@ -694,7 +750,7 @@ utility_component_template = {
 			society_research = @unity_t3_output
 		}
 		upkeep = {
-			food = @upkeep_food_X8
+			
 			consumer_goods = @unity_t3_cost
 			rare_crystals = 2
 		}
@@ -727,7 +783,7 @@ utility_component_template = {
 			society_research = @unity_t1_output
 		}
 		upkeep = {
-			food = @upkeep_food_X2
+			
 			consumer_goods = @unity_t1_cost
 		}
 	}
@@ -759,7 +815,7 @@ utility_component_template = {
 			society_research = @unity_t2_output
 		}
 		upkeep = {
-			food = @upkeep_food_X5
+			
 			consumer_goods = @unity_t2_cost
 			rare_crystals = @b2_rare_upkeep
 		}
@@ -793,7 +849,7 @@ utility_component_template = {
 			society_research = @unity_t3_output
 		}
 		upkeep = {
-			food = @upkeep_food_X8
+			
 			consumer_goods = @unity_t3_cost
 			rare_crystals = 2
 		}
