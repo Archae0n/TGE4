@@ -1,7 +1,6 @@
 plentiful_traditions_harvest_erupt = {
-	owned_planets_only = yes
 	sound = event_administrative_work
-	icon = decision_resources ### neues Bild?
+	icon = decision_resources
 
 	resources = {
 		category = decisions
@@ -11,40 +10,28 @@ plentiful_traditions_harvest_erupt = {
 	}
 	
 	potential = {
-		owner = {
+		exists = space_owner
+		space_owner = { is_same_value = from }
+		from = {
 			has_tradition = tr_plentiful_industry_finish
-		}
-		owner = {
 			is_ai = no
+		}
+		colonizeable_planet = yes
+		NOR = {
+			is_planet_class = pc_habitat
+			is_planet_class = pc_ringworld_habitable
+			is_planet_class = pc_pd_gas_giant_hab
+			is_planet_class = pc_pd_asteroid_hab
+			set_planet_flag = to_self_destruct
 		}
 	}
 	
 	allow = {
-		has_major_upgraded_capital = yes
 	}
 
 	effect = {
-		if = {
-			limit = { planet_size < 17 }
-			planet_event = {
-				id = plentiful_traditions_harvest_pedict.3
-			}
-			break = yes
-		}
-		if = {
-			limit = { planet_size < 23 }
-			planet_event = {
-				id = plentiful_traditions_harvest_pedict.2
-			}
-			break = yes
-		}
-		if = {
-			limit = { planet_size < 31 }
-			planet_event = {
-				id = plentiful_traditions_harvest_pedict.1
-			}
-			break = yes
-		}
+		set_planet_flag = to_self_destruct
+		from = { country_event = { id = plentiful_traditions_harvest_pedict.1 } }
 	}
 	
 	ai_weight = {
