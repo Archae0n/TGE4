@@ -298,7 +298,7 @@ ship_section_template = {
 	key = "station_void_farer_dwelling"
 	ship_size = void_farer_void_dwelling
 	fits_on_slot = "mid"
-	entity = "void_farer_void_dwelling_hull_entity"
+	entity = "habitat_phase_02_entity"
 	icon = "GFX_ship_part_core_mid"
 	
 	component_slot = {
