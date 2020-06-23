@@ -83,10 +83,7 @@ tr_plentiful_biogenesis_1 = {
 		
 		modifier = {
 			planet_pop_assemblers_alloys_upkeep_mult = -0.15
-
-			#planet_organic_battery_energy_produces_add = 1
-			#planet_job_organic_battery_energy_produces_add = 2
-			#job_organic_battery_energy_produces_add = 3
+			planet_pop_assembly_mult = 0.10
 		}
 		
 		weight = {
