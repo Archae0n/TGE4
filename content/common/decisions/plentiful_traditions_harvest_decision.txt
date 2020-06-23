@@ -16,13 +16,17 @@ plentiful_traditions_harvest_erupt = {
 			has_tradition = tr_plentiful_industry_finish
 			is_ai = no
 		}
-		colonizeable_planet = yes
+		#PD miss
+		OR = {
+			colonizeable_planet = yes
+			is_planet_class = pc_relic
+		}
 		NOR = {
 			is_planet_class = pc_habitat
 			is_planet_class = pc_ringworld_habitable
 			is_planet_class = pc_pd_gas_giant_hab
 			is_planet_class = pc_pd_asteroid_hab
-			set_planet_flag = to_self_destruct
+			has_planet_flag = to_self_destruct
 		}
 	}
 	
