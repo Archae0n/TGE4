@@ -44,6 +44,8 @@ decision_pm_young_unfreeze: "Awaken the Patron"
 decision_pm_mature_unfreeze: "Awaken the Patron"
 decision_pm_elder_unfreeze: "Awaken the Patron"
 
+decision_pm_make_moon: "Build a new Patron Moon"
+decision_pm_make_moon_desc: "We're going to build a new home for our Patron."
 
 decision_pm_turn_base_moon_desc: "Turns one of the planet's moons into a Patron Moon!"
 decision_pm_turn_habitat_desc: "Turns one of the planet's habitats into a Patron Moon!"
