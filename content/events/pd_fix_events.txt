@@ -1,0 +1,132 @@
+namespace = pd_fix
+
+country_event = {
+	id = pd_fix.100
+	title = "pd_fix.100.title"
+	desc = "pd_fix.100.desc"
+	picture = GFX_evt_board_meeting
+	show_sound = event_default
+	
+	is_triggered_only = yes
+
+	immediate = {
+		every_owned_planet = {
+			limit = { is_planet_class = pc_irradiated }
+
+			remove_modifier = karst
+			remove_modifier = pdsalt 
+			remove_modifier = ammonia 
+			remove_modifier = methane 
+			remove_modifier = ash 
+			remove_modifier = primal 
+			remove_modifier = aquatic 
+			remove_modifier = machine_factory 
+			remove_modifier = extra_memory 
+			remove_modifier = geothermal 
+			remove_modifier = superhabitable 
+			remove_modifier = tidal_locked2 
+			remove_modifier = floating 
+			remove_modifier = stableislands 
+			remove_modifier = crystal 
+			remove_modifier = deadcrystal 
+			remove_modifier = graveyard 
+			remove_modifier = notiyanki
+			remove_modifier = fallingtiyanki 
+			remove_modifier = mushroom 
+			remove_modifier = happymushrooms 
+			remove_modifier = happymushrooms2 
+			remove_modifier = badmushrooms 
+			remove_modifier = badmushrooms2 
+			remove_modifier = biolumen 
+			remove_modifier = scaredofthedark 
+			remove_modifier = hunterreserves 
+			remove_modifier = unbalancedecosystem 
+			remove_modifier = technoorganic 
+			remove_modifier = technoorganic2 
+			remove_modifier = technobliss 
+			remove_modifier = technoshame 
+			remove_modifier = technohive 
+			remove_modifier = archive 
+			remove_modifier = pdarchive_core 
+
+			remove_deposit = d_hunterreserve 
+			remove_deposit = d_peace_museum
+			remove_deposit = d_subsurface_assembly
+			remove_deposit = d_crystal_temple
+			remove_deposit = d_crystal_guild
+			remove_deposit = d_holy_temple
+			remove_deposit = d_eludium_centre
+			remove_deposit = d_tiyanki_cleanup
+			remove_deposit = d_tiyanki_station
+			remove_deposit = d_graveyard_well
+			remove_deposit = d_archive_dataports
+			remove_deposit = d_interdimensional_lab
+			remove_deposit = d_virtual_obersvation_post
+			remove_deposit = d_zro_dune
+			remove_deposit = d_pdsandworms
+			remove_deposit = d_potential_cave
+			remove_deposit = d_mineral_cave
+			remove_deposit = d_livable_cave
+			remove_deposit = d_geothermal_slurry_site
+			remove_deposit = d_nightside_mining_operations
+			remove_deposit = d_ancient_motes
+			remove_deposit = d_karst_cave
+			remove_deposit = d_ammonia_sea
+			remove_deposit = d_frozen_gas_mountain
+			remove_deposit = d_lava_lakes
+			remove_deposit = d_biolumen_nature_preserve
+			remove_deposit = d_aquatic_trench
+			remove_deposit = d_salt_caves
+			remove_deposit = d_ecogarden
+			remove_deposit = d_tiyanki_small
+			remove_deposit = d_tiyanki_large
+			remove_deposit = d_unit04
+			remove_deposit = d_dead04
+			remove_deposit = d_home04
+			remove_deposit = d_pdcrystalpatch
+			remove_deposit = d_technocanal
+			remove_deposit = d_remaining_stores
+			remove_deposit = d_hive_crystal1
+			remove_deposit = d_hive_crystal2
+			remove_deposit = d_hive_gas1
+			remove_deposit = d_hive_gas2
+			remove_deposit = d_hive_motes1
+			remove_deposit = d_hive_motes2			
+		}		
+	}
+	
+	option = {
+		name = pd_fix.100.a
+		trigger = {
+			NOR = {
+				has_authority = auth_machine_intelligence
+				is_mechanical_empire = yes
+				is_lithoid = yes
+			}
+		}
+		add_resource = { food = 1 }
+	}
+
+	option = {
+		name = pd_fix.100.b
+		trigger = {
+			is_lithoid = yes
+			NOR = {
+				has_authority = auth_machine_intelligence
+				is_mechanical_empire = yes
+			}
+		}
+		add_resource = { minerals = 1 }
+	}
+
+	option = {
+		name = pd_fix.100.c
+		trigger = {
+			OR = {
+				has_authority = auth_machine_intelligence
+				is_mechanical_empire = yes
+			}
+		}
+		add_resource = { energy = 1 }
+	}
+}
