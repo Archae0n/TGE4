@@ -1,7 +1,4 @@
 
-#fix: action.1.a
-
-
 #########################################
 #
 # on_action_events
@@ -1468,15 +1465,20 @@ country_event = {
 			is_primitive = no
 			NOR = {
 				is_country_type = tiyanki
+				is_country_type = tiyanki_garrison
 				is_country_type = neutral_faction
 				is_country_type = faction
 				is_country_type = pirate
 				#is_country_type = nomad #triggered in a special case event
 				is_country_type = amoeba
+				is_country_type = amoeba_borderless
+				is_country_type = amoeba_garrison
 				is_country_type = crystal
 				is_country_type = drone
 				is_country_type = cloud
 				is_country_type = enclave
+				has_country_flag = crystal_country
+				has_country_flag = drone_country
 				has_relation_flag = { flag = AbandonedRefugees who = root }
 			}
 		}
@@ -1495,7 +1497,23 @@ country_event = {
 		name = action.1.a
 		trigger = {
 			NOR = {
-
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_fanatic_egalitarian
+				has_ethic = ethic_authoritarian
+				has_ethic = ethic_fanatic_authoritarian
+				has_ethic = ethic_militarist
+				has_ethic = ethic_fanatic_militarist
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+				has_ethic = ethic_spiritualist
+				has_ethic = ethic_fanatic_spiritualist
+				has_ethic = ethic_gestalt_consciousness
 			}
 		}
 	}
@@ -3599,13 +3617,18 @@ country_event = {
 			is_primitive = no
 			NOR = {
 				is_country_type = tiyanki
+				is_country_type = tiyanki_garrison
 				is_country_type = neutral_faction
 				is_country_type = faction
 				is_country_type = pirate
 				is_country_type = amoeba
+				is_country_type = amoeba_borderless
+				is_country_type = amoeba_garrison
 				is_country_type = crystal
 				is_country_type = drone
 				is_country_type = cloud
+				has_country_flag = crystal_country
+				has_country_flag = drone_country
 				has_relation_flag = { flag = AbandonedRefugees who = root }
 			}
 		}
@@ -3624,7 +3647,23 @@ country_event = {
 		name = action.1.a
 		trigger = {
 			NOR = {
-
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_fanatic_egalitarian
+				has_ethic = ethic_authoritarian
+				has_ethic = ethic_fanatic_authoritarian
+				has_ethic = ethic_militarist
+				has_ethic = ethic_fanatic_militarist
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+				has_ethic = ethic_spiritualist
+				has_ethic = ethic_fanatic_spiritualist
+				has_ethic = ethic_gestalt_consciousness
 			}
 		}
 	}
@@ -5185,9 +5224,15 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		FROM = { is_country_type = amoeba }
+		FROM = {
+			OR = {
+				is_country_type = amoeba
+				is_country_type = amoeba_borderless
+				is_country_type = amoeba_garrison
+			}
+		}
 		is_country_type = default
-		is_ai = no
+#		is_ai = no
 		NOT = { has_country_flag = amoeba_encountered }
 	}
 
@@ -5227,7 +5272,12 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		FROM = { is_country_type = crystal }
+		FROM = {
+			OR = {
+				is_country_type = crystal
+				has_country_flag = crystal_country
+			}
+		}
 		is_country_type = default
 		is_ai = no
 		NOT = { has_country_flag = crystal_encountered }
@@ -5269,7 +5319,12 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		FROM = { is_country_type = drone }
+		FROM = {
+			OR = {
+				is_country_type = drone
+				has_country_flag = drone_country
+			}
+		}
 		is_country_type = default
 		is_ai = no
 		NOT = { has_country_flag = drone_encountered }
@@ -5353,7 +5408,12 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		FROM = { is_country_type = tiyanki }
+		FROM = {
+			OR = {
+				is_country_type = tiyanki
+				is_country_type = tiyanki_garrison
+			}
+		}
 		is_country_type = default
 		is_ai = no
 		NOT = { has_country_flag = tiyanki_encountered }
@@ -7912,7 +7972,7 @@ event = {
 						is_planet_class = pc_ringworld_habitable
 					}
 				}
-				change_pc = pc_infested 
+				change_pc = pc_infested
 			}
 		}
 	}
@@ -8418,7 +8478,7 @@ country_event = {
 				}
 				modifier = {
 					mult = 0.5
-					NOT = { 
+					NOT = {
 						any_owned_planet = {
 							OR = {
 								has_modifier = market_nominee_level_1
@@ -8543,6 +8603,8 @@ country_event = {
 			days = -1
 		}
 		set_market_leader = yes # Update who owns the market station
+
+		set_timed_global_flag = { flag = resolution_galactic_market_relocated_recently days = 18000 }
 
 		event_target:market_founder_planet.solar_system.star = {
 			create_ambient_object = {
@@ -9187,7 +9249,9 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		from = { set_country_flag = whatever_it_is_im_against_it_left_federation }
+		from = {
+			set_country_flag = whatever_it_is_im_against_it_left_federation
+		}
 	}
 }
 
@@ -9224,7 +9288,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		federation = { 
+		federation = {
 			any_member = {
 				is_overlord = yes
 				any_subject = {
@@ -9262,7 +9326,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		federation = { 
+		federation = {
 			any_member = {
 				is_overlord = yes
 				any_subject = { is_in_federation_with = prev }
@@ -9310,6 +9374,7 @@ country_event = {
     }
 }
 
+
 # Federation Clear Outside Treaties
 country_event = {
 	id = action.215
@@ -9324,6 +9389,94 @@ country_event = {
 				NOT = { is_in_federation_with = root }
 			}
 			end_all_treaties_with = root
+		}
+	}
+}
+
+
+# Random pulse (set up the delay) - on_five_year_pulse_country
+country_event = {
+	id = action.220
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = action.221 random = 360 }
+	}
+}
+
+# Random pulse part 2 (fire the events) - on_five_year_pulse_country
+country_event = {
+	id = action.221
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		random_list = {
+			900 = { } #no event
+			125 = { country_event = { id = federations2.50 } } # Federation hegemony challenge
+			125 = { country_event = { id = federations2.100 } } # Federation military challenge
+			75 = { country_event = { id = envoy_events.1 } } # Insulting envoy software event
+			100 = { country_event = { id = envoy_events.3 } } # A Contribution to Galactic Comedy
+			50 = { country_event = { id = envoy_events.4 } } # Respected Envoy to Galactic Community
+			75 = { country_event = { id = envoy_events.5 } } # Irritating Envoy Must Die
+			75 = { country_event = { id = envoy_events.7 } } # Xenophobe Envoy Elopes
+			20 = { country_event = { id = envoy_events.15 } } # Galactic Community Wildlife
+		}
+	}
+}
+
+
+# on_colony_5_year_pulse
+planet_event = {
+	id = action.222
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = { #save the AI from doomsday if it manages to colonise
+			limit = {
+				exists = owner
+				owner = {
+					has_origin = origin_doomsday
+					is_ai = yes
+					any_owned_planet = {
+						has_planet_flag = doomed_planet_origin
+					}
+				}
+				NOT = { has_planet_flag = doomed_planet_origin }
+			}
+			owner = {
+				random_owned_planet = {
+					limit = {
+						has_planet_flag = doomed_planet_origin
+						num_pops > 3
+					}
+					while = {
+						count = 3
+						random_owned_pop = {
+							limit = {
+								OR = {
+									prev = { has_modifier = doomsday_5 }
+									root = {
+										habitability = {
+											who = prev.species
+											value > 0.3
+										}
+									}
+								}
+							}
+							resettle_pop = {
+								pop = this
+								planet = root
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }

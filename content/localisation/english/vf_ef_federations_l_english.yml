@@ -1,0 +1,151 @@
+﻿l_english:
+ IS_YOU:1 "This is you"
+
+# Empire Federation
+
+vf_ef_federation:0 "Feudal Empire"
+vf_ef_federation_desc:0 "This system of government is structured around one Crown nation that wields almost absolute control over its subject nations."
+
+# Perks
+
+ 
+ empire_federation_passive:0 "Imperial Authority"
+ empire_federation_passive_desc:0 "The strength of the empire must not be undermined by personal ambition."
+ empire_federation_passive_effect:1 "Subjects cannot freely leave the empire. If their emperor refuses their request for independence, the subject gains the §YInependence§! Casus Belli and may try to secede from the empire."
+ 
+
+ 
+ emperor_empire_cb_1:0 "Imperial Might"
+ emperor_empire_cb_1_desc:0 "For the glory of our empire, we shall expand."
+ emperor_empire_cb_1_effect:1 "Crown gets the §YImperialism Wargoal§! to force a sovereign nation to submit to imperial authority."
+
+ emperor_diplo_weight_steal_1:0 "Imperial Affairs"
+ emperor_diplo_weight_steal_1_desc:0 "Subject nations may have a wide measure of control over their domestic affairs, but foreign affairs are the responsibility of the Crown."
+ emperor_diplo_weight_steal_1_effect:1 "Every subject transfers §Y90%§! of their §Y$MOD_DIPLO_WEIGHT_MULT$§! to their Crown."
+ 
+ vf_ef_job_output_1:0 "Imperial Administration"
+ vf_ef_job_output_1_desc:0 "The efficient and capable administration of our empire has led to massive improvements in production."
+ 
+ emperor_unity_1:0 "Imperial Destiny"
+ emperor_unity_1_desc:0 "The citizens at the heart of our empire are proud of what they have accomplished."
+ 
+ 
+ imperial_upkeep_1:0 "Imperial Overseers"
+ imperial_upkeep_1_desc:0 "Mutually beneficial agreements between our subject nations are much easier to coordinate when our supervisory agents are directly embedded in each subjects's governing apparatus."
+ imperial_upkeep_1_effect:0 "Research Agreements and Migration Pacts between subject nations cost no £influence£ Influence in their upkeep."
+ 
+ 
+ extra_imperial_envoy_1:0 "Imperial Envoys"
+ extra_imperial_envoy_1_desc:1 "The diplomatic corps serve a vital role in the maintenance of our empire."
+
+ imperial_influence_1:0 "Ultimate Responsibility"
+ imperial_influence_1_desc:0 "Rising to become the empire we are today wasn't easy. All that we have now will take work to protect."
+ imperial_influence_1_effect:0 "Empire Influence Gain: §G+1§!"
+ 
+ empire_fleet_speed_1:0 "Interior Lines"
+ empire_fleet_speed_1_desc:1 "Well-charted and patrolled hyperspace corridors within our territory permit unparalleled freedom of movement, allowing our navies to rapidly concentrate wherever required."
+ empire_fleet_speed_effect:0 "§YShip Speed§! is increased by §G+10%§! while within our empire."
+ 
+ 
+ 
+ # Casus Belli
+ casus_belli_cb_empire:0 "Subjugation"
+ 
+ # War Goals
+ war_goal_wg_empire:0 "Imperialism"
+ war_goal_wg_empire_desc:0 "War is waged to force the enemy to become a member of our empire.\n\n\n\nIn the event of a Status Quo peace, systems we occupy will be released as a new subject of our Empire if they include at least one planet."
+
+ wg_empire_status_quo:0 "Our subject §Y[Root.GetName]§! has partially seceded from the §Y[From.GetAllianceName]§!"
+ wg_empire_accept:0 "The empire is strong! §Y[From.GetName]§! is now a subject of the §Y[Root.GetAllianceName]§!"
+
+ 
+ # Federation
+ 
+ requires_feudal_1:0 "§RRequires you to have the §Y$civic_feudal_realm$§! civic.§!"
+ 
+ federation_acceptance_empire_federation:0 "$vf_ef_federation$"
+ federation_acceptance_empire:0 "Feudal Empire"
+ 
+ declare_war_unanimous_vote_empire:0 "Unanimous Vote"
+ declare_war_unanimous_vote_empire_desc:0 "An empire is stronger when know we are united in our goal."
+ 
+ 
+ declare_war_majority_vote_empire:0 "$declare_war_majority_vote$"
+ declare_war_majority_vote_empire_desc:0 "If the majority of our subjects will it, so it shall be."
+ 
+ declare_war_president_vote_empire:0 "Emperor's Right"
+ declare_war_president_vote_empire_desc:0 "It is the sole right of the emperor to declare war."
+ 
+ fleet_contribution_none_empire:0 "None"
+ fleet_contribution_none_empire_desc:0 "This empire has no collaborative military effort."
+ fleet_contribution_low_empire:0 "$fleet_contribution_low$"
+ fleet_contribution_low_empire_desc:0 "This empire has a minor collaborative military effort"
+ fleet_contribution_medium_empire:0 "$fleet_contribution_medium$"
+ fleet_contribution_medium_empire_desc:0 "This empire has a moderate collaborative military effort"
+ fleet_contribution_high_empire:0 "$fleet_contribution_high$"
+ fleet_contribution_high_empire_desc:0 "This empire has an extensive collaborative military effort."
+ 
+ fleet_contribution_empire_low_effect:0 "Members transfer §Y10%§! of their Naval Capacity to the empire."
+ fleet_contribution_empire_medium_effect:0 "Members transfer §Y20%§! of their Naval Capacity to the empire."
+ fleet_contribution_empire_high_effect:0 "Members transfer §Y30%§! of their Naval Capacity to the empire."
+
+ succession_type_strongest_empire:0 "Strongest"
+ succession_type_strongest_empire_desc:2 "The Crown will be chosen from the most powerful nation, depending on which §Y$law_category_succession_power$§! is chosen. The $law_category_succession_power$ laws will become available when this law is active."
+ 
+ succession_type_challenge_empire:0 "Challenge"
+ succession_type_challenge_empire_desc:0 "The empire chooses its leader by lawful challenge."
+ 
+ federation_build_fleets_only_leader_empire:0 "Only Crown"
+ federation_build_fleets_only_leader_empire_desc:0 "Only the Crown may order the construction of new ships to the empire fleet."
+ federation_build_fleets_everyone_empire:0 "Everyone"
+ federation_build_fleets_everyone_empire_desc:0 "All subject nations may order the construction of new ships to the empire fleet."
+
+ vote_weight_equal_empire:0 "Equal"
+ vote_weight_equal_empire_desc:0 "We, as well as our subjects, all have 1 vote of equal weight."
+ vote_weight_diplomatic_empire:0 "Diplomatic"
+ vote_weight_diplomatic_empire_desc:0 "Votes are determined by Diplomatic Weight. More influential subject nations will wield more power."
+ 
+ invite_members_president_vote_empire:0 "Emperor's Right"
+ invite_members_president_vote_empire_desc:0 "It is the right of the emperor to decide their subjects."
+ invite_members_majority_vote_empire:0 "Majority Vote"
+ invite_members_majority_vote_empire_desc:0 "If a majority of our subjects agree, we shall take in another."
+ invite_members_unanimous_vote_empire:0 "Unanimous Vote"
+ invite_members_unanimous_vote_empire_desc:0 "New subjects of the empire need to meet the approval of the entire empire."
+
+ kick_members_president_vote_empire:0 "Emperor's Right"
+ kick_members_president_vote_empire_desc:0 "The president wields the power to decide if a member should be removed from the federation."
+ kick_members_majority_vote_empire:0 "Majority Vote"
+ kick_members_majority_vote_empire_desc:0 "A member can be removed from the federation by a majority vote."
+
+ free_migration_no_empire:0 "Disabled"
+ free_migration_no_empire_desc:0 "Subjects have to sign individual Migration Treaties."
+ free_migration_yes_empire:0 "Enabled"
+ free_migration_yes_empire_desc:0 "Migration Treaties are free and automatic between all subjects."
+
+ treaties_separate_yes_empire:0 "Allowed"
+ treaties_separate_yes_empire_desc:0 "Subject nations are allowed to sign diplomatic agreements with nations outside the empire."
+ treaties_separate_no_empire:0 "Prohibited"
+ treaties_separate_no_empire_desc:0 "Subject nations are prohibited from having Research Agreements, Migration Treaties, or Commercial Pacts with nations outside the empire."
+
+ allow_subjects_to_join_no_empire:0 "No"
+ allow_subjects_to_join_no_empire_desc:0 "Subjects may not join the empire."
+ allow_subjects_to_join_yes_empire:0 "Yes"
+ allow_subjects_to_join_yes_empire_desc:0 "Subjects are allowed to join the empire."
+ 
+ succession_power_economy_empire:0 "Economy"
+ succession_power_economy_empire_desc:0 "Our Crown nation should be chosen from the nation with the strongest §Yeconomy§!."
+ succession_power_tech_empire:0 "Technology"
+ succession_power_tech_empire_desc:0 "Our Crown nation should be chosen from the nation with the most advanced §Ytechnology§!."
+ succession_power_fleet_empire:0 "Fleets"
+ succession_power_fleet_empire_desc:0 "Our Crown nation should be chosen from the nation with the largest and most powerful §Ynavy§!."
+ succession_power_diplomatic_weight_empire:0 "Diplomatic Weight"
+ succession_power_diplomatic_weight_empire_desc:0 "Our Crown nation should be chosen from the nation with the largest §YDiplomatic Weight§!."
+
+
+
+ disabled_for_empire:0 "§RA §Y$vf_ef_federation$§! cannot ban subject nations from joining.§!"
+ 
+ 
+ 
+ 
+ 

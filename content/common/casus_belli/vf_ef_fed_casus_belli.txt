@@ -1,0 +1,19 @@
+cb_empire = {
+	show_in_diplomacy = yes
+	show_notification = yes
+	potential = {
+		has_federation = yes
+		is_federation_leader = yes
+		federation = {
+			has_federation_type = vf_ef_federation
+			has_federation_perk = emperor_empire_cb_1
+		}
+	}
+	is_valid = {
+		from = {
+			is_country_type = default
+			NOT = { is_in_federation_with = from }
+		}
+		has_total_war_cb = no
+	}
+}
