@@ -1,0 +1,61 @@
+pd_fix_edict = {
+	length = 0
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = edicts
+		cost = {
+			influence = 1
+		}
+	}
+
+	effect = {
+		country_event = { id = pd_fix.100 }
+	}
+
+	potential = {
+		any_owned_planet = {
+			is_planet_class = pc_irradiated
+			OR = {
+				has_modifier = karst
+				has_modifier = pdsalt 
+				has_modifier = ammonia 
+				has_modifier = methane 
+				has_modifier = ash 
+				has_modifier = primal 
+				has_modifier = aquatic 
+				has_modifier = machine_factory 
+				has_modifier = extra_memory 
+				has_modifier = geothermal 
+				has_modifier = superhabitable 
+				has_modifier = tidal_locked2 
+				has_modifier = floating 
+				has_modifier = stableislands 
+				has_modifier = crystal 
+				has_modifier = deadcrystal 
+				has_modifier = graveyard 
+				has_modifier = notiyanki
+				has_modifier = fallingtiyanki 
+				has_modifier = mushroom 
+				has_modifier = happymushrooms 
+				has_modifier = happymushrooms2 
+				has_modifier = badmushrooms 
+				has_modifier = badmushrooms2 
+				has_modifier = biolumen 
+				has_modifier = scaredofthedark 
+				has_modifier = hunterreserves 
+				has_modifier = unbalancedecosystem 
+				has_modifier = technoorganic 
+				has_modifier = technoorganic2 
+				has_modifier = technobliss 
+				has_modifier = technoshame 
+				has_modifier = technohive 
+				has_modifier = archive 
+				has_modifier = pdarchive_core 
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 5000
+	}
+}
