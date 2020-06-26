@@ -44,6 +44,8 @@ decision_pm_young_unfreeze: "Awaken the Patron"
 decision_pm_mature_unfreeze: "Awaken the Patron"
 decision_pm_elder_unfreeze: "Awaken the Patron"
 
+decision_pm_make_moon: "Build a new Patron Moon"
+decision_pm_make_moon_desc: "We're going to build a new home for our Patron."
 
 decision_pm_turn_base_moon_desc: "Turns one of the planet's moons into a Patron Moon!"
 decision_pm_turn_habitat_desc: "Turns one of the planet's habitats into a Patron Moon!"
@@ -93,6 +95,9 @@ patronmoon.125.desc:0 "The sin of those foolish enough to attempt stopping our g
 enough to cause any harm to it. Stalling is not going to save them. We will reach them. We will smite them down and awaken our master once more. And they will see
 that he is not picky when it comes to the source of his nutrition. In their foolishness they chose to become part of his great plan. Their choices brought it upon
 themselves."
+
+patronmoon.120.name:0 "New Moon"
+patronmoon.120.desc:0 "With the immense amount of work, time and resources spent, our efforts are complete. The mass of earth, rock, plants, animals and the bodies of those lucky enough to contribute to it is sent to the orbit. The ground shook as the matter flew up. People screamed in joy, fear, ecstasy. All shall be honoured to join the new master in its physical form. The power of the new patron moon is not yet at its full potential, but its whispers are heard across the planet. We are with it once more. It is a part of us, as it should, and it will lead us to the glory. But it still has potential to §R grow. Expand. Consume.§!"
 
 patronmoon.200.name:0 "Lack of Partecipation"
 patronmoon.200.desc:0 "Blast it! We couldn't find enough "nourishment" to continue the feeding process of our Patron, now we'll have to start all over again!"

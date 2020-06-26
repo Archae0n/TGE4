@@ -2371,7 +2371,7 @@ ap_esap_materialist_1 = {
 			has_ascension_perk = ap_esap_materialist_1
 		}
 		OR = {
-			is_country_type = void_farer
+			has_country_flag = is_nomads
 			is_country_type = fallen_empire
 		}
 	}

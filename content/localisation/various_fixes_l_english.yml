@@ -9,6 +9,15 @@ edict_nomad_fix_edict_desc:0 "Press this to fix the nomads, §YWARNING:§! this 
 edict_kill_non_nomads_edict:0 "§RDestroy your empire§!"
 edict_kill_non_nomads_edict_desc:0 "AIs will press this :D"
 
+edict_pd_fix_edict:0 "§GIf you're a good boy press this :)§!"
+edict_pd_fix_edict_desc:0 "Hi c:"
+
+pd_fix.100.title:0 "Yay :>"
+pd_fix.100.desc:0 "All mismatched special deposits on irradiated worlds has been cleaned up! ^-^"
+pd_fix.100.a:0 "Here's a cookie c:"
+pd_fix.100.b:0 "Here's a rock candy c:"
+pd_fix.100.c:0 "Here's a virtual cookie c:"
+
 edict_become_nomads_edict:0 "§GBecome Void Farers§!"
 edict_become_nomads_edict_desc:0 "Abandon planetary life and sail the stars as space Nomads!"
 
@@ -16,6 +25,9 @@ nomads_h.280.name:0 "Stranded"
 nomads_h.280.desc:0 "Our fleet is destroyed, our armies scattered, and our once wealthy colonies have been lost. Yet, we are not yet finished, our ideals cannot be vanquished so easily. Our scientists and engineers have spent that last few years of the war preparing a large vessel to house our remaining population. This self-sustaining starship will allow us to keep our freedom, our sovereignty, and will allow us one day to reclaim what has been lost. While the [From.GetName] may have been pushed from their homes, it shall continue to exist bathing in the light of the stars."
 nomads_h.280.a:0 "To the Stars!"
 nomads_h.280.b:0 "Maybe another day..."
+
+self_destruction_inbound:0 "Imminent Planetary Eruption"
+self_destruction_inbound_desc:0 "§RWARNING: THE PLANET IS ABOUT TO EXPLODE§!"
 
 green_propaganda:0 "Ecocentric Awareness"
 fanatic_green_propaganda:0 "Radical Ecocentrism"

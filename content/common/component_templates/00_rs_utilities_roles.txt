@@ -535,10 +535,10 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { cruiser rs_battlecruiser battleship rs_dreadnought rs_heavy_dreadnought_type_a rs_heavy_dreadnought_type_b rs_heavy_dreadnought_type_c rs_heavy_dreadnought_type_d rs_heavy_dreadnought_type_e rs_heavy_dreadnought_type_f rs_heavy_dreadnought_type_g rs_heavy_dreadnought_type_h rs_heavy_dreadnought_type_i juggernaut titan }
+	size_restriction = { capital_ark_ship cruiser rs_battlecruiser battleship rs_dreadnought rs_heavy_dreadnought_type_a rs_heavy_dreadnought_type_b rs_heavy_dreadnought_type_c rs_heavy_dreadnought_type_d rs_heavy_dreadnought_type_e rs_heavy_dreadnought_type_f rs_heavy_dreadnought_type_g rs_heavy_dreadnought_type_h rs_heavy_dreadnought_type_i juggernaut titan }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
-	prerequisites = { "tech_combat_computers_1" }
+	#prerequisites = { "tech_combat_computers_1" }
 	upgrades_to = "COMBAT_COMPUTER_CARRIER_ADVANCED"
 
 	ship_modifier = {
@@ -563,7 +563,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { cruiser rs_battlecruiser battleship rs_dreadnought rs_heavy_dreadnought_type_a rs_heavy_dreadnought_type_b rs_heavy_dreadnought_type_c rs_heavy_dreadnought_type_d rs_heavy_dreadnought_type_e rs_heavy_dreadnought_type_f rs_heavy_dreadnought_type_g rs_heavy_dreadnought_type_h rs_heavy_dreadnought_type_i juggernaut titan }
+	size_restriction = { capital_ark_ship cruiser rs_battlecruiser battleship rs_dreadnought rs_heavy_dreadnought_type_a rs_heavy_dreadnought_type_b rs_heavy_dreadnought_type_c rs_heavy_dreadnought_type_d rs_heavy_dreadnought_type_e rs_heavy_dreadnought_type_f rs_heavy_dreadnought_type_g rs_heavy_dreadnought_type_h rs_heavy_dreadnought_type_i juggernaut titan }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { "tech_combat_computers_2" }
@@ -591,7 +591,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { cruiser rs_battlecruiser battleship rs_dreadnought rs_heavy_dreadnought_type_a rs_heavy_dreadnought_type_b rs_heavy_dreadnought_type_c rs_heavy_dreadnought_type_d rs_heavy_dreadnought_type_e rs_heavy_dreadnought_type_f rs_heavy_dreadnought_type_g rs_heavy_dreadnought_type_h rs_heavy_dreadnought_type_i juggernaut titan }
+	size_restriction = { capital_ark_ship cruiser rs_battlecruiser battleship rs_dreadnought rs_heavy_dreadnought_type_a rs_heavy_dreadnought_type_b rs_heavy_dreadnought_type_c rs_heavy_dreadnought_type_d rs_heavy_dreadnought_type_e rs_heavy_dreadnought_type_f rs_heavy_dreadnought_type_g rs_heavy_dreadnought_type_h rs_heavy_dreadnought_type_i juggernaut titan }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { "tech_combat_computers_3" }
@@ -629,7 +629,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { cruiser rs_battlecruiser battleship rs_dreadnought rs_heavy_dreadnought_type_a rs_heavy_dreadnought_type_b rs_heavy_dreadnought_type_c rs_heavy_dreadnought_type_d rs_heavy_dreadnought_type_e rs_heavy_dreadnought_type_f rs_heavy_dreadnought_type_g rs_heavy_dreadnought_type_h rs_heavy_dreadnought_type_i juggernaut titan }
+	size_restriction = { capital_ark_ship cruiser rs_battlecruiser battleship rs_dreadnought rs_heavy_dreadnought_type_a rs_heavy_dreadnought_type_b rs_heavy_dreadnought_type_c rs_heavy_dreadnought_type_d rs_heavy_dreadnought_type_e rs_heavy_dreadnought_type_f rs_heavy_dreadnought_type_g rs_heavy_dreadnought_type_h rs_heavy_dreadnought_type_i juggernaut titan }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { "tech_combat_computers_autonomous" }
@@ -656,7 +656,7 @@ utility_component_template = {
 		}
 	}
 	class_restriction = { shipclass_military shipclass_starbase }
-	size_restriction = { cruiser rs_battlecruiser battleship rs_dreadnought rs_heavy_dreadnought_type_a rs_heavy_dreadnought_type_b rs_heavy_dreadnought_type_c rs_heavy_dreadnought_type_d rs_heavy_dreadnought_type_e rs_heavy_dreadnought_type_f rs_heavy_dreadnought_type_g rs_heavy_dreadnought_type_h rs_heavy_dreadnought_type_i juggernaut titan }
+	size_restriction = { capital_ark_ship cruiser rs_battlecruiser battleship rs_dreadnought rs_heavy_dreadnought_type_a rs_heavy_dreadnought_type_b rs_heavy_dreadnought_type_c rs_heavy_dreadnought_type_d rs_heavy_dreadnought_type_e rs_heavy_dreadnought_type_f rs_heavy_dreadnought_type_g rs_heavy_dreadnought_type_h rs_heavy_dreadnought_type_i juggernaut titan }
 	component_set = "combat_computers"
 	ship_behavior = "carrier"
 	prerequisites = { "tech_precognition_interface" }

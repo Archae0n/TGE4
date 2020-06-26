@@ -9288,21 +9288,26 @@ country_event = {
 
 # Federation Member Gains Subject
 country_event = {
-	id = action.214
-	hide_window = yes
+    id = action.214
+    hide_window = yes
 
-	is_triggered_only = yes
+    is_triggered_only = yes
 
-	trigger = {
-		from = {
-			has_federation = yes
-			federation = { has_federation_law = allow_subjects_to_join_yes }
-		}
-	}
+    trigger = {
+        from = {
+            has_federation = yes
+            federation = {
+                OR = {
+                    has_federation_law = allow_subjects_to_join_yes
+                    has_federation_law = allow_subjects_to_join_yes_empire
+                }
+            }
+        }
+    }
 
-	immediate = {
-		join_alliance = { who = from override_requirements = yes }
-	}
+    immediate = {
+        join_alliance = { who = from override_requirements = yes }
+    }
 }
 
 # Federation Clear Outside Treaties

@@ -279,7 +279,7 @@ tr_plentiful_biogenesis_finish:0 "Biogenesis Traditions Finished"
 tr_plentiful_biogenesis_finish_effect:0 "§E$TRADITIONS_FINISH$:§!\nAdopt $tr_plentiful_biogenesis_adopt$ and increased §Y$mod_BIOLOGICAL_species_trait_points_add$§! by §G+1§!, §Y$mod_ROBOT_species_trait_points_add$§! by §G+3§!, §Y$mod_MACHINE_species_trait_points_add$§! by §G+3§! and reduced §Y$MOD_COUNTRY_MODIFY_SPECIES_COST_MULT$§! by §G-20%§!.\n\n"
 
 tr_plentiful_biogenesis_machine_1:0 "Evolutionary convergence"
-tr_plentiful_biogenesis_machine_1_desc:0 "§Y$mod_planet_pop_assemblers_alloys_upkeep_mult$§! reduced by §G-15%§!, §Y$MOD_PLANET_POP_ASSEMBLY_ADD$§! of £job_replicator£ increased by §G+25%§!, and §Y$mod_planet_jobs_organic_battery_energy_produces_add$§! increased by §G+2§!."
+tr_plentiful_biogenesis_machine_1_desc:0 "§Y$mod_planet_pop_assemblers_alloys_upkeep_mult$§! reduced by §G-15%§!, §Y$MOD_PLANET_POP_ASSEMBLY_ADD$§! of £job_replicator£ increased by §G+10%§!."
 tr_plentiful_biogenesis_machine_1_delayed:0 "Specialized sensualists have a much better understanding of cultivated food. An injection of hormones has never harmed anyone. And we can also learn from the mistakes of the organic, copy and optimize their reproduction process, also for us."
  
 # Biogenesis buildings

@@ -675,10 +675,7 @@ vf_mining_station = {
 	}
 	
 	potential_country = {
-		OR = {
-			has_country_flag = is_nomads
-			has_ascension_perk = ap_voidborn
-		}
+		always = no
 	}
 }
 
@@ -723,10 +720,7 @@ vf_alloy_station = {
 	}
 	
 	potential_country = {
-		OR = {
-			has_country_flag = is_nomads
-			has_ascension_perk = ap_voidborn
-		}
+		always = no
 	}
 }
 
@@ -771,10 +765,7 @@ vf_factory_station = {
 	}
 	
 	potential_country = {
-		OR = {
-			has_country_flag = is_nomads
-			has_ascension_perk = ap_voidborn
-		}
+		always = no
 	}
 }
 
@@ -815,10 +806,7 @@ vf_energy_station = {
 	}
 	
 	potential_country = {
-		OR = {
-			has_country_flag = is_nomads
-			has_ascension_perk = ap_voidborn
-		}
+		always = no
 	}
 }
 
@@ -865,9 +853,6 @@ vf_research_station = {
 	}
 	
 	potential_country = {
-		OR = {
-			has_country_flag = is_nomads
-			has_ascension_perk = ap_voidborn
-		}
+		always = no
 	}
 }
