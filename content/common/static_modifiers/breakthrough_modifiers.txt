@@ -1,18 +1,18 @@
 Psychohistorians = {
-    planet_researchers_unity_produces_add = 0.5
-   	planet_priests_unity_produces_add = 0.5
-    planet_metallurgists_unity_produces_add = 0.5
-   	planet_enforcers_unity_produces_add = 0.5
-   	planet_telepaths_unity_produces_add = 0.5
-   	planet_artisans_unity_produces_add = 0.5
-   	planet_entertainers_unity_produces_add = 0.5
-   	planet_culture_workers_unity_produces_add = 0.5
-   	planet_chemists_unity_produces_add = 0.5
-   	planet_translucers_unity_produces_add = 0.5
-   	planet_refiners_unity_produces_add = 0.5
-  	planet_pop_assemblers_unity_produces_add = 0.5
-   	planet_doctors_unity_produces_add = 0.5
-   	planet_managers_unity_produces_add = 0.5
+    planet_researchers_unity_produces_add = 0.1
+   	planet_priests_unity_produces_add = 0.1
+    planet_metallurgists_unity_produces_add = 0.1
+   	planet_enforcers_unity_produces_add = 0.1
+   	planet_telepaths_unity_produces_add = 0.1
+   	planet_artisans_unity_produces_add = 0.1
+   	planet_entertainers_unity_produces_add = 0.1
+   	planet_culture_workers_unity_produces_add = 0.1
+   	planet_chemists_unity_produces_add = 0.1
+   	planet_translucers_unity_produces_add = 0.1
+   	planet_refiners_unity_produces_add = 0.1
+  	planet_pop_assemblers_unity_produces_add = 0.1
+   	planet_doctors_unity_produces_add = 0.1
+   	planet_managers_unity_produces_add = 0.1
 }
 
 Psychohistorian_crisis = {

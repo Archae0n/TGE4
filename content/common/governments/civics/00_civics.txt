@@ -1316,7 +1316,7 @@ civic_meritocracy = {
 	random_weight = { base = 5 }
 	modifier = {
 		leader_skill_levels = 1
-		planet_jobs_specialist_produces_mult = 0.1	
+		planet_jobs_specialist_produces_mult = 0.05
 		pop_cat_specialist_political_power = 1
 	}
 }
@@ -1579,7 +1579,7 @@ civic_shared_burden = {
 		}
 	}
 	modifier = {
-	            pop_growth_speed = 0.1
+	            pop_growth_speed = 0.05
 				job_labour_hero_per_pop = 0.05
                 country_society_tech_research_speed	= 0.05
                 country_leader_pool_size = 1

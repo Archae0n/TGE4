@@ -1389,7 +1389,7 @@ ap_esap_ct1_finance = {
 
 	modifier = {
 		description = ap_esap_ct1_finance_tooltip
-		planet_districts_energy_upkeep_add = -0.5
+		planet_districts_cities_energy_upkeep_add = -1
 	}
 	
 	potential = {
