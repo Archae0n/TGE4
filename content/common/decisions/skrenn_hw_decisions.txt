@@ -1,0 +1,47 @@
+chill_with_valgiess = {
+	sound = event_alien_nature
+	icon = decision_animal_wildlife
+
+	enactment_time = 1800
+	resources = {
+		category = decisions
+		cost = {
+			food = 1000
+		}
+	}
+	
+	potential = {
+		exists = space_owner
+		space_owner = { is_same_value = from }
+		from = {
+			NOR = {
+				has_ethic = ethic_industrial
+				has_ethic = ethic_fanatic_industrial
+			}
+		}
+		has_planet_flag = skrenn_homeworld
+		has_modifier = gpm_living_planet
+	}
+	
+	allow = {
+	}
+
+	effect = {
+		remove_modifier = gpm_living_planet
+		remove_modifier = hostile_animal_life
+
+		remove_deposit = d_society_2
+		remove_deposit = d_infestation
+		remove_deposit = d_dangerous_wildlife_blocker
+
+		add_modifier = { modifier = gpm_symbiotic_life }
+		add_modifier = { modifier = gpm_friendly_wildlife }
+
+		add_deposit = gpm_d_ecological_brain
+		add_deposit = d_savage_wildlands		
+	}
+	
+	ai_weight = {
+		weight = 10
+	}	
+}
