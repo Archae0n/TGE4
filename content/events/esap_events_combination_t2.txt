@@ -59,8 +59,16 @@ planet_event = {
 		owner = {
 			has_ascension_perk = ap_esap_ct2_expansion_diplomacy
 		}	
-		Not = {
+		NOR = {
 			has_modifier = mod_esap_ct2_expansion_diplomacy
+			is_planet_class = pc_pd_gas_giant_hab
+			is_planet_class = pc_pd_barren_hab
+			is_planet_class = pc_pd_barren_cold_hab
+			is_planet_class = pc_pd_hothouse_hab
+			is_planet_class = pc_pd_asteroid_hab
+			is_planet_class = pc_pd_molten_hab
+			is_planet_class = pc_pd_frozen_hab
+			is_planet_class = pc_habitat
 		}
 	}
 	

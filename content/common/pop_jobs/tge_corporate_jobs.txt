@@ -23,12 +23,7 @@ eco_technician = {
 	resources = {
 		category = planet_technicians
 		produces = {
-			trigger = {
-				owner = {
-					is_gestalt = no
-				}
-			}
-			energy = 6
+			energy = 8
 		}
 
 		upkeep = {
@@ -151,7 +146,7 @@ gene_therapist = {
 	
 		planet_modifier = {
 		trade_value_add = 4
-		pop_growth_speed = 0.05
+		pop_growth_speed = 0.075
 		planet_amenities_add = 6
 	}
 
@@ -260,7 +255,7 @@ virtual_celebrity = {
 		planet_modifier = {
 		trade_value_add = 4
 		pop_growth_speed = -0.01
-		planet_amenities_add = 10
+		planet_amenities_add = 12
 	}
 	
 	resources = {

@@ -428,16 +428,16 @@ labour_hero = {
 	resources = {
 		category = planet_miners
 		produces = {
-			energy = 2
-			minerals = 2
-			food = 2
-			unity = 2
+			energy = 1
+			minerals = 1
+			food = 1
+			unity = 1
 		}
 		
         produces = {
              trigger = { owner = { is_lithoid = yes  }}
-             food = -2
-             minerals = 2
+             food = -1
+             minerals = 1
         }		
 
 	}

@@ -91,7 +91,7 @@ tr_plentiful_endure_4 = {
 		has_tradition = tr_plentiful_endure_3
 	}
 	modifier = {
-		planet_jobs_slave_produces_mult = 0.2
+		planet_jobs_slave_produces_mult = 0.1
 	}
 	
 	ai_weight = {
