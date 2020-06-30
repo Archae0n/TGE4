@@ -32,32 +32,32 @@
  NOMAD_ENERGY_UPGRADE_2:0 "Commercial Framework Module: Multi-Thread Management LV3"
  NOMAD_ENERGY_UPGRADE_2_DESC:0 "Produces: §Y48§! £energy£\n\nA combination of different economic factors have produced the need for citizens on Arkships to define exchangable mediums in different ways. Thanks to the inherent need of an Arkship to be able to replace most if not all of its own components with outsourced materials, currency has been relegated to an energy allotment per citizen. This Module is specifically designed to compute the various requests from citizens as well as to manage the fuel reserves and power generation available on the Ark. Generators as well as supercomputers are present within the Module."
  
- NOMAD_ALLOY_1:0 "Production Module: Plasma Metallurgy"
- NOMAD_ALLOY_1_DESC:0 "Produces: §Y6§! £alloys£\nUpkeep: §Y12§! £minerals£\n\nThis Module is specifically deisgned to handle the high level production and refinement of base alloys and other component construction. Under carefully-controlled conditions, the application of extremely high temperature currents through molten metallics can produce metal plasmas. These substances form the basis of all hard material components built within this Module."
+ NOMAD_ALLOY_T1:0 "Production Module: Plasma Metallurgy"
+ NOMAD_ALLOY_T1_DESC:0 "Produces: §Y6§! £alloys£\nUpkeep: §Y12§! £minerals£\n\nThis Module is specifically deisgned to handle the high level production and refinement of base alloys and other component construction. Under carefully-controlled conditions, the application of extremely high temperature currents through molten metallics can produce metal plasmas. These substances form the basis of all hard material components built within this Module."
  
- NOMAD_ALLOY_2:0 "Production Module: Matter Manipulation"
- NOMAD_ALLOY_2_DESC:0 "Produces: §Y15§! £alloys£\nUpkeep: §Y1§! £volatile_motes£, §Y30§! £minerals£\n\nThis Production Module is capable of creating high order localized fields to bend matter, while also serving as a storage medium for the refined product. As knowledge of crystal lattice structures improves and mining and refining technologies advance, resources can be exploited in previously impossible ways for production of high end durable materials."
+ NOMAD_ALLOY_T2:0 "Production Module: Matter Manipulation"
+ NOMAD_ALLOY_T2_DESC:0 "Produces: §Y15§! £alloys£\nUpkeep: §Y1§! £volatile_motes£, §Y30§! £minerals£\n\nThis Production Module is capable of creating high order localized fields to bend matter, while also serving as a storage medium for the refined product. As knowledge of crystal lattice structures improves and mining and refining technologies advance, resources can be exploited in previously impossible ways for production of high end durable materials."
  
- NOMAD_ALLOY_3:0 "Production Module: Replication Industrialization"
- NOMAD_ALLOY_3_DESC:0 "Produces: §Y24§! £alloys£\nUpkeep: §Y2§! £volatile_motes£, §Y48§! £minerals£\n\nBy far the most sophisticated industrial complex on the Ark, this Module is specifically designed to replicate matter on truly vast scales. By exploiting the nature of reality on either very small (sub-quantum) or very large scales, powerful effects can be achieved that partially fold and reshape reality onto itself, allowing the manipulator to transmute matter into energy and energy into matter. This effect allows flawless materials to be made out of previously useless chunks of rock. Energy itself is the foundation of the future."
+ NOMAD_ALLOY_T3:0 "Production Module: Replication Industrialization"
+ NOMAD_ALLOY_T3_DESC:0 "Produces: §Y24§! £alloys£\nUpkeep: §Y2§! £volatile_motes£, §Y48§! £minerals£\n\nBy far the most sophisticated industrial complex on the Ark, this Module is specifically designed to replicate matter on truly vast scales. By exploiting the nature of reality on either very small (sub-quantum) or very large scales, powerful effects can be achieved that partially fold and reshape reality onto itself, allowing the manipulator to transmute matter into energy and energy into matter. This effect allows flawless materials to be made out of previously useless chunks of rock. Energy itself is the foundation of the future."
  
- NOMAD_CG_1:0 "Fabrication Module: Citizen Needs LV1"
- NOMAD_CG_1_DESC:0 "Produces: §Y12§! £consumer_goods£\nUpkeep: §Y12§! £minerals£\n\nThe Fabrication Module is designed to act as a massive foundry where anything that the citizenry requires can be produced. Ranging from durable, nondurable, or pure services, these goods are built from the raw materials gathered and housed in the Resource Module, then distributed to the citizens via the Commercial Framework Module. The way this is presented to the citizen varies on the culture and customs - a mall, a silo, a slot in the wall, it all depends on the ideation of the civilization."
+ NOMAD_CG_T1:0 "Fabrication Module: Citizen Needs LV1"
+ NOMAD_CG_T1_DESC:0 "Produces: §Y12§! £consumer_goods£\nUpkeep: §Y12§! £minerals£\n\nThe Fabrication Module is designed to act as a massive foundry where anything that the citizenry requires can be produced. Ranging from durable, nondurable, or pure services, these goods are built from the raw materials gathered and housed in the Resource Module, then distributed to the citizens via the Commercial Framework Module. The way this is presented to the citizen varies on the culture and customs - a mall, a silo, a slot in the wall, it all depends on the ideation of the civilization."
  
- NOMAD_CG_2:0 "Fabrication Module: Citizen Needs LV2"
- NOMAD_CG_2_DESC:0 "Produces: §Y30§! £consumer_goods£\nUpkeep: §Y1§! £rare_crystals£, §Y30§! £minerals£\n\n"
+ NOMAD_CG_T2:0 "Fabrication Module: Citizen Needs LV2"
+ NOMAD_CG_T2_DESC:0 "Produces: §Y30§! £consumer_goods£\nUpkeep: §Y1§! £rare_crystals£, §Y30§! £minerals£\n\n"
  
- NOMAD_CG_3:0 "Fabrication Module: Citizen Needs LV3"
- NOMAD_CG_3_DESC:0 "Produces: §Y48§! £consumer_goods£\nUpkeep: §Y2§! £rare_crystals£, §Y48§! £minerals£\n\n"
+ NOMAD_CG_T3:0 "Fabrication Module: Citizen Needs LV3"
+ NOMAD_CG_T3_DESC:0 "Produces: §Y48§! £consumer_goods£\nUpkeep: §Y2§! £rare_crystals£, §Y48§! £minerals£\n\n"
  
- NOMAD_UNITY_1:0 "Government Complex: Adaptive Bureaucracy"
- NOMAD_UNITY_1_DESC:0 "Produces: §Y6§! £unity£ £society£\nUpkeep:§Y4§! £consumer_goods£\n\nThe nature of this complex is one of Arkship governance. It is designed to act as the nerve center of the Ark, and houses vast arrays of computers, sensors, monitors, and other feedback equipment that allows the people charged with ensuring the smooth flow of operations to get all the data they need at their fingertips. Due to the nature of Arkship life, new systems are built that automatically adopt job titles, document routing, and training programs to the latest changes in local government policy. The net result is a more cohesive civilization that flows more readily to the ever changing circumstances of Arkship life."
+ NOMAD_UNITY_T1:0 "Government Complex: Adaptive Bureaucracy"
+ NOMAD_UNITY_T1_DESC:0 "Produces: §Y6§! £unity£ £society£\nUpkeep:§Y4§! £consumer_goods£\n\nThe nature of this complex is one of Arkship governance. It is designed to act as the nerve center of the Ark, and houses vast arrays of computers, sensors, monitors, and other feedback equipment that allows the people charged with ensuring the smooth flow of operations to get all the data they need at their fingertips. Due to the nature of Arkship life, new systems are built that automatically adopt job titles, document routing, and training programs to the latest changes in local government policy. The net result is a more cohesive civilization that flows more readily to the ever changing circumstances of Arkship life."
  
- NOMAD_UNITY_2:0 "Government Complex: Cultural Invertics"
- NOMAD_UNITY_2_DESC:0 "Produces: §Y15§! £unity£ £society£\nUpkeep: §Y1§! £rare_crystals£, §Y10§! £consumer_goods£\n\nThe additional knowledge gained of the sophisticated interplay between citizens and large group structures has given way to the realization of cultural invertics. Originating from a messy but captivating collision of political science, crowd heuristics, and cultural phase shifts, a knowledge of cultural invertics better places a society to both understand and, more importantly, provoke behavioral change on a massive scale in order to suit the needs of the Arkship."
+ NOMAD_UNITY_T2:0 "Government Complex: Cultural Invertics"
+ NOMAD_UNITY_T2_DESC:0 "Produces: §Y15§! £unity£ £society£\nUpkeep: §Y1§! £rare_crystals£, §Y10§! £consumer_goods£\n\nThe additional knowledge gained of the sophisticated interplay between citizens and large group structures has given way to the realization of cultural invertics. Originating from a messy but captivating collision of political science, crowd heuristics, and cultural phase shifts, a knowledge of cultural invertics better places a society to both understand and, more importantly, provoke behavioral change on a massive scale in order to suit the needs of the Arkship."
  
- NOMAD_UNITY_3:0 "Government Complex: Final Upgrade"
- NOMAD_UNITY_3_DESC:0 "Produces: §Y24§! £unity£ £society£\nUpkeep: §Y2§! £rare_crystals£, §Y16§! £consumer_goods£\n\n"
+ NOMAD_UNITY_T3:0 "Government Complex: Final Upgrade"
+ NOMAD_UNITY_T3_DESC:0 "Produces: §Y24§! £unity£ £society£\nUpkeep: §Y2§! £rare_crystals£, §Y16§! £consumer_goods£\n\n"
  
  NOMAD_UNITY_HIVE_1:0 "Hive unity thing LV1"
  NOMAD_UNITY_HIVE_1_DESC:0 Produces: §Y6§! £unity£ £society£\nUpkeep: §Y4§! £consumer_goods£\n\n"
