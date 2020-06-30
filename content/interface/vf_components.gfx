@@ -66,15 +66,31 @@ spriteTypes{
 
 	spriteType = {
 		name = "GFX_ship_part_vf_minerals"
-		texturefile = "gfx/interface/icons/technologies/tech_mineral_purification_1.dds"
+		texturefile = "gfx/interface/icons/technologies/tech_mechanized_mining.dds"
 	}
 	spriteType = {
 		name = "GFX_ship_part_vf_energy"
-		texturefile = "gfx/interface/icons/technologies/tech_power_hub_1.dds"
+		texturefile = "gfx/interface/icons/technologies/tech_power_plant_1.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_minerals_upgrade"
+		texturefile = "gfx/interface/icons/technologies/tech_mining_1.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_energy_upgrade"
+		texturefile = "gfx/interface/icons/technologies/tech_power_plant_2.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_minerals_upgrade_2"
+		texturefile = "gfx/interface/icons/technologies/tech_mining_2.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_part_vf_energy_upgrade_2"
+		texturefile = "gfx/interface/icons/technologies/tech_power_plant_3.dds"
 	}
 	spriteType = {
 		name = "GFX_ship_part_vf_food"
-		texturefile = "gfx/interface/icons/technologies/tech_pure_seed_farming.dds"
+		texturefile = "gfx/interface/icons/technologies/tech_hydroponics.dds"
 	}
 
 	spriteType = {
