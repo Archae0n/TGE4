@@ -18,6 +18,9 @@ pd_fix.100.a:0 "Here's a cookie c:"
 pd_fix.100.b:0 "Here's a rock candy c:"
 pd_fix.100.c:0 "Here's a virtual cookie c:"
 
+plentiful_traditions_harvest_cease:0 "Interrupt Planetary Eruption"
+plentiful_traditions_harvest_cease_desc:0 "Interrupts the destruction of the planet."
+
 edict_become_nomads_edict:0 "§GBecome Void Farers§!"
 edict_become_nomads_edict_desc:0 "Abandon planetary life and sail the stars as space Nomads!"
 
