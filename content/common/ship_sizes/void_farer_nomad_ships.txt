@@ -152,48 +152,6 @@ nomad_energy_tanker = {
 		produces = {
 			energy = 4
 		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_reactor_boosters_1
-			}
-			energy = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_reactor_boosters_2
-			}
-			energy = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_reactor_boosters_3
-			}
-			energy = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_cold_fusion_power
-			}
-			energy = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_antimatter_power
-			}
-			energy = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_zero_point_power
-			}
-			energy = 1
-		}
-		produces = {
-			trigger = {
-				has_technololgy = tech_dar_matter_power_core
-			}
-			energy = 3
-		}
 	}
 	
 	potential_country = {
@@ -208,15 +166,13 @@ nomad_energy_tanker = {
 
 capital_ark_ship = {
 	ftl = yes
-	max_speed = @speed_slow
+	max_speed = 160
 	rotation_speed = 0.15
-	acceleration = 0.2
+	acceleration = 0.3
 	modifier = {
 		ship_evasion_add = 15
 		ship_armor_add = 50
 		starbase_shipyard_capacity_add = 2
-		country_naval_cap_add = 20
-		ship_armor_regen_add_static = 2
 	}
 	max_hitpoints = 50000
 	size_multiplier = 1
@@ -235,14 +191,23 @@ capital_ark_ship = {
 	
 	combat_disengage_chance = 1.25
 	
+	country_modifier = {
+		country_naval_cap_add = 20
+	}
+	
 	resources = {
 		category = ships
+		produces = {
+			energy = 12
+			minerals = 12
+			physics = 4
+			society = 4
+			engineering = 4
+		}
 		cost = {
 			alloys = 750
 		}
 		upkeep = {
-			food = 5
-			consumer_goods = 5
 			energy = 5
 		}
 	}
@@ -251,7 +216,6 @@ capital_ark_ship = {
 	required_component_set = "ftl_components"
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
-	required_component_set = "combat_computers"
 	auto_upgrade = no
 	
 	
