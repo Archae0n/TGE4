@@ -21,21 +21,21 @@ component_set = {
 }
 
 component_set = {
-	key = "NOMAD_LABS_1"
+	key = "NOMAD_SCIENCE_T1"
 
 	icon = "GFX_ship_part_vf_lab_1"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_LABS_2"
+	key = "NOMAD_SCIENCE_T2"
 
 	icon = "GFX_ship_part_vf_lab_2"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_LABS_3"
+	key = "NOMAD_SCIENCE_T3"
 
 	icon = "GFX_ship_part_vf_lab_3"
 	icon_frame = 1	
@@ -70,6 +70,20 @@ component_set = {
 }
 
 component_set = {
+	key = "NOMAD_MINERALS_UPGRADE_2"
+
+	icon = "GFX_ship_part_vf_minerals_upgrade_2"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "NOMAD_ENERGY_UPGRADE_2"
+
+	icon = "GFX_ship_part_vf_energy_upgrade_2"
+	icon_frame = 1	
+}
+
+component_set = {
 	key = "NOMAD_FOOD"
 
 	icon = "GFX_ship_part_vf_food"
@@ -77,42 +91,42 @@ component_set = {
 }
 
 component_set = {
-	key = "NOMAD_ALLOYS_1"
+	key = "NOMAD_ALLOY_1"
 
 	icon = "GFX_ship_part_vf_alloys_1"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_ALLOYS_2"
+	key = "NOMAD_ALLOY_2"
 
 	icon = "GFX_ship_part_vf_alloys_2"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_ALLOYS_3"
+	key = "NOMAD_ALLOY_3"
 
 	icon = "GFX_ship_part_vf_alloys_3"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_CGS_1"
+	key = "NOMAD_CG_1"
 
 	icon = "GFX_ship_part_vf_cgs_1"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_CGS_2"
+	key = "NOMAD_CG_2"
 
 	icon = "GFX_ship_part_vf_cgs_2"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_CGS_3"
+	key = "NOMAD_CG_3"
 
 	icon = "GFX_ship_part_vf_cgs_3"
 	icon_frame = 1	

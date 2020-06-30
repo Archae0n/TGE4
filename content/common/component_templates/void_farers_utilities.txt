@@ -147,17 +147,13 @@
 
 @fleetcomm_upkeep = 3
 
-@upkeep_cg_X2 = 2
-
-@upkeep_cg_X5 = 10
-
-@upkeep_cg_X8 = 16
-
 @food_output = 8
 @minerals_output = 12
 @energy_output = 12
 @minerals_output_up = 24
 @energy_output_up = 24
+@minerals_output_up_2 = 48
+@energy_output_up_2 = 48
 
 @base_cost = 300
 
@@ -192,7 +188,7 @@ utility_component_template = {
 	}
 	
 	prerequisites = { tech_basic_science_lab_1 }
-	component_set = "NOMAD_LABS_1"
+	component_set = "NOMAD_SCIENCE_T1"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -220,7 +216,7 @@ utility_component_template = {
 	}
 	
 	prerequisites = { tech_basic_science_lab_2 }
-	component_set = "NOMAD_LABS_2"
+	component_set = "NOMAD_SCIENCE_T2"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -253,7 +249,7 @@ utility_component_template = {
 	}
 	
 	prerequisites = { tech_basic_science_lab_2 }
-	component_set = "NOMAD_LABS_3"
+	component_set = "NOMAD_SCIENCE_T3"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -271,6 +267,7 @@ utility_component_template = {
 	icon = "GFX_ship_part_vf_minerals"
 	icon_frame = 1
 	power = -10
+	upgrades_to = "NOMAD_MINERALS_UPGRADE"
 	resources = {
 		category = ship_components
 		cost = {
@@ -281,7 +278,7 @@ utility_component_template = {
 		}
 		upkeep = {
 			
-			consumer_goods = @upkeep_cg_X2
+			
 		}
 	}
 	
@@ -300,6 +297,7 @@ utility_component_template = {
 	icon = "GFX_ship_part_vf_minerals_upgrade"
 	icon_frame = 1
 	power = -20
+	upgrades_to = "NOMAD_MINERALS_UPGRADE_2"
 	resources = {
 		category = ship_components
 		cost = {
@@ -309,12 +307,40 @@ utility_component_template = {
 			minerals = @minerals_output_up
 		}
 		upkeep = {
-			consumer_goods = @upkeep_cg_X2
+			
+		}
+	}
+	
+	prerequisites = { tech_mineral_purification_1 }
+	component_set = "NOMAD_MINERALS_UPGRADE"
+	size_restriction = { capital_ark_ship support_ark_ship }
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "NOMAD_MINERALS_UPGRADE_2"
+	size = aux
+	icon = "GFX_ship_part_vf_minerals_upgrade_2"
+	icon_frame = 1
+	power = -40
+	resources = {
+		category = ship_components
+		cost = {
+			minerals = @base_cost
+		}
+		produces = {
+			minerals = @minerals_output_up_2
+		}
+		upkeep = {
+			
 		}
 	}
 	
 	prerequisites = { tech_mineral_purification_2 }
-	component_set = "NOMAD_MINERALS_UPGRADE"
+	component_set = "NOMAD_MINERALS_UPGRADE_2"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -328,6 +354,7 @@ utility_component_template = {
 	icon = "GFX_ship_part_vf_energy"
 	icon_frame = 1
 	power = -10
+	upgrades_to = "NOMAD_ENERGY_UPGRADE"
 	resources = {
 		category = ship_components
 		cost = {
@@ -338,7 +365,7 @@ utility_component_template = {
 		}
 		upkeep = {
 			
-			consumer_goods = @upkeep_cg_X2
+			
 		}
 	}
 	
@@ -354,9 +381,10 @@ utility_component_template = {
 utility_component_template = {
 	key = "NOMAD_ENERGY_UPGRADE"
 	size = aux
-	icon = "GFX_ship_part_vf_energy_upgrade"
+	icon = "GFX_ship_part_vf_energy_up"
 	icon_frame = 1
-	power = -10
+	power = -20
+	upgrades_to = "NOMAD_ENERGY_UPGRADE_2"
 	resources = {
 		category = ship_components
 		cost = {
@@ -367,12 +395,41 @@ utility_component_template = {
 		}
 		upkeep = {
 			
-			consumer_goods = @upkeep_cg_X2
+			
+		}
+	}
+	
+	prerequisites = { tech_power_hub_1 }
+	component_set = "NOMAD_ENERGY_UPGRADE"
+	size_restriction = { capital_ark_ship support_ark_ship }
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+utility_component_template = {
+	key = "NOMAD_ENERGY_UPGRADE_2"
+	size = aux
+	icon = "GFX_ship_part_vf_energy_up_2"
+	icon_frame = 1
+	power = -40
+	resources = {
+		category = ship_components
+		cost = {
+			minerals = @base_cost
+		}
+		produces = {
+			energy = @energy_output_up_2
+		}
+		upkeep = {
+			
+			
 		}
 	}
 	
 	prerequisites = { tech_power_hub_2 }
-	component_set = "NOMAD_ENERGY_UPGRADE"
+	component_set = "NOMAD_ENERGY_UPGRADE_2"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -396,7 +453,7 @@ utility_component_template = {
 		}
 		upkeep = {
 			
-			consumer_goods = @upkeep_cg_X2
+			
 		}
 	}
 	
@@ -414,7 +471,7 @@ utility_component_template = {
 ######################
 
 utility_component_template = {
-	key = "NOMAD_ALLOY_T1"
+	key = "NOMAD_ALLOY_1"
 	size = aux
 	icon = "GFX_ship_part_vf_alloys_1"
 	icon_frame = 1
@@ -429,13 +486,13 @@ utility_component_template = {
 		}
 		upkeep = {
 			
-			consumer_goods = @upkeep_cg_X2
+			
 			minerals = @alloy_t1_cost
 		}
 	}
 	
 	prerequisites = { tech_basic_industry }
-	component_set = "NOMAD_ALLOYS_1"
+	component_set = "NOMAD_ALLOY_1"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -444,7 +501,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_ALLOY_T2"
+	key = "NOMAD_ALLOY_2"
 	size = aux
 	icon = "GFX_ship_part_vf_alloys_2"
 	icon_frame = 1
@@ -460,14 +517,14 @@ utility_component_template = {
 		}
 		upkeep = {
 			
-			consumer_goods = @upkeep_cg_X5
+			
 			minerals = @alloy_t2_cost
 			volatile_motes = @b2_rare_upkeep
 		}
 	}
 	
 	prerequisites = { tech_alloys_1 }
-	component_set = "NOMAD_ALLOYS_2"
+	component_set = "NOMAD_ALLOY_2"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -476,7 +533,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_ALLOY_T3"
+	key = "NOMAD_ALLOY_3"
 	size = aux
 	icon = "GFX_ship_part_vf_alloys_3"
 	icon_frame = 1
@@ -492,14 +549,14 @@ utility_component_template = {
 		}
 		upkeep = {
 			
-			consumer_goods = @upkeep_cg_X8
+			
 			minerals = @alloy_t3_cost
 			volatile_motes = @b3_rare_upkeep
 		}
 	}
 	
 	prerequisites = { tech_alloys_2 }
-	component_set = "NOMAD_ALLOYS_3"
+	component_set = "NOMAD_ALLOY_3"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -508,7 +565,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_CG_T1"
+	key = "NOMAD_CG_1"
 	size = aux
 	icon = "GFX_ship_part_vf_cgs_1"
 	icon_frame = 1
@@ -528,7 +585,7 @@ utility_component_template = {
 	}
 	
 	prerequisites = { tech_basic_industry }
-	component_set = "NOMAD_CGS_1"
+	component_set = "NOMAD_CG_1"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -537,7 +594,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_CG_T2"
+	key = "NOMAD_CG_2"
 	size = aux
 	icon = "GFX_ship_part_vf_cgs_2"
 	icon_frame = 1
@@ -559,7 +616,7 @@ utility_component_template = {
 	}
 	
 	prerequisites = { tech_luxuries_1 }
-	component_set = "NOMAD_CGS_2"
+	component_set = "NOMAD_CG_2"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -568,7 +625,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_CG_T3"
+	key = "NOMAD_CG_3"
 	size = aux
 	icon = "GFX_ship_part_vf_cgs_3"
 	icon_frame = 1
@@ -590,7 +647,7 @@ utility_component_template = {
 	}
 	
 	prerequisites = { tech_luxuries_1 }
-	component_set = "NOMAD_CGS_3"
+	component_set = "NOMAD_CG_3"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -600,7 +657,7 @@ utility_component_template = {
 
 #NORMAL EMPIRE UNITY
 utility_component_template = {
-	key = "NOMAD_UNITY_T1"
+	key = "NOMAD_UNITY_1"
 	size = aux
 	icon = "GFX_ship_part_vf_unity_1"
 	icon_frame = 1
@@ -631,7 +688,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_UNITY_T2"
+	key = "NOMAD_UNITY_2"
 	size = aux
 	icon = "GFX_ship_part_vf_unity_2"
 	icon_frame = 1
@@ -665,7 +722,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_UNITY_T3"
+	key = "NOMAD_UNITY_3"
 	size = aux
 	icon = "GFX_ship_part_vf_unity_3"
 	icon_frame = 1
@@ -700,7 +757,7 @@ utility_component_template = {
 
 #SPI UNITY
 utility_component_template = {
-	key = "NOMAD_UNITY_SPI_T2"
+	key = "NOMAD_UNITY_SPI_2"
 	size = aux
 	icon = "GFX_ship_part_vf_unity_spi_2"
 	icon_frame = 1
@@ -734,7 +791,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_UNITY_SPI_T3"
+	key = "NOMAD_UNITY_SPI_3"
 	size = aux
 	icon = "GFX_ship_part_vf_unity_spi_3"
 	icon_frame = 1
@@ -768,7 +825,7 @@ utility_component_template = {
 }
 #HIVE UNITY
 utility_component_template = {
-	key = "NOMAD_UNITY_HIVE_T1"
+	key = "NOMAD_UNITY_HIVE_1"
 	size = aux
 	icon = "GFX_ship_part_vf_unity_hive_1"
 	icon_frame = 1
@@ -799,7 +856,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_UNITY_HIVE_T2"
+	key = "NOMAD_UNITY_HIVE_2"
 	size = aux
 	icon = "GFX_ship_part_vf_unity_hive_2"
 	icon_frame = 1
@@ -833,7 +890,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_UNITY_HIVE_T3"
+	key = "NOMAD_UNITY_HIVE_3"
 	size = aux
 	icon = "GFX_ship_part_vf_unity_hive_3"
 	icon_frame = 1
