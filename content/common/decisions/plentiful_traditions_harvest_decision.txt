@@ -1,6 +1,6 @@
 plentiful_traditions_harvest_erupt = {
-	sound = event_administrative_work
-	icon = decision_resources
+	sound = event_air_raid_siren
+	icon = decision_exploding_planet
 
 	resources = {
 		category = decisions
@@ -40,5 +40,28 @@ plentiful_traditions_harvest_erupt = {
 	
 	ai_weight = {
 		weight = 0
+	}	
+}
+
+plentiful_traditions_harvest_cease = {
+	sound = event_administrative_work
+	icon = decision_atmospheric_entry
+
+	potential = {
+		exists = space_owner
+		space_owner = { is_same_value = from }
+		has_planet_flag = to_self_destruct
+	}
+	
+	allow = {
+	}
+
+	effect = {
+		remove_planet_flag = to_self_destruct
+		remove_modifier = self_destruction_inbound
+	}
+	
+	ai_weight = {
+		weight = 1000
 	}	
 }
