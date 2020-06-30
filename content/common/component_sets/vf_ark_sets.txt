@@ -91,42 +91,42 @@ component_set = {
 }
 
 component_set = {
-	key = "NOMAD_ALLOY_1"
+	key = "NOMAD_ALLOY_T1"
 
 	icon = "GFX_ship_part_vf_alloys_1"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_ALLOY_2"
+	key = "NOMAD_ALLOY_T2"
 
 	icon = "GFX_ship_part_vf_alloys_2"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_ALLOY_3"
+	key = "NOMAD_ALLOY_T3"
 
 	icon = "GFX_ship_part_vf_alloys_3"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_CG_1"
+	key = "NOMAD_CG_T1"
 
 	icon = "GFX_ship_part_vf_cgs_1"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_CG_2"
+	key = "NOMAD_CG_T2"
 
 	icon = "GFX_ship_part_vf_cgs_2"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_CG_3"
+	key = "NOMAD_CG_T3"
 
 	icon = "GFX_ship_part_vf_cgs_3"
 	icon_frame = 1	
@@ -147,56 +147,56 @@ component_set = {
 #}
 
 component_set = {
-	key = "NOMAD_UNITY_1"
+	key = "NOMAD_UNITY_T1"
 
 	icon = "GFX_ship_part_vf_unity_1"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_UNITY_2"
+	key = "NOMAD_UNITY_T2"
 
 	icon = "GFX_ship_part_vf_unity_2"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_UNITY_3"
+	key = "NOMAD_UNITY_T3"
 
 	icon = "GFX_ship_part_vf_unity_3"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_UNITY_SPI_2"
+	key = "NOMAD_UNITY_TSPI_2"
 
 	icon = "GFX_ship_part_vf_unity_spi_2"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_UNITY_SPI_3"
+	key = "NOMAD_UNITY_TSPI_3"
 
 	icon = "GFX_ship_part_vf_unity_spi_3"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_UNITY_HIVE_1"
+	key = "NOMAD_UNITY_THIVE_1"
 
 	icon = "GFX_ship_part_vf_unity_hive_1"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_UNITY_HIVE_2"
+	key = "NOMAD_UNITY_THIVE_2"
 
 	icon = "GFX_ship_part_vf_unity_hive_2"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_UNITY_HIVE_3"
+	key = "NOMAD_UNITY_THIVE_3"
 
 	icon = "GFX_ship_part_vf_unity_hive_3"
 	icon_frame = 1	

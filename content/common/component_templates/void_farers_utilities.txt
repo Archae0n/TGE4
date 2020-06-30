@@ -471,7 +471,7 @@ utility_component_template = {
 ######################
 
 utility_component_template = {
-	key = "NOMAD_ALLOY_1"
+	key = "NOMAD_ALLOY_T1"
 	size = aux
 	icon = "GFX_ship_part_vf_alloys_1"
 	icon_frame = 1
@@ -492,7 +492,7 @@ utility_component_template = {
 	}
 	
 	prerequisites = { tech_basic_industry }
-	component_set = "NOMAD_ALLOY_1"
+	component_set = "NOMAD_ALLOY_T1"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -501,7 +501,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_ALLOY_2"
+	key = "NOMAD_ALLOY_T2"
 	size = aux
 	icon = "GFX_ship_part_vf_alloys_2"
 	icon_frame = 1
@@ -524,7 +524,7 @@ utility_component_template = {
 	}
 	
 	prerequisites = { tech_alloys_1 }
-	component_set = "NOMAD_ALLOY_2"
+	component_set = "NOMAD_ALLOY_T2"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -533,7 +533,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_ALLOY_3"
+	key = "NOMAD_ALLOY_T3"
 	size = aux
 	icon = "GFX_ship_part_vf_alloys_3"
 	icon_frame = 1
@@ -556,7 +556,7 @@ utility_component_template = {
 	}
 	
 	prerequisites = { tech_alloys_2 }
-	component_set = "NOMAD_ALLOY_3"
+	component_set = "NOMAD_ALLOY_T3"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -565,7 +565,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_CG_1"
+	key = "NOMAD_CG_T1"
 	size = aux
 	icon = "GFX_ship_part_vf_cgs_1"
 	icon_frame = 1
@@ -585,7 +585,7 @@ utility_component_template = {
 	}
 	
 	prerequisites = { tech_basic_industry }
-	component_set = "NOMAD_CG_1"
+	component_set = "NOMAD_CG_T1"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -594,7 +594,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_CG_2"
+	key = "NOMAD_CG_T2"
 	size = aux
 	icon = "GFX_ship_part_vf_cgs_2"
 	icon_frame = 1
@@ -616,7 +616,7 @@ utility_component_template = {
 	}
 	
 	prerequisites = { tech_luxuries_1 }
-	component_set = "NOMAD_CG_2"
+	component_set = "NOMAD_CG_T2"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -625,7 +625,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_CG_3"
+	key = "NOMAD_CG_T3"
 	size = aux
 	icon = "GFX_ship_part_vf_cgs_3"
 	icon_frame = 1
@@ -647,7 +647,7 @@ utility_component_template = {
 	}
 	
 	prerequisites = { tech_luxuries_1 }
-	component_set = "NOMAD_CG_3"
+	component_set = "NOMAD_CG_T3"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -657,7 +657,7 @@ utility_component_template = {
 
 #NORMAL EMPIRE UNITY
 utility_component_template = {
-	key = "NOMAD_UNITY_1"
+	key = "NOMAD_UNITY_T1"
 	size = aux
 	icon = "GFX_ship_part_vf_unity_1"
 	icon_frame = 1
@@ -679,7 +679,7 @@ utility_component_template = {
 	prerequisites = {
 		tech_cultural_heritage
 	}
-	component_set = "NOMAD_UNITY_1"
+	component_set = "NOMAD_UNITY_T1"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -688,7 +688,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_UNITY_2"
+	key = "NOMAD_UNITY_T2"
 	size = aux
 	icon = "GFX_ship_part_vf_unity_2"
 	icon_frame = 1
@@ -713,7 +713,7 @@ utility_component_template = {
 	prerequisites = {
 		tech_heritage_site
 	}
-	component_set = "NOMAD_UNITY_2"
+	component_set = "NOMAD_UNITY_T2"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -722,7 +722,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_UNITY_3"
+	key = "NOMAD_UNITY_T3"
 	size = aux
 	icon = "GFX_ship_part_vf_unity_3"
 	icon_frame = 1
@@ -747,7 +747,7 @@ utility_component_template = {
 	prerequisites = {
 		tech_hypercomms_forum
 	}
-	component_set = "NOMAD_UNITY_3"
+	component_set = "NOMAD_UNITY_T3"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -757,7 +757,7 @@ utility_component_template = {
 
 #SPI UNITY
 utility_component_template = {
-	key = "NOMAD_UNITY_SPI_2"
+	key = "NOMAD_UNITY_TSPI_2"
 	size = aux
 	icon = "GFX_ship_part_vf_unity_spi_2"
 	icon_frame = 1
@@ -782,7 +782,7 @@ utility_component_template = {
 	prerequisites = {
 		tech_holographic_rituals
 	}
-	component_set = "NOMAD_UNITY_SPI_2"
+	component_set = "NOMAD_UNITY_TSPI_2"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -791,7 +791,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_UNITY_SPI_3"
+	key = "NOMAD_UNITY_TSPI_3"
 	size = aux
 	icon = "GFX_ship_part_vf_unity_spi_3"
 	icon_frame = 1
@@ -816,7 +816,7 @@ utility_component_template = {
 	prerequisites = {
 		tech_consecration_fields
 	}
-	component_set = "NOMAD_UNITY_SPI_3"
+	component_set = "NOMAD_UNITY_TSPI_3"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -825,7 +825,7 @@ utility_component_template = {
 }
 #HIVE UNITY
 utility_component_template = {
-	key = "NOMAD_UNITY_HIVE_1"
+	key = "NOMAD_UNITY_THIVE_1"
 	size = aux
 	icon = "GFX_ship_part_vf_unity_hive_1"
 	icon_frame = 1
@@ -847,7 +847,7 @@ utility_component_template = {
 	prerequisites = {
 		tech_hive_node
 	}
-	component_set = "NOMAD_UNITY_HIVE_1"
+	component_set = "NOMAD_UNITY_THIVE_1"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -856,7 +856,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_UNITY_HIVE_2"
+	key = "NOMAD_UNITY_THIVE_2"
 	size = aux
 	icon = "GFX_ship_part_vf_unity_hive_2"
 	icon_frame = 1
@@ -881,7 +881,7 @@ utility_component_template = {
 	prerequisites = {
 		tech_hive_cluster		
 	}
-	component_set = "NOMAD_UNITY_HIVE_2"
+	component_set = "NOMAD_UNITY_THIVE_2"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
@@ -890,7 +890,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "NOMAD_UNITY_HIVE_3"
+	key = "NOMAD_UNITY_THIVE_3"
 	size = aux
 	icon = "GFX_ship_part_vf_unity_hive_3"
 	icon_frame = 1
@@ -915,7 +915,7 @@ utility_component_template = {
 	prerequisites = {
 		tech_hive_confluence			
 	}
-	component_set = "NOMAD_UNITY_HIVE_3"
+	component_set = "NOMAD_UNITY_THIVE_3"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
 	ai_weight = {
