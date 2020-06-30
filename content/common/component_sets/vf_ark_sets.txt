@@ -168,35 +168,35 @@ component_set = {
 }
 
 component_set = {
-	key = "NOMAD_UNITY_TSPI_2"
+	key = "NOMAD_UNITY_SPI_2"
 
 	icon = "GFX_ship_part_vf_unity_spi_2"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_UNITY_TSPI_3"
+	key = "NOMAD_UNITY_SPI_3"
 
 	icon = "GFX_ship_part_vf_unity_spi_3"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_UNITY_THIVE_1"
+	key = "NOMAD_UNITY_HIVE_1"
 
 	icon = "GFX_ship_part_vf_unity_hive_1"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_UNITY_THIVE_2"
+	key = "NOMAD_UNITY_HIVE_2"
 
 	icon = "GFX_ship_part_vf_unity_hive_2"
 	icon_frame = 1	
 }
 
 component_set = {
-	key = "NOMAD_UNITY_THIVE_3"
+	key = "NOMAD_UNITY_HIVE_3"
 
 	icon = "GFX_ship_part_vf_unity_hive_3"
 	icon_frame = 1	
