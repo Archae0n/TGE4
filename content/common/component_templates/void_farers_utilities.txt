@@ -248,7 +248,7 @@ utility_component_template = {
 		}
 	}
 	
-	prerequisites = { tech_basic_science_lab_2 }
+	prerequisites = { tech_basic_science_lab_3 }
 	component_set = "NOMAD_SCIENCE_T3"
 	size_restriction = { capital_ark_ship support_ark_ship }
 	
@@ -381,7 +381,7 @@ utility_component_template = {
 utility_component_template = {
 	key = "NOMAD_ENERGY_UPGRADE"
 	size = aux
-	icon = "GFX_ship_part_vf_energy_up"
+	icon = "GFX_ship_part_vf_energy_upgrade"
 	icon_frame = 1
 	power = -20
 	upgrades_to = "NOMAD_ENERGY_UPGRADE_2"
@@ -411,7 +411,7 @@ utility_component_template = {
 utility_component_template = {
 	key = "NOMAD_ENERGY_UPGRADE_2"
 	size = aux
-	icon = "GFX_ship_part_vf_energy_up_2"
+	icon = "GFX_ship_part_vf_energy_upgrade_2"
 	icon_frame = 1
 	power = -40
 	resources = {
@@ -938,8 +938,6 @@ utility_component_template = {
 			exotic_gases = 2
 		}
 		upkeep = {
-			food = 1
-			consumer_goods = 1
 			minerals = 10
 		}
 	}
@@ -968,8 +966,6 @@ utility_component_template = {
 			volatile_motes = 2
 		}
 		upkeep = {
-			food = 1
-			consumer_goods = 1
 			minerals = 10
 		}
 	}
@@ -998,8 +994,6 @@ utility_component_template = {
 			rare_crystals = 2
 		}
 		upkeep = {
-			food = 1
-			consumer_goods = 1
 			minerals = 10
 		}
 	}
