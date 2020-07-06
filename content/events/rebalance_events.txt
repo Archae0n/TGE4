@@ -1,0 +1,45 @@
+namespace = rebalance
+
+country_event = {
+    	id = rebalance.100
+	title = "rebalance.title"
+	desc = "rebalance.100.desc"
+	picture = GFX_evt_civil_action
+	show_sound = event_default
+		
+	is_triggered_only = yes
+
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_modifier = pm_new_frontier
+				habitable_structure = yes
+			}
+			remove_modifier = pm_new_frontier
+		}
+
+		while = {
+			count = 102
+
+			random_owned_planet = {
+				limit = {
+					count_pops = {
+						count >= 5
+						limit = {
+							is_robot_pop = no
+						}
+					}
+				}
+				random_pop = {
+					limit = {
+						OR = {
+							is_sapient = yes
+							has_trait = "trait_mechanical"
+						}
+					}
+					kill_pop = yes
+				}
+			}
+		}
+	}
+}
