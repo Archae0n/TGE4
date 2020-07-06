@@ -35,6 +35,9 @@ chill_with_valgiess_desc:0 "While we aren't able to restore the planet to its or
 self_destruction_inbound:0 "Imminent Planetary Eruption"
 self_destruction_inbound_desc:0 "§RWARNING: THE PLANET IS ABOUT TO EXPLODE§!"
 
+rebalance.title:0 "Rebalance Event Executed"
+rebalance.100.desc:0 "Rebalance Event n°100 has been executed: 102 pops removed, New Frontier modifier removed from habitats of all kinds (including ring worlds and archives)."
+
 green_propaganda:0 "Ecocentric Awareness"
 fanatic_green_propaganda:0 "Radical Ecocentrism"
 
