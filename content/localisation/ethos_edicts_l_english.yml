@@ -1,0 +1,61 @@
+﻿l_english:
+
+edict_authoritarian_propaganda:0 "authoritarian propaganda" 
+
+edict_libertarian_propaganda:0 "libertarian propaganda"
+
+edict_materialist_propaganda:0 "materialist propaganda" 
+
+edict_spiritualist_propaganda:0 "spiritualist propaganda" 
+
+edict_militarist_propaganda:0 "militarist propaganda" 
+
+edict_pacifist_propaganda:0 "pacifist propaganda" 
+	
+edict_xenophile_propaganda:0 "xenophile propaganda" 
+	
+edict_xenophobe_propaganda:0 "xenophobe propaganda" 
+	
+edict_industrialist_propaganda:0 "industrialist propaganda" 
+	
+edict_ecologist_propaganda:0 "ecologist propaganda" 
+
+edict_collectivist_propaganda:0 "collectivist propaganda" 
+
+edict_individualist_propaganda:0 "individualist propaganda" 
+
+edict_elitist_propaganda:0 "elitist propaganda" 
+
+edict_egalitarian_propaganda:0 "egalitarian propaganda" 
+
+edict_xenophile_suppression:0 "xenophile suppression"
+
+edict_authoritarian_propaganda_desc:0 "It's authoritarian propaganda" 
+
+edict_libertarian_propaganda_desc:0 "It's libertarian propaganda"
+
+edict_materialist_propaganda_desc:0 "It's materialist propaganda" 
+
+edict_spiritualist_propaganda_desc:0 "It's spiritualist propaganda" 
+
+edict_militarist_propaganda_desc:0 "It's militarist propaganda" 
+
+edict_pacifist_propaganda_desc:0 "It's pacifist propaganda" 
+	
+edict_xenophile_propaganda_desc:0 "It's xenophile propaganda" 
+	
+edict_xenophobe_propaganda_desc:0 "It's xenophobe propaganda" 
+	
+edict_industrialist_propaganda_desc:0 "It's industrialist propaganda" 
+	
+edict_ecologist_propaganda_desc:0 "It's ecologist propaganda" 
+
+edict_collectivist_propaganda_desc:0 "It's collectivist propaganda" 
+
+edict_individualist_propaganda_desc:0 "It's individualist propaganda" 
+
+edict_elitist_propaganda_desc:0 "It's elitist propaganda" 
+
+edict_egalitarian_propaganda_desc:0 "It's egalitarian propaganda" 
+
+edict_xenophile_suppression_desc:0 "Suppress xenophilia"
