@@ -2,7 +2,7 @@
 
 authoritarian_propaganda = {
 	length = @EdictPerpetual
-	resources = { cost = { influence = 100 } }
+	resources = { cost = { influence = 10 } }
 	edict_cap_usage = 0
 	
 	modifier = {
@@ -29,7 +29,7 @@ authoritarian_propaganda = {
 
 libertarian_propaganda = {
 	length = @EdictPerpetual
-	resources = { cost = { influence = 100 } }
+	resources = { cost = { influence = 10 } }
 	
 	modifier = {
 		pop_ethic_egalitarian_attraction_mult = 7.5
@@ -55,7 +55,7 @@ libertarian_propaganda = {
 
 materialist_propaganda = {
 	length = @EdictPerpetual
-	resources = { cost = { influence = 100 } }
+	resources = { cost = { influence = 10 } }
 	
 	modifier = {
 		pop_ethic_materialist_attraction_mult = 7.5
@@ -81,7 +81,7 @@ materialist_propaganda = {
 
 spiritualist_propaganda = {
 	length = @EdictPerpetual
-	resources = { cost = { influence = 100 } }
+	resources = { cost = { influence = 10 } }
 	
 	modifier = {
 		pop_ethic_spiritualist_attraction_mult = 7.5
@@ -107,7 +107,7 @@ spiritualist_propaganda = {
 
 militarist_propaganda = {
 	length = @EdictPerpetual
-	resources = { cost = { influence = 100 } }
+	resources = { cost = { influence = 10 } }
 	
 	modifier = {
 		pop_ethic_militarist_attraction_mult = 7.5
@@ -133,7 +133,7 @@ militarist_propaganda = {
 
 pacifist_propaganda = {
 	length = @EdictPerpetual
-	resources = { cost = { influence = 100 } }
+	resources = { cost = { influence = 10 } }
 	
 	modifier = {
 		pop_ethic_pacifist_attraction_mult = 7.5
@@ -159,7 +159,7 @@ pacifist_propaganda = {
 
 xenophile_propaganda = {
 	length = @EdictPerpetual
-	resources = { cost = { influence = 100 } }
+	resources = { cost = { influence = 10 } }
 	
 	modifier = {
 		pop_ethic_xenophile_attraction_mult = 7.5
@@ -185,7 +185,7 @@ xenophile_propaganda = {
 
 xenophobe_propaganda = {
 	length = @EdictPerpetual
-	resources = { cost = { influence = 100 } }
+	resources = { cost = { influence = 10 } }
 	
 	modifier = {
 		pop_ethic_xenophobe_attraction_mult = 7.5
@@ -211,7 +211,7 @@ xenophobe_propaganda = {
 
 industrialist_propaganda = {
 	length = @EdictPerpetual
-	resources = { cost = { influence = 100 } }
+	resources = { cost = { influence = 10 } }
 	
 	modifier = {
 		pop_ethic_industrialist_attraction_mult = 7.5
@@ -237,7 +237,7 @@ industrialist_propaganda = {
 
 ecologist_propaganda = {
 	length = @EdictPerpetual
-	resources = { cost = { influence = 100 } }
+	resources = { cost = { influence = 10 } }
 	
 	modifier = {
 		pop_ethic_green_attraction_mult = 7.5
@@ -263,7 +263,7 @@ ecologist_propaganda = {
 
 collectivist_propaganda = {
 	length = @EdictPerpetual
-	resources = { cost = { influence = 100 } }
+	resources = { cost = { influence = 10 } }
 	
 	modifier = {
 		pop_ethic_socialism_attraction_mult = 7.5
@@ -290,7 +290,7 @@ collectivist_propaganda = {
 
 individualist_propaganda = {
 	length = @EdictPerpetual
-	resources = { cost = { influence = 100 } }
+	resources = { cost = { influence = 10 } }
 	
 	modifier = {
 		pop_ethic_capitalsim_attraction_mult = 7.5
@@ -316,7 +316,7 @@ individualist_propaganda = {
 
 elitist_propaganda = {
 	length = @EdictPerpetual
-	resources = { cost = { influence = 100 } }
+	resources = { cost = { influence = 10 } }
 	
 	modifier = {
 		pop_ethic_elitist_attraction_mult = 7.5
@@ -342,7 +342,7 @@ elitist_propaganda = {
 
 egalitarian_propaganda = {
 	length = @EdictPerpetual
-	resources = { cost = { influence = 100 } }
+	resources = { cost = { influence = 10 } }
 	
 	modifier = {
 		pop_ethic_pluralist_attraction_mult = 7.5
