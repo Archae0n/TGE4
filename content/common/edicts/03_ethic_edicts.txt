@@ -1,0 +1,393 @@
+@EdictPerpetual = -1
+
+authoritarian_propaganda = {
+	length = @EdictPerpetual
+	resources = { cost = { influence = 100 } }
+	edict_cap_usage = 0
+	
+	modifier = {
+		pop_ethic_authoritarian_attraction_mult = 7.5
+	}
+	
+	potential = {
+		owner = {
+			NOR = {
+				has_ethic = ethic_authoritarian
+				has_ethic = ethic_fanatic_authoritarian
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	
+	allow = {
+	}
+
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+libertarian_propaganda = {
+	length = @EdictPerpetual
+	resources = { cost = { influence = 100 } }
+	
+	modifier = {
+		pop_ethic_egalitarian_attraction_mult = 7.5
+	}
+	
+	potential = {
+		owner = {
+			NOR = {
+				has_ethic = ethic_egalitarian
+				has_ethic = ethic_fanatic_egalitarian
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	
+	allow = {
+	}
+
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+materialist_propaganda = {
+	length = @EdictPerpetual
+	resources = { cost = { influence = 100 } }
+	
+	modifier = {
+		pop_ethic_materialist_attraction_mult = 7.5
+	}
+	
+	potential = {
+		owner = {
+			NOR = {
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	
+	allow = {
+	}
+
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+spiritualist_propaganda = {
+	length = @EdictPerpetual
+	resources = { cost = { influence = 100 } }
+	
+	modifier = {
+		pop_ethic_spiritualist_attraction_mult = 7.5
+	}
+	
+	potential = {
+		owner = {
+			NOR = {
+				has_ethic = ethic_spiritualist
+				has_ethic = ethic_fanatic_spiritualist
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	
+	allow = {
+	}
+
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+militarist_propaganda = {
+	length = @EdictPerpetual
+	resources = { cost = { influence = 100 } }
+	
+	modifier = {
+		pop_ethic_militarist_attraction_mult = 7.5
+	}
+	
+	potential = {
+		owner = {
+			NOR = {
+				has_ethic = ethic_militarist
+				has_ethic = ethic_fanatic_militarist
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	
+	allow = {
+	}
+
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+pacifist_propaganda = {
+	length = @EdictPerpetual
+	resources = { cost = { influence = 100 } }
+	
+	modifier = {
+		pop_ethic_pacifist_attraction_mult = 7.5
+	}
+	
+	potential = {
+		owner = {
+			NOR = {
+				has_ethic = ethic_pacifist
+				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	
+	allow = {
+	}
+
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+xenophile_propaganda = {
+	length = @EdictPerpetual
+	resources = { cost = { influence = 100 } }
+	
+	modifier = {
+		pop_ethic_xenophile_attraction_mult = 7.5
+	}
+	
+	potential = {
+		owner = {
+			NOR = {
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	
+	allow = {
+	}
+
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+xenophobe_propaganda = {
+	length = @EdictPerpetual
+	resources = { cost = { influence = 100 } }
+	
+	modifier = {
+		pop_ethic_xenophobe_attraction_mult = 7.5
+	}
+	
+	potential = {
+		owner = {
+			NOR = {
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	
+	allow = {
+	}
+
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+industrialist_propaganda = {
+	length = @EdictPerpetual
+	resources = { cost = { influence = 100 } }
+	
+	modifier = {
+		pop_ethic_industrialist_attraction_mult = 7.5
+	}
+	
+	potential = {
+		owner = {
+			NOR = {
+				has_ethic = ethic_industrial
+				has_ethic = ethic_fanatic_industrial
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	
+	allow = {
+	}
+
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+ecologist_propaganda = {
+	length = @EdictPerpetual
+	resources = { cost = { influence = 100 } }
+	
+	modifier = {
+		pop_ethic_green_attraction_mult = 7.5
+	}
+	
+	potential = {
+		owner = {
+			NOR = {
+				has_ethic = ethic_green
+				has_ethic = ethic_fanatic_green
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	
+	allow = {
+	}
+
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+collectivist_propaganda = {
+	length = @EdictPerpetual
+	resources = { cost = { influence = 100 } }
+	
+	modifier = {
+		pop_ethic_socialism_attraction_mult = 7.5
+		pop_ethic_socialist_attraction_mult = 7.5
+	}
+	
+	potential = {
+		owner = {
+			NOR = {
+				has_ethic = ethic_socialism
+				has_ethic = ethic_fanatic_socialism
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	
+	allow = {
+	}
+
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+individualist_propaganda = {
+	length = @EdictPerpetual
+	resources = { cost = { influence = 100 } }
+	
+	modifier = {
+		pop_ethic_capitalsim_attraction_mult = 7.5
+	}
+	
+	potential = {
+		owner = {
+			NOR = {
+				has_ethic = ethic_capitalism
+				has_ethic = ethic_fanatic_capitalism
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	
+	allow = {
+	}
+
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+elitist_propaganda = {
+	length = @EdictPerpetual
+	resources = { cost = { influence = 100 } }
+	
+	modifier = {
+		pop_ethic_elitist_attraction_mult = 7.5
+	}
+	
+	potential = {
+		owner = {
+			NOR = {
+				has_ethic = ethic_elitist
+				has_ethic = ethic_fanatic_elitist
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	
+	allow = {
+	}
+
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+egalitarian_propaganda = {
+	length = @EdictPerpetual
+	resources = { cost = { influence = 100 } }
+	
+	modifier = {
+		pop_ethic_pluralist_attraction_mult = 7.5
+	}
+	
+	potential = {
+		owner = {
+			NOR = {
+				has_ethic = ethic_pluralist
+				has_ethic = ethic_fanatic_pluralist
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	
+	allow = {
+	}
+
+	ai_weight = {
+		weight = 0
+	}	
+}
+
+xenophile_suppression = {
+	length = @EdictPerpetual
+	resources = { cost = { influence = 5 } }
+	
+	modifier = {
+		pop_ethic_xenophile_attraction_mult = -0.8
+	}
+	
+	potential = {
+		owner = {
+			NOR = {
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+	
+	allow = {
+	}
+
+	ai_weight = {
+		weight = 0
+	}	
+}
