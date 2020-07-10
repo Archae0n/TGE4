@@ -14,6 +14,2961 @@
 @Titan_food_upkeep = 1.6
 @Titan_alloy_reduction = -0.68
 
+### HEAVY DREADS TOO MANY FUCKING SECTIONS REE
+### FUCK IT THEYRE TOO BIG TO GROW HULLS FOR GEE GEE
+### (WE IGNORE JUGGERNAUTS COZ JUGGS ARE MEMES)
+
+### EWAR CRUISER
+
+ship_section_template = {
+	key = "RS_EA_CRUISER_BOW_A1S2"
+	ship_size = rs_ea_cruiser
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "rs_ea_cruiser_bow_A1S2_entity"
+	icon = "GFX_ship_part_core_bow"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "PD_02"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_02"
+	}
+	
+	medium_utility_slots = 4
+
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+###########
+### MID ###
+###########
+
+ship_section_template = {
+	key = "RS_EA_CRUISER_MID_A2S2"
+	ship_size = rs_ea_cruiser
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = "rs_ea_cruiser_mid_A2S2_entity"
+	icon = "GFX_ship_part_core_mid"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		
+		locatorname = "small_gun_02"
+	}
+	
+	medium_utility_slots = 4
+	
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+#############
+### STERN ###
+#############
+
+ship_section_template = {
+	key = "RS_EA_CRUISER_STERN_M1"
+	ship_size = rs_ea_cruiser
+	fits_on_slot = stern
+	should_draw_components = yes
+	entity = "rs_ea_cruiser_stern_M1_entity"
+	icon = "GFX_ship_part_core_stern"
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_01"
+	}
+	
+	aux_utility_slots = 2
+		
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_EA_CRUISER_STERN_S2"
+	ship_size = rs_ea_cruiser
+	fits_on_slot = stern
+	should_draw_components = yes
+	entity = "rs_ea_cruiser_stern_S2_entity"
+	icon = "GFX_ship_part_core_stern"
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		
+		locatorname = "small_gun_02"
+	}
+	
+	aux_utility_slots = 2
+		
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+### DREADNOUGHT
+
+###########
+### BOW ###
+###########
+
+ship_section_template = {
+	key = "RS_DREADNOUGHT_LIVING_BOW_L1M1S2"
+	ship_size = rs_dreadnought
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "rs_dreadnought_bow_L1M1S2_entity"
+	icon = "GFX_ship_part_core_bow"
+	icon_frame = 1
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		
+		locatorname = "small_gun_02"
+	}
+	
+	large_utility_slots = 3
+	
+ 	resources = {
+		category = ship_sections
+		cost = {
+           food = @Battleship_cost_food
+        }
+        upkeep = {
+			food = @Battleship_food_upkeep
+			alloys = @Battleship_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_DREADNOUGHT_LIVING_BOW_L2"
+	ship_size = rs_dreadnought
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "rs_dreadnought_bow_L2_entity"
+	icon = "GFX_ship_part_core_bow"
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		
+		locatorname = "large_gun_01"
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		
+		locatorname = "large_gun_02"
+	}
+	
+	large_utility_slots = 3
+	
+ 	resources = {
+		category = ship_sections
+		cost = {
+           food = @Battleship_cost_food
+        }
+        upkeep = {
+			food = @Battleship_food_upkeep
+			alloys = @Battleship_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_DREADNOUGHT_LIVING_BOW_M1S2SHB"
+	ship_size = rs_dreadnought
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "rs_dreadnought_bow_M1S2SHB_entity"
+	icon = "GFX_ship_part_core_bow"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	ai_weight = {
+		modifier = {
+			factor = 10.0
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}		
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_02"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	
+	large_utility_slots = 3
+	
+ 	resources = {
+		category = ship_sections
+		cost = {
+           food = @Battleship_cost_food
+        }
+        upkeep = {
+			food = @Battleship_food_upkeep
+			alloys = @Battleship_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_DREADNOUGHT_LIVING_BOW_XL1"
+	ship_size = rs_dreadnought
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "rs_dreadnought_bow_XL1_entity"
+	icon = "GFX_ship_part_core_bow"
+	
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	ai_weight = {
+		modifier = {
+			factor = 10.0
+			NOT = { is_preferred_weapons = weapon_type_explosive }
+		}
+		modifier = {
+			factor = 0.1
+			is_preferred_weapons = weapon_type_explosive
+		}		
+	}
+	
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+			template = "invisible_extra_large_fixed"
+		
+		locatorname = "xl_gun_01"
+	}
+	
+	large_utility_slots = 3
+	
+ 	resources = {
+		category = ship_sections
+		cost = {
+           food = @Battleship_cost_food
+        }
+        upkeep = {
+			food = @Battleship_food_upkeep
+			alloys = @Battleship_alloy_reduction
+        }
+	}
+}
+
+############
+### MID1 ###
+############
+
+ship_section_template = {
+	key = "RS_DREADNOUGHT_LIVING_MID1_L2M2"
+	ship_size = rs_dreadnought
+	fits_on_slot = mid1
+	should_draw_components = yes
+	entity = "rs_dreadnought_mid1_L2M2_entity"
+	icon = "GFX_ship_part_core_mid"
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		
+		locatorname = "large_gun_02"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_02"
+	}
+	
+	large_utility_slots = 3
+	
+ 	resources = {
+		category = ship_sections
+		cost = {
+           food = @Battleship_cost_food
+        }
+        upkeep = {
+			food = @Battleship_food_upkeep
+			alloys = @Battleship_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_DREADNOUGHT_LIVING_MID1_L3"
+	ship_size = rs_dreadnought
+	fits_on_slot = mid1
+	should_draw_components = yes
+	entity = "rs_dreadnought_mid1_L3_entity"
+	icon = "GFX_ship_part_core_mid"
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		
+		locatorname = "large_gun_01"
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		
+		locatorname = "large_gun_02"
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_03"
+		template = "large_turret"
+		
+		locatorname = "large_gun_03"
+	}
+	
+	large_utility_slots = 3
+	
+ 	resources = {
+		category = ship_sections
+		cost = {
+           food = @Battleship_cost_food
+        }
+        upkeep = {
+			food = @Battleship_food_upkeep
+			alloys = @Battleship_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_DREADNOUGHT_LIVING_MID1_M4SHB"
+	ship_size = rs_dreadnought
+	fits_on_slot = mid1
+	should_draw_components = yes
+	entity = "rs_dreadnought_mid1_M4SHB_entity"
+	icon = "GFX_ship_part_core_mid"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	ai_weight = {
+		modifier = {
+			factor = 10.0
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}		
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_02"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_03"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_04"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_04"
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	
+	large_utility_slots = 3
+	
+ 	resources = {
+		category = ship_sections
+		cost = {
+           food = @Battleship_cost_food
+        }
+        upkeep = {
+			food = @Battleship_food_upkeep
+			alloys = @Battleship_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_DREADNOUGHT_LIVING_MID1_S4LHB"
+	ship_size = rs_dreadnought
+	fits_on_slot = mid1
+	should_draw_components = yes
+	entity = "rs_dreadnought_mid1_S4LHB_entity"
+	icon = "GFX_ship_part_core_mid"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		
+		locatorname = "small_gun_02"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_03"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_04"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_04"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"
+		
+		rotation = -90
+		locatorname = "strike_craft_locator_02"
+	}	
+
+	large_utility_slots = 3
+	
+ 	resources = {
+		category = ship_sections
+		cost = {
+           food = @Battleship_cost_food
+        }
+        upkeep = {
+			food = @Battleship_food_upkeep
+			alloys = @Battleship_alloy_reduction
+        }
+	}
+}
+
+############
+### MID2 ###
+############
+
+ship_section_template = {
+	key = "RS_DREADNOUGHT_LIVING_MID2_L2M2"
+	ship_size = rs_dreadnought
+	fits_on_slot = mid2
+	should_draw_components = yes
+	entity = "rs_dreadnought_mid2_L2M2_entity"
+	icon = "GFX_ship_part_core_mid"
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		
+		locatorname = "large_gun_02"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_02"
+	}
+	
+	large_utility_slots = 3
+	
+ 	resources = {
+		category = ship_sections
+		cost = {
+           food = @Battleship_cost_food
+        }
+        upkeep = {
+			food = @Battleship_food_upkeep
+			alloys = @Battleship_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_DREADNOUGHT_LIVING_MID2_L3"
+	ship_size = rs_dreadnought
+	fits_on_slot = mid2
+	should_draw_components = yes
+	entity = "rs_dreadnought_mid2_L3_entity"
+	icon = "GFX_ship_part_core_mid"
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		
+		locatorname = "large_gun_01"
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		
+		locatorname = "large_gun_02"
+	}
+	
+	component_slot = {
+		name = "LARGE_GUN_03"
+		template = "large_turret"
+		
+		locatorname = "large_gun_03"
+	}
+	
+	large_utility_slots = 3
+	
+ 	resources = {
+		category = ship_sections
+		cost = {
+           food = @Battleship_cost_food
+        }
+        upkeep = {
+			food = @Battleship_food_upkeep
+			alloys = @Battleship_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_DREADNOUGHT_LIVING_MID2_M4SHB"
+	ship_size = rs_dreadnought
+	fits_on_slot = mid2
+	should_draw_components = yes
+	entity = "rs_dreadnought_mid2_M4SHB_entity"
+	icon = "GFX_ship_part_core_mid"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	ai_weight = {
+		modifier = {
+			factor = 10.0
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}		
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_02"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_03"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_04"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_04"
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	
+	large_utility_slots = 3
+	
+ 	resources = {
+		category = ship_sections
+		cost = {
+           food = @Battleship_cost_food
+        }
+        upkeep = {
+			food = @Battleship_food_upkeep
+			alloys = @Battleship_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_DREADNOUGHT_LIVING_MID2_S4LHB"
+	ship_size = rs_dreadnought
+	fits_on_slot = mid2
+	should_draw_components = yes
+	entity = "rs_dreadnought_mid2_S4LHB_entity"
+	icon = "GFX_ship_part_core_mid"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		
+		locatorname = "small_gun_02"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_03"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_04"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_04"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"
+		
+		rotation = -90
+		locatorname = "strike_craft_locator_02"
+	}	
+
+	large_utility_slots = 3
+	
+ 	resources = {
+		category = ship_sections
+		cost = {
+           food = @Battleship_cost_food
+        }
+        upkeep = {
+			food = @Battleship_food_upkeep
+			alloys = @Battleship_alloy_reduction
+        }
+	}
+}
+
+#############
+### STERN ###
+#############
+
+ship_section_template = {
+	key = "RS_DREADNOUGHT_LIVING_STERN_L1"
+	ship_size = rs_dreadnought
+	fits_on_slot = stern
+	should_draw_components = yes
+	entity = "rs_dreadnought_stern_L1_entity"
+	icon = "GFX_ship_part_core_stern"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		
+		locatorname = "large_gun_01"
+	}
+	
+	aux_utility_slots = 2
+	
+ 	resources = {
+		category = ship_sections
+		cost = {
+           food = @Battleship_cost_food
+        }
+        upkeep = {
+			food = @Battleship_food_upkeep
+			alloys = @Battleship_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_DREADNOUGHT_LIVING_STERN_M2"
+	ship_size = rs_dreadnought
+	fits_on_slot = stern
+	should_draw_components = yes
+	entity = "rs_dreadnought_stern_M2_entity"
+	icon = "GFX_ship_part_core_stern"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_01"
+				
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_02"
+	}
+	
+	aux_utility_slots = 2
+	
+ 	resources = {
+		category = ship_sections
+		cost = {
+           food = @Battleship_cost_food
+        }
+        upkeep = {
+			food = @Battleship_food_upkeep
+			alloys = @Battleship_alloy_reduction
+        }
+	}
+}
+
+### BATTLECRUISER
+
+###########
+### BOW ###
+###########
+
+ship_section_template = {
+	key = "RS_BATTLECRUISER_LIVING_BOW_L1"
+	ship_size = rs_battlecruiser
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "rs_battlecruiser_bow_L1_entity"
+	icon = "GFX_ship_part_core_bow"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}
+	
+	medium_utility_slots = 4
+	
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_BATTLECRUISER_LIVING_BOW_M1S2"
+	ship_size = rs_battlecruiser
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "rs_battlecruiser_bow_M1S2_entity"
+	icon = "GFX_ship_part_core_bow"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	ai_weight = {
+		modifier = {
+			factor = 10.0
+			is_preferred_weapons = weapon_type_explosive
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_explosive }
+		}		
+	}
+	
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "small_gun_02"
+	}
+	
+	medium_utility_slots = 4
+	
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_BATTLECRUISER_LIVING_BOW_M2"
+	ship_size = rs_battlecruiser
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "rs_battlecruiser_bow_M2_entity"
+	icon = "GFX_ship_part_core_bow"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		locatorname = "medium_gun_02"
+	}
+	
+	medium_utility_slots = 4
+	
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_BATTLECRUISER_LIVING_BOW_XL1"
+	ship_size = rs_battlecruiser
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "rs_battlecruiser_bow_XL1_entity"
+	icon = "GFX_ship_part_core_bow"
+
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	ai_weight = {
+		modifier = {
+			factor = 10.0
+			NOT = { is_preferred_weapons = weapon_type_explosive }
+		}
+		modifier = {
+			factor = 0.1
+			is_preferred_weapons = weapon_type_explosive
+		}		
+	}
+	
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "invisible_extra_large_fixed"
+		locatorname = "xl_gun_01"
+	}
+	
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+############
+### MID1 ###
+############
+
+ship_section_template = {
+	key = "RS_BATTLECRUISER_LIVING_MID1_S2HB"
+	ship_size = rs_battlecruiser
+	fits_on_slot = mid1
+	should_draw_components = yes
+	entity = "rs_battlecruiser_mid1_S2HB_entity"
+	icon = "GFX_ship_part_core_mid"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	ai_weight = {
+		modifier = {
+			factor = 10.0
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}		
+	}
+
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		locatorname = "small_gun_01"
+	}
+
+	component_slot = {
+		name = "PD_02"
+		template = "point_defence_turret"
+		locatorname = "small_gun_02"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	
+	medium_utility_slots = 4
+	
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_BATTLECRUISER_LIVING_MID1_L1M1"
+	ship_size = rs_battlecruiser
+	fits_on_slot = mid1
+	should_draw_components = yes
+	entity = "rs_battlecruiser_mid1_L1M1_entity"
+	icon = "GFX_ship_part_core_mid"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		locatorname = "medium_gun_01"
+	}
+	
+	medium_utility_slots = 4
+	
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_BATTLECRUISER_LIVING_MID1_M3"
+	ship_size = rs_battlecruiser
+	fits_on_slot = mid1
+	should_draw_components = yes
+	entity = "rs_battlecruiser_mid1_M3_entity"
+	icon = "GFX_ship_part_core_mid"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_02"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_03"
+	}
+	
+	medium_utility_slots = 4
+	
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_BATTLECRUISER_LIVING_MID1_M2S2"
+	ship_size = rs_battlecruiser
+	fits_on_slot = mid1
+	should_draw_components = yes
+	entity = "rs_battlecruiser_mid1_M2S2_entity"
+	icon = "GFX_ship_part_core_mid"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	ai_weight = {
+		modifier = {
+			factor = 10.0
+			is_preferred_weapons = weapon_type_explosive
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_explosive }
+		}		
+	}
+	
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_02"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		
+		locatorname = "small_gun_02"
+	}
+	
+	medium_utility_slots = 4
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+############
+### MID2 ###
+############
+
+ship_section_template = {
+	key = "RS_BATTLECRUISER_LIVING_MID2_S2HB"
+	ship_size = rs_battlecruiser
+	fits_on_slot = mid2
+	should_draw_components = yes
+	entity = "rs_battlecruiser_mid2_S2HB_entity"
+	icon = "GFX_ship_part_core_mid"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	ai_weight = {
+		modifier = {
+			factor = 10.0
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}		
+	}
+
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_01"
+	}
+
+	component_slot = {
+		name = "PD_02"
+		template = "point_defence_turret"
+		
+		locatorname = "small_gun_02"
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	
+	medium_utility_slots = 4
+	
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_BATTLECRUISER_LIVING_MID2_L1M1"
+	ship_size = rs_battlecruiser
+	fits_on_slot = mid2
+	should_draw_components = yes
+	entity = "rs_battlecruiser_mid2_L1M1_entity"
+	icon = "GFX_ship_part_core_mid"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_01"
+	}
+	
+	medium_utility_slots = 4
+	
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_BATTLECRUISER_LIVING_MID2_M3"
+	ship_size = rs_battlecruiser
+	fits_on_slot = mid2
+	should_draw_components = yes
+	entity = "rs_battlecruiser_mid2_M3_entity"
+	icon = "GFX_ship_part_core_mid"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_02"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_03"
+	}
+	
+	medium_utility_slots = 4
+	
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_BATTLECRUISER_LIVING_MID2_M2S2"
+	ship_size = rs_battlecruiser
+	fits_on_slot = mid2
+	should_draw_components = yes
+	entity = "rs_battlecruiser_mid2_M2S2_entity"
+	icon = "GFX_ship_part_core_mid"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	ai_weight = {
+		modifier = {
+			factor = 10.0
+			is_preferred_weapons = weapon_type_explosive
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_explosive }
+		}		
+	}
+	
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_02"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		
+		locatorname = "small_gun_02"
+	}
+	
+	medium_utility_slots = 4
+	
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+#############
+### STERN ###
+#############
+
+ship_section_template = {
+	key = "RS_BATTLECRUISER_LIVING_STERN_M1"
+	ship_size = rs_battlecruiser
+	fits_on_slot = stern
+	should_draw_components = yes
+	entity = "rs_battlecruiser_stern_M1_entity"
+	icon = "GFX_ship_part_core_stern"
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		
+		locatorname = "medium_gun_01"
+	}
+	
+	aux_utility_slots = 2
+		
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_BATTLECRUISER_LIVING_STERN_S2"
+	ship_size = rs_battlecruiser
+	fits_on_slot = stern
+	should_draw_components = yes
+	entity = "rs_battlecruiser_stern_S2_entity"
+	icon = "GFX_ship_part_core_stern"
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		
+		locatorname = "small_gun_02"
+	}
+	
+	aux_utility_slots = 2
+	
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+### EAC TITANS
+
+@section_cost = 160 
+#BOW
+
+ship_section_template = {
+	key = "EAC_TITAN_LIVING_BOW_2XL"
+	ship_size = titan
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "titan_bow_entity"
+	icon = "GFX_ship_part_core_bow"
+
+	prerequisites = { tech_voidcraft_breakthrough }
+
+    component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "invisible_extra_large_fixed"
+		locatorname = "xl_gun_01"
+	}	
+	component_slot = {
+		name = "EXTRA_LARGE_02"
+		template = "invisible_extra_large_fixed"
+		locatorname = "xl_gun_01"
+	}	
+
+	large_utility_slots = 6
+	
+	resources = {
+		category = ship_sections
+		cost = {
+            food = @Titan_cost_food
+        }
+        upkeep = {
+			food = @Titan_food_upkeep
+        }
+	}
+}
+
+ship_section_template = {
+	key = "EAC_TITAN_LIVING_BOW_1XL_4G"
+	ship_size = titan
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "titan_bow_entity"
+	icon = "GFX_ship_part_core_bow"
+
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	ai_weight = {
+		modifier = {
+			factor = 10.0
+			NOT = { is_preferred_weapons = weapon_type_explosive }
+		}
+		modifier = {
+			factor = 0.1
+			is_preferred_weapons = weapon_type_explosive
+		}		
+	}
+	
+    component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "invisible_extra_large_fixed"
+		locatorname = "xl_gun_01"
+	}	
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "invisible_missile_fixed"
+		locatorname = "xl_gun_01"
+	}	
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "invisible_missile_fixed"
+		locatorname = "xl_gun_01"
+	}	
+	component_slot = {
+		name = "TORPEDO_03"
+		template = "invisible_missile_fixed"
+		locatorname = "xl_gun_01"
+	}	
+	component_slot = {
+		name = "TORPEDO_04"
+		template = "invisible_missile_fixed"
+		locatorname = "xl_gun_01"
+	}	
+
+	large_utility_slots = 6
+	
+	resources = {
+		category = ship_sections
+		cost = {
+            food = @Titan_cost_food
+        }
+        upkeep = {
+			food = @Titan_food_upkeep
+        }
+	}
+}
+
+#MID
+
+ship_section_template = {
+	key = "EAC_TITAN_LIVING_MID_1L_4G_4P"
+	ship_size = titan
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = "titan_mid_entity"
+	icon = "GFX_ship_part_core_mid"
+
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	ai_weight = {
+		modifier = {
+			factor = 20.0
+			is_preferred_weapons = weapon_type_explosive
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_explosive }
+		}		
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "invisible_missile_turret"
+		locatorname = "large_gun_01"
+	}	
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "invisible_missile_turret"
+		locatorname = "large_gun_02"
+	}	
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "invisible_missile_turret"
+		locatorname = "large_gun_02"
+	}
+	component_slot = {
+		name = "TORPEDO_03"
+		template = "invisible_missile_turret"
+		locatorname = "large_gun_03"
+	}
+
+	component_slot = {
+		name = "TORPEDO_04"
+		template = "invisible_missile_turret"
+		locatorname = "large_gun_03"
+	}
+
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "PD_02"
+		template = "point_defence_turret"
+		locatorname = "large_gun_02"
+	}	
+	component_slot = {
+		name = "PD_03"
+		template = "point_defence_turret"
+		locatorname = "large_gun_03"
+	}
+	component_slot = {
+		name = "PD_04"
+		template = "point_defence_turret"
+		locatorname = "large_gun_04"
+	}	
+	
+	large_utility_slots = 6
+	
+	resources = {
+		category = ship_sections
+		cost = {
+            food = @Titan_cost_food
+        }
+        upkeep = {
+			food = @Titan_food_upkeep
+        }
+	}
+}
+
+ship_section_template = {
+	key = "EAC_TITAN_LIVING_MID_6G_2S"
+	ship_size = titan
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = "titan_mid_entity"
+	icon = "GFX_ship_part_core_mid"
+
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	ai_weight = {
+		modifier = {
+			factor = 20.0
+			is_preferred_weapons = weapon_type_explosive
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_explosive }
+		}		
+	}
+
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
+		locatorname = "large_gun_01"
+	}	
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "medium_missile_turret"
+		locatorname = "large_gun_02"
+	}
+	component_slot = {
+		name = "TORPEDO_03"
+		template = "invisible_missile_turret"
+		locatorname = "large_gun_03"
+	}
+
+	component_slot = {
+		name = "TORPEDO_04"
+		template = "invisible_missile_turret"
+		locatorname = "large_gun_04"
+	}
+	component_slot = {
+		name = "TORPEDO_05"
+		template = "invisible_missile_turret"
+		locatorname = "large_gun_01"
+	}	
+	component_slot = {
+		name = "TORPEDO_06"
+		template = "invisible_missile_turret"
+		locatorname = "large_gun_02"
+	}
+
+	component_slot = {
+		name = "SMALL_01"
+		template = "small_turret"
+		locatorname = "large_gun_03"
+	}
+	component_slot = {
+		name = "SMALL_02"
+		template = "small_turret"
+		locatorname = "large_gun_04"
+	}	
+	
+	large_utility_slots = 6
+	
+	resources = {
+		category = ship_sections
+		cost = {
+            food = @Titan_cost_food
+        }
+        upkeep = {
+			food = @Titan_food_upkeep
+        }
+	}
+}
+
+ship_section_template = {
+	key = "EAC_TITAN_LIVING_MID_2L_2M_4S"
+	ship_size = titan
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = "titan_mid_entity"
+	icon = "GFX_ship_part_core_mid"
+
+
+	prerequisites = { tech_voidcraft_breakthrough }
+	ai_weight = {
+		modifier = {
+			factor = 10.0
+			is_preferred_weapons = weapon_type_kinetic
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_kinetic }
+		}		
+	}
+
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}	
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		locatorname = "large_gun_02"
+	}	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		locatorname = "large_gun_03"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		locatorname = "large_gun_04"
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "invisible_small_turret"
+		locatorname = "large_gun_03"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "invisible_small_turret"
+		locatorname = "large_gun_03"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "invisible_small_turret"
+		locatorname = "large_gun_04"
+	}
+	component_slot = {
+		name = "SMALL_GUN_04"
+		template = "invisible_small_turret"
+		locatorname = "large_gun_04"
+	}
+	
+	large_utility_slots = 6
+	
+	resources = {
+		category = ship_sections
+		cost = {
+            food = @Titan_cost_food
+        }
+        upkeep = {
+			food = @Titan_food_upkeep
+        }
+	}
+}
+
+ship_section_template = {
+	key = "EAC_TITAN_LIVING_MID_2H_2M_2S_2P"
+	ship_size = titan
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = "titan_mid_entity"
+	icon = "GFX_ship_part_core_mid"
+
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		locatorname = "large_gun_01"
+	}	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		locatorname = "large_gun_02"
+	}	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "invisible_small_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "invisible_small_turret"
+		locatorname = "large_gun_02"
+	}
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		locatorname = "large_gun_03"
+	}
+	component_slot = {
+		name = "PD_02"
+		template = "point_defence_turret"
+		locatorname = "large_gun_04"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		rotation = 45
+		locatorname = "large_gun_03"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"
+		rotation = -45
+		locatorname = "large_gun_04"
+	}	
+	
+	large_utility_slots = 6
+	
+	resources = {
+		category = ship_sections
+		cost = {
+            food = @Titan_cost_food
+        }
+        upkeep = {
+			food = @Titan_food_upkeep
+        }
+	}
+}
+
+#STERN
+
+ship_section_template = {
+	key = "EAC_TITAN_LIVING_STERN_2G_4P"
+	ship_size = titan
+	fits_on_slot = stern
+	should_draw_components = yes
+	entity = "titan_stern_entity"
+	icon = "GFX_ship_part_core_stern"
+	
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	ai_weight = {
+		modifier = {
+			factor = 20.0
+			is_preferred_weapons = weapon_type_explosive
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_explosive }
+		}		
+	}
+
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "medium_missile_turret"
+		locatorname = "large_gun_02"
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "invisible_point_defence_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "invisible_point_defence_turret"
+		locatorname = "large_gun_01"
+	}	
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "invisible_point_defence_turret"
+		locatorname = "large_gun_02"
+	}
+	component_slot = {
+		name = "SMALL_GUN_04"
+		template = "invisible_point_defence_turret"
+		locatorname = "large_gun_02"
+	}	
+	
+	aux_utility_slots = 3
+	
+	resources = {
+		category = ship_sections
+		cost = {
+            food = @Titan_cost_food
+        }
+        upkeep = {
+			food = @Titan_food_upkeep
+        }
+	}
+}
+
+ship_section_template = {
+	key = "EAC_TITAN_LIVING_STERN_8S"
+	ship_size = titan
+	fits_on_slot = stern
+	should_draw_components = yes
+	entity = "titan_stern_entity"
+	icon = "GFX_ship_part_core_stern"
+	
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "large_gun_02"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "invisible_small_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_04"
+		template = "invisible_small_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_05"
+		template = "invisible_small_turret"
+		locatorname = "large_gun_02"
+	}
+	component_slot = {
+		name = "SMALL_GUN_06"
+		template = "invisible_small_turret"
+		locatorname = "large_gun_02"
+	}	
+	component_slot = {
+		name = "SMALL_GUN_07"
+		template = "invisible_small_turret"
+		locatorname = "large_gun_02"
+	}
+	component_slot = {
+		name = "SMALL_GUN_08"
+		template = "invisible_small_turret"
+		locatorname = "large_gun_02"
+	}	
+	
+	aux_utility_slots = 3
+	
+	resources = {
+		category = ship_sections
+		cost = {
+            food = @Titan_cost_food
+        }
+        upkeep = {
+			food = @Titan_food_upkeep
+        }
+	}
+}
+
+ship_section_template = {
+	key = "EAC_TITAN_LIVING_BOW"
+	ship_size = titan
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "titan_bow_entity"
+	icon = "GFX_ship_part_core_bow"
+
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	ai_weight = {
+		modifier = {
+			factor = 20.0
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}
+	}
+	
+    component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		rotation = 45
+		locatorname = "xl_gun_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"
+		rotation = -45
+		locatorname = "xl_gun_01"
+	}	
+    component_slot = {
+		name = "STRIKE_CRAFT_03"
+		template = "large_strike_craft"
+		rotation = 22
+		locatorname = "xl_gun_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_04"
+		template = "large_strike_craft"
+		rotation = -22
+		locatorname = "xl_gun_01"
+	}	
+
+	large_utility_slots = 6
+	
+	resources = {
+		category = ship_sections
+		cost = {
+            food = @Titan_cost_food
+        }
+        upkeep = {
+			food = @Titan_food_upkeep
+        }
+	}
+}
+
+ship_section_template = {
+	key = "EAC_TITAN_LIVING_MID"
+	ship_size = titan
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = "titan_mid_entity"
+	icon = "GFX_ship_part_core_mid"
+
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	ai_weight = {
+		modifier = {
+			factor = 20.0
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}
+	}
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		rotation = 45
+		locatorname = "large_gun_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"
+		rotation = -45
+		locatorname = "large_gun_02"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_03"
+		template = "large_strike_craft"
+		rotation = -90
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_04"
+		template = "large_strike_craft"
+		rotation = 90
+		locatorname = "large_gun_02"
+	}
+
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "large_gun_02"
+	}
+
+
+	component_slot = {
+		name = "LARGE_GUN_03"
+		template = "point_defence_turret"
+		locatorname = "large_gun_03"
+	}
+	component_slot = {
+		name = "LARGE_GUN_04"
+		template = "point_defence_turret"
+		locatorname = "large_gun_04"
+	}	
+	
+	large_utility_slots = 6
+	
+	resources = {
+		category = ship_sections
+		cost = {
+            food = @Titan_cost_food
+        }
+        upkeep = {
+			food = @Titan_food_upkeep
+        }
+	}
+}
+
+#STERN
+
+ship_section_template = {
+	key = "EAC_TITAN_LIVING_STERN"
+	ship_size = titan
+	fits_on_slot = stern
+	should_draw_components = yes
+	entity = "titan_stern_entity"
+	icon = "GFX_ship_part_core_stern"
+	
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	ai_weight = {
+		modifier = {
+			factor = 20.0
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}
+	}
+
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "medium_missile_turret"
+		locatorname = "large_gun_02"
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "invisible_point_defence_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "invisible_point_defence_turret"
+		locatorname = "large_gun_02"
+	}	
+	
+	aux_utility_slots = 3
+	
+	resources = {
+		category = ship_sections
+		cost = {
+            food = @Titan_cost_food
+        }
+        upkeep = {
+			food = @Titan_food_upkeep
+        }
+	}
+}
+
+### EAC DESTROYER
+
+ship_section_template = {
+	key = "EAC_LIVING_DESTROYER_BOW_H1"
+	ship_size = destroyer
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "destroyer_bow_L1_entity"
+	icon = "GFX_ship_part_core_bow"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	ai_weight = {
+		modifier = {
+			factor = 20.0
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		rotation = 0
+		locatorname = "large_gun_01"
+	}	
+	
+	small_utility_slots = 6
+	aux_utility_slots = 1
+	
+ 	resources = {
+		category = ship_sections
+		cost = {
+            food = @section_cost_food
+        }
+        upkeep = {
+			food = @section_food_upkeep
+			alloys = @section_alloy_reduction
+        }
+	}
+}
+
+
+### EAC Missile Cruiser
+ship_section_template = {
+	key = "EAC_CRUISER_LIVING_BOW_G2"
+	ship_size = cruiser
+	fits_on_slot = bow
+	entity = "cruiser_bow_M2_entity"
+	icon = "GFX_ship_part_core_bow"
+
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	ai_weight = {
+		modifier = {
+			factor = 20.0
+			is_preferred_weapons = weapon_type_explosive
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_explosive }
+		}		
+	}
+	
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_02"
+	}
+	
+	medium_utility_slots = 4
+	
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "EAC_CRUISER_LIVING_MID_G3"
+	ship_size = cruiser
+	fits_on_slot = mid
+	entity = "cruiser_mid_M3_entity"
+	icon = "GFX_ship_part_core_mid"
+
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	ai_weight = {
+		modifier = {
+			factor = 20.0
+			is_preferred_weapons = weapon_type_explosive
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_explosive }
+		}		
+	}
+	
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_01"
+	}
+	
+	component_slot = {
+		name = "TORPEDO_02"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_02"
+	}
+	
+	component_slot = {
+		name = "TORPEDO_03"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_03"
+	}
+	
+	medium_utility_slots = 4
+	
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+### EAC CARRIER CRUISER
+ship_section_template = {
+	key = "EAC_CRUISER_LIVING_BOW_S1"
+	ship_size = cruiser
+	fits_on_slot = bow
+	entity = "cruiser_bow_L1_entity"
+	icon = "GFX_ship_part_core_bow"
+
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	ai_weight = {
+		modifier = {
+			factor = 20.0
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}		
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		locatorname = "large_gun_01"
+	}
+	
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		locatorname = "large_gun_01"
+	}
+	
+	medium_utility_slots = 4
+	
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "EAC_CRUISER_LIVING_MID_S2"
+	ship_size = cruiser
+	fits_on_slot = mid
+	entity = "cruiser_mid_S2HB_entity"
+	icon = "GFX_ship_part_core_mid"
+
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	ai_weight = {
+		modifier = {
+			factor = 20.0
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}		
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		rotation = -45
+		locatorname = "strike_craft_locator_01"
+	}
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"
+		rotation = 45
+		locatorname = "strike_craft_locator_01"
+	}
+	
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "PD_02"
+		template = "point_defence_turret"
+		locatorname = "small_gun_02"
+	}
+		
+	medium_utility_slots = 4
+	
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "EAC_CRUISER_LIVING_STERN_P2"
+	ship_size = cruiser
+	fits_on_slot = stern
+	entity = "cruiser_stern_S2_entity"
+	icon = "GFX_ship_part_core_stern"
+
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	ai_weight = {
+		modifier = {
+			factor = 20.0
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}		
+	}
+
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "point_defence_turret"
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "point_defence_turret"
+		locatorname = "small_gun_02"
+	}
+	
+	aux_utility_slots = 2
+	
+  	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+		upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+### EAC CORVETTE
+ship_section_template = {
+	key = "EAC_CORVETTE_LIVING_MID_M2P1"
+	ship_size = corvette
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = "corvette_S3_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	ai_weight = {
+		modifier = {
+			factor = 10.0
+			is_preferred_weapons = weapon_type_explosive
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { is_preferred_weapons = weapon_type_explosive }
+		}
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "point_defence_turret"
+		locatorname = "small_gun_01"
+	}
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
+		locatorname = "small_gun_02"
+	}
+	component_slot = {
+		name = "TORPED_02"
+		template = "medium_missile_turret"
+		locatorname = "small_gun_03"
+	}
+	
+	small_utility_slots = 3
+	aux_utility_slots = 1
+	
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = @section_cost
+		}
+	}
+}
+
+
+
+### Battlecarrier sections
+ship_section_template = {
+	key = "EAC_BATTLESHIP_LIVING_BOW_AC"
+	ship_size = battleship
+	fits_on_slot = bow
+	entity = "battleship_bow_M1S2SHB_entity"
+	icon = "GFX_ship_part_core_bow"
+
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "point_defence_turret"
+		locatorname = "medium_gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "point_defence_turret"
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "point_defence_turret"
+		locatorname = "small_gun_02"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"
+		rotation = -90
+		locatorname = "strike_craft_locator_01"
+	}
+
+	large_utility_slots = 4
+	
+	resources = {
+		category = ship_sections
+		cost = {
+            food = @Battleship_cost_food
+        }
+        upkeep = {
+			food = @Battleship_food_upkeep
+			alloys = @Battleship_alloy_reduction
+        }
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 70.0
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}		
+	}	
+}
+
+ship_section_template = {
+	key = "EAC_BATTLESHIP_LIVING_MID_AC"
+	ship_size = battleship
+	fits_on_slot = mid
+	entity = "battleship_mid_S4LHB_entity"
+	icon = "GFX_ship_part_core_mid"
+
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"
+		rotation = -90
+		locatorname = "strike_craft_locator_02"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_03"
+		template = "large_strike_craft"
+		rotation = 60
+		locatorname = "strike_craft_locator_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_04"
+		template = "large_strike_craft"
+		rotation = -60
+		locatorname = "strike_craft_locator_02"
+	}
+	# component_slot = {
+	# 	name = "SMALL_GUN_01"
+	# 	slot_size = small
+	# 	slot_type = weapon
+	# 	locatorname = "small_gun_01"
+	# }
+	
+	# component_slot = {
+	# 	name = "SMALL_GUN_02"
+	# 	slot_size = small
+	# 	slot_type = weapon
+	# 	locatorname = "small_gun_02"
+	# }
+
+	component_slot = {
+		name = "STRIKE_CRAFT_05"
+		template = "large_strike_craft"
+		rotation = 120
+		locatorname = "strike_craft_locator_01"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_06"
+		template = "large_strike_craft"
+		rotation = -120
+		locatorname = "strike_craft_locator_02"
+	}
+
+	large_utility_slots = 6
+	
+	resources = {
+		category = ship_sections
+		cost = {
+            food = @Battleship_cost_food
+        }
+        upkeep = {
+			food = @Battleship_food_upkeep
+			alloys = @Battleship_alloy_reduction
+        }
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 70.0
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}		
+	}	
+}
+
+ship_section_template = {
+	key = "EAC_BATTLESHIP_LIVING_STERN_AC"
+	ship_size = battleship
+	fits_on_slot = stern
+	entity = "battleship_stern_M2_entity"
+	icon = "GFX_ship_part_core_stern"
+
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "point_defence_turret"
+		locatorname = "medium_gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "point_defence_turret"
+		locatorname = "medium_gun_02"
+	}	
+
+	large_utility_slots = 2
+	aux_utility_slots = 2
+	
+	resources = {
+		category = ship_sections
+		cost = {
+            food = @Battleship_cost_food
+        }
+        upkeep = {
+			food = @Battleship_food_upkeep
+			alloys = @Battleship_alloy_reduction
+        }
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 10.0
+			is_preferred_weapons = weapon_type_strike_craft
+		}
+		modifier = {
+			factor = 0.1
+			NOT = { is_preferred_weapons = weapon_type_strike_craft }
+		}		
+	}	
+}
+
+
+
+
+
+######################
+
+### Support Cruiser
+
+###########
+### BOW ###
+###########
+
+ship_section_template = {
+	key = "RS_SUPPORT_CRUISER_BOW_LIVING_A1S2"
+	ship_size = rs_support_cruiser
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "rs_support_cruiser_bow_A1S2_entity"
+	icon = "GFX_ship_part_core_bow"
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "point_defence_turret"
+		locatorname = "small_gun_01"
+	}
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "point_defence_turret"
+		locatorname = "small_gun_02"
+	}
+	
+	medium_utility_slots = 4
+	
+	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+        upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+###########
+### MID ###
+###########
+
+ship_section_template = {
+	key = "RS_SUPPORT_CRUISER_MID_S2RDB"
+	ship_size = rs_support_cruiser
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = "rs_support_cruiser_mid_S2RDB_entity"
+	icon = "GFX_ship_part_core_mid"
+	prerequisites = { tech_voidcraft_breakthrough }
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "small_gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "small_gun_02"
+	}
+	
+	medium_utility_slots = 4
+	
+	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+        upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+#############
+### STERN ###
+#############
+
+ship_section_template = {
+	key = "RS_SUPPORT_CRUISER_STERN_M1"
+	ship_size = rs_support_cruiser
+	fits_on_slot = stern
+	should_draw_components = yes
+	entity = "rs_support_cruiser_stern_M1_entity"
+	icon = "GFX_ship_part_core_stern"
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		locatorname = "medium_gun_01"
+	}
+	
+	aux_utility_slots = 2
+	
+	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+        upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+ship_section_template = {
+	key = "RS_SUPPORT_CRUISER_LIVING_STERN_S2"
+	ship_size = rs_support_cruiser
+	fits_on_slot = stern
+	should_draw_components = yes
+	entity = "rs_support_cruiser_stern_S2_entity"
+	icon = "GFX_ship_part_core_stern"
+	prerequisites = { tech_voidcraft_breakthrough }
+
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "small_gun_01"
+	}	
+	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "small_gun_02"
+	}
+	
+	aux_utility_slots = 2
+	
+	resources = {
+		category = ship_sections
+		cost = {
+            food = @Cruiser_cost_food
+        }
+        upkeep = {
+			food = @Cruiser_food_upkeep
+			alloys = @Cruiser_alloy_reduction
+        }
+	}
+}
+
+
+
+
+
+
+
+
+
+
 ship_section_template = {
 	key = "$ORGANIC$ $CORVETTE_MID_M1S1$"
 	ship_size = corvette
