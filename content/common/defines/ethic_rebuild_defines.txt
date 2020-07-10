@@ -40,6 +40,20 @@ LEADER_MAX_SKILL_CAP	= 20
 		MIN_RIVAL_YEARS						= 1
 		GOVERNMENT_COOLDOWN_YEARS			= 5	# Cooldown years after changing government before you can change it again
 		GOVERNMENT_CHANGE_INFLUENCE_COST	= 100	# The Influence it costs to change government typ		
+		
+		DEFAULT_COUNCIL_SIZE = 0 						# default number of community council members, will be modified
+		DEFAULT_COUNCIL_VETO = no 						# can the council veto resolutions by default?
+		DEFAULT_COUNCIL_EMERGENCY_MEASURES = yes		# can the council by default propose emergency measures?
+		CATEGORY_VOTE_COOLDOWN = 900					# time before another resolution in a given category can proposed again
+		TYPE_VOTE_COOLDOWN = 900						# time before a referendum of a given type can be proposed again
+		VETO_COOLDOWN = 1800							# time before a country can enact another veto
+		EMERGENCY_MEASURES_COOLDOWN = 1800				# time before a country can propose another emergency measure
+		DEFAULT_VETO_COST_MULT = 1						# proposed resolution cost is multiplied by this to determine the cost of vetoing that resolution
+		JOIN_COMMUNITY_INFLUENCE_COST = 100				# cost to join the community manually after its formation
+		LEAVE_COMMUNITY_MIN_INFLUENCE_COST = 1		# minimum cost to leave the galactic community
+		LEAVE_COMMUNITY_MAX_INFLUENCE_COST = 100		# maximum cost to leave the galactic community
+		LEAVE_COMMUNITY_INFLUENCE_COST_FACTOR = 0.5		# factor determining actual cost of leaving the community, this is multiplied with empire sprawl
+		LEFT_COMMUNITY_MODIFIER_TIMER = 360			# how many days the left_community_modifier will affect the leaving country	
 }
 
 
