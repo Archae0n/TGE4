@@ -122,16 +122,16 @@ orbital_refinery_station = {
 		cost = {
 			alloys = 75
 			energy = 25
-			influence = 10000
+			influence = 100
 		}
 
 		produces = {
-			alloys = 5
+			alloys = 4
 		}
 
 		upkeep = {
-			minerals = 5
-			energy = 5
+			minerals = 16
+			energy = 4
 		}
 	}
 	
@@ -160,17 +160,16 @@ orbital_craftwork_headquarters = {
 		cost = {
 			alloys = 75
 			energy = 25
-			influence = 10000
+			influence = 100
 		}
 
 		produces = {
-			consumer_goods = 5
+			consumer_goods = 4
 		}
 
 		upkeep = {
-			minerals = 2.5
-			food = 2.5
-			energy = 5
+			minerals = 8
+			energy = 4
 		}
 	}
 	

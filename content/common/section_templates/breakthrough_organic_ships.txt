@@ -21,7 +21,7 @@
 ### EWAR CRUISER
 
 ship_section_template = {
-	key = "RS_EA_CRUISER_BOW_A1S2"
+	key = "RS_EA_CRUISER_LIVING_BOW_A1S2"
 	ship_size = rs_ea_cruiser
 	fits_on_slot = bow
 	should_draw_components = yes
@@ -62,7 +62,7 @@ ship_section_template = {
 ###########
 
 ship_section_template = {
-	key = "RS_EA_CRUISER_MID_A2S2"
+	key = "RS_EA_CRUISER_LIVING_MID_A2S2"
 	ship_size = rs_ea_cruiser
 	fits_on_slot = mid
 	should_draw_components = yes
@@ -103,7 +103,7 @@ ship_section_template = {
 #############
 
 ship_section_template = {
-	key = "RS_EA_CRUISER_STERN_M1"
+	key = "RS_EA_CRUISER_LIVING_STERN_M1"
 	ship_size = rs_ea_cruiser
 	fits_on_slot = stern
 	should_draw_components = yes
@@ -133,7 +133,7 @@ ship_section_template = {
 }
 
 ship_section_template = {
-	key = "RS_EA_CRUISER_STERN_S2"
+	key = "RS_EA_CRUISER_LIVING_STERN_S2"
 	ship_size = rs_ea_cruiser
 	fits_on_slot = stern
 	should_draw_components = yes
