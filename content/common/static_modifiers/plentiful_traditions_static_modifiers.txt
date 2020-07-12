@@ -439,4 +439,7 @@ modifier_rebalance = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_feeding.dds"
 	icon_frame = 1
 	pop_growth_speed = -2
+	planet_pop_assembly_mult = -2
+	pop_growth_from_immigration = -2
+	
 }
