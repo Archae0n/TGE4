@@ -434,3 +434,9 @@ modifier_plentiful_traditions_war_profiteering = {
 	icon_frame = 1
 	trade_value_mult = 0.25
 }
+
+modifier_rebalance = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_feeding.dds"
+	icon_frame = 1
+	pop_growth_speed = -2
+}
