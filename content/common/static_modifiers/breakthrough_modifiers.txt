@@ -22,8 +22,7 @@ Psychohistorian_crisis = {
 }
 
 pm_new_frontier = {
-	pop_growth_speed = 0.50
-	pop_growth_from_immigration = 1
+	pop_growth_speed = 0.01
 
 	icon = "gfx/interface/icons/planet_modifiers/pm_new_frontier.dds"
 	icon_frame = 1

@@ -93,12 +93,6 @@ on_planet_conquer = {
     }
 }
 
-on_colonized = {
-	events = {
-        Breakthrough.9
-    }
-}
-
 on_terraforming_complete = {
 	events = {
         Breakthrough.88

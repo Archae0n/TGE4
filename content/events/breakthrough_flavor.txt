@@ -456,25 +456,25 @@ planet_event = {
 }
 
 ### Add New Frontier Modifier
-planet_event = {
-    id = Breakthrough.9
-    hide_window = yes
-    is_triggered_only = yes
-
-    trigger = {
-    	habitable_structure = no
-        owner = {
-            has_technology = tech_new_worlds_breakthrough
-        }
-    }
-
-    immediate = {
-        add_modifier = {
-            modifier = "pm_new_frontier"
-            days = 7200
-        }
-    }  
-}
+#planet_event = {
+#    id = Breakthrough.9
+#    hide_window = yes
+#    is_triggered_only = yes
+#
+#    trigger = {
+#    	habitable_structure = no
+#        owner = {
+#            has_technology = tech_new_worlds_breakthrough
+#        }
+#    }
+#
+#    immediate = {
+#        add_modifier = {
+#            modifier = "pm_new_frontier"
+#           days = 7200
+#        }
+#    }  
+#}
 
 ### Statecraft opinion boost/end rivalries
 country_event = {
