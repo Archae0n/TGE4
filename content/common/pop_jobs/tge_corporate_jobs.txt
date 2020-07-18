@@ -35,7 +35,119 @@ eco_technician = {
 			consumer_goods = 2
 		}
 		}
+			weight = {
+		weight = @worker_job_weight
+		modifier = {
+			factor = 2
+			OR = {
+				has_trait = trait_robot_superconductive
+				has_trait = trait_ingenious
+				has_trait = trait_nuumismatic_administration
+			}
 		}
+		modifier = {
+			factor = 8
+			is_enslaved = yes
+			can_take_servant_job = no
+			NOR = {
+				has_trait = trait_syncretic_proles
+				has_trait = trait_nuumismatic_administration
+				has_trait = trait_robot_superconductive
+				has_trait = trait_ingenious
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+			can_take_servant_job = no
+		}
+		modifier = {
+			factor = 0.25
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_trait = trait_syncretic_proles
+		}
+		modifier = {
+			factor = 4
+			species = {
+				has_species_flag = racket_species_flag
+			}
+		}
+		modifier = {
+			factor = 1.2
+			has_trait = trait_very_strong
+		}
+		modifier = {
+			factor = 1.1
+			has_trait = trait_strong
+		}
+		modifier = {
+			factor = 0.9
+			has_trait = trait_weak
+		}
+		modifier = {
+			factor = 1.3
+			has_trait = trait_psionic
+		}
+		modifier = {
+			factor = 1.2
+			has_trait = trait_latent_psionic
+		}
+		modifier = {
+			factor = 1.5
+			has_trait = trait_presapient_earthbound
+		}
+		modifier = {
+			factor = 1.1
+			OR = {
+				has_trait = trait_robust
+				has_trait = trait_robot_efficient_processors
+			}
+		}
+		modifier = {
+			factor = 1.1
+			has_trait = trait_nerve_stapled
+		}
+		modifier = {
+			factor = 1.5
+			has_trait = trait_void_dweller_1
+		}
+
+		#modifier = {
+		#	factor = 500
+		#	planet = {
+		#		owner = {
+		#			is_megacorp = yes
+		#		}
+		#	}
+		#}
+
+		# low income modifier
+		modifier = {
+			factor = 1.2
+
+			OR = {
+				is_unemployed = yes
+				has_job = "technician"
+			}
+			exists = planet
+			planet = {
+				has_available_jobs = "technician"
+			}
+			owner = {
+				has_monthly_income = {
+					resource = energy
+					value < 0
+				}
+			}
+		}
+	}
+}
 		
 bounty_hunter = {
 	category = specialist
@@ -78,6 +190,79 @@ bounty_hunter = {
 				}
 			}
 			consumer_goods = 2
+		}
+	}
+		weight = {
+		weight = @specialist_job_weight
+		modifier = {
+			factor = 0.1
+			has_ethic = ethic_pacifist
+			NOT = { has_job = duelist }
+		}
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no	
+			NOT = { has_trait = trait_mechanical }
+		}	
+		modifier = {
+			factor = 3
+			has_trait = trait_robot_domestic_protocols
+			OR = {	
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+		}		
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_trait = trait_robot_domestic_protocols
+				has_trait = trait_charismatic
+			}
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_trait = trait_traditional
+				has_trait = trait_robot_propaganda_machines
+			}
+		}	
+		modifier = {
+			factor = 10
+			is_enslaved = yes
+			has_slavery_type = { type = slavery_military }
+		}
+		modifier = {
+			factor = 0.75
+			has_trait = trait_quarrelsome
+		}
+		modifier = {
+			factor = 1.25
+			has_trait = trait_brainslug
+		}		
+		modifier = {
+			factor = 1.20
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.05
+			has_trait = trait_presapient_natural_intellectuals
+		} 
+		modifier = {
+			factor = 1.5
+			has_job = duelist
+		}		
+		modifier = {
+			factor = 0.1
+			NOT = { has_job = duelist }
+			exists = planet
+			planet = {
+				free_amenities > 5
+			}
+		}
+		modifier = {
+			factor = 2
+			is_unemployed = yes
+			is_pop_category = specialist
 		}
 	}
 }	
@@ -170,6 +355,244 @@ gene_therapist = {
 			consumer_goods = 2
 		}
 	}
+	weight = {
+		weight = @spawner_drone_job_weight
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no	
+			NOT = { has_trait = trait_mechanical }	
+		}		
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_trait = trait_robot_domestic_protocols
+				has_trait = trait_charismatic
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = trait_repugnant
+		}		
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_job = healthcare
+		}
+		modifier = {
+			factor = 0.5
+			is_enslaved = yes
+			has_slavery_type = { type = slavery_indentured }
+		}
+		modifier = {
+			factor = 2
+			is_unemployed = yes
+			is_pop_category = specialist
+		}
+	}
+		weight = {
+		weight = @specialist_job_weight
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no	
+			NOT = { has_trait = trait_mechanical }
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				AND = {
+					exists = owner
+					owner = { is_at_war = yes }
+				}
+				has_crisis = yes
+			}
+		}
+		modifier = {
+			factor = 4
+			exists = planet
+			planet = { has_modifier = martial_law }
+		}
+		modifier = {
+			factor = 0.0001
+			has_global_flag = str_enabled_flag
+			owner = {
+				is_ai = yes
+				is_at_war = no
+			}
+			# has_crisis = no
+			planet = {
+				OR = {
+					meaningful_crime_could_have_criminals = no
+					meaningful_crime_acceptable_criminal_jobs = yes
+				}
+				or = {
+					not = {
+						has_modifier = crime_lord_deal
+					}
+					and = {
+						planet_crime > 65
+						nor = {
+							has_modifier = gang_wars
+							has_modifier = center_of_drug_trade
+							has_modifier = mob_rule
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			planet = { planet_crime >= 15 }
+			NOT = { owner = { has_valid_civic = civic_criminal_heritage } }
+		}
+		modifier = {
+			factor = 0.8
+			planet = {
+				meaningful_crime_could_have_criminals = no
+				planet_crime < 12
+			}
+		}
+		modifier = {
+			factor = 0.4
+			exists = owner
+			owner = { is_at_war = no }
+			has_crisis = no
+			planet = {
+				meaningful_crime_could_have_criminals = no
+				planet_crime < 12
+			}
+		}
+		modifier = {
+			factor = 10
+			NOT = { owner = { has_valid_civic = civic_criminal_heritage } }
+			planet = {
+				OR = {
+					planet_crime > 70
+					AND = {
+						meaningful_crime_could_have_criminals = yes
+						OR = {
+							planet_crime > 50
+							meaningful_crime_acceptable_criminal_jobs = no
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.2
+			owner = {
+				is_ai = yes
+				is_at_war = no
+			}
+			has_crisis = no
+			# AI Shouldn't bother trying to fight crime if the number of jobs lost to crime is low
+			planet = {
+				meaningful_crime_could_have_criminals = yes
+				planet_crime > 27
+				planet_crime < 65
+				count_pops = {
+					limit = { 
+						has_job = criminal
+					}
+					count <= 1
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			has_trait = trait_resilient
+		}			
+		modifier = {
+			factor = 2
+			has_trait = trait_very_strong
+		}	
+		modifier = {
+			factor = 1.5
+			has_trait = trait_strong
+		}
+		modifier = {
+			factor = 10
+			is_enslaved = yes
+			has_slavery_type = { type = slavery_military }
+		}			
+		modifier = {
+			factor = 0.50
+			has_trait = trait_weak
+		}
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 10
+			has_job = enforcer
+		}
+		modifier = {
+			factor = 1.1
+			has_trait = trait_cybernetic
+		}
+		modifier = {
+			factor = 2
+			has_trait = trait_presapient_earthbound
+		}
+		modifier = {
+			factor = 1.1
+			has_trait = trait_limited_regeneration
+		}
+		modifier = {
+			factor = 1.1
+			has_trait = trait_presapient_proles
+		}
+		modifier = {
+			factor = 1.1
+			has_trait = trait_brainslug
+			exists = owner
+			owner = { has_valid_civic = civic_police_state }
+		}
+		modifier = {
+			factor = 1.05
+			has_trait = trait_presapient_natural_intellectuals
+			exists = owner
+			owner = { has_valid_civic = civic_police_state }
+		}
+		modifier = {
+			factor = 20
+			has_job = enforcer
+			OR = {
+				has_trait = trait_robust
+				has_trait = trait_robot_efficient_processors
+			}
+		}
+		modifier = {
+			factor = 1.1
+			OR = {
+				has_trait = trait_robot_propaganda_machines
+				has_trait = trait_traditional
+			}
+			exists = owner
+			owner = { has_valid_civic = civic_police_state }
+		}
+		modifier = {
+			factor = 0.9
+			has_trait = trait_quarrelsome
+		}		
+		modifier = {
+			factor = 0.8
+			is_enslaved = yes
+			has_slavery_type = { type = slavery_indentured }
+		}
+		modifier = {
+			factor = 2
+			has_trait = trait_lithoid
+		}
+		modifier = {
+			factor = 2
+			is_unemployed = yes
+			is_pop_category = specialist
+		}
+	}
 }	
 panopticon_overseer = {
 	category = specialist
@@ -201,6 +624,207 @@ panopticon_overseer = {
 			}
 			consumer_goods = 2
 		}
+			weight = {
+		weight = @specialist_job_weight
+		modifier = {
+			factor = 0.2
+			has_citizenship_rights = no	
+			NOT = { has_trait = trait_mechanical }
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				AND = {
+					exists = owner
+					owner = { is_at_war = yes }
+				}
+				has_crisis = yes
+			}
+		}
+		modifier = {
+			factor = 4
+			exists = planet
+			planet = { has_modifier = martial_law }
+		}
+		modifier = {
+			factor = 0.0001
+			has_global_flag = str_enabled_flag
+			owner = {
+				is_ai = yes
+				is_at_war = no
+			}
+			# has_crisis = no
+			planet = {
+				OR = {
+					meaningful_crime_could_have_criminals = no
+					meaningful_crime_acceptable_criminal_jobs = yes
+				}
+				or = {
+					not = {
+						has_modifier = crime_lord_deal
+					}
+					and = {
+						planet_crime > 65
+						nor = {
+							has_modifier = gang_wars
+							has_modifier = center_of_drug_trade
+							has_modifier = mob_rule
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			planet = { planet_crime >= 15 }
+			NOT = { owner = { has_valid_civic = civic_criminal_heritage } }
+		}
+		modifier = {
+			factor = 0.8
+			planet = {
+				meaningful_crime_could_have_criminals = no
+				planet_crime < 12
+			}
+		}
+		modifier = {
+			factor = 0.4
+			exists = owner
+			owner = { is_at_war = no }
+			has_crisis = no
+			planet = {
+				meaningful_crime_could_have_criminals = no
+				planet_crime < 12
+			}
+		}
+		modifier = {
+			factor = 10
+			NOT = { owner = { has_valid_civic = civic_criminal_heritage } }
+			planet = {
+				OR = {
+					planet_crime > 70
+					AND = {
+						meaningful_crime_could_have_criminals = yes
+						OR = {
+							planet_crime > 50
+							meaningful_crime_acceptable_criminal_jobs = no
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.2
+			owner = {
+				is_ai = yes
+				is_at_war = no
+			}
+			has_crisis = no
+			# AI Shouldn't bother trying to fight crime if the number of jobs lost to crime is low
+			planet = {
+				meaningful_crime_could_have_criminals = yes
+				planet_crime > 27
+				planet_crime < 65
+				count_pops = {
+					limit = { 
+						has_job = criminal
+					}
+					count <= 1
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			has_trait = trait_resilient
+		}			
+		modifier = {
+			factor = 2
+			has_trait = trait_very_strong
+		}	
+		modifier = {
+			factor = 1.5
+			has_trait = trait_strong
+		}
+		modifier = {
+			factor = 10
+			is_enslaved = yes
+			has_slavery_type = { type = slavery_military }
+		}			
+		modifier = {
+			factor = 0.50
+			has_trait = trait_weak
+		}
+		modifier = {
+			factor = 0.1
+			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 10
+			has_job = enforcer
+		}
+		modifier = {
+			factor = 1.1
+			has_trait = trait_cybernetic
+		}
+		modifier = {
+			factor = 2
+			has_trait = trait_presapient_earthbound
+		}
+		modifier = {
+			factor = 1.1
+			has_trait = trait_limited_regeneration
+		}
+		modifier = {
+			factor = 1.1
+			has_trait = trait_presapient_proles
+		}
+		modifier = {
+			factor = 1.1
+			has_trait = trait_brainslug
+			exists = owner
+			owner = { has_valid_civic = civic_police_state }
+		}
+		modifier = {
+			factor = 1.05
+			has_trait = trait_presapient_natural_intellectuals
+			exists = owner
+			owner = { has_valid_civic = civic_police_state }
+		}
+		modifier = {
+			factor = 20
+			has_job = enforcer
+			OR = {
+				has_trait = trait_robust
+				has_trait = trait_robot_efficient_processors
+			}
+		}
+		modifier = {
+			factor = 1.1
+			OR = {
+				has_trait = trait_robot_propaganda_machines
+				has_trait = trait_traditional
+			}
+			exists = owner
+			owner = { has_valid_civic = civic_police_state }
+		}
+		modifier = {
+			factor = 0.9
+			has_trait = trait_quarrelsome
+		}		
+		modifier = {
+			factor = 0.8
+			is_enslaved = yes
+			has_slavery_type = { type = slavery_indentured }
+		}
+		modifier = {
+			factor = 2
+			has_trait = trait_lithoid
+		}
+		modifier = {
+			factor = 2
+			is_unemployed = yes
+			is_pop_category = specialist
+		}
+	}
 	}	
 negotiator = {
 	category = specialist
@@ -275,6 +899,80 @@ virtual_celebrity = {
 				}
 			}
 			consumer_goods = 2
+		}
+	}
+		weight = {
+		weight = @specialist_job_weight
+		modifier = {
+			factor = 0.2
+			NOT = { has_global_flag = str_enabled_flag }
+			has_citizenship_rights = no	
+			NOT = { has_trait = trait_mechanical }
+		}	
+		modifier = {
+		  factor = 0.5
+			# Starnet AI compatibility
+			has_global_flag = str_enabled_flag
+			has_citizenship_rights = no	
+			NOT = { has_trait = trait_mechanical }
+		}
+		modifier = {
+			factor = 3
+			has_trait = trait_robot_domestic_protocols
+			OR = {	
+				is_non_sapient_robot = yes
+				is_shackled_robot = yes
+			}
+		}		
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_trait = trait_robot_domestic_protocols
+				has_trait = trait_charismatic
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = trait_repugnant
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_trait = trait_traditional
+				has_trait = trait_robot_propaganda_machines
+			}
+		}
+		modifier = {
+			factor = 0.75
+			has_trait = trait_quarrelsome
+		} 
+		modifier = {
+			factor = 1.5
+			has_job = entertainer
+		}		
+		modifier = {
+			factor = 1.25
+			has_trait = trait_brainslug
+		}
+		modifier = {
+			factor = 1.1
+			has_trait = trait_presapient_natural_intellectuals
+		}
+		modifier = {
+			factor = 0.1
+			is_domestic_servant = yes
+		}
+		modifier = {
+			factor = 1.1
+			OR = {
+				has_trait = trait_robust
+				has_trait = trait_robot_efficient_processors
+			}
+		}
+		modifier = {
+			factor = 2
+			is_unemployed = yes
+			is_pop_category = specialist
 		}
 	}
 }	
